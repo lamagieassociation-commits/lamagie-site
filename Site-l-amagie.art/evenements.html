@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Evenements &amp; Presse &mdash; L'AMagie</title>
+<meta name="description" content="Evenements L'AMagie - salons du livre, dedicaces, ateliers. Actualites de la maison d'edition."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet"/>
+<style>*{margin:0;padding:0;box-sizing:border-box;}:root{--or:#c9a84c;--orp:#e8d59a;--ors:#8a6d2f;--p:#f5f0e8;--e:#070910;}html{scroll-behavior:smooth;}body{background:var(--e);color:#f5f0e8;font-family:"Cormorant Garamond",serif;overflow-x:hidden;}
+#cosmos{position:fixed;inset:0;z-index:0;}.neb{position:fixed;inset:0;z-index:1;pointer-events:none;}
+nav{position:fixed;top:0;width:100%;z-index:200;padding:1.4rem 3rem;display:flex;align-items:center;justify-content:space-between;background:linear-gradient(180deg,rgba(7,9,16,.97),transparent);border-bottom:1px solid rgba(201,168,76,.14);backdrop-filter:blur(8px);}
+.logo{font-family:"Cinzel Decorative",serif;font-size:.78rem;letter-spacing:.2em;text-decoration:none;white-space:nowrap;}.logo .lp{color:rgba(245,240,232,.7);}.logo .la{color:#c9a84c;text-shadow:0 0 14px rgba(201,168,76,.5);}.logo .lm{color:rgba(245,240,232,.95);}.logo .lg{color:rgba(245,240,232,.7);}
+.nav-ul{display:flex;gap:1.5rem;list-style:none;}.nav-ul a{color:rgba(245,240,232,.72);text-decoration:none;font-size:.8rem;letter-spacing:.08em;transition:color .3s;}.nav-ul a:hover,.nav-ul a.active{color:var(--or);}
+.burger{display:none;background:none;border:none;color:var(--or);font-size:1.4rem;cursor:pointer;}.mob{display:none;position:fixed;inset:0;background:rgba(7,9,16,.98);z-index:300;flex-direction:column;align-items:center;justify-content:center;gap:2rem;}.mob.open{display:flex;}.mob a{font-family:"Cinzel Decorative",serif;color:#f5f0e8;text-decoration:none;font-size:.85rem;letter-spacing:.2em;transition:color .3s;}.mob a:hover{color:var(--or);}.mc{position:absolute;top:1.5rem;right:2rem;background:none;border:none;color:var(--or);font-size:2rem;cursor:pointer;}
+.ph{position:relative;z-index:10;padding:9rem 2rem 3.5rem;text-align:center;}.bc{font-size:.56rem;letter-spacing:.26em;color:rgba(245,240,232,.65);margin-bottom:1.2rem;display:block;}.bc a{color:rgba(201,168,76,.55);text-decoration:none;transition:color .3s;}.bc a:hover{color:var(--or);}
+.pth{font-family:"Cinzel Decorative",serif;font-size:clamp(1.6rem,4vw,3rem);color:#f5f0e8;letter-spacing:.05em;font-weight:400;margin-bottom:.8rem;opacity:0;animation:fu 1s ease forwards .2s;}
+@keyframes fu{from{opacity:0;transform:translateY(25px);}to{opacity:1;transform:none;}}
+.ps{font-family:"IM Fell English",serif;font-style:italic;font-size:clamp(.9rem,1.8vw,1.15rem);color:#f5f0e8;max-width:600px;margin:0 auto;line-height:1.8;opacity:0;animation:fu 1s ease forwards .4s;}.seph{width:44px;height:1px;background:linear-gradient(90deg,transparent,var(--or),transparent);margin:1.2rem auto 0;opacity:0;animation:fu 1s ease forwards .5s;}
+.cnt{position:relative;z-index:10;max-width:880px;margin:0 auto;padding:1rem 2rem 6rem;}
+.sl{font-size:.56rem;letter-spacing:.38em;color:var(--or);text-transform:uppercase;display:block;text-align:center;margin-bottom:.7rem;}.sh2{font-family:"Cinzel Decorative",serif;font-size:clamp(1.1rem,2.3vw,1.7rem);color:#f5f0e8;letter-spacing:.06em;font-weight:400;text-align:center;}.sep{width:42px;height:1px;background:linear-gradient(90deg,transparent,var(--or),transparent);margin:1rem auto 2.5rem;}
+.box{border:1px solid rgba(201,168,76,.18);background:linear-gradient(145deg,rgba(16,10,28,.85),rgba(10,12,24,.94));padding:2.5rem 3rem;margin-bottom:2rem;position:relative;}.box::before{content:"\2726";position:absolute;top:-.9rem;left:50%;transform:translateX(-50%);font-size:1.1rem;color:var(--or);background:var(--e);padding:0 .8rem;}.box h3{font-family:"Cinzel Decorative",serif;font-size:.86rem;color:#f5f0e8;letter-spacing:.1em;font-weight:400;margin-bottom:.9rem;}.box p{font-size:1rem;color:#f5f0e8;line-height:2;font-weight:300;margin-bottom:.8rem;}.box p:last-child{margin-bottom:0;}.box em{color:var(--orp);}.box strong{color:#f5f0e8;font-weight:600;}.box ul{list-style:none;margin:.5rem 0;}.box ul li{font-size:1rem;color:#f5f0e8;padding:.3rem 0 .3rem 1.2rem;position:relative;line-height:1.7;}.box ul li::before{content:"\2014";position:absolute;left:0;color:var(--or);font-size:.7rem;}
+.grille{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1px;background:rgba(201,168,76,.07);margin-bottom:3rem;}.carte{background:linear-gradient(145deg,rgba(14,10,26,.9),rgba(10,12,24,.97));padding:2.2rem 1.8rem;text-decoration:none;display:flex;flex-direction:column;position:relative;overflow:hidden;transition:background .3s,transform .25s;}.carte::after{content:"";position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--or),transparent);transform:scaleX(0);transition:transform .4s;}.carte:hover{transform:translateY(-3px);}.carte:hover::after{transform:scaleX(1);}.ci{font-size:1.5rem;color:var(--or);margin-bottom:.9rem;display:block;}.ct{font-family:"Cinzel Decorative",serif;font-size:.7rem;color:#f5f0e8;letter-spacing:.1em;font-weight:400;margin-bottom:.5rem;}.cd{font-size:.92rem;color:#f5f0e8;line-height:1.85;font-weight:300;flex:1;}.cl{display:inline-block;margin-top:1.2rem;font-size:.55rem;letter-spacing:.16em;color:var(--or);border-bottom:1px solid rgba(201,168,76,.25);padding-bottom:.1rem;transition:color .3s;font-family:"Cinzel Decorative",serif;text-decoration:none;}.cl:hover{color:var(--orp);}
+.faq-item{border-bottom:1px solid rgba(201,168,76,.12);padding:1.5rem 0;cursor:pointer;}.faq-item:last-child{border-bottom:none;}.faq-q{font-family:"Cinzel Decorative",serif;font-size:.74rem;color:#f5f0e8;letter-spacing:.06em;font-weight:400;display:flex;justify-content:space-between;align-items:center;gap:1rem;}.faq-q::after{content:"\2726";color:var(--or);font-size:.7rem;transition:transform .3s;flex-shrink:0;}.faq-item.open .faq-q::after{transform:rotate(90deg);}.faq-a{font-size:1rem;color:#f5f0e8;line-height:2;font-weight:300;max-height:0;overflow:hidden;transition:max-height .5s ease,padding .3s;}.faq-item.open .faq-a{max-height:600px;padding-top:1rem;}.faq-a a{color:var(--or);text-decoration:none;}.faq-a a:hover{color:var(--orp);}
+.boutique-grille{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:3rem;}.boutique-card{border:1px solid rgba(201,168,76,.18);background:linear-gradient(145deg,rgba(16,10,28,.85),rgba(10,12,24,.94));padding:3rem 2.5rem;text-align:center;position:relative;overflow:hidden;transition:transform .3s,border-color .3s;}.boutique-card::after{content:"";position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--or),transparent);transform:scaleX(0);transition:transform .4s;}.boutique-card:hover{transform:translateY(-4px);border-color:rgba(201,168,76,.35);}.boutique-card:hover::after{transform:scaleX(1);}.boutique-card .icon{font-size:2.5rem;margin-bottom:1.2rem;display:block;}.boutique-card h3{font-family:"Cinzel Decorative",serif;font-size:.88rem;color:#f5f0e8;letter-spacing:.1em;font-weight:400;margin-bottom:1rem;}.boutique-card p{font-size:.95rem;color:#f5f0e8;line-height:1.9;font-weight:300;margin-bottom:1.5rem;}.boutique-card ul{list-style:none;text-align:left;margin-bottom:1.5rem;}.boutique-card ul li{font-size:.9rem;color:#f5f0e8;padding:.25rem 0 .25rem 1.2rem;position:relative;line-height:1.6;}.boutique-card ul li::before{content:"\2726";position:absolute;left:0;color:var(--or);font-size:.5rem;top:.4rem;}
+.cta-box{border:1px solid rgba(201,168,76,.2);background:linear-gradient(145deg,rgba(22,14,38,.8),rgba(10,12,24,.92));padding:3rem;text-align:center;position:relative;}.cta-box::before{content:"\2726";position:absolute;top:-.9rem;left:50%;transform:translateX(-50%);font-size:1.1rem;color:var(--or);background:var(--e);padding:0 .8rem;}.cta-box h3{font-family:"Cinzel Decorative",serif;font-size:.88rem;color:#f5f0e8;letter-spacing:.08em;font-weight:400;margin-bottom:1rem;}.cta-box p{font-size:1rem;color:#f5f0e8;line-height:1.9;font-weight:300;max-width:500px;margin:0 auto 2rem;}
+.contact-grille{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-bottom:3rem;}.contact-info{border:1px solid rgba(201,168,76,.15);background:linear-gradient(145deg,rgba(16,10,28,.82),rgba(10,12,24,.92));padding:2.5rem;}.contact-info .label{font-size:.56rem;letter-spacing:.3em;color:var(--or);text-transform:uppercase;display:block;margin-bottom:.6rem;}.contact-info p,.contact-info a{font-size:1rem;color:#f5f0e8;line-height:1.8;font-weight:300;text-decoration:none;display:block;margin-bottom:.3rem;}.contact-info a:hover{color:var(--or);}
+.f-input{width:100%;background:transparent;border:none;border-bottom:1px solid rgba(201,168,76,.2);color:#f5f0e8;font-family:"Cormorant Garamond",serif;font-size:1rem;font-style:italic;padding:.5rem 0;outline:none;transition:border-color .3s;}.f-input::placeholder{color:rgba(245,240,232,.35);}.f-input:focus{border-color:rgba(201,168,76,.55);}.fl{font-size:.56rem;letter-spacing:.28em;color:var(--or);text-transform:uppercase;display:block;margin-bottom:.5rem;}.form-grille{display:flex;flex-direction:column;gap:1.8rem;}
+.ml-box{border:1px solid rgba(201,168,76,.12);background:linear-gradient(145deg,rgba(14,10,26,.82),rgba(10,12,24,.94));padding:2.5rem 3rem;margin-bottom:1.5rem;}.ml-box h3{font-family:"Cinzel Decorative",serif;font-size:.8rem;color:#f5f0e8;letter-spacing:.08em;font-weight:400;margin-bottom:1rem;border-bottom:1px solid rgba(201,168,76,.15);padding-bottom:.7rem;}.ml-box p{font-size:.95rem;color:#f5f0e8;line-height:1.9;font-weight:300;margin-bottom:.6rem;}.ml-box p:last-child{margin-bottom:0;}.ml-box strong{color:#f5f0e8;font-weight:600;}
+.bor{position:relative;font-family:"Cinzel Decorative",serif;font-size:.56rem;letter-spacing:.18em;color:var(--or);border:1px solid rgba(201,168,76,.4);padding:.8rem 2rem;text-decoration:none;overflow:hidden;transition:color .35s;display:inline-block;}.bor::before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,var(--ors),var(--or));transform:translateX(-100%);transition:transform .35s;z-index:-1;}.bor:hover{color:var(--e);}.bor:hover::before{transform:none;}
+.bg{font-family:"IM Fell English",serif;font-style:italic;font-size:.95rem;color:rgba(245,240,232,.65);border:1px solid rgba(245,240,232,.12);padding:.75rem 1.6rem;text-decoration:none;transition:color .3s,border-color .3s;display:inline-block;margin-left:.8rem;}.bg:hover{color:var(--orp);border-color:rgba(201,168,76,.3);}
+footer{position:relative;z-index:10;border-top:1px solid rgba(201,168,76,.1);padding:3rem 2rem;text-align:center;}.fl2{font-family:"Cinzel Decorative",serif;color:rgba(201,168,76,.4);font-size:.7rem;letter-spacing:.3em;display:block;margin-bottom:.5rem;}.flinks{display:flex;flex-wrap:wrap;justify-content:center;gap:1.5rem;margin:1.2rem 0;list-style:none;}.flinks a{font-size:.7rem;letter-spacing:.08em;color:rgba(245,240,232,.65);text-decoration:none;transition:color .3s;}.flinks a:hover{color:var(--or);}.fsoc{display:flex;justify-content:center;gap:1rem;margin:.8rem 0;}.fsoc a{width:30px;height:30px;border:1px solid rgba(201,168,76,.18);display:flex;align-items:center;justify-content:center;color:rgba(245,240,232,.65);text-decoration:none;font-size:.75rem;transition:border-color .3s,color .3s;}.fsoc a:hover{border-color:var(--or);color:var(--or);}footer p{font-size:.72rem;color:rgba(245,240,232,.65);font-style:italic;}.ara{color:rgba(201,168,76,.25);letter-spacing:.6em;}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .8s,transform .8s;}.reveal.vis{opacity:1;transform:none;}
+@media(max-width:700px){.boutique-grille,.contact-grille{grid-template-columns:1fr;}.box,.ml-box{padding:1.8rem;}}
+@media(max-width:580px){nav{padding:1.2rem 1.5rem;}.nav-ul{display:none;}.burger{display:block;}}
+::-webkit-scrollbar{width:2px;}::-webkit-scrollbar-track{background:var(--e);}::-webkit-scrollbar-thumb{background:rgba(201,168,76,.22);}</style>
+</head>
+<body>
+<canvas id="cosmos"></canvas><div class="neb"></div>
+<nav>
+  <a href="index.html" class="logo"><span class="lp">L'</span><span class="la">A</span><span class="lm">M</span><span class="lg">agie</span></a>
+  <ul class="nav-ul">    <li><a href="qui-sommes-nous.html" class="">La maison</a></li>
+    <li><a href="ateliers.html" class="">Ateliers</a></li>
+    <li><a href="edition.html" class="">Edition</a></li>
+    <li><a href="peintures.html" class="">Meichelus</a></li>
+    <li><a href="poesie.html" class="">Po&eacute;sie</a></li>
+    <li><a href="contact.html" class="active">Contact</a></li></ul>
+  <button class="burger" onclick="document.getElementById('mm').classList.add('open')">&#x2630;</button>
+</nav>
+<div class="mob" id="mm">
+  <button class="mc" onclick="document.getElementById('mm').classList.remove('open')">&#x2715;</button>
+    <a href="qui-sommes-nous.html" onclick="document.getElementById('mm').classList.remove('open')">La maison</a>
+  <a href="ateliers.html" onclick="document.getElementById('mm').classList.remove('open')">Ateliers</a>
+  <a href="edition.html" onclick="document.getElementById('mm').classList.remove('open')">Edition</a>
+  <a href="peintures.html" onclick="document.getElementById('mm').classList.remove('open')">Meichelus</a>
+  <a href="poesie.html" onclick="document.getElementById('mm').classList.remove('open')">Po&eacute;sie</a>
+  <a href="contact.html" onclick="document.getElementById('mm').classList.remove('open')">Contact</a>
+</div>
+<div class="ph">
+  <span class="bc"><a href="index.html">Accueil</a> &middot; &Eacute;v&eacute;nements</span>
+  <h1 class="pth">&Eacute;v&eacute;nements &amp; Presse</h1>
+  <p class="ps">Salons du livre, d&eacute;dicaces, ateliers et actualit&eacute;s de la maison.</p>
+  <div class="seph"></div>
+</div>
+<div class="cnt"><div class="box reveal"><p>L'AMagie est pr&eacute;sente sur le terrain &mdash; salons du livre, d&eacute;dicaces, ateliers publics et &eacute;v&eacute;nements culturels en Occitanie et au-del&agrave;. Suivez nos <strong>r&eacute;seaux sociaux</strong> pour les prochaines dates.</p></div>
+  <span class="sl reveal">&mdash; Prochains rendez-vous &mdash;</span><h2 class="sh2 reveal">Agenda</h2><div class="sep reveal"></div>
+  <div class="box reveal"><p style="text-align:center;font-family:'IM Fell English',serif;font-style:italic;color:rgba(201,168,76,.8);font-size:1.1rem;">Les prochains &eacute;v&eacute;nements seront annonc&eacute;s ici.</p><p style="text-align:center;font-size:.9rem;margin-top:.5rem;">Suivez Instagram et Facebook pour les annonces en temps r&eacute;el.</p></div>
+  <span class="sl reveal">&mdash; Dans la presse &mdash;</span><h2 class="sh2 reveal">Presse &amp; M&eacute;dias</h2><div class="sep reveal"></div>
+  <div class="box reveal"><h3>L'Ind&eacute;pendant</h3><p>Article paru dans <em>L'Ind&eacute;pendant</em> &mdash; L'AMagie, une maison d'&eacute;dition n&eacute;e en Minervois, fait parler d'elle dans la presse r&eacute;gionale occitane.</p></div>
+  <div class="cta-box reveal"><h3>Inviter L'AMagie</h3><p>Salon du livre, m&eacute;diath&egrave;que, &eacute;cole, festival culturel &mdash; nous serions ravis de vous rencontrer.</p><a href="contact.html" class="bor">Nous contacter &rarr;</a><a href="https://www.instagram.com/lamagie_arts_editions/" target="_blank" class="bg">Instagram</a></div></div>
+<footer>
+  <p class="ara">&#x2726; &#x2726; &#x2726;</p>
+  <span class="fl2">L'AMagie &middot; &Eacute;ditions</span>
+  <ul class="flinks">
+    <li><a href="qui-sommes-nous.html">Qui sommes-nous ?</a></li>
+    <li><a href="ateliers.html">Ateliers</a></li>
+    <li><a href="edition.html">Edition</a></li>
+    <li><a href="poesie.html">Po&eacute;sie</a></li>
+    <li><a href="boutique.html">Boutique</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="mentions-legales.html">Mentions l&eacute;gales</a></li>
+  </ul>
+  <div class="fsoc">
+    <a href="https://www.instagram.com/lamagie_arts_editions/">&#x1F4F7;</a>
+    <a href="http://www.facebook.com/share/1Rcqk3QQ4z/">f</a>
+    <a href="https://meichelus-art.blogspot.com">&#x270E;</a>
+    <a href="https://www.youtube.com/@lamagieeditions">&#x25B6;</a>
+  </div>
+  <p>&copy; 2026 L'AMagie &middot; Maison d'&eacute;dition ind&eacute;pendante &middot; Siren 937629533</p>
+  <p style="margin-top:.2rem;">F&eacute;lines-Minervois &middot; Occitanie &middot; France</p>
+</footer>
+<script>
+const cvs=document.getElementById("cosmos"),ctx=cvs.getContext("2d");
+function rsz(){cvs.width=innerWidth;cvs.height=innerHeight;}rsz();window.addEventListener("resize",rsz);
+
+// Étoiles avec types variés
+const stars=[];
+for(let i=0;i<320;i++){
+  const t=Math.random();
+  stars.push({
+    x:Math.random()*innerWidth, y:Math.random()*innerHeight,
+    r: t>.92 ? Math.random()*2.5+1.5 : t>.7 ? Math.random()*1.2+.5 : Math.random()*.5+.1,
+    a:Math.random()*.7+.2, ad:(Math.random()>.5?1:-1)*(.001+Math.random()*.004),
+    v:Math.random()*.06+.008,
+    c:t>.85?[255,240,200]:t>.6?[201,168,76]:t>.3?[245,240,232]:[180,200,255],
+    pulse: t>.88, pulseT: Math.random()*Math.PI*2
+  });
+}
+
+// Étoiles filantes (comètes)
+class Comet{
+  constructor(){this.reset(true);}
+  reset(init=false){
+    this.x=init?Math.random()*innerWidth*1.5-innerWidth*.25:-200;
+    this.y=init?Math.random()*innerHeight*.5:Math.random()*innerHeight*.3;
+    this.len=120+Math.random()*220;
+    this.vx=4+Math.random()*5;
+    this.vy=.2+Math.random()*1.8;
+    this.a=0; this.amax=.6+Math.random()*.4;
+    this.st=init?"idle":"in";
+    this.delay=init?Math.floor(Math.random()*400):0;
+    this.t=0; this.w=.6+Math.random()*.8;
+    this.burst=Math.random()>.7;
+  }
+  tick(){
+    if(this.st==="idle"){if(++this.t>this.delay){this.st="in";this.t=0;}return;}
+    this.x+=this.vx; this.y+=this.vy;
+    if(this.st==="in"){this.a=Math.min(this.a+.025,this.amax);if(this.a>=this.amax)this.st="out";}
+    else this.a=Math.max(this.a-.004,0);
+    if(this.x>innerWidth+300||this.a<=0)this.reset();
+  }
+  draw(){
+    if(this.a<=0)return;
+    const ang=Math.atan2(this.vy,this.vx);
+    const tx=this.x-Math.cos(ang)*this.len, ty=this.y-Math.sin(ang)*this.len;
+    const g=ctx.createLinearGradient(this.x,this.y,tx,ty);
+    g.addColorStop(0,`rgba(255,248,220,${this.a})`);
+    g.addColorStop(.15,`rgba(232,213,154,${this.a*.8})`);
+    g.addColorStop(.4,`rgba(201,168,76,${this.a*.4})`);
+    g.addColorStop(1,"rgba(201,168,76,0)");
+    ctx.beginPath();ctx.moveTo(this.x,this.y);ctx.lineTo(tx,ty);
+    ctx.strokeStyle=g;ctx.lineWidth=this.w;ctx.stroke();
+    // Halo tête
+    const hg=ctx.createRadialGradient(this.x,this.y,0,this.x,this.y,this.w*4);
+    hg.addColorStop(0,`rgba(255,248,220,${this.a*.9})`);
+    hg.addColorStop(.5,`rgba(201,168,76,${this.a*.3})`);
+    hg.addColorStop(1,"rgba(201,168,76,0)");
+    ctx.beginPath();ctx.arc(this.x,this.y,this.w*3.5,0,Math.PI*2);
+    ctx.fillStyle=hg;ctx.fill();
+  }
+}
+
+// Nébuleuses animées
+const nebulas=[
+  {x:.2,y:.3,rx:.45,ry:.35,c:"rgba(80,40,120,",a:.06,speed:.0003},
+  {x:.78,y:.65,rx:.38,ry:.42,c:"rgba(20,60,100,",a:.05,speed:.0004},
+  {x:.5,y:.15,rx:.55,ry:.25,c:"rgba(180,120,40,",a:.025,speed:.0002},
+];
+let nebT=0;
+
+const comets=[new Comet(),new Comet(),new Comet(),new Comet()];
+let lastT=0, frame=0;
+
+function draw(t){
+  if(t-lastT<14){requestAnimationFrame(draw);return;}lastT=t;frame++;
+  ctx.clearRect(0,0,cvs.width,cvs.height);
+
+  // Fond dégradé cosmique
+  const bg=ctx.createRadialGradient(cvs.width*.45,cvs.height*.38,0,cvs.width*.5,cvs.height*.5,Math.max(cvs.width,cvs.height)*.9);
+  bg.addColorStop(0,"#141830");
+  bg.addColorStop(.35,"#0e1228");
+  bg.addColorStop(.7,"#0a0e1e");
+  bg.addColorStop(1,"#070910");
+  ctx.fillStyle=bg;ctx.fillRect(0,0,cvs.width,cvs.height);
+
+  nebT+=.001;
+  // Nébuleuses
+  nebulas.forEach(n=>{
+    const cx=n.x*cvs.width, cy=n.y*cvs.height;
+    const drift=Math.sin(nebT*n.speed*1000+n.x*10)*15;
+    const ng=ctx.createRadialGradient(cx+drift,cy,0,cx+drift,cy,Math.max(cvs.width*n.rx,cvs.height*n.ry));
+    ng.addColorStop(0,n.c+(n.a*.8)+")");
+    ng.addColorStop(.4,n.c+(n.a*.35)+")");
+    ng.addColorStop(1,n.c+"0)");
+    ctx.fillStyle=ng;
+    ctx.beginPath();ctx.ellipse(cx+drift,cy,cvs.width*n.rx,cvs.height*n.ry,n.speed*1000*nebT,0,Math.PI*2);
+    ctx.fill();
+  });
+
+  // Voie lactée subtile
+  const vl=ctx.createLinearGradient(0,cvs.height*.05,cvs.width,cvs.height*.9);
+  vl.addColorStop(0,"rgba(201,168,76,0)");
+  vl.addColorStop(.3,"rgba(245,240,232,0.018)");
+  vl.addColorStop(.5,"rgba(201,168,76,0.012)");
+  vl.addColorStop(.7,"rgba(245,240,232,0.015)");
+  vl.addColorStop(1,"rgba(201,168,76,0)");
+  ctx.fillStyle=vl;ctx.fillRect(0,0,cvs.width,cvs.height);
+
+  // Étoiles
+  stars.forEach(s=>{
+    s.y+=s.v;if(s.y>cvs.height+2)s.y=-2;
+    if(s.pulse){
+      s.pulseT+=.04;
+      s.a=.4+Math.sin(s.pulseT)*.5;
+    } else {
+      s.a+=s.ad;if(s.a>.95||s.a<.08)s.ad*=-1;
+    }
+    ctx.beginPath();ctx.arc(s.x,s.y,s.r,0,Math.PI*2);
+    ctx.fillStyle=`rgba(${s.c[0]},${s.c[1]},${s.c[2]},${s.a})`;ctx.fill();
+    // Halo pour les grosses étoiles
+    if(s.r>1.2){
+      const h=ctx.createRadialGradient(s.x,s.y,0,s.x,s.y,s.r*5);
+      h.addColorStop(0,`rgba(${s.c[0]},${s.c[1]},${s.c[2]},${s.a*.3})`);
+      h.addColorStop(1,`rgba(${s.c[0]},${s.c[1]},${s.c[2]},0)`);
+      ctx.beginPath();ctx.arc(s.x,s.y,s.r*5,0,Math.PI*2);ctx.fillStyle=h;ctx.fill();
+      // Croix lumineuse pour les plus grosses
+      if(s.r>2.2&&s.a>.5){
+        ctx.strokeStyle=`rgba(${s.c[0]},${s.c[1]},${s.c[2]},${s.a*.4})`;
+        ctx.lineWidth=.5;
+        ctx.beginPath();ctx.moveTo(s.x-s.r*6,s.y);ctx.lineTo(s.x+s.r*6,s.y);ctx.stroke();
+        ctx.beginPath();ctx.moveTo(s.x,s.y-s.r*6);ctx.lineTo(s.x,s.y+s.r*6);ctx.stroke();
+      }
+    }
+  });
+
+  comets.forEach(c=>{c.tick();c.draw();});
+  requestAnimationFrame(draw);
+}
+requestAnimationFrame(draw);
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){if(e.target.classList.contains("grille")||e.target.classList.contains("boutique-grille"))[...e.target.children].forEach((c,i)=>setTimeout(()=>c.classList.add("vis"),i*80));e.target.classList.add("vis");}});},{threshold:.06});
+document.querySelectorAll(".reveal").forEach(el=>obs.observe(el));
+document.querySelectorAll(".faq-item").forEach(item=>{item.addEventListener("click",()=>item.classList.toggle("open"));});
+</script>
+</body>
+</html>

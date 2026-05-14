@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Collection Amis-Mots pour animaux &mdash; L'AMagie</title>
-<meta name="description" content="Collection Amis-Mots L'AMagie - des livres ou les animaux sont les heros. Moustache, Valreve."/>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Anouk Journo &mdash; L'AMagie</title>
+<meta name="description" content="Anouk Journo, co-fondatrice de L'AMagie. Autrice, traductrice, ateliers d'ecriture, mediation animale, poesie. Membre SGDL."/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet"/>
@@ -34,6 +35,15 @@ footer{position:relative;z-index:10;border-top:1px solid rgba(201,168,76,.1);pad
 @media(max-width:700px){.boutique-grille,.contact-grille{grid-template-columns:1fr;}.box,.ml-box{padding:1.8rem;}}
 @media(max-width:580px){nav{padding:1.2rem 1.5rem;}.nav-ul{display:none;}.burger{display:block;}}
 ::-webkit-scrollbar{width:2px;}::-webkit-scrollbar-track{background:var(--e);}::-webkit-scrollbar-thumb{background:rgba(201,168,76,.22);}
+.two-col{display:grid;grid-template-columns:210px 1fr;gap:3rem;align-items:start;margin-bottom:3rem;}
+.pill{font-size:.54rem;letter-spacing:.12em;color:rgba(245,240,232,.6);border:1px solid rgba(201,168,76,.18);padding:.25rem .8rem;font-family:'Cinzel Decorative',serif;display:inline-block;margin:.2rem;}
+.tarif-g{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(201,168,76,.08);margin:1.2rem 0;}
+.tarif-c{background:linear-gradient(145deg,rgba(14,10,26,.88),rgba(10,12,24,.95));padding:1.5rem;}
+.tarif-c .tn{font-size:.55rem;letter-spacing:.25em;color:var(--or);text-transform:uppercase;display:block;margin-bottom:.4rem;}
+.tarif-c .tp{font-family:'Cinzel Decorative',serif;font-size:1.15rem;color:#f5f0e8;display:block;margin-bottom:.3rem;}
+.tarif-c .td{font-size:.88rem;color:#f5f0e8;line-height:1.7;}
+@media(max-width:680px){.two-col{grid-template-columns:1fr;}.tarif-g{grid-template-columns:1fr;}}
+
 /* Sécurité Cloudflare — affichage des médaillons */
 .f-cadre img,
 .portrait img,
@@ -74,41 +84,111 @@ figure img {
 <link rel="stylesheet" href="assets/css/lamagie-refinement.css"/>
 </head>
 <body>
-<canvas id="cosmos"></canvas><div class="neb"></div>
-<nav>
-  <a href="index.html" class="logo"><span class="lp">L'</span><span class="la">A</span><span class="lm">M</span><span class="lg">agie</span></a>
-  <ul class="nav-ul">    <li><a href="qui-sommes-nous.html" class="">La maison</a></li>
-    <li><a href="ateliers.html" class="active">Ateliers</a></li>
-    <li><a href="edition.html" class="">Edition</a></li>
-    <li><a href="peintures.html" class="">Meichelus</a></li>
-    <li><a href="poesie.html" class="">Po&eacute;sie</a></li>
-    <li><a href="contact.html" class="">Contact</a></li></ul>
-  <button class="burger" onclick="document.getElementById('mm').classList.add('open')">&#x2630;</button>
-</nav>
-<div class="mob" id="mm">
-  <button class="mc" onclick="document.getElementById('mm').classList.remove('open')">&#x2715;</button>
-    <a href="qui-sommes-nous.html" onclick="document.getElementById('mm').classList.remove('open')">La maison</a>
-  <a href="ateliers.html" onclick="document.getElementById('mm').classList.remove('open')">Ateliers</a>
-  <a href="edition.html" onclick="document.getElementById('mm').classList.remove('open')">Edition</a>
-  <a href="peintures.html" onclick="document.getElementById('mm').classList.remove('open')">Meichelus</a>
-  <a href="poesie.html" onclick="document.getElementById('mm').classList.remove('open')">Po&eacute;sie</a>
-  <a href="contact.html" onclick="document.getElementById('mm').classList.remove('open')">Contact</a>
-</div>
+<canvas id="cosmos"></canvas>
+<div class="neb"></div>
+<nav><a href="index.html" class="logo"><span class="lp">L'</span><span class="la">A</span><span class="lm">M</span><span class="lg">agie</span></a><ul class="nav-ul"><li><a href="qui-sommes-nous.html" class="">La maison</a></li><li><a href="ateliers.html" class="">Ateliers</a></li><li><a href="edition.html" class="">&Eacute;dition</a></li><li><a href="anouk-journo.html" class="active">Anouk</a></li><li><a href="peintures.html" class="">Meichelus</a></li><li><a href="poesie.html" class="">Po&eacute;sie</a></li><li><a href="contact.html" class="">Contact</a></li></ul><button class="burger" onclick="document.getElementById('mm').classList.add('open')">&#9776;</button></nav><div class="mob" id="mm"><button class="mc" onclick="document.getElementById('mm').classList.remove('open')">&#x2715;</button><a href="qui-sommes-nous.html" onclick="document.getElementById('mm').classList.remove('open')">La maison</a><a href="ateliers.html" onclick="document.getElementById('mm').classList.remove('open')">Ateliers</a><a href="edition.html" onclick="document.getElementById('mm').classList.remove('open')">&Eacute;dition</a><a href="anouk-journo.html" onclick="document.getElementById('mm').classList.remove('open')">Anouk</a><a href="peintures.html" onclick="document.getElementById('mm').classList.remove('open')">Meichelus</a><a href="poesie.html" onclick="document.getElementById('mm').classList.remove('open')">Po&eacute;sie</a><a href="contact.html" onclick="document.getElementById('mm').classList.remove('open')">Contact</a></div>
 <div class="ph">
-  <span class="bc"><a href="index.html">Accueil</a> &middot; <a href="ateliers.html">Ateliers</a> &middot; Amis-Mots</span>
-  <h1 class="pth">Collection Amis-Mots</h1>
-  <p class="ps">L&agrave; o&ugrave; les animaux deviennent les h&eacute;ros discrets de nos vies.</p>
+  <span class="bc"><a href="index.html">Accueil</a> &middot; Anouk Journo</span>
+  <h1 class="pth">Anouk Journo</h1>
+  <p class="ps">J'&eacute;cris, je traduis, je transmets, j'accompagne&hellip;</p>
   <div class="seph"></div>
 </div>
-<div class="cnt"><div class="box reveal"><p>La collection <strong>Amis-Mots</strong> est n&eacute;e de la passion d'Anouk Journo pour le monde animal. Des livres qui c&eacute;l&egrave;brent la relation unique entre les humains et les animaux &mdash; avec tendresse, humour et profondeur. <em>Pour la jeunesse et les adultes qui ont gard&eacute; leur &acirc;me d'enfant.</em></p></div>
-  <span class="sl reveal">&mdash; Les titres &mdash;</span><h2 class="sh2 reveal">Livres de la collection</h2><div class="sep reveal"></div>
-  <div class="grille reveal">
-    <div class="carte"><span class="ci">&#x1F431;</span><span class="ct">Moustache, le roi des coussins</span><p class="cd">Roman jeunesse &mdash; les aventures d'un chat imp&eacute;rial et tendre, h&eacute;ros discret d'un quotidien plein de douceur.</p><span style="font-size:.58rem;color:var(--or);letter-spacing:.15em;margin-top:.8rem;display:block;font-family:'Cinzel Decorative',serif;">Anouk Journo</span></div>
-    <div class="carte"><span class="ci">&#x1F981;</span><span class="ct">Valr&ecirc;ve &mdash; Le serment de la lionne</span><p class="cd">Tome 1 &mdash; Un refuge imaginaire o&ugrave; les animaux libres trouvent paix et dignit&eacute;. Une aventure qui touche au c&oelig;ur.</p><span style="font-size:.58rem;color:var(--or);letter-spacing:.15em;margin-top:.8rem;display:block;font-family:'Cinzel Decorative',serif;">Anouk Journo</span></div>
-    <div class="carte"><span class="ci">&#x1F319;</span><span class="ct">Valr&ecirc;ve &mdash; R&ecirc;ve sauvage</span><p class="cd">Tome 2 &mdash; La suite des aventures de Valr&ecirc;ve. Les animaux libres continuent leur lutte pour la dignit&eacute;.</p><span style="font-size:.58rem;color:var(--or);letter-spacing:.15em;margin-top:.8rem;display:block;font-family:'Cinzel Decorative',serif;">Anouk Journo</span></div>
+<div class="cnt">
+  <!-- Portrait + bio -->
+  <div class="two-col reveal">
+    <div style="text-align:center;">
+      <div style="width:190px;height:190px;border-radius:50%;border:2px solid rgba(201,168,76,.5);overflow:hidden;margin:0 auto 1.2rem;box-shadow:0 0 0 6px rgba(201,168,76,.07),0 0 28px rgba(201,168,76,.12);"><img src="images/anouk-journo.jpg" alt="Anouk Journo" style="width:100%;height:100%;object-fit:cover;object-position:center top;" loading="lazy"></div>
+      <div style="margin:.5rem 0;">
+        <span class="pill">Romanci&egrave;re</span><span class="pill">Po&egrave;te</span><span class="pill">Traductrice</span><span class="pill">Formatrice</span><span class="pill">M&eacute;diation animale</span><span class="pill">SGDL</span>
+      </div>
+      <a href="https://www.anoukjourno.fr/" target="_blank" class="bor" style="margin-top:1rem;display:inline-block;font-size:.52rem;">anoukjourno.fr &rarr;</a>
+    </div>
+    <div>
+      <span class="sl" style="text-align:left;display:block;margin-bottom:.6rem;">Co-fondatrice de L'AMagie</span>
+      <p style="font-size:1.05rem;color:#f5f0e8;line-height:2;font-weight:300;margin-bottom:.9rem;">Autrice publi&eacute;e depuis plus de <strong>trente ans</strong>, Anouk Journo est romanci&egrave;re, po&egrave;te, traductrice d'anglais et facilitatrice certifi&eacute;e en m&eacute;diation animale.</p>
+      <p style="font-size:1.05rem;color:#f5f0e8;line-height:2;font-weight:300;margin-bottom:.9rem;">Autrice d'une <em style="color:var(--orp);">trentaine d'ouvrages</em> chez Bayard, Fleurus, Gallimard Jeunesse, Rustica, Talents Hauts, HarperCollins, Larousse&hellip; et traductrice de <em style="color:var(--orp);">plus de cent livres</em> de l'anglais.</p>
+      <p style="font-size:1.05rem;color:#f5f0e8;line-height:2;font-weight:300;margin-bottom:.9rem;">Apr&egrave;s avoir dirig&eacute; l'association <strong>Dixit</strong> (ateliers d'&eacute;criture, r&eacute;cits de vie) pendant vingt ans, elle co-fonde <em style="color:var(--orp);">L'AMagie</em> &mdash; &eacute;dition associative, solidaire et po&eacute;tique.</p>
+      <p style="font-size:.85rem;color:rgba(245,240,232,.55);line-height:1.8;font-style:italic;">Membre SGDL &middot; Agence Unique Occitanie Culture &middot; F&eacute;lines-Minervois</p>
+    </div>
   </div>
-  <div class="box reveal"><h3>M&eacute;diation animale &amp; &eacute;criture</h3><p>La collection Amis-Mots est indissociable des ateliers de m&eacute;diation animale d'Anouk Journo. &Eacute;crire sur les animaux, c'est apprendre &agrave; les &eacute;couter et &agrave; les respecter.</p><a href="mediation-animale.html" class="bor" style="margin-top:1rem;display:inline-block;">D&eacute;couvrir les ateliers &rarr;</a></div>
-  <div class="cta-box reveal"><h3>Commander un titre</h3><p>Tous les titres de la collection Amis-Mots sont disponibles en boutique ou sur commande directe.</p><a href="boutique.html" class="bor">Voir la boutique &rarr;</a><a href="contact.html" class="bg">Nous contacter</a></div></div>
+
+  <!-- Ses activités -->
+  <span class="sl reveal">&mdash; Ses activit&eacute;s sur L'AMagie &mdash;</span>
+  <h2 class="sh2 reveal">Ce qu'elle porte ici</h2>
+  <div class="sep reveal"></div>
+
+  <!-- Ateliers -->
+  <div class="box reveal">
+    <h3>&#x270E;&nbsp; Ateliers &amp; Coaching en &eacute;criture</h3>
+    <p>Anouk anime depuis <strong>plus de vingt ans</strong> des ateliers d'&eacute;criture cr&eacute;ative pour tous niveaux, dans des institutions et en priv&eacute;. Cinq voies d'accompagnement&nbsp;:</p>
+    <ul>
+      <li><strong>Ateliers d'&eacute;criture</strong> en groupe &mdash; cr&eacute;ation collective et bienveillante</li>
+      <li><strong>Coaching cr&eacute;atif</strong> individuel &mdash; faire na&icirc;tre ou avancer votre projet</li>
+      <li><strong>Accompagnements r&eacute;dactionnels</strong> &mdash; textes professionnels, biographies, contenus</li>
+      <li><strong>&Eacute;criture th&eacute;rapeutique</strong> Mots pour Maux &mdash; voir ci-dessous</li>
+      <li><strong>M&eacute;diation animale</strong> &mdash; ateliers o&ugrave; la pr&eacute;sence animale ouvre la parole</li>
+    </ul>
+    <div style="margin-top:1.2rem;">
+      <a href="ateliers.html" class="bor" style="font-size:.52rem;">Voir les ateliers sur L'AMagie &rarr;</a>
+      <a href="https://www.anoukjourno.fr/ateliers-et-formations/" target="_blank" class="bg">Site d'Anouk</a>
+    </div>
+  </div>
+
+  <!-- Mots pour Maux -->
+  <div class="box reveal">
+    <h3>&#x2665;&nbsp; &Eacute;criture th&eacute;rapeutique &mdash; Mots pour Maux</h3>
+    <p>Des s&eacute;ances individuelles en ligne pour &eacute;crire, traverser, comprendre et se lib&eacute;rer. <em style="color:var(--orp);">&laquo;&nbsp;&Eacute;crire, c'est partir en voyage int&eacute;rieur. Chaque mot devient une cl&eacute;, chaque phrase un passage.&nbsp;&raquo;</em></p>
+    <p>S&eacute;ances Zoom, cadre bienveillant et confidentiel garanti par charte. <strong>Premier entretien offert.</strong></p>
+    <div class="tarif-g">
+      <div class="tarif-c"><span class="tn">S&eacute;ance &agrave; l'unit&eacute;</span><span class="tp">50 &euro; / heure</span><p class="td">Dur&eacute;e adaptable entre 1h et 2h.</p></div>
+      <div class="tarif-c"><span class="tn">Forfait 5 s&eacute;ances</span><span class="tp">200 &euro;</span><p class="td">Accompagnement suivi, &agrave; votre rythme.</p></div>
+    </div>
+    <a href="mots-pour-maux.html" class="bor" style="font-size:.52rem;display:inline-block;margin-top:.5rem;">D&eacute;couvrir &rarr;</a>
+    <a href="https://l-amagie.sumupstore.com/article/seance-d-ecriture-therapeutique-1-h" target="_blank" class="bg">R&eacute;server en ligne</a>
+  </div>
+
+  <!-- Médiation animale -->
+  <div class="box reveal">
+    <h3>&#x1F43E;&nbsp; M&eacute;diation animale &mdash; certifi&eacute;e</h3>
+    <p>Form&eacute;e en 2025 avec <strong>Les Entrepreneurs Animaliers</strong>, certifi&eacute;e. &Eacute;galement titulaire de l'<strong>ACACED &laquo;&nbsp;Chiens&nbsp;&raquo;</strong> d&eacute;livr&eacute; par le Minist&egrave;re de l'Agriculture &mdash; indispensable pour exercer avec des chiens en contexte professionnel.</p>
+    <p>Des ateliers qui associent <em style="color:var(--orp);">pr&eacute;sence animale, parole et &eacute;criture</em> &mdash; pour des publics en accompagnement socioprofessionnel, &eacute;ducatif ou artistique. Cr&eacute;ation de recueils personnels ou collectifs (m&eacute;moire, cognitif, artistique).</p>
+    <a href="mediation-animale.html" class="bor" style="font-size:.52rem;display:inline-block;margin-top:.5rem;">D&eacute;couvrir les ateliers &rarr;</a>
+  </div>
+
+  <!-- Poésie & publications -->
+  <span class="sl reveal">&mdash; Ses &oelig;uvres &mdash;</span>
+  <h2 class="sh2 reveal">Po&eacute;sie &amp; Publications L'AMagie</h2>
+  <div class="sep reveal"></div>
+
+  <div class="grille reveal">
+    <a href="poesie.html" class="carte">
+      <span class="ci">&#x2736;</span>
+      <span class="ct">Recueils po&eacute;tiques</span>
+      <p class="cd"><em>Lucide, L'&Acirc;me en Selle / Riding Soul, Ab&eacute;c&eacute;daire des &eacute;toiles, O&ugrave; est pass&eacute; l'&Ocirc; d'Hautpoul, En qu&ecirc;te d'Hozro, Mots en apart&eacute;</em> &mdash; six recueils de la collection De la Lune &agrave; la Plume.</p>
+      <span class="cl">D&eacute;couvrir &rarr;</span>
+    </a>
+    <a href="amis-mots.html" class="carte">
+      <span class="ci">&#x1F431;</span>
+      <span class="ct">Collection Amis-Mots</span>
+      <p class="cd"><em>Moustache le roi des coussins, Valr&ecirc;ve &mdash; Le serment de la lionne, Valr&ecirc;ve &mdash; R&ecirc;ve sauvage.</em> Des animaux h&eacute;ros discrets de nos vies.</p>
+      <span class="cl">D&eacute;couvrir &rarr;</span>
+    </a>
+    <a href="edition.html" class="carte">
+      <span class="ci">&#x1F4DA;</span>
+      <span class="ct">Comit&eacute; de lecture</span>
+      <p class="cd">Anouk fait partie du comit&eacute; de lecture de L'AMagie et accompagne les auteurs vers la publication qui leur ressemble. R&eacute;ponse sous 3 &agrave; 6 mois.</p>
+      <span class="cl">Envoyer un manuscrit &rarr;</span>
+    </a>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-box reveal">
+    <h3>L'univers complet d'Anouk Journo</h3>
+    <p>Trente ans d'&eacute;criture, une centaine de traductions, des ateliers dans toute la France, des engagements solidaires&hellip; Son site personnel rassemble l'ensemble de ce parcours.</p>
+    <a href="https://www.anoukjourno.fr/" target="_blank" class="bor">Visiter anoukjourno.fr &rarr;</a>
+    <a href="contact.html" class="bg">Nous &eacute;crire</a>
+  </div>
+</div>
 <footer>
   <p class="ara">&#x2726; &#x2726; &#x2726;</p>
   <span class="fl2">L'AMagie &middot; &Eacute;ditions</span>
@@ -129,6 +209,20 @@ figure img {
   </div>
   <p>&copy; 2026 L'AMagie &middot; Maison d'&eacute;dition ind&eacute;pendante &middot; Siren 937629533</p>
   <p style="margin-top:.2rem;">F&eacute;lines-Minervois &middot; Occitanie &middot; France</p>
+  <div style="text-align:center;padding:.8rem 0 0;border-top:1px solid rgba(201,168,76,.07);margin-top:.8rem;">
+  <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.62rem;color:rgba(201,168,76,.45);letter-spacing:.2em;margin-bottom:.25rem;">&#169; Webmaster</div>
+  <div style="display:inline-flex;align-items:baseline;font-family:'Cinzel Decorative',serif;font-size:.72rem;color:rgba(245,240,232,.42);letter-spacing:.22em;">
+    <span>MEIC</span>
+    <span style="display:inline-flex;align-items:baseline;letter-spacing:0;margin:0 .04em;">
+      <svg viewBox="0 0 22 14" style="width:1.35em;height:.95em;" fill="none" stroke="rgba(245,240,232,.42)" stroke-width="1.4" stroke-linecap="square">
+        <line x1="1" y1="1" x2="1" y2="13"/><line x1="9" y1="1" x2="9" y2="13"/>
+        <line x1="1" y1="7" x2="9" y2="7"/><line x1="9" y1="1" x2="18" y2="1"/>
+        <line x1="9" y1="7" x2="15" y2="7"/><line x1="9" y1="13" x2="18" y2="13"/>
+      </svg>
+    </span>
+    <span style="letter-spacing:.22em;">LUS</span>
+  </div>
+</div>
 </footer>
 <script>
 const cvs=document.getElementById("cosmos"),ctx=cvs.getContext("2d");

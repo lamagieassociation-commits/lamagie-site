@@ -1,15 +1,21 @@
+/* ============================================================
+   L'AMAGIE — ACCUEIL CINÉMATIQUE (renforcé)
+   Le portail d'entrée : image + animations canvas + hotspots
+   ============================================================ */
 
 *{box-sizing:border-box;}
 :root{
   --or:#d9bf72;
   --orp:#f0dc9b;
+  --orc:#8a6d2f;
   --p:#f5f0e8;
   --nuit:#02040a;
+  --nuit-2:#050711;
 }
 html,body{
   margin:0;
   padding:0;
-  background:#02040a;
+  background:var(--nuit);
   color:var(--p);
   font-family:'Cormorant Garamond', Georgia, serif;
 }
@@ -17,6 +23,21 @@ body{
   min-height:100vh;
   overflow-x:hidden;
 }
+
+/* === FADE-IN CINÉMATIQUE D'ENTRÉE === */
+@keyframes rideau{
+  from{opacity:0;transform:scale(.985);filter:brightness(.5);}
+  to{opacity:1;transform:scale(1);filter:brightness(1);}
+}
+@keyframes lustre{
+  0%,100%{opacity:.78;}
+  50%{opacity:.95;}
+}
+@keyframes flotEntree{
+  from{transform:translateY(30px);opacity:0;}
+  to{transform:translateY(0);opacity:1;}
+}
+
 .portal-page{
   position:relative;
   min-height:100vh;
@@ -25,8 +46,10 @@ body{
   align-items:flex-start;
   background:
     radial-gradient(ellipse 90% 60% at 50% 25%,rgba(217,191,114,.07),transparent 62%),
-    linear-gradient(180deg,#02040a,#050711 45%,#02040a);
+    linear-gradient(180deg,var(--nuit),var(--nuit-2) 45%,var(--nuit));
+  padding-bottom:0;
 }
+
 .portal-wrap{
   position:relative;
   width:min(100vw,1100px);
@@ -35,7 +58,9 @@ body{
   box-shadow:
     0 0 90px rgba(0,0,0,.86),
     0 0 150px rgba(217,191,114,.08);
+  animation:rideau 1.8s cubic-bezier(.2,.7,.3,1) both;
 }
+
 .portal-img{
   display:block;
   width:100%;
@@ -45,6 +70,7 @@ body{
   transform:translateZ(0);
   backface-visibility:hidden;
 }
+
 #cinemaCanvas{
   position:absolute;
   inset:0;
@@ -53,9 +79,11 @@ body{
   z-index:5;
   pointer-events:none;
   mix-blend-mode:screen;
-  opacity:.82;
+  opacity:.88;
+  animation:lustre 12s ease-in-out infinite;
 }
-/* Zones cliquables parfaitement invisibles, avec survol raffiné */
+
+/* === HOTSPOTS — zones cliquables invisibles avec halo dramatique === */
 .hotspot{
   position:absolute;
   z-index:12;
@@ -66,29 +94,35 @@ body{
   text-decoration:none;
   line-height:1;
   border-radius:2px;
-  transition:background .35s ease,border-color .35s ease,box-shadow .35s ease,transform .35s ease;
+  transition:background .4s ease,border-color .4s ease,box-shadow .4s ease,transform .4s ease;
 }
 .hotspot::before{
   content:"";
   position:absolute;
-  inset:0;
-  background:linear-gradient(90deg,transparent,rgba(217,191,114,.16),transparent);
+  inset:-2px -8px;
+  background:linear-gradient(90deg,transparent 10%,rgba(217,191,114,.22) 50%,transparent 90%);
   opacity:0;
-  transition:opacity .35s ease;
+  transition:opacity .4s ease;
+  pointer-events:none;
+  border-radius:3px;
 }
 .hotspot:hover{
-  border-color:rgba(240,220,155,.42);
-  background:rgba(217,191,114,.045);
-  box-shadow:0 0 24px rgba(217,191,114,.16), inset 0 0 24px rgba(217,191,114,.055);
-  transform:translateY(-1px);
+  border-color:rgba(240,220,155,.55);
+  background:rgba(217,191,114,.07);
+  box-shadow:
+    0 0 32px rgba(217,191,114,.28),
+    inset 0 0 28px rgba(217,191,114,.08),
+    0 0 60px rgba(217,191,114,.12);
+  transform:translateY(-1px) scale(1.003);
 }
 .hotspot:hover::before{opacity:1;}
 .hotspot:focus-visible{
   outline:2px solid var(--orp);
   outline-offset:4px;
-  background:rgba(217,191,114,.12);
+  background:rgba(217,191,114,.14);
 }
-/* Coordonnées adaptées à la nouvelle image horizontale */
+
+/* Coordonnées des hotspots de menu */
 .h-maison{top:46.35%;}
 .h-ateliers{top:50.62%;}
 .h-edition{top:54.85%;}
@@ -102,7 +136,157 @@ body{
   width:30.6%;
   height:3.55%;
 }
+
+/* Zone hamburger en haut à droite — bouton totalement transparent */
+button.hotspot,
+.h-burger{
+  appearance:none;
+  -webkit-appearance:none;
+  background:transparent !important;
+  border:1px solid transparent;
+  color:transparent;
+  font:inherit;
+  padding:0;
+  margin:0;
+  outline:none;
+  -webkit-tap-highlight-color:transparent;
+}
+.h-burger{
+  top:2.5%;
+  left:88.5%;
+  width:7.5%;
+  height:7%;
+  border-radius:50%;
+  cursor:pointer;
+}
+button.hotspot:hover{
+  background:rgba(217,191,114,.07) !important;
+}
+
+/* === MENU HAMBURGER PLEIN ÉCRAN === */
+.menu-overlay{
+  position:fixed;
+  inset:0;
+  z-index:300;
+  background:rgba(2,4,10,.97);
+  backdrop-filter:blur(20px);
+  display:none;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:1.8rem;
+  opacity:0;
+  transition:opacity .5s ease;
+}
+.menu-overlay.open{display:flex;opacity:1;}
+.menu-overlay::before{
+  content:'';
+  position:absolute;inset:30px;
+  border:1px solid rgba(217,191,114,.12);
+  pointer-events:none;
+}
+.menu-overlay .close{
+  position:absolute;
+  top:2.2rem;right:2.5rem;
+  background:none;border:1px solid rgba(217,191,114,.3);
+  color:var(--or);font-size:1.4rem;
+  width:44px;height:44px;
+  display:flex;align-items:center;justify-content:center;
+  cursor:pointer;border-radius:50%;
+  transition:border-color .3s,color .3s,transform .3s;
+}
+.menu-overlay .close:hover{border-color:var(--or);color:var(--orp);transform:rotate(90deg);}
+
+.menu-title{
+  font-family:'Cinzel Decorative',serif;
+  font-size:.65rem;letter-spacing:.5em;color:var(--or);
+  text-transform:uppercase;margin-bottom:1.8rem;
+  opacity:.85;
+}
+.menu-overlay a.menu-link{
+  font-family:'Cinzel Decorative',serif;
+  color:var(--p);text-decoration:none;
+  font-size:1.05rem;letter-spacing:.28em;
+  position:relative;padding:.4rem 1.5rem;
+  transition:color .35s,letter-spacing .35s;
+  animation:flotEntree .8s ease both;
+}
+.menu-overlay.open a.menu-link:nth-child(2){animation-delay:.08s;}
+.menu-overlay.open a.menu-link:nth-child(3){animation-delay:.16s;}
+.menu-overlay.open a.menu-link:nth-child(4){animation-delay:.24s;}
+.menu-overlay.open a.menu-link:nth-child(5){animation-delay:.32s;}
+.menu-overlay.open a.menu-link:nth-child(6){animation-delay:.40s;}
+.menu-overlay.open a.menu-link:nth-child(7){animation-delay:.48s;}
+.menu-overlay.open a.menu-link:nth-child(8){animation-delay:.56s;}
+.menu-overlay.open a.menu-link:nth-child(9){animation-delay:.64s;}
+.menu-overlay a.menu-link:hover{color:var(--or);letter-spacing:.34em;}
+.menu-overlay a.menu-link::before{
+  content:'✦';position:absolute;left:-1.5rem;top:50%;transform:translateY(-50%);
+  color:var(--or);opacity:0;font-size:.6rem;
+  transition:opacity .35s,left .35s;
+}
+.menu-overlay a.menu-link:hover::before{opacity:.7;left:-.5rem;}
+
+.menu-sep{
+  width:1px;height:42px;
+  background:linear-gradient(180deg,transparent,var(--or),transparent);
+  margin:1rem 0;
+}
+
+.menu-foot{
+  font-family:'IM Fell English',serif;
+  font-style:italic;color:rgba(217,191,114,.55);
+  font-size:.78rem;letter-spacing:.08em;margin-top:1.5rem;
+}
+.menu-foot a{color:rgba(217,191,114,.7);text-decoration:none;border-bottom:1px solid rgba(217,191,114,.2);}
+.menu-foot a:hover{color:var(--orp);}
+
+/* === FOOTER MINIMAL SOUS L'IMAGE === */
+.foot-min{
+  position:relative;z-index:8;
+  background:var(--nuit);
+  padding:2.5rem 2rem 2rem;text-align:center;
+  border-top:1px solid rgba(217,191,114,.08);
+}
+.foot-min .sep{
+  width:42px;height:1px;
+  background:linear-gradient(90deg,transparent,var(--or),transparent);
+  margin:0 auto 1.5rem;opacity:.5;
+}
+.foot-min p{
+  font-size:.72rem;color:rgba(245,240,232,.7);
+  font-family:'Cormorant Garamond',serif;font-style:italic;
+  letter-spacing:.04em;margin:0 0 .4rem;line-height:1.6;
+}
+.foot-min .small{font-size:.62rem;color:rgba(217,191,114,.35);letter-spacing:.18em;font-style:normal;font-family:'Cinzel Decorative',serif;}
+.foot-min .links{
+  display:flex;justify-content:center;flex-wrap:wrap;gap:1.5rem;
+  margin:1rem 0;list-style:none;padding:0;
+}
+.foot-min .links a{
+  font-size:.65rem;color:rgba(245,240,232,.6);
+  text-decoration:none;letter-spacing:.1em;
+  font-family:'Cormorant Garamond',serif;
+  transition:color .3s;
+}
+.foot-min .links a:hover{color:var(--or);}
+
+.foot-min .socs{
+  display:flex;justify-content:center;gap:.8rem;margin:1.2rem 0 .5rem;
+}
+.foot-min .socs a{
+  width:28px;height:28px;
+  border:1px solid rgba(217,191,114,.18);
+  border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  color:rgba(245,240,232,.7);
+  text-decoration:none;font-size:.72rem;
+  transition:border-color .3s,color .3s;
+}
+.foot-min .socs a:hover{border-color:var(--or);color:var(--or);}
+
 .fallback-nav{display:none;}
+
 @media(max-width:760px){
   .portal-wrap{
     width:100vw;
@@ -117,8 +301,13 @@ body{
     left:22%;
     width:56%;
   }
+  .h-burger{left:85%;width:11%;height:6%;}
+  .menu-overlay a.menu-link{font-size:.95rem;}
 }
+
 @media (prefers-reduced-motion: reduce){
   #cinemaCanvas{display:none;}
-  .hotspot{transition:none;}
+  .hotspot,.menu-overlay a.menu-link,.portal-wrap{
+    transition:none;animation:none;
+  }
 }

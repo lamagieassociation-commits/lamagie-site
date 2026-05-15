@@ -4,6 +4,7 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>L'AMagie — Maison d’édition indépendante</title>
+<link rel="preload" as="image" href="images/accueil-lamagie-final.webp" type="image/webp"/>
 <meta name="description" content="L'AMagie — maison d'édition indépendante, poétique et artistique à Félines-Minervois."/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
@@ -13,7 +14,10 @@
 <body>
 <main class="portal-page">
   <div class="portal-wrap">
-    <img class="portal-img" src="images/accueil-lamagie-final.png" alt="L'AMagie, maison d'édition indépendante — portail d'accueil"/>
+    <picture>
+      <source srcset="images/accueil-lamagie-final.webp" type="image/webp"/>
+      <img class="portal-img" src="images/accueil-lamagie-final.jpg" alt="L'AMagie, maison d'édition indépendante — portail d'accueil" width="1327" height="1185"/>
+    </picture>
     <canvas id="cinemaCanvas" aria-hidden="true"></canvas>
 
     <a class="hotspot h-maison" href="qui-sommes-nous.html" aria-label="La maison"></a>

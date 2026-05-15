@@ -1,326 +1,202 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Contact &mdash; L'AMagie</title>
-<meta name="description" content="Contactez L'AMagie - manuscrits, ateliers, collaborations. 5 rue du Puits, 34210 Felines-Minervois."/>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet"/>
-<style>*{margin:0;padding:0;box-sizing:border-box;}:root{--or:#c9a84c;--orp:#e8d59a;--ors:#8a6d2f;--p:#f5f0e8;--e:#070910;}html{scroll-behavior:smooth;}body{background:var(--e);color:#f5f0e8;font-family:"Cormorant Garamond",serif;overflow-x:hidden;}
-#cosmos{position:fixed;inset:0;z-index:0;}.neb{position:fixed;inset:0;z-index:1;pointer-events:none;}
-nav{position:fixed;top:0;width:100%;z-index:200;padding:1.4rem 3rem;display:flex;align-items:center;justify-content:space-between;background:linear-gradient(180deg,rgba(7,9,16,.97),transparent);border-bottom:1px solid rgba(201,168,76,.14);backdrop-filter:blur(8px);}
-.logo{font-family:"Cinzel Decorative",serif;font-size:.78rem;letter-spacing:.2em;text-decoration:none;white-space:nowrap;}.logo .lp{color:rgba(245,240,232,.7);}.logo .la{color:#c9a84c;text-shadow:0 0 14px rgba(201,168,76,.5);}.logo .lm{color:rgba(245,240,232,.95);}.logo .lg{color:rgba(245,240,232,.7);}
-.nav-ul{display:flex;gap:1.5rem;list-style:none;}.nav-ul a{color:rgba(245,240,232,.72);text-decoration:none;font-size:.8rem;letter-spacing:.08em;transition:color .3s;}.nav-ul a:hover,.nav-ul a.active{color:var(--or);}
-.burger{display:none;background:none;border:none;color:var(--or);font-size:1.4rem;cursor:pointer;}.mob{display:none;position:fixed;inset:0;background:rgba(7,9,16,.98);z-index:300;flex-direction:column;align-items:center;justify-content:center;gap:2rem;}.mob.open{display:flex;}.mob a{font-family:"Cinzel Decorative",serif;color:#f5f0e8;text-decoration:none;font-size:.85rem;letter-spacing:.2em;transition:color .3s;}.mob a:hover{color:var(--or);}.mc{position:absolute;top:1.5rem;right:2rem;background:none;border:none;color:var(--or);font-size:2rem;cursor:pointer;}
-.ph{position:relative;z-index:10;padding:9rem 2rem 3.5rem;text-align:center;}.bc{font-size:.56rem;letter-spacing:.26em;color:rgba(245,240,232,.65);margin-bottom:1.2rem;display:block;}.bc a{color:rgba(201,168,76,.55);text-decoration:none;transition:color .3s;}.bc a:hover{color:var(--or);}
-.pth{font-family:"Cinzel Decorative",serif;font-size:clamp(1.6rem,4vw,3rem);color:#f5f0e8;letter-spacing:.05em;font-weight:400;margin-bottom:.8rem;opacity:0;animation:fu 1s ease forwards .2s;}
-@keyframes fu{from{opacity:0;transform:translateY(25px);}to{opacity:1;transform:none;}}
-.ps{font-family:"IM Fell English",serif;font-style:italic;font-size:clamp(.9rem,1.8vw,1.15rem);color:#f5f0e8;max-width:600px;margin:0 auto;line-height:1.8;opacity:0;animation:fu 1s ease forwards .4s;}.seph{width:44px;height:1px;background:linear-gradient(90deg,transparent,var(--or),transparent);margin:1.2rem auto 0;opacity:0;animation:fu 1s ease forwards .5s;}
-.cnt{position:relative;z-index:10;max-width:880px;margin:0 auto;padding:1rem 2rem 6rem;}
-.sl{font-size:.56rem;letter-spacing:.38em;color:var(--or);text-transform:uppercase;display:block;text-align:center;margin-bottom:.7rem;}.sh2{font-family:"Cinzel Decorative",serif;font-size:clamp(1.1rem,2.3vw,1.7rem);color:#f5f0e8;letter-spacing:.06em;font-weight:400;text-align:center;}.sep{width:42px;height:1px;background:linear-gradient(90deg,transparent,var(--or),transparent);margin:1rem auto 2.5rem;}
-.box{border:1px solid rgba(201,168,76,.18);background:linear-gradient(145deg,rgba(16,10,28,.85),rgba(10,12,24,.94));padding:2.5rem 3rem;margin-bottom:2rem;position:relative;}.box::before{content:"\2726";position:absolute;top:-.9rem;left:50%;transform:translateX(-50%);font-size:1.1rem;color:var(--or);background:var(--e);padding:0 .8rem;}.box h3{font-family:"Cinzel Decorative",serif;font-size:.86rem;color:#f5f0e8;letter-spacing:.1em;font-weight:400;margin-bottom:.9rem;}.box p{font-size:1rem;color:#f5f0e8;line-height:2;font-weight:300;margin-bottom:.8rem;}.box p:last-child{margin-bottom:0;}.box em{color:var(--orp);}.box strong{color:#f5f0e8;font-weight:600;}.box ul{list-style:none;margin:.5rem 0;}.box ul li{font-size:1rem;color:#f5f0e8;padding:.3rem 0 .3rem 1.2rem;position:relative;line-height:1.7;}.box ul li::before{content:"\2014";position:absolute;left:0;color:var(--or);font-size:.7rem;}
-.grille{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1px;background:rgba(201,168,76,.07);margin-bottom:3rem;}.carte{background:linear-gradient(145deg,rgba(14,10,26,.9),rgba(10,12,24,.97));padding:2.2rem 1.8rem;text-decoration:none;display:flex;flex-direction:column;position:relative;overflow:hidden;transition:background .3s,transform .25s;}.carte::after{content:"";position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--or),transparent);transform:scaleX(0);transition:transform .4s;}.carte:hover{transform:translateY(-3px);}.carte:hover::after{transform:scaleX(1);}.ci{font-size:1.5rem;color:var(--or);margin-bottom:.9rem;display:block;}.ct{font-family:"Cinzel Decorative",serif;font-size:.7rem;color:#f5f0e8;letter-spacing:.1em;font-weight:400;margin-bottom:.5rem;}.cd{font-size:.92rem;color:#f5f0e8;line-height:1.85;font-weight:300;flex:1;}.cl{display:inline-block;margin-top:1.2rem;font-size:.55rem;letter-spacing:.16em;color:var(--or);border-bottom:1px solid rgba(201,168,76,.25);padding-bottom:.1rem;transition:color .3s;font-family:"Cinzel Decorative",serif;text-decoration:none;}.cl:hover{color:var(--orp);}
-.faq-item{border-bottom:1px solid rgba(201,168,76,.12);padding:1.5rem 0;cursor:pointer;}.faq-item:last-child{border-bottom:none;}.faq-q{font-family:"Cinzel Decorative",serif;font-size:.74rem;color:#f5f0e8;letter-spacing:.06em;font-weight:400;display:flex;justify-content:space-between;align-items:center;gap:1rem;}.faq-q::after{content:"\2726";color:var(--or);font-size:.7rem;transition:transform .3s;flex-shrink:0;}.faq-item.open .faq-q::after{transform:rotate(90deg);}.faq-a{font-size:1rem;color:#f5f0e8;line-height:2;font-weight:300;max-height:0;overflow:hidden;transition:max-height .5s ease,padding .3s;}.faq-item.open .faq-a{max-height:600px;padding-top:1rem;}.faq-a a{color:var(--or);text-decoration:none;}.faq-a a:hover{color:var(--orp);}
-.boutique-grille{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:3rem;}.boutique-card{border:1px solid rgba(201,168,76,.18);background:linear-gradient(145deg,rgba(16,10,28,.85),rgba(10,12,24,.94));padding:3rem 2.5rem;text-align:center;position:relative;overflow:hidden;transition:transform .3s,border-color .3s;}.boutique-card::after{content:"";position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--or),transparent);transform:scaleX(0);transition:transform .4s;}.boutique-card:hover{transform:translateY(-4px);border-color:rgba(201,168,76,.35);}.boutique-card:hover::after{transform:scaleX(1);}.boutique-card .icon{font-size:2.5rem;margin-bottom:1.2rem;display:block;}.boutique-card h3{font-family:"Cinzel Decorative",serif;font-size:.88rem;color:#f5f0e8;letter-spacing:.1em;font-weight:400;margin-bottom:1rem;}.boutique-card p{font-size:.95rem;color:#f5f0e8;line-height:1.9;font-weight:300;margin-bottom:1.5rem;}.boutique-card ul{list-style:none;text-align:left;margin-bottom:1.5rem;}.boutique-card ul li{font-size:.9rem;color:#f5f0e8;padding:.25rem 0 .25rem 1.2rem;position:relative;line-height:1.6;}.boutique-card ul li::before{content:"\2726";position:absolute;left:0;color:var(--or);font-size:.5rem;top:.4rem;}
-.cta-box{border:1px solid rgba(201,168,76,.2);background:linear-gradient(145deg,rgba(22,14,38,.8),rgba(10,12,24,.92));padding:3rem;text-align:center;position:relative;}.cta-box::before{content:"\2726";position:absolute;top:-.9rem;left:50%;transform:translateX(-50%);font-size:1.1rem;color:var(--or);background:var(--e);padding:0 .8rem;}.cta-box h3{font-family:"Cinzel Decorative",serif;font-size:.88rem;color:#f5f0e8;letter-spacing:.08em;font-weight:400;margin-bottom:1rem;}.cta-box p{font-size:1rem;color:#f5f0e8;line-height:1.9;font-weight:300;max-width:500px;margin:0 auto 2rem;}
-.contact-grille{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-bottom:3rem;}.contact-info{border:1px solid rgba(201,168,76,.15);background:linear-gradient(145deg,rgba(16,10,28,.82),rgba(10,12,24,.92));padding:2.5rem;}.contact-info .label{font-size:.56rem;letter-spacing:.3em;color:var(--or);text-transform:uppercase;display:block;margin-bottom:.6rem;}.contact-info p,.contact-info a{font-size:1rem;color:#f5f0e8;line-height:1.8;font-weight:300;text-decoration:none;display:block;margin-bottom:.3rem;}.contact-info a:hover{color:var(--or);}
-.f-input{width:100%;background:transparent;border:none;border-bottom:1px solid rgba(201,168,76,.2);color:#f5f0e8;font-family:"Cormorant Garamond",serif;font-size:1rem;font-style:italic;padding:.5rem 0;outline:none;transition:border-color .3s;}.f-input::placeholder{color:rgba(245,240,232,.35);}.f-input:focus{border-color:rgba(201,168,76,.55);}.fl{font-size:.56rem;letter-spacing:.28em;color:var(--or);text-transform:uppercase;display:block;margin-bottom:.5rem;}.form-grille{display:flex;flex-direction:column;gap:1.8rem;}
-.ml-box{border:1px solid rgba(201,168,76,.12);background:linear-gradient(145deg,rgba(14,10,26,.82),rgba(10,12,24,.94));padding:2.5rem 3rem;margin-bottom:1.5rem;}.ml-box h3{font-family:"Cinzel Decorative",serif;font-size:.8rem;color:#f5f0e8;letter-spacing:.08em;font-weight:400;margin-bottom:1rem;border-bottom:1px solid rgba(201,168,76,.15);padding-bottom:.7rem;}.ml-box p{font-size:.95rem;color:#f5f0e8;line-height:1.9;font-weight:300;margin-bottom:.6rem;}.ml-box p:last-child{margin-bottom:0;}.ml-box strong{color:#f5f0e8;font-weight:600;}
-.bor{position:relative;font-family:"Cinzel Decorative",serif;font-size:.56rem;letter-spacing:.18em;color:var(--or);border:1px solid rgba(201,168,76,.4);padding:.8rem 2rem;text-decoration:none;overflow:hidden;transition:color .35s;display:inline-block;}.bor::before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,var(--ors),var(--or));transform:translateX(-100%);transition:transform .35s;z-index:-1;}.bor:hover{color:var(--e);}.bor:hover::before{transform:none;}
-.bg{font-family:"IM Fell English",serif;font-style:italic;font-size:.95rem;color:rgba(245,240,232,.65);border:1px solid rgba(245,240,232,.12);padding:.75rem 1.6rem;text-decoration:none;transition:color .3s,border-color .3s;display:inline-block;margin-left:.8rem;}.bg:hover{color:var(--orp);border-color:rgba(201,168,76,.3);}
-footer{position:relative;z-index:10;border-top:1px solid rgba(201,168,76,.1);padding:3rem 2rem;text-align:center;}.fl2{font-family:"Cinzel Decorative",serif;color:rgba(201,168,76,.4);font-size:.7rem;letter-spacing:.3em;display:block;margin-bottom:.5rem;}.flinks{display:flex;flex-wrap:wrap;justify-content:center;gap:1.5rem;margin:1.2rem 0;list-style:none;}.flinks a{font-size:.7rem;letter-spacing:.08em;color:rgba(245,240,232,.65);text-decoration:none;transition:color .3s;}.flinks a:hover{color:var(--or);}.fsoc{display:flex;justify-content:center;gap:1rem;margin:.8rem 0;}.fsoc a{width:30px;height:30px;border:1px solid rgba(201,168,76,.18);display:flex;align-items:center;justify-content:center;color:rgba(245,240,232,.65);text-decoration:none;font-size:.75rem;transition:border-color .3s,color .3s;}.fsoc a:hover{border-color:var(--or);color:var(--or);}footer p{font-size:.72rem;color:rgba(245,240,232,.65);font-style:italic;}.ara{color:rgba(201,168,76,.25);letter-spacing:.6em;}
-.reveal{opacity:0;transform:translateY(18px);transition:opacity .8s,transform .8s;}.reveal.vis{opacity:1;transform:none;}
-@media(max-width:700px){.boutique-grille,.contact-grille{grid-template-columns:1fr;}.box,.ml-box{padding:1.8rem;}}
-@media(max-width:580px){nav{padding:1.2rem 1.5rem;}.nav-ul{display:none;}.burger{display:block;}}
-::-webkit-scrollbar{width:2px;}::-webkit-scrollbar-track{background:var(--e);}::-webkit-scrollbar-thumb{background:rgba(201,168,76,.22);}
-/* Sécurité Cloudflare — affichage des médaillons */
-.f-cadre img,
-.portrait img,
-.medaillon img,
-.medallion img,
-.avatar img,
-.portrait-anouk img,
-.founder-photo img,
-.fondateur img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-
-/* Sécurité affichage portraits et articles */
-.f-cadre img,
-.portrait img,
-.medaillon img,
-.medallion img,
-.avatar img,
-.portrait-anouk img,
-.founder-photo img,
-.fondateur img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-.article-presse img,
-figure img {
-  max-width: 100%;
-  height: auto;
-}
-
-</style>
-<link rel="stylesheet" href="assets/css/lamagie-refinement.css"/>
-
-<style>
-.lamagie-bandeau-contact{
-  position:relative;
-  z-index:10;
-  margin:42px auto 70px auto;
-  max-width:1180px;
-  text-align:center;
-  padding:0 1.4rem;
-}
-.lamagie-bandeau-contact img{
-  width:100%;
-  max-width:1180px;
-  display:block;
-  margin:0 auto;
-  border-radius:18px;
-  border:1px solid rgba(217,191,114,.22);
-  box-shadow:
-    0 0 34px rgba(217,191,114,.16),
-    0 30px 110px rgba(0,0,0,.58);
-}
-@media(max-width:760px){
-  .lamagie-bandeau-contact{
-    margin:32px auto 52px auto;
-    padding:0 1rem;
-  }
-  .lamagie-bandeau-contact img{
-    border-radius:12px;
-  }
-}
-</style>
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — L'AMagie</title>
+<meta name="description" content="L'AMagie — Contact — maison d'édition indépendante à Félines-Minervois.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/cosmos.css">
 </head>
 <body>
 
-<section class="lamagie-bandeau-contact">
-  <img src="images/bandeau-lamagie-contact.png" alt="Éditions L'AMagie">
-</section>
+<!-- DÉCOR COSMIQUE PERMANENT -->
+<div class="bg-image"></div>
+<div class="bg-veil-base"></div>
+<canvas class="cosmos-canvas" id="cosmosCanvas"></canvas>
+<div class="bg-vignette"></div>
 
-<canvas id="cosmos"></canvas><div class="neb"></div>
+<a href="index.html" class="retour" aria-label="Retour à l'accueil">Accueil</a>
+
+<!-- VAISSEAUX -->
+<svg class="ship ship1" width="120" height="64" viewBox="0 0 120 64">
+  <defs>
+    <linearGradient id="trail1" x1="100%" x2="0%"><stop offset="0%" stop-color="#d9bf72" stop-opacity="0"/><stop offset="100%" stop-color="#d9bf72" stop-opacity=".85"/></linearGradient>
+    <radialGradient id="core1" cx="50%" cy="50%"><stop offset="0%" stop-color="#4dd1ff" stop-opacity="1"/><stop offset="40%" stop-color="#2c8dc7" stop-opacity=".7"/><stop offset="100%" stop-color="#0a3958" stop-opacity="0"/></radialGradient>
+  </defs>
+  <path d="M 0 32 L 50 32" stroke="url(#trail1)" stroke-width="1.8" fill="none"/>
+  <ellipse cx="80" cy="32" rx="32" ry="14" fill="#1a1408" stroke="#d9bf72" stroke-width="1"/>
+  <ellipse cx="80" cy="32" rx="29" ry="11" fill="none" stroke="#d9bf72" stroke-width=".4" opacity=".6"/>
+  <ellipse cx="80" cy="32" rx="18" ry="6" fill="url(#core1)"/>
+  <ellipse cx="80" cy="32" rx="9" ry="3" fill="#9ed1ff" opacity=".7"/>
+  <circle cx="80" cy="32" r="2" fill="#e8d59a"/>
+  <circle cx="112" cy="32" r="2" fill="#9ed1ff"/>
+  <circle cx="112" cy="32" r="3.5" fill="#9ed1ff" opacity=".25"/>
+</svg>
+<svg class="ship ship2" width="86" height="32" viewBox="0 0 86 32">
+  <defs><linearGradient id="trail2" x1="100%" x2="0%"><stop offset="0%" stop-color="#9ed1ff" stop-opacity="0"/><stop offset="100%" stop-color="#9ed1ff" stop-opacity=".75"/></linearGradient></defs>
+  <path d="M 0 16 L 50 16" stroke="url(#trail2)" stroke-width="1.6" fill="none"/>
+  <path d="M 62 4 L 82 28 L 42 28 Z" fill="#0d1622" stroke="#d9bf72" stroke-width=".7"/>
+  <ellipse cx="62" cy="20" rx="6" ry="3" fill="#9ed1ff" opacity=".4"/>
+  <ellipse cx="62" cy="20" rx="3" ry="2" fill="#cce9ff"/>
+</svg>
+<svg class="ship ship3" width="68" height="30" viewBox="0 0 68 30">
+  <defs><linearGradient id="trail3" x1="100%" x2="0%"><stop offset="0%" stop-color="#d9bf72" stop-opacity="0"/><stop offset="100%" stop-color="#d9bf72" stop-opacity=".65"/></linearGradient></defs>
+  <path d="M 0 15 L 32 15" stroke="url(#trail3)" stroke-width="1.3" fill="none"/>
+  <ellipse cx="46" cy="15" rx="18" ry="8" fill="#1a1408" stroke="#d9bf72" stroke-width=".7"/>
+  <ellipse cx="46" cy="15" rx="9" ry="2.5" fill="#9ed1ff" opacity=".5"/>
+  <circle cx="64" cy="15" r="1.6" fill="#e8d59a"/>
+</svg>
+<svg class="comet comet1" width="320" height="220" viewBox="0 0 320 220">
+  <defs><linearGradient id="cm1" x1="0%" x2="100%"><stop offset="0%" stop-color="#fff" stop-opacity="1"/><stop offset="40%" stop-color="#e8d59a" stop-opacity=".6"/><stop offset="100%" stop-color="#d9bf72" stop-opacity="0"/></linearGradient></defs>
+  <path d="M 0 0 L 260 170" stroke="url(#cm1)" stroke-width="2.2" fill="none"/>
+  <circle cx="0" cy="0" r="3.5" fill="#fff"/>
+  <circle cx="0" cy="0" r="7" fill="#fff" opacity=".4"/>
+</svg>
+<svg class="comet comet2" width="300" height="240" viewBox="0 0 300 240">
+  <defs><linearGradient id="cm2" x1="0%" x2="100%"><stop offset="0%" stop-color="#9ed1ff" stop-opacity=".95"/><stop offset="55%" stop-color="#7da3d4" stop-opacity=".45"/><stop offset="100%" stop-color="#7da3d4" stop-opacity="0"/></linearGradient></defs>
+  <path d="M 280 0 L 0 215" stroke="url(#cm2)" stroke-width="2" fill="none"/>
+  <circle cx="280" cy="0" r="3" fill="#cce9ff"/>
+  <circle cx="280" cy="0" r="6" fill="#cce9ff" opacity=".4"/>
+</svg>
+
+
 <nav>
-  <a href="index.html" class="logo"><span class="lp">L'</span><span class="la">A</span><span class="lm">M</span><span class="lg">agie</span></a>
-  <ul class="nav-ul">    <li><a href="qui-sommes-nous.html" class="">La maison</a></li>
-    <li><a href="ateliers.html" class="">Ateliers</a></li>
-    <li><a href="edition.html" class="">Edition</a></li>
-    <li><a href="peintures.html" class="">Meichelus</a></li>
-    <li><a href="poesie.html" class="">Po&eacute;sie</a></li>
-    <li><a href="contact.html" class="active">Contact</a></li></ul>
-  <button class="burger" onclick="document.getElementById('mm').classList.add('open')">&#x2630;</button>
+  <a href="index.html" class="logo">
+    <span><span class="lp">L'</span><span class="la">A</span><span class="lm">M</span><span class="lg">agie</span></span>
+    <span class="tagline">Maison d'édition</span>
+  </a>
+  <ul class="nav-ul">
+    <li><a href="qui-sommes-nous.html">La maison</a></li>
+    <li><a href="ateliers.html">Ateliers</a></li>
+    <li><a href="edition.html">Édition</a></li>
+    <li><a href="anouk-journo.html">Anouk</a></li>
+    <li><a href="peintures.html">Meichelus</a></li>
+    <li><a href="poesie.html">Poésie</a></li>
+    <li><a href="contact.html" class="active">Contact</a></li>
+  </ul>
+  <button class="burger" aria-label="Ouvrir le menu">☰</button>
 </nav>
 <div class="mob" id="mm">
-  <button class="mc" onclick="document.getElementById('mm').classList.remove('open')">&#x2715;</button>
-    <a href="qui-sommes-nous.html" onclick="document.getElementById('mm').classList.remove('open')">La maison</a>
-  <a href="ateliers.html" onclick="document.getElementById('mm').classList.remove('open')">Ateliers</a>
-  <a href="edition.html" onclick="document.getElementById('mm').classList.remove('open')">Edition</a>
-  <a href="peintures.html" onclick="document.getElementById('mm').classList.remove('open')">Meichelus</a>
-  <a href="poesie.html" onclick="document.getElementById('mm').classList.remove('open')">Po&eacute;sie</a>
-  <a href="contact.html" onclick="document.getElementById('mm').classList.remove('open')">Contact</a>
+  <button class="mc" aria-label="Fermer le menu">✕</button>
+  <a href="qui-sommes-nous.html">La maison</a>
+  <a href="ateliers.html">Ateliers</a>
+  <a href="edition.html">Édition</a>
+  <a href="anouk-journo.html">Anouk Journo</a>
+  <a href="peintures.html">Meichelus</a>
+  <a href="poesie.html">Poésie</a>
+  <a href="boutique.html">Boutique</a>
+  <a href="contact.html">Contact</a>
 </div>
-<div class="ph">
-  <span class="bc"><a href="index.html">Accueil</a> &middot; Contact</span>
-  <h1 class="pth">Nous &Eacute;crire</h1>
-  <p class="ps">Pour toute demande &eacute;ditoriale, atelier, collaboration ou simplement traverser le seuil.</p>
-  <div class="seph"></div>
-</div>
-<div class="cnt"><div class="contact-grille reveal">
-    <div class="contact-info"><span class="label">Adresse</span><p>5 rue du Puits</p><p>34210 F&eacute;lines-Minervois</p><p>Occitanie &middot; France</p></div>
-    <div class="contact-info"><span class="label">Coordonn&eacute;es</span><a href="mailto:editions@l-amagie.art">editions@l-amagie.art</a><a href="tel:0674402880">06 74 40 28 80</a><a href="https://www.l-amagie.art" target="_blank" style="color:var(--or);">www.l-amagie.art</a></div>
-  </div>
-  <div class="box reveal">
-    <form action="https://formspree.io/f/xvgzqkbd" method="POST">
-      <div class="form-grille">
-        <div><label class="fl">Votre nom</label><input type="text" name="nom" placeholder="Pr&eacute;nom et nom" class="f-input" required/></div>
-        <div><label class="fl">E-mail</label><input type="email" name="email" placeholder="votre@adresse.fr" class="f-input" required/></div>
-        <div><label class="fl">Objet</label><select name="objet" class="f-input"><option value="" disabled selected>Choisir</option><option>Manuscrit / projet editorial</option><option>Atelier d'ecriture</option><option>Mediation animale</option><option>Collaboration artistique</option><option>Commande d'ouvrage</option><option>Peintures et oeuvres</option><option>Autre</option></select></div>
-        <div><label class="fl">Message</label><textarea name="message" rows="4" placeholder="Votre message..." class="f-input" style="resize:none;" required></textarea></div>
-        <div style="text-align:center;"><button type="submit" class="bor" style="cursor:pointer;">Envoyer &rarr;</button></div>
+
+
+<section class="seuil">
+  <span class="seuil-lbl">Entrer en relation</span>
+  <h1 class="seuil-titre">Nous <span class="gold">Écrire</span></h1>
+  <div class="seuil-sep"></div>
+  <p class="seuil-sous">Manuscrits, collaborations, commandes, questions — nous lisons <em>chaque message</em> avec attention.</p>
+</section>
+
+<section class="s" style="padding:3rem 0 6rem;">
+  <div class="contenu-wrap">
+    <section class="vignette-contact reveal">
+      <div class="vignette-cadre">
+        <img alt="Éditions L'AMagie — 5 rue du Puits, Félines-Minervois" src="images/bandeau-lamagie-contact.jpg" loading="lazy"/>
       </div>
-    </form>
+      <p class="vignette-legende">L'entrée des Éditions L'AMagie<br><em>5 rue du Puits · Félines-Minervois</em></p>
+    </section>
+    <style>
+      .vignette-contact{
+        display:flex;flex-direction:column;align-items:center;
+        margin:0 auto 3rem;text-align:center;
+      }
+      .vignette-cadre{
+        max-width:380px;width:100%;
+        border:1px solid rgba(217,191,114,.35);
+        padding:.5rem;
+        background:linear-gradient(145deg,rgba(14,10,26,.55),rgba(6,8,15,.78));
+        backdrop-filter:blur(11px);
+        box-shadow:
+          0 0 0 3px rgba(217,191,114,.08),
+          0 30px 60px rgba(0,0,0,.55),
+          0 0 36px rgba(217,191,114,.1);
+        border-radius:3px;
+        position:relative;
+        overflow:hidden;
+      }
+      .vignette-cadre::before{
+        content:'';position:absolute;top:0;left:0;right:0;height:1px;
+        background:linear-gradient(90deg,transparent,#d9bf72,transparent);
+        opacity:.55;z-index:2;
+      }
+      .vignette-cadre::after{
+        content:'';position:absolute;bottom:0;left:0;right:0;height:1px;
+        background:linear-gradient(90deg,transparent,rgba(217,191,114,.4),transparent);
+        opacity:.4;z-index:2;
+      }
+      .vignette-cadre img{
+        width:100%;height:auto;display:block;border-radius:1px;
+        margin:0;border:1px solid rgba(217,191,114,.18);
+      }
+      .vignette-legende{
+        font-family:'IM Fell English',serif;
+        font-style:italic;font-size:.92rem;
+        color:rgba(245,240,232,.85);
+        margin-top:1.4rem;line-height:1.7;
+        letter-spacing:.04em;
+      }
+      .vignette-legende em{color:#e8d59a;font-size:.85rem;}
+    </style>
+<div class="cnt"><div class="contact-grille reveal">
+<div class="contact-info"><span class="label">Adresse</span><p>5 rue du Puits</p><p>34210 Félines-Minervois</p><p>Occitanie · France</p></div>
+<div class="contact-info"><span class="label">Coordonnées</span><a href="mailto:editions@l-amagie.art">editions@l-amagie.art</a><a href="tel:0674402880">06 74 40 28 80</a><a href="https://www.l-amagie.art" style="color:var(--or);" target="_blank">www.l-amagie.art</a></div>
+</div>
+<div class="box reveal">
+<form action="https://formspree.io/f/xvgzqkbd" method="POST">
+<div class="form-grille">
+<div><label class="fl">Votre nom</label><input class="f-input" name="nom" placeholder="Prénom et nom" required="" type="text"/></div>
+<div><label class="fl">E-mail</label><input class="f-input" name="email" placeholder="votre@adresse.fr" required="" type="email"/></div>
+<div><label class="fl">Objet</label><select class="f-input" name="objet"><option disabled="" selected="" value="">Choisir</option><option>Manuscrit / projet editorial</option><option>Atelier d'ecriture</option><option>Mediation animale</option><option>Collaboration artistique</option><option>Commande d'ouvrage</option><option>Peintures et oeuvres</option><option>Autre</option></select></div>
+<div><label class="fl">Message</label><textarea class="f-input" name="message" placeholder="Votre message..." required="" rows="4" style="resize:none;"></textarea></div>
+<div style="text-align:center;"><button class="bor" style="cursor:pointer;" type="submit">Envoyer →</button></div>
+</div>
+</form>
+</div>
+<div class="grille reveal" style="margin-top:2rem;">
+<a class="carte" href="https://www.instagram.com/lamagie_arts_editions/" target="_blank"><span class="ci">📷</span><span class="ct">Instagram</span><p class="cd">Suivez l'actualité de L'AMagie et les créations de Meichelus.</p></a>
+<a class="carte" href="http://www.facebook.com/share/1Rcqk3QQ4z/" target="_blank"><span class="ci">f</span><span class="ct">Facebook</span><p class="cd">La page Facebook de L'AMagie — événements, publications, actualités.</p></a>
+<a class="carte" href="https://www.youtube.com/@lamagieeditions" target="_blank"><span class="ci">▶</span><span class="ct">YouTube</span><p class="cd">La chaîne L'AMagie — Bulles poétiques et vidéos de la maison.</p></a>
+</div></div>
   </div>
-  <div class="grille reveal" style="margin-top:2rem;">
-    <a href="https://www.instagram.com/lamagie_arts_editions/" target="_blank" class="carte"><span class="ci">&#x1F4F7;</span><span class="ct">Instagram</span><p class="cd">Suivez l'actualit&eacute; de L'AMagie et les cr&eacute;ations de Meichelus.</p></a>
-    <a href="http://www.facebook.com/share/1Rcqk3QQ4z/" target="_blank" class="carte"><span class="ci">f</span><span class="ct">Facebook</span><p class="cd">La page Facebook de L'AMagie &mdash; &eacute;v&eacute;nements, publications, actualit&eacute;s.</p></a>
-    <a href="https://www.youtube.com/@lamagieeditions" target="_blank" class="carte"><span class="ci">&#x25B6;</span><span class="ct">YouTube</span><p class="cd">La cha&icirc;ne L'AMagie &mdash; Bulles po&eacute;tiques et vid&eacute;os de la maison.</p></a>
-  </div></div>
+</section>
+
+
 <footer>
-  <p class="ara">&#x2726; &#x2726; &#x2726;</p>
-  <span class="fl2">L'AMagie &middot; &Eacute;ditions</span>
+  <p class="ara">✦ ✦ ✦</p>
+  <span class="fl2">L'AMagie · Éditions</span>
   <ul class="flinks">
-    <li><a href="qui-sommes-nous.html">Qui sommes-nous ?</a></li>
+    <li><a href="qui-sommes-nous.html">Qui sommes-nous</a></li>
+    <li><a href="edition.html">Édition</a></li>
     <li><a href="ateliers.html">Ateliers</a></li>
-    <li><a href="edition.html">Edition</a></li>
-    <li><a href="poesie.html">Po&eacute;sie</a></li>
     <li><a href="boutique.html">Boutique</a></li>
-    <li><a href="contact.html">Contact</a></li>
-    <li><a href="mentions-legales.html">Mentions l&eacute;gales</a></li>
+    <li><a href="evenements.html">Événements</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="mentions-legales.html">Mentions légales</a></li>
   </ul>
   <div class="fsoc">
-    <a href="https://www.instagram.com/lamagie_arts_editions/">&#x1F4F7;</a>
-    <a href="http://www.facebook.com/share/1Rcqk3QQ4z/">f</a>
-    <a href="https://meichelus-art.blogspot.com">&#x270E;</a>
-    <a href="https://www.youtube.com/@lamagieeditions">&#x25B6;</a>
+    <a href="https://www.instagram.com/lamagie_arts_editions/" title="Instagram" target="_blank" rel="noopener">IG</a>
+    <a href="http://www.facebook.com/share/1Rcqk3QQ4z/" title="Facebook" target="_blank" rel="noopener">f</a>
+    <a href="https://meichelus-art.blogspot.com" title="Blog" target="_blank" rel="noopener">B</a>
+    <a href="https://www.youtube.com/@lamagieeditions" title="YouTube" target="_blank" rel="noopener">▶</a>
   </div>
-  <p>&copy; 2026 L'AMagie &middot; Maison d'&eacute;dition ind&eacute;pendante &middot; Siren 937629533</p>
-  <p style="margin-top:.2rem;">F&eacute;lines-Minervois &middot; Occitanie &middot; France</p>
+  <p>© 2026 L'AMagie · Maison d'édition indépendante · Siren 937 629 533</p>
+  <p style="margin-top:.2rem;">Félines-Minervois · Occitanie · France</p>
+  <p style="margin-top:.5rem;color:rgba(217,191,114,.5);"><a href="mailto:editions@l-amagie.art" style="color:inherit;text-decoration:none;letter-spacing:.08em;">editions@l-amagie.art</a></p>
 </footer>
-<script>
-const cvs=document.getElementById("cosmos"),ctx=cvs.getContext("2d");
-function rsz(){cvs.width=innerWidth;cvs.height=innerHeight;}rsz();window.addEventListener("resize",rsz);
 
-// Étoiles avec types variés
-const stars=[];
-for(let i=0;i<320;i++){
-  const t=Math.random();
-  stars.push({
-    x:Math.random()*innerWidth, y:Math.random()*innerHeight,
-    r: t>.92 ? Math.random()*2.5+1.5 : t>.7 ? Math.random()*1.2+.5 : Math.random()*.5+.1,
-    a:Math.random()*.7+.2, ad:(Math.random()>.5?1:-1)*(.001+Math.random()*.004),
-    v:Math.random()*.06+.008,
-    c:t>.85?[255,240,200]:t>.6?[201,168,76]:t>.3?[245,240,232]:[180,200,255],
-    pulse: t>.88, pulseT: Math.random()*Math.PI*2
-  });
-}
 
-// Étoiles filantes (comètes)
-class Comet{
-  constructor(){this.reset(true);}
-  reset(init=false){
-    this.x=init?Math.random()*innerWidth*1.5-innerWidth*.25:-200;
-    this.y=init?Math.random()*innerHeight*.5:Math.random()*innerHeight*.3;
-    this.len=120+Math.random()*220;
-    this.vx=4+Math.random()*5;
-    this.vy=.2+Math.random()*1.8;
-    this.a=0; this.amax=.6+Math.random()*.4;
-    this.st=init?"idle":"in";
-    this.delay=init?Math.floor(Math.random()*400):0;
-    this.t=0; this.w=.6+Math.random()*.8;
-    this.burst=Math.random()>.7;
-  }
-  tick(){
-    if(this.st==="idle"){if(++this.t>this.delay){this.st="in";this.t=0;}return;}
-    this.x+=this.vx; this.y+=this.vy;
-    if(this.st==="in"){this.a=Math.min(this.a+.025,this.amax);if(this.a>=this.amax)this.st="out";}
-    else this.a=Math.max(this.a-.004,0);
-    if(this.x>innerWidth+300||this.a<=0)this.reset();
-  }
-  draw(){
-    if(this.a<=0)return;
-    const ang=Math.atan2(this.vy,this.vx);
-    const tx=this.x-Math.cos(ang)*this.len, ty=this.y-Math.sin(ang)*this.len;
-    const g=ctx.createLinearGradient(this.x,this.y,tx,ty);
-    g.addColorStop(0,`rgba(255,248,220,${this.a})`);
-    g.addColorStop(.15,`rgba(232,213,154,${this.a*.8})`);
-    g.addColorStop(.4,`rgba(201,168,76,${this.a*.4})`);
-    g.addColorStop(1,"rgba(201,168,76,0)");
-    ctx.beginPath();ctx.moveTo(this.x,this.y);ctx.lineTo(tx,ty);
-    ctx.strokeStyle=g;ctx.lineWidth=this.w;ctx.stroke();
-    // Halo tête
-    const hg=ctx.createRadialGradient(this.x,this.y,0,this.x,this.y,this.w*4);
-    hg.addColorStop(0,`rgba(255,248,220,${this.a*.9})`);
-    hg.addColorStop(.5,`rgba(201,168,76,${this.a*.3})`);
-    hg.addColorStop(1,"rgba(201,168,76,0)");
-    ctx.beginPath();ctx.arc(this.x,this.y,this.w*3.5,0,Math.PI*2);
-    ctx.fillStyle=hg;ctx.fill();
-  }
-}
-
-// Nébuleuses animées
-const nebulas=[
-  {x:.2,y:.3,rx:.45,ry:.35,c:"rgba(80,40,120,",a:.06,speed:.0003},
-  {x:.78,y:.65,rx:.38,ry:.42,c:"rgba(20,60,100,",a:.05,speed:.0004},
-  {x:.5,y:.15,rx:.55,ry:.25,c:"rgba(180,120,40,",a:.025,speed:.0002},
-];
-let nebT=0;
-
-const comets=[new Comet(),new Comet(),new Comet(),new Comet()];
-let lastT=0, frame=0;
-
-function draw(t){
-  if(t-lastT<14){requestAnimationFrame(draw);return;}lastT=t;frame++;
-  ctx.clearRect(0,0,cvs.width,cvs.height);
-
-  // Fond dégradé cosmique
-  const bg=ctx.createRadialGradient(cvs.width*.45,cvs.height*.38,0,cvs.width*.5,cvs.height*.5,Math.max(cvs.width,cvs.height)*.9);
-  bg.addColorStop(0,"#141830");
-  bg.addColorStop(.35,"#0e1228");
-  bg.addColorStop(.7,"#0a0e1e");
-  bg.addColorStop(1,"#070910");
-  ctx.fillStyle=bg;ctx.fillRect(0,0,cvs.width,cvs.height);
-
-  nebT+=.001;
-  // Nébuleuses
-  nebulas.forEach(n=>{
-    const cx=n.x*cvs.width, cy=n.y*cvs.height;
-    const drift=Math.sin(nebT*n.speed*1000+n.x*10)*15;
-    const ng=ctx.createRadialGradient(cx+drift,cy,0,cx+drift,cy,Math.max(cvs.width*n.rx,cvs.height*n.ry));
-    ng.addColorStop(0,n.c+(n.a*.8)+")");
-    ng.addColorStop(.4,n.c+(n.a*.35)+")");
-    ng.addColorStop(1,n.c+"0)");
-    ctx.fillStyle=ng;
-    ctx.beginPath();ctx.ellipse(cx+drift,cy,cvs.width*n.rx,cvs.height*n.ry,n.speed*1000*nebT,0,Math.PI*2);
-    ctx.fill();
-  });
-
-  // Voie lactée subtile
-  const vl=ctx.createLinearGradient(0,cvs.height*.05,cvs.width,cvs.height*.9);
-  vl.addColorStop(0,"rgba(201,168,76,0)");
-  vl.addColorStop(.3,"rgba(245,240,232,0.018)");
-  vl.addColorStop(.5,"rgba(201,168,76,0.012)");
-  vl.addColorStop(.7,"rgba(245,240,232,0.015)");
-  vl.addColorStop(1,"rgba(201,168,76,0)");
-  ctx.fillStyle=vl;ctx.fillRect(0,0,cvs.width,cvs.height);
-
-  // Étoiles
-  stars.forEach(s=>{
-    s.y+=s.v;if(s.y>cvs.height+2)s.y=-2;
-    if(s.pulse){
-      s.pulseT+=.04;
-      s.a=.4+Math.sin(s.pulseT)*.5;
-    } else {
-      s.a+=s.ad;if(s.a>.95||s.a<.08)s.ad*=-1;
-    }
-    ctx.beginPath();ctx.arc(s.x,s.y,s.r,0,Math.PI*2);
-    ctx.fillStyle=`rgba(${s.c[0]},${s.c[1]},${s.c[2]},${s.a})`;ctx.fill();
-    // Halo pour les grosses étoiles
-    if(s.r>1.2){
-      const h=ctx.createRadialGradient(s.x,s.y,0,s.x,s.y,s.r*5);
-      h.addColorStop(0,`rgba(${s.c[0]},${s.c[1]},${s.c[2]},${s.a*.3})`);
-      h.addColorStop(1,`rgba(${s.c[0]},${s.c[1]},${s.c[2]},0)`);
-      ctx.beginPath();ctx.arc(s.x,s.y,s.r*5,0,Math.PI*2);ctx.fillStyle=h;ctx.fill();
-      // Croix lumineuse pour les plus grosses
-      if(s.r>2.2&&s.a>.5){
-        ctx.strokeStyle=`rgba(${s.c[0]},${s.c[1]},${s.c[2]},${s.a*.4})`;
-        ctx.lineWidth=.5;
-        ctx.beginPath();ctx.moveTo(s.x-s.r*6,s.y);ctx.lineTo(s.x+s.r*6,s.y);ctx.stroke();
-        ctx.beginPath();ctx.moveTo(s.x,s.y-s.r*6);ctx.lineTo(s.x,s.y+s.r*6);ctx.stroke();
-      }
-    }
-  });
-
-  comets.forEach(c=>{c.tick();c.draw();});
-  requestAnimationFrame(draw);
-}
-requestAnimationFrame(draw);
-const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){if(e.target.classList.contains("grille")||e.target.classList.contains("boutique-grille"))[...e.target.children].forEach((c,i)=>setTimeout(()=>c.classList.add("vis"),i*80));e.target.classList.add("vis");}});},{threshold:.06});
-document.querySelectorAll(".reveal").forEach(el=>obs.observe(el));
-document.querySelectorAll(".faq-item").forEach(item=>{item.addEventListener("click",()=>item.classList.toggle("open"));});
-</script>
-<script src="assets/js/lamagie.js" defer></script>
-
+<script src="assets/js/cosmos.js"></script>
 </body>
 </html>

@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Édition — L'AMagie</title>
+<meta name="description" content="Six collections L'AMagie : Raconter le monde, Immersion, Romans jeunesse, De la Terre à la Lune, Amis-Mots, De la Lune à la Plume."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{--or:#c9a84c;--orp:#e8d59a;--ors:#8a6d2f;--p:#f5f0e8;--e:#06080f;}
+html{scroll-behavior:smooth;}
+body{background:#0a0c18;color:var(--p);font-family:'Cormorant Garamond',serif;overflow-x:hidden;}
+#cosmos{position:fixed;inset:0;z-index:0;}
+.neb{position:fixed;inset:0;z-index:1;background:radial-gradient(ellipse 65% 55% at 25% 25%,rgba(22,12,42,.6) 0%,transparent 60%),radial-gradient(ellipse 45% 60% at 75% 75%,rgba(8,18,42,.4) 0%,transparent 55%);pointer-events:none;}
+nav{position:fixed;top:0;width:100%;z-index:200;padding:1.4rem 4rem;display:flex;align-items:center;justify-content:space-between;background:linear-gradient(180deg,rgba(6,8,15,.95),transparent);border-bottom:1px solid rgba(201,168,76,.1);backdrop-filter:blur(6px);}
+
+
+
+
+.logo{font-family:'Cinzel Decorative',serif;font-size:.82rem;letter-spacing:.2em;text-decoration:none;}
+.logo .lp{color:rgba(245,240,232,.7);font-style:normal;}
+.logo .la{color:#c9a84c;text-shadow:0 0 14px rgba(201,168,76,.55);font-size:1.05em;}
+.logo .lm{color:rgba(245,240,232,1);}
+.logo .lg{color:rgba(245,240,232,1);font-size:.88em;letter-spacing:.15em;}
+.h1-a{color:#c9a84c !important;text-shadow:0 0 40px rgba(201,168,76,.65),0 0 80px rgba(201,168,76,.25) !important;}
+.h1-m{color:rgba(245,240,232,1) !important;}
+.h1-rest{color:rgba(245,240,232,1) !important;}
+.nav-ul{display:flex;gap:2rem;list-style:none;}
+.nav-ul a{color:rgba(245,240,232,1);text-decoration:none;font-size:.88rem;letter-spacing:.1em;transition:color .3s;}
+.nav-ul a:hover,.nav-ul a.active{color:var(--or);}
+.burger{display:none;background:none;border:none;color:var(--or);font-size:1.4rem;cursor:pointer;}
+.mob{display:none;position:fixed;inset:0;background:rgba(6,8,15,.98);z-index:300;flex-direction:column;align-items:center;justify-content:center;gap:2.2rem;}
+.mob.open{display:flex;}
+.mob a{font-family:'Cinzel Decorative',serif;color:var(--p);text-decoration:none;font-size:.9rem;letter-spacing:.25em;transition:color .3s;}
+.mob a:hover{color:var(--or);}
+.mc{position:absolute;top:1.5rem;right:2rem;background:none;border:none;color:var(--or);font-size:2rem;cursor:pointer;}
+
+.page-hero{position:relative;z-index:10;padding:10rem 2rem 4rem;text-align:center;}
+.breadcrumb{font-size:.6rem;letter-spacing:.3em;color:rgba(245,240,232,1);margin-bottom:1.5rem;display:block;}
+.breadcrumb a{color:rgba(201,168,76,.45);text-decoration:none;transition:color .3s;}
+.breadcrumb a:hover{color:var(--or);}
+.page-title{font-family:'Cinzel Decorative',serif;font-size:clamp(2rem,5vw,4rem);color:var(--p);letter-spacing:.06em;font-weight:400;margin-bottom:1rem;opacity:0;animation:fu 1s ease forwards .2s;}
+@keyframes fu{from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:none;}}
+.page-sous{font-family:'IM Fell English',serif;font-style:italic;font-size:clamp(.95rem,2vw,1.25rem);color:rgba(245,240,232,1);max-width:650px;margin:0 auto;line-height:1.8;opacity:0;animation:fu 1s ease forwards .4s;}
+.sep-h{width:46px;height:1px;background:linear-gradient(90deg,transparent,var(--or),transparent);margin:1.5rem auto;opacity:0;animation:fu 1s ease forwards .5s;}
+
+.content{position:relative;z-index:10;max-width:1060px;margin:0 auto;padding:2rem 2rem 6rem;}
+
+/* Intro */
+.intro{text-align:center;margin-bottom:4rem;padding:2.5rem;border:1px solid rgba(201,168,76,.12);background:linear-gradient(145deg,rgba(16,10,28,.7),rgba(6,8,15,.85));}
+.intro p{font-size:1.05rem;color:rgba(245,240,232,1);line-height:2;font-weight:300;}
+.intro em{color:var(--orp);}
+
+/* Label section */
+.s-label{font-size:.6rem;letter-spacing:.42em;color:var(--or);text-transform:uppercase;display:block;text-align:center;margin-bottom:.8rem;}
+.s-h2{font-family:'Cinzel Decorative',serif;font-size:clamp(1.2rem,2.5vw,1.8rem);color:var(--p);letter-spacing:.06em;font-weight:400;text-align:center;}
+.sep{width:44px;height:1px;background:linear-gradient(90deg,transparent,var(--or),transparent);margin:1.2rem auto 3rem;}
+
+/* Grille collections */
+.grille-col{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(201,168,76,.07);margin-bottom:5rem;}
+.col-carte{background:linear-gradient(145deg,rgba(14,10,26,.88),rgba(6,8,15,.96));padding:0;text-decoration:none;display:flex;flex-direction:column;position:relative;overflow:hidden;transition:transform .3s;}
+.col-carte::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--or),transparent);transform:scaleX(0);transition:transform .45s;}
+.col-carte:hover{transform:translateY(-4px);}
+.col-carte:hover::after{transform:scaleX(1);}
+.col-num{font-family:'Cinzel Decorative',serif;font-size:4rem;color:rgba(201,168,76,.05);position:absolute;top:1rem;right:1.5rem;line-height:1;font-weight:700;}
+.col-body{padding:2.5rem 2rem;flex:1;display:flex;flex-direction:column;}
+.col-roman{font-size:.56rem;letter-spacing:.32em;color:var(--or);text-transform:uppercase;display:block;margin-bottom:.9rem;}
+.col-titre{font-family:'Cinzel Decorative',serif;font-size:.92rem;color:var(--p);letter-spacing:.08em;font-weight:400;margin-bottom:.7rem;line-height:1.4;}
+.col-desc{font-size:.92rem;color:rgba(245,240,232,1);line-height:1.9;font-weight:300;font-style:italic;flex:1;}
+.col-lien{display:inline-block;margin-top:1.5rem;font-size:.55rem;letter-spacing:.18em;color:var(--or);border-bottom:1px solid rgba(201,168,76,.25);padding-bottom:.1rem;transition:color .3s;font-family:'Cinzel Decorative',serif;}
+.col-lien:hover{color:var(--orp);}
+
+/* Titres publiés */
+.titres-section{margin-bottom:5rem;}
+.titre-livre{border:1px solid rgba(201,168,76,.1);background:linear-gradient(145deg,rgba(16,10,28,.72),rgba(6,8,15,.88));padding:2rem 2.5rem;display:grid;grid-template-columns:auto 1fr;gap:2rem;align-items:center;margin-bottom:1px;transition:border-color .3s;}
+.titre-livre:hover{border-color:rgba(201,168,76,.28);}
+.livre-num{font-family:'Cinzel Decorative',serif;font-size:2.5rem;color:rgba(201,168,76,.12);line-height:1;min-width:60px;text-align:center;}
+.livre-info .coll{font-size:.55rem;letter-spacing:.28em;color:var(--or);text-transform:uppercase;display:block;margin-bottom:.5rem;}
+.livre-info h3{font-family:'Cinzel Decorative',serif;font-size:.95rem;color:var(--p);letter-spacing:.07em;font-weight:400;margin-bottom:.4rem;}
+.livre-info .auteur{font-family:'IM Fell English',serif;font-style:italic;font-size:.82rem;color:rgba(245,240,232,1);margin-bottom:.6rem;display:block;}
+.livre-info p{font-size:.9rem;color:rgba(245,240,232,1);line-height:1.8;font-weight:300;}
+
+/* Manuscrits */
+.manuscrit-box{border:1px solid rgba(201,168,76,.2);background:linear-gradient(145deg,rgba(22,14,38,.75),rgba(6,8,15,.9));padding:3.5rem;text-align:center;position:relative;}
+.manuscrit-box::before{content:'✦';position:absolute;top:-1rem;left:50%;transform:translateX(-50%);font-size:1.2rem;color:var(--or);background:#0a0c18;padding:0 .8rem;}
+.manuscrit-box h3{font-family:'Cinzel Decorative',serif;font-size:1.1rem;color:var(--p);letter-spacing:.08em;font-weight:400;margin-bottom:1.2rem;}
+.manuscrit-box p{font-size:1rem;color:rgba(245,240,232,1);line-height:1.9;font-weight:300;max-width:560px;margin:0 auto 2rem;}
+.manuscrit-box em{color:var(--orp);}
+
+.bor{position:relative;font-family:'Cinzel Decorative',serif;font-size:.58rem;letter-spacing:.2em;color:var(--or);border:1px solid rgba(201,168,76,.4);padding:.85rem 2.2rem;text-decoration:none;overflow:hidden;transition:color .35s;display:inline-block;}
+.bor::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,var(--ors),var(--or));transform:translateX(-100%);transition:transform .35s;z-index:-1;}
+.bor:hover{color:var(--e);}
+.bor:hover::before{transform:none;}
+
+footer{position:relative;z-index:10;border-top:1px solid rgba(201,168,76,.08);padding:3rem 2rem;text-align:center;}
+.fl2{font-family:'Cinzel Decorative',serif;color:rgba(201,168,76,.35);font-size:.7rem;letter-spacing:.3em;display:block;margin-bottom:.5rem;}
+.flinks{display:flex;flex-wrap:wrap;justify-content:center;gap:1.5rem;margin:1.2rem 0;list-style:none;}
+.flinks a{font-size:.7rem;letter-spacing:.08em;color:rgba(245,240,232,1);text-decoration:none;transition:color .3s;}
+.flinks a:hover{color:var(--or);}
+.fsoc{display:flex;justify-content:center;gap:1rem;margin:.8rem 0;}
+.fsoc a{width:30px;height:30px;border:1px solid rgba(201,168,76,.16);display:flex;align-items:center;justify-content:center;color:rgba(245,240,232,1);text-decoration:none;font-size:.75rem;transition:border-color .3s,color .3s;}
+.fsoc a:hover{border-color:var(--or);color:var(--or);}
+footer p{font-size:.72rem;color:rgba(245,240,232,1);font-style:italic;}
+.ara{color:rgba(201,168,76,.2);letter-spacing:.6em;}
+
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .8s,transform .8s;}
+.reveal.vis{opacity:1;transform:none;}
+
+@media(max-width:800px){.grille-col{grid-template-columns:repeat(2,1fr);}.titre-livre{grid-template-columns:1fr;gap:1rem;}.livre-num{font-size:1.8rem;min-width:auto;}}
+@media(max-width:520px){.grille-col{grid-template-columns:1fr;}}
+@media(max-width:580px){nav{padding:1.2rem 1.5rem;}.nav-ul{display:none;}.burger{display:block;}}
+::-webkit-scrollbar{width:2px;}::-webkit-scrollbar-track{background:#0a0c18;}::-webkit-scrollbar-thumb{background:rgba(201,168,76,.2);}
+
+/* Sécurité Cloudflare — affichage des médaillons */
+.f-cadre img,
+.portrait img,
+.medaillon img,
+.medallion img,
+.avatar img,
+.portrait-anouk img,
+.founder-photo img,
+.fondateur img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+
+/* Sécurité affichage portraits et articles */
+.f-cadre img,
+.portrait img,
+.medaillon img,
+.medallion img,
+.avatar img,
+.portrait-anouk img,
+.founder-photo img,
+.fondateur img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.article-presse img,
+figure img {
+  max-width: 100%;
+  height: auto;
+}
+
+</style>
+<link rel="stylesheet" href="assets/css/lamagie-refinement.css"/>
+</head>
+<body>
+<canvas id="cosmos"></canvas>
+<div class="neb"></div>
+<nav>
+  <a href="index.html" class="logo"><span class="lp">L'</span><span class="la">A</span><span class="lm">M</span><span class="lg">agie</span></a>
+  <ul class="nav-ul">
+    <li><a href="qui-sommes-nous.html">La maison</a></li>
+    <li><a href="edition.html" class="active">Édition</a></li>
+    <li><a href="peintures.html">Meichelus</a></li>
+    <li><a href="poesie.html">Poésie</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <button class="burger" onclick="document.getElementById('mm').classList.add('open')">☰</button>
+</nav>
+<div class="mob" id="mm">
+  <button class="mc" onclick="document.getElementById('mm').classList.remove('open')">✕</button>
+  <a href="qui-sommes-nous.html" onclick="document.getElementById('mm').classList.remove('open')">La maison</a>
+  <a href="edition.html" onclick="document.getElementById('mm').classList.remove('open')">Édition</a>
+  <a href="peintures.html" onclick="document.getElementById('mm').classList.remove('open')">Meichelus</a>
+  <a href="poesie.html" onclick="document.getElementById('mm').classList.remove('open')">Poésie</a>
+  <a href="contact.html" onclick="document.getElementById('mm').classList.remove('open')">Contact</a>
+</div>
+
+<div class="page-hero">
+  <span class="breadcrumb"><a href="index.html">Accueil</a> · Édition</span>
+  <h1 class="page-title">Éditions</h1>
+  <p class="page-sous">Six collections qui accueillent des écritures variées — du récit de vie au roman, de la jeunesse à la poésie — réunies par une même exigence : <em>un élan poétique et libre.</em></p>
+  <div class="sep-h"></div>
+</div>
+
+<div class="content">
+
+  <div class="intro reveal">
+    <p>L'AMagie publie des ouvrages organisés en collections thématiques, chacune avec son propre univers : <em>récits de vie, romans noirs, poésie, jeunesse, hommages animaliers, voyages en imaginaire…</em> Découvrez-les, et choisissez celle qui vous parle.</p>
+  </div>
+
+  <!-- 6 COLLECTIONS -->
+  <div class="s-label reveal">— Nos collections —</div>
+  <h2 class="s-h2 reveal">Six univers à explorer</h2>
+  <div class="sep reveal"></div>
+
+  <div class="grille-col reveal">
+    <a href="contact.html" class="col-carte">
+      <span class="col-num">I</span>
+      <div class="col-body">
+        <span class="col-roman">Collection</span>
+        <span class="col-titre">Raconter le monde</span>
+        <p class="col-desc">Récits & témoignages — la mémoire vivante des voix singulières</p>
+        <span class="col-lien">Découvrir →</span>
+      </div>
+    </a>
+    <a href="contact.html" class="col-carte">
+      <span class="col-num">II</span>
+      <div class="col-body">
+        <span class="col-roman">Collection</span>
+        <span class="col-titre">Immersion</span>
+        <p class="col-desc">Romans, polars, thrillers — pour adultes en quête d'ombre et de profondeur</p>
+        <span class="col-lien">Découvrir →</span>
+      </div>
+    </a>
+    <a href="contact.html" class="col-carte">
+      <span class="col-num">III</span>
+      <div class="col-body">
+        <span class="col-roman">Collection</span>
+        <span class="col-titre">Romans jeunesse</span>
+        <p class="col-desc">Aventures, courage et imaginaire — pour les lecteurs qui grandissent</p>
+        <span class="col-lien">Découvrir →</span>
+      </div>
+    </a>
+    <a href="contact.html" class="col-carte">
+      <span class="col-num">IV</span>
+      <div class="col-body">
+        <span class="col-roman">Collection</span>
+        <span class="col-titre">De la Terre à la Lune</span>
+        <p class="col-desc">Imaginaire & merveilleux — voyages au-delà du réel</p>
+        <span class="col-lien">Découvrir →</span>
+      </div>
+    </a>
+    <a href="contact.html" class="col-carte">
+      <span class="col-num">V</span>
+      <div class="col-body">
+        <span class="col-roman">Collection</span>
+        <span class="col-titre">Amis-Mots</span>
+        <p class="col-desc">Là où les animaux deviennent les héros discrets de nos vies</p>
+        <span class="col-lien">Découvrir →</span>
+      </div>
+    </a>
+    <a href="poesie.html" class="col-carte">
+      <span class="col-num">VI</span>
+      <div class="col-body">
+        <span class="col-roman">Collection</span>
+        <span class="col-titre">De la Lune à la Plume</span>
+        <p class="col-desc">Recueils poétiques — légers comme une plume, intenses comme la Lune</p>
+        <span class="col-lien">Découvrir →</span>
+      </div>
+    </a>
+  </div>
+
+  <!-- TITRES PUBLIÉS -->
+  <div class="s-label reveal">— Notre catalogue —</div>
+  <h2 class="s-h2 reveal">Titres publiés</h2>
+  <div class="sep reveal"></div>
+
+  <div class="titres-section">
+    <div class="titre-livre reveal">
+      <div class="livre-num">I</div>
+      <div class="livre-info">
+        <span class="coll">Collection Manifestes</span>
+        <h3>Le Seuil</h3>
+        <span class="auteur">Meichelus · 2026</span>
+        <p>Manifeste fondateur du Spectralisme cognitif — une phénoménologie du sensible, entre membrane et passage. Premier volume d'une trilogie.</p>
+      </div>
+    </div>
+    <div class="titre-livre reveal">
+      <div class="livre-num">II</div>
+      <div class="livre-info">
+        <span class="coll">Collection De la Lune à la Plume</span>
+        <h3>Lucide</h3>
+        <span class="auteur">Meichelus & Anouk Journo</span>
+        <p>Recueil poétique co-créé avec illustrations graphite et aquarelle de Meichelus. Précis comme un trait, intense comme la nuit.</p>
+      </div>
+    </div>
+    <div class="titre-livre reveal">
+      <div class="livre-num">III</div>
+      <div class="livre-info">
+        <span class="coll">Collection Amis-Mots</span>
+        <h3>Valrêve, le refuge des animaux libres</h3>
+        <span class="auteur">Anouk Journo</span>
+        <p>Roman jeunesse — un refuge imaginaire où les animaux libres trouvent paix et dignité. Deuxième tome de la série.</p>
+      </div>
+    </div>
+    <div class="titre-livre reveal">
+      <div class="livre-num">IV</div>
+      <div class="livre-info">
+        <span class="coll">Collection Amis-Mots</span>
+        <h3>Moustache, le roi des coussins</h3>
+        <span class="auteur">Anouk Journo</span>
+        <p>Roman jeunesse — les aventures d'un chat impérial et tendre, héros discret d'un quotidien plein de douceur.</p>
+      </div>
+    </div>
+    <div class="titre-livre reveal">
+      <div class="livre-num">V</div>
+      <div class="livre-info">
+        <span class="coll">Collection De la Terre à la Lune</span>
+        <h3>Le triangle des Bermudes</h3>
+        <span class="auteur">Anouk Journo</span>
+        <p>Roman jeunesse — une aventure palpitante au cœur du mystère le plus célèbre des océans.</p>
+      </div>
+    </div>
+    <div class="titre-livre reveal">
+      <div class="livre-num">VI</div>
+      <div class="livre-info">
+        <span class="coll">Collection De la Terre à la Lune</span>
+        <h3>À la recherche de Truffe ou les alexandrins magiques</h3>
+        <span class="auteur">Anouk Journo</span>
+        <p>Roman jeunesse — une quête poétique et rythmée, où les alexandrins deviennent une arme magique.</p>
+      </div>
+    </div>
+    <div class="titre-livre reveal">
+      <div class="livre-num">VII</div>
+      <div class="livre-info">
+        <span class="coll">Collection De la Terre à la Lune</span>
+        <h3>Strass et Stress</h3>
+        <span class="auteur">Anouk Journo</span>
+        <p>Roman jeunesse — dans les coulisses du spectacle, entre paillettes et pression, une héroïne apprend à trouver sa voix.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- MANUSCRITS -->
+  <div class="manuscrit-box reveal">
+    <h3>Une voix qui cherche son livre ?</h3>
+    <p>Vous portez un texte qui vous tient à cœur ? Confiez-le-nous. Notre comité de lecture étudiera votre manuscrit avec <em>attention et bienveillance</em>, et nous cheminerons ensemble vers la publication qui lui ressemble.</p>
+    <a href="contact.html" class="bor">Envoyer un manuscrit →</a>
+  </div>
+
+</div>
+
+<footer>
+  <p class="ara">✦ ✦ ✦</p>
+  <span class="fl2">L'AMagie · Éditions</span>
+  <ul class="flinks">
+    <li><a href="qui-sommes-nous.html">Qui sommes-nous ?</a></li>
+    <li><a href="edition.html">Édition</a></li>
+    <li><a href="poesie.html">Poésie</a></li>
+    <li><a href="boutique.html">Boutique</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="mentions-legales.html">Mentions légales</a></li>
+  </ul>
+  <div class="fsoc">
+    <a href="https://www.instagram.com/lamagie_arts_editions/" title="Instagram">📷</a>
+    <a href="http://www.facebook.com/share/1Rcqk3QQ4z/" title="Facebook">f</a>
+    <a href="https://meichelus-art.blogspot.com" title="Blog">✎</a>
+    <a href="https://www.youtube.com/@lamagieeditions" title="YouTube">▶</a>
+  </div>
+  <p>© 2026 L'AMagie · Maison d'édition indépendante · Siren 937629533</p>
+  <p style="margin-top:.2rem;">Félines-Minervois · Occitanie · France</p>
+</footer>
+
+<script>
+const cvs=document.getElementById('cosmos'),ctx=cvs.getContext('2d');
+function rsz(){cvs.width=innerWidth;cvs.height=innerHeight;}rsz();
+window.addEventListener('resize',rsz);
+const stars=[];
+for(let i=0;i<200;i++)stars.push({x:Math.random()*innerWidth,y:Math.random()*innerHeight,r:Math.random()*1.3+.1,a:Math.random()*.8+.1,ad:(Math.random()>.5?1:-1)*(.0015+Math.random()*.0025),v:Math.random()*.08+.01,c:Math.random()>.7?[232,213,154]:Math.random()>.5?[201,168,76]:[245,240,232]});
+class C{constructor(){this.reset(true);}reset(init=false){this.x=init?Math.random()*innerWidth:-100;this.y=init?Math.random()*innerHeight*.4:Math.random()*innerHeight*.3;this.len=90+Math.random()*160;this.vx=3+Math.random()*4;this.vy=.3+Math.random()*1.5;this.a=0;this.amax=.45+Math.random()*.35;this.st=init?'idle':'in';this.delay=init?Math.floor(Math.random()*350):0;this.t=0;this.w=.5+Math.random()*.6;}tick(){if(this.st==='idle'){if(++this.t>this.delay){this.st='in';this.t=0;}return;}this.x+=this.vx;this.y+=this.vy;if(this.st==='in'){this.a=Math.min(this.a+.02,this.amax);if(this.a>=this.amax)this.st='out';}else this.a=Math.max(this.a-.003,0);if(this.x>innerWidth+200)this.reset();}draw(){if(this.a<=0)return;const ang=Math.atan2(this.vy,this.vx),tx=this.x-Math.cos(ang)*this.len,ty=this.y-Math.sin(ang)*this.len,g=ctx.createLinearGradient(this.x,this.y,tx,ty);g.addColorStop(0,`rgba(245,240,232,${this.a})`);g.addColorStop(.3,`rgba(201,168,76,${this.a*.6})`);g.addColorStop(1,'rgba(201,168,76,0)');ctx.beginPath();ctx.moveTo(this.x,this.y);ctx.lineTo(tx,ty);ctx.strokeStyle=g;ctx.lineWidth=this.w;ctx.stroke();}}
+const comets=[new C(),new C(),new C()];
+let lastT=0;
+function draw(t){if(t-lastT<16){requestAnimationFrame(draw);return;}lastT=t;ctx.clearRect(0,0,cvs.width,cvs.height);const bg=ctx.createRadialGradient(cvs.width*.5,cvs.height*.35,0,cvs.width*.5,cvs.height*.35,Math.max(cvs.width,cvs.height));bg.addColorStop(0,'#111428');bg.addColorStop(.5,'#0d1020');bg.addColorStop(1,'#0a0c18');ctx.fillStyle=bg;ctx.fillRect(0,0,cvs.width,cvs.height);stars.forEach(s=>{s.a+=s.ad;if(s.a>.9||s.a<.05)s.ad*=-1;s.y+=s.v;if(s.y>cvs.height)s.y=0;ctx.beginPath();ctx.arc(s.x,s.y,s.r,0,Math.PI*2);ctx.fillStyle=`rgba(${s.c[0]},${s.c[1]},${s.c[2]},${s.a})`;ctx.fill();});comets.forEach(c=>{c.tick();c.draw();});requestAnimationFrame(draw);}
+requestAnimationFrame(draw);
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){if(e.target.classList.contains('grille-col')||e.target.classList.contains('titres-section')){[...e.target.children].forEach((c,i)=>setTimeout(()=>c.classList.add('vis'),i*80));}e.target.classList.add('vis');}});},{threshold:.06});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+<script src="assets/js/lamagie.js" defer></script>
+</body>
+</html>

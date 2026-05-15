@@ -72,8 +72,45 @@ figure img {
 
 </style>
 <link rel="stylesheet" href="assets/css/lamagie-refinement.css"/>
+
+<style>
+.lamagie-bandeau-contact{
+  position:relative;
+  z-index:10;
+  margin:42px auto 70px auto;
+  max-width:1180px;
+  text-align:center;
+  padding:0 1.4rem;
+}
+.lamagie-bandeau-contact img{
+  width:100%;
+  max-width:1180px;
+  display:block;
+  margin:0 auto;
+  border-radius:18px;
+  border:1px solid rgba(217,191,114,.22);
+  box-shadow:
+    0 0 34px rgba(217,191,114,.16),
+    0 30px 110px rgba(0,0,0,.58);
+}
+@media(max-width:760px){
+  .lamagie-bandeau-contact{
+    margin:32px auto 52px auto;
+    padding:0 1rem;
+  }
+  .lamagie-bandeau-contact img{
+    border-radius:12px;
+  }
+}
+</style>
+
 </head>
 <body>
+
+<section class="lamagie-bandeau-contact">
+  <img src="images/bandeau-lamagie-contact.png" alt="Éditions L'AMagie">
+</section>
+
 <canvas id="cosmos"></canvas><div class="neb"></div>
 <nav>
   <a href="index.html" class="logo"><span class="lp">L'</span><span class="la">A</span><span class="lm">M</span><span class="lg">agie</span></a>
@@ -102,7 +139,7 @@ figure img {
 </div>
 <div class="cnt"><div class="contact-grille reveal">
     <div class="contact-info"><span class="label">Adresse</span><p>5 rue du Puits</p><p>34210 F&eacute;lines-Minervois</p><p>Occitanie &middot; France</p></div>
-    <div class="contact-info"><span class="label">Coordonn&eacute;es</span><a href="mailto:lamagieeditions@gmail.com">lamagieeditions@gmail.com</a><a href="tel:0674402880">06 74 40 28 80</a><a href="https://www.l-amagie.art" target="_blank" style="color:var(--or);">www.l-amagie.art</a></div>
+    <div class="contact-info"><span class="label">Coordonn&eacute;es</span><a href="mailto:editions@l-amagie.art">editions@l-amagie.art</a><a href="tel:0674402880">06 74 40 28 80</a><a href="https://www.l-amagie.art" target="_blank" style="color:var(--or);">www.l-amagie.art</a></div>
   </div>
   <div class="box reveal">
     <form action="https://formspree.io/f/xvgzqkbd" method="POST">
@@ -284,5 +321,6 @@ document.querySelectorAll(".reveal").forEach(el=>obs.observe(el));
 document.querySelectorAll(".faq-item").forEach(item=>{item.addEventListener("click",()=>item.classList.toggle("open"));});
 </script>
 <script src="assets/js/lamagie.js" defer></script>
+
 </body>
 </html>

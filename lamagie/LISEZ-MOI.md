@@ -1,17 +1,24 @@
-# Correctif vignette contact
+# Correctifs v6.1 — 2 problèmes résolus
 
-## Problème
-Sur la page Contact, l'image du bandeau prenait toute la largeur de la page (non centrée, trop grande).
+## Problèmes corrigés
 
-## Solution
-Image placée dans une **vignette élégante** :
-- Largeur max 380px (au lieu de 100%)
-- Centrée horizontalement
-- Encadrement doré subtil + ombre portée + halo
-- Légende en italique dessous : « L'entrée des Éditions L'AMagie — 5 rue du Puits · Félines-Minervois »
+### 1. Sur smartphone : grand vide noir sous l'image d'accueil
+**Cause** : l'image d'accueil est presque carrée (1327×1185) mais l'écran smartphone est très haut (9:19) → l'image ne remplissait que la moitié supérieure, le reste était noir.
+**Solution** : sur mobile (≤760px), suppression du `min-height:100vh` sur `.portal-page` → l'image s'enchaîne directement avec le footer minimal sans rupture noire.
 
-## À faire
-Sur GitHub → `lamagieassociation-commits/lamagie-site` → dossier `Site-l-amagie.art/` :
-- Remplace `contact.html` par celui de ce mini-zip
-- Commit : « Vignette image contact »
-- Cloudflare redéploie en 1-2 min
+### 2. Sur la page contact : image en pleine largeur, pas centrée
+**Cause** : la classe `.vignette-cadre` n'avait pas de style dans cosmos.css → l'image s'étalait sur toute la largeur sans encadrement.
+**Solution** : ajout d'un style élégant `.vignette-cadre` avec :
+- Largeur limitée à 420 px
+- Centrage automatique
+- Cadre doré subtil
+- Halo doré et ombre portée
+- Filet doré en haut (touche chic)
+
+## Fichiers à remplacer sur GitHub
+
+Dans `Site-l-amagie.art/` :
+1. `assets/css/cosmos.css`
+2. `assets/css/index-cinematique-finale.css`
+
+**Commit** : *« v6.1 : fix vide mobile + vignette image contact »*

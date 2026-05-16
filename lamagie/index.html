@@ -4,22 +4,44 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>L'AMagie — Maison d’édition indépendante</title>
-<link rel="preload" as="image" href="images/accueil-lamagie-final.webp" type="image/webp"/>
-<meta name="description" content="L'AMagie — maison d'édition indépendante, poétique et artistique à Félines-Minervois."/>
+<meta name="description" content="L'AMagie — maison d'édition indépendante, poétique et artistic à Félines-Minervois."/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cormorant+Garamond:wght@300;400;600&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet"/>
 <link rel="stylesheet" href="assets/css/index-cinematique-finale.css"/>
+<style>
+  /* Amélioration visuelle du menu de secours pour lister proprement toute l'arborescence */
+  .fallback-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    padding: 20px;
+    background: rgba(5, 8, 22, 0.95);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    z-index: 10;
+  }
+  .fallback-nav a {
+    color: #d8dcef;
+    text-decoration: none;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem;
+    padding: 5px 10px;
+    transition: color 0.3s ease;
+  }
+  .fallback-nav a:hover {
+    color: #d8c28f;
+  }
+</style>
 </head>
 <body>
 <main class="portal-page">
   <div class="portal-wrap">
-    <picture>
-      <source srcset="images/accueil-lamagie-final.webp" type="image/webp"/>
-      <img class="portal-img" src="images/accueil-lamagie-final.jpg" alt="L'AMagie, maison d'édition indépendante — portail d'accueil" width="1327" height="1185"/>
-    </picture>
+    <img class="portal-img" src="images/accueil-lamagie-final.png" alt="L'AMagie, maison d'édition indépendante — portail d'accueil"/>
     <canvas id="cinemaCanvas" aria-hidden="true"></canvas>
 
+    <!-- Zones cliquables d'origine (Hotspots) -->
     <a class="hotspot h-maison" href="qui-sommes-nous.html" aria-label="La maison"></a>
     <a class="hotspot h-ateliers" href="ateliers.html" aria-label="Ateliers"></a>
     <a class="hotspot h-edition" href="edition.html" aria-label="Édition"></a>
@@ -31,14 +53,23 @@
   </div>
 </main>
 
-<nav class="fallback-nav" aria-label="Navigation de secours">
-  <a href="qui-sommes-nous.html">La maison</a>
-  <a href="ateliers.html">Ateliers</a>
-  <a href="edition.html">Édition</a>
-  <a href="anouk-journo.html">Anouk Journo</a>
-  <a href="peintures.html">Meichelus</a>
-  <a href="poesie.html">Poésie</a>
+<!-- Menu complet référençant chaque page de votre arborescence -->
+<nav class="fallback-nav" aria-label="Navigation complète du site">
+  <a href="qui-sommes-nous.html">La Maison (Qui sommes-nous)</a>
+  <a href="fonctionnement.html">Fonctionnement Association</a>
+  <a href="ateliers.html">Ateliers & Coaching</a>
+  <a href="mots-pour-maux.html">Écriture Thérapeutique</a>
+  <a href="mediation-animale.html">Médiation Animale</a>
+  <a href="amis-mots.html">Collection Amis-Mots</a>
+  <a href="edition.html">Édition (Manuscrits)</a>
+  <a href="poesie.html">Poésie au jour le jour</a>
+  <a href="peintures.html">Peintures & Dessins</a>
+  <a href="evenements.html">Événements & Presse</a>
+  <a href="boutique.html">Boutique</a>
+  <a href="faq.html">FAQ</a>
   <a href="contact.html">Contact</a>
+  <a href="youtube.html">Chaîne Youtube</a>
+  <a href="mentions-legales.html">Mentions Légales</a>
 </nav>
 
 <script src="assets/js/index-cinematique-finale.js"></script>

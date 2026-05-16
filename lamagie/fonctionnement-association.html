@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Rôle et fonctionnement de l'association — L’AMagie</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+background:#020816;
+color:#f4f1eb;
+font-family:'Inter',sans-serif;
+line-height:1.8;
+overflow-x:hidden;
+}
+
+/* ======================
+ETOILES
+====================== */
+
+body::before{
+
+content:'';
+
+position:fixed;
+inset:0;
+
+pointer-events:none;
+
+background-image:
+radial-gradient(white 1px, transparent 1px),
+radial-gradient(rgba(255,255,255,.6) 1px, transparent 1px);
+
+background-size:160px 160px, 240px 240px;
+
+opacity:.14;
+
+animation:stars 120s linear infinite;
+
+z-index:-1;
+}
+
+@keyframes stars{
+
+from{
+transform:translateY(0px);
+}
+
+to{
+transform:translateY(-180px);
+}
+
+}
+
+/* ======================
+HEADER
+====================== */
+
+header{
+
+position:fixed;
+top:0;
+left:0;
+
+width:100%;
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+padding:18px 40px;
+
+background:rgba(0,0,0,.45);
+
+backdrop-filter:blur(10px);
+
+border-bottom:1px solid rgba(255,255,255,.08);
+
+z-index:1000;
+}
+
+.logo{
+
+font-family:'Cormorant Garamond',serif;
+
+font-size:3rem;
+
+line-height:1;
+
+color:#efc57c;
+
+text-decoration:none;
+}
+
+nav{
+display:flex;
+gap:22px;
+flex-wrap:wrap;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+font-size:.95rem;
+transition:.3s;
+}
+
+nav a:hover{
+color:#efc57c;
+}
+
+/* ======================
+HERO
+====================== */
+
+.hero{
+
+min-height:72vh;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+text-align:center;
+
+padding:180px 30px 120px;
+
+background:
+linear-gradient(to bottom,
+rgba(0,0,0,.22),
+rgba(0,0,0,.68)),
+url('images/bandeau-lamagie.jpg')
+center center/cover no-repeat;
+
+position:relative;
+}
+
+.hero::after{
+
+content:'';
+
+position:absolute;
+inset:0;
+
+background:
+radial-gradient(circle at top,
+rgba(72,106,255,.12),
+transparent 35%),
+
+radial-gradient(circle at bottom,
+rgba(255,190,110,.06),
+transparent 25%);
+}
+
+.hero-content{
+
+position:relative;
+z-index:2;
+max-width:960px;
+}
+
+.hero h1{
+
+font-family:'Cormorant Garamond',serif;
+
+font-size:clamp(4rem,8vw,6.5rem);
+
+font-weight:400;
+
+line-height:1.05;
+
+margin-bottom:26px;
+
+color:#efc57c;
+
+text-shadow:0 0 40px rgba(239,197,124,.16);
+}
+
+.hero p{
+
+font-size:1.2rem;
+
+max-width:760px;
+
+margin:auto;
+
+color:#f5e7c7;
+}
+
+/* ======================
+CONTENU
+====================== */
+
+.content{
+
+max-width:1100px;
+
+margin:auto;
+
+padding:100px 40px;
+}
+
+.block{
+
+margin-bottom:90px;
+
+padding:50px;
+
+background:rgba(8,12,24,.82);
+
+border:1px solid rgba(239,197,124,.16);
+
+border-radius:28px;
+
+backdrop-filter:blur(4px);
+}
+
+.block h2{
+
+font-family:'Cormorant Garamond',serif;
+
+font-size:3rem;
+
+color:#efc57c;
+
+margin-bottom:26px;
+}
+
+.block p{
+
+font-size:1.08rem;
+
+margin-bottom:20px;
+
+color:#f4f1eb;
+}
+
+.highlight{
+
+color:#f4ddb2;
+font-weight:500;
+}
+
+/* ======================
+FOOTER
+====================== */
+
+footer{
+
+padding:60px 40px;
+
+border-top:1px solid rgba(255,255,255,.08);
+
+text-align:center;
+
+color:#c9c3b8;
+}
+
+footer a{
+
+color:#efc57c;
+
+text-decoration:none;
+}
+
+/* ======================
+MOBILE
+====================== */
+
+@media(max-width:900px){
+
+header{
+padding:18px 20px;
+flex-direction:column;
+gap:18px;
+}
+
+.hero{
+padding-top:240px;
+padding-bottom:100px;
+}
+
+.hero p{
+font-size:1rem;
+}
+
+.content{
+padding:60px 20px;
+}
+
+.block{
+padding:36px 24px;
+}
+
+.block h2{
+font-size:2.2rem;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<a class="logo" href="index.html">L’AMagie</a>
+
+<nav>
+
+<a href="index.html">Accueil</a>
+<a href="qui-sommes-nous.html">La maison</a>
+<a href="fonctionnement-association.html">Association</a>
+<a href="edition.html">Édition</a>
+<a href="poesie.html">Poésie</a>
+<a href="contact.html">Contact</a>
+
+</nav>
+
+</header>
+
+<section class="hero">
+
+<div class="hero-content">
+
+<h1>Rôle et fonctionnement de l’association</h1>
+
+<p>
+Une maison éditoriale indépendante, artistique et associative,
+où les livres, les images et les rencontres participent à une même recherche de sens et de lumière.
+</p>
+
+</div>
+
+</section>
+
+<section class="content">
+
+<div class="block">
+
+<h2>Une structure associative au service des livres</h2>
+
+<p>
+L’AMagie fonctionne sous la forme d’une association loi 1901.
+Cette structure permet de développer des projets éditoriaux, artistiques et culturels dans une logique de transmission, de création et d’indépendance.
+</p>
+
+<p>
+L’association soutient la publication d’ouvrages sensibles, singuliers et exigeants, tout en favorisant les échanges entre littérature, poésie, arts visuels et ateliers d’écriture.
+</p>
+
+</div>
+
+<div class="block">
+
+<h2>Un fonctionnement éditorial indépendant</h2>
+
+<p>
+L’AMagie sélectionne ses publications selon une ligne éditoriale fondée sur la qualité des textes, la cohérence des projets et la sensibilité artistique.
+</p>
+
+<p>
+La maison privilégie les ouvrages qui portent une voix, une atmosphère, une vision du monde ou une démarche humaine sincère.
+</p>
+
+<p>
+<span class="highlight">Chaque projet fait l’objet d’une lecture attentive.</span>
+Les publications ne répondent pas à une logique industrielle ou automatique.
+</p>
+
+</div>
+
+<div class="block">
+
+<h2>Rôle culturel et transmission</h2>
+
+<p>
+Au-delà de l’édition, l’association développe également des activités culturelles :
+ateliers d’écriture, rencontres, lectures, projets poétiques, créations artistiques et événements autour du livre.
+</p>
+
+<p>
+L’objectif est de faire vivre une maison éditoriale habitée,
+où les œuvres dialoguent avec les personnes, les territoires et les imaginaires.
+</p>
+
+</div>
+
+<div class="block">
+
+<h2>Transparence et positionnement</h2>
+
+<p>
+L’AMagie n’est ni une plateforme automatisée ni une structure de publication impersonnelle.
+</p>
+
+<p>
+La maison défend un positionnement indépendant et transparent.
+Elle ne fonctionne pas selon un modèle de “compte d’auteur” classique.
+</p>
+
+<p>
+Les projets retenus sont accompagnés dans une logique éditoriale réelle :
+lecture, échanges, cohérence graphique, identité du livre et mise en valeur des œuvres.
+</p>
+
+</div>
+
+<div class="block">
+
+<h2>Les valeurs de L’AMagie</h2>
+
+<p>
+L’AMagie souhaite préserver une certaine idée du livre :
+un espace de présence, de beauté, de réflexion et de transmission.
+</p>
+
+<p>
+La maison privilégie :
+</p>
+
+<p>
+— l’exigence littéraire,<br>
+— la sensibilité artistique,<br>
+— la liberté créative,<br>
+— l’attention portée aux auteurs,<br>
+— la cohérence des projets,<br>
+— et le respect du lecteur.
+</p>
+
+<p>
+Chaque ouvrage publié participe à cette même volonté :
+faire exister des livres qui gardent une part d’étoiles.
+</p>
+
+</div>
+
+</section>
+
+<footer>
+
+<p>
+L’AMagie — Maison d’édition indépendante<br>
+<a href="mailto:editions@l-amagie.art">editions@l-amagie.art</a>
+</p>
+
+</footer>
+
+</body>
+</html>

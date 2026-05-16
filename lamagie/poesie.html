@@ -1,220 +1,326 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Poésie — L'AMagie</title>
-<meta name="description" content="L'AMagie — Poésie — maison d'édition indépendante à Félines-Minervois.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/cosmos.css">
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>La poésie au jour le jour — L'AMagie</title>
+<meta name="description" content="Collection De la Lune à la Plume — recueils poétiques L'AMagie. Lucide, L'Âme en selle, Abécédaire des étoiles, Où est passé l'Ô d'Hautpoul…"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --or:#c9a84c;--orp:#e8d59a;--ors:#8a6d2f;--p:#f5f0e8;--e:#06080f;
+  /* Textes lisibles */
+  --txt-fort:rgba(245,240,232,1);
+  --txt-moyen:rgba(245,240,232,1);
+  --txt-leger:rgba(245,240,232,1);
+  --txt-discret:rgba(245,240,232,1);
+}
+html{scroll-behavior:smooth;}
+body{background:#0a0c18;color:var(--txt-fort);font-family:'Cormorant Garamond',serif;overflow-x:hidden;}
+#cosmos{position:fixed;inset:0;z-index:0;}
+.neb{position:fixed;inset:0;z-index:1;background:radial-gradient(ellipse 65% 55% at 25% 25%,rgba(22,12,42,.55) 0%,transparent 60%),radial-gradient(ellipse 45% 60% at 75% 75%,rgba(8,18,42,.35) 0%,transparent 55%);pointer-events:none;}
+
+/* NAV */
+nav{position:fixed;top:0;width:100%;z-index:200;padding:1.4rem 4rem;display:flex;align-items:center;justify-content:space-between;background:linear-gradient(180deg,rgba(6,8,15,.95),transparent);border-bottom:1px solid rgba(201,168,76,.12);backdrop-filter:blur(6px);}
+
+
+
+
+.logo{font-family:'Cinzel Decorative',serif;font-size:.82rem;letter-spacing:.2em;text-decoration:none;}
+.logo .lp{color:rgba(245,240,232,.7);font-style:normal;}
+.logo .la{color:#c9a84c;text-shadow:0 0 14px rgba(201,168,76,.55);font-size:1.05em;}
+.logo .lm{color:rgba(245,240,232,1);}
+.logo .lg{color:rgba(245,240,232,1);font-size:.88em;letter-spacing:.15em;}
+.h1-a{color:#c9a84c !important;text-shadow:0 0 40px rgba(201,168,76,.65),0 0 80px rgba(201,168,76,.25) !important;}
+.h1-m{color:rgba(245,240,232,1) !important;}
+.h1-rest{color:rgba(245,240,232,1) !important;}
+.nav-ul{display:flex;gap:2rem;list-style:none;}
+.nav-ul a{color:var(--txt-discret);text-decoration:none;font-size:.88rem;letter-spacing:.1em;transition:color .3s;}
+.nav-ul a:hover,.nav-ul a.active{color:var(--or);}
+.burger{display:none;background:none;border:none;color:var(--or);font-size:1.4rem;cursor:pointer;}
+.mob{display:none;position:fixed;inset:0;background:rgba(6,8,15,.98);z-index:300;flex-direction:column;align-items:center;justify-content:center;gap:2.2rem;}
+.mob.open{display:flex;}
+.mob a{font-family:'Cinzel Decorative',serif;color:var(--p);text-decoration:none;font-size:.9rem;letter-spacing:.25em;transition:color .3s;}
+.mob a:hover{color:var(--or);}
+.mc{position:absolute;top:1.5rem;right:2rem;background:none;border:none;color:var(--or);font-size:2rem;cursor:pointer;}
+
+/* PAGE HERO */
+.page-hero{position:relative;z-index:10;padding:10rem 2rem 4rem;text-align:center;}
+.breadcrumb{font-size:.6rem;letter-spacing:.3em;color:var(--txt-discret);margin-bottom:1.5rem;display:block;}
+.breadcrumb a{color:rgba(201,168,76,.55);text-decoration:none;transition:color .3s;}
+.breadcrumb a:hover{color:var(--or);}
+.page-title{font-family:'Cinzel Decorative',serif;font-size:clamp(1.8rem,4.5vw,3.8rem);color:var(--txt-fort);letter-spacing:.06em;font-weight:400;margin-bottom:1rem;opacity:0;animation:fu 1s ease forwards .2s;}
+@keyframes fu{from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:none;}}
+.page-sous{font-family:'IM Fell English',serif;font-style:italic;font-size:clamp(.95rem,2vw,1.25rem);color:var(--txt-moyen);max-width:650px;margin:0 auto;line-height:1.9;opacity:0;animation:fu 1s ease forwards .4s;}
+.sep-h{width:46px;height:1px;background:linear-gradient(90deg,transparent,var(--or),transparent);margin:1.5rem auto;opacity:0;animation:fu 1s ease forwards .5s;}
+
+/* CONTENU */
+.content{position:relative;z-index:10;max-width:900px;margin:0 auto;padding:1rem 2rem 6rem;}
+
+/* Section labels */
+.s-label{font-size:.6rem;letter-spacing:.42em;color:var(--or);text-transform:uppercase;display:block;text-align:center;margin-bottom:.8rem;}
+.s-h2{font-family:'Cinzel Decorative',serif;font-size:clamp(1.2rem,2.5vw,1.8rem);color:var(--txt-fort);letter-spacing:.06em;font-weight:400;text-align:center;}
+.sep{width:44px;height:1px;background:linear-gradient(90deg,transparent,var(--or),transparent);margin:1.2rem auto 3rem;}
+
+/* Manifeste poétique */
+.manifeste{border:1px solid rgba(201,168,76,.18);background:linear-gradient(145deg,rgba(16,10,28,.8),rgba(6,8,15,.88));padding:3rem 3.5rem;margin-bottom:4rem;position:relative;}
+.manifeste::before{content:'❋';position:absolute;top:-1rem;left:50%;transform:translateX(-50%);font-size:1.2rem;color:var(--or);background:#0a0c18;padding:0 .8rem;}
+.manifeste p{font-size:1.08rem;color:var(--txt-moyen);line-height:2.1;font-weight:300;margin-bottom:1.2rem;}
+.manifeste p:last-child{margin-bottom:0;}
+.manifeste em{color:var(--orp);font-style:italic;}
+
+/* Poème visuel */
+.poeme-visuel{text-align:center;margin:3rem 0;padding:2.5rem;border-left:1px solid rgba(201,168,76,.25);border-right:1px solid rgba(201,168,76,.25);}
+.poeme-visuel p{font-family:'IM Fell English',serif;font-style:italic;font-size:1.1rem;color:var(--txt-moyen);line-height:2.4;letter-spacing:.03em;}
+.poeme-visuel .indent-1{padding-left:2rem;}
+.poeme-visuel .indent-2{padding-left:4rem;}
+.poeme-visuel .indent-3{padding-left:6rem;}
+.poeme-visuel .indent-4{padding-left:8rem;}
+.poeme-visuel .indent-5{padding-left:10rem;}
+
+/* Grille recueils */
+.grille-recueils{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(201,168,76,.08);margin-bottom:4rem;}
+.recueil{background:linear-gradient(145deg,rgba(14,10,26,.88),rgba(6,8,15,.95));padding:2.2rem 1.8rem;text-decoration:none;display:flex;flex-direction:column;position:relative;overflow:hidden;transition:transform .3s,background .3s;}
+.recueil::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--or),transparent);transform:scaleX(0);transition:transform .4s;}
+.recueil:hover{transform:translateY(-4px);background:linear-gradient(145deg,rgba(22,14,38,.9),rgba(10,8,18,.98));}
+.recueil:hover::after{transform:scaleX(1);}
+.rec-icone{font-size:1.4rem;color:var(--or);margin-bottom:.9rem;display:block;}
+.rec-titre{font-family:'Cinzel Decorative',serif;font-size:.78rem;color:var(--txt-fort);letter-spacing:.08em;font-weight:400;margin-bottom:.5rem;line-height:1.4;}
+.rec-auteur{font-family:'IM Fell English',serif;font-style:italic;font-size:.78rem;color:var(--txt-leger);margin-bottom:.6rem;display:block;}
+.rec-desc{font-size:.9rem;color:var(--txt-leger);line-height:1.85;font-weight:300;flex:1;}
+
+/* Citation */
+.citation-box{border:1px solid rgba(201,168,76,.15);background:linear-gradient(145deg,rgba(18,10,30,.75),rgba(6,8,15,.88));padding:3rem;text-align:center;margin:4rem 0;}
+.citation-box blockquote{font-family:'IM Fell English',serif;font-style:italic;font-size:clamp(1.1rem,2.2vw,1.45rem);color:var(--txt-moyen);line-height:2.1;position:relative;}
+.citation-box blockquote::before{content:'"';font-family:'Cinzel Decorative',serif;font-size:4rem;color:rgba(201,168,76,.15);display:block;line-height:.6;margin-bottom:.6rem;}
+.citation-box cite{font-size:.62rem;letter-spacing:.25em;color:var(--or);text-transform:uppercase;display:block;margin-top:1.5rem;font-style:normal;}
+
+/* Appel à contribution */
+.appel{border:1px solid rgba(201,168,76,.2);background:linear-gradient(145deg,rgba(22,14,38,.75),rgba(6,8,15,.9));padding:3rem;text-align:center;position:relative;}
+.appel::before{content:'✦';position:absolute;top:-1rem;left:50%;transform:translateX(-50%);font-size:1.2rem;color:var(--or);background:#0a0c18;padding:0 .8rem;}
+.appel h3{font-family:'Cinzel Decorative',serif;font-size:1rem;color:var(--txt-fort);letter-spacing:.08em;font-weight:400;margin-bottom:1rem;}
+.appel p{font-size:1rem;color:var(--txt-moyen);line-height:1.9;font-weight:300;max-width:520px;margin:0 auto 2rem;}
+
+.bor{position:relative;font-family:'Cinzel Decorative',serif;font-size:.58rem;letter-spacing:.2em;color:var(--or);border:1px solid rgba(201,168,76,.4);padding:.85rem 2.2rem;text-decoration:none;overflow:hidden;transition:color .35s;display:inline-block;}
+.bor::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,var(--ors),var(--or));transform:translateX(-100%);transition:transform .35s;z-index:-1;}
+.bor:hover{color:var(--e);}
+.bor:hover::before{transform:none;}
+
+footer{position:relative;z-index:10;border-top:1px solid rgba(201,168,76,.1);padding:3rem 2rem;text-align:center;}
+.fl2{font-family:'Cinzel Decorative',serif;color:rgba(201,168,76,.4);font-size:.7rem;letter-spacing:.3em;display:block;margin-bottom:.5rem;}
+.flinks{display:flex;flex-wrap:wrap;justify-content:center;gap:1.5rem;margin:1.2rem 0;list-style:none;}
+.flinks a{font-size:.7rem;letter-spacing:.08em;color:var(--txt-discret);text-decoration:none;transition:color .3s;}
+.flinks a:hover{color:var(--or);}
+.fsoc{display:flex;justify-content:center;gap:1rem;margin:.8rem 0;}
+.fsoc a{width:30px;height:30px;border:1px solid rgba(201,168,76,.18);display:flex;align-items:center;justify-content:center;color:var(--txt-discret);text-decoration:none;font-size:.75rem;transition:border-color .3s,color .3s;}
+.fsoc a:hover{border-color:var(--or);color:var(--or);}
+footer p{font-size:.72rem;color:var(--txt-discret);font-style:italic;}
+.ara{color:rgba(201,168,76,.25);letter-spacing:.6em;}
+
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .8s,transform .8s;}
+.reveal.vis{opacity:1;transform:none;}
+
+@media(max-width:720px){.grille-recueils{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:480px){.grille-recueils{grid-template-columns:1fr;}.manifeste{padding:2rem;}.poeme-visuel .indent-3,.poeme-visuel .indent-4,.poeme-visuel .indent-5{padding-left:2rem;}}
+@media(max-width:580px){nav{padding:1.2rem 1.5rem;}.nav-ul{display:none;}.burger{display:block;}}
+::-webkit-scrollbar{width:2px;}::-webkit-scrollbar-track{background:#0a0c18;}::-webkit-scrollbar-thumb{background:rgba(201,168,76,.22);}
+
+/* Sécurité Cloudflare — affichage des médaillons */
+.f-cadre img,
+.portrait img,
+.medaillon img,
+.medallion img,
+.avatar img,
+.portrait-anouk img,
+.founder-photo img,
+.fondateur img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+
+/* Sécurité affichage portraits et articles */
+.f-cadre img,
+.portrait img,
+.medaillon img,
+.medallion img,
+.avatar img,
+.portrait-anouk img,
+.founder-photo img,
+.fondateur img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.article-presse img,
+figure img {
+  max-width: 100%;
+  height: auto;
+}
+
+</style>
+<link rel="stylesheet" href="assets/css/lamagie-refinement.css"/>
 </head>
 <body>
-
-<!-- DÉCOR COSMIQUE PERMANENT -->
-<div class="bg-image"></div>
-<div class="bg-veil-base"></div>
-<canvas class="cosmos-canvas" id="cosmosCanvas"></canvas>
-<div class="bg-vignette"></div>
-
-<a href="index.html" class="retour" aria-label="Retour à l'accueil">Accueil</a>
-
-<!-- VAISSEAUX -->
-<svg class="ship ship1" width="120" height="64" viewBox="0 0 120 64">
-  <defs>
-    <linearGradient id="trail1" x1="100%" x2="0%"><stop offset="0%" stop-color="#d9bf72" stop-opacity="0"/><stop offset="100%" stop-color="#d9bf72" stop-opacity=".85"/></linearGradient>
-    <radialGradient id="core1" cx="50%" cy="50%"><stop offset="0%" stop-color="#4dd1ff" stop-opacity="1"/><stop offset="40%" stop-color="#2c8dc7" stop-opacity=".7"/><stop offset="100%" stop-color="#0a3958" stop-opacity="0"/></radialGradient>
-  </defs>
-  <path d="M 0 32 L 50 32" stroke="url(#trail1)" stroke-width="1.8" fill="none"/>
-  <ellipse cx="80" cy="32" rx="32" ry="14" fill="#1a1408" stroke="#d9bf72" stroke-width="1"/>
-  <ellipse cx="80" cy="32" rx="29" ry="11" fill="none" stroke="#d9bf72" stroke-width=".4" opacity=".6"/>
-  <ellipse cx="80" cy="32" rx="18" ry="6" fill="url(#core1)"/>
-  <ellipse cx="80" cy="32" rx="9" ry="3" fill="#9ed1ff" opacity=".7"/>
-  <circle cx="80" cy="32" r="2" fill="#e8d59a"/>
-  <circle cx="112" cy="32" r="2" fill="#9ed1ff"/>
-  <circle cx="112" cy="32" r="3.5" fill="#9ed1ff" opacity=".25"/>
-</svg>
-<svg class="ship ship2" width="86" height="32" viewBox="0 0 86 32">
-  <defs><linearGradient id="trail2" x1="100%" x2="0%"><stop offset="0%" stop-color="#9ed1ff" stop-opacity="0"/><stop offset="100%" stop-color="#9ed1ff" stop-opacity=".75"/></linearGradient></defs>
-  <path d="M 0 16 L 50 16" stroke="url(#trail2)" stroke-width="1.6" fill="none"/>
-  <path d="M 62 4 L 82 28 L 42 28 Z" fill="#0d1622" stroke="#d9bf72" stroke-width=".7"/>
-  <ellipse cx="62" cy="20" rx="6" ry="3" fill="#9ed1ff" opacity=".4"/>
-  <ellipse cx="62" cy="20" rx="3" ry="2" fill="#cce9ff"/>
-</svg>
-<svg class="ship ship3" width="68" height="30" viewBox="0 0 68 30">
-  <defs><linearGradient id="trail3" x1="100%" x2="0%"><stop offset="0%" stop-color="#d9bf72" stop-opacity="0"/><stop offset="100%" stop-color="#d9bf72" stop-opacity=".65"/></linearGradient></defs>
-  <path d="M 0 15 L 32 15" stroke="url(#trail3)" stroke-width="1.3" fill="none"/>
-  <ellipse cx="46" cy="15" rx="18" ry="8" fill="#1a1408" stroke="#d9bf72" stroke-width=".7"/>
-  <ellipse cx="46" cy="15" rx="9" ry="2.5" fill="#9ed1ff" opacity=".5"/>
-  <circle cx="64" cy="15" r="1.6" fill="#e8d59a"/>
-</svg>
-<svg class="comet comet1" width="320" height="220" viewBox="0 0 320 220">
-  <defs><linearGradient id="cm1" x1="0%" x2="100%"><stop offset="0%" stop-color="#fff" stop-opacity="1"/><stop offset="40%" stop-color="#e8d59a" stop-opacity=".6"/><stop offset="100%" stop-color="#d9bf72" stop-opacity="0"/></linearGradient></defs>
-  <path d="M 0 0 L 260 170" stroke="url(#cm1)" stroke-width="2.2" fill="none"/>
-  <circle cx="0" cy="0" r="3.5" fill="#fff"/>
-  <circle cx="0" cy="0" r="7" fill="#fff" opacity=".4"/>
-</svg>
-<svg class="comet comet2" width="300" height="240" viewBox="0 0 300 240">
-  <defs><linearGradient id="cm2" x1="0%" x2="100%"><stop offset="0%" stop-color="#9ed1ff" stop-opacity=".95"/><stop offset="55%" stop-color="#7da3d4" stop-opacity=".45"/><stop offset="100%" stop-color="#7da3d4" stop-opacity="0"/></linearGradient></defs>
-  <path d="M 280 0 L 0 215" stroke="url(#cm2)" stroke-width="2" fill="none"/>
-  <circle cx="280" cy="0" r="3" fill="#cce9ff"/>
-  <circle cx="280" cy="0" r="6" fill="#cce9ff" opacity=".4"/>
-</svg>
-
-
+<canvas id="cosmos"></canvas>
+<div class="neb"></div>
 <nav>
-  <a href="index.html" class="logo">
-    <span><span class="lp">L'</span><span class="la">A</span><span class="lm">M</span><span class="lg">agie</span></span>
-    <span class="tagline">Maison d'édition</span>
-  </a>
+  <a href="index.html" class="logo"><span class="lp">L'</span><span class="la">A</span><span class="lm">M</span><span class="lg">agie</span></a>
   <ul class="nav-ul">
     <li><a href="qui-sommes-nous.html">La maison</a></li>
-    <li><a href="ateliers.html">Ateliers</a></li>
     <li><a href="edition.html">Édition</a></li>
-    <li><a href="anouk-journo.html">Anouk</a></li>
     <li><a href="peintures.html">Meichelus</a></li>
     <li><a href="poesie.html" class="active">Poésie</a></li>
     <li><a href="contact.html">Contact</a></li>
   </ul>
-  <button class="burger" aria-label="Ouvrir le menu">☰</button>
+  <button class="burger" onclick="document.getElementById('mm').classList.add('open')">☰</button>
 </nav>
 <div class="mob" id="mm">
-  <button class="mc" aria-label="Fermer le menu">✕</button>
-  <a href="qui-sommes-nous.html">La maison</a>
-  <a href="ateliers.html">Ateliers</a>
-  <a href="edition.html">Édition</a>
-  <a href="anouk-journo.html">Anouk Journo</a>
-  <a href="peintures.html">Meichelus</a>
-  <a href="poesie.html">Poésie</a>
-  <a href="boutique.html">Boutique</a>
-  <a href="contact.html">Contact</a>
+  <button class="mc" onclick="document.getElementById('mm').classList.remove('open')">✕</button>
+  <a href="qui-sommes-nous.html" onclick="document.getElementById('mm').classList.remove('open')">La maison</a>
+  <a href="edition.html" onclick="document.getElementById('mm').classList.remove('open')">Édition</a>
+  <a href="peintures.html" onclick="document.getElementById('mm').classList.remove('open')">Meichelus</a>
+  <a href="poesie.html" onclick="document.getElementById('mm').classList.remove('open')">Poésie</a>
+  <a href="contact.html" onclick="document.getElementById('mm').classList.remove('open')">Contact</a>
 </div>
 
-
-<section class="seuil">
-  <span class="seuil-lbl">La poésie au jour le jour</span>
-  <h1 class="seuil-titre">Le Journal <span class="gold">Poétique</span></h1>
-  <div class="seuil-sep"></div>
-  <p class="seuil-sous">Des poèmes <em>légers comme une plume,</em> intenses <em>comme la Lune.</em></p>
-</section>
-
-<section class="s" style="padding:3rem 0 6rem;">
-  <div class="contenu-wrap">
-    <div class="page-hero">
-<span class="breadcrumb"><a href="index.html">Accueil</a> · La poésie au jour le jour</span>
-<h1 class="page-title">La poésie au jour le jour</h1>
-<p class="page-sous">Des poèmes légers comme une plume, <em>intenses comme la Lune.</em></p>
-<div class="sep-h"></div>
+<div class="page-hero">
+  <span class="breadcrumb"><a href="index.html">Accueil</a> · La poésie au jour le jour</span>
+  <h1 class="page-title">La poésie au jour le jour</h1>
+  <p class="page-sous">Des poèmes légers comme une plume, <em>intenses comme la Lune.</em></p>
+  <div class="sep-h"></div>
 </div>
+
 <div class="content">
-<!-- Manifeste -->
-<div class="manifeste reveal">
-<p>La poésie, c'est… Mais qu'est-ce qui <em>« fait poésie »</em> ? Chaque être humain sensible, à l'écoute, déployant ses antennes multisensorielles, déclinera ses propositions de définition.</p>
-<p>Sauf que la poésie <em>ne se définit pas… Jamais.</em> Elle est confinée, figée, dans les quelques lignes du dictionnaire. Elle ne respire plus. Elle a besoin de sortir des pages, des cadres, tout en offrant à nos sens déployés une expérience unique, des griseries intenses ou douces, des baumes sous différentes formes, des aiguillons également — aiguillons pour inciter au décalage, à une certaine révolte, une quête de tranquillité profonde, une soif d'authenticité.</p>
-</div>
-<!-- Poème visuel -->
-<div class="poeme-visuel reveal">
-<p>La poésie, c'est…</p>
-<p class="indent-1"> </p>
-<p class="indent-1">Un instant</p>
-<p class="indent-2"> </p>
-<p class="indent-2">Un son</p>
-<p class="indent-3"> </p>
-<p class="indent-3">Un espace</p>
-<p class="indent-4"> </p>
-<p class="indent-4">Des ailes qui se défroissent</p>
-<p class="indent-5"> </p>
-<p class="indent-5">Des silences qui font des vagues</p>
-<p style="margin-top:1.5rem;color:rgba(217,191,114,.5);font-size:.85rem;">Et pour vous ? Pour toi ?</p>
-</div>
-<!-- Collection -->
-<span class="s-label reveal">— Collection De la Lune à la Plume —</span>
-<h2 class="s-h2 reveal">Recueils poétiques</h2>
-<div class="sep reveal"></div>
-<div class="manifeste reveal" style="margin-bottom:3rem;">
-<p>L'esprit sera celui du haïku, sans qu'il s'agisse forcément de haïku. Des poèmes <em>plutôt courts, denses, riches de sens</em>, ouvrant sur les portes du Monde. Végétaux, plantes, saisons, éléments naturels, animaux de toutes sortes, insectes, oiseaux… Nous les appelons dans nos poèmes. Nous les choyons. Nos peaux les aiment.</p>
-</div>
-<div class="grille-recueils reveal">
-<div class="recueil">
-<span class="rec-icone">❋</span>
-<span class="rec-titre">Lucide</span>
-<span class="rec-auteur">Meichelus &amp; Anouk Journo</span>
-<p class="rec-desc">Recueil co-créé avec illustrations graphite et aquarelle. Précis comme un trait, intense comme la nuit.</p>
-</div>
-<div class="recueil">
-<span class="rec-icone">🐎</span>
-<span class="rec-titre">L'Âme en selle / Riding Soul</span>
-<span class="rec-auteur">Anouk Journo</span>
-<p class="rec-desc">Poésie bilingue français-anglais — le galop, la liberté, l'âme qui chevauche au-delà des frontières.</p>
-</div>
-<div class="recueil">
-<span class="rec-icone">⭐</span>
-<span class="rec-titre">Abécédaire des étoiles</span>
-<span class="rec-auteur">Anouk Journo</span>
-<p class="rec-desc">De A à Z, un abécédaire céleste qui traverse les constellations et les mystères du ciel nocturne.</p>
-</div>
-<div class="recueil">
-<span class="rec-icone">🌊</span>
-<span class="rec-titre">Où est passé l'Ô d'Hautpoul</span>
-<span class="rec-auteur">Anouk Journo</span>
-<p class="rec-desc">Un voyage poétique dans le village cathare d'Hautpoul — pierres, légendes et souffles anciens.</p>
-</div>
-<div class="recueil">
-<span class="rec-icone">🌿</span>
-<span class="rec-titre">En quête d'Hozro</span>
-<span class="rec-auteur">Anouk Journo</span>
-<p class="rec-desc">Hozro — beauté, harmonie, équilibre en langue navajo. Une quête poétique de l'essentiel.</p>
-</div>
-<div class="recueil">
-<span class="rec-icone">✒</span>
-<span class="rec-titre">Mots en aparté</span>
-<span class="rec-auteur">Anouk Journo</span>
-<p class="rec-desc">Des mots qui se glissent à l'oreille, discrets et essentiels, comme un confidence entre deux silences.</p>
-</div>
-</div>
-<!-- Citation -->
-<div class="citation-box reveal">
-<blockquote>
+
+  <!-- Manifeste -->
+  <div class="manifeste reveal">
+    <p>La poésie, c'est… Mais qu'est-ce qui <em>« fait poésie »</em> ? Chaque être humain sensible, à l'écoute, déployant ses antennes multisensorielles, déclinera ses propositions de définition.</p>
+    <p>Sauf que la poésie <em>ne se définit pas… Jamais.</em> Elle est confinée, figée, dans les quelques lignes du dictionnaire. Elle ne respire plus. Elle a besoin de sortir des pages, des cadres, tout en offrant à nos sens déployés une expérience unique, des griseries intenses ou douces, des baumes sous différentes formes, des aiguillons également — aiguillons pour inciter au décalage, à une certaine révolte, une quête de tranquillité profonde, une soif d'authenticité.</p>
+  </div>
+
+  <!-- Poème visuel -->
+  <div class="poeme-visuel reveal">
+    <p>La poésie, c'est…</p>
+    <p class="indent-1">&nbsp;</p>
+    <p class="indent-1">Un instant</p>
+    <p class="indent-2">&nbsp;</p>
+    <p class="indent-2">Un son</p>
+    <p class="indent-3">&nbsp;</p>
+    <p class="indent-3">Un espace</p>
+    <p class="indent-4">&nbsp;</p>
+    <p class="indent-4">Des ailes qui se défroissent</p>
+    <p class="indent-5">&nbsp;</p>
+    <p class="indent-5">Des silences qui font des vagues</p>
+    <p style="margin-top:1.5rem;color:rgba(201,168,76,.5);font-size:.85rem;">Et pour vous ? Pour toi ?</p>
+  </div>
+
+  <!-- Collection -->
+  <span class="s-label reveal">— Collection De la Lune à la Plume —</span>
+  <h2 class="s-h2 reveal">Recueils poétiques</h2>
+  <div class="sep reveal"></div>
+
+  <div class="manifeste reveal" style="margin-bottom:3rem;">
+    <p>L'esprit sera celui du haïku, sans qu'il s'agisse forcément de haïku. Des poèmes <em>plutôt courts, denses, riches de sens</em>, ouvrant sur les portes du Monde. Végétaux, plantes, saisons, éléments naturels, animaux de toutes sortes, insectes, oiseaux… Nous les appelons dans nos poèmes. Nous les choyons. Nos peaux les aiment.</p>
+  </div>
+
+  <div class="grille-recueils reveal">
+    <div class="recueil">
+      <span class="rec-icone">❋</span>
+      <span class="rec-titre">Lucide</span>
+      <span class="rec-auteur">Meichelus & Anouk Journo</span>
+      <p class="rec-desc">Recueil co-créé avec illustrations graphite et aquarelle. Précis comme un trait, intense comme la nuit.</p>
+    </div>
+    <div class="recueil">
+      <span class="rec-icone">🐎</span>
+      <span class="rec-titre">L'Âme en selle / Riding Soul</span>
+      <span class="rec-auteur">Anouk Journo</span>
+      <p class="rec-desc">Poésie bilingue français-anglais — le galop, la liberté, l'âme qui chevauche au-delà des frontières.</p>
+    </div>
+    <div class="recueil">
+      <span class="rec-icone">⭐</span>
+      <span class="rec-titre">Abécédaire des étoiles</span>
+      <span class="rec-auteur">Anouk Journo</span>
+      <p class="rec-desc">De A à Z, un abécédaire céleste qui traverse les constellations et les mystères du ciel nocturne.</p>
+    </div>
+    <div class="recueil">
+      <span class="rec-icone">🌊</span>
+      <span class="rec-titre">Où est passé l'Ô d'Hautpoul</span>
+      <span class="rec-auteur">Anouk Journo</span>
+      <p class="rec-desc">Un voyage poétique dans le village cathare d'Hautpoul — pierres, légendes et souffles anciens.</p>
+    </div>
+    <div class="recueil">
+      <span class="rec-icone">🌿</span>
+      <span class="rec-titre">En quête d'Hozro</span>
+      <span class="rec-auteur">Anouk Journo</span>
+      <p class="rec-desc">Hozro — beauté, harmonie, équilibre en langue navajo. Une quête poétique de l'essentiel.</p>
+    </div>
+    <div class="recueil">
+      <span class="rec-icone">✒</span>
+      <span class="rec-titre">Mots en aparté</span>
+      <span class="rec-auteur">Anouk Journo</span>
+      <p class="rec-desc">Des mots qui se glissent à l'oreille, discrets et essentiels, comme un confidence entre deux silences.</p>
+    </div>
+  </div>
+
+  <!-- Citation -->
+  <div class="citation-box reveal">
+    <blockquote>
       Un nuage enveloppe tendrement le soleil.
     </blockquote>
-<cite>Anouk Journo · L'AMagie</cite>
-</div>
-<!-- Appel -->
-<div class="appel reveal">
-<h3>Vous écrivez de la poésie ?</h3>
-<p>L'AMagie accueille des voix poétiques nouvelles dans sa collection <em>De la Lune à la Plume</em>. Si vous portez un recueil, confiez-le-nous — nous l'écouterons avec attention.</p>
-<a class="bor" href="contact.html">Proposer un recueil →</a>
-</div>
-</div>
+    <cite>Anouk Journo · L'AMagie</cite>
   </div>
-</section>
 
+  <!-- Appel -->
+  <div class="appel reveal">
+    <h3>Vous écrivez de la poésie ?</h3>
+    <p>L'AMagie accueille des voix poétiques nouvelles dans sa collection <em>De la Lune à la Plume</em>. Si vous portez un recueil, confiez-le-nous — nous l'écouterons avec attention.</p>
+    <a href="contact.html" class="bor">Proposer un recueil →</a>
+  </div>
+
+</div>
 
 <footer>
   <p class="ara">✦ ✦ ✦</p>
   <span class="fl2">L'AMagie · Éditions</span>
   <ul class="flinks">
-    <li><a href="qui-sommes-nous.html">Qui sommes-nous</a></li>
+    <li><a href="qui-sommes-nous.html">Qui sommes-nous ?</a></li>
     <li><a href="edition.html">Édition</a></li>
+    <li><a href="poesie.html">Poésie</a></li>
     <li><a href="ateliers.html">Ateliers</a></li>
-    <li><a href="boutique.html">Boutique</a></li>
-    <li><a href="evenements.html">Événements</a></li>
-    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="contact.html">Contact</a></li>
     <li><a href="mentions-legales.html">Mentions légales</a></li>
   </ul>
   <div class="fsoc">
-    <a href="https://www.instagram.com/lamagie_arts_editions/" title="Instagram" target="_blank" rel="noopener">IG</a>
-    <a href="http://www.facebook.com/share/1Rcqk3QQ4z/" title="Facebook" target="_blank" rel="noopener">f</a>
-    <a href="https://meichelus-art.blogspot.com" title="Blog" target="_blank" rel="noopener">B</a>
-    <a href="https://www.youtube.com/@lamagieeditions" title="YouTube" target="_blank" rel="noopener">▶</a>
+    <a href="https://www.instagram.com/lamagie_arts_editions/" title="Instagram">📷</a>
+    <a href="http://www.facebook.com/share/1Rcqk3QQ4z/" title="Facebook">f</a>
+    <a href="https://meichelus-art.blogspot.com" title="Blog">✎</a>
+    <a href="https://www.youtube.com/@lamagieeditions" title="YouTube">▶</a>
   </div>
-  <p>© 2026 L'AMagie · Maison d'édition indépendante · Siren 937 629 533</p>
+  <p>© 2026 L'AMagie · Maison d'édition indépendante · Siren 937629533</p>
   <p style="margin-top:.2rem;">Félines-Minervois · Occitanie · France</p>
-  <p style="margin-top:.5rem;color:rgba(217,191,114,.5);"><a href="mailto:editions@l-amagie.art" style="color:inherit;text-decoration:none;letter-spacing:.08em;">editions@l-amagie.art</a></p>
 </footer>
 
-
-<script src="assets/js/cosmos.js"></script>
+<script>
+const cvs=document.getElementById('cosmos'),ctx=cvs.getContext('2d');
+function rsz(){cvs.width=innerWidth;cvs.height=innerHeight;}rsz();
+window.addEventListener('resize',rsz);
+const stars=[];
+for(let i=0;i<200;i++)stars.push({x:Math.random()*innerWidth,y:Math.random()*innerHeight,r:Math.random()*1.3+.1,a:Math.random()*.8+.1,ad:(Math.random()>.5?1:-1)*(.0015+Math.random()*.0025),v:Math.random()*.08+.01,c:Math.random()>.7?[232,213,154]:Math.random()>.5?[201,168,76]:[245,240,232]});
+class C{constructor(){this.reset(true);}reset(init=false){this.x=init?Math.random()*innerWidth:-100;this.y=init?Math.random()*innerHeight*.4:Math.random()*innerHeight*.3;this.len=90+Math.random()*160;this.vx=3+Math.random()*4;this.vy=.3+Math.random()*1.5;this.a=0;this.amax=.45+Math.random()*.35;this.st=init?'idle':'in';this.delay=init?Math.floor(Math.random()*350):0;this.t=0;this.w=.5+Math.random()*.6;}tick(){if(this.st==='idle'){if(++this.t>this.delay){this.st='in';this.t=0;}return;}this.x+=this.vx;this.y+=this.vy;if(this.st==='in'){this.a=Math.min(this.a+.02,this.amax);if(this.a>=this.amax)this.st='out';}else this.a=Math.max(this.a-.003,0);if(this.x>innerWidth+200)this.reset();}draw(){if(this.a<=0)return;const ang=Math.atan2(this.vy,this.vx),tx=this.x-Math.cos(ang)*this.len,ty=this.y-Math.sin(ang)*this.len,g=ctx.createLinearGradient(this.x,this.y,tx,ty);g.addColorStop(0,`rgba(245,240,232,${this.a})`);g.addColorStop(.3,`rgba(201,168,76,${this.a*.6})`);g.addColorStop(1,'rgba(201,168,76,0)');ctx.beginPath();ctx.moveTo(this.x,this.y);ctx.lineTo(tx,ty);ctx.strokeStyle=g;ctx.lineWidth=this.w;ctx.stroke();}}
+const comets=[new C(),new C(),new C()];
+let lastT=0;
+function draw(t){if(t-lastT<16){requestAnimationFrame(draw);return;}lastT=t;ctx.clearRect(0,0,cvs.width,cvs.height);const bg=ctx.createRadialGradient(cvs.width*.5,cvs.height*.35,0,cvs.width*.5,cvs.height*.35,Math.max(cvs.width,cvs.height));bg.addColorStop(0,'#111428');bg.addColorStop(.5,'#0d1020');bg.addColorStop(1,'#0a0c18');ctx.fillStyle=bg;ctx.fillRect(0,0,cvs.width,cvs.height);stars.forEach(s=>{s.a+=s.ad;if(s.a>.9||s.a<.05)s.ad*=-1;s.y+=s.v;if(s.y>cvs.height)s.y=0;ctx.beginPath();ctx.arc(s.x,s.y,s.r,0,Math.PI*2);ctx.fillStyle=`rgba(${s.c[0]},${s.c[1]},${s.c[2]},${s.a})`;ctx.fill();});comets.forEach(c=>{c.tick();c.draw();});requestAnimationFrame(draw);}
+requestAnimationFrame(draw);
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){if(e.target.classList.contains('grille-recueils'))[...e.target.children].forEach((c,i)=>setTimeout(()=>c.classList.add('vis'),i*80));e.target.classList.add('vis');}});},{threshold:.06});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+<script src="assets/js/lamagie.js" defer></script>
 </body>
 </html>

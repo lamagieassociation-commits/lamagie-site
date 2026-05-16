@@ -483,41 +483,6 @@ section.s a:not(.bor):not(.bg-btn):not(.bloc a):not(.fsoc a):hover,
 }
 .contact-info a:hover,.cnt a:hover{color:var(--orp);border-bottom-color:rgba(217,191,114,.6);}
 
-/* Vignette élégante pour les images de contenu (bandeaux, photos d'illustration) */
-.vignette-cadre{
-  max-width:420px;
-  margin:2rem auto;
-  border:1px solid rgba(217,191,114,.25);
-  border-radius:3px;
-  overflow:hidden;
-  box-shadow:
-    0 0 0 4px rgba(217,191,114,.05),
-    0 24px 60px rgba(0,0,0,.5),
-    0 0 36px rgba(217,191,114,.08);
-  background:rgba(2,4,10,.4);
-  position:relative;
-}
-.vignette-cadre::before{
-  content:'';position:absolute;top:0;left:0;right:0;height:1px;
-  background:linear-gradient(90deg,transparent,rgba(217,191,114,.6),transparent);
-  z-index:2;
-}
-.vignette-cadre img{
-  display:block;width:100%;height:auto;
-  margin:0;border:none;border-radius:0;
-}
-@media(max-width:580px){
-  .vignette-cadre{max-width:90%;}
-}
-
-/* Image de contenu standard (pas dans une vignette) — limitée et centrée */
-.contenu-wrap > img,
-section.s > .contenu-wrap img:not(.vignette-cadre img):not(.mcadre img){
-  max-width:420px;
-  margin:1.5rem auto;
-  display:block;
-}
-
 .two-col{display:grid;grid-template-columns:auto 1fr;gap:2rem;align-items:flex-start;margin-bottom:2rem;}
 
 .tarif-g{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem;margin:1.2rem 0;}

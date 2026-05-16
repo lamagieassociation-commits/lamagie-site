@@ -3,6 +3,8 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="google" content="notranslate"/>
+<meta http-equiv="Content-Language" content="fr"/>
 <title>L'AMagie — Maison d’édition indépendante</title>
 <meta name="description" content="L'AMagie — maison d'édition indépendante, poétique et artistic à Félines-Minervois."/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
@@ -34,12 +36,79 @@
     color: #d8c28f;
   }
 </style>
+
+<style id="hero-editorial-mask">
+/* === MASQUE DE LA PHRASE GRAVÉE DANS L'IMAGE === */
+/* Couvre exactement la zone "Le Seuil, la Membrane sensible..." */
+.hero-editorial-replacement{
+  position:absolute;
+  top:36.6%;
+  left:27%;
+  width:46%;
+  /* La hauteur s'auto-ajuste mais on assure un minimum pour masquer */
+  min-height:9.2%;
+  z-index:8;                       /* au-dessus de l'image + canvas, sous les hotspots */
+  background:#050816;              /* couleur de fond opaque demandée */
+  border:1px solid rgba(217,191,114,.28);
+  box-shadow:
+    inset 0 0 24px rgba(217,191,114,.05),
+    0 0 18px rgba(2,4,10,.55);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:1.1% 2%;
+  line-height:1.55;
+  text-align:center;
+  pointer-events:none;             /* ne bloque pas les hotspots éventuels */
+  font-family:'Cormorant Garamond', Georgia, serif;
+  font-style:italic;
+  font-weight:400;
+  letter-spacing:.02em;
+  color:#f0dc9b;                   /* or pâle, à l'unisson du visuel */
+  font-size:clamp(.78rem, 1.55vw, 1.18rem);
+  /* petit fade-in pour rester dans l'esprit cinématique */
+  opacity:0;
+  animation:heroMaskFadeIn 1.4s ease forwards .6s;
+}
+.hero-editorial-replacement p{
+  margin:0;
+}
+@keyframes heroMaskFadeIn{
+  from{opacity:0;transform:translateY(4px);}
+  to{opacity:1;transform:translateY(0);}
+}
+/* Ajustements responsive — la phrase tient sur des écrans étroits */
+@media(max-width:760px){
+  .hero-editorial-replacement{
+    top:36.4%;
+    left:18%;
+    width:64%;
+    min-height:10%;
+    font-size:clamp(.7rem, 2.4vw, 1rem);
+    padding:1.5% 3%;
+  }
+}
+@media(max-width:480px){
+  .hero-editorial-replacement{
+    top:36.2%;
+    left:12%;
+    width:76%;
+    min-height:11%;
+  }
+}
+</style>
 </head>
 <body>
 <main class="portal-page">
   <div class="portal-wrap">
     <img class="portal-img" src="images/accueil-lamagie-final.png" alt="L'AMagie, maison d'édition indépendante — portail d'accueil"/>
     <canvas id="cinemaCanvas" aria-hidden="true"></canvas>
+    <!-- MASQUE ÉDITORIAL : recouvre la phrase gravée dans l'image -->
+    <div class="hero-editorial-replacement" translate="no" aria-hidden="false">
+      <p>Maison d&rsquo;éditions indépendante au service de la poésie, de l&rsquo;Art et des voix singulières.</p>
+    </div>
+
+
 
     <!-- Zones cliquables d'origine (Hotspots) -->
     <a class="hotspot h-maison" href="qui-sommes-nous.html" aria-label="La maison"></a>

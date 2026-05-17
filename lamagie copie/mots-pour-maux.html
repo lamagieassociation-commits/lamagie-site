@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Mots pour Maux — Écriture thérapeutique — L'AMagie</title>
+<meta name="description" content="Séances individuelles d'écriture thérapeutique avec Anouk Journo. Premier entretien offert. En ligne, cadre bienveillant et confidentiel."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{--or:#c9a84c;--orp:#e8d59a;--ors:#8a6d2f;--p:#f5f0e8;--e:#0a0c18;}
+html{scroll-behavior:smooth;}
+body{background:var(--e);color:#f5f0e8;font-family:"Cormorant Garamond",serif;overflow-x:hidden;}
+#cosmos{position:fixed;inset:0;z-index:0;}
+.neb{position:fixed;inset:0;z-index:1;background:radial-gradient(ellipse 65% 55% at 25% 25%,rgba(22,12,42,.55) 0%,transparent 60%);pointer-events:none;}
+nav{position:fixed;top:0;width:100%;z-index:200;padding:1.4rem 3rem;display:flex;align-items:center;justify-content:space-between;background:linear-gradient(180deg,rgba(10,12,24,.97),transparent);border-bottom:1px solid rgba(201,168,76,.12);backdrop-filter:blur(6px);}
+.logo{font-family:"Cinzel Decorative",serif;font-size:.78rem;letter-spacing:.2em;text-decoration:none;white-space:nowrap;}
+.logo .lp{color:rgba(245,240,232,.7);}
+.logo .la{color:#c9a84c;text-shadow:0 0 10px rgba(201,168,76,.4);}
+.logo .lm{color:rgba(245,240,232,.95);}
+.logo .lg{color:rgba(245,240,232,.7);}
+.nav-ul{display:flex;gap:1.5rem;list-style:none;}
+.nav-ul a{color:rgba(245,240,232,.70);text-decoration:none;font-size:.82rem;letter-spacing:.08em;transition:color .3s;}
+.nav-ul a:hover,.nav-ul a.active{color:var(--or);}
+.burger{display:none;background:none;border:none;color:var(--or);font-size:1.4rem;cursor:pointer;}
+.mob{display:none;position:fixed;inset:0;background:rgba(6,8,15,.98);z-index:300;flex-direction:column;align-items:center;justify-content:center;gap:2rem;}
+.mob.open{display:flex;}
+.mob a{font-family:"Cinzel Decorative",serif;color:#f5f0e8;text-decoration:none;font-size:.85rem;letter-spacing:.2em;transition:color .3s;}
+.mob a:hover{color:var(--or);}
+.mc{position:absolute;top:1.5rem;right:2rem;background:none;border:none;color:var(--or);font-size:2rem;cursor:pointer;}
+.ph{position:relative;z-index:10;padding:9rem 2rem 3.5rem;text-align:center;}
+.bc{font-size:.58rem;letter-spacing:.28em;color:rgba(245,240,232,.70);margin-bottom:1.2rem;display:block;}
+.bc a{color:rgba(201,168,76,.55);text-decoration:none;transition:color .3s;}
+.bc a:hover{color:var(--or);}
+.pth{font-family:"Cinzel Decorative",serif;font-size:clamp(1.6rem,4vw,3.2rem);color:#f5f0e8;letter-spacing:.05em;font-weight:400;margin-bottom:.8rem;opacity:0;animation:fu 1s ease forwards .2s;}
+@keyframes fu{from{opacity:0;transform:translateY(25px);}to{opacity:1;transform:none;}}
+.ps{font-family:"IM Fell English",serif;font-style:italic;font-size:clamp(.9rem,1.8vw,1.15rem);color:#f5f0e8;max-width:600px;margin:0 auto;line-height:1.8;opacity:0;animation:fu 1s ease forwards .4s;}
+.seph{width:44px;height:1px;background:linear-gradient(90deg,transparent,var(--or),transparent);margin:1.2rem auto 0;opacity:0;animation:fu 1s ease forwards .5s;}
+.cnt{position:relative;z-index:10;max-width:880px;margin:0 auto;padding:1rem 2rem 6rem;}
+.sl{font-size:.58rem;letter-spacing:.4em;color:var(--or);text-transform:uppercase;display:block;text-align:center;margin-bottom:.7rem;}
+.sh2{font-family:"Cinzel Decorative",serif;font-size:clamp(1.1rem,2.3vw,1.7rem);color:#f5f0e8;letter-spacing:.06em;font-weight:400;text-align:center;}
+.sep{width:42px;height:1px;background:linear-gradient(90deg,transparent,var(--or),transparent);margin:1rem auto 2.5rem;}
+.box{border:1px solid rgba(201,168,76,.18);background:linear-gradient(145deg,rgba(16,10,28,.82),rgba(10,12,24,.92));padding:2.5rem 3rem;margin-bottom:2rem;position:relative;}
+.box::before{content:"✦";position:absolute;top:-.9rem;left:50%;transform:translateX(-50%);font-size:1.1rem;color:var(--or);background:var(--e);padding:0 .8rem;}
+.box h3{font-family:"Cinzel Decorative",serif;font-size:.88rem;color:#f5f0e8;letter-spacing:.1em;font-weight:400;margin-bottom:.9rem;}
+.box p{font-size:1rem;color:#f5f0e8;line-height:2;font-weight:300;margin-bottom:.8rem;}
+.box p:last-child{margin-bottom:0;}
+.box em{color:var(--orp);}
+.box strong{color:#f5f0e8;font-weight:600;}
+.box ul{list-style:none;margin:.5rem 0;}
+.box ul li{font-size:1rem;color:#f5f0e8;padding:.3rem 0 .3rem 1.2rem;position:relative;line-height:1.7;}
+.box ul li::before{content:"—";position:absolute;left:0;color:var(--or);font-size:.7rem;}
+.grille{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1px;background:rgba(201,168,76,.07);margin-bottom:3rem;}
+.carte{background:linear-gradient(145deg,rgba(14,10,26,.88),rgba(10,12,24,.96));padding:2.2rem 1.8rem;text-decoration:none;display:flex;flex-direction:column;position:relative;overflow:hidden;transition:background .3s,transform .25s;}
+.carte::after{content:"";position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--or),transparent);transform:scaleX(0);transition:transform .4s;}
+.carte:hover{transform:translateY(-3px);}
+.carte:hover::after{transform:scaleX(1);}
+.ci{font-size:1.5rem;color:var(--or);margin-bottom:.9rem;display:block;}
+.ct{font-family:"Cinzel Decorative",serif;font-size:.7rem;color:#f5f0e8;letter-spacing:.1em;font-weight:400;margin-bottom:.5rem;}
+.cd{font-size:.92rem;color:#f5f0e8;line-height:1.85;font-weight:300;flex:1;}
+.cl{display:inline-block;margin-top:1.2rem;font-size:.55rem;letter-spacing:.16em;color:var(--or);border-bottom:1px solid rgba(201,168,76,.25);padding-bottom:.1rem;transition:color .3s;font-family:"Cinzel Decorative",serif;text-decoration:none;}
+.cl:hover{color:var(--orp);}
+.citation{border-left:2px solid var(--or);padding:1.8rem 2.5rem;margin:2.5rem 0;background:linear-gradient(90deg,rgba(201,168,76,.05),transparent);}
+.citation p{font-family:"IM Fell English",serif;font-style:italic;font-size:1.1rem;color:#f5f0e8;line-height:2;}
+.citation cite{font-size:.6rem;letter-spacing:.2em;color:var(--or);text-transform:uppercase;display:block;margin-top:.8rem;font-style:normal;}
+.cta-box{border:1px solid rgba(201,168,76,.2);background:linear-gradient(145deg,rgba(22,14,38,.75),rgba(10,12,24,.9));padding:3rem;text-align:center;position:relative;}
+.cta-box::before{content:"✦";position:absolute;top:-.9rem;left:50%;transform:translateX(-50%);font-size:1.1rem;color:var(--or);background:var(--e);padding:0 .8rem;}
+.cta-box h3{font-family:"Cinzel Decorative",serif;font-size:.9rem;color:#f5f0e8;letter-spacing:.08em;font-weight:400;margin-bottom:1rem;}
+.cta-box p{font-size:1rem;color:#f5f0e8;line-height:1.9;font-weight:300;max-width:500px;margin:0 auto 2rem;}
+.tarif-grille{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(201,168,76,.08);margin:1.5rem 0;}
+.tarif{background:linear-gradient(145deg,rgba(14,10,26,.88),rgba(10,12,24,.95));padding:1.8rem;}
+.tarif .tnom{font-size:.58rem;letter-spacing:.28em;color:var(--or);text-transform:uppercase;display:block;margin-bottom:.6rem;}
+.tarif .tprix{font-family:"Cinzel Decorative",serif;font-size:1.3rem;color:#f5f0e8;letter-spacing:.04em;display:block;margin-bottom:.5rem;}
+.tarif .tdesc{font-size:.9rem;color:#f5f0e8;line-height:1.7;}
+.bor{position:relative;font-family:"Cinzel Decorative",serif;font-size:.56rem;letter-spacing:.18em;color:var(--or);border:1px solid rgba(201,168,76,.4);padding:.8rem 2rem;text-decoration:none;overflow:hidden;transition:color .35s;display:inline-block;}
+.bor::before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,var(--ors),var(--or));transform:translateX(-100%);transition:transform .35s;z-index:-1;}
+.bor:hover{color:var(--e);}
+.bor:hover::before{transform:none;}
+.bg{font-family:"IM Fell English",serif;font-style:italic;font-size:.95rem;color:rgba(245,240,232,.70);border:1px solid rgba(245,240,232,.12);padding:.75rem 1.6rem;text-decoration:none;transition:color .3s,border-color .3s;display:inline-block;margin-left:.8rem;}
+.bg:hover{color:var(--orp);border-color:rgba(201,168,76,.3);}
+.sous-liens{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.5rem;justify-content:center;}
+.sous-lien{font-size:.58rem;letter-spacing:.14em;color:rgba(245,240,232,.70);border:1px solid rgba(201,168,76,.18);padding:.4rem 1rem;text-decoration:none;font-family:"Cinzel Decorative",serif;transition:border-color .3s,color .3s;}
+.sous-lien:hover{border-color:var(--or);color:var(--or);}
+footer{position:relative;z-index:10;border-top:1px solid rgba(201,168,76,.1);padding:3rem 2rem;text-align:center;}
+.fl2{font-family:"Cinzel Decorative",serif;color:rgba(201,168,76,.4);font-size:.7rem;letter-spacing:.3em;display:block;margin-bottom:.5rem;}
+.flinks{display:flex;flex-wrap:wrap;justify-content:center;gap:1.5rem;margin:1.2rem 0;list-style:none;}
+.flinks a{font-size:.7rem;letter-spacing:.08em;color:rgba(245,240,232,.70);text-decoration:none;transition:color .3s;}
+.flinks a:hover{color:var(--or);}
+.fsoc{display:flex;justify-content:center;gap:1rem;margin:.8rem 0;}
+.fsoc a{width:30px;height:30px;border:1px solid rgba(201,168,76,.18);display:flex;align-items:center;justify-content:center;color:rgba(245,240,232,.70);text-decoration:none;font-size:.75rem;transition:border-color .3s,color .3s;}
+.fsoc a:hover{border-color:var(--or);color:var(--or);}
+footer p{font-size:.72rem;color:rgba(245,240,232,.70);font-style:italic;}
+.ara{color:rgba(201,168,76,.25);letter-spacing:.6em;}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .8s,transform .8s;}
+.reveal.vis{opacity:1;transform:none;}
+@media(max-width:700px){.tarif-grille{grid-template-columns:1fr;}.box{padding:1.8rem;}}
+@media(max-width:580px){nav{padding:1.2rem 1.5rem;}.nav-ul{display:none;}.burger{display:block;}}
+::-webkit-scrollbar{width:2px;}::-webkit-scrollbar-track{background:var(--e);}::-webkit-scrollbar-thumb{background:rgba(201,168,76,.22);}
+
+/* Sécurité Cloudflare — affichage des médaillons */
+.f-cadre img,
+.portrait img,
+.medaillon img,
+.medallion img,
+.avatar img,
+.portrait-anouk img,
+.founder-photo img,
+.fondateur img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+
+/* Sécurité affichage portraits et articles */
+.f-cadre img,
+.portrait img,
+.medaillon img,
+.medallion img,
+.avatar img,
+.portrait-anouk img,
+.founder-photo img,
+.fondateur img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.article-presse img,
+figure img {
+  max-width: 100%;
+  height: auto;
+}
+
+</style>
+<link rel="stylesheet" href="assets/css/lamagie-refinement.css"/>
+</head>
+<body>
+<canvas id="cosmos"></canvas>
+<div class="neb"></div>
+<nav>
+  <a href="index.html" class="logo"><span class="lp">L'</span><span class="la">A</span><span class="lm">M</span><span class="lg">agie</span></a>
+  <ul class="nav-ul">
+    <li><a href="qui-sommes-nous.html">La maison</a></li>
+    <li><a href="ateliers.html" class="active">Ateliers</a></li>
+    <li><a href="edition.html">Édition</a></li>
+    <li><a href="peintures.html">Meichelus</a></li>
+    <li><a href="poesie.html">Poésie</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <button class="burger" onclick="document.getElementById('mm').classList.add('open')">☰</button>
+</nav>
+<div class="mob" id="mm">
+  <button class="mc" onclick="document.getElementById('mm').classList.remove('open')">✕</button>
+  <a href="qui-sommes-nous.html" onclick="document.getElementById('mm').classList.remove('open')">La maison</a>
+  <a href="ateliers.html" onclick="document.getElementById('mm').classList.remove('open')">Ateliers</a>
+  <a href="edition.html" onclick="document.getElementById('mm').classList.remove('open')">Édition</a>
+  <a href="peintures.html" onclick="document.getElementById('mm').classList.remove('open')">Meichelus</a>
+  <a href="poesie.html" onclick="document.getElementById('mm').classList.remove('open')">Poésie</a>
+  <a href="contact.html" onclick="document.getElementById('mm').classList.remove('open')">Contact</a>
+</div>
+<div class="ph">
+  <span class="bc"><a href="index.html">Accueil</a> · <a href="ateliers.html">Ateliers</a> · Mots pour Maux</span>
+  <h1 class="pth">Mots pour Maux</h1>
+  <p class="ps">L'écriture thérapeutique — des mots qui apaisent, éclairent, transforment.</p>
+  <div class="seph"></div>
+</div>
+<div class="cnt">
+
+  <div class="box reveal">
+    <p>Écrivaine publiée et poète, <strong>Anouk Journo</strong> anime depuis vingt ans des ateliers d'écriture créative. Son parcours personnel — une longue thérapie, une expérience d'aidante — l'a convaincue de la force des mots pour apaiser et transformer.</p>
+    <p><em>Écrire, c'est partir en voyage intérieur. Chaque mot devient une clé, chaque phrase un passage. Les mots apaisent, éclairent, transforment.</em></p>
+    <p>Ils offrent un chemin vers soi, dans la douceur et la vérité.</p>
+  </div>
+
+  <span class="sl reveal">— Le cadre —</span>
+  <h2 class="sh2 reveal">Comment ça se passe ?</h2>
+  <div class="sep reveal"></div>
+
+  <div class="box reveal">
+    <p>Les séances se vivent <strong>en ligne</strong>, dans la simplicité d'une rencontre par Zoom ou une autre plateforme de votre choix.</p>
+    <p>Nous définissons ensemble leur durée — entre <strong>1h et 2h</strong> — selon votre rythme et vos besoins.</p>
+    <p>Tout se déroule dans un <em>cadre bienveillant et confidentiel</em>, garanti par une charte que nous signons ensemble.</p>
+    <p>Pour ouvrir ce chemin en douceur, <strong>le premier entretien est offert.</strong></p>
+  </div>
+
+  <span class="sl reveal">— Tarifs —</span>
+  <h2 class="sh2 reveal">Formules</h2>
+  <div class="sep reveal"></div>
+
+  <div class="tarif-grille reveal">
+    <div class="tarif">
+      <span class="tnom">Séance à l'unité</span>
+      <span class="tprix">50 €/heure</span>
+      <p class="tdesc">Durée adaptable entre 1h et 2h selon vos besoins. Règlement sécurisé en ligne.</p>
+    </div>
+    <div class="tarif">
+      <span class="tnom">Forfait 5 séances</span>
+      <span class="tprix">200 €</span>
+      <p class="tdesc">Un accompagnement suivi, à votre rythme. Économique et structurant.</p>
+    </div>
+  </div>
+
+  <div class="cta-box reveal">
+    <h3>Premier entretien offert</h3>
+    <p>Pour commencer en douceur, sans engagement. Échangeons sur votre parcours et vos besoins.</p>
+    <a href="https://l-amagie.sumupstore.com/article/seance-d-ecriture-therapeutique-1-h" target="_blank" class="bor">Réserver une séance →</a>
+    <a href="contact.html" class="bg">Nous écrire</a>
+  </div>
+
+  <div style="text-align:center;margin-top:2rem;">
+    <a href="ateliers.html" style="font-family:'IM Fell English',serif;font-style:italic;color:rgba(245,240,232,.60);text-decoration:none;font-size:.92rem;border-bottom:1px solid rgba(201,168,76,.2);padding-bottom:.1rem;">← Retour aux ateliers</a>
+  </div>
+
+</div>
+<footer>
+  <p class="ara">✦ ✦ ✦</p>
+  <span class="fl2">L'AMagie · Éditions</span>
+  <ul class="flinks">
+    <li><a href="qui-sommes-nous.html">Qui sommes-nous ?</a></li>
+    <li><a href="ateliers.html">Ateliers</a></li>
+    <li><a href="edition.html">Édition</a></li>
+    <li><a href="poesie.html">Poésie</a></li>
+    <li><a href="boutique.html">Boutique</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="mentions-legales.html">Mentions légales</a></li>
+  </ul>
+  <div class="fsoc">
+    <a href="https://www.instagram.com/lamagie_arts_editions/">📷</a>
+    <a href="http://www.facebook.com/share/1Rcqk3QQ4z/">f</a>
+    <a href="https://meichelus-art.blogspot.com">✎</a>
+    <a href="https://www.youtube.com/@lamagieeditions">▶</a>
+  </div>
+  <p>© 2026 L'AMagie · Maison d'édition indépendante · Siren 937629533</p>
+  <p style="margin-top:.2rem;">Félines-Minervois · Occitanie · France</p>
+</footer>
+<script>
+const cvs=document.getElementById("cosmos"),ctx=cvs.getContext("2d");
+function rsz(){cvs.width=innerWidth;cvs.height=innerHeight;}rsz();window.addEventListener("resize",rsz);
+const stars=[];for(let i=0;i<180;i++)stars.push({x:Math.random()*innerWidth,y:Math.random()*innerHeight,r:Math.random()*1.2+.1,a:Math.random()*.8+.1,ad:(Math.random()>.5?1:-1)*(.0015+Math.random()*.002),v:Math.random()*.07+.01,c:Math.random()>.7?[232,213,154]:Math.random()>.5?[201,168,76]:[245,240,232]});
+class C{constructor(){this.reset(true);}reset(init=false){this.x=init?Math.random()*innerWidth:-100;this.y=init?Math.random()*innerHeight*.4:Math.random()*innerHeight*.3;this.len=80+Math.random()*140;this.vx=3+Math.random()*3.5;this.vy=.3+Math.random()*1.3;this.a=0;this.amax=.4+Math.random()*.3;this.st=init?"idle":"in";this.delay=init?Math.floor(Math.random()*300):0;this.t=0;this.w=.4+Math.random()*.5;}tick(){if(this.st==="idle"){if(++this.t>this.delay){this.st="in";this.t=0;}return;}this.x+=this.vx;this.y+=this.vy;if(this.st==="in"){this.a=Math.min(this.a+.02,this.amax);if(this.a>=this.amax)this.st="out";}else this.a=Math.max(this.a-.003,0);if(this.x>innerWidth+200)this.reset();}draw(){if(this.a<=0)return;const ang=Math.atan2(this.vy,this.vx),tx=this.x-Math.cos(ang)*this.len,ty=this.y-Math.sin(ang)*this.len,g=ctx.createLinearGradient(this.x,this.y,tx,ty);g.addColorStop(0,`rgba(245,240,232,${this.a})`);g.addColorStop(.3,`rgba(201,168,76,${this.a*.6})`);g.addColorStop(1,"rgba(201,168,76,0)");ctx.beginPath();ctx.moveTo(this.x,this.y);ctx.lineTo(tx,ty);ctx.strokeStyle=g;ctx.lineWidth=this.w;ctx.stroke();}}
+const comets=[new C(),new C()];let lastT=0;
+function draw(t){if(t-lastT<16){requestAnimationFrame(draw);return;}lastT=t;ctx.clearRect(0,0,cvs.width,cvs.height);const bg=ctx.createRadialGradient(cvs.width*.5,cvs.height*.35,0,cvs.width*.5,cvs.height*.35,Math.max(cvs.width,cvs.height));bg.addColorStop(0,"#111428");bg.addColorStop(.5,"#0d1020");bg.addColorStop(1,"#0a0c18");ctx.fillStyle=bg;ctx.fillRect(0,0,cvs.width,cvs.height);stars.forEach(s=>{s.a+=s.ad;if(s.a>.9||s.a<.05)s.ad*=-1;s.y+=s.v;if(s.y>cvs.height)s.y=0;ctx.beginPath();ctx.arc(s.x,s.y,s.r,0,Math.PI*2);ctx.fillStyle=`rgba(${s.c[0]},${s.c[1]},${s.c[2]},${s.a})`;ctx.fill();});comets.forEach(c=>{c.tick();c.draw();});requestAnimationFrame(draw);}requestAnimationFrame(draw);
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){if(e.target.classList.contains("grille"))[...e.target.children].forEach((c,i)=>setTimeout(()=>c.classList.add("vis"),i*80));e.target.classList.add("vis");}});},{threshold:.06});
+document.querySelectorAll(".reveal").forEach(el=>obs.observe(el));
+</script>
+<script src="assets/js/lamagie.js" defer></script>
+</body>
+</html>

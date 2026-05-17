@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="google" content="notranslate"/>
+<meta http-equiv="Content-Language" content="fr"/>
+<title>L'AMagie — Maison d’édition indépendante</title>
+<meta name="description" content="L'AMagie — maison d'édition indépendante, poétique et artistic à Félines-Minervois."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cormorant+Garamond:wght@300;400;600&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="assets/css/index-cinematique-finale.css"/>
+<style>
+  /* Amélioration visuelle du menu de secours pour lister proprement toute l'arborescence */
+  .fallback-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    padding: 20px;
+    background: rgba(5, 8, 22, 0.95);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    z-index: 10;
+  }
+  .fallback-nav a {
+    color: #d8dcef;
+    text-decoration: none;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem;
+    padding: 5px 10px;
+    transition: color 0.3s ease;
+  }
+  .fallback-nav a:hover {
+    color: #d8c28f;
+  }
+</style>
+
+<style id="hero-editorial-mask">
+/* === MASQUE DE LA PHRASE GRAVÉE DANS L'IMAGE === */
+/* Couvre exactement la zone "Le Seuil, la Membrane sensible..." */
+.hero-editorial-replacement{
+  position:absolute;
+  top:36.6%;
+  left:27%;
+  width:46%;
+  /* La hauteur s'auto-ajuste mais on assure un minimum pour masquer */
+  min-height:9.2%;
+  z-index:8;                       /* au-dessus de l'image + canvas, sous les hotspots */
+  background:#050816;              /* couleur de fond opaque demandée */
+  border:1px solid rgba(217,191,114,.28);
+  box-shadow:
+    inset 0 0 24px rgba(217,191,114,.05),
+    0 0 18px rgba(2,4,10,.55);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:1.1% 2%;
+  line-height:1.55;
+  text-align:center;
+  pointer-events:none;             /* ne bloque pas les hotspots éventuels */
+  font-family:'Cormorant Garamond', Georgia, serif;
+  font-style:italic;
+  font-weight:400;
+  letter-spacing:.02em;
+  color:#f0dc9b;                   /* or pâle, à l'unisson du visuel */
+  font-size:clamp(.78rem, 1.55vw, 1.18rem);
+  /* petit fade-in pour rester dans l'esprit cinématique */
+  opacity:0;
+  animation:heroMaskFadeIn 1.4s ease forwards .6s;
+}
+.hero-editorial-replacement p{
+  margin:0;
+}
+@keyframes heroMaskFadeIn{
+  from{opacity:0;transform:translateY(4px);}
+  to{opacity:1;transform:translateY(0);}
+}
+/* Ajustements responsive — la phrase tient sur des écrans étroits */
+@media(max-width:760px){
+  .hero-editorial-replacement{
+    top:36.4%;
+    left:18%;
+    width:64%;
+    min-height:10%;
+    font-size:clamp(.7rem, 2.4vw, 1rem);
+    padding:1.5% 3%;
+  }
+}
+@media(max-width:480px){
+  .hero-editorial-replacement{
+    top:36.2%;
+    left:12%;
+    width:76%;
+    min-height:11%;
+  }
+}
+</style>
+
+<style id="hero-editorial-banner-styles">
+/* === BANDEAU ÉDITORIAL — masque absolu sur la plaque peinte ===
+   Posé à l'intérieur du cadre or peint en bas de accueil-lamagie-final.png,
+   il occulte la phrase peinte (« Maison d'édition indépendante au service
+   de la Poésie... ») tout en laissant visible le cadre décoratif. */
+.hero-editorial-banner{
+  position:absolute;
+  /* Coordonnées calibrées sur les hotspots de l'image
+     (h-contact à 71.85%, h-mail à 91.95% : la plaque peinte se situe
+     juste entre les deux). Le bloc reste à l'intérieur du cadre or peint. */
+  top:78.2%;
+  left:33%;
+  width:34%;
+  min-height:8.4%;
+  z-index:8;                       /* au-dessus image + canvas, sous hotspots */
+  background:#050816;              /* opaque : agit comme une gomme */
+  border:1px solid rgba(217,191,114,.28);
+  box-shadow:
+    inset 0 0 24px rgba(217,191,114,.05),
+    0 0 18px rgba(2,4,10,.5);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:1% 2.4%;
+  text-align:center;
+  pointer-events:none;             /* ne bloque pas les hotspots éventuels */
+  font-family:'Cormorant Garamond', Georgia, serif;
+  font-style:italic;
+  font-weight:400;
+  letter-spacing:.02em;
+  color:#f0dc9b;
+  font-size:clamp(.78rem, 1.55vw, 1.18rem);
+  line-height:1.55;
+  opacity:0;
+  animation:heroBannerFadeIn 1.4s ease forwards .65s;
+}
+.hero-editorial-banner p{margin:0;}
+@keyframes heroBannerFadeIn{
+  from{opacity:0;transform:translateY(4px);}
+  to  {opacity:1;transform:translateY(0);}
+}
+/* Responsive — la plaque suit le redimensionnement de l'image */
+@media(max-width:760px){
+  .hero-editorial-banner{
+    top:78.0%;
+    left:24%;
+    width:52%;
+    min-height:9.4%;
+    font-size:clamp(.7rem, 2.3vw, 1rem);
+    padding:1.4% 3%;
+  }
+}
+@media(max-width:480px){
+  .hero-editorial-banner{
+    top:77.8%;
+    left:17%;
+    width:66%;
+    min-height:10.6%;
+  }
+}
+</style>
+
+<style id="cosmos-fond-styles">
+/* === FOND COSMIQUE PLEIN ÉCRAN ===
+   Posé en fixed sur tout le viewport, derrière la page-portail.
+   Visible sur l'ensemble de l'écran (et notamment dans la zone
+   qui apparaissait en noir entre l'image et le menu sur mobile). */
+#cosmosFond{
+  position:fixed;
+  inset:0;
+  width:100%;
+  height:100%;
+  z-index:0;                       /* derrière .portal-wrap (z:1 ou +) */
+  pointer-events:none;
+  display:block;
+}
+
+/* Le body et la page portail laissent passer le cosmos */
+body{background:#050816;}          /* couleur de secours uniforme */
+.portal-page{
+  position:relative;
+  z-index:1;
+  background:transparent !important;  /* laisse le cosmos transparaître */
+}
+/* On garde le léger halo doré central, mais en couche superposée fine */
+.portal-page::before{
+  content:'';
+  position:fixed;
+  inset:0;
+  z-index:0;
+  pointer-events:none;
+  background:
+    radial-gradient(ellipse 80% 50% at 50% 30%,rgba(217,191,114,.07),transparent 65%);
+}
+
+/* === RESPONSIVE MOBILE — SUPPRESSION DU VIDE NOIR ===
+   Sur téléphone, on n'impose plus 100vh à .portal-page ; le wrap
+   prend juste la hauteur naturelle de l'image (ratio préservé,
+   hotspots calés au pixel près), puis la fallback-nav remonte
+   immédiatement en-dessous. Le cosmos anime tout l'arrière-plan. */
+@media(max-width:760px){
+  .portal-page{
+    min-height:auto;
+    padding-bottom:0;
+    align-items:flex-start;
+  }
+  .portal-wrap{
+    width:100vw;
+    box-shadow:none;
+    animation-duration:1.4s;        /* rideau un peu plus rapide */
+  }
+  .fallback-nav{
+    margin-top:0;
+    padding:14px 12px 20px;
+  }
+  .fallback-nav a{
+    font-size:.98rem;
+    padding:6px 10px;
+  }
+}
+
+/* iOS Safari : éviter les sauts de viewport liés à la barre d'adresse */
+@supports (height: 100dvh){
+  @media(max-width:760px){
+    #cosmosFond{height:100dvh;}
+  }
+}
+</style>
+</head>
+<body>
+<canvas id="cosmosFond" aria-hidden="true"></canvas>
+
+<main class="portal-page">
+  <div class="portal-wrap">
+    <img class="portal-img" src="images/accueil-lamagie-final.png" alt="L'AMagie, maison d'édition indépendante — portail d'accueil"/>
+    <canvas id="cinemaCanvas" aria-hidden="true"></canvas>
+    <!-- MASQUE ÉDITORIAL : recouvre la phrase gravée dans l'image -->
+    <div class="hero-editorial-replacement" translate="no" aria-hidden="false">
+      <p>Maison d&rsquo;éditions indépendante au service de la poésie, de l&rsquo;Art et des voix singulières.</p>
+    </div>
+
+
+
+    <!-- Zones cliquables d'origine (Hotspots) -->
+    <a class="hotspot h-maison" href="qui-sommes-nous.html" aria-label="La maison"></a>
+    <a class="hotspot h-ateliers" href="ateliers.html" aria-label="Ateliers"></a>
+    <a class="hotspot h-edition" href="edition.html" aria-label="Édition"></a>
+    <a class="hotspot h-anouk" href="anouk-journo.html" aria-label="Anouk Journo"></a>
+    <a class="hotspot h-meichelus" href="peintures.html" aria-label="Meichelus"></a>
+    <a class="hotspot h-poesie" href="poesie.html" aria-label="Poésie"></a>
+    <a class="hotspot h-contact" href="contact.html" aria-label="Contact"></a>
+    <a class="hotspot h-mail" href="mailto:editions@l-amagie.art" aria-label="Écrire à L'AMagie"></a>
+
+    <!-- BANDEAU ÉDITORIAL — masque absolu sur la plaque peinte du bas -->
+    <div class="hero-editorial-banner" translate="no" aria-hidden="false">
+      <p>Maison d&rsquo;édition indépendante, non conformiste et libre</p>
+    </div>
+  </div>
+</main>
+
+<!-- Menu complet référençant chaque page de votre arborescence -->
+
+<nav class="fallback-nav" aria-label="Navigation complète du site">
+  <a href="qui-sommes-nous.html">La Maison (Qui sommes-nous)</a>
+  <a href="fonctionnement.html">Fonctionnement Association</a>
+  <a href="ateliers.html">Ateliers & Coaching</a>
+  <a href="mots-pour-maux.html">Écriture Thérapeutique</a>
+  <a href="mediation-animale.html">Médiation Animale</a>
+  <a href="amis-mots.html">Collection Amis-Mots</a>
+  <a href="edition.html">Édition (Manuscrits)</a>
+  <a href="poesie.html">Poésie au jour le jour</a>
+  <a href="peintures.html">Peintures & Dessins</a>
+  <a href="evenements.html">Événements & Presse</a>
+  <a href="boutique.html">Boutique</a>
+  <a href="faq.html">FAQ</a>
+  <a href="contact.html">Contact</a>
+  <a href="youtube.html">Chaîne Youtube</a>
+  <a href="mentions-legales.html">Mentions Légales</a>
+</nav>
+
+<script>
+/* ============================================================
+   L'AMAGIE — Animation cosmique inline (autonome)
+   - #cosmosFond : étoiles + comètes plein écran (le ciel vivant)
+   - #cinemaCanvas : fines poussières dorées au-dessus du portail
+   Pas de dépendance externe. Respecte prefers-reduced-motion.
+   ============================================================ */
+(function(){
+  'use strict';
+
+  var reduit = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var dpr = Math.min(window.devicePixelRatio || 1, 2);
+
+  /* ---------- Canvas plein écran : ciel cosmique ---------- */
+  var fond = document.getElementById('cosmosFond');
+  if (fond){
+    var cf = fond.getContext('2d', { alpha:true });
+    var Wf=0, Hf=0;
+    function dimFond(){
+      Wf = window.innerWidth;
+      Hf = window.innerHeight;
+      fond.width  = Math.floor(Wf*dpr);
+      fond.height = Math.floor(Hf*dpr);
+      fond.style.width  = Wf+'px';
+      fond.style.height = Hf+'px';
+      cf.setTransform(dpr,0,0,dpr,0,0);
+    }
+    dimFond();
+    window.addEventListener('resize', dimFond, {passive:true});
+
+    // Étoiles
+    var nb = Wf < 600 ? 140 : (Wf < 1000 ? 210 : 290);
+    var stars = [];
+    for (var i=0; i<nb; i++){
+      var t = Math.random();
+      var col;
+      if (t > .9)      col = [255,240,200];
+      else if (t > .68) col = [217,191,114];
+      else if (t > .3)  col = [245,240,232];
+      else              col = [180,200,255];
+      var gros = t > .92;
+      stars.push({
+        x: Math.random()*Wf,
+        y: Math.random()*Hf,
+        r: gros ? (1.4 + Math.random()*1.1) : (Math.random()*.85 + .15),
+        a: Math.random()*.55 + .2,
+        da: (Math.random()>.5 ? 1:-1) * (.0009 + Math.random()*.0024),
+        v: Math.random()*.03 + .003,
+        c: col,
+        p: t > .88,
+        pT: Math.random()*Math.PI*2
+      });
+    }
+
+    // Comètes
+    function Comete(init){ this.reset(init); }
+    Comete.prototype.reset = function(init){
+      this.x = init ? Math.random()*Wf*1.4 - Wf*.25 : -240;
+      this.y = init ? Math.random()*Hf*.55 : Math.random()*Hf*.35;
+      this.long = 90 + Math.random()*180;
+      this.vx = 3 + Math.random()*4;
+      this.vy = .1 + Math.random()*1.4;
+      this.a = 0;
+      this.aMax = .5 + Math.random()*.35;
+      this.st = init ? 'attente' : 'apparait';
+      this.delai = init ? Math.floor(Math.random()*600) : Math.floor(Math.random()*400+200);
+      this.t = 0;
+      this.larg = .5 + Math.random()*.7;
+    };
+    Comete.prototype.tick = function(){
+      if (this.st === 'attente'){ if (++this.t > this.delai){ this.st='apparait'; this.t=0; } return; }
+      this.x += this.vx; this.y += this.vy;
+      if (this.st === 'apparait'){
+        this.a = Math.min(this.a + .02, this.aMax);
+        if (this.a >= this.aMax) this.st = 'disparait';
+      } else {
+        this.a = Math.max(this.a - .0036, 0);
+      }
+      if (this.x > Wf+280 || this.a <= 0) this.reset(false);
+    };
+    Comete.prototype.draw = function(){
+      if (this.a <= 0) return;
+      var ang = Math.atan2(this.vy, this.vx);
+      var tx = this.x - Math.cos(ang)*this.long;
+      var ty = this.y - Math.sin(ang)*this.long;
+      var g = cf.createLinearGradient(this.x, this.y, tx, ty);
+      g.addColorStop(0,    'rgba(255,248,220,' + this.a + ')');
+      g.addColorStop(.15,  'rgba(232,213,154,' + (this.a*.78) + ')');
+      g.addColorStop(.42,  'rgba(217,191,114,' + (this.a*.34) + ')');
+      g.addColorStop(1,    'rgba(217,191,114,0)');
+      cf.beginPath();
+      cf.moveTo(this.x, this.y);
+      cf.lineTo(tx, ty);
+      cf.strokeStyle = g;
+      cf.lineWidth = this.larg;
+      cf.stroke();
+      var hg = cf.createRadialGradient(this.x, this.y, 0, this.x, this.y, this.larg*4.5);
+      hg.addColorStop(0,  'rgba(255,248,220,' + (this.a*.9) + ')');
+      hg.addColorStop(.5, 'rgba(217,191,114,' + (this.a*.28) + ')');
+      hg.addColorStop(1,  'rgba(217,191,114,0)');
+      cf.fillStyle = hg;
+      cf.beginPath();
+      cf.arc(this.x, this.y, this.larg*3.5, 0, Math.PI*2);
+      cf.fill();
+    };
+    var nbC = Wf < 600 ? 2 : 3;
+    var cometes = [];
+    for (var c=0; c<nbC; c++) cometes.push(new Comete(true));
+
+    // Nébuleuses dérivantes
+    var nebs = [
+      { x:.22, y:.30, rx:.45, ry:.36, c:'rgba(78, 38, 118,', a:.055, vit:.00028 },
+      { x:.78, y:.66, rx:.40, ry:.42, c:'rgba(20, 60, 100,', a:.05,  vit:.00034 },
+      { x:.50, y:.18, rx:.55, ry:.25, c:'rgba(180,120, 40,', a:.022, vit:.00018 }
+    ];
+    var tNeb = 0, dernierF = 0;
+
+    function dessinerFond(t){
+      if (t - dernierF < 32){ requestAnimationFrame(dessinerFond); return; }
+      dernierF = t;
+      cf.clearRect(0,0,Wf,Hf);
+
+      // dégradé radial cosmique
+      var bg = cf.createRadialGradient(Wf*.46, Hf*.38, 0, Wf*.5, Hf*.5, Math.max(Wf,Hf)*.92);
+      bg.addColorStop(0,   '#141830');
+      bg.addColorStop(.35, '#0e1228');
+      bg.addColorStop(.72, '#0a0e1e');
+      bg.addColorStop(1,   '#070910');
+      cf.fillStyle = bg;
+      cf.fillRect(0,0,Wf,Hf);
+
+      // nébuleuses
+      tNeb += .001;
+      for (var n=0; n<nebs.length; n++){
+        var ne = nebs[n];
+        var cx = ne.x*Wf, cy = ne.y*Hf;
+        var deriv = Math.sin(tNeb*ne.vit*1000 + ne.x*10) * 14;
+        var ng = cf.createRadialGradient(cx+deriv, cy, 0, cx+deriv, cy, Math.max(Wf*ne.rx, Hf*ne.ry));
+        ng.addColorStop(0,   ne.c + (ne.a*.82) + ')');
+        ng.addColorStop(.4,  ne.c + (ne.a*.34) + ')');
+        ng.addColorStop(1,   ne.c + '0)');
+        cf.fillStyle = ng;
+        cf.beginPath();
+        cf.ellipse(cx+deriv, cy, Wf*ne.rx, Hf*ne.ry, 0, 0, Math.PI*2);
+        cf.fill();
+      }
+
+      // étoiles
+      if (!reduit){
+        for (var s=0; s<stars.length; s++){
+          var et = stars[s];
+          et.y += et.v;
+          if (et.y > Hf+2) et.y = -2;
+          if (et.p){ et.pT += .03; et.a = .4 + Math.sin(et.pT)*.45; }
+          else { et.a += et.da; if (et.a > .9 || et.a < .12) et.da *= -1; }
+          cf.beginPath();
+          cf.arc(et.x, et.y, et.r, 0, Math.PI*2);
+          cf.fillStyle = 'rgba('+et.c[0]+','+et.c[1]+','+et.c[2]+','+et.a+')';
+          cf.fill();
+          if (et.r > 1.1){
+            var hg2 = cf.createRadialGradient(et.x, et.y, 0, et.x, et.y, et.r*4.5);
+            hg2.addColorStop(0, 'rgba('+et.c[0]+','+et.c[1]+','+et.c[2]+','+(et.a*.26)+')');
+            hg2.addColorStop(1, 'rgba('+et.c[0]+','+et.c[1]+','+et.c[2]+',0)');
+            cf.fillStyle = hg2;
+            cf.beginPath();
+            cf.arc(et.x, et.y, et.r*4.5, 0, Math.PI*2);
+            cf.fill();
+          }
+        }
+        for (var k=0; k<cometes.length; k++){ cometes[k].tick(); cometes[k].draw(); }
+      } else {
+        // mode réduit : étoiles fixes
+        for (var sr=0; sr<stars.length; sr++){
+          var er = stars[sr];
+          cf.beginPath();
+          cf.arc(er.x, er.y, er.r, 0, Math.PI*2);
+          cf.fillStyle = 'rgba('+er.c[0]+','+er.c[1]+','+er.c[2]+','+Math.min(er.a,.6)+')';
+          cf.fill();
+        }
+      }
+      requestAnimationFrame(dessinerFond);
+    }
+    requestAnimationFrame(dessinerFond);
+  }
+
+  /* ---------- cinemaCanvas : fines poussières dorées au-dessus du portail ---------- */
+  var cine = document.getElementById('cinemaCanvas');
+  if (cine && !reduit){
+    var cc = cine.getContext('2d', { alpha:true });
+    var Wc=0, Hc=0;
+    function dimCine(){
+      var r = cine.getBoundingClientRect();
+      Wc = r.width;
+      Hc = r.height;
+      cine.width  = Math.floor(Wc*dpr);
+      cine.height = Math.floor(Hc*dpr);
+      cc.setTransform(dpr,0,0,dpr,0,0);
+    }
+    dimCine();
+    window.addEventListener('resize', dimCine, {passive:true});
+
+    var poussiere = [];
+    for (var p=0; p<60; p++){
+      poussiere.push({
+        x: Math.random()*Wc,
+        y: Math.random()*Hc,
+        r: Math.random()*.9 + .15,
+        a: Math.random()*.5 + .15,
+        vx: (Math.random()-.5)*.18,
+        vy: (Math.random()-.5)*.18 - .04,
+        ph: Math.random()*Math.PI*2
+      });
+    }
+    var dernierC = 0;
+    function dessinerCine(t){
+      if (t - dernierC < 40){ requestAnimationFrame(dessinerCine); return; }
+      dernierC = t;
+      cc.clearRect(0,0,Wc,Hc);
+      for (var i=0; i<poussiere.length; i++){
+        var d = poussiere[i];
+        d.x += d.vx; d.y += d.vy; d.ph += .025;
+        if (d.x < -4) d.x = Wc+4; if (d.x > Wc+4) d.x = -4;
+        if (d.y < -4) d.y = Hc+4; if (d.y > Hc+4) d.y = -4;
+        var aa = d.a * (.55 + Math.sin(d.ph)*.45);
+        cc.beginPath();
+        cc.arc(d.x, d.y, d.r, 0, Math.PI*2);
+        cc.fillStyle = 'rgba(240,220,155,' + aa + ')';
+        cc.fill();
+      }
+      requestAnimationFrame(dessinerCine);
+    }
+    requestAnimationFrame(dessinerCine);
+  }
+})();
+</script>
+</body>
+</html>

@@ -3,447 +3,737 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="google" content="notranslate"/>
+<meta http-equiv="Content-Language" content="fr"/>
 <title>Qui sommes-nous ? — L'AMagie</title>
-<meta name="description" content="L'AMagie — fondée par Anouk Journo et Michel Foucher. Maison d'édition indépendante, non conformiste et libre, Félines-Minervois, Occitanie."/>
+<meta name="description" content="L'AMagie — Anouk Journo et Meichelus, fondateurs d'une maison d'édition indépendante, non conformiste et libre, à Félines-Minervois."/>
+
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Pinyon+Script&display=swap" rel="stylesheet"/>
+
 <style>
-*{margin:0;padding:0;box-sizing:border-box;}
-:root{--or:#c9a84c;--orp:#e8d59a;--ors:#8a6d2f;--p:#f5f0e8;--e:#06080f;}
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Pinyon+Script&display=swap');
+
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html,body{overflow-x:hidden;}
 html{scroll-behavior:smooth;}
-body{background:#070910;color:var(--p);font-family:'Cormorant Garamond',serif;overflow-x:hidden;}
-#cosmos{position:fixed;inset:0;z-index:0;}
-.neb{position:fixed;inset:0;z-index:1;background:radial-gradient(ellipse 65% 55% at 25% 25%,rgba(22,12,42,.6) 0%,transparent 60%),radial-gradient(ellipse 45% 60% at 75% 75%,rgba(8,18,42,.4) 0%,transparent 55%);pointer-events:none;}
-nav{position:fixed;top:0;width:100%;z-index:200;padding:1.4rem 4rem;display:flex;align-items:center;justify-content:space-between;background:linear-gradient(180deg,rgba(6,8,15,.95),transparent);border-bottom:1px solid rgba(201,168,76,.1);backdrop-filter:blur(6px);}
 
+/* ============================================================
+   FOND PARCHEMIN — même ambiance que index.html
+   ============================================================ */
+body{
+  background-color:#ece2c8;
+  color:#3a3220;
+  font-family:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  font-weight:400;
+  font-size:17px;
+  line-height:1.75;
+  min-height:100vh;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  text-rendering:optimizeLegibility;
+  background-image:
+    radial-gradient(ellipse 55% 50% at 12% 18%,  rgba(146, 96, 38, 0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 55% at 88% 82%,  rgba(132, 88, 36, 0.11) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 45% at 78% 18%,  rgba(170,128, 60, 0.09) 0%, transparent 65%),
+    radial-gradient(ellipse 55% 50% at 22% 82%,  rgba(160,118, 50, 0.10) 0%, transparent 65%),
+    radial-gradient(ellipse 75% 60% at 50% 35%,  rgba(212,176,114, 0.10) 0%, transparent 75%),
+    linear-gradient(135deg, #f1ead4 0%, #e8dec0 50%, #ecdfc2 100%),
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='280' height='280'><filter id='g'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' seed='4'/><feColorMatrix values='0 0 0 0 0.42 0 0 0 0 0.32 0 0 0 0 0.17 0 0 0 0.22 0'/></filter><rect width='100%25' height='100%25' filter='url(%23g)'/></svg>");
+  background-attachment:fixed;
+  background-size:auto,auto,auto,auto,auto,auto,280px 280px;
+  background-repeat:no-repeat,no-repeat,no-repeat,no-repeat,no-repeat,no-repeat,repeat;
+}
+a{color:inherit;text-decoration:none;}
+img{max-width:100%;height:auto;display:block;}
+em{font-style:italic;color:#5a4a30;}
+::selection{background:rgba(184,154,92,.32);color:#3a3220;}
 
+/* ============================================================
+   HEADER CONSTANT — logo gauche, titre centre, retour droite
+   ============================================================ */
+.entete-site{
+  position:relative;
+  z-index:10;
+  display:grid;
+  grid-template-columns:1fr auto 1fr;
+  align-items:center;
+  gap:24px;
+  padding:24px 40px;
+  border-bottom:1px solid rgba(184,154,92,.28);
+  background:linear-gradient(180deg, rgba(241,234,212,.55), rgba(236,226,200,.25));
+  backdrop-filter:blur(1px);
+}
+.entete-logo{display:flex;align-items:center;justify-content:flex-start;}
+.entete-logo img{height:55px;width:auto;display:block;}
+.entete-titre{
+  text-align:center;
+  font-family:'Cormorant Garamond',Georgia,serif;
+  font-weight:500;
+  font-size:clamp(1.8rem,3.2vw,2.6rem);
+  color:#3a3220;
+  letter-spacing:.01em;
+  line-height:1;
+  text-decoration:none;
+}
+.entete-retour{display:flex;align-items:center;justify-content:flex-end;}
+.entete-retour a{
+  font-family:'Cormorant Garamond',Georgia,serif;
+  font-size:.92rem;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:#5a4a30;
+  padding:8px 18px;
+  border:1px solid rgba(184,154,92,.4);
+  border-radius:2px;
+  transition:color .3s, background-color .3s, border-color .3s;
+  white-space:nowrap;
+}
+.entete-retour a::before{content:'⌂ ';margin-right:.25em;letter-spacing:0;}
+.entete-retour a:hover{
+  color:#b89a5c;border-color:#b89a5c;
+  background:rgba(184,154,92,.07);
+}
+@media(max-width:760px){
+  .entete-site{grid-template-columns:auto 1fr auto;padding:14px 16px;gap:12px;}
+  .entete-logo img{height:42px;}
+  .entete-titre{font-size:1.4rem;}
+  .entete-retour a{font-size:.7rem;letter-spacing:.1em;padding:6px 10px;}
+  .entete-retour a::before{content:'⌂';margin-right:0;}
+  .entete-retour a span{display:none;}
+}
 
-
-.logo{font-family:'Cinzel Decorative',serif;font-size:.82rem;letter-spacing:.2em;text-decoration:none;white-space:nowrap;}
-.logo .lp{color:rgba(245,240,232,.7);font-style:normal;}
-.logo .la{color:#c9a84c;text-shadow:0 0 14px rgba(201,168,76,.55);font-size:1.05em;}
-.logo .lm{color:rgba(245,240,232,1);}
-.logo .lg{color:rgba(245,240,232,1);font-size:.88em;letter-spacing:.15em;}
-.h1-a{color:#c9a84c !important;text-shadow:0 0 40px rgba(201,168,76,.65),0 0 80px rgba(201,168,76,.25) !important;}
-.h1-m{color:rgba(245,240,232,1) !important;}
-.h1-rest{color:rgba(245,240,232,1) !important;}
-.nav-ul{display:flex;gap:2rem;list-style:none;}
-.nav-ul a{color:rgba(245,240,232,1);text-decoration:none;font-size:.88rem;letter-spacing:.1em;transition:color .3s;}
-.nav-ul a:hover,.nav-ul a.active{color:var(--or);}
-.burger{display:none;background:none;border:none;color:var(--or);font-size:1.4rem;cursor:pointer;}
-.mob{display:none;position:fixed;inset:0;background:rgba(6,8,15,.98);z-index:300;flex-direction:column;align-items:center;justify-content:center;gap:2.2rem;}
-.mob.open{display:flex;}
-.mob a{font-family:'Cinzel Decorative',serif;color:var(--p);text-decoration:none;font-size:.9rem;letter-spacing:.25em;transition:color .3s;}
-.mob a:hover{color:var(--or);}
-.mc{position:absolute;top:1.5rem;right:2rem;background:none;border:none;color:var(--or);font-size:2rem;cursor:pointer;}
-
-/* PAGE HERO */
-.page-hero{position:relative;z-index:10;padding:10rem 2rem 5rem;text-align:center;}
-.breadcrumb{font-size:.62rem;letter-spacing:.3em;color:rgba(245,240,232,.3);margin-bottom:1.5rem;display:block;}
-.breadcrumb a{color:rgba(201,168,76,.5);text-decoration:none;transition:color .3s;}
-.breadcrumb a:hover{color:var(--or);}
-.page-title{font-family:'Cinzel Decorative',serif;font-size:clamp(2rem,5vw,4rem);color:var(--p);letter-spacing:.06em;font-weight:400;margin-bottom:1rem;opacity:0;animation:fu 1s ease forwards .2s;}
-@keyframes fu{from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:none;}}
-.page-sous{font-family:'IM Fell English',serif;font-style:italic;font-size:clamp(1rem,2.2vw,1.3rem);color:rgba(245,240,232,1);opacity:0;animation:fu 1s ease forwards .4s;}
-.sep-h{width:46px;height:1px;background:linear-gradient(90deg,transparent,var(--or),transparent);margin:1.5rem auto;opacity:0;animation:fu 1s ease forwards .5s;}
-
-/* CONTENU */
-.content{position:relative;z-index:10;max-width:900px;margin:0 auto;padding:0 2rem 6rem;}
-
-/* Intro */
-.intro-box{border:1px solid rgba(201,168,76,.15);background:linear-gradient(145deg,rgba(18,12,32,.7),rgba(6,8,15,.88));padding:3rem;margin-bottom:4rem;position:relative;}
-.intro-box::before{content:'✦';position:absolute;top:-1rem;left:50%;transform:translateX(-50%);font-size:1.2rem;color:var(--or);background:#070910;padding:0 .8rem;}
-.intro-box p{font-size:1.1rem;color:rgba(245,240,232,1);line-height:2;font-weight:300;margin-bottom:1rem;}
-.intro-box p:last-child{margin-bottom:0;}
-.intro-box em{color:var(--orp);font-style:italic;}
-
-/* Fondateurs */
-.fondateurs-titre{font-family:'Cinzel Decorative',serif;font-size:.65rem;letter-spacing:.4em;color:var(--or);text-transform:uppercase;text-align:center;margin-bottom:3rem;display:block;}
-.fondateur{display:grid;grid-template-columns:220px 1fr;gap:3rem;align-items:start;margin-bottom:4rem;padding-bottom:4rem;border-bottom:1px solid rgba(201,168,76,.08);}
-.fondateur:last-of-type{border-bottom:none;margin-bottom:0;}
-.fondateur.inverse{grid-template-columns:1fr 220px;}
-.fondateur.inverse .f-visuel{order:2;}
-.fondateur.inverse .f-texte{order:1;}
-.f-visuel{position:relative;}
-.f-cadre{
-  width:200px;height:200px;
-  border-radius:50%;
-  border:2px solid rgba(201,168,76,.5);
-  background:linear-gradient(160deg,rgba(28,18,42,.8),rgba(8,6,18,.9));
-  display:flex;align-items:center;justify-content:center;
-  position:relative;overflow:hidden;
-  box-shadow:0 0 0 6px rgba(201,168,76,.08),0 0 0 12px rgba(201,168,76,.04),0 0 30px rgba(201,168,76,.15);
+/* ============================================================
+   HÉROS DE PAGE
+   ============================================================ */
+.heros-page{
+  text-align:center;
+  padding:64px 20px 28px;
+  max-width:760px;
   margin:0 auto;
+  position:relative;
 }
-.f-cadre::after{
-  content:'';position:absolute;inset:0;border-radius:50%;
-  box-shadow:inset 0 0 20px rgba(0,0,0,.4);pointer-events:none;z-index:2;
+.fil-ariane{
+  display:inline-block;
+  font-family:'Cormorant Garamond',serif;
+  font-size:.72rem;
+  letter-spacing:.32em;
+  text-transform:uppercase;
+  color:#5a4a30;
+  margin-bottom:24px;
 }
-.f-initial{font-family:'Cinzel Decorative',serif;font-size:4rem;color:rgba(201,168,76,.08);}
-.f-cadre img{width:100%;height:100%;object-fit:cover;display:block;}
-.f-texte .role{font-size:.6rem;letter-spacing:.35em;color:var(--or);text-transform:uppercase;display:block;margin-bottom:.8rem;}
-.f-texte h2{font-family:'Cinzel Decorative',serif;font-size:1.5rem;color:var(--p);letter-spacing:.08em;font-weight:400;margin-bottom:1.2rem;}
-.f-texte p{font-size:1rem;color:rgba(245,240,232,1);line-height:2;font-weight:300;margin-bottom:.8rem;}
-.f-texte p em{color:var(--orp);}
-.f-lien{display:inline-block;margin-top:1.2rem;font-family:'Cinzel Decorative',serif;font-size:.56rem;letter-spacing:.18em;color:var(--or);text-decoration:none;border:1px solid rgba(201,168,76,.35);padding:.6rem 1.5rem;transition:background .3s,color .3s;}
-.f-lien:hover{background:var(--or);color:var(--e);}
+.fil-ariane a{color:#8a6d2f;transition:color .3s;}
+.fil-ariane a:hover{color:#b89a5c;}
+.fil-ariane .sep{margin:0 .55em;color:rgba(184,154,92,.55);}
 
-/* Presse */
-.presse{border:1px solid rgba(201,168,76,.12);background:linear-gradient(145deg,rgba(14,10,26,.8),rgba(6,8,15,.9));padding:2.5rem;margin-top:4rem;text-align:center;}
-.presse-label{font-size:.6rem;letter-spacing:.4em;color:var(--or);text-transform:uppercase;display:block;margin-bottom:1rem;}
-.presse h3{font-family:'Cinzel Decorative',serif;font-size:.9rem;color:var(--p);letter-spacing:.08em;font-weight:400;margin-bottom:.8rem;}
-.presse p{font-size:.95rem;color:rgba(245,240,232,1);font-style:italic;line-height:1.8;}
-
-/* Lien suivant */
-.page-next{text-align:center;margin-top:3rem;}
-.page-next a{font-family:'IM Fell English',serif;font-style:italic;font-size:.95rem;color:rgba(245,240,232,1);text-decoration:none;letter-spacing:.08em;border-bottom:1px solid rgba(201,168,76,.2);padding-bottom:.15rem;transition:color .3s,border-color .3s;}
-.page-next a:hover{color:var(--or);border-color:var(--or);}
-
-.bor{position:relative;font-family:'Cinzel Decorative',serif;font-size:.58rem;letter-spacing:.2em;color:var(--or);border:1px solid rgba(201,168,76,.4);padding:.85rem 2.2rem;text-decoration:none;overflow:hidden;transition:color .35s;}
-.bor::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,var(--ors),var(--or));transform:translateX(-100%);transition:transform .35s;z-index:-1;}
-.bor:hover{color:var(--e);}
-.bor:hover::before{transform:none;}
-
-footer{position:relative;z-index:10;border-top:1px solid rgba(201,168,76,.08);padding:3rem 2rem;text-align:center;}
-.fl2{font-family:'Cinzel Decorative',serif;color:rgba(201,168,76,.35);font-size:.7rem;letter-spacing:.3em;display:block;margin-bottom:.5rem;}
-.flinks{display:flex;flex-wrap:wrap;justify-content:center;gap:1.5rem;margin:1.2rem 0;list-style:none;}
-.flinks a{font-size:.7rem;letter-spacing:.08em;color:rgba(245,240,232,1);text-decoration:none;transition:color .3s;}
-.flinks a:hover{color:var(--or);}
-.fsoc{display:flex;justify-content:center;gap:1rem;margin:.8rem 0;}
-.fsoc a{width:30px;height:30px;border:1px solid rgba(201,168,76,.16);display:flex;align-items:center;justify-content:center;color:rgba(245,240,232,1);text-decoration:none;font-size:.75rem;transition:border-color .3s,color .3s;}
-.fsoc a:hover{border-color:var(--or);color:var(--or);}
-footer p{font-size:.72rem;color:rgba(245,240,232,1);font-style:italic;}
-.ara{color:rgba(201,168,76,.2);letter-spacing:.6em;}
-.reveal{opacity:0;transform:translateY(20px);transition:opacity .8s,transform .8s;}
-.reveal.vis{opacity:1;transform:none;}
-@media(max-width:700px){.fondateur,.fondateur.inverse{grid-template-columns:1fr;}.fondateur.inverse .f-visuel,.fondateur.inverse .f-texte{order:unset;}.f-cadre{max-width:180px;margin:0 auto;}}
-@media(max-width:580px){nav{padding:1.2rem 1.5rem;}.nav-ul{display:none;}.burger{display:block;}}
-::-webkit-scrollbar{width:2px;}::-webkit-scrollbar-track{background:#070910;}::-webkit-scrollbar-thumb{background:rgba(201,168,76,.2);}
-
-/* Sécurité Cloudflare — affichage des médaillons */
-.f-cadre img,
-.portrait img,
-.medaillon img,
-.medallion img,
-.avatar img,
-.portrait-anouk img,
-.founder-photo img,
-.fondateur img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
+.titre-page{
+  font-family:'Cormorant Garamond',Georgia,serif;
+  font-weight:500;
+  font-size:clamp(2.4rem,5.5vw,3.8rem);
+  color:#3a3220;
+  letter-spacing:.005em;
+  line-height:1.1;
+  margin:0 0 14px;
+}
+.sous-titre-page{
+  font-family:'Pinyon Script','Cormorant Garamond',cursive;
+  font-size:clamp(1.4rem,2.5vw,1.95rem);
+  color:#7a6a48;
+  line-height:1.3;
+  margin:0;
 }
 
-
-/* Sécurité affichage portraits et articles */
-.f-cadre img,
-.portrait img,
-.medaillon img,
-.medallion img,
-.avatar img,
-.portrait-anouk img,
-.founder-photo img,
-.fondateur img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-.article-presse img,
-figure img {
-  max-width: 100%;
-  height: auto;
+/* Médaillon décoratif sous le titre (rappel du cercle central de l'accueil) */
+.medaillon-titre{
+  width:54px;height:54px;
+  margin:32px auto 0;
+  border-radius:50%;
+  border:1px solid rgba(184,154,92,.5);
+  box-shadow:
+    0 0 0 5px rgba(241,234,212,.6),
+    0 0 0 6px rgba(184,154,92,.18);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#b89a5c;
+  font-size:1.1rem;
 }
 
+/* ============================================================
+   ZONE DE CONTENU
+   ============================================================ */
+.contenu{
+  max-width:840px;
+  margin:0 auto;
+  padding:0 20px 64px;
+}
+
+/* Carte parchemin clair (avec équerres or aux coins) */
+.carte{
+  background:rgba(246,239,216,.62);
+  border:1px solid rgba(184,154,92,.22);
+  border-radius:2px;
+  padding:48px 56px;
+  margin:0 auto 36px;
+  position:relative;
+  box-shadow:
+    0 4px 14px rgba(90,74,48,.06),
+    0 1px 2px rgba(90,74,48,.04);
+}
+.carte::before,
+.carte::after{
+  content:'';
+  position:absolute;
+  width:18px;height:18px;
+  border:1px solid rgba(184,154,92,.45);
+  pointer-events:none;
+}
+.carte::before{top:6px;left:6px;border-right:0;border-bottom:0;}
+.carte::after{bottom:6px;right:6px;border-left:0;border-top:0;}
+.carte p{
+  font-size:1.08rem;
+  line-height:1.85;
+  color:#3a3220;
+  margin:0 0 1.1rem;
+}
+.carte p:last-child{margin-bottom:0;}
+@media(max-width:600px){
+  .carte{padding:32px 22px;}
+  .carte p{font-size:1rem;}
+}
+
+/* ============================================================
+   SECTION LES FONDATEURS — titre orné + médaillons
+   ============================================================ */
+.section-titre{
+  text-align:center;
+  margin:56px 0 36px;
+}
+.section-titre h2{
+  display:inline-block;
+  font-family:'Cormorant Garamond',serif;
+  font-weight:500;
+  font-size:clamp(1.4rem,2.8vw,1.85rem);
+  letter-spacing:.18em;
+  color:#3a3220;
+  text-transform:uppercase;
+  position:relative;
+  padding:0 30px;
+}
+.section-titre h2::before,
+.section-titre h2::after{
+  content:'❦';
+  position:absolute;
+  top:50%;transform:translateY(-50%);
+  color:#b89a5c;
+  font-size:.85em;
+}
+.section-titre h2::before{left:0;}
+.section-titre h2::after{right:0;}
+
+/* ============================================================
+   CARTES FONDATEURS — médaillon circulaire à gauche/droite
+   ============================================================ */
+.fondateur{
+  display:grid;
+  grid-template-columns:240px 1fr;
+  gap:48px;
+  align-items:center;
+  background:rgba(246,239,216,.5);
+  border:1px solid rgba(184,154,92,.2);
+  border-radius:2px;
+  padding:44px 48px;
+  margin:0 auto 32px;
+  position:relative;
+  box-shadow:0 4px 14px rgba(90,74,48,.06);
+}
+.fondateur::before,
+.fondateur::after{
+  content:'';
+  position:absolute;
+  width:18px;height:18px;
+  border:1px solid rgba(184,154,92,.4);
+  pointer-events:none;
+}
+.fondateur::before{top:6px;left:6px;border-right:0;border-bottom:0;}
+.fondateur::after{bottom:6px;right:6px;border-left:0;border-top:0;}
+.fondateur.inverse{grid-template-columns:1fr 240px;}
+.fondateur.inverse .portrait{order:2;}
+.fondateur.inverse .biographie{order:1;}
+
+.portrait{
+  width:220px;height:220px;
+  border-radius:50%;
+  overflow:hidden;
+  position:relative;
+  margin:0 auto;
+  border:1px solid rgba(184,154,92,.4);
+  box-shadow:
+    0 0 0 6px rgba(241,234,212,.75),
+    0 0 0 7px rgba(184,154,92,.28),
+    0 8px 22px rgba(90,74,48,.14);
+}
+.portrait img{
+  width:100%;height:100%;
+  object-fit:cover;
+  object-position:center top;
+  filter:saturate(.88) brightness(1.02);
+}
+
+.biographie .role{
+  display:block;
+  font-family:'Cormorant Garamond',serif;
+  font-size:.7rem;
+  letter-spacing:.28em;
+  text-transform:uppercase;
+  color:#8a6d2f;
+  margin-bottom:.7rem;
+}
+.biographie h3{
+  font-family:'Cormorant Garamond',serif;
+  font-weight:500;
+  font-size:1.7rem;
+  color:#3a3220;
+  letter-spacing:.02em;
+  margin:0 0 1rem;
+  line-height:1.15;
+}
+.biographie h3 .alias{
+  display:block;
+  font-family:'Pinyon Script','Cormorant Garamond',cursive;
+  font-size:.65em;
+  letter-spacing:.02em;
+  color:#7a6a48;
+  margin-top:.3rem;
+}
+.biographie p{
+  font-size:1.02rem;
+  line-height:1.8;
+  color:#3a3220;
+  margin:0 0 .85rem;
+}
+.lien-externe{
+  display:inline-block;
+  margin-top:.6rem;
+  font-family:'Cormorant Garamond',serif;
+  font-size:.95rem;
+  font-style:italic;
+  color:#8a6d2f;
+  border-bottom:1px solid rgba(184,154,92,.4);
+  padding-bottom:.1rem;
+  transition:color .3s, border-color .3s;
+}
+.lien-externe:hover{color:#b89a5c;border-color:#b89a5c;}
+
+@media(max-width:760px){
+  .fondateur,
+  .fondateur.inverse{
+    grid-template-columns:1fr;
+    gap:24px;
+    padding:36px 24px;
+    text-align:center;
+  }
+  .fondateur.inverse .portrait,
+  .fondateur.inverse .biographie{order:unset;}
+  .portrait{width:180px;height:180px;}
+  .biographie h3{font-size:1.45rem;}
+}
+
+/* ============================================================
+   ARTICLE DE PRESSE
+   ============================================================ */
+.presse{
+  max-width:760px;
+  margin:48px auto 0;
+  text-align:center;
+}
+.presse-cadre{
+  display:inline-block;
+  background:rgba(246,239,216,.7);
+  border:1px solid rgba(184,154,92,.32);
+  padding:30px 30px 24px;
+  position:relative;
+  box-shadow:
+    0 8px 24px rgba(90,74,48,.12),
+    inset 0 0 0 1px rgba(184,154,92,.06);
+  max-width:100%;
+}
+.presse-label{
+  position:absolute;
+  top:-12px;
+  left:50%;
+  transform:translateX(-50%);
+  font-family:'Cormorant Garamond',serif;
+  font-size:.65rem;
+  letter-spacing:.3em;
+  color:#8a6d2f;
+  text-transform:uppercase;
+  background:#ece2c8;
+  padding:4px 16px;
+  border:1px solid rgba(184,154,92,.32);
+  border-radius:99px;
+}
+.presse img{
+  display:block;
+  margin:0 auto;
+  max-width:100%;
+  height:auto;
+  border:1px solid rgba(184,154,92,.22);
+  box-shadow:0 6px 18px rgba(90,74,48,.18);
+}
+.presse-legende{
+  margin-top:1.2rem;
+  font-family:'Pinyon Script','Cormorant Garamond',cursive;
+  font-size:1.3rem;
+  color:#5a4a30;
+  line-height:1.4;
+}
+.presse-legende .source{
+  display:block;
+  margin-top:.45rem;
+  font-family:'Cormorant Garamond',serif;
+  font-size:.72rem;
+  letter-spacing:.24em;
+  color:#8a6d2f;
+  text-transform:uppercase;
+}
+
+/* ============================================================
+   NAVIGATION SUITE
+   ============================================================ */
+.navigation-suite{
+  margin:56px auto 0;
+  max-width:820px;
+  text-align:center;
+}
+.filet-ornement{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:14px;
+  margin:0 auto 28px;
+  max-width:240px;
+}
+.filet-ornement::before,
+.filet-ornement::after{
+  content:'';
+  flex:1;
+  height:1px;
+  background:linear-gradient(90deg,transparent,rgba(184,154,92,.6),transparent);
+}
+.filet-ornement .etoile{color:#b89a5c;font-size:.85rem;line-height:1;}
+
+.navigation-suite-grille{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:18px 32px;
+}
+.navigation-suite-grille a{
+  display:inline-block;
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;
+  font-size:1.05rem;
+  color:#3a3220;
+  padding:11px 24px;
+  border:1px solid rgba(184,154,92,.32);
+  background:rgba(246,239,216,.4);
+  border-radius:2px;
+  transition:color .3s, border-color .3s, background-color .3s, transform .3s;
+}
+.navigation-suite-grille a:hover{
+  color:#b89a5c;
+  border-color:#b89a5c;
+  background:rgba(246,239,216,.7);
+  transform:translateY(-2px);
+}
+.navigation-suite-grille a::after{content:' →';font-style:normal;}
+
+/* ============================================================
+   PLAN DU SITE (footer)
+   ============================================================ */
+
+/* === PLAN DU SITE — discret, élégant, utile au SEO === */
+.plan-site{
+  background:transparent;
+  padding:48px 24px 36px;
+  max-width:1080px;
+  margin:0 auto;
+  text-align:center;
+  font-family:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  color:#3a3220;
+  border-top:1px solid rgba(184,154,92,.25);
+}
+.plan-site .filet-haut{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:14px;
+  margin:0 auto 28px;
+  max-width:200px;
+}
+.plan-site .filet-haut::before,
+.plan-site .filet-haut::after{
+  content:'';
+  flex:1;
+  height:1px;
+  background:linear-gradient(90deg,transparent,rgba(184,154,92,.55),transparent);
+}
+.plan-site .filet-haut .etoile{color:#b89a5c;font-size:.85rem;line-height:1;}
+
+.plan-site-grille{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:24px 32px;
+  text-align:left;
+  margin-bottom:28px;
+}
+.plan-categorie h2{
+  font-family:'Cormorant Garamond',serif;
+  font-weight:500;
+  font-size:.72rem;
+  letter-spacing:.3em;
+  text-transform:uppercase;
+  color:#5a4a30;
+  margin:0 0 10px;
+  padding-bottom:6px;
+  border-bottom:1px solid rgba(184,154,92,.22);
+}
+.plan-categorie ul{
+  list-style:none;
+  margin:0;padding:0;
+}
+.plan-categorie li{
+  font-size:.92rem;
+  line-height:1.65;
+  margin-bottom:2px;
+}
+.plan-categorie a{
+  color:#3a3220;
+  text-decoration:none;
+  transition:color .3s;
+  border-bottom:1px solid transparent;
+}
+.plan-categorie a:hover{
+  color:#b89a5c;
+  border-bottom-color:rgba(184,154,92,.4);
+}
+.plan-categorie .label{
+  color:#7a6a48;
+  font-style:italic;
+  font-size:.88rem;
+}
+
+.plan-mentions{
+  font-family:'Cormorant Garamond',serif;
+  font-size:.78rem;
+  letter-spacing:.16em;
+  color:#7a6a48;
+  text-transform:uppercase;
+  margin:0;
+}
+.plan-mentions .etoile{color:#b89a5c;margin:0 .6em;}
+
+@media(max-width:560px){
+  .plan-site{padding:32px 18px 24px;}
+  .plan-site-grille{gap:18px;text-align:center;}
+  .plan-categorie h2{text-align:center;}
+  .plan-mentions{font-size:.7rem;letter-spacing:.12em;}
+}
+
+
+/* ============================================================
+   ANIMATION RÉVÉLATION SCROLL
+   ============================================================ */
+.reveler{
+  opacity:0;
+  transform:translateY(18px);
+  transition:opacity .9s ease, transform .9s ease;
+}
+.reveler.visible{opacity:1;transform:translateY(0);}
+@media(prefers-reduced-motion: reduce){
+  .reveler{opacity:1;transform:none;transition:none;}
+}
 </style>
-<link rel="stylesheet" href="assets/css/lamagie-refinement.css"/>
 </head>
+
 <body>
-<canvas id="cosmos"></canvas>
-<div class="neb"></div>
-<nav>
-  <a href="index.html" class="logo"><span class="lp">L'</span><span class="la">A</span><span class="lm">M</span><span class="lg">agie</span></a>
-  <ul class="nav-ul">
-    <li><a href="qui-sommes-nous.html" class="active">La maison</a></li>
-    <li><a href="edition.html">Édition</a></li>
-    <li><a href="peintures.html">Meichelus</a></li>
-    <li><a href="poesie.html">Poésie</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
-  <button class="burger" onclick="document.getElementById('mm').classList.add('open')">☰</button>
-</nav>
-<div class="mob" id="mm">
-  <button class="mc" onclick="document.getElementById('mm').classList.remove('open')">✕</button>
-  <a href="qui-sommes-nous.html" onclick="document.getElementById('mm').classList.remove('open')">La maison</a>
-  <a href="edition.html" onclick="document.getElementById('mm').classList.remove('open')">Édition</a>
-  <a href="peintures.html" onclick="document.getElementById('mm').classList.remove('open')">Meichelus</a>
-  <a href="poesie.html" onclick="document.getElementById('mm').classList.remove('open')">Poésie</a>
-  <a href="contact.html" onclick="document.getElementById('mm').classList.remove('open')">Contact</a>
-</div>
 
-<div class="page-hero">
-  <span class="breadcrumb"><a href="index.html">Accueil</a> · Qui sommes-nous ?</span>
-  <h1 class="page-title">Qui sommes-nous ?</h1>
-  <p class="page-sous">L'esprit de la maison</p>
-  <div class="sep-h"></div>
-</div>
+  <!-- HEADER CONSTANT — réutilisable sur toutes les pages -->
+  <header class="entete-site" role="banner">
+    <div class="entete-logo">
+      <a href="index.html" aria-label="Retour à l'accueil de L'AMagie">
+        <img src="images/logo-amagie.png" alt="Monogramme L'AMagie" onerror="this.style.display='none'"/>
+      </a>
+    </div>
+    <a href="index.html" class="entete-titre" aria-label="L'AMagie — Accueil">L&rsquo;AMagie</a>
+    <div class="entete-retour">
+      <a href="index.html"><span>Retour à l&rsquo;accueil</span></a>
+    </div>
+  </header>
 
-<div class="content">
-  <div class="intro-box reveal">
-    <p>L'AMagie a été créée en 2024 par <em>Anouk Journo</em> et <em>Michel Foucher</em>. Elle propose des ateliers et séances individuelles d'écriture, de médiation animale, et porte les éditions L'AMagie.</p>
-    <p>Notre ambition est simple : offrir une alternative <em>solidaire et accessible</em> à celles et ceux qui souhaitent publier leurs œuvres. Ni contraintes de l'édition traditionnelle, ni détour par l'édition à compte d'auteur — nous privilégions une relation <em>bienveillante, humaine et respectueuse</em> de la création.</p>
-    <p>Nous croyons à cet élan fragile qui fait naître une œuvre : le moment où la plume s'anime, où l'espoir surgit, renaît, vibre… et se partage.</p>
-  </div>
+  <!-- HÉROS DE PAGE -->
+  <section class="heros-page">
+    <nav class="fil-ariane" aria-label="Fil d'ariane">
+      <a href="index.html">Accueil</a>
+      <span class="sep">·</span>
+      <span>Qui sommes-nous</span>
+    </nav>
+    <h1 class="titre-page">Qui sommes-nous&nbsp;?</h1>
+    <p class="sous-titre-page">L&rsquo;esprit de la maison</p>
+    <div class="medaillon-titre" aria-hidden="true">✦</div>
+  </section>
 
-  <span class="fondateurs-titre reveal">❦ Les fondateurs ❦</span>
+  <!-- ZONE DE CONTENU -->
+  <main class="contenu" role="main">
 
-  <div class="fondateur reveal">
-    <div class="f-visuel">
-      <div class="f-cadre">
-        <img src="images/anouk-journo.jpg" alt="Anouk Journo" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;">
+    <!-- INTRODUCTION (carte parchemin clair) -->
+    <article class="carte reveler">
+      <p>L&rsquo;AMagie a été créée en 2024 par <em>Anouk Journo</em> et <em>Michel Foucher</em>. Elle propose des ateliers et séances individuelles d&rsquo;écriture, de médiation animale, et porte les éditions L&rsquo;AMagie.</p>
+      <p>Notre ambition est simple&nbsp;: offrir une alternative <em>solidaire et accessible</em> à celles et ceux qui souhaitent publier leurs œuvres. Ni contraintes de l&rsquo;édition traditionnelle, ni détour par l&rsquo;édition à compte d&rsquo;auteur — nous privilégions une relation <em>bienveillante, humaine et respectueuse</em> de la création.</p>
+      <p>Nous croyons à cet élan fragile qui fait naître une œuvre&nbsp;: le moment où la plume s&rsquo;anime, où l&rsquo;espoir surgit, renaît, vibre… et se partage.</p>
+    </article>
+
+    <!-- LES FONDATEURS -->
+    <div class="section-titre reveler">
+      <h2>Les fondateurs</h2>
+    </div>
+
+    <!-- Anouk Journo -->
+    <article class="fondateur reveler">
+      <div class="portrait">
+        <img src="images/anouk-journo.jpg" alt="Anouk Journo" loading="lazy"/>
       </div>
-    </div>
-    <div class="f-texte">
-      <span class="role">Autrice · Traductrice · Animatrice d'ateliers d'écriture</span>
-      <h2>Anouk Journo</h2>
-      <p>Anouk travaille dans l'édition depuis une <em>trentaine d'années</em> — autrice de documentaires animaliers et de fictions, traductrice d'anglais, formatrice.</p>
-      <p>Elle a publié de très nombreux textes chez <em>Bayard, Fleurus, Gallimard jeunesse, Rustica</em>… Certains de ses titres, retirés des catalogues, seront peu à peu réédités dans une version enrichie par L'AMagie.</p>
-      <p>Passionnée par les animaux, elle s'est récemment formée à la <em>médiation animale</em>.</p>
-      <a href="https://www.anoukjourno.fr/" class="f-lien" target="_blank">✦ Visiter son site →</a>
-    </div>
-  </div>
-
-  <div class="fondateur inverse reveal">
-    <div class="f-visuel">
-      <div class="f-cadre">
-        <img src="images/meichelus-portrait.jpg" alt="Michel Foucher — Meichelus" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;">
+      <div class="biographie">
+        <span class="role">Autrice · Traductrice · Animatrice d&rsquo;ateliers d&rsquo;écriture</span>
+        <h3>Anouk Journo</h3>
+        <p>Anouk travaille dans l&rsquo;édition depuis une <em>trentaine d&rsquo;années</em> — autrice de documentaires animaliers et de fictions, traductrice d&rsquo;anglais, formatrice.</p>
+        <p>Elle a publié de très nombreux textes chez <em>Bayard, Fleurus, Gallimard jeunesse, Rustica</em>… Certains de ses titres, retirés des catalogues, seront peu à peu réédités dans une version enrichie par L&rsquo;AMagie.</p>
+        <p>Passionnée par les animaux, elle s&rsquo;est récemment formée à la <em>médiation animale</em>.</p>
+        <a class="lien-externe" href="https://www.anoukjourno.fr/" target="_blank" rel="noopener">✦ Visiter son site</a>
       </div>
-    </div>
-    <div class="f-texte">
-      <span class="role">Peintre · Illustrateur · Coordinateur éditorial</span>
-      <h2>Michel Foucher<br/><span style="font-size:.7em;letter-spacing:.05em;color:rgba(245,240,232,1);">dit Meichelus</span></h2>
-      <p>Michel a été infirmier en <em>psychiatrie et pédo-psychiatrie</em>, ainsi que pompier, dans une autre vie. L'art-thérapie était, au quotidien, l'une de ses ressources.</p>
-      <p>Aujourd'hui, il se consacre à plein temps à la <em>peinture pointilliste</em> et à de nombreux projets graphiques et créatifs. Il coordonne les étapes du processus éditorial et illustre bon nombre des ouvrages publiés par L'AMagie.</p>
-      <a href="https://meichelus-art.blogspot.com/" class="f-lien" target="_blank">✦ Visiter son blog →</a>
-    </div>
-  </div>
+    </article>
 
-
-  <!-- Article de presse L'Indépendant -->
-  <div class="reveal" style="max-width:680px;margin:2rem auto 0;">
-    <figure style="border:1px solid rgba(201,168,76,.18);background:linear-gradient(145deg,rgba(16,10,28,.82),rgba(10,12,24,.92));padding:1.5rem;position:relative;">
-      <div style="position:absolute;top:-.9rem;left:50%;transform:translateX(-50%);background:var(--e);padding:0 1rem;">
-        <span style="font-size:.58rem;letter-spacing:.3em;color:var(--or);text-transform:uppercase;font-family:'Cinzel Decorative',serif;">L'Ind&eacute;pendant</span>
+    <!-- Meichelus -->
+    <article class="fondateur inverse reveler">
+      <div class="portrait">
+        <img src="images/meichelus-portrait.jpg" alt="Michel Foucher, dit Meichelus" loading="lazy"/>
       </div>
-      <img src="images/article-presse-lamagie.jpg" alt="Article de L’Indépendant consacré à L’AMagie" loading="lazy" style="display:block;width:100%;max-width:720px;height:auto;margin:0 auto;border:1px solid rgba(201,168,76,.25);box-shadow:0 10px 30px rgba(0,0,0,.35);">
-      <figcaption style="font-family:'IM Fell English',serif;font-style:italic;font-size:.82rem;color:rgba(245,240,232,.6);text-align:center;margin-top:.8rem;line-height:1.6;">
-        &laquo;&nbsp;Avec l'AMagie, Anouk et Michel offrent un voyage en po&eacute;sie&nbsp;&raquo;<br/>
-        <span style="font-size:.7rem;letter-spacing:.1em;color:rgba(201,168,76,.5);">F&eacute;lines-Minervois &middot; L'Ind&eacute;pendant</span>
-      </figcaption>
-    </figure>
-  </div>
+      <div class="biographie">
+        <span class="role">Peintre · Illustrateur · Coordinateur éditorial</span>
+        <h3>Michel Foucher<span class="alias">dit Meichelus</span></h3>
+        <p>Michel a été infirmier en <em>psychiatrie et pédo-psychiatrie</em>, ainsi que pompier, dans une autre vie. L&rsquo;art-thérapie était, au quotidien, l&rsquo;une de ses ressources.</p>
+        <p>Aujourd&rsquo;hui, il se consacre à plein temps à la <em>peinture pointilliste</em> et à de nombreux projets graphiques et créatifs. Il coordonne les étapes du processus éditorial et illustre bon nombre des ouvrages publiés par L&rsquo;AMagie.</p>
+        <a class="lien-externe" href="https://meichelus-art.blogspot.com/" target="_blank" rel="noopener">✦ Visiter son blog</a>
+      </div>
+    </article>
 
-  <div class="presse reveal">
-    <span class="presse-label">⌘ Dans la presse</span>
-    <h3>L'AMagie, une maison d'édition née en Minervois</h3>
-    <p>Voir l'article ci-dessus &mdash; <em>L'Ind&eacute;pendant</em>, F&eacute;lines-Minervois.</p>
-  </div>
+    <!-- ARTICLE DE PRESSE -->
+    <section class="presse reveler">
+      <figure class="presse-cadre">
+        <span class="presse-label">Dans la presse</span>
+        <img src="images/article-presse-lamagie.jpg" alt="Article de L'Indépendant consacré à L'AMagie" loading="lazy"/>
+        <figcaption class="presse-legende">
+          «&nbsp;Avec L&rsquo;AMagie, Anouk et Michel offrent un voyage en poésie&nbsp;»
+          <span class="source">Félines-Minervois · L&rsquo;Indépendant</span>
+        </figcaption>
+      </figure>
+    </section>
 
-  <div class="page-next reveal" style="margin-top:3rem;display:flex;flex-wrap:wrap;gap:2rem;justify-content:center;">
-    <a href="fonctionnement.html">Fonctionnement & rôle de l'association →</a>
-    <a href="edition.html">Découvrir nos collections →</a>
-  </div>
-</div>
+    <!-- NAVIGATION SUITE -->
+    <nav class="navigation-suite reveler" aria-label="Suite du parcours">
+      <div class="filet-ornement" aria-hidden="true">
+        <span class="etoile">✦</span>
+      </div>
+      <div class="navigation-suite-grille">
+        <a href="fonctionnement.html">Fonctionnement &amp; rôle de l&rsquo;association</a>
+        <a href="edition.html">Découvrir nos collections</a>
+      </div>
+    </nav>
 
-<footer>
-  <p class="ara">✦ ✦ ✦</p>
-  <span class="fl2">L'AMagie · Éditions</span>
-  <ul class="flinks">
-    <li><a href="qui-sommes-nous.html">Qui sommes-nous ?</a></li>
-    <li><a href="edition.html">Édition</a></li>
-    <li><a href="poesie.html">Poésie</a></li>
-    <li><a href="boutique.html">Boutique</a></li>
-    <li><a href="faq.html">FAQ</a></li>
-    <li><a href="mentions-legales.html">Mentions légales</a></li>
-  </ul>
-  <div class="fsoc">
-    <a href="https://www.instagram.com/lamagie_arts_editions/" title="Instagram">📷</a>
-    <a href="https://www.facebook.com/share/1Rcqk3QQ4z/" title="Facebook">f</a>
-    <a href="https://meichelus-art.blogspot.com" title="Blog">✎</a>
-    <a href="https://www.youtube.com/@lamagieeditions" title="YouTube">▶</a>
-  </div>
-  <p>© 2026 L'AMagie · Maison d'édition indépendante · Siren 937629533</p>
-  <p style="margin-top:.2rem;">Félines-Minervois · Occitanie · France</p>
-<div style="position:relative;z-index:10;text-align:center;padding:.8rem 0 0;border-top:1px solid rgba(201,168,76,.07);margin-top:.8rem;">
-  <div style="font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:.62rem;color:rgba(201,168,76,.45);letter-spacing:.2em;margin-bottom:.25rem;">&#169; Webmaster</div>
-  <div style="display:inline-flex;align-items:baseline;font-family:'Cinzel Decorative',Georgia,serif;font-size:.72rem;color:rgba(245,240,232,.42);letter-spacing:.22em;">
-    <span>MEIC</span><!--
-    Ligature HE : H partage son trait droit avec le trait gauche du E
-    --><span style="display:inline-flex;align-items:baseline;position:relative;letter-spacing:0;margin:0 .04em;">
-      <svg viewBox="0 0 22 14" style="width:1.35em;height:.95em;overflow:visible;" fill="none"
-           stroke="rgba(245,240,232,.42)" stroke-width="1.4" stroke-linecap="square">
-        <!-- H jambe gauche -->
-        <line x1="1" y1="1" x2="1" y2="13"/>
-        <!-- H/E jambe partagée -->
-        <line x1="9" y1="1" x2="9" y2="13"/>
-        <!-- H barre -->
-        <line x1="1" y1="7" x2="9" y2="7"/>
-        <!-- E barre haute -->
-        <line x1="9" y1="1" x2="18" y2="1"/>
-        <!-- E barre milieu -->
-        <line x1="9" y1="7" x2="15" y2="7"/>
-        <!-- E barre basse -->
-        <line x1="9" y1="13" x2="18" y2="13"/>
-      </svg>
-    </span>
-    <span style="letter-spacing:.22em;">LUS</span>
-  </div>
-</div>
-</footer>
-<script>
-const cvs=document.getElementById("cosmos"),ctx=cvs.getContext("2d");
-function rsz(){cvs.width=innerWidth;cvs.height=innerHeight;}rsz();window.addEventListener("resize",rsz);
+  </main>
 
-// Étoiles avec types variés
-const stars=[];
-for(let i=0;i<320;i++){
-  const t=Math.random();
-  stars.push({
-    x:Math.random()*innerWidth, y:Math.random()*innerHeight,
-    r: t>.92 ? Math.random()*2.5+1.5 : t>.7 ? Math.random()*1.2+.5 : Math.random()*.5+.1,
-    a:Math.random()*.7+.2, ad:(Math.random()>.5?1:-1)*(.001+Math.random()*.004),
-    v:Math.random()*.06+.008,
-    c:t>.85?[255,240,200]:t>.6?[201,168,76]:t>.3?[245,240,232]:[180,200,255],
-    pulse: t>.88, pulseT: Math.random()*Math.PI*2
-  });
-}
+  <!-- PLAN DU SITE (footer commun) -->
+  <section class="plan-site" aria-label="Plan du site">
+    <div class="filet-haut" aria-hidden="true">
+      <span class="etoile">✦</span>
+    </div>
 
-// Étoiles filantes (comètes)
-class Comet{
-  constructor(){this.reset(true);}
-  reset(init=false){
-    this.x=init?Math.random()*innerWidth*1.5-innerWidth*.25:-200;
-    this.y=init?Math.random()*innerHeight*.5:Math.random()*innerHeight*.3;
-    this.len=120+Math.random()*220;
-    this.vx=4+Math.random()*5;
-    this.vy=.2+Math.random()*1.8;
-    this.a=0; this.amax=.6+Math.random()*.4;
-    this.st=init?"idle":"in";
-    this.delay=init?Math.floor(Math.random()*400):0;
-    this.t=0; this.w=.6+Math.random()*.8;
-    this.burst=Math.random()>.7;
-  }
-  tick(){
-    if(this.st==="idle"){if(++this.t>this.delay){this.st="in";this.t=0;}return;}
-    this.x+=this.vx; this.y+=this.vy;
-    if(this.st==="in"){this.a=Math.min(this.a+.025,this.amax);if(this.a>=this.amax)this.st="out";}
-    else this.a=Math.max(this.a-.004,0);
-    if(this.x>innerWidth+300||this.a<=0)this.reset();
-  }
-  draw(){
-    if(this.a<=0)return;
-    const ang=Math.atan2(this.vy,this.vx);
-    const tx=this.x-Math.cos(ang)*this.len, ty=this.y-Math.sin(ang)*this.len;
-    const g=ctx.createLinearGradient(this.x,this.y,tx,ty);
-    g.addColorStop(0,`rgba(255,248,220,${this.a})`);
-    g.addColorStop(.15,`rgba(232,213,154,${this.a*.8})`);
-    g.addColorStop(.4,`rgba(201,168,76,${this.a*.4})`);
-    g.addColorStop(1,"rgba(201,168,76,0)");
-    ctx.beginPath();ctx.moveTo(this.x,this.y);ctx.lineTo(tx,ty);
-    ctx.strokeStyle=g;ctx.lineWidth=this.w;ctx.stroke();
-    // Halo tête
-    const hg=ctx.createRadialGradient(this.x,this.y,0,this.x,this.y,this.w*4);
-    hg.addColorStop(0,`rgba(255,248,220,${this.a*.9})`);
-    hg.addColorStop(.5,`rgba(201,168,76,${this.a*.3})`);
-    hg.addColorStop(1,"rgba(201,168,76,0)");
-    ctx.beginPath();ctx.arc(this.x,this.y,this.w*3.5,0,Math.PI*2);
-    ctx.fillStyle=hg;ctx.fill();
-  }
-}
+    <div class="plan-site-grille">
 
-// Nébuleuses animées
-const nebulas=[
-  {x:.2,y:.3,rx:.45,ry:.35,c:"rgba(80,40,120,",a:.06,speed:.0003},
-  {x:.78,y:.65,rx:.38,ry:.42,c:"rgba(20,60,100,",a:.05,speed:.0004},
-  {x:.5,y:.15,rx:.55,ry:.25,c:"rgba(180,120,40,",a:.025,speed:.0002},
-];
-let nebT=0;
+      <div class="plan-categorie">
+        <h2>Qui sommes-nous&nbsp;?</h2>
+        <ul>
+          <li><a href="qui-sommes-nous.html">Qui sommes-nous</a></li>
+          <li><a href="fonctionnement.html">Fonctionnement de l&rsquo;association</a></li>
+          <li><a href="anouk-journo.html">Anouk Journo</a></li>
+        </ul>
+      </div>
 
-const comets=[new Comet(),new Comet(),new Comet(),new Comet()];
-let lastT=0, frame=0;
+      <div class="plan-categorie">
+        <h2>Ateliers &amp; Coaching</h2>
+        <ul>
+          <li><a href="ateliers.html">Ateliers &amp; Coaching</a></li>
+          <li><a href="mots-pour-maux.html">Écriture thérapeutique</a></li>
+          <li><a href="mediation-animale.html">Médiation animale</a></li>
+          <li><a href="amis-mots.html">Collection Amis-Mots</a></li>
+        </ul>
+      </div>
 
-function draw(t){
-  if(t-lastT<14){requestAnimationFrame(draw);return;}lastT=t;frame++;
-  ctx.clearRect(0,0,cvs.width,cvs.height);
+      <div class="plan-categorie">
+        <h2>Éditions</h2>
+        <ul>
+          <li><a href="edition.html">Manuscrits &amp; projets</a></li>
+          <li><a href="edition.html#raconter-le-monde">Collection Raconter le monde</a></li>
+          <li><a href="edition.html#immersion">Collection Immersion</a></li>
+          <li><a href="edition.html#manifestes">Collection Manifestes</a></li>
+          <li><a href="edition.html#romans-jeunesse">Romans jeunesse</a></li>
+        </ul>
+      </div>
 
-  // Fond dégradé cosmique
-  const bg=ctx.createRadialGradient(cvs.width*.45,cvs.height*.38,0,cvs.width*.5,cvs.height*.5,Math.max(cvs.width,cvs.height)*.9);
-  bg.addColorStop(0,"#141830");
-  bg.addColorStop(.35,"#0e1228");
-  bg.addColorStop(.7,"#0a0e1e");
-  bg.addColorStop(1,"#070910");
-  ctx.fillStyle=bg;ctx.fillRect(0,0,cvs.width,cvs.height);
+      <div class="plan-categorie">
+        <h2>Poésie &amp; Arts</h2>
+        <ul>
+          <li><a href="poesie.html">Poésie au jour le jour</a></li>
+          <li><a href="peintures.html">Peintures &amp; Dessins</a></li>
+          <li><a href="evenements.html">Événements &amp; Presse</a></li>
+        </ul>
+      </div>
 
-  nebT+=.001;
-  // Nébuleuses
-  nebulas.forEach(n=>{
-    const cx=n.x*cvs.width, cy=n.y*cvs.height;
-    const drift=Math.sin(nebT*n.speed*1000+n.x*10)*15;
-    const ng=ctx.createRadialGradient(cx+drift,cy,0,cx+drift,cy,Math.max(cvs.width*n.rx,cvs.height*n.ry));
-    ng.addColorStop(0,n.c+(n.a*.8)+")");
-    ng.addColorStop(.4,n.c+(n.a*.35)+")");
-    ng.addColorStop(1,n.c+"0)");
-    ctx.fillStyle=ng;
-    ctx.beginPath();ctx.ellipse(cx+drift,cy,cvs.width*n.rx,cvs.height*n.ry,n.speed*1000*nebT,0,Math.PI*2);
-    ctx.fill();
-  });
+      <div class="plan-categorie">
+        <h2>Liens utiles</h2>
+        <ul>
+          <li><a href="boutique.html">Boutique</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="youtube.html">Chaîne Youtube</a></li>
+          <li><a href="mentions-legales.html">Mentions légales</a></li>
+        </ul>
+      </div>
 
-  // Voie lactée subtile
-  const vl=ctx.createLinearGradient(0,cvs.height*.05,cvs.width,cvs.height*.9);
-  vl.addColorStop(0,"rgba(201,168,76,0)");
-  vl.addColorStop(.3,"rgba(245,240,232,0.018)");
-  vl.addColorStop(.5,"rgba(201,168,76,0.012)");
-  vl.addColorStop(.7,"rgba(245,240,232,0.015)");
-  vl.addColorStop(1,"rgba(201,168,76,0)");
-  ctx.fillStyle=vl;ctx.fillRect(0,0,cvs.width,cvs.height);
+    </div>
 
-  // Étoiles
-  stars.forEach(s=>{
-    s.y+=s.v;if(s.y>cvs.height+2)s.y=-2;
-    if(s.pulse){
-      s.pulseT+=.04;
-      s.a=.4+Math.sin(s.pulseT)*.5;
+    <p class="plan-mentions">
+      © L&rsquo;AMagie <span class="etoile">✦</span> Maison d&rsquo;édition indépendante <span class="etoile">✦</span> Félines-Minervois
+    </p>
+  </section>
+
+  <script>
+    if ('IntersectionObserver' in window) {
+      var obs = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){
+          if (e.isIntersecting){
+            e.target.classList.add('visible');
+            obs.unobserve(e.target);
+          }
+        });
+      }, { threshold:.08, rootMargin:'0px 0px -50px 0px' });
+      document.querySelectorAll('.reveler').forEach(function(el){ obs.observe(el); });
     } else {
-      s.a+=s.ad;if(s.a>.95||s.a<.08)s.ad*=-1;
+      document.querySelectorAll('.reveler').forEach(function(el){ el.classList.add('visible'); });
     }
-    ctx.beginPath();ctx.arc(s.x,s.y,s.r,0,Math.PI*2);
-    ctx.fillStyle=`rgba(${s.c[0]},${s.c[1]},${s.c[2]},${s.a})`;ctx.fill();
-    // Halo pour les grosses étoiles
-    if(s.r>1.2){
-      const h=ctx.createRadialGradient(s.x,s.y,0,s.x,s.y,s.r*5);
-      h.addColorStop(0,`rgba(${s.c[0]},${s.c[1]},${s.c[2]},${s.a*.3})`);
-      h.addColorStop(1,`rgba(${s.c[0]},${s.c[1]},${s.c[2]},0)`);
-      ctx.beginPath();ctx.arc(s.x,s.y,s.r*5,0,Math.PI*2);ctx.fillStyle=h;ctx.fill();
-      // Croix lumineuse pour les plus grosses
-      if(s.r>2.2&&s.a>.5){
-        ctx.strokeStyle=`rgba(${s.c[0]},${s.c[1]},${s.c[2]},${s.a*.4})`;
-        ctx.lineWidth=.5;
-        ctx.beginPath();ctx.moveTo(s.x-s.r*6,s.y);ctx.lineTo(s.x+s.r*6,s.y);ctx.stroke();
-        ctx.beginPath();ctx.moveTo(s.x,s.y-s.r*6);ctx.lineTo(s.x,s.y+s.r*6);ctx.stroke();
-      }
-    }
-  });
+  </script>
 
-  comets.forEach(c=>{c.tick();c.draw();});
-  requestAnimationFrame(draw);
-}
-requestAnimationFrame(draw);
-const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){if(e.target.classList.contains("grille")||e.target.classList.contains("boutique-grille"))[...e.target.children].forEach((c,i)=>setTimeout(()=>c.classList.add("vis"),i*80));e.target.classList.add("vis");}});},{threshold:.06});
-document.querySelectorAll(".reveal").forEach(el=>obs.observe(el));
-document.querySelectorAll(".faq-item").forEach(item=>{item.addEventListener("click",()=>item.classList.toggle("open"));});
-</script>
-<script src="assets/js/lamagie.js" defer></script>
 </body>
 </html>

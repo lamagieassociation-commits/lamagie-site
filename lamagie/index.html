@@ -123,6 +123,95 @@ body{
 
 /* Sélection */
 ::selection{background:rgba(184,154,92,.32);color:#3a3220;}
+
+/* === PLAN DU SITE — discret, élégant, utile au SEO === */
+.plan-site{
+  background:transparent;
+  padding:48px 24px 36px;
+  max-width:1080px;
+  margin:0 auto;
+  text-align:center;
+  font-family:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  color:#3a3220;
+  border-top:1px solid rgba(184,154,92,.25);
+}
+.plan-site .filet-haut{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:14px;
+  margin:0 auto 28px;
+  max-width:200px;
+}
+.plan-site .filet-haut::before,
+.plan-site .filet-haut::after{
+  content:'';
+  flex:1;
+  height:1px;
+  background:linear-gradient(90deg,transparent,rgba(184,154,92,.55),transparent);
+}
+.plan-site .filet-haut .etoile{color:#b89a5c;font-size:.85rem;line-height:1;}
+
+.plan-site-grille{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:24px 32px;
+  text-align:left;
+  margin-bottom:28px;
+}
+.plan-categorie h2{
+  font-family:'Cormorant Garamond',serif;
+  font-weight:500;
+  font-size:.72rem;
+  letter-spacing:.3em;
+  text-transform:uppercase;
+  color:#5a4a30;
+  margin:0 0 10px;
+  padding-bottom:6px;
+  border-bottom:1px solid rgba(184,154,92,.22);
+}
+.plan-categorie ul{
+  list-style:none;
+  margin:0;padding:0;
+}
+.plan-categorie li{
+  font-size:.92rem;
+  line-height:1.65;
+  margin-bottom:2px;
+}
+.plan-categorie a{
+  color:#3a3220;
+  text-decoration:none;
+  transition:color .3s;
+  border-bottom:1px solid transparent;
+}
+.plan-categorie a:hover{
+  color:#b89a5c;
+  border-bottom-color:rgba(184,154,92,.4);
+}
+.plan-categorie .label{
+  color:#7a6a48;
+  font-style:italic;
+  font-size:.88rem;
+}
+
+.plan-mentions{
+  font-family:'Cormorant Garamond',serif;
+  font-size:.78rem;
+  letter-spacing:.16em;
+  color:#7a6a48;
+  text-transform:uppercase;
+  margin:0;
+}
+.plan-mentions .etoile{color:#b89a5c;margin:0 .6em;}
+
+@media(max-width:560px){
+  .plan-site{padding:32px 18px 24px;}
+  .plan-site-grille{gap:18px;text-align:center;}
+  .plan-categorie h2{text-align:center;}
+  .plan-mentions{font-size:.7rem;letter-spacing:.12em;}
+}
+
 </style>
 </head>
 
@@ -170,6 +259,71 @@ body{
     <a class="hotspot" href="mentions-legales.html" aria-label="Mentions Légales" style="top:94.00%;left:35.00%;width:30.00%;height:3.50%;"></a>
 
   </main>
+
+
+  <section class="plan-site" aria-label="Plan du site">
+    <div class="filet-haut" aria-hidden="true">
+      <span class="etoile">✦</span>
+    </div>
+
+    <div class="plan-site-grille">
+
+      <div class="plan-categorie">
+        <h2>Qui sommes-nous&nbsp;?</h2>
+        <ul>
+          <li><a href="qui-sommes-nous.html">Qui sommes-nous</a></li>
+          <li><a href="fonctionnement.html">Fonctionnement de l&rsquo;association</a></li>
+          <li><a href="anouk-journo.html">Anouk Journo</a></li>
+        </ul>
+      </div>
+
+      <div class="plan-categorie">
+        <h2>Ateliers &amp; Coaching</h2>
+        <ul>
+          <li><a href="ateliers.html">Ateliers &amp; Coaching</a></li>
+          <li><a href="mots-pour-maux.html">Écriture thérapeutique</a></li>
+          <li><a href="mediation-animale.html">Médiation animale</a></li>
+          <li><a href="amis-mots.html">Collection Amis-Mots</a></li>
+        </ul>
+      </div>
+
+      <div class="plan-categorie">
+        <h2>Éditions</h2>
+        <ul>
+          <li><a href="edition.html">Manuscrits &amp; projets</a></li>
+          <li><a href="edition.html#raconter-le-monde">Collection Raconter le monde</a></li>
+          <li><a href="edition.html#immersion">Collection Immersion</a></li>
+          <li><a href="edition.html#manifestes">Collection Manifestes</a></li>
+          <li><a href="edition.html#romans-jeunesse">Romans jeunesse</a></li>
+        </ul>
+      </div>
+
+      <div class="plan-categorie">
+        <h2>Poésie &amp; Arts</h2>
+        <ul>
+          <li><a href="poesie.html">Poésie au jour le jour</a></li>
+          <li><a href="peintures.html">Peintures &amp; Dessins</a></li>
+          <li><a href="evenements.html">Événements &amp; Presse</a></li>
+        </ul>
+      </div>
+
+      <div class="plan-categorie">
+        <h2>Liens utiles</h2>
+        <ul>
+          <li><a href="boutique.html">Boutique</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="youtube.html">Chaîne Youtube</a></li>
+          <li><a href="mentions-legales.html">Mentions légales</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <p class="plan-mentions">
+      © L&rsquo;AMagie <span class="etoile">✦</span> Maison d&rsquo;édition indépendante <span class="etoile">✦</span> Félines-Minervois
+    </p>
+  </section>
 
 </body>
 </html>

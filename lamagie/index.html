@@ -5,142 +5,171 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <meta name="google" content="notranslate"/>
 <meta http-equiv="Content-Language" content="fr"/>
-<title>L'AMagie — Maison d’édition indépendante</title>
-<meta name="description" content="L'AMagie — maison d'édition indépendante, poétique et artistic à Félines-Minervois."/>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cormorant+Garamond:wght@300;400;600&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet"/>
-<link rel="stylesheet" href="assets/css/index-cinematique-finale.css"/>
-<style>
-  /* Amélioration visuelle du menu de secours pour lister proprement toute l'arborescence */
-  .fallback-nav {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
-    padding: 20px;
-    background: rgba(5, 8, 22, 0.95);
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    position: relative;
-    z-index: 10;
-  }
-  .fallback-nav a {
-    color: #d8dcef;
-    text-decoration: none;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.05rem;
-    padding: 5px 10px;
-    transition: color 0.3s ease;
-  }
-  .fallback-nav a:hover {
-    color: #d8c28f;
-  }
-</style>
+<title>L'AMagie — Maison d'édition indépendante, non conformiste et libre</title>
+<meta name="description" content="L'AMagie, maison d'édition indépendante à Félines-Minervois. Poésie, romans, ateliers d'écriture, médiation animale, peintures et dessins de Meichelus."/>
 
-<style id="hero-editorial-mask">
-/* === MASQUE DE LA PHRASE GRAVÉE DANS L'IMAGE === */
-/* Couvre exactement la zone "Le Seuil, la Membrane sensible..." */
-.hero-editorial-replacement{
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html,body{overflow-x:hidden;}
+html{scroll-behavior:smooth;}
+
+/* ============================================================
+   FOND DU SITE — couleur de secours = ton parchemin de la maquette
+   ============================================================ */
+body{
+  background-color:#ece2c8;
+  min-height:100vh;
+  font-family:Georgia,'Times New Roman',serif; /* utile uniquement au tooltip natif */
+  -webkit-font-smoothing:antialiased;
+}
+
+/* ============================================================
+   CONTENEUR PRINCIPAL — porte l'image de maquette en fond
+   - largeur max 1100 px comme demandé
+   - même ratio que la maquette (1024 / 1536) pour que les
+     hotspots en % tombent toujours au bon endroit
+   ============================================================ */
+.page-maquette{
+  position:relative;
+  width:100%;
+  max-width:1100px;
+  margin:0 auto;
+  aspect-ratio:1024 / 1536;
+  background:url('images/fond-maquette.png') no-repeat top center;
+  background-size:100% auto;
+}
+
+/* ============================================================
+   CERCLE CENTRAL ANIMÉ
+   - posé pile au centre, par-dessus le cercle dessiné dans la maquette
+   - l'image démarre désaturée (croquis) et passe en couleur en 4 s
+   ============================================================ */
+.cercle-anime{
   position:absolute;
-  top:36.6%;
-  left:27%;
-  width:46%;
-  /* La hauteur s'auto-ajuste mais on assure un minimum pour masquer */
-  min-height:9.2%;
-  z-index:8;                       /* au-dessus de l'image + canvas, sous les hotspots */
-  background:#050816;              /* couleur de fond opaque demandée */
-  border:1px solid rgba(217,191,114,.28);
-  box-shadow:
-    inset 0 0 24px rgba(217,191,114,.05),
-    0 0 18px rgba(2,4,10,.55);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:1.1% 2%;
-  line-height:1.55;
-  text-align:center;
-  pointer-events:none;             /* ne bloque pas les hotspots éventuels */
-  font-family:'Cormorant Garamond', Georgia, serif;
-  font-style:italic;
-  font-weight:400;
-  letter-spacing:.02em;
-  color:#f0dc9b;                   /* or pâle, à l'unisson du visuel */
-  font-size:clamp(.78rem, 1.55vw, 1.18rem);
-  /* petit fade-in pour rester dans l'esprit cinématique */
-  opacity:0;
-  animation:heroMaskFadeIn 1.4s ease forwards .6s;
+  top:48.5%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  width:38.5%;
+  aspect-ratio:1 / 1;
+  border-radius:50%;
+  overflow:hidden;
+  pointer-events:none;
 }
-.hero-editorial-replacement p{
-  margin:0;
+.cercle-anime img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  filter:saturate(0) brightness(1.04) contrast(.95);
+  animation:vers-couleur 4s ease 1s forwards;
 }
-@keyframes heroMaskFadeIn{
-  from{opacity:0;transform:translateY(4px);}
-  to{opacity:1;transform:translateY(0);}
+@keyframes vers-couleur{
+  to{filter:saturate(1) brightness(1) contrast(1);}
 }
-/* Ajustements responsive — la phrase tient sur des écrans étroits */
+
+/* ============================================================
+   HOTSPOTS INVISIBLES — superposés aux 15 textes/icônes
+   ============================================================ */
+.hotspot{
+  position:absolute;
+  display:block;
+  background:transparent;
+  border:none;
+  text-decoration:none;
+  cursor:pointer;
+  border-radius:6px;
+  transition:background-color .25s ease, box-shadow .25s ease;
+  /* Anti-bleu de tap mobile */
+  -webkit-tap-highlight-color:transparent;
+}
+.hotspot:hover,
+.hotspot:focus-visible{
+  /* Léger halo or, très subtil — feedback minimal */
+  background-color:rgba(184,154,92,.10);
+  box-shadow:0 0 0 1px rgba(184,154,92,.18);
+  outline:none;
+}
+
+/* ============================================================
+   RÉDUCTION DE MOUVEMENT
+   ============================================================ */
+@media(prefers-reduced-motion: reduce){
+  .cercle-anime img{
+    animation:none !important;
+    filter:saturate(1) brightness(1) contrast(1) !important;
+  }
+  .hotspot{transition:none !important;}
+}
+
+/* ============================================================
+   AJUSTEMENTS MOBILES
+   - Tout reste en %, donc les hotspots se calent toujours sur
+     l'image qui se redimensionne avec le conteneur.
+   ============================================================ */
 @media(max-width:760px){
-  .hero-editorial-replacement{
-    top:36.4%;
-    left:18%;
-    width:64%;
-    min-height:10%;
-    font-size:clamp(.7rem, 2.4vw, 1rem);
-    padding:1.5% 3%;
-  }
+  .page-maquette{max-width:100vw;}
 }
-@media(max-width:480px){
-  .hero-editorial-replacement{
-    top:36.2%;
-    left:12%;
-    width:76%;
-    min-height:11%;
-  }
+
+/* ============================================================
+   ACCESSIBILITÉ — texte alternatif lu, jamais affiché
+   ============================================================ */
+.sr-only{
+  position:absolute;
+  width:1px;height:1px;
+  margin:-1px;padding:0;
+  overflow:hidden;clip:rect(0,0,0,0);
+  white-space:nowrap;border:0;
 }
+
+/* Sélection */
+::selection{background:rgba(184,154,92,.32);color:#3a3220;}
 </style>
 </head>
+
 <body>
-<main class="portal-page">
-  <div class="portal-wrap">
-    <img class="portal-img" src="images/accueil-lamagie-final.png" alt="L'AMagie, maison d'édition indépendante — portail d'accueil"/>
-    <canvas id="cinemaCanvas" aria-hidden="true"></canvas>
-    <!-- MASQUE ÉDITORIAL : recouvre la phrase gravée dans l'image -->
-    <div class="hero-editorial-replacement" translate="no" aria-hidden="false">
-      <p>Maison d&rsquo;éditions indépendante au service de la poésie, de l&rsquo;Art et des voix singulières.</p>
+
+  <!-- ============================================================
+       PAGE D'ACCUEIL — maquette en fond + cercle animé + hotspots
+       Tout est calé sur le ratio 1024×1536 de votre fond-maquette.png
+       ============================================================ -->
+  <main class="page-maquette" role="main">
+
+    <!-- Lecteurs d'écran : titre invisible pour identifier la page -->
+    <h1 class="sr-only">L&rsquo;AMagie — Maison d&rsquo;édition indépendante, non conformiste et libre</h1>
+
+    <!-- ===== CERCLE CENTRAL ANIMÉ ===== -->
+    <!-- L'image démarre en croquis désaturé et passe en couleur en 4 s.
+         Si maison-lamagie.png n'est pas encore en place, le cercle reste
+         vide (transparent) et le dessin de la maquette transparaît. -->
+    <div class="cercle-anime" aria-hidden="true">
+      <img src="images/maison-lamagie.png"
+           alt=""
+           loading="eager"
+           decoding="async"
+           onerror="this.style.display='none'"/>
     </div>
 
+    <!-- ===== 15 HOTSPOTS INVISIBLES ===== -->
+    <!-- Sept liens à gauche, sept à droite, Mentions Légales centré en bas.
+         Positions en % du conteneur (qui a le même ratio que la maquette),
+         donc parfaitement calées quelle que soit la taille d'écran. -->
+    <a class="hotspot" href="qui-sommes-nous.html" aria-label="La Maison (qui sommes-nous)" style="top:22.00%;left:2.00%;width:24.00%;height:8.00%;"></a>
+    <a class="hotspot" href="fonctionnement.html" aria-label="Fonctionnement Association" style="top:31.00%;left:2.00%;width:24.00%;height:8.00%;"></a>
+    <a class="hotspot" href="ateliers.html" aria-label="Ateliers & Coaching" style="top:40.00%;left:2.00%;width:24.00%;height:8.00%;"></a>
+    <a class="hotspot" href="mots-pour-maux.html" aria-label="Écriture Thérapeutique" style="top:49.00%;left:2.00%;width:24.00%;height:8.00%;"></a>
+    <a class="hotspot" href="mediation-animale.html" aria-label="Médiation Animale" style="top:58.00%;left:2.00%;width:24.00%;height:8.00%;"></a>
+    <a class="hotspot" href="amis-mots.html" aria-label="Collection Amis-Mots" style="top:67.00%;left:2.00%;width:24.00%;height:8.00%;"></a>
+    <a class="hotspot" href="edition.html" aria-label="Édition (Manuscrits)" style="top:76.00%;left:2.00%;width:24.00%;height:8.00%;"></a>
+    <a class="hotspot" href="poesie.html" aria-label="Poésie au jour le jour" style="top:22.00%;left:74.00%;width:24.00%;height:8.00%;"></a>
+    <a class="hotspot" href="peintures.html" aria-label="Peintures & Dessins" style="top:31.00%;left:74.00%;width:24.00%;height:8.00%;"></a>
+    <a class="hotspot" href="evenements.html" aria-label="Événements & Presse" style="top:40.00%;left:74.00%;width:24.00%;height:8.00%;"></a>
+    <a class="hotspot" href="boutique.html" aria-label="Boutique" style="top:49.00%;left:74.00%;width:24.00%;height:8.00%;"></a>
+    <a class="hotspot" href="faq.html" aria-label="FAQ" style="top:58.00%;left:74.00%;width:24.00%;height:8.00%;"></a>
+    <a class="hotspot" href="contact.html" aria-label="Contact" style="top:67.00%;left:74.00%;width:24.00%;height:8.00%;"></a>
+    <a class="hotspot" href="youtube.html" aria-label="Chaîne Youtube" style="top:76.00%;left:74.00%;width:24.00%;height:8.00%;"></a>
+    <a class="hotspot" href="mentions-legales.html" aria-label="Mentions Légales" style="top:94.00%;left:35.00%;width:30.00%;height:3.50%;"></a>
 
+  </main>
 
-    <!-- Zones cliquables d'origine (Hotspots) -->
-    <a class="hotspot h-maison" href="qui-sommes-nous.html" aria-label="La maison"></a>
-    <a class="hotspot h-ateliers" href="ateliers.html" aria-label="Ateliers"></a>
-    <a class="hotspot h-edition" href="edition.html" aria-label="Édition"></a>
-    <a class="hotspot h-anouk" href="anouk-journo.html" aria-label="Anouk Journo"></a>
-    <a class="hotspot h-meichelus" href="peintures.html" aria-label="Meichelus"></a>
-    <a class="hotspot h-poesie" href="poesie.html" aria-label="Poésie"></a>
-    <a class="hotspot h-contact" href="contact.html" aria-label="Contact"></a>
-    <a class="hotspot h-mail" href="mailto:editions@l-amagie.art" aria-label="Écrire à L'AMagie"></a>
-  </div>
-</main>
-
-<!-- Menu complet référençant chaque page de votre arborescence -->
-<nav class="fallback-nav" aria-label="Navigation complète du site">
-  <a href="qui-sommes-nous.html">La Maison (Qui sommes-nous)</a>
-  <a href="fonctionnement.html">Fonctionnement Association</a>
-  <a href="ateliers.html">Ateliers & Coaching</a>
-  <a href="mots-pour-maux.html">Écriture Thérapeutique</a>
-  <a href="mediation-animale.html">Médiation Animale</a>
-  <a href="amis-mots.html">Collection Amis-Mots</a>
-  <a href="edition.html">Édition (Manuscrits)</a>
-  <a href="poesie.html">Poésie au jour le jour</a>
-  <a href="peintures.html">Peintures & Dessins</a>
-  <a href="evenements.html">Événements & Presse</a>
-  <a href="boutique.html">Boutique</a>
-  <a href="faq.html">FAQ</a>
-  <a href="contact.html">Contact</a>
-  <a href="youtube.html">Chaîne Youtube</a>
-  <a href="mentions-legales.html">Mentions Légales</a>
-</nav>
-
-<script src="assets/js/index-cinematique-finale.js"></script>
 </body>
 </html>

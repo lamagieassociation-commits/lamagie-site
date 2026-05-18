@@ -2,6 +2,8 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="google" content="notranslate"/>
+<meta http-equiv="Content-Language" content="fr"/>
 <title>Contact &mdash; L'AMagie</title>
 <meta name="description" content="Contactez L'AMagie - manuscrits, ateliers, collaborations. 5 rue du Puits, 34210 Felines-Minervois."/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
@@ -104,6 +106,76 @@ figure img {
 }
 </style>
 
+
+<style id="contact-photo-fondateurs-styles">
+/* === PHOTO DES FONDATEURS EN TÊTE DE PAGE CONTACT === */
+.fondateurs-photo{
+  position:relative;
+  z-index:10;
+  max-width:760px;
+  margin:0 auto 3rem;
+  padding:0;
+  text-align:center;
+  opacity:0;
+  animation:fondateursFadeIn 1.2s ease forwards .25s;
+}
+.fondateurs-photo figure{
+  margin:0;
+  position:relative;
+  padding:.85rem;
+  background:linear-gradient(145deg,rgba(18,12,32,.55),rgba(8,10,22,.72));
+  border:1px solid rgba(201,168,76,.32);
+  box-shadow:
+    0 22px 50px rgba(0,0,0,.55),
+    0 0 0 1px rgba(201,168,76,.05),
+    0 0 38px rgba(201,168,76,.10);
+}
+.fondateurs-photo figure::before,
+.fondateurs-photo figure::after{
+  content:'';
+  position:absolute;
+  width:14px;height:14px;
+  border:1px solid rgba(201,168,76,.55);
+  pointer-events:none;
+}
+.fondateurs-photo figure::before{top:-1px;left:-1px;border-right:0;border-bottom:0;}
+.fondateurs-photo figure::after{bottom:-1px;right:-1px;border-left:0;border-top:0;}
+.fondateurs-photo img{
+  display:block;
+  width:100%;
+  height:auto;
+  border:1px solid rgba(201,168,76,.18);
+  filter:saturate(.94) brightness(.96);
+}
+.fondateurs-photo figcaption{
+  margin-top:1rem;
+  font-family:'IM Fell English','Cormorant Garamond',Georgia,serif;
+  font-style:italic;
+  font-size:.95rem;
+  color:rgba(245,240,232,.78);
+  letter-spacing:.02em;
+  line-height:1.55;
+}
+.fondateurs-photo figcaption .signature{
+  display:block;
+  margin-top:.4rem;
+  font-family:'Cinzel Decorative','Cormorant Garamond',serif;
+  font-style:normal;
+  font-size:.62rem;
+  letter-spacing:.32em;
+  text-transform:uppercase;
+  color:#c9a84c;
+}
+@keyframes fondateursFadeIn{
+  from{opacity:0;transform:translateY(18px);}
+  to  {opacity:1;transform:translateY(0);}
+}
+@media(max-width:600px){
+  .fondateurs-photo{margin:0 .6rem 2rem;}
+  .fondateurs-photo figure{padding:.55rem;}
+  .fondateurs-photo figcaption{font-size:.88rem;}
+}
+</style>
 </head>
 <body>
 
@@ -137,7 +209,26 @@ figure img {
   <p class="ps">Pour toute demande &eacute;ditoriale, atelier, collaboration ou simplement traverser le seuil.</p>
   <div class="seph"></div>
 </div>
-<div class="cnt"><div class="contact-grille reveal">
+
+<!-- PHOTO DES FONDATEURS — Anouk Journo & Meichelus -->
+<!-- Fichier à déposer : images/ChatGPT Image 1 mai 2026, 17_50_25.png -->
+<section class="fondateurs-photo" aria-label="Photographie des fondateurs">
+  <figure>
+    <img
+      src="images/ChatGPT%20Image%201%20mai%202026%2C%2017_50_25.png"
+      alt="Anouk Journo &amp; Meichelus — Créateurs des Éditions L'AMagie"
+      loading="lazy"
+      decoding="async"
+    />
+    <figcaption>
+      « Une maison où les livres gardent une part d&rsquo;étoiles »
+      <span class="signature">Anouk Journo &middot; Meichelus &middot; Éditions L&rsquo;AMagie</span>
+    </figcaption>
+  </figure>
+</section>
+
+<div class="cnt">
+  <div class="contact-grille reveal">
     <div class="contact-info"><span class="label">Adresse</span><p>5 rue du Puits</p><p>34210 F&eacute;lines-Minervois</p><p>Occitanie &middot; France</p></div>
     <div class="contact-info"><span class="label">Coordonn&eacute;es</span><a href="mailto:editions@l-amagie.art">editions@l-amagie.art</a><a href="tel:0674402880">06 74 40 28 80</a><a href="https://www.l-amagie.art" target="_blank" style="color:var(--or);">www.l-amagie.art</a></div>
   </div>

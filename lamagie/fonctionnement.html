@@ -3,334 +3,553 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Fonctionnement & rôle de l'association — L'AMagie</title>
-<meta name="description" content="L'AMagie, une autre manière de publier. Accompagnement sur mesure, 40% des ventes pour l'auteur, ISBN et dépôt légal gratuits, impression à la demande."/>
+<meta name="google" content="notranslate"/>
+<meta http-equiv="Content-Language" content="fr"/>
+<title>Fonctionnement, rôle et objectifs de l'association — L'AMagie</title>
+<meta name="description" content="L'AMagie — Une autre manière de faire vivre les livres. Maison d'édition associative et solidaire à Félines-Minervois : accompagnement, publication équitable, rémunération transparente, diffusion adaptée."/>
+
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Pinyon+Script&display=swap" rel="stylesheet"/>
+
 <style>
-*{margin:0;padding:0;box-sizing:border-box;}
-:root{--or:#c9a84c;--orp:#e8d59a;--ors:#8a6d2f;--p:#f5f0e8;--e:#06080f;
-  --tf:rgba(245,240,232,1);--tm:rgba(245,240,232,1);--tl:rgba(245,240,232,1);--td:rgba(245,240,232,1);}
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Pinyon+Script&display=swap');
+
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html,body{overflow-x:hidden;}
 html{scroll-behavior:smooth;}
-body{background:#0a0c18;color:var(--tf);font-family:'Cormorant Garamond',serif;overflow-x:hidden;}
-#cosmos{position:fixed;inset:0;z-index:0;}
-.neb{position:fixed;inset:0;z-index:1;background:radial-gradient(ellipse 65% 55% at 25% 25%,rgba(22,12,42,.55) 0%,transparent 60%),radial-gradient(ellipse 45% 60% at 75% 75%,rgba(8,18,42,.35) 0%,transparent 55%);pointer-events:none;}
-nav{position:fixed;top:0;width:100%;z-index:200;padding:1.4rem 4rem;display:flex;align-items:center;justify-content:space-between;background:linear-gradient(180deg,rgba(6,8,15,.95),transparent);border-bottom:1px solid rgba(201,168,76,.12);backdrop-filter:blur(6px);}
 
+body{
+  background-color:#ece2c8;
+  color:#3a3220;
+  font-family:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  font-weight:400;
+  font-size:17px;
+  line-height:1.75;
+  min-height:100vh;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  text-rendering:optimizeLegibility;
+  background-image:
+    radial-gradient(ellipse 55% 50% at 12% 18%, rgba(146,96,38,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 55% at 88% 82%, rgba(132,88,36,0.11) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 45% at 78% 18%, rgba(170,128,60,0.09) 0%, transparent 65%),
+    radial-gradient(ellipse 55% 50% at 22% 82%, rgba(160,118,50,0.10) 0%, transparent 65%),
+    radial-gradient(ellipse 75% 60% at 50% 35%, rgba(212,176,114,0.10) 0%, transparent 75%),
+    linear-gradient(135deg, #f1ead4 0%, #e8dec0 50%, #ecdfc2 100%),
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='280' height='280'><filter id='g'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' seed='4'/><feColorMatrix values='0 0 0 0 0.42 0 0 0 0 0.32 0 0 0 0 0.17 0 0 0 0.22 0'/></filter><rect width='100%25' height='100%25' filter='url(%23g)'/></svg>");
+  background-attachment:fixed;
+  background-size:auto,auto,auto,auto,auto,auto,280px 280px;
+  background-repeat:no-repeat,no-repeat,no-repeat,no-repeat,no-repeat,no-repeat,repeat;
+}
+a{color:inherit;text-decoration:none;}
+img{max-width:100%;height:auto;display:block;}
+em{font-style:italic;color:#5a4a30;}
+::selection{background:rgba(184,154,92,.32);color:#3a3220;}
 
+/* === HEADER CONSTANT === */
+.entete-site{position:relative;z-index:10;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:24px;padding:24px 40px;border-bottom:1px solid rgba(184,154,92,.28);background:linear-gradient(180deg,rgba(241,234,212,.55),rgba(236,226,200,.25));backdrop-filter:blur(1px);}
+.entete-logo{display:flex;align-items:center;justify-content:flex-start;}
+.entete-logo img{height:55px;width:auto;display:block;}
+.entete-titre{text-align:center;font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:clamp(1.8rem,3.2vw,2.6rem);color:#3a3220;letter-spacing:.01em;line-height:1;text-decoration:none;}
+.entete-retour{display:flex;align-items:center;justify-content:flex-end;}
+.entete-retour a{font-family:'Cormorant Garamond',Georgia,serif;font-size:.92rem;letter-spacing:.18em;text-transform:uppercase;color:#5a4a30;padding:8px 18px;border:1px solid rgba(184,154,92,.4);border-radius:2px;transition:color .3s, background-color .3s, border-color .3s;white-space:nowrap;}
+.entete-retour a::before{content:'⌂ ';margin-right:.25em;letter-spacing:0;}
+.entete-retour a:hover{color:#b89a5c;border-color:#b89a5c;background:rgba(184,154,92,.07);}
+@media(max-width:760px){.entete-site{grid-template-columns:auto 1fr auto;padding:14px 16px;gap:12px;}.entete-logo img{height:42px;}.entete-titre{font-size:1.4rem;}.entete-retour a{font-size:.7rem;letter-spacing:.1em;padding:6px 10px;}.entete-retour a::before{content:'⌂';margin-right:0;}.entete-retour a span{display:none;}}
 
+/* === HÉROS DE PAGE === */
+.heros-page{text-align:center;padding:64px 20px 28px;max-width:820px;margin:0 auto;}
+.fil-ariane{display:inline-block;font-family:'Cormorant Garamond',serif;font-size:.72rem;letter-spacing:.32em;text-transform:uppercase;color:#5a4a30;margin-bottom:24px;}
+.fil-ariane a{color:#8a6d2f;transition:color .3s;}
+.fil-ariane a:hover{color:#b89a5c;}
+.fil-ariane .sep{margin:0 .55em;color:rgba(184,154,92,.55);}
+.titre-page{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:clamp(2.2rem,5vw,3.5rem);color:#3a3220;letter-spacing:.005em;line-height:1.1;margin:0 0 14px;}
+.sous-titre-page{font-family:'Pinyon Script','Cormorant Garamond',cursive;font-size:clamp(1.4rem,2.5vw,1.95rem);color:#7a6a48;line-height:1.3;margin:0;}
+.medaillon-titre{width:54px;height:54px;margin:32px auto 0;border-radius:50%;border:1px solid rgba(184,154,92,.5);box-shadow:0 0 0 5px rgba(241,234,212,.6),0 0 0 6px rgba(184,154,92,.18);display:flex;align-items:center;justify-content:center;color:#b89a5c;font-size:1.1rem;}
 
-.logo{font-family:'Cinzel Decorative',serif;font-size:.82rem;letter-spacing:.2em;text-decoration:none;}
-.logo .lp{color:rgba(245,240,232,.7);font-style:normal;}
-.logo .la{color:#c9a84c;text-shadow:0 0 14px rgba(201,168,76,.55);font-size:1.05em;}
-.logo .lm{color:rgba(245,240,232,1);}
-.logo .lg{color:rgba(245,240,232,1);font-size:.88em;letter-spacing:.15em;}
-.h1-a{color:#c9a84c !important;text-shadow:0 0 40px rgba(201,168,76,.65),0 0 80px rgba(201,168,76,.25) !important;}
-.h1-m{color:rgba(245,240,232,1) !important;}
-.h1-rest{color:rgba(245,240,232,1) !important;}
-.nav-ul{display:flex;gap:2rem;list-style:none;}
-.nav-ul a{color:var(--td-new);text-decoration:none;font-size:.88rem;letter-spacing:.1em;transition:color .3s;}
-.nav-ul a:hover,.nav-ul a.active{color:var(--or);}
-.burger{display:none;background:none;border:none;color:var(--or);font-size:1.4rem;cursor:pointer;}
-.mob{display:none;position:fixed;inset:0;background:rgba(6,8,15,.98);z-index:300;flex-direction:column;align-items:center;justify-content:center;gap:2.2rem;}
-.mob.open{display:flex;}
-.mob a{font-family:'Cinzel Decorative',serif;color:var(--p);text-decoration:none;font-size:.9rem;letter-spacing:.25em;transition:color .3s;}
-.mob a:hover{color:var(--or);}
-.mc{position:absolute;top:1.5rem;right:2rem;background:none;border:none;color:var(--or);font-size:2rem;cursor:pointer;}
+/* === CONTENU === */
+.contenu{max-width:920px;margin:0 auto;padding:0 20px 56px;}
 
-.page-hero{position:relative;z-index:10;padding:10rem 2rem 4rem;text-align:center;}
-.breadcrumb{font-size:.6rem;letter-spacing:.3em;color:var(--td-new);margin-bottom:1.5rem;display:block;}
-.breadcrumb a{color:rgba(201,168,76,.55);text-decoration:none;transition:color .3s;}
-.breadcrumb a:hover{color:var(--or);}
-.page-title{font-family:'Cinzel Decorative',serif;font-size:clamp(1.5rem,4vw,3.2rem);color:var(--tf);letter-spacing:.05em;font-weight:400;margin-bottom:1rem;opacity:0;animation:fu 1s ease forwards .2s;line-height:1.3;}
-@keyframes fu{from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:none;}}
-.page-sous{font-family:'IM Fell English',serif;font-style:italic;font-size:clamp(.95rem,2vw,1.2rem);color:var(--tm);max-width:600px;margin:0 auto;line-height:1.9;opacity:0;animation:fu 1s ease forwards .4s;}
-.sep-h{width:46px;height:1px;background:linear-gradient(90deg,transparent,var(--or),transparent);margin:1.5rem auto;opacity:0;animation:fu 1s ease forwards .5s;}
+/* Carte parchemin clair */
+.carte{background:rgba(246,239,216,.62);border:1px solid rgba(184,154,92,.22);border-radius:2px;padding:48px 56px;margin:0 auto 36px;position:relative;box-shadow:0 4px 14px rgba(90,74,48,.06),0 1px 2px rgba(90,74,48,.04);}
+.carte::before,.carte::after{content:'';position:absolute;width:18px;height:18px;border:1px solid rgba(184,154,92,.45);pointer-events:none;}
+.carte::before{top:6px;left:6px;border-right:0;border-bottom:0;}
+.carte::after{bottom:6px;right:6px;border-left:0;border-top:0;}
+.carte p{font-size:1.08rem;line-height:1.85;color:#3a3220;margin:0 0 1.1rem;}
+.carte p:last-child{margin-bottom:0;}
+@media(max-width:600px){.carte{padding:32px 22px;}.carte p{font-size:1rem;}}
 
-.content{position:relative;z-index:10;max-width:880px;margin:0 auto;padding:1rem 2rem 6rem;}
+/* Section titre orné */
+.section-titre{text-align:center;margin:56px 0 32px;}
+.section-titre h2{display:inline-block;font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(1.4rem,2.8vw,1.85rem);letter-spacing:.18em;color:#3a3220;text-transform:uppercase;position:relative;padding:0 30px;}
+.section-titre h2::before,.section-titre h2::after{content:'❦';position:absolute;top:50%;transform:translateY(-50%);color:#b89a5c;font-size:.85em;}
+.section-titre h2::before{left:0;}
+.section-titre h2::after{right:0;}
 
-/* Intro manifeste */
-.intro{border:1px solid rgba(201,168,76,.18);background:linear-gradient(145deg,rgba(16,10,28,.82),rgba(6,8,15,.9));padding:3rem 3.5rem;margin-bottom:4rem;position:relative;}
-.intro::before{content:'✦';position:absolute;top:-1rem;left:50%;transform:translateX(-50%);font-size:1.2rem;color:var(--or);background:#0a0c18;padding:0 .8rem;}
-.intro h2{font-family:'Cinzel Decorative',serif;font-size:clamp(1.1rem,2.5vw,1.7rem);color:var(--tf);letter-spacing:.06em;font-weight:400;margin-bottom:1.2rem;}
-.intro p{font-size:1.05rem;color:var(--tm);line-height:2;font-weight:300;margin-bottom:.8rem;}
-.intro p:last-child{margin-bottom:0;}
-.intro em{color:var(--orp);}
-.intro strong{color:var(--tf);font-weight:600;}
+/* === Grille de cartes éditoriales === */
+.grille-cartes{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px;margin:0 auto 36px;}
+.carte-edito{background:rgba(246,239,216,.55);border:1px solid rgba(184,154,92,.22);border-radius:2px;padding:32px 28px;position:relative;box-shadow:0 4px 14px rgba(90,74,48,.05);transition:transform .35s, border-color .35s, background-color .35s;}
+.carte-edito::before,.carte-edito::after{content:'';position:absolute;width:14px;height:14px;border:1px solid rgba(184,154,92,.4);pointer-events:none;}
+.carte-edito::before{top:5px;left:5px;border-right:0;border-bottom:0;}
+.carte-edito::after{bottom:5px;right:5px;border-left:0;border-top:0;}
+.carte-edito:hover{transform:translateY(-3px);border-color:rgba(184,154,92,.4);background:rgba(246,239,216,.75);}
+.carte-edito-icone{display:block;font-size:1.8rem;line-height:1;margin-bottom:14px;color:#b89a5c;}
+.carte-edito h3{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:1.25rem;letter-spacing:.04em;color:#3a3220;margin:0 0 12px;line-height:1.2;}
+.carte-edito p{font-size:1rem;line-height:1.7;color:#3a3220;margin:0 0 .6rem;}
+.carte-edito p:last-child{margin-bottom:0;}
+.carte-edito .highlight-or{color:#8a6d2f;font-weight:500;}
 
-/* Blocs avantages */
-.blocs{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:rgba(201,168,76,.08);margin-bottom:4rem;}
-.bloc{background:linear-gradient(145deg,rgba(14,10,26,.88),rgba(6,8,15,.95));padding:2.5rem 2rem;position:relative;overflow:hidden;transition:background .3s;}
-.bloc::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--or),transparent);transform:scaleX(0);transition:transform .4s;}
-.bloc:hover{background:linear-gradient(145deg,rgba(22,14,38,.92),rgba(10,8,18,.98));}
-.bloc:hover::after{transform:scaleX(1);}
-.bloc-icone{font-size:1.8rem;display:block;margin-bottom:1rem;}
-.bloc h3{font-family:'Cinzel Decorative',serif;font-size:.82rem;color:var(--tf);letter-spacing:.1em;font-weight:400;margin-bottom:1rem;}
-.bloc ul{list-style:none;display:flex;flex-direction:column;gap:.6rem;}
-.bloc ul li{font-size:1rem;color:var(--tm);line-height:1.7;padding-left:1.2rem;position:relative;}
-.bloc ul li::before{content:'—';position:absolute;left:0;color:var(--or);font-size:.7rem;}
-.bloc ul li strong{color:var(--tf);font-weight:600;}
-.bloc p{font-size:1rem;color:var(--tm);line-height:1.8;}
+/* === Œuvre au centre === */
+.oeuvre-centrale{margin:48px auto;text-align:center;max-width:820px;}
+.oeuvre-centrale figure{margin:0;}
+.oeuvre-centrale img{
+  display:block;
+  width:100%;
+  max-width:100%;
+  height:auto;
+  margin:0 auto;
+  border-radius:8px;
+  box-shadow:0 4px 20px rgba(58,50,32,0.15);
+  filter:saturate(.95) brightness(1.02);
+}
+.oeuvre-centrale figcaption{
+  margin-top:14px;
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;
+  font-size:1.02rem;
+  color:#5a4a30;
+  letter-spacing:.02em;
+}
+.oeuvre-centrale figcaption strong{color:#3a3220;font-style:normal;font-weight:500;}
 
-/* Tableau services */
-.services-titre{font-size:.62rem;letter-spacing:.42em;color:var(--or);text-transform:uppercase;display:block;text-align:center;margin-bottom:.8rem;}
-.sh2{font-family:'Cinzel Decorative',serif;font-size:clamp(1.1rem,2.5vw,1.7rem);color:var(--tf);letter-spacing:.06em;font-weight:400;text-align:center;}
-.sep{width:44px;height:1px;background:linear-gradient(90deg,transparent,var(--or),transparent);margin:1.2rem auto 2.5rem;}
-
-.services{border:1px solid rgba(201,168,76,.12);background:linear-gradient(145deg,rgba(14,10,26,.8),rgba(6,8,15,.9));overflow:hidden;margin-bottom:4rem;}
-.service-ligne{display:grid;grid-template-columns:1fr 1.2fr;border-bottom:1px solid rgba(201,168,76,.08);transition:background .25s;}
-.service-ligne:last-child{border-bottom:none;}
-.service-ligne:hover{background:rgba(201,168,76,.04);}
-.service-nom{padding:1.2rem 2rem;font-size:1rem;color:var(--tm);line-height:1.6;border-right:1px solid rgba(201,168,76,.08);}
-.service-nom em{color:var(--or);font-style:normal;font-family:'Cinzel Decorative',serif;font-size:.62rem;letter-spacing:.12em;display:block;margin-bottom:.2rem;}
-.service-prix{padding:1.2rem 2rem;font-size:1rem;font-weight:600;color:var(--tf);display:flex;align-items:center;}
-.service-prix.gratuit{color:#7bc67e;}
-.service-prix.payant{color:var(--orp);}
-
-/* Citation */
-.citation{border-left:2px solid var(--or);padding:2rem 2.5rem;margin:3rem 0;background:linear-gradient(90deg,rgba(201,168,76,.05),transparent);}
-.citation blockquote{font-family:'IM Fell English',serif;font-style:italic;font-size:1.15rem;color:var(--tm);line-height:2;}
-.citation cite{font-size:.62rem;letter-spacing:.2em;color:var(--or);text-transform:uppercase;display:block;margin-top:1rem;font-style:normal;}
-
-/* Pourquoi box */
-.pourquoi{border:1px solid rgba(201,168,76,.2);background:linear-gradient(145deg,rgba(22,14,38,.78),rgba(6,8,15,.92));padding:3rem;text-align:center;position:relative;}
-.pourquoi::before{content:'🌟';position:absolute;top:-1.2rem;left:50%;transform:translateX(-50%);font-size:1.5rem;background:#0a0c18;padding:0 .5rem;}
-.pourquoi h3{font-family:'Cinzel Decorative',serif;font-size:1rem;color:var(--tf);letter-spacing:.08em;font-weight:400;margin-bottom:1.5rem;}
-.pourquoi p{font-size:1.05rem;color:var(--tm);line-height:1.9;font-weight:300;margin-bottom:2rem;}
-
-.bor{position:relative;font-family:'Cinzel Decorative',serif;font-size:.58rem;letter-spacing:.2em;color:var(--or);border:1px solid rgba(201,168,76,.4);padding:.85rem 2.2rem;text-decoration:none;overflow:hidden;transition:color .35s;display:inline-block;}
-.bor::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,var(--ors),var(--or));transform:translateX(-100%);transition:transform .35s;z-index:-1;}
-.bor:hover{color:var(--e);}
-.bor:hover::before{transform:none;}
-
-footer{position:relative;z-index:10;border-top:1px solid rgba(201,168,76,.1);padding:3rem 2rem;text-align:center;}
-.fl2{font-family:'Cinzel Decorative',serif;color:rgba(201,168,76,.4);font-size:.7rem;letter-spacing:.3em;display:block;margin-bottom:.5rem;}
-.flinks{display:flex;flex-wrap:wrap;justify-content:center;gap:1.5rem;margin:1.2rem 0;list-style:none;}
-.flinks a{font-size:.7rem;letter-spacing:.08em;color:var(--td-new);text-decoration:none;transition:color .3s;}
-.flinks a:hover{color:var(--or);}
-.fsoc{display:flex;justify-content:center;gap:1rem;margin:.8rem 0;}
-.fsoc a{width:30px;height:30px;border:1px solid rgba(201,168,76,.18);display:flex;align-items:center;justify-content:center;color:var(--td-new);text-decoration:none;font-size:.75rem;transition:border-color .3s,color .3s;}
-.fsoc a:hover{border-color:var(--or);color:var(--or);}
-footer p{font-size:.72rem;color:var(--td-new);font-style:italic;}
-.ara{color:rgba(201,168,76,.25);letter-spacing:.6em;}
-
-.reveal{opacity:0;transform:translateY(20px);transition:opacity .8s,transform .8s;}
-.reveal.vis{opacity:1;transform:none;}
-
-@media(max-width:680px){.blocs{grid-template-columns:1fr;}.service-ligne{grid-template-columns:1fr;}.service-prix{padding-top:0;padding-bottom:1.2rem;}.intro{padding:2rem;}}
-@media(max-width:580px){nav{padding:1.2rem 1.5rem;}.nav-ul{display:none;}.burger{display:block;}}
-::-webkit-scrollbar{width:2px;}::-webkit-scrollbar-track{background:#0a0c18;}::-webkit-scrollbar-thumb{background:rgba(201,168,76,.22);}
-
-/* Sécurité Cloudflare — affichage des médaillons */
-.f-cadre img,
-.portrait img,
-.medaillon img,
-.medallion img,
-.avatar img,
-.portrait-anouk img,
-.founder-photo img,
-.fondateur img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
+/* === TARIFS — Tableau soigné === */
+.tarifs{background:rgba(246,239,216,.62);border:1px solid rgba(184,154,92,.22);border-radius:2px;padding:42px 48px;margin:0 auto 36px;position:relative;box-shadow:0 4px 14px rgba(90,74,48,.06);}
+.tarifs::before,.tarifs::after{content:'';position:absolute;width:18px;height:18px;border:1px solid rgba(184,154,92,.45);pointer-events:none;}
+.tarifs::before{top:6px;left:6px;border-right:0;border-bottom:0;}
+.tarifs::after{bottom:6px;right:6px;border-left:0;border-top:0;}
+.tarifs-intro{text-align:center;font-family:'Pinyon Script','Cormorant Garamond',cursive;font-size:1.3rem;color:#7a6a48;margin-bottom:24px;line-height:1.4;}
+.tarifs ul{list-style:none;margin:0;padding:0;}
+.tarifs li{
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:18px;
+  align-items:flex-start;
+  padding:16px 0;
+  border-bottom:1px dashed rgba(184,154,92,.3);
+}
+.tarifs li:last-child{border-bottom:none;}
+.tarifs .libelle{font-size:1rem;line-height:1.55;color:#3a3220;}
+.tarifs .libelle em{display:block;font-style:italic;color:#7a6a48;font-size:.92rem;margin-top:2px;}
+.tarifs .montant{
+  font-family:'Cormorant Garamond',serif;
+  font-weight:500;
+  font-size:1.1rem;
+  letter-spacing:.04em;
+  color:#3a3220;
+  white-space:nowrap;
+  text-align:right;
+  padding-top:2px;
+}
+.tarifs .montant.offert{color:#8a6d2f;font-style:italic;}
+@media(max-width:600px){
+  .tarifs{padding:30px 22px;}
+  .tarifs li{grid-template-columns:1fr;gap:6px;}
+  .tarifs .montant{text-align:left;}
 }
 
+/* === Bloc formules (avec/sans référencement) === */
+.formules{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin:0 auto 36px;}
+.formule{background:rgba(246,239,216,.55);border:1px solid rgba(184,154,92,.3);border-radius:2px;padding:28px 26px;text-align:center;position:relative;}
+.formule::before,.formule::after{content:'';position:absolute;width:14px;height:14px;border:1px solid rgba(184,154,92,.45);pointer-events:none;}
+.formule::before{top:5px;left:5px;border-right:0;border-bottom:0;}
+.formule::after{bottom:5px;right:5px;border-left:0;border-top:0;}
+.formule .label{display:block;font-family:'Cormorant Garamond',serif;font-size:.7rem;letter-spacing:.28em;text-transform:uppercase;color:#8a6d2f;margin-bottom:10px;}
+.formule .prix{display:block;font-family:'Cormorant Garamond',serif;font-weight:500;font-size:1.7rem;color:#3a3220;margin-bottom:8px;}
+.formule .prix-suffixe{display:block;font-size:.78rem;letter-spacing:.2em;color:#5a4a30;text-transform:uppercase;margin-bottom:14px;}
+.formule p{font-size:.95rem;line-height:1.65;color:#3a3220;margin:0;}
+@media(max-width:600px){.formules{grid-template-columns:1fr;}}
 
-/* Sécurité affichage portraits et articles */
-.f-cadre img,
-.portrait img,
-.medaillon img,
-.medallion img,
-.avatar img,
-.portrait-anouk img,
-.founder-photo img,
-.fondateur img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
+/* === Citation Anouk en exergue === */
+.citation-anouk{
+  margin:48px auto 32px;
+  max-width:760px;
+  padding:42px 48px;
+  background:linear-gradient(135deg, rgba(246,239,216,.85), rgba(241,234,212,.7));
+  border:1px solid rgba(184,154,92,.4);
+  border-radius:2px;
+  position:relative;
+  text-align:center;
+  box-shadow:0 6px 22px rgba(90,74,48,.10);
 }
-.article-presse img,
-figure img {
-  max-width: 100%;
-  height: auto;
+.citation-anouk::before{
+  content:'❝';
+  font-family:Georgia,serif;
+  position:absolute;
+  top:-20px;
+  left:50%;
+  transform:translateX(-50%);
+  font-size:3rem;
+  color:#b89a5c;
+  background:#ece2c8;
+  padding:0 14px;
+  line-height:1;
+}
+.citation-anouk p{
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;
+  font-size:1.18rem;
+  line-height:1.7;
+  color:#3a3220;
+  margin:0 0 16px;
+}
+.citation-anouk p strong{color:#5a4a30;font-style:normal;font-weight:500;}
+.citation-anouk cite{
+  display:block;
+  font-family:'Cormorant Garamond',serif;
+  font-style:normal;
+  font-size:.72rem;
+  letter-spacing:.32em;
+  text-transform:uppercase;
+  color:#8a6d2f;
+}
+@media(max-width:600px){
+  .citation-anouk{padding:32px 26px;}
+  .citation-anouk p{font-size:1.04rem;}
 }
 
+/* === Liste de valeurs === */
+.valeurs-liste{list-style:none;margin:18px 0 0;padding:0;}
+.valeurs-liste li{
+  position:relative;
+  padding:8px 0 8px 32px;
+  font-size:1.05rem;
+  line-height:1.65;
+  color:#3a3220;
+}
+.valeurs-liste li::before{
+  content:'✦';
+  position:absolute;
+  left:8px;
+  top:8px;
+  color:#b89a5c;
+  font-size:.85em;
+}
+.valeurs-liste li strong{font-weight:500;color:#5a4a30;}
+
+/* === Phrase forte « part d'étoiles » === */
+.phrase-forte{
+  text-align:center;
+  font-family:'Pinyon Script','Cormorant Garamond',cursive;
+  font-size:1.6rem;
+  color:#5a4a30;
+  margin:36px auto 0;
+  line-height:1.4;
+  max-width:680px;
+}
+.phrase-forte .etoile{color:#b89a5c;}
+
+/* === Navigation suite === */
+.navigation-suite{margin:56px auto 0;max-width:820px;text-align:center;}
+.filet-ornement{display:flex;align-items:center;justify-content:center;gap:14px;margin:0 auto 28px;max-width:240px;}
+.filet-ornement::before,.filet-ornement::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,transparent,rgba(184,154,92,.6),transparent);}
+.filet-ornement .etoile{color:#b89a5c;font-size:.85rem;line-height:1;}
+.navigation-suite-grille{display:flex;flex-wrap:wrap;justify-content:center;gap:18px 32px;}
+.navigation-suite-grille a{display:inline-block;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.05rem;color:#3a3220;padding:11px 24px;border:1px solid rgba(184,154,92,.32);background:rgba(246,239,216,.4);border-radius:2px;transition:all .3s;}
+.navigation-suite-grille a:hover{color:#b89a5c;border-color:#b89a5c;background:rgba(246,239,216,.7);transform:translateY(-2px);}
+.navigation-suite-grille a::after{content:' →';font-style:normal;}
+
+
+/* === PLAN DU SITE === */
+.plan-site{background:transparent;padding:48px 24px 36px;max-width:1080px;margin:0 auto;text-align:center;font-family:'Cormorant Garamond',Georgia,serif;color:#3a3220;border-top:1px solid rgba(184,154,92,.25);}
+.plan-site .filet-haut{display:flex;align-items:center;justify-content:center;gap:14px;margin:0 auto 28px;max-width:200px;}
+.plan-site .filet-haut::before,.plan-site .filet-haut::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,transparent,rgba(184,154,92,.55),transparent);}
+.plan-site .filet-haut .etoile{color:#b89a5c;font-size:.85rem;line-height:1;}
+.plan-site-grille{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px 32px;text-align:left;margin-bottom:28px;}
+.plan-categorie h2{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:#5a4a30;margin:0 0 10px;padding-bottom:6px;border-bottom:1px solid rgba(184,154,92,.22);}
+.plan-categorie ul{list-style:none;margin:0;padding:0;}
+.plan-categorie li{font-size:.92rem;line-height:1.65;margin-bottom:2px;}
+.plan-categorie a{color:#3a3220;text-decoration:none;transition:color .3s;border-bottom:1px solid transparent;}
+.plan-categorie a:hover{color:#b89a5c;border-bottom-color:rgba(184,154,92,.4);}
+.plan-mentions{font-family:'Cormorant Garamond',serif;font-size:.78rem;letter-spacing:.16em;color:#7a6a48;text-transform:uppercase;margin:0;}
+.plan-mentions .etoile{color:#b89a5c;margin:0 .6em;}
+@media(max-width:560px){.plan-site{padding:32px 18px 24px;}.plan-site-grille{gap:18px;text-align:center;}.plan-categorie h2{text-align:center;}.plan-mentions{font-size:.7rem;letter-spacing:.12em;}}
+
+
+/* Révélation au scroll */
+.reveler{opacity:0;transform:translateY(18px);transition:opacity .9s ease, transform .9s ease;}
+.reveler.visible{opacity:1;transform:translateY(0);}
+@media(prefers-reduced-motion: reduce){.reveler{opacity:1;transform:none;transition:none;}}
 </style>
-<link rel="stylesheet" href="assets/css/lamagie-refinement.css"/>
 </head>
+
 <body>
-<canvas id="cosmos"></canvas>
-<div class="neb"></div>
-<nav>
-  <a href="index.html" class="logo"><span class="lp">L'</span><span class="la">A</span><span class="lm">M</span><span class="lg">agie</span></a>
-  <ul class="nav-ul">
-    <li><a href="qui-sommes-nous.html" class="active">La maison</a></li>
-    <li><a href="edition.html">Édition</a></li>
-    <li><a href="peintures.html">Meichelus</a></li>
-    <li><a href="poesie.html">Poésie</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
-  <button class="burger" onclick="document.getElementById('mm').classList.add('open')">☰</button>
-</nav>
-<div class="mob" id="mm">
-  <button class="mc" onclick="document.getElementById('mm').classList.remove('open')">✕</button>
-  <a href="qui-sommes-nous.html" onclick="document.getElementById('mm').classList.remove('open')">La maison</a>
-  <a href="edition.html" onclick="document.getElementById('mm').classList.remove('open')">Édition</a>
-  <a href="peintures.html" onclick="document.getElementById('mm').classList.remove('open')">Meichelus</a>
-  <a href="poesie.html" onclick="document.getElementById('mm').classList.remove('open')">Poésie</a>
-  <a href="contact.html" onclick="document.getElementById('mm').classList.remove('open')">Contact</a>
-</div>
 
-<div class="page-hero">
-  <span class="breadcrumb"><a href="index.html">Accueil</a> · <a href="qui-sommes-nous.html">Qui sommes-nous ?</a> · Fonctionnement</span>
-  <h1 class="page-title">Fonctionnement, rôle<br/>et objectifs</h1>
-  <p class="page-sous">L'AMagie — <em>une autre manière de publier</em></p>
-  <div class="sep-h"></div>
-</div>
+  <!-- HEADER COMMUN -->
+  <header class="entete-site" role="banner">
+    <div class="entete-logo">
+      <a href="index.html" aria-label="Retour à l'accueil de L'AMagie">
+        <img src="images/logo-amagie.png" alt="Monogramme L'AMagie" onerror="this.style.display='none'"/>
+      </a>
+    </div>
+    <a href="index.html" class="entete-titre" aria-label="L'AMagie — Accueil">L&rsquo;AMagie</a>
+    <div class="entete-retour">
+      <a href="index.html"><span>Retour à l&rsquo;accueil</span></a>
+    </div>
+  </header>
 
-<div class="content">
+  <!-- HÉROS DE PAGE -->
+  <section class="heros-page">
+    <nav class="fil-ariane" aria-label="Fil d'ariane">
+      <a href="index.html">Accueil</a>
+      <span class="sep">·</span>
+      <span>Fonctionnement</span>
+    </nav>
+    <h1 class="titre-page">Fonctionnement, rôle<br/>et objectifs de l&rsquo;association</h1>
+    <p class="sous-titre-page">L&rsquo;AMagie — Une autre manière de faire vivre les livres</p>
+    <div class="medaillon-titre" aria-hidden="true">✦</div>
+  </section>
 
-  <!-- Intro -->
-  <div class="intro reveal">
-    <h2>L'AMagie — Une autre manière de publier</h2>
-    <p>Les éditions <strong>L'AMagie</strong> sont nées de l'association L'AMagie (loi 1901), créée en 2024. Notre ambition ? Offrir une <em>alternative solidaire et accessible</em> aux auteurs et autrices qui souhaitent publier leurs œuvres sans subir les contraintes de l'édition traditionnelle, ou de l'édition à compte d'auteur qui s'apparente à la prestation commerciale.</p>
-    <p>Nous voulons <em>privilégier une relation bienveillante, humaine, attentive à la création artistique.</em></p>
-  </div>
+  <!-- CONTENU -->
+  <main class="contenu" role="main">
 
-  <!-- 4 blocs -->
-  <div class="blocs reveal">
-    <div class="bloc">
-      <span class="bloc-icone">🎯</span>
-      <h3>Un accompagnement sur mesure</h3>
+    <!-- ============================================================
+         BLOC 1 — Une démarche éditoriale humaine et équitable
+         ============================================================ -->
+
+    <!-- Introduction manifeste -->
+    <article class="carte reveler">
+      <p>Les éditions <em>L&rsquo;AMagie</em> sont nées de l&rsquo;association éponyme (loi 1901), créée en 2024. Notre ambition est simple&nbsp;: offrir une <em>alternative solidaire et accessible</em> aux auteurs et autrices qui souhaitent publier leurs œuvres sans subir les contraintes de l&rsquo;édition traditionnelle, ni les dérives de l&rsquo;édition à compte d&rsquo;auteur qui s&rsquo;apparente à la prestation commerciale.</p>
+      <p>Nous voulons privilégier une relation <em>bienveillante, humaine, attentive à la création artistique</em>. Une maison à hauteur d&rsquo;homme, où chaque texte est lu, accompagné, défendu — et où chaque auteur reste maître de son œuvre.</p>
+    </article>
+
+    <div class="section-titre reveler">
+      <h2>Une démarche éditoriale humaine et équitable</h2>
+    </div>
+
+    <!-- Quatre cartes piliers -->
+    <div class="grille-cartes reveler">
+
+      <article class="carte-edito">
+        <span class="carte-edito-icone">🎯</span>
+        <h3>Un accompagnement sur mesure</h3>
+        <p><strong>1h de coaching littéraire</strong> incluse pour penser ensemble votre projet.</p>
+        <p>Mise en page, graphisme et couverture <span class="highlight-or">inclus gratuitement</span>.</p>
+        <p>ISBN, dépôt légal BnF et envois obligatoires : pris en charge.</p>
+      </article>
+
+      <article class="carte-edito">
+        <span class="carte-edito-icone">📖</span>
+        <h3>Une publication en toute liberté</h3>
+        <p>Deux formules au choix : <em>avec référencement</em> (forfait unique 65 € TTC, librairies indépendantes, Dilicom, Electre, Sodis) ou <em>simple</em>, sans référencement.</p>
+        <p><span class="highlight-or">Impression à la demande, sans minimum d&rsquo;exemplaires.</span></p>
+      </article>
+
+      <article class="carte-edito">
+        <span class="carte-edito-icone">💰</span>
+        <h3>Une rémunération juste et transparente</h3>
+        <p>Auteur·rice : <strong>environ 40&nbsp;%</strong> des ventes (contre 2 à 8&nbsp;% en édition classique), et <span class="highlight-or">100&nbsp;% en vente directe</span>.</p>
+        <p>Librairie ~30&nbsp;% · Imprimeur ~30&nbsp;% · TVA 5,5&nbsp;%. L&rsquo;AMagie&nbsp;: <em>dons solidaires uniquement</em>.</p>
+      </article>
+
+      <article class="carte-edito">
+        <span class="carte-edito-icone">🌍</span>
+        <h3>Un circuit de diffusion adapté</h3>
+        <p>Salons du livre &amp; librairies partenaires, visibilité sur les réseaux sociaux.</p>
+        <p><strong>Article de presse offert</strong> à chaque sortie.</p>
+        <p>Catalogues Dilicom, Electre, Sodis pour la formule avec référencement.</p>
+      </article>
+
+    </div>
+
+    <!-- ============================================================
+         ŒUVRE CENTRALE — Place de l'apéro, Meichelus
+         ============================================================ -->
+    <figure class="oeuvre-centrale reveler">
+      <img src="images/place-de-lapero.jpg"
+           alt="Place de l'apéro — Œuvre originale de Meichelus"
+           loading="lazy"
+           decoding="async"/>
+      <figcaption>« <strong>Place de l&rsquo;apéro</strong> », œuvre originale de Meichelus.</figcaption>
+    </figure>
+
+    <!-- ============================================================
+         BLOC 2 — Tarifs clairs et transparence
+         ============================================================ -->
+
+    <div class="section-titre reveler">
+      <h2>Tarifs clairs &amp; transparence</h2>
+    </div>
+
+    <!-- Deux formules au choix -->
+    <div class="formules reveler">
+      <div class="formule">
+        <span class="label">Avec référencement</span>
+        <span class="prix">65 €</span>
+        <span class="prix-suffixe">forfait unique TTC</span>
+        <p>Réseau des librairies indépendantes · Catalogues Dilicom, Electre, Sodis · Librairies en ligne partenaires.</p>
+      </div>
+      <div class="formule">
+        <span class="label">Sans référencement</span>
+        <span class="prix">—</span>
+        <span class="prix-suffixe">formule simple</span>
+        <p>Impression à la demande, sans minimum d&rsquo;exemplaires. Pour les projets confidentiels ou en circulation directe.</p>
+      </div>
+    </div>
+
+    <!-- Tableau des services -->
+    <section class="tarifs reveler">
+      <p class="tarifs-intro">Nos services inclus ou à prix doux</p>
       <ul>
-        <li><strong>1h de coaching littéraire offerte</strong></li>
-        <li>Mise en page, graphisme & couverture : <strong>inclus gratuitement</strong></li>
+        <li>
+          <div class="libelle">Adhésion annuelle à l&rsquo;association <em>via HelloAsso</em></div>
+          <div class="montant">30 €</div>
+        </li>
+        <li>
+          <div class="libelle">Relecture &amp; mise au format <em>si tapuscrit propre (Word, police 12, interligne simple, tirets cadratins)</em></div>
+          <div class="montant offert">gratuit</div>
+        </li>
+        <li>
+          <div class="libelle">Corrections approfondies <em>forfait ou participation libre via HelloAsso</em></div>
+          <div class="montant">30 € / h</div>
+        </li>
+        <li>
+          <div class="libelle">Impression à l&rsquo;exemplaire <em>format poche N&amp;B + couverture couleur — sans minimum, sans marge ajoutée par l&rsquo;association</em></div>
+          <div class="montant">4 – 5 € / ex.</div>
+        </li>
+        <li>
+          <div class="libelle">Communication &amp; visibilité <em>réseaux sociaux + article de presse</em></div>
+          <div class="montant offert">offert</div>
+        </li>
+        <li>
+          <div class="libelle">Illustrations <em>couverture ou intérieur — œuvres signées Meichelus</em></div>
+          <div class="montant offert">participation libre</div>
+        </li>
+        <li>
+          <div class="libelle">ISBN, dépôt légal BnF <em>et envois obligatoires</em></div>
+          <div class="montant offert">pris en charge</div>
+        </li>
       </ul>
+    </section>
+
+    <!-- ============================================================
+         BLOC 3 — Valeurs fondatrices et engagement
+         ============================================================ -->
+
+    <div class="section-titre reveler">
+      <h2>Nos valeurs fondatrices</h2>
     </div>
-    <div class="bloc">
-      <span class="bloc-icone">📖</span>
-      <h3>Une publication en toute liberté</h3>
-      <p>Deux formules au choix :</p>
-      <ul style="margin-top:.8rem;">
-        <li>Avec <strong>référencement</strong> : 65 € TTC forfait unique (Fnac, Cultura, Amazon…)</li>
-        <li>Ou <strong>simple</strong>, sans référencement</li>
-        <li>Impression à la demande, <strong>sans minimum d'exemplaires</strong></li>
+
+    <article class="carte reveler">
+      <p>Au-delà de l&rsquo;édition, l&rsquo;association développe également des activités culturelles : <em>ateliers d&rsquo;écriture, rencontres, lectures, projets poétiques, créations artistiques</em> et événements autour du livre. L&rsquo;objectif est de faire vivre une maison éditoriale habitée, où les œuvres dialoguent avec les personnes, les territoires et les imaginaires.</p>
+      <p>L&rsquo;AMagie n&rsquo;est ni une plateforme automatisée ni une structure de publication impersonnelle. La maison défend un positionnement <em>indépendant et transparent</em>, et ne fonctionne pas selon un modèle de « compte d&rsquo;auteur » classique. Les projets retenus sont accompagnés dans une logique éditoriale réelle&nbsp;: lecture, échanges, cohérence graphique, identité du livre et mise en valeur des œuvres.</p>
+      <p>L&rsquo;AMagie souhaite préserver une certaine idée du livre&nbsp;: un espace de <em>présence, de beauté, de réflexion et de transmission</em>. Chaque ouvrage publié participe à cette même volonté.</p>
+    </article>
+
+    <article class="carte reveler">
+      <p style="text-align:center;font-family:'Cormorant Garamond',serif;font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;color:#8a6d2f;margin-bottom:18px;">Nos valeurs cardinales</p>
+      <ul class="valeurs-liste">
+        <li><strong>L&rsquo;exigence littéraire</strong> — choisir des textes qui portent une voix, une atmosphère, une vraie nécessité d&rsquo;être écrits.</li>
+        <li><strong>La sensibilité artistique</strong> — faire dialoguer littérature, poésie et arts visuels, pour que chaque livre soit aussi un objet sensible.</li>
+        <li><strong>La liberté créative</strong> — refuser la logique industrielle, accueillir l&rsquo;imprévu, soutenir les formes singulières.</li>
+        <li><strong>L&rsquo;attention portée aux auteurs</strong> — accompagner chaque projet pas à pas, dans une relation respectueuse et durable.</li>
+        <li><strong>La cohérence des projets</strong> — défendre une ligne éditoriale claire sans la transformer en uniformité.</li>
+        <li><strong>Le respect du lecteur</strong> — lui offrir des livres pensés, soignés, dignes de son temps et de son attention.</li>
       </ul>
-    </div>
-    <div class="bloc">
-      <span class="bloc-icone">💰</span>
-      <h3>Une rémunération juste et transparente</h3>
-      <ul>
-        <li>Auteur·rice : <strong>~40 % des ventes</strong> (vs 2–8 % en édition classique)</li>
-        <li>Librairie : ~30 % · Imprimeur : ~30 % · TVA 5,5 %</li>
-        <li>L'AMagie : <strong>dons solidaires</strong></li>
-        <li>Ventes directes (salons) : <strong>100 % pour vous</strong></li>
-      </ul>
-    </div>
-    <div class="bloc">
-      <span class="bloc-icone">🌍</span>
-      <h3>Un circuit de diffusion adapté</h3>
-      <ul>
-        <li>Salons du livre & librairies partenaires</li>
-        <li>Visibilité en ligne avec nos <strong>partenaires de diffusion</strong></li>
-        <li>Réseaux sociaux + <strong>article de presse offert</strong></li>
-      </ul>
-    </div>
-  </div>
+      <p class="phrase-forte" style="margin-top:32px;">
+        Faire exister des livres <span class="etoile">✦</span><br/>
+        qui gardent une part d&rsquo;étoiles.
+      </p>
+    </article>
 
-  <!-- Services -->
-  <span class="services-titre reveal">— Nos services —</span>
-  <h2 class="sh2 reveal">Inclus ou à prix doux</h2>
-  <div class="sep reveal"></div>
+    <!-- Citation Anouk en exergue -->
+    <blockquote class="citation-anouk reveler">
+      <p>En édition classique, les auteurs cèdent leurs droits pour <strong>2 à 8&nbsp;%</strong> des ventes… Avec L&rsquo;AMagie, ils restent maîtres de leurs œuvres et gagnent bien plus. Mais surtout&nbsp;: <em>la création artistique retrouve sa place essentielle</em>.</p>
+      <cite>— Anouk Journo, co-fondatrice</cite>
+    </blockquote>
 
-  <div class="services reveal">
-    <div class="service-ligne">
-      <div class="service-nom"><em>Adhésion</em>Adhésion annuelle à l'association (via HelloAsso)</div>
-      <div class="service-prix payant">30 €/an</div>
-    </div>
-    <div class="service-ligne">
-      <div class="service-nom"><em>Relecture & mise en forme</em>Si tapuscrit propre (Word, police 12, interligne simple, tirets cadratins)</div>
-      <div class="service-prix gratuit">Gratuit</div>
-    </div>
-    <div class="service-ligne">
-      <div class="service-nom"><em>Corrections</em>Si corrections nécessaires (forfait ou participation libre via HelloAsso)</div>
-      <div class="service-prix payant">30 €/h</div>
-    </div>
-    <div class="service-ligne">
-      <div class="service-nom"><em>Impression</em>Format poche N&B + couverture couleur, sans minimum d'exemplaires. L'AMagie ne facture aucune marge.</div>
-      <div class="service-prix payant">4–5 €/exemplaire</div>
-    </div>
-    <div class="service-ligne">
-      <div class="service-nom"><em>Illustrations</em>Couverture ou intérieur signés Meichelus</div>
-      <div class="service-prix gratuit">Participation libre</div>
-    </div>
-    <div class="service-ligne">
-      <div class="service-nom"><em>ISBN, dépôt légal BnF</em>Envois obligatoires pris en charge</div>
-      <div class="service-prix gratuit">Gratuit</div>
-    </div>
-    <div class="service-ligne">
-      <div class="service-nom"><em>Communication</em>Réseaux sociaux + article de presse</div>
-      <div class="service-prix gratuit">Offert</div>
-    </div>
-    <div class="service-ligne">
-      <div class="service-nom"><em>Coaching littéraire</em>Première séance d'accompagnement</div>
-      <div class="service-prix gratuit">1h offerte</div>
-    </div>
-  </div>
+    <!-- Navigation suite -->
+    <nav class="navigation-suite reveler" aria-label="Suite du parcours">
+      <div class="filet-ornement" aria-hidden="true">
+        <span class="etoile">✦</span>
+      </div>
+      <div class="navigation-suite-grille">
+        <a href="edition.html">Soumettre un manuscrit</a>
+        <a href="contact.html">Nous contacter</a>
+        <a href="faq.html">Questions fréquentes</a>
+      </div>
+    </nav>
 
-  <!-- Citation -->
-  <div class="citation reveal">
-    <blockquote>« En édition classique, les auteurs cèdent leurs droits pour 2 à 8 % des ventes… Avec L'AMagie, ils restent maîtres de leurs œuvres et gagnent bien plus. Mais surtout : la création artistique retrouve sa place essentielle. »</blockquote>
-    <cite>Anouk Journo · Co-fondatrice de L'AMagie</cite>
-  </div>
+  </main>
 
-  <!-- CTA -->
-  <div class="pourquoi reveal">
-    <h3>Vous avez un texte à publier ?</h3>
-    <p>Contactez-nous pour en parler — sans engagement. Nous étudierons votre projet avec attention et vous proposerons la formule la plus adaptée à votre création.</p>
-    <a href="contact.html" class="bor">Nous écrire →</a>
-  </div>
+  <!-- PLAN DU SITE (footer commun) -->
+  <section class="plan-site" aria-label="Plan du site">
+    <div class="filet-haut" aria-hidden="true"><span class="etoile">✦</span></div>
+    <div class="plan-site-grille">
+      <div class="plan-categorie">
+        <h2>Qui sommes-nous&nbsp;?</h2>
+        <ul>
+          <li><a href="qui-sommes-nous.html">Qui sommes-nous</a></li>
+          <li><a href="fonctionnement.html">Fonctionnement de l&rsquo;association</a></li>
+          <li><a href="anouk-journo.html">Anouk Journo</a></li>
+        </ul>
+      </div>
+      <div class="plan-categorie">
+        <h2>Ateliers &amp; Coaching</h2>
+        <ul>
+          <li><a href="ateliers.html">Ateliers &amp; Coaching</a></li>
+          <li><a href="mots-pour-maux.html">Écriture thérapeutique</a></li>
+          <li><a href="mediation-animale.html">Médiation animale</a></li>
+          <li><a href="amis-mots.html">Collection Amis-Mots</a></li>
+        </ul>
+      </div>
+      <div class="plan-categorie">
+        <h2>Éditions</h2>
+        <ul>
+          <li><a href="edition.html">Manuscrits &amp; projets</a></li>
+          <li><a href="edition.html#raconter-le-monde">Collection Raconter le monde</a></li>
+          <li><a href="edition.html#immersion">Collection Immersion</a></li>
+          <li><a href="edition.html#manifestes">Collection Manifestes</a></li>
+          <li><a href="edition.html#romans-jeunesse">Romans jeunesse</a></li>
+        </ul>
+      </div>
+      <div class="plan-categorie">
+        <h2>Poésie &amp; Arts</h2>
+        <ul>
+          <li><a href="poesie.html">Poésie au jour le jour</a></li>
+          <li><a href="peintures.html">Peintures &amp; Dessins</a></li>
+          <li><a href="evenements.html">Événements &amp; Presse</a></li>
+        </ul>
+      </div>
+      <div class="plan-categorie">
+        <h2>Liens utiles</h2>
+        <ul>
+          <li><a href="boutique.html">Boutique</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="youtube.html">Chaîne Youtube</a></li>
+          <li><a href="mentions-legales.html">Mentions légales</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="plan-mentions">© L&rsquo;AMagie <span class="etoile">✦</span> Maison d&rsquo;édition indépendante <span class="etoile">✦</span> Félines-Minervois</p>
+  </section>
 
-</div>
+  <script>
+    if ('IntersectionObserver' in window) {
+      var obs = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){
+          if (e.isIntersecting){
+            e.target.classList.add('visible');
+            obs.unobserve(e.target);
+          }
+        });
+      }, { threshold:.08, rootMargin:'0px 0px -50px 0px' });
+      document.querySelectorAll('.reveler').forEach(function(el){ obs.observe(el); });
+    } else {
+      document.querySelectorAll('.reveler').forEach(function(el){ el.classList.add('visible'); });
+    }
+  </script>
 
-<footer>
-  <p class="ara">✦ ✦ ✦</p>
-  <span class="fl2">L'AMagie · Éditions</span>
-  <ul class="flinks">
-    <li><a href="qui-sommes-nous.html">Qui sommes-nous ?</a></li>
-    <li><a href="fonctionnement.html">Fonctionnement</a></li>
-    <li><a href="edition.html">Édition</a></li>
-    <li><a href="poesie.html">Poésie</a></li>
-    <li><a href="contact.html">Contact</a></li>
-    <li><a href="mentions-legales.html">Mentions légales</a></li>
-  </ul>
-  <div class="fsoc">
-    <a href="https://www.instagram.com/lamagie_arts_editions/" title="Instagram">📷</a>
-    <a href="http://www.facebook.com/share/1Rcqk3QQ4z/" title="Facebook">f</a>
-    <a href="https://meichelus-art.blogspot.com" title="Blog">✎</a>
-    <a href="https://www.youtube.com/@lamagieeditions" title="YouTube">▶</a>
-  </div>
-  <p>© 2026 L'AMagie · Maison d'édition indépendante · Siren 937629533</p>
-  <p style="margin-top:.2rem;">Félines-Minervois · Occitanie · France</p>
-</footer>
-
-<script>
-const cvs=document.getElementById('cosmos'),ctx=cvs.getContext('2d');
-function rsz(){cvs.width=innerWidth;cvs.height=innerHeight;}rsz();
-window.addEventListener('resize',rsz);
-const stars=[];
-for(let i=0;i<200;i++)stars.push({x:Math.random()*innerWidth,y:Math.random()*innerHeight,r:Math.random()*1.3+.1,a:Math.random()*.8+.1,ad:(Math.random()>.5?1:-1)*(.0015+Math.random()*.0025),v:Math.random()*.08+.01,c:Math.random()>.7?[232,213,154]:Math.random()>.5?[201,168,76]:[245,240,232]});
-class C{constructor(){this.reset(true);}reset(init=false){this.x=init?Math.random()*innerWidth:-100;this.y=init?Math.random()*innerHeight*.4:Math.random()*innerHeight*.3;this.len=90+Math.random()*160;this.vx=3+Math.random()*4;this.vy=.3+Math.random()*1.5;this.a=0;this.amax=.45+Math.random()*.35;this.st=init?'idle':'in';this.delay=init?Math.floor(Math.random()*350):0;this.t=0;this.w=.5+Math.random()*.6;}tick(){if(this.st==='idle'){if(++this.t>this.delay){this.st='in';this.t=0;}return;}this.x+=this.vx;this.y+=this.vy;if(this.st==='in'){this.a=Math.min(this.a+.02,this.amax);if(this.a>=this.amax)this.st='out';}else this.a=Math.max(this.a-.003,0);if(this.x>innerWidth+200)this.reset();}draw(){if(this.a<=0)return;const ang=Math.atan2(this.vy,this.vx),tx=this.x-Math.cos(ang)*this.len,ty=this.y-Math.sin(ang)*this.len,g=ctx.createLinearGradient(this.x,this.y,tx,ty);g.addColorStop(0,`rgba(245,240,232,${this.a})`);g.addColorStop(.3,`rgba(201,168,76,${this.a*.6})`);g.addColorStop(1,'rgba(201,168,76,0)');ctx.beginPath();ctx.moveTo(this.x,this.y);ctx.lineTo(tx,ty);ctx.strokeStyle=g;ctx.lineWidth=this.w;ctx.stroke();}}
-const comets=[new C(),new C(),new C()];
-let lastT=0;
-function draw(t){if(t-lastT<16){requestAnimationFrame(draw);return;}lastT=t;ctx.clearRect(0,0,cvs.width,cvs.height);const bg=ctx.createRadialGradient(cvs.width*.5,cvs.height*.35,0,cvs.width*.5,cvs.height*.35,Math.max(cvs.width,cvs.height));bg.addColorStop(0,'#111428');bg.addColorStop(.5,'#0d1020');bg.addColorStop(1,'#0a0c18');ctx.fillStyle=bg;ctx.fillRect(0,0,cvs.width,cvs.height);stars.forEach(s=>{s.a+=s.ad;if(s.a>.9||s.a<.05)s.ad*=-1;s.y+=s.v;if(s.y>cvs.height)s.y=0;ctx.beginPath();ctx.arc(s.x,s.y,s.r,0,Math.PI*2);ctx.fillStyle=`rgba(${s.c[0]},${s.c[1]},${s.c[2]},${s.a})`;ctx.fill();});comets.forEach(c=>{c.tick();c.draw();});requestAnimationFrame(draw);}
-requestAnimationFrame(draw);
-const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){if(e.target.classList.contains('blocs')||e.target.classList.contains('services'))[...e.target.children].forEach((c,i)=>setTimeout(()=>c.classList.add('vis'),i*80));e.target.classList.add('vis');}});},{threshold:.06});
-document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
-</script>
-<script src="assets/js/lamagie.js" defer></script>
 </body>
 </html>

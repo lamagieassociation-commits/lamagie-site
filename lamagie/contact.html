@@ -67,22 +67,68 @@ em{font-style:italic;color:#5a4a30;}
 .titre-page{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:clamp(2.4rem,5.5vw,3.8rem);color:#3a3220;letter-spacing:.005em;line-height:1.1;margin:0 0 14px;}
 .sous-titre-page{font-family:'Pinyon Script','Cormorant Garamond',cursive;font-size:clamp(1.4rem,2.5vw,1.95rem);color:#7a6a48;line-height:1.3;margin:0;}
 
-/* === Image éditions (au-dessus du titre) === */
+/* === Image bandeau (au-dessus du titre) — OVALE avec transition esquisse → photo === */
 .image-editions{
   margin:0 auto 30px;
   max-width:760px;
   padding:0 20px;
   text-align:center;
 }
-.image-editions img{
-  display:block;
+/* Conteneur ovale : porte la forme, l'ombre et le clipping */
+.bandeau-ovale{
+  position:relative;
   width:100%;
-  height:auto;
-  border-radius:10px;
+  aspect-ratio:16 / 9;
+  border-radius:50% / 50%;
+  overflow:hidden;
   box-shadow:
-    0 4px 20px rgba(58,50,32,0.15),
-    0 0 0 1px rgba(184,154,92,.25),
-    0 0 0 6px rgba(241,234,212,.6);
+    0 8px 28px rgba(58,50,32,0.18),
+    0 0 0 1px rgba(184,154,92,.28),
+    0 0 0 8px rgba(241,234,212,.7);
+  background:rgba(248,243,228,.85);
+}
+.bandeau-ovale img{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+  display:block;
+}
+/* Couche du dessous : esquisse au crayon (niveau de gris + contraste + léger flou) */
+.bandeau-esquisse{
+  filter:grayscale(1) contrast(1.5) brightness(1.18) blur(.5px);
+  opacity:.92;
+  mix-blend-mode:multiply;
+}
+/* Couche du dessus : photographie nette, révélée au centre, fondue vers les bords */
+.bandeau-photo{
+  -webkit-mask-image:radial-gradient(ellipse 62% 70% at center,
+    rgba(0,0,0,1) 28%,
+    rgba(0,0,0,.92) 46%,
+    rgba(0,0,0,.55) 66%,
+    rgba(0,0,0,.18) 84%,
+    rgba(0,0,0,0) 97%);
+  mask-image:radial-gradient(ellipse 62% 70% at center,
+    rgba(0,0,0,1) 28%,
+    rgba(0,0,0,.92) 46%,
+    rgba(0,0,0,.55) 66%,
+    rgba(0,0,0,.18) 84%,
+    rgba(0,0,0,0) 97%);
+}
+/* Voile de grain « papier de croquis » concentré sur les bords */
+.bandeau-ovale::after{
+  content:'';
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='g'><feTurbulence type='fractalNoise' baseFrequency='0.95' numOctaves='3' seed='7'/><feColorMatrix values='0 0 0 0 0.36 0 0 0 0 0.28 0 0 0 0 0.16 0 0 0 0.55 0'/></filter><rect width='100%25' height='100%25' filter='url(%23g)'/></svg>");
+  background-size:240px 240px;
+  mix-blend-mode:multiply;
+  opacity:.45;
+  -webkit-mask-image:radial-gradient(ellipse 62% 70% at center, transparent 36%, black 90%);
+  mask-image:radial-gradient(ellipse 62% 70% at center, transparent 36%, black 90%);
 }
 @media(max-width:600px){
   .image-editions{max-width:520px;}
@@ -354,13 +400,24 @@ em{font-style:italic;color:#5a4a30;}
       <span>Contact</span>
     </nav>
 
-    <!-- Image éditions au-dessus du titre -->
+    <!-- Image bandeau au-dessus du titre — ovale avec transition esquisse/photo -->
     <figure class="image-editions reveler">
-      <img src="images/editions.png"
-           alt="Éditions L'AMagie — façade et entrée"
-           loading="eager"
-           decoding="async"
-           onerror="this.style.display='none'"/>
+      <div class="bandeau-ovale" role="img" aria-label="Éditions L'AMagie — entrée et bibliothèque extérieure">
+        <img class="bandeau-esquisse"
+             src="images/bandeau-lamagie.jpg"
+             alt=""
+             aria-hidden="true"
+             loading="eager"
+             decoding="async"
+             onerror="this.style.display='none'"/>
+        <img class="bandeau-photo"
+             src="images/bandeau-lamagie.jpg"
+             alt=""
+             aria-hidden="true"
+             loading="eager"
+             decoding="async"
+             onerror="this.style.display='none'"/>
+      </div>
     </figure>
 
     <h1 class="titre-page">Nous écrire</h1>

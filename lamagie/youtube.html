@@ -455,8 +455,14 @@ footer p{
 ::-webkit-scrollbar-track{background:var(--parchemin-fonce);}
 ::-webkit-scrollbar-thumb{background:rgba(168,132,44,0.4);border-radius:4px;}
 ::-webkit-scrollbar-thumb:hover{background:rgba(168,132,44,0.6);}
+
+/* Force du theme parchemin - aucune surcharge possible */
+html,body{
+  background:#ece2c8 !important;
+  background-color:#ece2c8 !important;
+  color:#3a3220 !important;
+}
 </style>
-<link rel="stylesheet" href="assets/css/lamagie-refinement.css"/>
 </head>
 <body>
 
@@ -558,6 +564,5 @@ const obs = new IntersectionObserver(entries => {
 }, { threshold: .08 });
 document.querySelectorAll(".reveal").forEach(el => obs.observe(el));
 </script>
-<script src="assets/js/lamagie.js" defer></script>
 </body>
 </html>

@@ -118,15 +118,17 @@ em{font-style:italic;color:#5a4a30;}
 .section-titre .legende{display:block;margin-top:14px;font-family:'Pinyon Script','Cormorant Garamond',cursive;font-size:1.2rem;color:#7a6a48;text-transform:none;letter-spacing:.02em;font-weight:400;}
 
 /* === Grille des livres === */
-.grille-livres{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:28px;margin:0 auto 36px;}
+.grille-livres{display:grid;grid-template-columns:1fr;gap:32px;margin:0 auto 40px;}
 .livre-carte{
   background:rgba(246,239,216,.58);
   border:1px solid rgba(184,154,92,.25);
   border-radius:2px;
-  padding:28px 24px;
+  padding:34px 36px;
   position:relative;
-  display:flex;
-  flex-direction:column;
+  display:grid;
+  grid-template-columns:minmax(240px,260px) minmax(0,1fr);
+  gap:30px 34px;
+  align-items:start;
   box-shadow:0 4px 14px rgba(90,74,48,.05);
   transition:transform .35s, border-color .35s, background-color .35s;
 }
@@ -136,21 +138,27 @@ em{font-style:italic;color:#5a4a30;}
 .livre-carte:hover{transform:translateY(-3px);background:rgba(246,239,216,.78);border-color:rgba(184,154,92,.4);}
 
 .livre-couverture{
-  width:100%;
-  aspect-ratio:2/3;
-  margin:0 0 20px;
-  border-radius:2px;
-  overflow:hidden;
-  background:rgba(184,154,92,.1);
-  display:flex;
+  width:clamp(240px, 28vw, 260px);
+  max-width:100%;
+  margin:0 auto 24px;
+  border-radius:3px;
+  overflow:visible;
+  background:transparent;
+  display:inline-flex;
   align-items:center;
   justify-content:center;
+  line-height:0;
+  box-shadow:0 8px 22px rgba(58,50,32,.14), 0 0 0 1px rgba(184,154,92,.28);
 }
 .livre-couverture img{
   width:100%;
-  height:100%;
-  object-fit:cover;
+  height:auto;
+  object-fit:contain;
+  border-radius:3px;
 }
+
+.livre-couverture{grid-row:1 / span 5;}
+.livre-texte{min-width:0;}
 
 .livre-titre{
   font-family:'Cormorant Garamond',serif;
@@ -263,19 +271,20 @@ em{font-style:italic;color:#5a4a30;}
 
 /* === Médaillon auteur === */
 .auteur-medallion{
-  width:180px;
-  height:180px;
-  margin:24px auto;
+  width:110px;
+  height:110px;
+  margin:4px 18px 12px 0;
   border-radius:50%;
   overflow:hidden;
-  border:3px solid rgba(184,154,92,.35);
-  box-shadow:0 8px 24px rgba(90,74,48,.15), 0 0 0 8px rgba(241,234,212,.8);
+  border:2px solid rgba(184,154,92,.38);
+  box-shadow:0 6px 18px rgba(90,74,48,.14), 0 0 0 6px rgba(241,234,212,.72);
   background:rgba(184,154,92,.08);
   flex-shrink:0;
+  float:left;
 }
 .auteur-medallion img{
-  width:100%;
-  height:100%;
+  width:110px;
+  height:110px;
   object-fit:cover;
   display:block;
 }
@@ -302,21 +311,27 @@ em{font-style:italic;color:#5a4a30;}
 }
 .article-presse-contenu{
   display:grid;
-  grid-template-columns:1fr 280px;
-  gap:20px;
+  grid-template-columns:1fr;
+  gap:22px;
   align-items:start;
 }
 .article-presse-texte{
-  font-size:.96rem;
-  line-height:1.75;
+  font-size:1rem;
+  line-height:1.78;
   color:#3a3220;
+  max-width:720px;
+  margin:0 auto;
 }
 .article-presse-image{
-  width:280px;
+  width:100%;
+  max-width:760px;
   height:auto;
-  border-radius:2px;
-  border:1px solid rgba(184,154,92,.25);
-  box-shadow:0 3px 12px rgba(90,74,48,.08);
+  margin:0 auto;
+  border-radius:3px;
+  border:1px solid rgba(184,154,92,.28);
+  box-shadow:0 8px 24px rgba(90,74,48,.12), 0 0 0 8px rgba(241,234,212,.55);
+  background:rgba(255,253,245,.45);
+  padding:8px;
 }
 .article-presse-image img{
   width:100%;
@@ -325,8 +340,11 @@ em{font-style:italic;color:#5a4a30;}
   border-radius:2px;
 }
 @media(max-width:720px){
-  .article-presse-contenu{grid-template-columns:1fr;gap:16px;}
-  .article-presse-image{width:100%;max-width:400px;margin:0 auto;}
+  .livre-carte{grid-template-columns:1fr;padding:30px 22px;}
+  .livre-couverture{grid-row:auto;width:min(260px,100%);}
+  .auteur-medallion{float:none;margin:8px auto 18px;}
+  .article-presse{padding:22px 14px;}
+  .article-presse-image{padding:5px;box-shadow:0 5px 18px rgba(90,74,48,.10), 0 0 0 5px rgba(241,234,212,.55);}
 }
 
 /* === PLAN DU SITE === */
@@ -421,21 +439,25 @@ em{font-style:italic;color:#5a4a30;}
         <div class="livre-couverture">
           <img src="images/paroles-de-felinoises.jpeg" alt="Couverture — Paroles de Félinoises"/>
         </div>
-        <h3 class="livre-titre">Paroles de Félinoises</h3>
-        <span class="livre-auteur">Recueilli par Anouk Journo</span>
-        <p class="livre-description">Une cinquantaine d&rsquo;interviews recueillies par Anouk Journo entre 2023 et 2024 dans le cadre du festival « Félines au Féminin ». Un travail de mémoire individuelle et collective qui donne voix aux femmes de Félines-Minervois — leurs parcours, leurs gestes, leurs silences. Les illustrations originales de Meichelus accompagnent chaque témoignage, ouvrant des respirations visuelles qui prolongent les mots.</p>
-        <a class="livre-lien" href="#">Découvrir</a>
+        <div class="livre-texte">
+          <h3 class="livre-titre">Paroles de Félinoises</h3>
+          <span class="livre-auteur">Recueilli par Anouk Journo</span>
+          <p class="livre-description">Une cinquantaine d&rsquo;interviews recueillies par Anouk Journo entre 2023 et 2024 dans le cadre du festival « Félines au Féminin ». Un travail de mémoire individuelle et collective qui donne voix aux femmes de Félines-Minervois — leurs parcours, leurs gestes, leurs silences. Les illustrations originales de Meichelus accompagnent chaque témoignage, ouvrant des respirations visuelles qui prolongent les mots.</p>
+        </div>
       </article>
 
     </div>
 
-    <!-- ARTICLE DE PRESSE : PAROLES DE FÉLINOISES -->
+    <!-- REVUE DE PRESSE : PAROLES DE FÉLINOISES -->
     <div class="article-presse reveler">
-      <h4>In the press</h4>
+      <h4>Revue de presse</h4>
       <div class="article-presse-contenu">
         <div class="article-presse-texte">
-          <p>La publication de <em>Paroles de Félinoises</em> a marqué l&rsquo;actualité culturelle locale, porteuse d&rsquo;une parole collective féminine rare et profonde. Les témoignages recueillis par Anouk Journo rendent visible la richesse des expériences vécues dans notre région.</p>
+          <p>La publication de <em>Paroles de Félinoises</em> a marqué l&rsquo;actualité culturelle locale : un ouvrage né d&rsquo;une collecte sensible, pensé comme une mémoire offerte aux femmes du village et à celles et ceux qui en prolongent la voix.</p>
         </div>
+        <figure class="article-presse-image">
+          <img src="images/paroles-de-felinoises-presse.jpeg" alt="Revue de presse — Paroles de Félinoises"/>
+        </figure>
       </div>
     </div>
 
@@ -446,24 +468,26 @@ em{font-style:italic;color:#5a4a30;}
         <div class="livre-couverture">
           <img src="images/mort-en-prison.png" alt="Couverture — Mort en prison"/>
         </div>
-        <h3 class="livre-titre">Mort en prison</h3>
-        <span class="livre-auteur">Jean-Pierre Montaron</span>
-        
-        <!-- Médaillon portrait de l'auteur -->
-        <div class="auteur-medallion">
-          <img src="images/Jean-Pierre-Montaron.jpg" alt="Portrait de Jean-Pierre Montaron"/>
+        <div class="livre-texte">
+          <h3 class="livre-titre">Mort en prison</h3>
+          <span class="livre-auteur">Jean-Pierre Montaron</span>
+          
+          <!-- Médaillon portrait de l'auteur -->
+          <div class="auteur-medallion">
+            <img src="images/Jean-Pierre-Montaron.jpg" alt="Portrait de Jean-Pierre Montaron"/>
+          </div>
+          
+          <p class="livre-description">Ancien enseignant en milieu carcéral, Jean-Pierre Montaron signe un roman nourri par l&rsquo;expérience et traversé par une vérité humaine rare. Dans l&rsquo;enceinte d&rsquo;une prison, au plus près des salles de classe, des couloirs et des silences, le narrateur accompagne de jeunes détenus vers l&rsquo;examen du brevet des collèges. Entre la rudesse institutionnelle, les instants d&rsquo;échange, le jardin et l&rsquo;atelier où la pensée reprend souffle, <em>Mort en prison</em> ouvre une fenêtre sensible sur un monde souvent tenu à distance. Un récit sobre et profond, où la fiction accueille la mémoire sans jamais trahir le réel.</p>
+          
+          <a class="livre-lien" href="https://www.fnac.com/a22323075/Jean-Pierre-Montaron-Mort-en-prison" target="_blank" rel="noopener">Acheter à la Fnac</a>
         </div>
-        
-        <p class="livre-description">Ancien enseignant en milieu carcéral, Jean-Pierre Montaron nous livre ici un roman de vérité. C&rsquo;est le jour de la rentrée scolaire à la prison de Fleury-Mérogie, où le narrateur prépare de jeunes détenus à l&rsquo;examen du brevet des collèges. Entre les salles de classe et les couloirs de l&rsquo;établissement, son récit alterne les moments partagés avec ses élèves et ses collègues avec les heures qu&rsquo;il consacre à son jardin et son atelier de peinture. Peu à peu, une vérité inquiétante se dessine. Écrit au plus près du vécu institutionnel, <em>Mort en prison</em> est l&rsquo;exploration poignante d&rsquo;un univers austère, des silences qui l&rsquo;habitent et des hommes qui tentent d&rsquo;y préserver leur humanité.</p>
-        
-        <a class="livre-lien" href="https://www.fnac.com/a22323075/Jean-Pierre-Montaron-Mort-en-prison" target="_blank">Acheter à la Fnac</a>
       </article>
 
     </div>
 
-    <!-- ARTICLE DE PRESSE : MORT EN PRISON -->
+    <!-- REVUE DE PRESSE : MORT EN PRISON -->
     <div class="article-presse reveler">
-      <h4>Article de presse — L&rsquo;Indépendant</h4>
+      <h4>Revue de presse</h4>
       <div class="article-presse-contenu">
         <div class="article-presse-texte">
           <p>Samedi 22 novembre 2025 — <strong>Jean-Pierre Montaron publie « Mort en prison »</strong></p>
@@ -471,7 +495,7 @@ em{font-style:italic;color:#5a4a30;}
           <p>« Un vrai roman », explique Jean-Pierre Montaron, qui s&rsquo;appuie sur une expérience directe de l&rsquo;enseignement en milieu carcéral pour brosser un portrait sensible et documenté de cet univers. Entre témoignage brut et création littéraire, l&rsquo;ouvrage offre une plongée dans une réalité souvent méconnue.</p>
         </div>
         <div class="article-presse-image">
-          <img src="images/Article-resse-Jean-Pierre-Montaron.jpeg" alt="Article de presse L'Indépendant — Mort en prison"/>
+          <img src="images/Article-presse-Jean-Pierre-Montaron.jpeg" alt="Article de presse L'Indépendant — Mort en prison"/>
         </div>
       </div>
     </div>

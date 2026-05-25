@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <meta name="google" content="notranslate"/>
 <meta http-equiv="Content-Language" content="fr"/>
-<title>Éditions — Six collections à explorer | L'AMagie</title>
-<meta name="description" content="Les six collections de L'AMagie : Raconter le monde, Immersion, Romans jeunesse, De la Terre à la Lune, Amis-Mots, De la Lune à la Plume. Catalogue des titres publiés et accueil de manuscrits."/>
+<title>Collection Raconter le monde | L'AMagie</title>
+<meta name="description" content="Collection Raconter le monde — Récits et témoignages de L'AMagie. Des histoires vraies et singulières qui portent la mémoire vivante."/>
 
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
@@ -80,10 +80,7 @@ em{font-style:italic;color:#5a4a30;}
   width:100%;
   height:auto;
   border-radius:8px;
-  box-shadow:
-    0 4px 20px rgba(58,50,32,0.12),
-    0 0 0 1px rgba(184,154,92,.22),
-    0 0 0 6px rgba(241,234,212,.55);
+  box-shadow:0 4px 20px rgba(58,50,32,0.12),0 0 0 1px rgba(184,154,92,.22),0 0 0 6px rgba(241,234,212,.55);
   background:rgba(255,253,245,.5);
   padding:14px;
 }
@@ -120,47 +117,74 @@ em{font-style:italic;color:#5a4a30;}
 .section-titre h2::after{right:0;}
 .section-titre .legende{display:block;margin-top:14px;font-family:'Pinyon Script','Cormorant Garamond',cursive;font-size:1.2rem;color:#7a6a48;text-transform:none;letter-spacing:.02em;font-weight:400;}
 
-/* === Grille des collections === */
-.grille-collections{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px;margin:0 auto 30px;}
-.collection-carte{
+/* === Grille des livres === */
+.grille-livres{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:28px;margin:0 auto 36px;}
+.livre-carte{
   background:rgba(246,239,216,.58);
   border:1px solid rgba(184,154,92,.25);
   border-radius:2px;
-  padding:34px 32px;
+  padding:28px 24px;
   position:relative;
   display:flex;
   flex-direction:column;
   box-shadow:0 4px 14px rgba(90,74,48,.05);
   transition:transform .35s, border-color .35s, background-color .35s;
-  scroll-margin-top:80px;
 }
-.collection-carte::before,.collection-carte::after{content:'';position:absolute;width:14px;height:14px;border:1px solid rgba(184,154,92,.4);pointer-events:none;}
-.collection-carte::before{top:5px;left:5px;border-right:0;border-bottom:0;}
-.collection-carte::after{bottom:5px;right:5px;border-left:0;border-top:0;}
-.collection-carte:hover{transform:translateY(-3px);background:rgba(246,239,216,.78);border-color:rgba(184,154,92,.4);}
-.collection-carte .numero-romain{
-  display:block;
-  font-family:'Cormorant Garamond',serif;
-  font-size:.7rem;
-  letter-spacing:.3em;
-  text-transform:uppercase;
-  color:#8a6d2f;
-  margin-bottom:8px;
+.livre-carte::before,.livre-carte::after{content:'';position:absolute;width:14px;height:14px;border:1px solid rgba(184,154,92,.4);pointer-events:none;}
+.livre-carte::before{top:5px;left:5px;border-right:0;border-bottom:0;}
+.livre-carte::after{bottom:5px;right:5px;border-left:0;border-top:0;}
+.livre-carte:hover{transform:translateY(-3px);background:rgba(246,239,216,.78);border-color:rgba(184,154,92,.4);}
+
+.livre-couverture{
+  width:100%;
+  aspect-ratio:2/3;
+  margin:0 0 20px;
+  border-radius:2px;
+  overflow:hidden;
+  background:rgba(184,154,92,.1);
+  display:flex;
+  align-items:center;
+  justify-content:center;
 }
-.collection-carte h3{
+.livre-couverture img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.livre-titre{
   font-family:'Cormorant Garamond',serif;
   font-weight:500;
-  font-size:1.32rem;
+  font-size:1.28rem;
   letter-spacing:.02em;
   color:#3a3220;
-  margin:0 0 14px;
+  margin:0 0 8px;
   line-height:1.25;
 }
-.collection-carte p{font-size:1rem;line-height:1.7;color:#3a3220;margin:0 0 18px;font-style:italic;color:#5a4a30;}
-.collection-carte .lien-action{
+
+.livre-auteur{
+  display:block;
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;
+  font-size:.95rem;
+  color:#5a4a30;
+  margin-bottom:12px;
+  padding-bottom:12px;
+  border-bottom:1px dashed rgba(184,154,92,.3);
+}
+.livre-auteur::before{content:'— ';color:#b89a5c;font-style:normal;}
+
+.livre-description{
+  font-size:.98rem;
+  line-height:1.7;
+  color:#3a3220;
+  margin:0 0 20px;
+  flex-grow:1;
+}
+
+.livre-lien{
   display:inline-block;
   align-self:flex-start;
-  margin-top:auto;
   font-family:'Cormorant Garamond',serif;
   font-style:italic;
   font-size:.95rem;
@@ -171,67 +195,11 @@ em{font-style:italic;color:#5a4a30;}
   border-radius:2px;
   transition:color .3s, border-color .3s, background-color .3s;
 }
-.collection-carte .lien-action::after{content:' →';font-style:normal;}
-.collection-carte .lien-action:hover{color:#b89a5c;border-color:#b89a5c;background:rgba(241,234,212,.7);}
+.livre-lien::after{content:' →';font-style:normal;}
+.livre-lien:hover{color:#b89a5c;border-color:#b89a5c;background:rgba(241,234,212,.7);}
 
-/* === Grille du catalogue (titres publiés) === */
-.grille-titres{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:22px;margin:0 auto 36px;}
-.titre-carte{
-  background:rgba(246,239,216,.58);
-  border:1px solid rgba(184,154,92,.25);
-  border-radius:2px;
-  padding:32px 30px;
-  position:relative;
-  display:flex;
-  flex-direction:column;
-  box-shadow:0 4px 14px rgba(90,74,48,.05);
-  transition:transform .35s, border-color .35s, background-color .35s;
-}
-.titre-carte::before,.titre-carte::after{content:'';position:absolute;width:14px;height:14px;border:1px solid rgba(184,154,92,.4);pointer-events:none;}
-.titre-carte::before{top:5px;left:5px;border-right:0;border-bottom:0;}
-.titre-carte::after{bottom:5px;right:5px;border-left:0;border-top:0;}
-.titre-carte:hover{transform:translateY(-3px);background:rgba(246,239,216,.78);border-color:rgba(184,154,92,.4);}
-.titre-carte .numero-romain{
-  display:block;
-  font-family:'Cormorant Garamond',serif;
-  font-size:.66rem;
-  letter-spacing:.28em;
-  text-transform:uppercase;
-  color:#8a6d2f;
-  margin-bottom:4px;
-}
-.titre-carte .surtitre{
-  display:block;
-  font-family:'Cormorant Garamond',serif;
-  font-style:italic;
-  font-size:.9rem;
-  color:#7a6a48;
-  margin-bottom:10px;
-}
-.titre-carte h3{
-  font-family:'Cormorant Garamond',serif;
-  font-weight:500;
-  font-size:1.3rem;
-  letter-spacing:.02em;
-  color:#3a3220;
-  margin:0 0 8px;
-  line-height:1.25;
-}
-.titre-carte .auteur{
-  display:block;
-  font-family:'Cormorant Garamond',serif;
-  font-style:italic;
-  font-size:.98rem;
-  color:#5a4a30;
-  margin-bottom:14px;
-  padding-bottom:12px;
-  border-bottom:1px dashed rgba(184,154,92,.3);
-}
-.titre-carte .auteur::before{content:'— ';color:#b89a5c;font-style:normal;}
-.titre-carte p{font-size:.98rem;line-height:1.7;color:#3a3220;margin:0;}
-
-/* === Bloc CTA Manuscrit === */
-.cta-manuscrit{
+/* === Bloc CTA === */
+.cta-bloc{
   margin:48px auto 36px;
   max-width:760px;
   padding:42px 48px;
@@ -242,40 +210,40 @@ em{font-style:italic;color:#5a4a30;}
   text-align:center;
   box-shadow:0 6px 22px rgba(90,74,48,.10);
 }
-.cta-manuscrit::before{
+.cta-bloc::before{
   content:'✦';
   position:absolute;
   top:-13px;
   left:50%;
   transform:translateX(-50%);
-  color:#b89a5c;
+  background:rgba(236,226,200,1);
+  width:26px;
+  height:26px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
   font-size:1rem;
-  background:#ece2c8;
-  padding:0 12px;
-  line-height:1;
+  color:#b89a5c;
 }
-.cta-manuscrit h3{
+.cta-bloc h3{
   font-family:'Cormorant Garamond',serif;
   font-weight:500;
-  font-size:1.5rem;
-  letter-spacing:.02em;
+  font-size:1.4rem;
   color:#3a3220;
-  margin:0 0 14px;
+  margin:0 0 12px;
+  letter-spacing:.01em;
 }
-.cta-manuscrit p{
-  font-family:'Cormorant Garamond',serif;
-  font-style:italic;
-  font-size:1.05rem;
-  line-height:1.65;
-  color:#5a4a30;
-  margin:0 0 26px;
+.cta-bloc p{
+  font-size:1rem;
+  line-height:1.8;
+  color:#3a3220;
+  margin:0 0 22px;
 }
 .btn-cta{
   display:inline-block;
   font-family:'Cormorant Garamond',serif;
-  font-size:1rem;
-  letter-spacing:.18em;
-  text-transform:uppercase;
+  font-style:italic;
+  font-size:.95rem;
   color:#3a3220;
   padding:13px 32px;
   border:1px solid rgba(184,154,92,.55);
@@ -350,20 +318,12 @@ em{font-style:italic;color:#5a4a30;}
     <nav class="fil-ariane" aria-label="Fil d'ariane">
       <a href="index.html">Accueil</a>
       <span class="sep">·</span>
-      <span>Édition</span>
+      <a href="edition.html">Éditions</a>
+      <span class="sep">·</span>
+      <span>Collection Raconter le monde</span>
     </nav>
-    <h1 class="titre-page">Éditions</h1>
-
-    <figure class="illustration-titre reveler">
-      <img src="images/editions.jpeg"
-           alt="Vol d'oiseau au-dessus de l'horizon — illustration de Meichelus pour L'AMagie"
-           loading="eager"
-           decoding="async"
-           onerror="this.style.display='none'"/>
-      <figcaption>S&rsquo;élever, en silence, au-dessus de l&rsquo;horizon.</figcaption>
-    </figure>
-
-    <p class="sous-titre-page">Six collections qui accueillent des écritures variées — du récit de vie au roman, de la jeunesse à la poésie — réunies par une même exigence : un élan poétique et libre.</p>
+    <h1 class="titre-page">Raconter le monde</h1>
+    <p class="sous-titre-page">Récits et témoignages — la mémoire vivante des voix singulières.</p>
     <div class="medaillon-titre" aria-hidden="true">✦</div>
   </section>
 
@@ -374,138 +334,48 @@ em{font-style:italic;color:#5a4a30;}
          INTRODUCTION
          ============================================================ -->
     <article class="carte reveler">
-      <p>L&rsquo;AMagie publie des ouvrages organisés en collections thématiques, chacune avec son propre univers&nbsp;: récits de vie, romans noirs, poésie, jeunesse, hommages animaliers, voyages en imaginaire…</p>
-      <p>Découvrez-les, et choisissez celle qui vous parle.</p>
+      <p>La collection <em>Raconter le monde</em> accueille des récits et des témoignages — des histoires vraies portées par des voix singulières. Chaque ouvrage est un acte de mémoire, une parole vivante qui se tisse entre passé et présence.</p>
+      <p>Ces voix cherchent à être entendues. Elles trouvent, chez L&rsquo;AMagie, un accueil bienveillant et une publication qui honore la vérité de ce qui a été vécu.</p>
     </article>
 
     <!-- ============================================================
-         LES SIX COLLECTIONS
+         OUVRAGES DE LA COLLECTION
          ============================================================ -->
     <div class="section-titre reveler">
-      <h2>Nos collections</h2>
-      <span class="legende">Six univers à explorer</span>
+      <h2>Les titres</h2>
+      <span class="legende">Paroles portées</span>
     </div>
 
-    <div class="grille-collections reveler">
+    <div class="grille-livres reveler">
 
-      <article class="collection-carte" id="raconter-le-monde">
-        <span class="numero-romain">I</span>
-        <h3>Collection Raconter le monde</h3>
-        <p>Récits &amp; témoignages — la mémoire vivante des voix singulières.</p>
-        <a class="lien-action" href="collection-raconter-le-monde.html">Découvrir</a>
+      <article class="livre-carte">
+        <div class="livre-couverture">
+          <img src="https://8ce34de276.clvaw-cdnwnd.com/4b763f209dde6689d3fabfcea9748055/200000675-054fe05500/1e%CC%80re%20de%20couverture%20paroles%20de%20Fe%CC%81linoises.webp" alt="Couverture — Paroles de Félinoises"/>
+        </div>
+        <h3 class="livre-titre">Paroles de Félinoises</h3>
+        <span class="livre-auteur">Recueillies par Anouk Journo &amp; Meichelus</span>
+        <p class="livre-description">Une cinquantaine d&rsquo;interviews recueillies dans le cadre du festival « Félines au Féminin ». Un travail de mémoire collective qui donne voix aux femmes de Félines-Minervois — leurs parcours, leurs gestes, leurs silences. Illustré par Meichelus.</p>
+        <a class="livre-lien" href="#">Découvrir</a>
       </article>
 
-      <article class="collection-carte" id="immersion">
-        <span class="numero-romain">II</span>
-        <h3>Collection Immersion</h3>
-        <p>Romans, polars, thrillers — pour adultes en quête d&rsquo;ombre et de profondeur.</p>
-        <a class="lien-action" href="#immersion">Découvrir</a>
-      </article>
-
-      <article class="collection-carte" id="romans-jeunesse">
-        <span class="numero-romain">III</span>
-        <h3>Collection Romans jeunesse</h3>
-        <p>Aventures, courage et imaginaire — pour les lecteurs qui grandissent.</p>
-        <a class="lien-action" href="#romans-jeunesse">Découvrir</a>
-      </article>
-
-      <article class="collection-carte" id="terre-a-la-lune">
-        <span class="numero-romain">IV</span>
-        <h3>Collection De la Terre à la Lune</h3>
-        <p>Imaginaire &amp; merveilleux — voyages au-delà du réel.</p>
-        <a class="lien-action" href="#terre-a-la-lune">Découvrir</a>
-      </article>
-
-      <article class="collection-carte" id="amis-mots-coll">
-        <span class="numero-romain">V</span>
-        <h3>Collection Amis-Mots</h3>
-        <p>Là où les animaux deviennent les héros discrets de nos vies.</p>
-        <a class="lien-action" href="amis-mots.html">Découvrir</a>
-      </article>
-
-      <article class="collection-carte" id="lune-a-la-plume">
-        <span class="numero-romain">VI</span>
-        <h3>Collection De la Lune à la Plume</h3>
-        <p>Recueils poétiques — légers comme une plume, intenses comme la Lune.</p>
-        <a class="lien-action" href="poesie.html">Découvrir</a>
+      <article class="livre-carte">
+        <div class="livre-couverture">
+          <img src="https://8ce34de276.clvaw-cdnwnd.com/4b763f209dde6689d3fabfcea9748055/200000679-7faed7faef/Jean-Pierre%20Montaron.webp" alt="Couverture — Mort en Prison"/>
+        </div>
+        <h3 class="livre-titre">Mort en Prison</h3>
+        <span class="livre-auteur">Jean-Pierre Montaron</span>
+        <p class="livre-description">Roman inspiré de faits réels. Le récit d&rsquo;un enseignant en milieu carcéral qui prépare de jeunes détenus au brevet, alternant leurs moments partagés et sa vie privée. Une exploration du vécu institutionnel au plus près de la réalité.</p>
+        <a class="livre-lien" href="#">Découvrir</a>
       </article>
 
     </div>
 
     <!-- ============================================================
-         CATALOGUE — TITRES PUBLIÉS
+         APPEL À MANUSCRITS
          ============================================================ -->
-    <div class="section-titre reveler" id="manifestes">
-      <h2>Notre catalogue</h2>
-      <span class="legende">Titres publiés</span>
-    </div>
-
-    <div class="grille-titres reveler">
-
-      <article class="titre-carte">
-        <span class="numero-romain">I</span>
-        <span class="surtitre">Collection Manifestes</span>
-        <h3>Le Seuil</h3>
-        <span class="auteur">Meichelus · 2026</span>
-        <p>Manifeste fondateur du <em>Spectralisme cognitif</em> — une phénoménologie du sensible, entre membrane et passage. Premier volume d&rsquo;une trilogie.</p>
-      </article>
-
-      <article class="titre-carte">
-        <span class="numero-romain">II</span>
-        <span class="surtitre">Collection De la Lune à la Plume</span>
-        <h3>Lucide</h3>
-        <span class="auteur">Meichelus &amp; Anouk Journo</span>
-        <p>Recueil poétique co-créé avec illustrations graphite et aquarelle de Meichelus. <em>Précis comme un trait, intense comme la nuit.</em></p>
-      </article>
-
-      <article class="titre-carte">
-        <span class="numero-romain">III</span>
-        <span class="surtitre">Collection Amis-Mots</span>
-        <h3>Valrêve, le refuge des animaux libres</h3>
-        <span class="auteur">Anouk Journo</span>
-        <p>Roman jeunesse — un refuge imaginaire où <em>les animaux libres</em> trouvent paix et dignité. Deuxième tome de la série.</p>
-      </article>
-
-      <article class="titre-carte">
-        <span class="numero-romain">IV</span>
-        <span class="surtitre">Collection Amis-Mots</span>
-        <h3>Moustache, le roi des coussins</h3>
-        <span class="auteur">Anouk Journo</span>
-        <p>Roman jeunesse — les aventures d&rsquo;un chat impérial et tendre, héros discret d&rsquo;un quotidien plein de douceur.</p>
-      </article>
-
-      <article class="titre-carte">
-        <span class="numero-romain">V</span>
-        <span class="surtitre">Collection De la Terre à la Lune</span>
-        <h3>Le triangle des Bermudes</h3>
-        <span class="auteur">Anouk Journo</span>
-        <p>Roman jeunesse — une aventure palpitante au cœur du <em>mystère le plus célèbre des océans</em>.</p>
-      </article>
-
-      <article class="titre-carte">
-        <span class="numero-romain">VI</span>
-        <span class="surtitre">Collection De la Terre à la Lune</span>
-        <h3>À la recherche de Truffe ou les alexandrins magiques</h3>
-        <span class="auteur">Anouk Journo</span>
-        <p>Roman jeunesse — une quête poétique et rythmée, où <em>les alexandrins deviennent une arme magique</em>.</p>
-      </article>
-
-      <article class="titre-carte">
-        <span class="numero-romain">VII</span>
-        <span class="surtitre">Collection De la Terre à la Lune</span>
-        <h3>Strass et Stress</h3>
-        <span class="auteur">Anouk Journo</span>
-        <p>Roman jeunesse — dans les coulisses du spectacle, entre paillettes et pression, une héroïne apprend à <em>trouver sa voix</em>.</p>
-      </article>
-
-    </div>
-
-    <!-- ============================================================
-         CTA MANUSCRIT
-         ============================================================ -->
-    <div class="cta-manuscrit reveler">
-      <h3>Une voix qui cherche son livre&nbsp;?</h3>
-      <p>Vous portez un texte qui vous tient à cœur&nbsp;? Confiez-le-nous. Notre comité de lecture étudiera votre manuscrit avec attention et bienveillance, et nous cheminerons ensemble vers la publication qui lui ressemble.</p>
+    <div class="cta-bloc reveler">
+      <h3>Votre histoire mérite d&rsquo;être contée</h3>
+      <p>Vous avez un récit, une vie, un témoignage à partager&nbsp;? Nous écoutons les voix qui cherchent une maison d&rsquo;édition pour être entendues.</p>
       <a class="btn-cta" href="contact.html">Envoyer un manuscrit</a>
     </div>
 
@@ -513,7 +383,7 @@ em{font-style:italic;color:#5a4a30;}
          RETOUR DISCRET
          ============================================================ -->
     <div class="retour-discret reveler">
-      <a href="index.html">Retour à l&rsquo;accueil</a>
+      <a href="edition.html">Retour aux collections</a>
     </div>
 
   </main>
@@ -544,7 +414,7 @@ em{font-style:italic;color:#5a4a30;}
         <h2>Éditions</h2>
         <ul>
           <li><a href="edition.html">Manuscrits &amp; projets</a></li>
-          <li><a href="edition.html#raconter-le-monde">Collection Raconter le monde</a></li>
+          <li><a href="collection-raconter-le-monde.html">Collection Raconter le monde</a></li>
           <li><a href="edition.html#immersion">Collection Immersion</a></li>
           <li><a href="edition.html#manifestes">Collection Manifestes</a></li>
           <li><a href="edition.html#romans-jeunesse">Romans jeunesse</a></li>

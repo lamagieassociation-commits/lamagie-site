@@ -261,6 +261,74 @@ em{font-style:italic;color:#5a4a30;}
 .retour-discret a::before{content:'← ';font-style:normal;}
 .retour-discret a:hover{color:#b89a5c;border-color:#b89a5c;}
 
+/* === Médaillon auteur === */
+.auteur-medallion{
+  width:180px;
+  height:180px;
+  margin:24px auto;
+  border-radius:50%;
+  overflow:hidden;
+  border:3px solid rgba(184,154,92,.35);
+  box-shadow:0 8px 24px rgba(90,74,48,.15), 0 0 0 8px rgba(241,234,212,.8);
+  background:rgba(184,154,92,.08);
+  flex-shrink:0;
+}
+.auteur-medallion img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
+/* === Article de Presse === */
+.article-presse{
+  margin:32px 0;
+  padding:28px;
+  background:rgba(246,239,216,.52);
+  border-left:3px solid rgba(184,154,92,.4);
+  border-radius:2px;
+  box-shadow:0 3px 10px rgba(90,74,48,.05);
+}
+.article-presse h4{
+  font-family:'Cormorant Garamond',serif;
+  font-weight:500;
+  font-size:1rem;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:#5a4a30;
+  margin:0 0 16px;
+  padding-bottom:10px;
+  border-bottom:1px dashed rgba(184,154,92,.3);
+}
+.article-presse-contenu{
+  display:grid;
+  grid-template-columns:1fr 280px;
+  gap:20px;
+  align-items:start;
+}
+.article-presse-texte{
+  font-size:.96rem;
+  line-height:1.75;
+  color:#3a3220;
+}
+.article-presse-image{
+  width:280px;
+  height:auto;
+  border-radius:2px;
+  border:1px solid rgba(184,154,92,.25);
+  box-shadow:0 3px 12px rgba(90,74,48,.08);
+}
+.article-presse-image img{
+  width:100%;
+  height:auto;
+  display:block;
+  border-radius:2px;
+}
+@media(max-width:720px){
+  .article-presse-contenu{grid-template-columns:1fr;gap:16px;}
+  .article-presse-image{width:100%;max-width:400px;margin:0 auto;}
+}
+
 /* === PLAN DU SITE === */
 .plan-site{background:transparent;padding:48px 24px 36px;max-width:1080px;margin:0 auto;text-align:center;font-family:'Cormorant Garamond',Georgia,serif;color:#3a3220;border-top:1px solid rgba(184,154,92,.25);}
 .plan-site .filet-haut{display:flex;align-items:center;justify-content:center;gap:14px;margin:0 auto 28px;max-width:200px;}
@@ -348,26 +416,64 @@ em{font-style:italic;color:#5a4a30;}
 
     <div class="grille-livres reveler">
 
+      <!-- OUVRAGE 1 : PAROLES DE FÉLINOISES -->
       <article class="livre-carte">
         <div class="livre-couverture">
-          <img src="https://8ce34de276.clvaw-cdnwnd.com/4b763f209dde6689d3fabfcea9748055/200000675-054fe05500/1e%CC%80re%20de%20couverture%20paroles%20de%20Fe%CC%81linoises.webp" alt="Couverture — Paroles de Félinoises"/>
+          <img src="images/paroles-de-felinoises.jpeg" alt="Couverture — Paroles de Félinoises"/>
         </div>
         <h3 class="livre-titre">Paroles de Félinoises</h3>
-        <span class="livre-auteur">Recueillies par Anouk Journo &amp; Meichelus</span>
-        <p class="livre-description">Une cinquantaine d&rsquo;interviews recueillies dans le cadre du festival « Félines au Féminin ». Un travail de mémoire collective qui donne voix aux femmes de Félines-Minervois — leurs parcours, leurs gestes, leurs silences. Illustré par Meichelus.</p>
+        <span class="livre-auteur">Recueilli par Anouk Journo</span>
+        <p class="livre-description">Une cinquantaine d&rsquo;interviews recueillies par Anouk Journo entre 2023 et 2024 dans le cadre du festival « Félines au Féminin ». Un travail de mémoire individuelle et collective qui donne voix aux femmes de Félines-Minervois — leurs parcours, leurs gestes, leurs silences. Les illustrations originales de Meichelus accompagnent chaque témoignage, ouvrant des respirations visuelles qui prolongent les mots.</p>
         <a class="livre-lien" href="#">Découvrir</a>
       </article>
+
+    </div>
+
+    <!-- ARTICLE DE PRESSE : PAROLES DE FÉLINOISES -->
+    <div class="article-presse reveler">
+      <h4>In the press</h4>
+      <div class="article-presse-contenu">
+        <div class="article-presse-texte">
+          <p>La publication de <em>Paroles de Félinoises</em> a marqué l&rsquo;actualité culturelle locale, porteuse d&rsquo;une parole collective féminine rare et profonde. Les témoignages recueillis par Anouk Journo rendent visible la richesse des expériences vécues dans notre région.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- OUVRAGE 2 : MORT EN PRISON -->
+    <div class="grille-livres reveler">
 
       <article class="livre-carte">
         <div class="livre-couverture">
-          <img src="https://8ce34de276.clvaw-cdnwnd.com/4b763f209dde6689d3fabfcea9748055/200000679-7faed7faef/Jean-Pierre%20Montaron.webp" alt="Couverture — Mort en Prison"/>
+          <img src="images/mort-en-prison.png" alt="Couverture — Mort en prison"/>
         </div>
-        <h3 class="livre-titre">Mort en Prison</h3>
+        <h3 class="livre-titre">Mort en prison</h3>
         <span class="livre-auteur">Jean-Pierre Montaron</span>
-        <p class="livre-description">Roman inspiré de faits réels. Le récit d&rsquo;un enseignant en milieu carcéral qui prépare de jeunes détenus au brevet, alternant leurs moments partagés et sa vie privée. Une exploration du vécu institutionnel au plus près de la réalité.</p>
-        <a class="livre-lien" href="#">Découvrir</a>
+        
+        <!-- Médaillon portrait de l'auteur -->
+        <div class="auteur-medallion">
+          <img src="images/Jean-Pierre-Montaron.jpg" alt="Portrait de Jean-Pierre Montaron"/>
+        </div>
+        
+        <p class="livre-description">Ancien enseignant en milieu carcéral, Jean-Pierre Montaron nous livre ici un roman de vérité. C&rsquo;est le jour de la rentrée scolaire à la prison de Fleury-Mérogie, où le narrateur prépare de jeunes détenus à l&rsquo;examen du brevet des collèges. Entre les salles de classe et les couloirs de l&rsquo;établissement, son récit alterne les moments partagés avec ses élèves et ses collègues avec les heures qu&rsquo;il consacre à son jardin et son atelier de peinture. Peu à peu, une vérité inquiétante se dessine. Écrit au plus près du vécu institutionnel, <em>Mort en prison</em> est l&rsquo;exploration poignante d&rsquo;un univers austère, des silences qui l&rsquo;habitent et des hommes qui tentent d&rsquo;y préserver leur humanité.</p>
+        
+        <a class="livre-lien" href="https://www.fnac.com/a22323075/Jean-Pierre-Montaron-Mort-en-prison" target="_blank">Acheter à la Fnac</a>
       </article>
 
+    </div>
+
+    <!-- ARTICLE DE PRESSE : MORT EN PRISON -->
+    <div class="article-presse reveler">
+      <h4>Article de presse — L&rsquo;Indépendant</h4>
+      <div class="article-presse-contenu">
+        <div class="article-presse-texte">
+          <p>Samedi 22 novembre 2025 — <strong>Jean-Pierre Montaron publie « Mort en prison »</strong></p>
+          <p>L&rsquo;AMagie, maison d&rsquo;édition félinoise, publie le nouveau livre de Jean-Pierre Montaron. Dès l&rsquo;ouverture, le ton s&rsquo;impose — quelque peu romanesque — qui fera choisir au lecteur s&rsquo;il doit rester tranquille en classe ou sombrer dans la réalité méconnue de l&rsquo;enseignement en prison.</p>
+          <p>« Un vrai roman », explique Jean-Pierre Montaron, qui s&rsquo;appuie sur une expérience directe de l&rsquo;enseignement en milieu carcéral pour brosser un portrait sensible et documenté de cet univers. Entre témoignage brut et création littéraire, l&rsquo;ouvrage offre une plongée dans une réalité souvent méconnue.</p>
+        </div>
+        <div class="article-presse-image">
+          <img src="images/Article-resse-Jean-Pierre-Montaron.jpeg" alt="Article de presse L'Indépendant — Mort en prison"/>
+        </div>
+      </div>
     </div>
 
     <!-- ============================================================

@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <meta name="google" content="notranslate"/>
 <meta http-equiv="Content-Language" content="fr"/>
-<title>Éditions — Six collections à explorer | L'AMagie</title>
-<meta name="description" content="Les six collections de L'AMagie : Raconter le monde, Immersion, Romans jeunesse, De la Terre à la Lune, Amis-Mots, De la Lune à la Plume. Catalogue des titres publiés et accueil de manuscrits."/>
+<title>Collection Immersion | L'AMagie</title>
+<meta name="description" content="Collection Immersion — Romans, polars et thrillers de L'AMagie. Des récits adultes qui explorent l'ombre, la profondeur et les méandres de l'âme humaine."/>
 
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
@@ -327,6 +327,152 @@ em{font-style:italic;color:#5a4a30;}
 .reveler{opacity:0;transform:translateY(18px);transition:opacity .9s ease, transform .9s ease;}
 .reveler.visible{opacity:1;transform:translateY(0);}
 @media(prefers-reduced-motion: reduce){.reveler{opacity:1;transform:none;transition:none;}}
+
+
+/* === COLLECTION IMMERSION : LIVRE MIS EN VALEUR === */
+.livre-vedette{
+  background:rgba(246,239,216,.62);
+  border:1px solid rgba(184,154,92,.25);
+  border-radius:2px;
+  padding:42px 44px;
+  margin:0 auto 36px;
+  position:relative;
+  box-shadow:0 4px 14px rgba(90,74,48,.06),0 1px 2px rgba(90,74,48,.04);
+}
+.livre-vedette::before,.livre-vedette::after{content:'';position:absolute;width:18px;height:18px;border:1px solid rgba(184,154,92,.45);pointer-events:none;}
+.livre-vedette::before{top:6px;left:6px;border-right:0;border-bottom:0;}
+.livre-vedette::after{bottom:6px;right:6px;border-left:0;border-top:0;}
+.livre-vedette-inner{display:grid;grid-template-columns:minmax(240px,260px) 1fr;gap:36px;align-items:start;}
+.livre-couverture-ajustee{
+  width:clamp(240px,28vw,260px);
+  max-width:100%;
+  margin:0 auto;
+  padding:0;
+  background:transparent;
+  border:1px solid rgba(184,154,92,.3);
+  box-shadow:0 8px 22px rgba(90,74,48,.14),0 0 0 7px rgba(241,234,212,.52);
+  line-height:0;
+}
+.livre-couverture-ajustee img{display:block;width:100%;height:auto;object-fit:contain;border-radius:1px;}
+.livre-info h2{
+  font-family:'Cormorant Garamond',serif;
+  font-weight:500;
+  font-size:clamp(1.7rem,3vw,2.35rem);
+  letter-spacing:.02em;
+  color:#3a3220;
+  line-height:1.1;
+  margin:0 0 8px;
+}
+.livre-info .auteur-livre{
+  display:block;
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;
+  font-size:1.08rem;
+  color:#5a4a30;
+  margin-bottom:18px;
+  padding-bottom:14px;
+  border-bottom:1px dashed rgba(184,154,92,.35);
+}
+.livre-info .auteur-livre::before{content:'— ';color:#b89a5c;font-style:normal;}
+.livre-info p{font-size:1.05rem;line-height:1.78;color:#3a3220;margin:0 0 1rem;}
+.auteur-zone{display:flex;align-items:center;gap:18px;margin:20px 0 24px;padding:16px 18px;background:rgba(241,234,212,.38);border:1px solid rgba(184,154,92,.18);}
+.auteur-medallion{
+  border-radius:50%;
+  width:110px;
+  height:110px;
+  object-fit:cover;
+  flex:0 0 110px;
+  border:2px solid rgba(184,154,92,.38);
+  box-shadow:0 5px 16px rgba(90,74,48,.15),0 0 0 6px rgba(241,234,212,.72);
+}
+.auteur-zone p{margin:0;font-size:.98rem;line-height:1.62;color:#5a4a30;font-style:italic;}
+.livre-lien{
+  display:inline-block;
+  font-family:'Cormorant Garamond',serif;
+  font-size:.95rem;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:#3a3220;
+  padding:12px 28px;
+  border:1px solid rgba(184,154,92,.55);
+  background:rgba(184,154,92,.15);
+  border-radius:2px;
+  transition:color .3s, border-color .3s, background-color .3s, transform .3s;
+  text-decoration:none;
+}
+.livre-lien::after{content:' →';letter-spacing:0;}
+.livre-lien:hover{border-color:#b89a5c;background:rgba(184,154,92,.28);transform:translateY(-2px);}
+.revue-presse{
+  margin:42px auto 36px;
+  padding:34px 36px;
+  background:rgba(246,239,216,.56);
+  border:1px solid rgba(184,154,92,.25);
+  border-left:3px solid rgba(184,154,92,.48);
+  border-radius:2px;
+  box-shadow:0 4px 14px rgba(90,74,48,.06);
+  position:relative;
+}
+.revue-presse h2{
+  font-family:'Cormorant Garamond',serif;
+  font-weight:500;
+  font-size:clamp(1.25rem,2.4vw,1.65rem);
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:#3a3220;
+  margin:0 0 8px;
+  text-align:center;
+}
+.revue-presse .source-presse{
+  display:block;
+  text-align:center;
+  font-family:'Pinyon Script','Cormorant Garamond',cursive;
+  font-size:1.22rem;
+  color:#7a6a48;
+  margin-bottom:24px;
+}
+.article-image-lisible{
+  max-width:760px;
+  margin:0 auto;
+  background:rgba(255,253,245,.45);
+  border:1px solid rgba(184,154,92,.28);
+  box-shadow:0 8px 24px rgba(90,74,48,.12),0 0 0 8px rgba(241,234,212,.46);
+  padding:10px;
+}
+.article-image-lisible img{display:block;width:100%;height:auto;object-fit:contain;border-radius:1px;}
+
+.article-image-lisible,
+.article-presse-container{
+  display:block;
+  visibility:visible;
+  opacity:1;
+  height:auto;
+  min-height:0;
+  max-height:none;
+  overflow:visible;
+}
+.article-presse-img{
+  display:block;
+  visibility:visible;
+  opacity:1;
+  width:100%;
+  max-width:100%;
+  height:auto;
+  min-height:0;
+  max-height:none;
+  object-fit:contain;
+  margin:0 auto;
+  border-radius:1px;
+}
+
+@media(max-width:780px){
+  .livre-vedette{padding:34px 24px;}
+  .livre-vedette-inner{grid-template-columns:1fr;gap:28px;}
+  .livre-couverture-ajustee{width:min(260px,82vw);}
+  .auteur-zone{flex-direction:column;text-align:center;}
+  .revue-presse{padding:28px 20px;}
+  .article-image-lisible{padding:7px;}
+}
+
 </style>
 </head>
 
@@ -350,170 +496,65 @@ em{font-style:italic;color:#5a4a30;}
     <nav class="fil-ariane" aria-label="Fil d'ariane">
       <a href="index.html">Accueil</a>
       <span class="sep">·</span>
-      <span>Édition</span>
+      <a href="edition.html">Éditions</a>
+      <span class="sep">·</span>
+      <span>Collection Immersion</span>
     </nav>
-    <h1 class="titre-page">Éditions</h1>
-
-    <figure class="illustration-titre reveler">
-      <img src="images/editions.jpeg"
-           alt="Vol d'oiseau au-dessus de l'horizon — illustration de Meichelus pour L'AMagie"
-           loading="eager"
-           decoding="async"
-           onerror="this.style.display='none'"/>
-      <figcaption>S&rsquo;élever, en silence, au-dessus de l&rsquo;horizon.</figcaption>
-    </figure>
-
-    <p class="sous-titre-page">Six collections qui accueillent des écritures variées — du récit de vie au roman, de la jeunesse à la poésie — réunies par une même exigence : un élan poétique et libre.</p>
+    <h1 class="titre-page">Collection Immersion</h1>
+    <p class="sous-titre-page">Romans, polars, thrillers — pour adultes en quête de profondeur et d'ombre.</p>
     <div class="medaillon-titre" aria-hidden="true">✦</div>
   </section>
 
   <!-- CONTENU -->
   <main class="contenu" role="main">
 
-    <!-- ============================================================
-         INTRODUCTION
-         ============================================================ -->
     <article class="carte reveler">
-      <p>L&rsquo;AMagie publie des ouvrages organisés en collections thématiques, chacune avec son propre univers&nbsp;: récits de vie, romans noirs, poésie, jeunesse, hommages animaliers, voyages en imaginaire…</p>
-      <p>Découvrez-les, et choisissez celle qui vous parle.</p>
+      <p>Plongez au cœur d'intrigues psychologiques, de récits sombres et de quêtes intérieures. La collection Immersion s'adresse aux lecteurs qui aiment explorer les méandres de l'âme humaine, là où la lumière côtoie l'ombre. Des romans noirs aux thrillers captivants, chaque ouvrage est une invitation à un voyage littéraire intense et sans concession.</p>
     </article>
 
-    <!-- ============================================================
-         LES SIX COLLECTIONS
-         ============================================================ -->
     <div class="section-titre reveler">
-      <h2>Nos collections</h2>
-      <span class="legende">Six univers à explorer</span>
+      <h2>Le titre</h2>
+      <span class="legende">Une plongée au plus près du réel</span>
     </div>
 
-    <div class="grille-collections reveler">
+    <article class="livre-vedette reveler">
+      <div class="livre-vedette-inner">
+        <div class="livre-couverture-ajustee">
+          <img src="images/Mort-en-prison.png" alt="Couverture du roman Mort en prison de Jean-Pierre Montaron" loading="lazy" decoding="async"/>
+        </div>
 
-      <article class="collection-carte" id="raconter-le-monde">
-        <span class="numero-romain">I</span>
-        <h3>Collection Raconter le monde</h3>
-        <p>Récits &amp; témoignages — la mémoire vivante des voix singulières.</p>
-        <a class="lien-action" href="collection-raconter-le-monde.html">Découvrir</a>
-      </article>
+        <div class="livre-info">
+          <h2>Mort en prison</h2>
+          <span class="auteur-livre">Jean-Pierre Montaron</span>
+          <p>Ancien enseignant en milieu carcéral, Jean-Pierre Montaron signe avec <em>Mort en prison</em> un roman d'une intensité rare, nourri par une connaissance intime de l'institution et de ses silences.</p>
+          <p>À travers le regard d'un narrateur confronté au quotidien de jeunes détenus, le récit avance entre salles de classe, couloirs fermés, instants de confiance fragile et zones d'ombre. Peu à peu, derrière l'apparente routine, quelque chose se dérègle. La fiction devient alors un révélateur : elle éclaire ce que l'on préfère souvent ne pas voir.</p>
 
-      <article class="collection-carte" id="immersion">
-        <span class="numero-romain">II</span>
-        <h3>Collection Immersion</h3>
-        <p>Romans, polars, thrillers — pour adultes en quête d&rsquo;ombre et de profondeur.</p>
-        <a class="lien-action" href="collection-immersion.html">Découvrir</a>
-      </article>
+          <div class="auteur-zone">
+            <img class="auteur-medallion" src="images/Jean-Pierre-Montaron.jpg" alt="Portrait de Jean-Pierre Montaron" loading="lazy" decoding="async"/>
+            <p>Une voix sobre, attentive, traversée par l'expérience de l'enseignement en prison et par le désir de rendre perceptible une réalité humaine complexe.</p>
+          </div>
 
-      <article class="collection-carte" id="romans-jeunesse">
-        <span class="numero-romain">III</span>
-        <h3>Collection Romans jeunesse</h3>
-        <p>Aventures, courage et imaginaire — pour les lecteurs qui grandissent.</p>
-        <a class="lien-action" href="#romans-jeunesse">Découvrir</a>
-      </article>
+          <a class="livre-lien" href="https://www.fnac.com/a22323075/Jean-Pierre-Montaron-Mort-en-prison" target="_blank" rel="noopener noreferrer">Acheter à la Fnac</a>
+        </div>
+      </div>
+    </article>
 
-      <article class="collection-carte" id="terre-a-la-lune">
-        <span class="numero-romain">IV</span>
-        <h3>Collection De la Terre à la Lune</h3>
-        <p>Imaginaire &amp; merveilleux — voyages au-delà du réel.</p>
-        <a class="lien-action" href="#terre-a-la-lune">Découvrir</a>
-      </article>
+    <section class="revue-presse reveler" aria-labelledby="revue-presse-title">
+      <h2 id="revue-presse-title">Revue de presse</h2>
+      <span class="source-presse">L&rsquo;Indépendant — Jean-Pierre Montaron publie « Mort en prison »</span>
+      <figure class="article-image-lisible">
+        <img src="images/Article-presse-Jean-Pierre-Montaron.jpeg" alt="Article de presse L'Indépendant - Mort en prison" class="article-presse-img">
+      </figure>
+    </section>
 
-      <article class="collection-carte" id="amis-mots-coll">
-        <span class="numero-romain">V</span>
-        <h3>Collection Amis-Mots</h3>
-        <p>Là où les animaux deviennent les héros discrets de nos vies.</p>
-        <a class="lien-action" href="amis-mots.html">Découvrir</a>
-      </article>
-
-      <article class="collection-carte" id="lune-a-la-plume">
-        <span class="numero-romain">VI</span>
-        <h3>Collection De la Lune à la Plume</h3>
-        <p>Recueils poétiques — légers comme une plume, intenses comme la Lune.</p>
-        <a class="lien-action" href="poesie.html">Découvrir</a>
-      </article>
-
-    </div>
-
-    <!-- ============================================================
-         CATALOGUE — TITRES PUBLIÉS
-         ============================================================ -->
-    <div class="section-titre reveler" id="manifestes">
-      <h2>Notre catalogue</h2>
-      <span class="legende">Titres publiés</span>
-    </div>
-
-    <div class="grille-titres reveler">
-
-      <article class="titre-carte">
-        <span class="numero-romain">I</span>
-        <span class="surtitre">Collection Manifestes</span>
-        <h3>Le Seuil</h3>
-        <span class="auteur">Meichelus · 2026</span>
-        <p>Manifeste fondateur du <em>Spectralisme cognitif</em> — une phénoménologie du sensible, entre membrane et passage. Premier volume d&rsquo;une trilogie.</p>
-      </article>
-
-      <article class="titre-carte">
-        <span class="numero-romain">II</span>
-        <span class="surtitre">Collection De la Lune à la Plume</span>
-        <h3>Lucide</h3>
-        <span class="auteur">Meichelus &amp; Anouk Journo</span>
-        <p>Recueil poétique co-créé avec illustrations graphite et aquarelle de Meichelus. <em>Précis comme un trait, intense comme la nuit.</em></p>
-      </article>
-
-      <article class="titre-carte">
-        <span class="numero-romain">III</span>
-        <span class="surtitre">Collection Amis-Mots</span>
-        <h3>Valrêve, le refuge des animaux libres</h3>
-        <span class="auteur">Anouk Journo</span>
-        <p>Roman jeunesse — un refuge imaginaire où <em>les animaux libres</em> trouvent paix et dignité. Deuxième tome de la série.</p>
-      </article>
-
-      <article class="titre-carte">
-        <span class="numero-romain">IV</span>
-        <span class="surtitre">Collection Amis-Mots</span>
-        <h3>Moustache, le roi des coussins</h3>
-        <span class="auteur">Anouk Journo</span>
-        <p>Roman jeunesse — les aventures d&rsquo;un chat impérial et tendre, héros discret d&rsquo;un quotidien plein de douceur.</p>
-      </article>
-
-      <article class="titre-carte">
-        <span class="numero-romain">V</span>
-        <span class="surtitre">Collection De la Terre à la Lune</span>
-        <h3>Le triangle des Bermudes</h3>
-        <span class="auteur">Anouk Journo</span>
-        <p>Roman jeunesse — une aventure palpitante au cœur du <em>mystère le plus célèbre des océans</em>.</p>
-      </article>
-
-      <article class="titre-carte">
-        <span class="numero-romain">VI</span>
-        <span class="surtitre">Collection De la Terre à la Lune</span>
-        <h3>À la recherche de Truffe ou les alexandrins magiques</h3>
-        <span class="auteur">Anouk Journo</span>
-        <p>Roman jeunesse — une quête poétique et rythmée, où <em>les alexandrins deviennent une arme magique</em>.</p>
-      </article>
-
-      <article class="titre-carte">
-        <span class="numero-romain">VII</span>
-        <span class="surtitre">Collection De la Terre à la Lune</span>
-        <h3>Strass et Stress</h3>
-        <span class="auteur">Anouk Journo</span>
-        <p>Roman jeunesse — dans les coulisses du spectacle, entre paillettes et pression, une héroïne apprend à <em>trouver sa voix</em>.</p>
-      </article>
-
-    </div>
-
-    <!-- ============================================================
-         CTA MANUSCRIT
-         ============================================================ -->
     <div class="cta-manuscrit reveler">
-      <h3>Une voix qui cherche son livre&nbsp;?</h3>
-      <p>Vous portez un texte qui vous tient à cœur&nbsp;? Confiez-le-nous. Notre comité de lecture étudiera votre manuscrit avec attention et bienveillance, et nous cheminerons ensemble vers la publication qui lui ressemble.</p>
+      <h3>Une fiction qui regarde l&rsquo;ombre en face&nbsp;?</h3>
+      <p>La collection Immersion accueille les récits adultes dont la tension intérieure, la profondeur psychologique ou l&rsquo;intensité narrative ouvrent un passage vers l&rsquo;invisible du réel.</p>
       <a class="btn-cta" href="contact.html">Envoyer un manuscrit</a>
     </div>
 
-    <!-- ============================================================
-         RETOUR DISCRET
-         ============================================================ -->
     <div class="retour-discret reveler">
-      <a href="index.html">Retour à l&rsquo;accueil</a>
+      <a href="edition.html">Retour aux collections</a>
     </div>
 
   </main>
@@ -544,8 +585,8 @@ em{font-style:italic;color:#5a4a30;}
         <h2>Éditions</h2>
         <ul>
           <li><a href="edition.html">Manuscrits &amp; projets</a></li>
-          <li><a href="edition.html#raconter-le-monde">Collection Raconter le monde</a></li>
-          <li><a href="edition.html#immersion">Collection Immersion</a></li>
+          <li><a href="collection-raconter-le-monde.html">Collection Raconter le monde</a></li>
+          <li><a href="collection-immersion.html">Collection Immersion</a></li>
           <li><a href="edition.html#manifestes">Collection Manifestes</a></li>
           <li><a href="edition.html#romans-jeunesse">Romans jeunesse</a></li>
         </ul>

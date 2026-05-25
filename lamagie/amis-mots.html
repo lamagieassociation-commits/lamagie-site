@@ -3,365 +3,467 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="google" content="notranslate"/>
+<meta http-equiv="Content-Language" content="fr"/>
 <title>Collection Amis-Mots — L'AMagie</title>
-<meta name="description" content="Collection Amis-Mots de L'AMagie."/>
+<meta name="description" content="Collection Amis-Mots de L'AMagie — récits jeunesse et romans animaliers où les animaux deviennent les héros sensibles de nos vies."/>
 
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Pinyon+Script&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Pinyon+Script&display=swap" rel="stylesheet"/>
 
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html,body{overflow-x:hidden;}
 html{scroll-behavior:smooth;}
 body{
 background-color:#ece2c8;
 color:#3a3220;
-font-family:'Cormorant Garamond',serif;
-line-height:1.8;
+font-family:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+font-weight:400;
+font-size:17px;
+line-height:1.75;
+min-height:100vh;
+-webkit-font-smoothing:antialiased;
+-moz-osx-font-smoothing:grayscale;
+text-rendering:optimizeLegibility;
 background-image:
-radial-gradient(circle at 20% 20%, rgba(184,154,92,.08), transparent 35%),
-radial-gradient(circle at 80% 80%, rgba(184,154,92,.06), transparent 35%),
-url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='.08'/></svg>");
+radial-gradient(ellipse 55% 50% at 12% 18%, rgba(146,96,38,0.12) 0%, transparent 60%),
+radial-gradient(ellipse 50% 55% at 88% 82%, rgba(132,88,36,0.11) 0%, transparent 60%),
+radial-gradient(ellipse 60% 45% at 78% 18%, rgba(170,128,60,0.09) 0%, transparent 65%),
+radial-gradient(ellipse 55% 50% at 22% 82%, rgba(160,118,50,0.10) 0%, transparent 65%),
+radial-gradient(ellipse 75% 60% at 50% 35%, rgba(212,176,114,0.10) 0%, transparent 75%),
+linear-gradient(135deg, #f1ead4 0%, #e8dec0 50%, #ecdfc2 100%),
+url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='280' height='280'><filter id='g'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' seed='4'/><feColorMatrix values='0 0 0 0 0.42 0 0 0 0 0.32 0 0 0 0 0.17 0 0 0 0.22 0'/></filter><rect width='100%25' height='100%25' filter='url(%23g)'/></svg>");
+background-attachment:fixed;
+background-size:auto,auto,auto,auto,auto,auto,280px 280px;
+background-repeat:no-repeat,no-repeat,no-repeat,no-repeat,no-repeat,no-repeat,repeat;
 }
-a{text-decoration:none;color:inherit;}
-img{max-width:100%;display:block;height:auto;}
+a{color:inherit;text-decoration:none;}
+img{max-width:100%;height:auto;display:block;}
+em{font-style:italic;color:#5a4a30;}
+strong{font-weight:600;}
+::selection{background:rgba(184,154,92,.32);color:#3a3220;}
 
 .entete-site{
+position:relative;
+z-index:10;
 display:grid;
 grid-template-columns:1fr auto 1fr;
 align-items:center;
+gap:24px;
 padding:24px 40px;
-border-bottom:1px solid rgba(184,154,92,.25);
-background:rgba(241,234,212,.7);
+border-bottom:1px solid rgba(184,154,92,.28);
+background:linear-gradient(180deg,rgba(241,234,212,.55),rgba(236,226,200,.25));
+backdrop-filter:blur(1px);
 }
-
-.entete-logo img{height:55px;}
+.entete-logo{display:flex;align-items:center;justify-content:flex-start;}
+.entete-logo img{height:55px;width:auto;display:block;}
 .entete-titre{
-font-size:2.3rem;
-font-weight:500;
 text-align:center;
+font-family:'Cormorant Garamond',Georgia,serif;
+font-weight:500;
+font-size:clamp(1.8rem,3.2vw,2.6rem);
+color:#3a3220;
+letter-spacing:.01em;
+line-height:1;
+text-decoration:none;
 }
-.entete-retour{text-align:right;}
+.entete-retour{display:flex;align-items:center;justify-content:flex-end;}
 .entete-retour a{
-padding:10px 18px;
-border:1px solid rgba(184,154,92,.4);
-font-size:.85rem;
-letter-spacing:.15em;
+font-family:'Cormorant Garamond',Georgia,serif;
+font-size:.92rem;
+letter-spacing:.18em;
 text-transform:uppercase;
+color:#5a4a30;
+padding:8px 18px;
+border:1px solid rgba(184,154,92,.4);
+border-radius:2px;
+transition:color .3s, background-color .3s, border-color .3s;
+white-space:nowrap;
 }
+.entete-retour a::before{content:'⌂ ';margin-right:.25em;letter-spacing:0;}
+.entete-retour a:hover{color:#b89a5c;border-color:#b89a5c;background:rgba(184,154,92,.07);}
 
 .heros-page{
+text-align:center;
+padding:64px 20px 28px;
 max-width:900px;
 margin:0 auto;
-padding:70px 20px 30px;
-text-align:center;
 }
-
 .fil-ariane{
-font-size:.75rem;
-letter-spacing:.28em;
-text-transform:uppercase;
-color:#7a6a48;
-margin-bottom:24px;
 display:inline-block;
+font-family:'Cormorant Garamond',serif;
+font-size:.72rem;
+letter-spacing:.32em;
+text-transform:uppercase;
+color:#5a4a30;
+margin-bottom:24px;
 }
-
+.fil-ariane a{color:#8a6d2f;transition:color .3s;}
+.fil-ariane a:hover{color:#b89a5c;}
+.fil-ariane .sep{margin:0 .55em;color:rgba(184,154,92,.55);}
 .titre-page{
-font-size:4rem;
+font-family:'Cormorant Garamond',Georgia,serif;
 font-weight:500;
+font-size:clamp(2.4rem,5.5vw,3.8rem);
+color:#3a3220;
+letter-spacing:.005em;
 line-height:1.1;
-margin-bottom:10px;
+margin:0 0 14px;
 }
-
 .sous-titre-page{
-font-family:'Pinyon Script',cursive;
-font-size:2rem;
+font-family:'Pinyon Script','Cormorant Garamond',cursive;
+font-size:clamp(1.4rem,2.5vw,1.95rem);
 color:#7a6a48;
+line-height:1.3;
+margin:0;
 }
-
 .medaillon-titre{
-margin:30px auto 0;
-width:56px;
-height:56px;
+width:54px;
+height:54px;
+margin:32px auto 0;
 border-radius:50%;
+border:1px solid rgba(184,154,92,.5);
+box-shadow:0 0 0 5px rgba(241,234,212,.6),0 0 0 6px rgba(184,154,92,.18);
 display:flex;
 align-items:center;
 justify-content:center;
-border:1px solid rgba(184,154,92,.45);
 color:#b89a5c;
+font-size:1.1rem;
 }
-
 .illustration-titre{
+margin:36px auto 0;
 max-width:720px;
-margin:42px auto 0;
+padding:0 20px;
+text-align:center;
 }
-
 .illustration-titre img{
-border-radius:10px;
-box-shadow:0 4px 20px rgba(58,50,32,.15);
+display:block;
+width:100%;
+height:auto;
+border-radius:8px;
+box-shadow:0 4px 20px rgba(58,50,32,0.12),0 0 0 1px rgba(184,154,92,.22),0 0 0 6px rgba(241,234,212,.55);
+background:rgba(255,253,245,.5);
+padding:14px;
 }
-
 .illustration-titre figcaption{
 margin-top:14px;
-font-family:'Pinyon Script',cursive;
-font-size:1.3rem;
+font-family:'Pinyon Script','Cormorant Garamond',cursive;
+font-size:1.25rem;
 color:#7a6a48;
+line-height:1.3;
+letter-spacing:.01em;
 }
 
-.contenu{
-max-width:980px;
-margin:0 auto;
-padding:0 20px 60px;
-}
-
+.contenu{max-width:1060px;margin:0 auto;padding:0 20px 60px;}
 .carte{
-position:relative;
-background:rgba(246,239,216,.68);
-border:1px solid rgba(184,154,92,.25);
+background:rgba(246,239,216,.62);
+border:1px solid rgba(184,154,92,.22);
+border-radius:2px;
 padding:48px 56px;
-margin-bottom:36px;
-box-shadow:0 4px 12px rgba(58,50,32,.05);
+margin:0 auto 36px;
+position:relative;
+box-shadow:0 4px 14px rgba(90,74,48,.06),0 1px 2px rgba(90,74,48,.04);
 }
-
-.carte::before,.carte::after{
+.carte::before,.carte::after,.livre-detail::before,.livre-detail::after{
 content:'';
 position:absolute;
 width:18px;
 height:18px;
 border:1px solid rgba(184,154,92,.45);
+pointer-events:none;
 }
+.carte::before,.livre-detail::before{top:6px;left:6px;border-right:0;border-bottom:0;}
+.carte::after,.livre-detail::after{bottom:6px;right:6px;border-left:0;border-top:0;}
+.carte p{font-size:1.08rem;line-height:1.85;color:#3a3220;margin:0 0 1.1rem;}
+.carte p:last-child{margin-bottom:0;}
 
-.carte::before{
-top:6px;
-left:6px;
-border-right:0;
-border-bottom:0;
-}
-
-.carte::after{
-bottom:6px;
-right:6px;
-border-left:0;
-border-top:0;
-}
-
-.carte p{
-font-size:1.08rem;
-margin-bottom:1rem;
-}
-
-.section-titre{
-text-align:center;
-margin:60px 0 32px;
-}
-
+.section-titre{text-align:center;margin:56px 0 32px;}
 .section-titre h2{
-font-size:1.8rem;
-letter-spacing:.18em;
-text-transform:uppercase;
+display:inline-block;
+font-family:'Cormorant Garamond',serif;
 font-weight:500;
+font-size:clamp(1.4rem,2.8vw,1.85rem);
+letter-spacing:.18em;
+color:#3a3220;
+text-transform:uppercase;
+position:relative;
+padding:0 30px;
 }
-
+.section-titre h2::before,.section-titre h2::after{
+content:'❦';
+position:absolute;
+top:50%;
+transform:translateY(-50%);
+color:#b89a5c;
+font-size:.85em;
+}
+.section-titre h2::before{left:0;}
+.section-titre h2::after{right:0;}
 .section-titre .legende{
 display:block;
-margin-top:12px;
-font-family:'Pinyon Script',cursive;
-font-size:1.2rem;
+margin-top:14px;
+font-family:'Pinyon Script','Cormorant Garamond',cursive;
+font-size:1.25rem;
 color:#7a6a48;
+letter-spacing:.02em;
+font-weight:400;
 }
 
-.grille-livres{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:24px;
-margin-bottom:36px;
-}
-
-.livre{
-background:rgba(246,239,216,.62);
-border:1px solid rgba(184,154,92,.25);
-padding:30px;
+.livre-detail{
 position:relative;
+background:rgba(246,239,216,.60);
+border:1px solid rgba(184,154,92,.25);
+border-radius:2px;
+padding:42px 44px;
+margin:0 auto 42px;
+box-shadow:0 4px 14px rgba(90,74,48,.06),0 1px 2px rgba(90,74,48,.04);
 }
-
-.livre::before,.livre::after{
-content:'';
-position:absolute;
-width:14px;
-height:14px;
-border:1px solid rgba(184,154,92,.4);
+.livre-haut{
+display:grid;
+grid-template-columns:minmax(300px,620px) 1fr;
+gap:38px;
+align-items:start;
 }
-
-.livre::before{
-top:5px;
-left:5px;
-border-right:0;
-border-bottom:0;
+.couvertures{
+display:flex;
+flex-wrap:wrap;
+gap:22px;
+align-items:flex-start;
+justify-content:center;
 }
-
-.livre::after{
-bottom:5px;
-right:5px;
-border-left:0;
-border-top:0;
+.couverture-bloc{
+max-width:100%;
+background:transparent;
+padding:0;
+line-height:0;
 }
-
-.livre h3{
-font-size:1.35rem;
-margin-bottom:14px;
-font-weight:500;
+.couverture-premiere{
+width:clamp(240px,24vw,260px);
 }
-
-.livre p{
-margin-bottom:12px;
+.couverture-quatrieme{
+width:clamp(280px,30vw,320px);
 }
-
-.auteur{
-font-style:italic;
-color:#7a6a48;
+.couverture-bloc img{
+display:block;
+width:100%;
+height:auto;
+object-fit:contain;
+border:1px solid rgba(184,154,92,.28);
+border-radius:1px;
+box-shadow:0 8px 22px rgba(90,74,48,.14),0 0 0 7px rgba(241,234,212,.50);
+background:rgba(255,253,245,.28);
 }
-
-.bouton{
-display:inline-block;
-padding:14px 28px;
-border:1px solid rgba(184,154,92,.55);
-background:rgba(184,154,92,.14);
+.couverture-legende{
+display:block;
+font-size:.78rem;
 letter-spacing:.16em;
 text-transform:uppercase;
-font-size:.9rem;
+color:#7a6a48;
+line-height:1.25;
+text-align:center;
+margin-top:13px;
 }
-
+.livre-texte h3{
+font-family:'Cormorant Garamond',serif;
+font-weight:500;
+font-size:clamp(1.65rem,3vw,2.25rem);
+line-height:1.12;
+letter-spacing:.015em;
+color:#3a3220;
+margin:0 0 8px;
+}
+.livre-texte .auteur{
+display:block;
+font-style:italic;
+font-size:1.08rem;
+color:#5a4a30;
+margin-bottom:18px;
+padding-bottom:14px;
+border-bottom:1px dashed rgba(184,154,92,.35);
+}
+.livre-texte .auteur::before{content:'— ';color:#b89a5c;font-style:normal;}
+.livre-texte p{
+font-size:1.05rem;
+line-height:1.78;
+color:#3a3220;
+margin:0 0 1rem;
+}
+.livre-texte .resume-original{
+margin:22px 0 22px;
+padding:22px 24px;
+background:rgba(241,234,212,.44);
+border-left:3px solid rgba(184,154,92,.45);
+box-shadow:0 3px 10px rgba(90,74,48,.04);
+}
+.livre-texte .resume-original p{
+font-style:italic;
+color:#5a4a30;
+margin-bottom:.82rem;
+}
+.livre-texte .resume-original p:last-child{margin-bottom:0;}
+.livre-texte .resume-original .accroche{
+font-weight:600;
+font-style:italic;
+color:#3a3220;
+}
+.bouton{
+display:inline-block;
+font-family:'Cormorant Garamond',serif;
+font-size:.95rem;
+letter-spacing:.14em;
+text-transform:uppercase;
+color:#3a3220;
+padding:12px 28px;
+border:1px solid rgba(184,154,92,.55);
+background:rgba(184,154,92,.15);
+border-radius:2px;
+transition:color .3s,border-color .3s,background-color .3s,transform .3s;
+text-decoration:none;
+}
+.bouton::after{content:' →';letter-spacing:0;}
+.bouton:hover{border-color:#b89a5c;background:rgba(184,154,92,.28);transform:translateY(-2px);}
 .cta{text-align:center;margin-top:20px;}
 
 .plan-site{
+background:transparent;
+padding:48px 24px 36px;
 max-width:1080px;
 margin:0 auto;
-padding:48px 24px 36px;
+text-align:center;
+font-family:'Cormorant Garamond',Georgia,serif;
+color:#3a3220;
 border-top:1px solid rgba(184,154,92,.25);
 }
-
+.plan-site .filet-haut{
+display:flex;
+align-items:center;
+justify-content:center;
+gap:14px;
+margin:0 auto 28px;
+max-width:200px;
+}
+.plan-site .filet-haut::before,.plan-site .filet-haut::after{
+content:'';
+flex:1;
+height:1px;
+background:linear-gradient(90deg,transparent,rgba(184,154,92,.55),transparent);
+}
+.plan-site .filet-haut .etoile{color:#b89a5c;font-size:.85rem;line-height:1;}
 .plan-site-grille{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
 gap:24px 32px;
+text-align:left;
 margin-bottom:28px;
 }
-
 .plan-categorie h2{
+font-family:'Cormorant Garamond',serif;
+font-weight:500;
 font-size:.72rem;
 letter-spacing:.3em;
 text-transform:uppercase;
-margin-bottom:10px;
+color:#5a4a30;
+margin:0 0 10px;
 padding-bottom:6px;
 border-bottom:1px solid rgba(184,154,92,.22);
 }
-
-.plan-categorie ul{
-list-style:none;
-}
-
-.plan-categorie li{
-line-height:1.7;
-}
-
+.plan-categorie ul{list-style:none;margin:0;padding:0;}
+.plan-categorie li{font-size:.92rem;line-height:1.65;margin-bottom:2px;}
+.plan-categorie a{color:#3a3220;text-decoration:none;transition:color .3s;border-bottom:1px solid transparent;}
+.plan-categorie a:hover{color:#b89a5c;border-bottom-color:rgba(184,154,92,.4);}
 .plan-mentions{
-text-align:center;
-font-size:.8rem;
+font-family:'Cormorant Garamond',serif;
+font-size:.78rem;
 letter-spacing:.16em;
-text-transform:uppercase;
 color:#7a6a48;
+text-transform:uppercase;
+margin:0;
 }
+.plan-mentions .etoile{color:#b89a5c;margin:0 .6em;}
 .plan-webmaster{
-  margin:14px auto 0;
-  max-width:340px;
-  padding-top:10px;
-  border-top:1px solid rgba(184,154,92,.18);
-  font-family:'Cormorant Garamond',serif;
-  font-style:italic;
-  font-size:.78rem;
-  letter-spacing:.08em;
-  color:#8a6d2f;
-  text-align:center;
+margin:14px auto 0;
+max-width:340px;
+padding-top:10px;
+border-top:1px solid rgba(184,154,92,.18);
+font-family:'Cormorant Garamond',serif;
+font-style:italic;
+font-size:.78rem;
+letter-spacing:.08em;
+color:#8a6d2f;
+text-align:center;
 }
-.plan-webmaster a{color:inherit;border-bottom:1px solid rgba(184,154,92,.3);transition:color .3s, border-color .3s;}
+.plan-webmaster a{color:inherit;border-bottom:1px solid rgba(184,154,92,.3);transition:color .3s,border-color .3s;}
 .plan-webmaster a:hover{color:#b89a5c;border-bottom-color:#b89a5c;}
 
+.reveler{opacity:0;transform:translateY(18px);transition:opacity .9s ease,transform .9s ease;}
+.reveler.visible{opacity:1;transform:translateY(0);}
 
-.reveler{
-opacity:0;
-transform:translateY(18px);
-transition:opacity .9s ease, transform .9s ease;
+@media(max-width:900px){
+.livre-haut{grid-template-columns:1fr;gap:30px;}
+.couverture-premiere{width:min(260px,78vw);}
+.couverture-quatrieme{width:min(320px,88vw);}
 }
-
-.reveler.visible{
-opacity:1;
-transform:translateY(0);
-}
-
 @media(max-width:760px){
-.entete-site{
-grid-template-columns:auto 1fr auto;
-padding:14px 16px;
-gap:12px;
-}
+.entete-site{grid-template-columns:auto 1fr auto;padding:14px 16px;gap:12px;}
 .entete-logo img{height:42px;}
+.entete-titre{font-size:1.4rem;}
+.entete-retour a{font-size:.7rem;letter-spacing:.1em;padding:6px 10px;}
+.entete-retour a::before{content:'⌂';margin-right:0;}
+.entete-retour a{font-size:0;width:34px;height:30px;display:flex;align-items:center;justify-content:center;}
+.entete-retour a::before{font-size:.85rem;}
 .titre-page{font-size:2.7rem;}
-.carte{padding:32px 22px;}
+.carte,.livre-detail{padding:32px 22px;}
+.couvertures{gap:18px;}
+.plan-site{padding:32px 18px 24px;}
+.plan-site-grille{gap:18px;text-align:center;}
+.plan-categorie h2{text-align:center;}
+.plan-mentions{font-size:.7rem;letter-spacing:.12em;}
+}
+@media(prefers-reduced-motion:reduce){
+.reveler{opacity:1;transform:none;transition:none;}
 }
 </style>
 </head>
 
 <body>
 
-<header class="entete-site">
+<header class="entete-site" role="banner">
 <div class="entete-logo">
-<a href="index.html"><img src="images/logo-amagie.png" alt="L'AMagie" onerror="this.style.display='none'"/></a>
+<a href="index.html" aria-label="Retour à l'accueil de L'AMagie"><img src="images/logo-amagie.png" alt="L'AMagie" onerror="this.style.display='none'"/></a>
 </div>
-
-<a href="index.html" class="entete-titre">L’AMagie</a>
-
+<a href="index.html" class="entete-titre" aria-label="L'AMagie — Accueil">L&rsquo;AMagie</a>
 <div class="entete-retour">
-<a href="index.html">Retour à l’accueil</a>
+<a href="index.html"><span>Retour à l&rsquo;accueil</span></a>
 </div>
 </header>
 
 <section class="heros-page">
-
-<nav class="fil-ariane">
-<a href="index.html">Accueil</a> ·
-<a href="ateliers.html">Ateliers</a> ·
+<nav class="fil-ariane" aria-label="Fil d'ariane">
+<a href="index.html">Accueil</a>
+<span class="sep">·</span>
+<a href="ateliers.html">Ateliers</a>
+<span class="sep">·</span>
 <span>Collection Amis-Mots</span>
 </nav>
 
 <h1 class="titre-page">Collection Amis-Mots</h1>
-
-<p class="sous-titre-page">
-Là où les animaux deviennent les héros discrets de nos vies
-</p>
-
-<div class="medaillon-titre">✦</div>
+<p class="sous-titre-page">Là où les animaux deviennent les héros discrets de nos vies</p>
+<div class="medaillon-titre" aria-hidden="true">✦</div>
 
 <figure class="illustration-titre reveler">
-<img src="images/amis-mots.png" alt="Collection Amis-Mots — L'AMagie"/>
+<img src="images/amis-mots.png" alt="Collection Amis-Mots — L'AMagie" loading="eager" decoding="async" onerror="this.style.display='none'"/>
 <figcaption>Une présence animale qui veille doucement sur les mots.</figcaption>
 </figure>
-
 </section>
 
-<main class="contenu">
+<main class="contenu" role="main">
 
 <article class="carte reveler">
-<p>
-La collection <strong>Amis-Mots</strong> est née de la passion d’Anouk Journo pour le monde animal.
-Des livres qui célèbrent la relation unique entre les humains et les animaux — avec tendresse, humour et profondeur.
-</p>
-
-<p>
-Des récits où les animaux ne sont jamais de simples silhouettes, mais des présences sensibles,
-capables d’accompagner, de réparer, d’apaiser ou de transformer un regard.
-</p>
-
-<p><em>Pour la jeunesse… et pour les adultes qui ont gardé leur âme d’enfant.</em></p>
+<p>La collection <strong>Amis-Mots</strong> est née de la passion d&rsquo;Anouk Journo pour le monde animal. Elle rassemble des textes où les bêtes ne sont jamais de simples silhouettes, mais des présences sensibles, capables d&rsquo;accompagner, de réparer, d&rsquo;apaiser ou de transformer un regard.</p>
+<p>Chats recueillis, animaux sauvages rescapés, refuges imaginaires ou bien réels&nbsp;: chaque livre ouvre un chemin vers le vivant, avec tendresse, humour, profondeur et cette part d&rsquo;émerveillement qui aide les jeunes lecteurs à grandir.</p>
+<p><em>Pour la jeunesse… et pour les adultes qui ont gardé leur âme d&rsquo;enfant.</em></p>
 </article>
 
 <div class="section-titre reveler">
@@ -369,97 +471,133 @@ capables d’accompagner, de réparer, d’apaiser ou de transformer un regard.
 <span class="legende">Livres de la collection</span>
 </div>
 
-<section class="grille-livres reveler">
-
-<article class="livre">
-<h3>🐈 Moustache, le roi des coussins</h3>
-<p>
-Roman jeunesse — les aventures d’un chat impérial et tendre,
-héros discret d’un quotidien plein de douceur.
-</p>
+<article class="livre-detail reveler" id="moustache">
+<div class="livre-haut">
+<div class="couvertures">
+<figure class="couverture-bloc couverture-premiere">
+<img src="images/Moustache.png" alt="Première de couverture de Moustache, le roi des coussins" loading="lazy" decoding="async"/>
+<figcaption class="couverture-legende">Première de couverture</figcaption>
+</figure>
+<figure class="couverture-bloc couverture-quatrieme">
+<img src="images/Moustache4.png" alt="Quatrième de couverture de Moustache, le roi des coussins" loading="lazy" decoding="async"/>
+<figcaption class="couverture-legende">Quatrième de couverture</figcaption>
+</figure>
+</div>
+<div class="livre-texte">
+<h3>Moustache, le roi des coussins</h3>
 <span class="auteur">Anouk Journo</span>
+<p>Avec <em>Moustache, le roi des coussins</em>, la collection Amis-Mots accueille un conte délicat inspiré d&rsquo;une histoire réelle. On y rencontre un grand chat noir, fier et drôle, qui traverse le monde avec la dignité d&rsquo;un souverain… mais sans royaume où poser ses pattes.</p>
+<p>Entre la rue, les enfants, les croquettes partagées et la découverte d&rsquo;un foyer, Moustache devient peu à peu plus qu&rsquo;un chat de passage&nbsp;: une présence attendue, aimée, reconnue. Son histoire parle d&rsquo;adoption, de courage, d&rsquo;espoir et de ces liens minuscules qui changent une vie.</p>
+<div class="resume-original">
+<p>Un grand chat noir sans nom vit dans un village avec la dignité d&rsquo;un roi… Mais il n&rsquo;a pas de royaume. Il est seul.</p>
+<p>Entre petites mains d&rsquo;enfants, croquettes partagées et dangers de la rue, il devient Moustache… Puis Moumou. Il découvre qu&rsquo;exister, c&rsquo;est être attendu quelque part…</p>
+<p class="accroche">Inspiré d&rsquo;une histoire réelle, ce conte délicat parle d&rsquo;adoption, de courage et d&rsquo;espoir.</p>
+</div>
+<a class="bouton" href="https://librairie.bod.fr/moustache-le-roi-des-coussins-anouk-journo-9791098116940" target="_blank" rel="noopener noreferrer">Acheter le livre</a>
+</div>
+</div>
 </article>
 
-<article class="livre">
-<h3>🦁 Valrêve — Le serment de la lionne</h3>
-<p>
-Tome 1 — Un refuge imaginaire où les animaux libres trouvent paix et dignité.
-Une aventure sensible tournée vers le vivant.
-</p>
+<article class="livre-detail reveler" id="serment-de-la-lionne">
+<div class="livre-haut">
+<div class="couvertures">
+<figure class="couverture-bloc couverture-premiere">
+<img src="images/serment.png" alt="Première de couverture du Serment de la lionne" loading="lazy" decoding="async"/>
+<figcaption class="couverture-legende">Première de couverture</figcaption>
+</figure>
+<figure class="couverture-bloc couverture-quatrieme">
+<img src="images/serment4.png" alt="Quatrième de couverture du Serment de la lionne" loading="lazy" decoding="async"/>
+<figcaption class="couverture-legende">Quatrième de couverture</figcaption>
+</figure>
+</div>
+<div class="livre-texte">
+<h3>Valrêve — Le serment de la lionne</h3>
 <span class="auteur">Anouk Journo</span>
+<p>Premier tome de la saga <em>Valrêve, le refuge des animaux libres</em>, <em>Le serment de la lionne</em> fait entrer les lecteurs dans un lieu à la fois refuge, territoire d&rsquo;aventures et seuil de transformation intérieure. À Valrêve, les animaux sauvages blessés ou rescapés de la captivité trouvent un espace où l&rsquo;on soigne sans posséder, où l&rsquo;on protège sans domestiquer.</p>
+<p>Izia et Jawo y découvrent un monde plus vaste qu&rsquo;ils ne l&rsquo;imaginaient, peuplé de lions, de secrets, de mémoires enfouies et de liens puissants entre les espèces. La protection animale devient ici le cœur d&rsquo;une quête romanesque&nbsp;: apprendre à regarder autrement, à faire confiance, à choisir le courage.</p>
+<div class="resume-original">
+<p class="accroche">Un refuge. Des animaux rescapés. Une famille en quête de sens.</p>
+<p>En Normandie, le refuge de Valrêve accueille des animaux sauvages qui ont connu la souffrance et l&rsquo;enfermement. Antoine Beucaire y travaille comme vétérinaire. Ses enfants, Izia et Jawo, vont y vivre une expérience qui changera leur regard sur le monde… et sur eux-mêmes.</p>
+<p>Car Valrêve cache des secrets. Et certains animaux n&rsquo;ont pas oublié…</p>
+<p class="accroche">Une histoire forte, inspirée de faits réels, sur la protection animale et la force du lien entre les espèces.</p>
+</div>
+<a class="bouton" href="https://www.fnac.com/a22677504/Anouk-Journo-Le-serment-de-la-lionne" target="_blank" rel="noopener noreferrer">Acheter à la Fnac</a>
+</div>
+</div>
 </article>
 
-<article class="livre">
-<h3>🌙 Valrêve — Rêve sauvage</h3>
-<p>
-Tome 2 — La suite des aventures de Valrêve.
-Les animaux libres poursuivent leur quête de liberté et de dignité.
-</p>
+<article class="livre-detail reveler" id="reve-sauvage">
+<div class="livre-haut">
+<div class="couvertures">
+<figure class="couverture-bloc couverture-premiere">
+<img src="images/reve-sauvage.png" alt="Première de couverture du Rêve sauvage" loading="lazy" decoding="async"/>
+<figcaption class="couverture-legende">Première de couverture</figcaption>
+</figure>
+<figure class="couverture-bloc couverture-quatrieme">
+<img src="images/reve-sauvage4.png" alt="Quatrième de couverture du Rêve sauvage" loading="lazy" decoding="async"/>
+<figcaption class="couverture-legende">Quatrième de couverture</figcaption>
+</figure>
+</div>
+<div class="livre-texte">
+<h3>Valrêve — Le rêve sauvage</h3>
 <span class="auteur">Anouk Journo</span>
+<p>Dans ce second tome, l&rsquo;univers de Valrêve s&rsquo;approfondit. Le refuge n&rsquo;est plus seulement un lieu d&rsquo;accueil&nbsp;: il devient un espace de choix, d&rsquo;épreuves et de révélations. Les animaux y gardent leur part sauvage, leur dignité intacte, leur mystère aussi.</p>
+<p>Jawo et Izia poursuivent leur chemin auprès des lions, des lémuriens et des félins blessés, tandis que les tensions humaines menacent l&rsquo;équilibre du refuge. Entre trahisons, anciennes légendes et force des liens sincères, <em>Le rêve sauvage</em> célèbre la liberté comme une promesse fragile&nbsp;: celle que l&rsquo;on doit protéger sans jamais l&rsquo;enfermer.</p>
+<div class="resume-original">
+<p class="accroche">Un refuge. Des animaux sauvages. Une famille en quête de sens.</p>
+<p>À Valrêve, on offre une seconde chance aux animaux sauvages rescapés de la captivité. Lions, lémuriens, félins blessés… Ici, on soigne sans domestiquer. On protège sans posséder.</p>
+<p>Pour Jawo et Izia, vivre au refuge, c&rsquo;est apprendre que la liberté ne se négocie pas. Jawo seul face à Gala, la lionne qu&rsquo;il aime tant. Izia, confrontée aux trahisons humaines, découvre que défendre les animaux, c&rsquo;est aussi trouver sa propre force…</p>
+<p>Quand une ancienne légende liée aux chevaliers des Templiers refait surface près du refuge, l&rsquo;aventure pourrait détourner l&rsquo;attention de l&rsquo;essentiel&nbsp;: le véritable trésor à Valrêve…</p>
+<p class="accroche">Suite du <em>Serment de la lionne</em>, ce roman vibrant célèbre l&rsquo;amour et le respect des animaux sauvages, ainsi que la puissance des liens sincères.</p>
+</div>
+<a class="bouton" href="https://www.fnac.com/a22807873/Anouk-Journo-Le-reve-sauvage#int=S:Suggestion|FA%3ALIV|1|22807873|BL1|L1" target="_blank" rel="noopener noreferrer">Acheter à la Fnac</a>
+</div>
+</div>
 </article>
-
-</section>
 
 <article class="carte reveler">
-
 <div class="section-titre" style="margin-top:0;">
 <h2>Médiation animale</h2>
-<span class="legende">Écriture & présence animale</span>
+<span class="legende">Écriture &amp; présence animale</span>
 </div>
-
-<p>
-La collection Amis-Mots est profondément liée aux ateliers de médiation animale proposés par L’AMagie.
-</p>
-
-<p>
-Écrire sur les animaux, c’est aussi apprendre à les écouter,
-à reconnaître leur présence silencieuse et la place qu’ils occupent dans nos vies.
-</p>
-
+<p>La collection Amis-Mots est profondément liée aux ateliers de médiation animale proposés par L&rsquo;AMagie.</p>
+<p>Écrire sur les animaux, c&rsquo;est aussi apprendre à les écouter, à reconnaître leur présence silencieuse et la place qu&rsquo;ils occupent dans nos vies.</p>
 <div class="cta">
 <a href="mediation-animale.html" class="bouton">Découvrir les ateliers</a>
 </div>
-
 </article>
 
 <article class="carte reveler">
-
 <div class="section-titre" style="margin-top:0;">
 <h2>Commander un titre</h2>
-<span class="legende">Boutique & commandes</span>
+<span class="legende">Boutique &amp; commandes</span>
 </div>
-
-<p style="text-align:center;">
-Tous les titres de la collection Amis-Mots sont disponibles en boutique
-ou sur commande directe auprès de L’AMagie.
-</p>
-
+<p style="text-align:center;">Tous les titres de la collection Amis-Mots sont disponibles en boutique ou sur commande directe auprès de L&rsquo;AMagie.</p>
 <div class="cta">
 <a href="boutique.html" class="bouton">Voir la boutique</a>
 </div>
-
 </article>
 
 </main>
 
-<section class="plan-site">
-
+<section class="plan-site" aria-label="Plan du site">
+<div class="filet-haut" aria-hidden="true"><span class="etoile">✦</span></div>
 <div class="plan-site-grille">
 
 <div class="plan-categorie">
-<h2>Qui sommes-nous ?</h2>
+<h2>Qui sommes-nous&nbsp;?</h2>
 <ul>
 <li><a href="qui-sommes-nous.html">Qui sommes-nous</a></li>
-<li><a href="fonctionnement.html">Fonctionnement de l’association</a></li>
+<li><a href="fonctionnement.html">Fonctionnement de l&rsquo;association</a></li>
 <li><a href="anouk-journo.html">Anouk Journo</a></li>
 <li><a href="peintures.html">Meichelus</a></li>
 </ul>
 </div>
 
 <div class="plan-categorie">
-<h2>Ateliers & Coaching</h2>
+<h2>Ateliers &amp; Coaching</h2>
 <ul>
-<li><a href="ateliers.html">Ateliers & Coaching</a></li>
+<li><a href="ateliers.html">Ateliers &amp; Coaching</a></li>
 <li><a href="mots-pour-maux.html">Écriture thérapeutique</a></li>
 <li><a href="mediation-animale.html">Médiation animale</a></li>
 <li><a href="amis-mots.html">Collection Amis-Mots</a></li>
@@ -469,7 +607,7 @@ ou sur commande directe auprès de L’AMagie.
 <div class="plan-categorie">
 <h2>Éditions</h2>
 <ul>
-<li><a href="edition.html">Manuscrits & projets</a></li>
+<li><a href="edition.html">Manuscrits &amp; projets</a></li>
 <li><a href="poesie.html">Poésie</a></li>
 <li><a href="boutique.html">Boutique</a></li>
 <li><a href="contact.html">Contact</a></li>
@@ -478,11 +616,8 @@ ou sur commande directe auprès de L’AMagie.
 
 </div>
 
-<p class="plan-mentions">
-© L’AMagie ✦ Maison d’édition indépendante ✦ Félines-Minervois
-</p>
-    <p class="plan-webmaster">© Webmaster Meichelus : <a href="mailto:meichelus@l-amagie.art">meichelus@l-amagie.art</a></p>
-
+<p class="plan-mentions">© L&rsquo;AMagie <span class="etoile">✦</span> Maison d&rsquo;édition indépendante <span class="etoile">✦</span> Félines-Minervois</p>
+<p class="plan-webmaster">© Webmaster Meichelus : <a href="mailto:meichelus@l-amagie.art">meichelus@l-amagie.art</a></p>
 </section>
 
 <script>
@@ -494,11 +629,10 @@ e.target.classList.add('visible');
 obs.unobserve(e.target);
 }
 });
-},{threshold:.08});
-
-document.querySelectorAll('.reveler').forEach(function(el){
-obs.observe(el);
-});
+},{threshold:.08,rootMargin:'0px 0px -50px 0px'});
+document.querySelectorAll('.reveler').forEach(function(el){obs.observe(el);});
+} else {
+document.querySelectorAll('.reveler').forEach(function(el){el.classList.add('visible');});
 }
 </script>
 

@@ -244,6 +244,30 @@ em{font-style:italic;color:#5a4a30;}
 .recueil-carte .auteur::before{content:'— ';color:#b89a5c;font-style:normal;}
 .recueil-carte p{font-size:1rem;line-height:1.7;color:#3a3220;margin:0;}
 
+
+.livre-images{
+  display:flex;
+  gap:12px;
+  align-items:flex-start;
+  justify-content:center;
+  margin:16px 0;
+}
+.livre-images .livre-img{
+  width:calc(50% - 6px);
+  max-width:170px;
+  height:auto;
+  border-radius:3px;
+  box-shadow:0 2px 8px rgba(90,74,48,.1);
+}
+.livre-img{
+  width:100%;
+  max-width:220px;
+  height:auto;
+  margin:16px auto;
+  border-radius:3px;
+  box-shadow:0 2px 8px rgba(90,74,48,.1);
+}
+
 /* === Citation en exergue === */
 .exergue{
   margin:30px auto 36px;
@@ -487,35 +511,54 @@ em{font-style:italic;color:#5a4a30;}
         <span class="icone" aria-hidden="true">🐎</span>
         <h3>L&rsquo;Âme en selle / Riding Soul</h3>
         <span class="auteur">Anouk Journo</span>
+        <div class="livre-images">
+          <img src="images/lame-en-selle.png" alt="L'Âme en selle" class="livre-img">
+          <img src="images/Riding- Soul.jpg" alt="Riding Soul" class="livre-img">
+        </div>
         <p>Poésie bilingue français-anglais — le galop, la liberté, <em>l&rsquo;âme qui chevauche au-delà des frontières</em>.</p>
+        <a class="btn-cta" href="https://librairie.bod.fr/lame-en-selle-anouk-journo-9782959874635" target="_blank">Acheter L&rsquo;Âme en selle</a>
       </article>
 
       <article class="recueil-carte">
         <span class="icone" aria-hidden="true">⭐</span>
         <h3>Abécédaire des étoiles</h3>
         <span class="auteur">Anouk Journo</span>
+        <img src="images/abecedaire.jpg" alt="L'Abécédaire des étoiles" class="livre-img">
         <p>De A à Z, un abécédaire céleste qui traverse les constellations et <em>les mystères du ciel nocturne</em>.</p>
+        <a class="btn-cta" href="https://www.cultura.com/p-abecedaire-des-etoiles-13005293.html" target="_blank">Format papier &amp; ebook</a>
       </article>
 
       <article class="recueil-carte">
         <span class="icone" aria-hidden="true">🌊</span>
         <h3>Où est passé l&rsquo;Ô d&rsquo;Hautpoul</h3>
         <span class="auteur">Anouk Journo</span>
+        <img src="images/hautpoul.png" alt="L'Ô d'Hautpoul" class="livre-img">
         <p>Un voyage poétique dans le village cathare d&rsquo;Hautpoul — <em>pierres, légendes et souffles anciens</em>.</p>
+        <a class="btn-cta" href="https://www.fnac.com/a22203068/Anouk-Journo-Ou-es-passe-l-O-d-Hautpoul" target="_blank">Acheter L&rsquo;Ô d&rsquo;Hautpoul</a>
       </article>
 
       <article class="recueil-carte">
         <span class="icone" aria-hidden="true">🌿</span>
         <h3>En quête d&rsquo;Hozro</h3>
         <span class="auteur">Anouk Journo</span>
-        <p>Hozro — <em>beauté, harmonie, équilibre</em> en langue navajo. Une quête poétique de l&rsquo;essentiel.</p>
+        <img src="images/ozro.png" alt="En quête d'Ozro" class="livre-img">
+        <p>Un beau-livre associant 20 poèmes et 20 peintures — une conversation intime entre la parole et l&rsquo;image.</p>
+        <p>Anouk Journo &amp; Meichelus explorent ensemble les territoires d&rsquo;Hozro, ce monde imaginaire où la poésie devient peinture, où chaque couleur chante un poème.</p>
+        <p>2024 — Une quête visuelle et poétique vers l&rsquo;ailleurs. En Quête d&rsquo;Hozro est bien plus qu&rsquo;un recueil. C&rsquo;est une invitation à voyager vers un monde où les frontières entre la poésie et la peinture s&rsquo;effacent.</p>
+        <p>Chaque page révèle une conversation silencieuse entre les mots d&rsquo;Anouk Journo et les pinceaux de Meichelus. Les poèmes deviennent tableaux, les peintures murmurent des vers oubliés.</p>
+        <p>Hozro — ce nom même évoque l&rsquo;énigme, le voyage sans fin, la quête permanente de beauté et de sens. Un monde où l&rsquo;enchantement du monde se vit au fil des pages. <a href="blog.html" target="_blank" style="color:#8a6d2f;border-bottom:1px solid rgba(184,154,92,.35);">Pour en savoir plus</a></p>
+        <a class="btn-cta" href="contact.html">Nous écrire pour ce recueil</a>
       </article>
 
       <article class="recueil-carte">
         <span class="icone" aria-hidden="true">✒</span>
         <h3>Mots en aparté</h3>
-        <span class="auteur">Anouk Journo</span>
-        <p>Des mots qui se glissent à l&rsquo;oreille, discrets et essentiels, <em>comme une confidence entre deux silences</em>.</p>
+        <span class="auteur">Michel Bonnin</span>
+        <img src="images/ mots-en-aparté.jpg" alt="Mots en aparté" class="livre-img">
+        <p>Poésie et peinture s&rsquo;y répondent dans un même souffle, portées par une écriture intime, sensible, nourrie par la course, le rêve et son énergie de vie communicative. Un ouvrage singulier, à l&rsquo;image de son auteur — poète, peintre… et champion. Michel Bonnin explore dans ce recueil les territoires de l&rsquo;intime — là où la poésie et la peinture se rencontrent, se dialoguent, s&rsquo;entrelacent.</p>
+        <p>Chaque page révèle une dualité poétique : les mots dansent avec les pinceaux, la course de l&rsquo;athlète se transforme en rêve du poète, l&rsquo;énergie vitale s&rsquo;exprime par des confidences murmurées.</p>
+        <p>Mots en Aparté est une invitation à ralentir, à écouter les voix secrètes qui habitent chacun d&rsquo;entre nous, à voir le monde à travers le double regard de l&rsquo;artiste. Des mots en aparté qui se chuchotent à l&rsquo;oreille, entre confidences poétiques et visions picturales.</p>
+        <a class="btn-cta" href="https://www.fnac.com/a22433786/Michel-Bonnin-Mots-en-aparte" target="_blank">Acheter Mots en aparté</a>
       </article>
 
     </div>

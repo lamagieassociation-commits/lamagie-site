@@ -374,6 +374,18 @@ em{font-style:italic;color:#5a4a30;}
 .plan-webmaster a:hover{color:#b89a5c;border-bottom-color:#b89a5c;}
 @media(max-width:560px){.plan-site{padding:32px 18px 24px;}.plan-site-grille{gap:18px;text-align:center;}.plan-categorie h2{text-align:center;}.plan-mentions{font-size:.7rem;letter-spacing:.12em;}}
 
+/* === IMAGE D'EN-TÊTE DE COLLECTION === */
+.header-banner-img {
+    display: block;
+    width: 50%;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto 30px auto;
+    border: 1px solid #b89a5c;
+    border-radius: 6px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
 /* === Révélation au scroll === */
 .reveler{opacity:0;transform:translateY(18px);transition:opacity .9s ease, transform .9s ease;}
 .reveler.visible{opacity:1;transform:translateY(0);}
@@ -404,14 +416,9 @@ em{font-style:italic;color:#5a4a30;}
       <span>La poésie au jour le jour</span>
     </nav>
 
-    <!-- Illustration Félines AU-DESSUS du titre -->
-    <figure class="illustration-felines reveler">
-      <img src="images/felines.png"
-           alt="Félines-Minervois — le village au cœur du Minervois"
-           loading="eager"
-           decoding="async"
-           onerror="this.style.display='none'"/>
-      <figcaption>Félines-Minervois, le village qui inspire L&rsquo;AMagie</figcaption>
+    <!-- Illustration d'en-tête de collection AU-DESSUS du titre -->
+    <figure style="margin:0 auto 28px; max-width:90%; padding:0 20px;">
+      <img src="images/recueil-image.png" alt="Collection Poésie" class="header-banner-img"/>
     </figure>
 
     <h1 class="titre-page">La poésie au jour le jour</h1>
@@ -469,6 +476,10 @@ em{font-style:italic;color:#5a4a30;}
         <span class="icone" aria-hidden="true">❋</span>
         <h3>Lucide</h3>
         <span class="auteur">Meichelus &amp; Anouk Journo</span>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:16px 0;">
+          <img src="images/lucide.png" alt="Couverture Lucide" style="width:100%;height:auto;border-radius:3px;box-shadow:0 2px 8px rgba(90,74,48,.1);"/>
+          <img src="images/lucide4.png" alt="Quatrième de couverture Lucide" style="width:100%;height:auto;border-radius:3px;box-shadow:0 2px 8px rgba(90,74,48,.1);"/>
+        </div>
         <p>Recueil co-créé avec illustrations graphite et aquarelle. <em>Précis comme un trait, intense comme la nuit.</em></p>
       </article>
 

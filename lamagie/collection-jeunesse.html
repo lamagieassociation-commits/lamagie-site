@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="google" content="notranslate"/>
+<meta http-equiv="Content-Language" content="fr"/>
+<title>Romans jeunesse : collection de La Terre à la Lune | L'AMagie</title>
+<meta name="description" content="Romans jeunesse : collection de La Terre à la Lune — aventures, énigmes et mystères pour jeunes lecteurs. Une collection L'AMagie dédiée à l'imaginaire, aux mots et aux récits captivants."/>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Pinyon+Script&display=swap" rel="stylesheet"/>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Pinyon+Script&display=swap');
+
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html,body{overflow-x:hidden;}
+html{scroll-behavior:smooth;}
+
+body{
+  background-color:#ece2c8;
+  color:#3a3220;
+  font-family:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  font-weight:400;
+  font-size:17px;
+  line-height:1.75;
+  min-height:100vh;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  text-rendering:optimizeLegibility;
+  background-image:
+    radial-gradient(ellipse 55% 50% at 12% 18%, rgba(146,96,38,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 55% at 88% 82%, rgba(132,88,36,0.11) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 45% at 78% 18%, rgba(170,128,60,0.09) 0%, transparent 65%),
+    radial-gradient(ellipse 55% 50% at 22% 82%, rgba(160,118,50,0.10) 0%, transparent 65%),
+    radial-gradient(ellipse 75% 60% at 50% 35%, rgba(212,176,114,0.10) 0%, transparent 75%),
+    linear-gradient(135deg, #f1ead4 0%, #e8dec0 50%, #ecdfc2 100%),
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='280' height='280'><filter id='g'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' seed='4'/><feColorMatrix values='0 0 0 0 0.42 0 0 0 0 0.32 0 0 0 0 0.17 0 0 0 0.22 0'/></filter><rect width='100%25' height='100%25' filter='url(%23g)'/></svg>");
+  background-attachment:fixed;
+  background-size:auto,auto,auto,auto,auto,auto,280px 280px;
+  background-repeat:no-repeat,no-repeat,no-repeat,no-repeat,no-repeat,no-repeat,repeat;
+}
+a{color:inherit;text-decoration:none;}
+img{max-width:100%;height:auto;display:block;}
+em{font-style:italic;color:#5a4a30;}
+strong{font-weight:600;}
+::selection{background:rgba(184,154,92,.32);color:#3a3220;}
+
+/* === HEADER CONSTANT === */
+.entete-site{position:relative;z-index:10;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:24px;padding:24px 40px;border-bottom:1px solid rgba(184,154,92,.28);background:linear-gradient(180deg,rgba(241,234,212,.55),rgba(236,226,200,.25));backdrop-filter:blur(1px);}
+.entete-logo{display:flex;align-items:center;justify-content:flex-start;}
+.entete-logo img{height:55px;width:auto;display:block;}
+.entete-titre{text-align:center;font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:clamp(1.8rem,3.2vw,2.6rem);color:#3a3220;letter-spacing:.01em;line-height:1;text-decoration:none;}
+.entete-retour{display:flex;align-items:center;justify-content:flex-end;}
+.entete-retour a{font-family:'Cormorant Garamond',Georgia,serif;font-size:.92rem;letter-spacing:.18em;text-transform:uppercase;color:#5a4a30;padding:8px 18px;border:1px solid rgba(184,154,92,.4);border-radius:2px;transition:color .3s, background-color .3s, border-color .3s;white-space:nowrap;}
+.entete-retour a::before{content:'⌂ ';margin-right:.25em;letter-spacing:0;}
+.entete-retour a:hover{color:#b89a5c;border-color:#b89a5c;background:rgba(184,154,92,.07);}
+@media(max-width:760px){.entete-site{grid-template-columns:auto 1fr auto;padding:14px 16px;gap:12px;}.entete-logo img{height:42px;}.entete-titre{font-size:1.4rem;}.entete-retour a{font-size:.7rem;letter-spacing:.1em;padding:6px 10px;}.entete-retour a::before{content:'⌂';margin-right:0;}.entete-retour a span{display:none;}}
+
+/* === HÉROS DE PAGE === */
+.heros-page{text-align:center;padding:64px 20px 28px;max-width:920px;margin:0 auto;}
+.fil-ariane{display:inline-block;font-family:'Cormorant Garamond',serif;font-size:.72rem;letter-spacing:.32em;text-transform:uppercase;color:#5a4a30;margin-bottom:24px;}
+.fil-ariane a{color:#8a6d2f;transition:color .3s;}
+.fil-ariane a:hover{color:#b89a5c;}
+.fil-ariane .sep{margin:0 .55em;color:rgba(184,154,92,.55);}
+.titre-page{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:clamp(2.2rem,4.9vw,3.55rem);color:#3a3220;letter-spacing:.005em;line-height:1.1;margin:0 0 14px;}
+.sous-titre-page{font-family:'Pinyon Script','Cormorant Garamond',cursive;font-size:clamp(1.4rem,2.5vw,1.95rem);color:#7a6a48;line-height:1.3;margin:0;}
+.medaillon-titre{width:54px;height:54px;margin:32px auto 0;border-radius:50%;border:1px solid rgba(184,154,92,.5);box-shadow:0 0 0 5px rgba(241,234,212,.6),0 0 0 6px rgba(184,154,92,.18);display:flex;align-items:center;justify-content:center;color:#b89a5c;font-size:1.1rem;}
+
+.contenu{max-width:1060px;margin:0 auto;padding:0 20px 56px;}
+.carte{background:rgba(246,239,216,.62);border:1px solid rgba(184,154,92,.22);border-radius:2px;padding:48px 56px;margin:0 auto 36px;position:relative;box-shadow:0 4px 14px rgba(90,74,48,.06),0 1px 2px rgba(90,74,48,.04);}
+.carte::before,.carte::after,.livre-detail::before,.livre-detail::after{content:'';position:absolute;width:18px;height:18px;border:1px solid rgba(184,154,92,.45);pointer-events:none;}
+.carte::before,.livre-detail::before{top:6px;left:6px;border-right:0;border-bottom:0;}
+.carte::after,.livre-detail::after{bottom:6px;right:6px;border-left:0;border-top:0;}
+.carte p{font-size:1.08rem;line-height:1.85;color:#3a3220;margin:0 0 1.1rem;}
+.carte p:last-child{margin-bottom:0;}
+
+.section-titre{text-align:center;margin:56px 0 32px;}
+.section-titre h2{display:inline-block;font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(1.4rem,2.8vw,1.85rem);letter-spacing:.18em;color:#3a3220;text-transform:uppercase;position:relative;padding:0 30px;}
+.section-titre h2::before,.section-titre h2::after{content:'❦';position:absolute;top:50%;transform:translateY(-50%);color:#b89a5c;font-size:.85em;}
+.section-titre h2::before{left:0;}
+.section-titre h2::after{right:0;}
+.section-titre .legende{display:block;margin-top:14px;font-family:'Pinyon Script','Cormorant Garamond',cursive;font-size:1.2rem;color:#7a6a48;text-transform:none;letter-spacing:.02em;font-weight:400;}
+
+.livre-detail{position:relative;background:rgba(246,239,216,.60);border:1px solid rgba(184,154,92,.25);border-radius:2px;padding:42px 44px;margin:0 auto 42px;box-shadow:0 4px 14px rgba(90,74,48,.06),0 1px 2px rgba(90,74,48,.04);}
+.livre-haut{display:grid;grid-template-columns:minmax(250px,340px) 1fr;gap:38px;align-items:start;}
+.couvertures{display:flex;flex-wrap:wrap;gap:22px;align-items:flex-start;justify-content:center;}
+.couverture-bloc{max-width:100%;background:transparent;padding:0;line-height:0;}
+.couverture-premiere{width:clamp(230px,24vw,260px);}
+.couverture-quatrieme{width:clamp(280px,30vw,320px);}
+.couverture-bloc img{display:block;width:100%;height:auto;object-fit:contain;border:1px solid rgba(184,154,92,.28);border-radius:1px;box-shadow:0 8px 22px rgba(90,74,48,.14),0 0 0 7px rgba(241,234,212,.50);background:rgba(255,253,245,.28);}
+.couverture-legende{display:block;font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:#7a6a48;line-height:1.25;text-align:center;margin-top:13px;}
+.livre-texte h3{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(1.55rem,3vw,2.2rem);line-height:1.12;letter-spacing:.015em;color:#3a3220;margin:0 0 8px;}
+.livre-texte .auteur{display:block;font-style:italic;font-size:1.08rem;color:#5a4a30;margin-bottom:18px;padding-bottom:14px;border-bottom:1px dashed rgba(184,154,92,.35);}
+.livre-texte .auteur::before{content:'— ';color:#b89a5c;font-style:normal;}
+.livre-texte p{font-size:1.05rem;line-height:1.78;color:#3a3220;margin:0 0 1rem;}
+.resume-original{margin:22px 0 22px;padding:22px 24px;background:rgba(241,234,212,.44);border-left:3px solid rgba(184,154,92,.45);box-shadow:0 3px 10px rgba(90,74,48,.04);}
+.resume-original p{font-style:italic;color:#5a4a30;margin-bottom:.82rem;}
+.resume-original p:last-child{margin-bottom:0;}
+.resume-original .accroche{font-weight:600;font-style:italic;color:#3a3220;}
+
+.encadre-hopitaux{
+  margin:24px 0 24px;
+  padding:22px 24px;
+  background:rgba(246,239,216,.68);
+  border:1px solid rgba(184,154,92,.48);
+  border-radius:10px;
+  box-shadow:0 4px 14px rgba(90,74,48,.06), inset 0 0 0 1px rgba(241,234,212,.45);
+}
+.encadre-hopitaux h4{
+  font-family:'Cormorant Garamond',serif;
+  font-weight:600;
+  font-size:1.1rem;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:#3a3220;
+  text-align:center;
+  margin:0 0 14px;
+}
+.encadre-hopitaux p{
+  margin:0 0 .55rem;
+  font-size:1rem;
+  line-height:1.55;
+  color:#5a4a30;
+}
+.encadre-hopitaux p:last-child{margin-bottom:0;}
+.bouton{display:inline-block;font-family:'Cormorant Garamond',serif;font-size:.95rem;letter-spacing:.14em;text-transform:uppercase;color:#3a3220;padding:12px 28px;border:1px solid rgba(184,154,92,.55);background:rgba(184,154,92,.15);border-radius:2px;transition:color .3s,border-color .3s,background-color .3s,transform .3s;text-decoration:none;}
+.bouton::after{content:' →';letter-spacing:0;}
+.bouton:hover{border-color:#b89a5c;background:rgba(184,154,92,.28);transform:translateY(-2px);}
+.boutons-achat{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:6px;}
+.cta{text-align:center;margin-top:20px;}
+
+/* === PLAN DU SITE === */
+.plan-site{background:transparent;padding:48px 24px 36px;max-width:1080px;margin:0 auto;text-align:center;font-family:'Cormorant Garamond',Georgia,serif;color:#3a3220;border-top:1px solid rgba(184,154,92,.25);}
+.plan-site .filet-haut{display:flex;align-items:center;justify-content:center;gap:14px;margin:0 auto 28px;max-width:200px;}
+.plan-site .filet-haut::before,.plan-site .filet-haut::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,transparent,rgba(184,154,92,.55),transparent);}
+.plan-site .filet-haut .etoile{color:#b89a5c;font-size:.85rem;line-height:1;}
+.plan-site-grille{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px 32px;text-align:left;margin-bottom:28px;}
+.plan-categorie h2{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:#5a4a30;margin:0 0 10px;padding-bottom:6px;border-bottom:1px solid rgba(184,154,92,.22);}
+.plan-categorie ul{list-style:none;margin:0;padding:0;}
+.plan-categorie li{font-size:.92rem;line-height:1.65;margin-bottom:2px;}
+.plan-categorie a{color:#3a3220;text-decoration:none;transition:color .3s;border-bottom:1px solid transparent;}
+.plan-categorie a:hover{color:#b89a5c;border-bottom-color:rgba(184,154,92,.4);}
+.plan-mentions{font-family:'Cormorant Garamond',serif;font-size:.78rem;letter-spacing:.16em;color:#7a6a48;text-transform:uppercase;margin:0;}
+.plan-mentions .etoile{color:#b89a5c;margin:0 .6em;}
+.plan-webmaster{margin:14px auto 0;max-width:340px;padding-top:10px;border-top:1px solid rgba(184,154,92,.18);font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.78rem;letter-spacing:.08em;color:#8a6d2f;text-align:center;}
+.plan-webmaster a{color:inherit;border-bottom:1px solid rgba(184,154,92,.3);transition:color .3s, border-color .3s;}
+.plan-webmaster a:hover{color:#b89a5c;border-bottom-color:#b89a5c;}
+
+.reveler{opacity:0;transform:translateY(18px);transition:opacity .9s ease, transform .9s ease;}
+.reveler.visible{opacity:1;transform:translateY(0);}
+
+@media(max-width:900px){.livre-haut{grid-template-columns:1fr;gap:30px;}.couverture-premiere{width:min(260px,78vw);}.couverture-quatrieme{width:min(320px,88vw);}}
+@media(max-width:760px){.carte,.livre-detail{padding:32px 22px;}.titre-page{font-size:2.35rem;}.couvertures{gap:18px;}.plan-site{padding:32px 18px 24px;}.plan-site-grille{gap:18px;text-align:center;}.plan-categorie h2{text-align:center;}.plan-mentions{font-size:.7rem;letter-spacing:.12em;}}
+@media(prefers-reduced-motion: reduce){.reveler{opacity:1;transform:none;transition:none;}}
+</style>
+</head>
+
+<body>
+
+  <!-- HEADER COMMUN -->
+  <header class="entete-site" role="banner">
+    <div class="entete-logo">
+      <a href="index.html" aria-label="Retour à l'accueil de L'AMagie">
+        <img src="images/logo-amagie.png" alt="L'AMagie" onerror="this.style.display='none'"/>
+      </a>
+    </div>
+    <a href="index.html" class="entete-titre" aria-label="L'AMagie — Accueil">L&rsquo;AMagie</a>
+    <div class="entete-retour">
+      <a href="index.html"><span>Retour à l&rsquo;accueil</span></a>
+    </div>
+  </header>
+
+  <!-- HÉROS DE PAGE -->
+  <section class="heros-page">
+    <nav class="fil-ariane" aria-label="Fil d'ariane">
+      <a href="index.html">Accueil</a>
+      <span class="sep">·</span>
+      <a href="edition.html">Éditions</a>
+      <span class="sep">·</span>
+      <span>Romans jeunesse</span>
+    </nav>
+    <h1 class="titre-page">Romans jeunesse : collection de La Terre à la Lune</h1>
+    <p class="sous-titre-page">Aventures, énigmes et mystères — pour les jeunes lecteurs qui aiment voyager entre les mots.</p>
+    <div class="medaillon-titre" aria-hidden="true">✦</div>
+  </section>
+
+  <main class="contenu" role="main">
+    <article class="carte reveler">
+      <p>La collection <em>Romans jeunesse : collection de La Terre à la Lune</em> rassemble des récits d&rsquo;aventures, d&rsquo;énigmes et de mystères où l&rsquo;imaginaire ouvre grand ses portes. Chaque livre invite les jeunes lecteurs à suivre une piste, à déchiffrer un signe, à traverser une peur ou une question, tout en découvrant la puissance secrète des mots.</p>
+      <p>Des alexandrins magiques aux légendes anciennes, des podiums de mode aux eaux troubles du Loch Ness, des secrets templiers aux horizons du Triangle des Bermudes, ces romans cultivent le goût du récit captivant, de la curiosité et de l&rsquo;émerveillement.</p>
+    </article>
+
+    <div class="section-titre reveler">
+      <h2>Les titres</h2>
+      <span class="legende">Mystères, quêtes et aventures</span>
+    </div>
+
+    <article class="livre-detail reveler" id="truffe">
+      <div class="livre-haut">
+        <div class="couvertures">
+          <figure class="couverture-bloc couverture-premiere">
+            <img src="images/truffe.png" alt="Couverture du roman À la recherche de Truffe ou les alexandrins magiques" loading="lazy" decoding="async"/>
+            <figcaption class="couverture-legende">Première de couverture</figcaption>
+          </figure>
+        </div>
+        <div class="livre-texte">
+          <h3>À la recherche de Truffe ou les alexandrins magiques</h3>
+          <span class="auteur">Anouk Journo</span>
+          <p><strong>Une Aventure Poétique</strong></p>
+          <p><em>À la Recherche de Truffe</em> est bien plus qu'un roman de jeunesse ordinaire. C'est un voyage au cœur de l'imaginaire, où chaque page résonne avec la magie des alexandrins et l'enchantement de l'aventure.</p>
+          <p>Nino et Lilla se lancent dans une quête périlleuse pour retrouver leur compagnon disparu, franchissant les limites de la forêt interdite, affrontant les mystères de la Montagne noire, et découvrant que la poésie elle-même peut être une arme magique pour triompher des ténèbres. L'affiche du roman « À la Recherche de Truffe... » a été distribuée dans les Centres Spécialisés Marfans et envoyée à plusieurs centres hospitaliers universitaires à travers la France.</p>
+          <p>Cette initiative de L'AMagie vise à sensibiliser et apporter la magie du storytelling dans le milieu médical, offrant un moment de lumière et d'espoir aux patients et aux équipes soignantes. Avec le soutien des illustrations détaillées de Meichelus et la plume poétique d'Anouk Journo, les jeunes lecteurs plongent dans un univers où l'aventure et la beauté des mots ne font qu'un.</p>
+          <div class="encadre-hopitaux">
+            <h4>Centres Spécialisés Marfans</h4>
+            <p>✦ Hôpital Bichat Claude Bernard, Paris — Pr. Guillaume Jondeau</p>
+            <p>✦ Centre Constitutif des Hospices Civiles de Lyon — Dr. Alexandre Guihem</p>
+            <p>✦ Centre Hospitalier Universitaire de Nancy — Pr. Stéphane Zuily, Service de Médecine vasculaire</p>
+            <p>✦ Centre Hospitalier Universitaire de Lille — Dr. Pascal Delsart, Institut Cœur Poumon</p>
+          </div>
+          <a class="bouton" href="https://l-amagie.sumupstore.com/article/a-la-recherche-de-truffe-ou-les-alexandrins-magiques" target="_blank" rel="noopener noreferrer">Acheter chez L'AMagie</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="livre-detail reveler" id="strass-stress">
+      <div class="livre-haut">
+        <div class="couvertures">
+          <figure class="couverture-bloc couverture-premiere">
+            <img src="images/strass-stress.png" alt="Couverture du roman Strass et Stress" loading="lazy" decoding="async"/>
+            <figcaption class="couverture-legende">Première de couverture</figcaption>
+          </figure>
+        </div>
+        <div class="livre-texte">
+          <h3>Strass et Stress</h3>
+          <span class="auteur">Anouk Journo</span>
+          <p><em>Strass et Stress</em> plonge les lecteurs dans les coulisses fascinantes et impitoyables de la mode londonienne. C'est bien plus qu'un roman sur les robes et les défilés : c'est une exploration de l'ambition, de la créativité, de l'engagement éthique et des défis que doivent relever ceux qui veulent faire la différence dans un univers consumériste.</p>
+          <p>À travers les yeux de Jade, nous découvrons non seulement les étapes de la création d'une collection, mais aussi les rivalités intenses, les alliances fragiles et les leçons amères que la vie réserve aux jeunes créatrices pleines d'idéaux.</p>
+          <p>Ce premier tome d'une saga captivante en trois tomes invite les jeunes lectrices et lecteurs à explorer un monde où passion, créativité et ambition se mêlent à l'apprentissage des codes de la mode. Entre défilés spectaculaires et rêves à réaliser, <em>Strass et Stress</em> est un récit inspirant et réaliste. Un roman qui aborde la mode sous un angle poétique mais aussi très réaliste...</p>
+          <div class="resume-original">
+            <p>Passionnée de mode, Jade, 18 ans, intègre une prestigieuse école de stylisme à Londres. Elle s'installe, avec son chat Didon, en coloc dans un joli quartier londonien, aux côtés de Cara (graphiste) et Sienna (mannequin).</p>
+            <p>Rapidement, Jade s'intéresse au mouvement « trashion » : la mode, oui, mais pas à n'importe quel prix ! Écologie, recyclage, entraide et solidarité comptent beaucoup pour elle. Douée, engagée et idéaliste, elle crée des modèles uniques… sans se douter de l'affreuse trahison qui l'attend…</p>
+          </div>
+          <a class="bouton" href="https://www.fnac.com/ia12719822/Meichelus" target="_blank" rel="noopener noreferrer">Acheter à la Fnac</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="livre-detail reveler" id="bermudes">
+      <div class="livre-haut">
+        <div class="couvertures">
+          <figure class="couverture-bloc couverture-premiere">
+            <img src="images/ bermudes.jpg" alt="Couverture du Mystère du Triangle des Bermudes" loading="lazy" decoding="async"/>
+            <figcaption class="couverture-legende">Première de couverture</figcaption>
+          </figure>
+        </div>
+        <div class="livre-texte">
+          <h3>Le Mystère du Triangle des Bermudes</h3>
+          <span class="auteur">Anouk Journo &amp; Meichelus</span>
+          <p><strong>Un secret englouti au cœur des Bermudes...</strong></p>
+          <p>Mattéo, 13 ans, s'apprête à vivre des vacances inoubliables sur les plages paradisiaques des Bermudes. Plongées sous-marines, soleil éclatant, sable doré… tout semble parfait. Mais derrière cette apparente tranquillité se cache un mystère troublant : pourquoi tant de navires et d'avions ont-ils disparu sans laisser de trace dans ce triangle énigmatique ?</p>
+          <p>Fasciné par l'inconnu, Mattéo décide de mener l'enquête. Sa soif d'aventure le pousse à explorer les profondeurs de ce phénomène inexpliqué. Pourtant, plus il s'approche de la vérité, plus le danger grandit. Qui est cet homme énigmatique aux yeux étrangement lumineux qui semble le suivre ? Et pourquoi semble-t-il toujours surgir là où il ne devrait pas être ?</p>
+          <div class="resume-original">
+            <p class="accroche">Une aventure captivante mêlant suspense, exploration et mystère.</p>
+            <p>Mattéo découvrira-t-il ce que cachent les eaux insondables des Bermudes… avant qu'il ne soit trop tard ?</p>
+          </div>
+          <div class="boutons-achat">
+            <a class="bouton" href="https://www.fnac.com/a22580728/Meichelus-Le-mystere-du-Triangle-des-Bermudes" target="_blank" rel="noopener noreferrer">Acheter à la Fnac</a>
+            <a class="bouton" href="https://books.apple.com/fr/book/le-myst%C3%A8re-du-triangle-des-bermudes/id6758957268" target="_blank" rel="noopener noreferrer">Version Ebook Apple Books</a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="livre-detail reveler" id="loch-ness">
+      <div class="livre-haut">
+        <div class="couvertures">
+          <figure class="couverture-bloc couverture-premiere">
+            <img src="images/loch-ness.jpg" alt="Couverture du Mystère du Loch Ness" loading="lazy" decoding="async"/>
+            <figcaption class="couverture-legende">Première de couverture</figcaption>
+          </figure>
+        </div>
+        <div class="livre-texte">
+          <h3>Le Mystère du Loch Ness</h3>
+          <span class="auteur">Anouk Journo &amp; Meichelus</span>
+          <p>Au cœur des Highlands, le Loch Ness étire ses eaux froides entre les collines et les brumes. Depuis toujours, on y murmure qu&rsquo;une créature se cache sous la surface. Mythe, illusion, animal inconnu ou mémoire ancienne ? L&rsquo;enquête commence dans un paysage où chaque reflet semble porter un secret.</p>
+          <p>Ce roman jeunesse invite à explorer la frontière entre légende et réalité. Les personnages suivent les traces d&rsquo;un mystère célèbre, mais découvrent surtout que croire, douter, observer et imaginer peuvent faire naître une aventure plus profonde qu&rsquo;une simple chasse au monstre.</p>
+          <div class="resume-original">
+            <p class="accroche">Une énigme écossaise, des eaux profondes et un mystère qui refuse de disparaître.</p>
+            <p>Le Loch Ness garde ses silences. Pour approcher la vérité, il faudra accepter la brume, les faux-semblants et cette part d&rsquo;invisible qui donne aux légendes leur puissance.</p>
+          </div>
+          <a class="bouton" href="https://www.fnac.com" target="_blank" rel="noopener noreferrer">Acheter l&rsquo;ouvrage</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="livre-detail reveler" id="templiers">
+      <div class="livre-haut">
+        <div class="couvertures">
+          <figure class="couverture-bloc couverture-premiere">
+            <img src="images/templiers.png" alt="Couverture du Mystère du Trésor des Templiers" loading="lazy" decoding="async"/>
+            <figcaption class="couverture-legende">Première de couverture</figcaption>
+          </figure>
+        </div>
+        <div class="livre-texte">
+          <h3>Le Mystère du Trésor des Templiers</h3>
+          <span class="auteur">Anouk Journo</span>
+          <p>Des pierres anciennes, un symbole oublié, une carte qui semble mener à autre chose qu&rsquo;un simple trésor : avec <em>Le Mystère du Trésor des Templiers</em>, l&rsquo;aventure s&rsquo;enracine dans l&rsquo;histoire et dans les secrets que les lieux conservent longtemps après le passage des hommes.</p>
+          <p>Les jeunes héros avancent entre passages obscurs, indices cryptés et questions de confiance. Mais le véritable trésor n&rsquo;est peut-être pas celui que l&rsquo;on croit. À mesure que l&rsquo;énigme se dévoile, chacun doit apprendre à lire les signes et à choisir ce qui mérite d&rsquo;être protégé.</p>
+          <div class="resume-original">
+            <p class="accroche">Une aventure à la lueur des torches, entre énigmes médiévales et secrets de chevaliers.</p>
+            <p>Les Templiers ont laissé derrière eux plus que des légendes. Encore faut-il savoir regarder au bon endroit, et comprendre que certains mystères ne se livrent qu&rsquo;aux cœurs courageux.</p>
+          </div>
+          <a class="bouton" href="https://www.fnac.com" target="_blank" rel="noopener noreferrer">Acheter l&rsquo;ouvrage</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="livre-detail reveler" id="ame-en-selle">
+      <div class="livre-haut">
+        <div class="couvertures">
+          <figure class="couverture-bloc couverture-premiere">
+            <img src="images/lame-en-selle.png" alt="Couverture de L'Âme en Selle" loading="lazy" decoding="async"/>
+            <figcaption class="couverture-legende">Première de couverture</figcaption>
+          </figure>
+        </div>
+        <div class="livre-texte">
+          <h3>L&rsquo;Âme en Selle</h3>
+          <span class="auteur">Anouk Journo &amp; Meichelus</span>
+          <p><em>L&rsquo;Âme en Selle</em> ouvre un autre versant de l&rsquo;aventure jeunesse : celui du lien avec l&rsquo;animal, de la patience, de la confiance et de l&rsquo;apprentissage de soi. Autour du cheval, le récit devient une traversée intérieure autant qu&rsquo;une histoire de mouvement.</p>
+          <p>Monter en selle, ce n&rsquo;est pas seulement avancer : c&rsquo;est écouter, sentir, comprendre, accepter la présence de l&rsquo;autre. Ce roman invite les lecteurs à découvrir une relation sensible, faite de gestes simples, d&rsquo;émotions discrètes et de courage silencieux.</p>
+          <div class="resume-original">
+            <p class="accroche">Une histoire d&rsquo;élan, de confiance et de liberté intérieure.</p>
+            <p>Entre peur de tomber et désir d&rsquo;avancer, l&rsquo;âme trouve parfois son équilibre au rythme d&rsquo;un pas, d&rsquo;un souffle, d&rsquo;un regard partagé avec un cheval.</p>
+          </div>
+          <a class="bouton" href="https://www.fnac.com" target="_blank" rel="noopener noreferrer">Acheter l&rsquo;ouvrage</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="livre-detail reveler" id="riding-soul">
+      <div class="livre-haut">
+        <div class="couvertures">
+          <figure class="couverture-bloc couverture-premiere">
+            <img src="images/Riding- Soul.jpg" alt="Couverture de Riding Soul" loading="lazy" decoding="async"/>
+            <figcaption class="couverture-legende">Première de couverture</figcaption>
+          </figure>
+        </div>
+        <div class="livre-texte">
+          <h3>Riding Soul</h3>
+          <span class="auteur">Anouk Journo &amp; Meichelus</span>
+          <p><em>Riding Soul</em> prolonge l&rsquo;univers sensible de la relation au cheval dans une tonalité plus ample, tournée vers l&rsquo;élan, la respiration et la liberté. Le titre porte déjà cette promesse : chevaucher, mais aussi écouter l&rsquo;âme qui se met en mouvement.</p>
+          <p>À travers une atmosphère douce et contemplative, le récit accompagne les jeunes lecteurs vers une aventure intérieure, où l&rsquo;on apprend à reconnaître ses émotions, à trouver sa place et à suivre un chemin qui ne ressemble à aucun autre.</p>
+          <div class="resume-original">
+            <p class="accroche">Une traversée sensible, entre nature, animalité et quête de soi.</p>
+            <p>Quand le mouvement devient langage, chaque pas ouvre une possibilité : celle d&rsquo;habiter pleinement son rêve, son courage et sa propre lumière.</p>
+          </div>
+          <a class="bouton" href="https://www.fnac.com" target="_blank" rel="noopener noreferrer">Acheter l&rsquo;ouvrage</a>
+        </div>
+      </div>
+    </article>
+
+    <div class="retour-discret reveler" style="text-align:center;margin:32px auto 0;">
+      <a href="edition.html" style="font-style:italic;color:#7a6a48;border-bottom:1px solid rgba(184,154,92,.3);">← Retour aux collections</a>
+    </div>
+  </main>
+
+  <!-- PLAN DU SITE -->
+  <section class="plan-site" aria-label="Plan du site">
+    <div class="filet-haut" aria-hidden="true"><span class="etoile">✦</span></div>
+    <div class="plan-site-grille">
+      <div class="plan-categorie">
+        <h2>Qui sommes-nous&nbsp;?</h2>
+        <ul>
+          <li><a href="qui-sommes-nous.html">Qui sommes-nous</a></li>
+          <li><a href="fonctionnement.html">Fonctionnement de l&rsquo;association</a></li>
+          <li><a href="anouk-journo.html">Anouk Journo</a></li>
+          <li><a href="peintures.html">Meichelus</a></li>
+        </ul>
+      </div>
+      <div class="plan-categorie">
+        <h2>Ateliers &amp; Coaching</h2>
+        <ul>
+          <li><a href="ateliers.html">Ateliers &amp; Coaching</a></li>
+          <li><a href="mots-pour-maux.html">Écriture thérapeutique</a></li>
+          <li><a href="mediation-animale.html">Médiation animale</a></li>
+          <li><a href="amis-mots.html">Collection Amis-Mots</a></li>
+        </ul>
+      </div>
+      <div class="plan-categorie">
+        <h2>Éditions</h2>
+        <ul>
+          <li><a href="edition.html">Manuscrits &amp; projets</a></li>
+          <li><a href="collection-raconter-le-monde.html">Collection Raconter le monde</a></li>
+          <li><a href="collection-immersion.html">Collection Immersion</a></li>
+          <li><a href="collection-jeunesse.html">Romans jeunesse</a></li>
+          <li><a href="amis-mots.html">Collection Amis-Mots</a></li>
+        </ul>
+      </div>
+      <div class="plan-categorie">
+        <h2>Poésie &amp; Arts</h2>
+        <ul>
+          <li><a href="poesie.html">Poésie au jour le jour</a></li>
+          <li><a href="peintures.html">Peintures &amp; Dessins</a></li>
+          <li><a href="evenements.html">Événements &amp; Presse</a></li>
+        </ul>
+      </div>
+      <div class="plan-categorie">
+        <h2>Liens utiles</h2>
+        <ul>
+          <li><a href="boutique.html">Boutique</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="youtube.html">Chaîne Youtube</a></li>
+          <li><a href="mentions-legales.html">Mentions légales</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="plan-mentions">© L&rsquo;AMagie <span class="etoile">✦</span> Maison d&rsquo;édition indépendante <span class="etoile">✦</span> Félines-Minervois</p>
+    <p class="plan-webmaster">© Webmaster Meichelus : <a href="mailto:meichelus@l-amagie.art">meichelus@l-amagie.art</a></p>
+  </section>
+
+  <script>
+    if ('IntersectionObserver' in window) {
+      var obs = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){
+          if (e.isIntersecting){
+            e.target.classList.add('visible');
+            obs.unobserve(e.target);
+          }
+        });
+      }, { threshold:.08, rootMargin:'0px 0px -50px 0px' });
+      document.querySelectorAll('.reveler').forEach(function(el){ obs.observe(el); });
+    } else {
+      document.querySelectorAll('.reveler').forEach(function(el){ el.classList.add('visible'); });
+    }
+  </script>
+
+</body>
+</html>

@@ -152,6 +152,18 @@ strong{font-weight:600;}
 .reveler{opacity:0;transform:translateY(18px);transition:opacity .9s ease, transform .9s ease;}
 .reveler.visible{opacity:1;transform:translateY(0);}
 
+/* === IMAGE D'EN-TÊTE DE COLLECTION === */
+.header-banner-img {
+    display: block;
+    width: 50%;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto 30px auto;
+    border: 1px solid #b89a5c;
+    border-radius: 6px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
 @media(max-width:900px){.livre-haut{grid-template-columns:1fr;gap:30px;}.couverture-premiere{width:min(260px,78vw);}.couverture-quatrieme{width:min(320px,88vw);}}
 @media(max-width:760px){.carte,.livre-detail{padding:32px 22px;}.titre-page{font-size:2.35rem;}.couvertures{gap:18px;}.plan-site{padding:32px 18px 24px;}.plan-site-grille{gap:18px;text-align:center;}.plan-categorie h2{text-align:center;}.plan-mentions{font-size:.7rem;letter-spacing:.12em;}}
 @media(prefers-reduced-motion: reduce){.reveler{opacity:1;transform:none;transition:none;}}
@@ -182,10 +194,12 @@ strong{font-weight:600;}
       <span class="sep">·</span>
       <span>Romans jeunesse</span>
     </nav>
+    <img src="images/roman-jeunesse.jpg" alt="Collection Jeunesse" class="header-banner-img">
     <h1 class="titre-page">Romans jeunesse : collection de La Terre à la Lune</h1>
     <p class="sous-titre-page">Aventures, énigmes et mystères — pour les jeunes lecteurs qui aiment voyager entre les mots.</p>
     <div class="medaillon-titre" aria-hidden="true">✦</div>
   </section>
+
 
   <main class="contenu" role="main">
     <article class="carte reveler">
@@ -252,7 +266,7 @@ strong{font-weight:600;}
       <div class="livre-haut">
         <div class="couvertures">
           <figure class="couverture-bloc couverture-premiere">
-            <img src="images/ bermudes.jpg" alt="Couverture du Mystère du Triangle des Bermudes" loading="lazy" decoding="async"/>
+            <img src="images/ bermudes.jpg" alt="Le Mystère du Triangle des Bermudes" class="livre-img">
             <figcaption class="couverture-legende">Première de couverture</figcaption>
           </figure>
         </div>
@@ -291,7 +305,7 @@ strong{font-weight:600;}
             <p class="accroche">Une énigme écossaise, des eaux profondes et un mystère qui refuse de disparaître.</p>
             <p>Le Loch Ness garde ses silences. Pour approcher la vérité, il faudra accepter la brume, les faux-semblants et cette part d&rsquo;invisible qui donne aux légendes leur puissance.</p>
           </div>
-          <a class="bouton" href="https://www.fnac.com" target="_blank" rel="noopener noreferrer">Acheter l&rsquo;ouvrage</a>
+          <a class="bouton" href="https://l-amagie.sumupstore.com/article/le-mystere-du-loch-ness" target="_blank" rel="noopener noreferrer">Acheter l&rsquo;ouvrage</a>
         </div>
       </div>
     </article>
@@ -313,7 +327,7 @@ strong{font-weight:600;}
             <p class="accroche">Une aventure à la lueur des torches, entre énigmes médiévales et secrets de chevaliers.</p>
             <p>Les Templiers ont laissé derrière eux plus que des légendes. Encore faut-il savoir regarder au bon endroit, et comprendre que certains mystères ne se livrent qu&rsquo;aux cœurs courageux.</p>
           </div>
-          <a class="bouton" href="https://www.fnac.com" target="_blank" rel="noopener noreferrer">Acheter l&rsquo;ouvrage</a>
+          <a class="bouton" href="https://l-amagie.sumupstore.com/article/le-mystere-des-templiers" target="_blank" rel="noopener noreferrer">Acheter l&rsquo;ouvrage</a>
         </div>
       </div>
     </article>
@@ -335,7 +349,7 @@ strong{font-weight:600;}
             <p class="accroche">Une histoire d&rsquo;élan, de confiance et de liberté intérieure.</p>
             <p>Entre peur de tomber et désir d&rsquo;avancer, l&rsquo;âme trouve parfois son équilibre au rythme d&rsquo;un pas, d&rsquo;un souffle, d&rsquo;un regard partagé avec un cheval.</p>
           </div>
-          <a class="bouton" href="https://www.fnac.com" target="_blank" rel="noopener noreferrer">Acheter l&rsquo;ouvrage</a>
+          <a class="bouton" href="https://librairie.bod.fr/lame-en-selle-anouk-journo-9782959874635" target="_blank" rel="noopener noreferrer">Acheter l&rsquo;ouvrage</a>
         </div>
       </div>
     </article>
@@ -357,7 +371,7 @@ strong{font-weight:600;}
             <p class="accroche">Une traversée sensible, entre nature, animalité et quête de soi.</p>
             <p>Quand le mouvement devient langage, chaque pas ouvre une possibilité : celle d&rsquo;habiter pleinement son rêve, son courage et sa propre lumière.</p>
           </div>
-          <a class="bouton" href="https://www.fnac.com" target="_blank" rel="noopener noreferrer">Acheter l&rsquo;ouvrage</a>
+          <a class="bouton" href="https://www.fnac.com/a22323074/Anouk-Journo-Riding-Soul" target="_blank" rel="noopener noreferrer">Acheter l&rsquo;ouvrage</a>
         </div>
       </div>
     </article>

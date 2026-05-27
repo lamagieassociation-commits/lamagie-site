@@ -111,6 +111,19 @@ body{
 }
 
 /* ============================================================
+   CORRECTION MOBILE — bandeau "librairies indépendantes"
+   Sur téléphone, le bandeau passe sur deux lignes et masque
+   le titre enluminé L'AMagie et ses lettrines. On décale donc
+   la maquette vers le bas, uniquement sur les petits écrans,
+   pour libérer entièrement le haut de l'enluminure.
+   ============================================================ */
+@media(max-width:768px){
+  .page-maquette{
+    margin-top:90px;
+  }
+}
+
+/* ============================================================
    ACCESSIBILITÉ — texte alternatif lu, jamais affiché
    ============================================================ */
 .sr-only{

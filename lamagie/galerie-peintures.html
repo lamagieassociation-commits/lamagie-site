@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="google" content="notranslate"/>
+<meta http-equiv="Content-Language" content="fr"/>
+<title>Peintures &amp; Dessins — Meichelus · L'AMagie</title>
+<meta name="description" content="Galerie de peintures, dessins et sculptures de Meichelus — encres, graphites, aquarelles et œuvres mixtes du Minervois."/>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Pinyon+Script&display=swap" rel="stylesheet"/>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Pinyon+Script&display=swap');
+
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html,body{overflow-x:hidden;}
+html{scroll-behavior:smooth;}
+
+body{
+  background-color:#ece2c8;
+  color:#3a3220;
+  font-family:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  font-weight:400;
+  font-size:17px;
+  line-height:1.75;
+  min-height:100vh;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  text-rendering:optimizeLegibility;
+  background-image:
+    radial-gradient(ellipse 55% 50% at 12% 18%, rgba(146,96,38,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 55% at 88% 82%, rgba(132,88,36,0.11) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 45% at 78% 18%, rgba(170,128,60,0.09) 0%, transparent 65%),
+    radial-gradient(ellipse 55% 50% at 22% 82%, rgba(160,118,50,0.10) 0%, transparent 65%),
+    radial-gradient(ellipse 75% 60% at 50% 35%, rgba(212,176,114,0.10) 0%, transparent 75%),
+    linear-gradient(135deg, #f1ead4 0%, #e8dec0 50%, #ecdfc2 100%),
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='280' height='280'><filter id='g'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' seed='4'/><feColorMatrix values='0 0 0 0 0.42 0 0 0 0 0.32 0 0 0 0 0.17 0 0 0 0.22 0'/></filter><rect width='100%25' height='100%25' filter='url(%23g)'/></svg>");
+  background-attachment:fixed;
+  background-size:auto,auto,auto,auto,auto,auto,280px 280px;
+  background-repeat:no-repeat,no-repeat,no-repeat,no-repeat,no-repeat,no-repeat,repeat;
+}
+a{color:inherit;text-decoration:none;}
+img{max-width:100%;height:auto;display:block;}
+em{font-style:italic;color:#5a4a30;}
+::selection{background:rgba(184,154,92,.32);color:#3a3220;}
+
+/* ═══════════════════════════════════════
+   HEADER (identique ateliers.html)
+═══════════════════════════════════════ */
+.entete-site{position:relative;z-index:10;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:24px;padding:24px 40px;border-bottom:1px solid rgba(184,154,92,.28);background:linear-gradient(180deg,rgba(241,234,212,.55),rgba(236,226,200,.25));backdrop-filter:blur(1px);}
+.entete-logo{display:flex;align-items:center;justify-content:flex-start;}
+.entete-logo img{height:55px;width:auto;display:block;}
+.entete-titre{text-align:center;font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:clamp(1.8rem,3.2vw,2.6rem);color:#3a3220;letter-spacing:.01em;line-height:1;text-decoration:none;}
+.entete-retour{display:flex;align-items:center;justify-content:flex-end;}
+.entete-retour a{font-family:'Cormorant Garamond',Georgia,serif;font-size:.92rem;letter-spacing:.18em;text-transform:uppercase;color:#5a4a30;padding:8px 18px;border:1px solid rgba(184,154,92,.4);border-radius:2px;transition:color .3s, background-color .3s, border-color .3s;white-space:nowrap;}
+.entete-retour a::before{content:'⌂ ';margin-right:.25em;letter-spacing:0;}
+.entete-retour a:hover{color:#b89a5c;border-color:#b89a5c;background:rgba(184,154,92,.07);}
+@media(max-width:760px){
+  .entete-site{grid-template-columns:auto 1fr auto;padding:14px 16px;gap:12px;}
+  .entete-logo img{height:42px;}
+  .entete-titre{font-size:1.4rem;}
+  .entete-retour a{font-size:.7rem;letter-spacing:.1em;padding:6px 10px;}
+  .entete-retour a::before{content:'⌂';margin-right:0;}
+  .entete-retour a span{display:none;}
+}
+
+/* ═══════════════════════════════════════
+   HÉROS
+═══════════════════════════════════════ */
+.heros-page{text-align:center;padding:64px 20px 28px;max-width:820px;margin:0 auto;}
+.fil-ariane{display:inline-block;font-family:'Cormorant Garamond',serif;font-size:.72rem;letter-spacing:.32em;text-transform:uppercase;color:#5a4a30;margin-bottom:24px;}
+.fil-ariane a{color:#8a6d2f;transition:color .3s;}
+.fil-ariane a:hover{color:#b89a5c;}
+.fil-ariane .sep{margin:0 .55em;color:rgba(184,154,92,.55);}
+.titre-page{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:clamp(2.2rem,5vw,3.5rem);color:#3a3220;letter-spacing:.005em;line-height:1.1;margin:0 0 14px;}
+.sous-titre-page{font-family:'Pinyon Script','Cormorant Garamond',cursive;font-size:clamp(1.4rem,2.5vw,1.95rem);color:#7a6a48;line-height:1.3;margin:0;}
+.medaillon-titre{width:54px;height:54px;margin:32px auto 0;border-radius:50%;border:1px solid rgba(184,154,92,.5);box-shadow:0 0 0 5px rgba(241,234,212,.6),0 0 0 6px rgba(184,154,92,.18);display:flex;align-items:center;justify-content:center;color:#b89a5c;font-size:1.1rem;}
+
+/* ═══════════════════════════════════════
+   CONTENU WRAPPER
+═══════════════════════════════════════ */
+.contenu{max-width:1040px;margin:0 auto;padding:0 20px 56px;}
+
+/* Section titre orné */
+.section-titre{text-align:center;margin:56px 0 36px;}
+.section-titre h2{display:inline-block;font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(1.4rem,2.8vw,1.85rem);letter-spacing:.18em;color:#3a3220;text-transform:uppercase;position:relative;padding:0 30px;}
+.section-titre h2::before,.section-titre h2::after{content:'❦';position:absolute;top:50%;transform:translateY(-50%);color:#b89a5c;font-size:.85em;}
+.section-titre h2::before{left:0;}
+.section-titre h2::after{right:0;}
+.section-titre .legende{display:block;margin-top:14px;font-family:'Pinyon Script','Cormorant Garamond',cursive;font-size:1.2rem;color:#7a6a48;text-transform:none;letter-spacing:.02em;font-weight:400;}
+
+/* Intro carte */
+.carte{background:rgba(246,239,216,.62);border:1px solid rgba(184,154,92,.22);border-radius:2px;padding:48px 56px;margin:0 auto 36px;position:relative;box-shadow:0 4px 14px rgba(90,74,48,.06),0 1px 2px rgba(90,74,48,.04);}
+.carte::before,.carte::after{content:'';position:absolute;width:18px;height:18px;border:1px solid rgba(184,154,92,.45);pointer-events:none;}
+.carte::before{top:6px;left:6px;border-right:0;border-bottom:0;}
+.carte::after{bottom:6px;right:6px;border-left:0;border-top:0;}
+.carte p{font-size:1.08rem;line-height:1.85;color:#3a3220;margin:0 0 1.1rem;}
+.carte p:last-child{margin-bottom:0;}
+@media(max-width:600px){.carte{padding:32px 22px;}.carte p{font-size:1rem;}}
+
+/* ═══════════════════════════════════════
+   GALERIE — entrées d'œuvres
+═══════════════════════════════════════ */
+.galerie{display:flex;flex-direction:column;gap:0;}
+
+.oeuvre{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  border-bottom:1px solid rgba(184,154,92,.22);
+  padding:48px 0;
+  opacity:0;
+  transform:translateY(18px);
+  transition:opacity .9s ease, transform .9s ease;
+}
+.oeuvre.visible{opacity:1;transform:translateY(0);}
+@media(prefers-reduced-motion:reduce){.oeuvre{opacity:1;transform:none;transition:none;}}
+
+/* Alternance : les entrées paires inversent image / texte */
+.oeuvre:nth-child(even) .oeuvre-meta{order:2;}
+.oeuvre:nth-child(even) .oeuvre-image{order:1;}
+
+/* ── Colonne texte ── */
+.oeuvre-meta{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding:16px 48px 16px 8px;
+}
+.oeuvre:nth-child(even) .oeuvre-meta{
+  padding:16px 8px 16px 48px;
+}
+
+.oeuvre-annee{
+  font-family:'Cormorant Garamond',serif;
+  font-weight:300;
+  font-size:3.2rem;
+  color:#b89a5c;
+  line-height:1;
+  letter-spacing:.04em;
+  margin-bottom:.35rem;
+}
+.oeuvre-filet{
+  display:flex;
+  align-items:center;
+  gap:.7rem;
+  margin-bottom:1rem;
+}
+.oeuvre-filet::before{
+  content:'';
+  display:block;
+  width:32px;
+  height:1px;
+  background:rgba(184,154,92,.5);
+  flex-shrink:0;
+}
+.oeuvre-lieu{
+  font-size:.68rem;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  color:#8a6d2f;
+}
+.oeuvre-titre{
+  font-family:'Cormorant Garamond',serif;
+  font-weight:500;
+  font-size:1.55rem;
+  color:#3a3220;
+  line-height:1.25;
+  margin-bottom:.7rem;
+  letter-spacing:.01em;
+}
+.oeuvre-technique{
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;
+  font-size:.92rem;
+  color:#7a6a48;
+  margin-bottom:1rem;
+  line-height:1.5;
+}
+.oeuvre-desc{
+  font-size:1rem;
+  line-height:1.8;
+  color:#3a3220;
+  margin-bottom:1.6rem;
+}
+.oeuvre-badge{
+  display:inline-block;
+  font-size:.62rem;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  color:#5a4a30;
+  border:1px solid rgba(184,154,92,.45);
+  padding:.22rem .7rem;
+  margin-bottom:1.1rem;
+  width:fit-content;
+  background:rgba(246,239,216,.5);
+}
+.oeuvre-lien{
+  display:inline-block;
+  align-self:flex-start;
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;
+  font-size:.95rem;
+  color:#3a3220;
+  padding:8px 18px;
+  border:1px solid rgba(184,154,92,.4);
+  border-radius:2px;
+  background:rgba(246,239,216,.4);
+  transition:color .3s, border-color .3s, background-color .3s;
+  width:fit-content;
+}
+.oeuvre-lien::after{content:' →';font-style:normal;}
+.oeuvre-lien:hover{color:#b89a5c;border-color:#b89a5c;background:rgba(246,239,216,.85);}
+
+/* ── Colonne image ── */
+.oeuvre-image{
+  position:relative;
+  overflow:hidden;
+}
+.oeuvre-image img{
+  width:100%;
+  height:100%;
+  min-height:320px;
+  object-fit:cover;
+  display:block;
+  transition:transform .6s ease;
+  filter:sepia(.06) brightness(.96);
+}
+.oeuvre-image:hover img{
+  transform:scale(1.03);
+  filter:sepia(0) brightness(1);
+}
+/* Effet vignette dorée sur l'image */
+.oeuvre-image::after{
+  content:'';
+  position:absolute;
+  inset:0;
+  box-shadow:inset 0 0 30px rgba(90,74,48,.12);
+  pointer-events:none;
+}
+
+/* ═══════════════════════════════════════
+   BLOC ACQUISITION
+═══════════════════════════════════════ */
+.bloc-acquisition{
+  background:linear-gradient(135deg,rgba(246,239,216,.85),rgba(241,234,212,.7));
+  border:1px solid rgba(184,154,92,.4);
+  border-radius:2px;
+  padding:42px 48px;
+  margin:16px 0 0;
+  position:relative;
+  text-align:center;
+  box-shadow:0 6px 22px rgba(90,74,48,.10);
+}
+.bloc-acquisition::before,.bloc-acquisition::after{
+  content:'';position:absolute;width:18px;height:18px;
+  border:1px solid rgba(184,154,92,.45);pointer-events:none;
+}
+.bloc-acquisition::before{top:6px;left:6px;border-right:0;border-bottom:0;}
+.bloc-acquisition::after{bottom:6px;right:6px;border-left:0;border-top:0;}
+.bloc-acquisition p{font-style:italic;font-size:1.05rem;color:#3a3220;margin-bottom:20px;}
+.btn-acquisition{
+  display:inline-block;
+  font-family:'Cormorant Garamond',serif;
+  font-size:.88rem;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:#f1ead4;
+  background:#7a5a2a;
+  padding:12px 32px;
+  border-radius:2px;
+  border:1px solid #8a6d2f;
+  transition:background .3s, border-color .3s;
+}
+.btn-acquisition:hover{background:#5a4a22;border-color:#5a4a22;}
+@media(max-width:600px){.bloc-acquisition{padding:32px 26px;}}
+
+/* ═══════════════════════════════════════
+   NAVIGATION SUITE
+═══════════════════════════════════════ */
+.navigation-suite{margin:56px auto 0;max-width:820px;text-align:center;}
+.filet-ornement{display:flex;align-items:center;justify-content:center;gap:14px;margin:0 auto 28px;max-width:240px;}
+.filet-ornement::before,.filet-ornement::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,transparent,rgba(184,154,92,.6),transparent);}
+.filet-ornement .etoile{color:#b89a5c;font-size:.85rem;line-height:1;}
+.navigation-suite-grille{display:flex;flex-wrap:wrap;justify-content:center;gap:18px 32px;}
+.navigation-suite-grille a{display:inline-block;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.05rem;color:#3a3220;padding:11px 24px;border:1px solid rgba(184,154,92,.32);background:rgba(246,239,216,.4);border-radius:2px;transition:all .3s;}
+.navigation-suite-grille a:hover{color:#b89a5c;border-color:#b89a5c;background:rgba(246,239,216,.7);transform:translateY(-2px);}
+.navigation-suite-grille a::after{content:' →';font-style:normal;}
+
+/* ═══════════════════════════════════════
+   PLAN DU SITE (identique ateliers.html)
+═══════════════════════════════════════ */
+.plan-site{background:transparent;padding:48px 24px 36px;max-width:1080px;margin:0 auto;text-align:center;font-family:'Cormorant Garamond',Georgia,serif;color:#3a3220;border-top:1px solid rgba(184,154,92,.25);}
+.plan-site .filet-haut{display:flex;align-items:center;justify-content:center;gap:14px;margin:0 auto 28px;max-width:200px;}
+.plan-site .filet-haut::before,.plan-site .filet-haut::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,transparent,rgba(184,154,92,.55),transparent);}
+.plan-site .filet-haut .etoile{color:#b89a5c;font-size:.85rem;line-height:1;}
+.plan-site-grille{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px 32px;text-align:left;margin-bottom:28px;}
+.plan-categorie h2{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:#5a4a30;margin:0 0 10px;padding-bottom:6px;border-bottom:1px solid rgba(184,154,92,.22);}
+.plan-categorie ul{list-style:none;margin:0;padding:0;}
+.plan-categorie li{font-size:.92rem;line-height:1.65;margin-bottom:2px;}
+.plan-categorie a{color:#3a3220;text-decoration:none;transition:color .3s;border-bottom:1px solid transparent;}
+.plan-categorie a:hover{color:#b89a5c;border-bottom-color:rgba(184,154,92,.4);}
+.plan-mentions{font-family:'Cormorant Garamond',serif;font-size:.78rem;letter-spacing:.16em;color:#7a6a48;text-transform:uppercase;margin:0;}
+.plan-mentions .etoile{color:#b89a5c;margin:0 .6em;}
+.plan-webmaster{margin:14px auto 0;max-width:340px;padding-top:10px;border-top:1px solid rgba(184,154,92,.18);font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.78rem;letter-spacing:.08em;color:#8a6d2f;text-align:center;}
+.plan-webmaster a{color:inherit;border-bottom:1px solid rgba(184,154,92,.3);transition:color .3s, border-color .3s;}
+.plan-webmaster a:hover{color:#b89a5c;border-bottom-color:#b89a5c;}
+@media(max-width:560px){.plan-site{padding:32px 18px 24px;}.plan-site-grille{gap:18px;text-align:center;}.plan-categorie h2{text-align:center;}.plan-mentions{font-size:.7rem;letter-spacing:.12em;}}
+
+
+/* === Lien de retour discret === */
+.retour-discret{text-align:center;margin:32px auto 0;}
+.retour-discret a{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.98rem;color:#7a6a48;border-bottom:1px solid rgba(184,154,92,.3);padding-bottom:.1em;transition:color .3s, border-color .3s;}
+.retour-discret a::before{content:'← ';font-style:normal;}
+.retour-discret a:hover{color:#b89a5c;border-color:#b89a5c;}
+
+/* ═══════════════════════════════════════
+   SCROLL REVEAL
+═══════════════════════════════════════ */
+.reveler{opacity:0;transform:translateY(18px);transition:opacity .9s ease, transform .9s ease;}
+.reveler.visible{opacity:1;transform:translateY(0);}
+@media(prefers-reduced-motion:reduce){.reveler,.oeuvre{opacity:1;transform:none;transition:none;}}
+
+/* ═══════════════════════════════════════
+   RESPONSIVE GALERIE
+═══════════════════════════════════════ */
+@media(max-width:760px){
+  .oeuvre{
+    grid-template-columns:1fr;
+    padding:36px 0;
+  }
+  .oeuvre:nth-child(even) .oeuvre-meta,
+  .oeuvre-meta{
+    order:2;
+    padding:18px 4px 8px;
+  }
+  .oeuvre:nth-child(even) .oeuvre-image,
+  .oeuvre-image{
+    order:1;
+  }
+  .oeuvre-image img{ min-height:240px; }
+  .oeuvre-annee{ font-size:2.4rem; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ═════════════════════════════════════
+     HEADER (identique ateliers.html)
+═════════════════════════════════════ -->
+<header class="entete-site" role="banner">
+  <div class="entete-logo">
+    <a href="index.html" aria-label="Retour à l'accueil de L'AMagie">
+      <img src="images/logo-amagie.png" alt="Monogramme L'AMagie" onerror="this.style.display='none'"/>
+    </a>
+  </div>
+  <a href="index.html" class="entete-titre" aria-label="L'AMagie — Accueil">L&rsquo;AMagie</a>
+  <div class="entete-retour">
+    <a href="index.html"><span>Retour à l&rsquo;accueil</span></a>
+  </div>
+</header>
+
+<!-- ═════════════════════════════════════
+     HÉROS
+═════════════════════════════════════ -->
+<section class="heros-page">
+  <nav class="fil-ariane" aria-label="Fil d'ariane">
+    <a href="index.html">Accueil</a>
+    <span class="sep">·</span>
+    <a href="peintures.html">Peintures &amp; Dessins</a>
+    <span class="sep">·</span>
+    <span>Galerie</span>
+  </nav>
+  <h1 class="titre-page">Peintures &amp; Dessins</h1>
+  <p class="sous-titre-page">Encres, graphites &amp; aquarelles — Minervois · Occitanie</p>
+  <div class="medaillon-titre" aria-hidden="true">✦</div>
+</section>
+
+<!-- ═════════════════════════════════════
+     CONTENU
+═════════════════════════════════════ -->
+<main class="contenu" role="main">
+
+  <div class="retour-discret reveler" style="margin-bottom:24px;">
+    <a href="peintures.html">Retour à la présentation de Meichelus</a>
+  </div>
+
+  <!-- Intro -->
+  <article class="carte reveler">
+    <p><em>Meichelus</em>, peintre pointilliste et poète, partage ici ses œuvres récentes : dessins à la mine graphite et à l'encre de Chine, aquarelles, et sculptures — autant de fenêtres ouvertes sur le Minervois, ses pierres, ses vignes et ses mémoires enfouies.</p>
+    <p>Chaque toile naît d'un territoire, d'une rencontre ou d'un poème. Les formats varient de la feuille Canson au papier Hahnemühle, les techniques se mêlent — graphite, encre noire, aquarelle, pastels — mais le geste reste le même : rendre visible ce qui demeure.</p>
+  </article>
+
+  <!-- Titre de section -->
+  <div class="section-titre reveler">
+    <h2>Galerie</h2>
+    <span class="legende">Œuvres originales · 2024 – 2026</span>
+  </div>
+
+  <!-- ═══════════════════════════════════
+       GALERIE — rendue par JavaScript
+  ═══════════════════════════════════ -->
+  <section class="galerie" id="galerie" role="list" aria-label="Galerie des œuvres de Meichelus"></section>
+
+  <!-- Acquisition -->
+  <div class="bloc-acquisition reveler">
+    <p>Chaque œuvre est disponible en original ou en copie numérotée — hologramme et certificat d'authenticité sur papier fine art, plexiglass, aluminium ou bois.</p>
+    <a class="btn-acquisition" href="mailto:editions@l-amagie.art">Demande d'acquisition</a>
+  </div>
+
+  <!-- Navigation suite -->
+  <nav class="navigation-suite reveler" aria-label="Suite du parcours">
+    <div class="filet-ornement" aria-hidden="true">
+      <span class="etoile">✦</span>
+    </div>
+    <div class="navigation-suite-grille">
+      <a href="poesie.html">Poésie au jour le jour</a>
+      <a href="evenements.html">Événements &amp; Presse</a>
+      <a href="contact.html">Nous contacter</a>
+    </div>
+  </nav>
+
+</main>
+
+<!-- ═════════════════════════════════════
+     PLAN DU SITE (identique ateliers.html)
+═════════════════════════════════════ -->
+<section class="plan-site" aria-label="Plan du site">
+  <div class="filet-haut" aria-hidden="true"><span class="etoile">✦</span></div>
+  <div class="plan-site-grille">
+    <div class="plan-categorie">
+      <h2>Qui sommes-nous&nbsp;?</h2>
+      <ul>
+        <li><a href="qui-sommes-nous.html">Qui sommes-nous</a></li>
+        <li><a href="fonctionnement.html">Fonctionnement de l&rsquo;association</a></li>
+        <li><a href="anouk-journo.html">Anouk Journo</a></li>
+      </ul>
+    </div>
+    <div class="plan-categorie">
+      <h2>Ateliers &amp; Coaching</h2>
+      <ul>
+        <li><a href="ateliers.html">Ateliers &amp; Coaching</a></li>
+        <li><a href="mots-pour-maux.html">Écriture thérapeutique</a></li>
+        <li><a href="mediation-animale.html">Médiation animale</a></li>
+        <li><a href="amis-mots.html">Collection Amis-Mots</a></li>
+      </ul>
+    </div>
+    <div class="plan-categorie">
+      <h2>Éditions</h2>
+      <ul>
+        <li><a href="edition.html">Manuscrits &amp; projets</a></li>
+        <li><a href="edition.html#raconter-le-monde">Collection Raconter le monde</a></li>
+        <li><a href="edition.html#immersion">Collection Immersion</a></li>
+        <li><a href="edition.html#manifestes">Collection Manifestes</a></li>
+        <li><a href="edition.html#romans-jeunesse">Romans jeunesse</a></li>
+      </ul>
+    </div>
+    <div class="plan-categorie">
+      <h2>Poésie &amp; Arts</h2>
+      <ul>
+        <li><a href="poesie.html">Poésie au jour le jour</a></li>
+        <li><a href="peintures.html">Peintures &amp; Dessins</a></li>
+        <li><a href="evenements.html">Événements &amp; Presse</a></li>
+      </ul>
+    </div>
+    <div class="plan-categorie">
+      <h2>Liens utiles</h2>
+      <ul>
+        <li><a href="boutique.html">Boutique</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="youtube.html">Chaîne Youtube</a></li>
+        <li><a href="mentions-legales.html">Mentions légales</a></li>
+      </ul>
+    </div>
+  </div>
+  <p class="plan-mentions">© L&rsquo;AMagie <span class="etoile">✦</span> Maison d&rsquo;édition indépendante <span class="etoile">✦</span> Félines-Minervois</p>
+  <p class="plan-webmaster">© Webmaster Meichelus : <a href="mailto:meichelus@l-amagie.art">meichelus@l-amagie.art</a></p>
+</section>
+
+<script>
+/* ═══════════════════════════════════════════════════════════
+   ✦  CATALOGUE DES ŒUVRES
+   Pour ajouter une toile : copier un bloc { ... },
+   le coller EN TÊTE du tableau (avant la première {).
+   Champs : title, year, location, technique, desc, img, url
+   tag : "Original" | "Sculpture" | "Illustration" | ""
+═══════════════════════════════════════════════════════════ */
+const OEUVRES = [
+
+  // ── 2026 ────────────────────────────────────────────────
+  {
+    title:     "Le Seuil",
+    year:      "2026",
+    location:  "Félines-Minervois",
+    technique: "Mine graphite, encre de Chine, aquarelle — 44 × 54 cm",
+    desc:      "Une porte fermée sur une ancienne façade du village. Dans l'arche, un visage surgit — non dessiné, révélé par le contraste lui-même. Cette œuvre illustre le manifeste éponyme paru aux Éditions L'AMagie.",
+    img:       "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgzDG4ESH2u_-sB2qRK4ytqavGFE813K1PxyBZhLrdgxLNgYBqhkcEUXCAz-b4rJLzUGsEPo9M3j7oDWsFINs8M_0QgSNXtm5vs1GuoUe4AXAwhtpIu4grwNVzBjqTegFpb0dvpj8pX5FVPh1DRQ_cXsw30R3EtZaewmTsMwCkTYlBRDcDgcy97rAKCqciN/w800/IMG_3831.jpeg",
+    url:       "https://meichelus-art.blogspot.com/2026/04/le-seuil-entre-dessin-et-peinture.html",
+    tag:       "Original"
+  },
+  {
+    title:     "Ferrals-les-Montagnes",
+    year:      "2026",
+    location:  "Minervois",
+    technique: "Encre et pastels — 44 × 54 cm",
+    desc:      "Mémoire des mines de fer, accroché à la pente, fier de ses habitants. Les lignes s'entrelacent depuis les racines de son histoire tandis que la lumière révèle doucement ce qui demeure.",
+    img:       "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgf8IIRDbfgxYjQkUNo_tN5Qa7AOqHx0Cnmo2G7xAZpVVpGk7OB1ixFuJlXpusRLdofUtqOzE0RI9HMpfHN97GYDhNFfXt9-Y_X07Je1sQlNZ_utaSHXxX1-f9uiw3My5WK6Z1NO2a7foj8vgS7Hm8XYbvpt4AxyHMN3dxmWQX1PvrclpiU8tCzGGSUuSvj/w800/IMG_3797.jpeg",
+    url:       "https://meichelus-art.blogspot.com/2026/04/ferrals-les-montagnes.html",
+    tag:       "Original"
+  },
+  {
+    title:     "L'éveilleur d'Azille",
+    year:      "2026",
+    location:  "Azille · Minervois",
+    technique: "Mine graphite, encre de Chine, aquarelle — 44 × 54 cm",
+    desc:      "Avant le village, ils étaient là. Ils veillent encore — sans régner, sans posséder, sans détruire. Un poème accompagne cette toile, éloge d'une présence plus douce au monde.",
+    img:       "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiF53lZuCTN8BlenNtK8WJ31-LREY2G_BIhbDDMGrNeFutMGzQaRw1-L_3js6gu5WgJI5QvdF-bkcoljYmaR1QJs0gkAS4U1srDmwZEM58By30UffUAWM5NzGwq-XcjSW1biG7nEHCgagWKSWm-VhF-oyStO1UGRjozNQOaYjAmdTahKYw0lShX-6LqpmH9/w800/L%27e%CC%81veilleur%20d%27Azille.jpg",
+    url:       "https://meichelus-art.blogspot.com/2026/03/leveilleur-dazille.html",
+    tag:       "Original"
+  },
+  {
+    title:     "Als Catars, la mémoire de la pierre",
+    year:      "2026",
+    location:  "Minerve · Hérault",
+    technique: "Mine graphite, encre de Chine, aquarelle — 43 × 55 cm",
+    desc:      "Minerve comme conscience vivante. La roche, le pont, les murs et la garrigue portent une mémoire que le temps n'a pas effacée. La stèle gravée agit comme un seuil entre l'Histoire et la transmission intérieure.",
+    img:       "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjfgCsoCVHUs8T5Z77lI1KYKTAPICHw0Pxt0hkA21mclkNSqHARTLRfuLafl7sRZ0BtGBy7MtDkfK1MGIZFZtpxjJs837g9q1FRhPyUGSHVGzuAr4z2X42nOwkl7OIfTLA4htkJ3M_ykvLDNlevj6KKOEMIAwAuTTF5Fct1inJ2Wf5USX9NbjaazKVP0kEK/w800/IMG_3504.jpeg",
+    url:       "https://meichelus-art.blogspot.com/2026/02/avec-als-catars-la-memoire-de-la-pierre.html",
+    tag:       "Original"
+  },
+  {
+    title:     "Cella Vinaria",
+    year:      "2026",
+    location:  "La Livinière · Minervois",
+    technique: "Mine graphite, encre noire, aquarelle sur papier Hahnemühle — 40 × 60 cm",
+    desc:      "Représentation poétique d'un village viticole ancestral. Épuré, presque monochrome, le dessin fait dialoguer le bâti, la vigne et le ciel. Une écriture presque hiéroglyphique affleure dans les vignes, trace graphique du temps et du travail.",
+    img:       "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjUB27U1PMe_Le74Pq1cQKbPUHG0dHUTbj5wOdnSbNFuSwF0n5fkW2SbaC26Hb0YG9m1PxBw-Vz0GHMf8g2pG8J9lJaFT3djJkPx1A1wKgcXmAm-CDsDsq0AP-pDjtp7J2EEjIHaXVS2K61XPAP6cd5os1qIr2ZMLPU9SpFGOQx_sR_aWpxcFWWkHqR-4kz/w800/IMG_3411.jpeg",
+    url:       "https://meichelus-art.blogspot.com/2026/01/cella-vinaria-toile-realise.html",
+    tag:       "Original"
+  },
+
+  // ── 2025 ────────────────────────────────────────────────
+  {
+    title:     "La place de l'apéro",
+    year:      "2025",
+    location:  "Félines-Minervois",
+    technique: "Encre de Chine et mine graphite",
+    desc:      "Une petite placette de quartier, celle où l'on se retrouve, où le monde s'invente ou se raconte. Lignes, ombres, traits et petits points prennent le temps. Un endroit familier — vu, ressenti, réinventé.",
+    img:       "https://blogger.googleusercontent.com/img/a/AVvXsEilnoL4b4WdXguO4J4OdjaT4G46D_zyaHfHeWAd8jvKCxaATq1AWMLFa9wX_JwsRZdsaiDECDQy23mnU8nPksucyLXS3gVuHZyQUQ0fr1HqDxLhNGPZZfalL9DrGqKh7cL2u9HHHiQji7HLTZYu4lfTFVF8FH4gpaaT_MJD-4SSEmJAiWzdhGv2eRJmEvpE=w800-h534",
+    url:       "https://meichelus-art.blogspot.com/2025/12/la-place-de-lapero.html",
+    tag:       "Original"
+  },
+  {
+    title:     "Vue du village de Félines-Minervois",
+    year:      "2025",
+    location:  "Félines-Minervois",
+    technique: "Mine graphite et encre de Chine",
+    desc:      "Un paysage du Minervois entre collines et vignes, dans une atmosphère douce et silencieuse. Le trait capte l'âme du village à travers ses lignes, ses ombres portées et l'air du plateau.",
+    img:       "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg4ha8PJBmszPXZzwTDDj5eBaNVhyphenhypheneYixn2px6rpo20srg-aOgi8DLu__I_K3_6It3qeRVh0VnbkL1qI08yxkBAs3HUkkbZ2_FM8HlFFnEoesd36Ir0GkZIDPJ5k66bRsKwEqZA9PDViTUVI0Nw7fxSY_9QtmxvkOpmBut9C4wsJV7OL9SyGlQarbyPLB9G/w800/Fe%CC%81lines%203.jpg",
+    url:       "https://meichelus-art.blogspot.com/2025/12/vue-du-village-de-felines-minervois.html",
+    tag:       ""
+  },
+  {
+    title:     "Bar le Minervois",
+    year:      "2025",
+    location:  "Siran · Minervois",
+    technique: "Mine graphite et encre — 44 × 54 cm",
+    desc:      "La placette du bar le Minervois à Siran, dans le calme d'un village occitan. Un coquelicot et une pâquerette surgissent sur l'asphalte — symboles de vie et de résistance. Les pierres parlent, il y a toujours une force qui pousse.",
+    img:       "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgcfJTbsOIlYslk5mfQYWInEMDL8qYkHsn3vxijdHvgHMiDhbf04ZJcqpeEQh2zHpztveTAnCCJFSSH-ELOt4nl0ppKou5BuGAzZkID2CAaUj_IenZYCR9VSpM5iK7i4qnE7-j6jGV-jpVLeULYIBKBPVyHVpgDjNXJz5Pd-r4YyorqwJ6YI3pLMTDIb85y/w800/unnamed.jpg",
+    url:       "https://meichelus.blogspot.com/2025/10/bar-le-minervois.html",
+    tag:       "Original"
+  },
+  {
+    title:     "Coccinelle des vignes",
+    year:      "2025",
+    location:  "Siran · Minervois",
+    technique: "Toile avec passe-partout — 40 × 60 cm",
+    desc:      "Hommage à la cave vigneronne de Siran, au cœur du Minervois. Entre pierre et mémoire, deux symboles discrets : le rouge du vin et son écriture, la coccinelle messagère de nature et de chance.",
+    img:       "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh-287zfRmfWY89bMEH-MLLEcJHgH8UteYQaevyKEqUvIFhwRLhLpiRKxgg8KoV89bXar_Ezr5llAle4WxNf6W61XvIsI52gytTV5vPvGQ8oUB4rVXjCxspIh-bnpDnYrBWgFve5KR_Y8bjkOiSkn2I_ULkTPRXywDP7ybOjdV_gmm2bRlnU1-AJl0wMxTp/w800/IMG_2668.jpeg",
+    url:       "https://meichelus.blogspot.com/2025/09/tableau-coccinelle-des-vignes.html",
+    tag:       "Original"
+  },
+
+  // ── 2024 ────────────────────────────────────────────────
+  {
+    title:     "Arrival",
+    year:      "2024",
+    location:  "Félines-Minervois",
+    technique: "Sculpture — bois flotté, pierre gravée, verre, acrylique, pastel, iridescent — 50 cm",
+    desc:      "Inspirée des poupées Kachinas des tribus Hopi, cette sculpture raconte l'arrivée des premiers êtres des étoiles sur Terre. Chaque matière, chaque couleur symbolise un aspect de cette rencontre mystique entre ciel et sol.",
+    img:       "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj9PmGipu3jDIVik0SNb2VVZgw3pvp4LacM59e_CxfOMtn-U6abGvjLXDSvLbg85v5rNjdf1e-aFHyO_GW24TBntauzaOW6tSr5VBrtpminFyL1E9uZVnNWwy9eYzKQt_bCzgaFE1XXyjOlvd1RzqCnMRZppAxvWWdbJCKZcd9i01nSJVPZ2X228U4bbfDh/w640/IMG_20240603_103952.jpg",
+    url:       "https://meichelus.blogspot.com/2024/05/poupee-arrival.html",
+    tag:       "Sculpture"
+  }
+
+  /* ──────────────────────────────────────────────────────────
+     POUR AJOUTER UNE NOUVELLE ŒUVRE :
+     Copier ce modèle et le coller EN TÊTE (avant le bloc 2026)
+
+  ,{
+    title:     "Titre de l'œuvre",
+    year:      "2026",
+    location:  "Lieu",
+    technique: "Technique — dimensions",
+    desc:      "Description courte.",
+    img:       "URL_directe_Blogger_ou_ImgBB",
+    url:       "https://meichelus-art.blogspot.com/...",
+    tag:       "Original"
+  }
+  ────────────────────────────────────────────────────────── */
+];
+
+/* ═══════════════════════════════════════════════════════════
+   RENDU AUTOMATIQUE
+═══════════════════════════════════════════════════════════ */
+(function() {
+  var container = document.getElementById('galerie');
+  if (!container) return;
+
+  OEUVRES.forEach(function(o, i) {
+    var pair = (i % 2 === 1);
+
+    // Badge HTML (optionnel)
+    var badgeHTML = o.tag ? '<span class="oeuvre-badge">' + o.tag + '</span>' : '';
+
+    // Colonne texte
+    var metaHTML = '<div class="oeuvre-meta">'
+      + '<div class="oeuvre-annee">' + o.year + '</div>'
+      + (o.location ? '<div class="oeuvre-filet"><span class="oeuvre-lieu">' + o.location + '</span></div>' : '')
+      + '<h2 class="oeuvre-titre">' + o.title + '</h2>'
+      + (o.technique ? '<p class="oeuvre-technique">' + o.technique + '</p>' : '')
+      + (o.desc ? '<p class="oeuvre-desc">' + o.desc + '</p>' : '')
+      + badgeHTML
+      + '<a class="oeuvre-lien" href="' + o.url + '" target="_blank" rel="noopener">Lire l\'article</a>'
+      + '</div>';
+
+    // Colonne image
+    var imgHTML = '<div class="oeuvre-image">'
+      + '<img src="' + o.img + '" alt="' + o.title + ' — Meichelus" loading="lazy"/>'
+      + '</div>';
+
+    var article = document.createElement('article');
+    article.setAttribute('role', 'listitem');
+    article.className = 'oeuvre';
+    article.innerHTML = pair ? (imgHTML + metaHTML) : (metaHTML + imgHTML);
+    container.appendChild(article);
+  });
+
+  // Scroll reveal sur les entrées
+  if ('IntersectionObserver' in window) {
+    var obs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          obs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.oeuvre').forEach(function(el) { obs.observe(el); });
+  } else {
+    document.querySelectorAll('.oeuvre').forEach(function(el) { el.classList.add('visible'); });
+  }
+})();
+
+/* ═══════════════════════════════════════════════════════════
+   SCROLL REVEAL (éléments .reveler)
+═══════════════════════════════════════════════════════════ */
+if ('IntersectionObserver' in window) {
+  var obs2 = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        obs2.unobserve(e.target);
+      }
+    });
+  }, { threshold: .08, rootMargin: '0px 0px -50px 0px' });
+  document.querySelectorAll('.reveler').forEach(function(el) { obs2.observe(el); });
+} else {
+  document.querySelectorAll('.reveler').forEach(function(el) { el.classList.add('visible'); });
+}
+</script>
+
+</body>
+</html>

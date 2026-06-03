@@ -112,16 +112,10 @@ body{
 
 /* ============================================================
    CORRECTION MOBILE — bandeau "librairies indépendantes"
-   Sur téléphone, le bandeau passe sur deux lignes et masque
-   le titre enluminé L'AMagie et ses lettrines. On décale donc
-   la maquette vers le bas, uniquement sur les petits écrans,
-   pour libérer entièrement le haut de l'enluminure.
+   Le bandeau est en position:relative, il pousse naturellement
+   la maquette vers le bas sur tous les écrans sans besoin
+   d'un margin-top compensatoire.
    ============================================================ */
-@media(max-width:768px){
-  .page-maquette{
-    margin-top:90px;
-  }
-}
 
 /* ============================================================
    ACCESSIBILITÉ — texte alternatif lu, jamais affiché
@@ -245,7 +239,7 @@ body{
 
 <body>
 
-<div style="position: absolute; top: 0; left: 0; width: 100%; background-color: #f7f3e8; text-align: center; padding: 10px 20px; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.15rem; letter-spacing: 0.05em; font-style: italic; color: #4a3e2b; border-bottom: 1px solid #e3dac3; z-index: 9999;">
+<div style="position: relative; top: 0; left: 0; width: 100%; background-color: #f7f3e8; text-align: center; padding: 10px 20px; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.15rem; letter-spacing: 0.05em; font-style: italic; color: #4a3e2b; border-bottom: 1px solid #e3dac3; z-index: 99999;">
   Les éditions L'AMagie soutiennent les librairies indépendantes
 </div>
 

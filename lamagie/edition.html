@@ -287,6 +287,75 @@ em{font-style:italic;color:#5a4a30;}
 .btn-cta::after{content:' →';letter-spacing:0;}
 .btn-cta:hover{border-color:#b89a5c;background:rgba(184,154,92,.28);transform:translateY(-2px);}
 
+/* === Encadré manifeste librairies === */
+.encadre-manifeste{
+  margin:48px auto 36px;
+  max-width:760px;
+  padding:42px 48px;
+  background:linear-gradient(160deg, rgba(241,234,212,.78), rgba(246,239,216,.60));
+  border:1px solid rgba(184,154,92,.38);
+  border-radius:2px;
+  position:relative;
+  text-align:center;
+  box-shadow:0 6px 22px rgba(90,74,48,.09);
+}
+.encadre-manifeste::before{
+  content:'❦';
+  position:absolute;
+  top:-14px;
+  left:50%;
+  transform:translateX(-50%);
+  color:#b89a5c;
+  font-size:1.1rem;
+  background:#ece2c8;
+  padding:0 12px;
+  line-height:1;
+}
+.encadre-manifeste::after{content:'';position:absolute;bottom:6px;right:6px;width:18px;height:18px;border:1px solid rgba(184,154,92,.38);border-left:0;border-top:0;pointer-events:none;}
+.encadre-manifeste .encadre-surtitre{
+  display:block;
+  font-family:'Cormorant Garamond',serif;
+  font-size:.7rem;
+  letter-spacing:.32em;
+  text-transform:uppercase;
+  color:#8a6d2f;
+  margin-bottom:14px;
+}
+.encadre-manifeste h3{
+  font-family:'Cormorant Garamond',serif;
+  font-weight:500;
+  font-size:clamp(1.25rem,2.4vw,1.6rem);
+  letter-spacing:.02em;
+  color:#3a3220;
+  margin:0 0 18px;
+  line-height:1.25;
+}
+.encadre-manifeste p{
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;
+  font-size:1.05rem;
+  line-height:1.75;
+  color:#5a4a30;
+  margin:0 0 28px;
+}
+.btn-manifeste{
+  display:inline-block;
+  font-family:'Cormorant Garamond',serif;
+  font-size:.95rem;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:#3a3220;
+  padding:12px 30px;
+  border:1px solid rgba(184,154,92,.55);
+  background:rgba(184,154,92,.12);
+  border-radius:2px;
+  transition:color .3s, border-color .3s, background-color .3s, transform .3s;
+  text-decoration:none;
+}
+.btn-manifeste::after{content:' →';letter-spacing:0;}
+.btn-manifeste:hover{border-color:#b89a5c;background:rgba(184,154,92,.26);transform:translateY(-2px);}
+@media(max-width:600px){.encadre-manifeste{padding:32px 22px;}}
+
 /* === Lien de retour discret === */
 .retour-discret{text-align:center;margin:32px auto 0;}
 .retour-discret a{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.98rem;color:#7a6a48;border-bottom:1px solid rgba(184,154,92,.3);padding-bottom:.1em;transition:color .3s, border-color .3s;}
@@ -501,6 +570,16 @@ em{font-style:italic;color:#5a4a30;}
       <p>Vous portez un texte qui vous tient à cœur&nbsp;? Confiez-le-nous. Notre comité de lecture étudiera votre manuscrit avec attention et bienveillance, et nous cheminerons ensemble vers la publication qui lui ressemble.</p>
       <a class="btn-cta" href="contact.html">Envoyer un manuscrit</a>
     </div>
+
+    <!-- ============================================================
+         ENCADRÉ MANIFESTE LIBRAIRIES
+         ============================================================ -->
+    <aside class="encadre-manifeste reveler" aria-label="Notre engagement pour les librairies indépendantes">
+      <span class="encadre-surtitre">Engagement</span>
+      <h3>Pourquoi L&rsquo;AMagie soutient les librairies indépendantes</h3>
+      <p>À l&rsquo;heure où l&rsquo;on peut commander un livre en quelques clics et le recevoir dès le lendemain, certains pourraient penser que la librairie indépendante appartient à un autre temps. Pourtant, partout en France, des femmes et des hommes continuent chaque jour à faire vivre ces lieux précieux où les livres ne sont pas seulement vendus, mais partagés, conseillés et défendus.</p>
+      <a href="engagements-librairies.html" class="btn-manifeste">Lire notre manifeste de soutien complet</a>
+    </aside>
 
     <!-- ============================================================
          RETOUR DISCRET

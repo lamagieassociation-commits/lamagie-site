@@ -279,6 +279,61 @@ em{font-style:italic;color:#5a4a30;}
 .retour-discret a::before{content:'← ';font-style:normal;}
 .retour-discret a:hover{color:#b89a5c;border-color:#b89a5c;}
 
+/* === Dernière toile === */
+.derniere-toile{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:36px;
+  align-items:center;
+  margin:0 0 48px;
+  padding:36px 44px;
+  background:linear-gradient(160deg,rgba(241,234,212,.8),rgba(246,239,216,.55));
+  border:1px solid rgba(184,154,92,.3);
+  border-radius:2px;
+  position:relative;
+  box-shadow:0 4px 18px rgba(90,74,48,.08);
+}
+.derniere-toile::before{
+  content:'Nouvelle toile';
+  position:absolute;
+  top:-11px;left:32px;
+  font-family:'Cormorant Garamond',serif;
+  font-size:.65rem;letter-spacing:.32em;text-transform:uppercase;
+  color:#8a6d2f;background:#ece2c8;padding:0 10px;line-height:1;
+}
+.derniere-toile-img img{
+  width:100%;height:auto;display:block;
+  border-radius:3px;
+  box-shadow:0 4px 16px rgba(58,50,32,.15),0 0 0 1px rgba(184,154,92,.2);
+}
+.derniere-toile-texte h3{
+  font-family:'Cormorant Garamond',serif;font-weight:500;
+  font-size:clamp(1.35rem,2.5vw,1.7rem);
+  color:#3a3220;line-height:1.2;margin:0 0 6px;
+}
+.derniere-toile-texte .dt-annee{
+  display:block;font-family:'Cormorant Garamond',serif;
+  font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;
+  color:#8a6d2f;margin-bottom:12px;
+}
+.derniere-toile-texte p{
+  font-size:1rem;line-height:1.8;color:#5a4a30;margin:0 0 18px;
+}
+.derniere-toile-texte .btn-derniere{
+  display:inline-block;
+  font-family:'Cormorant Garamond',serif;
+  font-size:.88rem;letter-spacing:.16em;text-transform:uppercase;
+  color:#3a3220;padding:10px 22px;
+  border:1px solid rgba(184,154,92,.5);
+  background:rgba(184,154,92,.1);border-radius:2px;
+  transition:border-color .3s,background-color .3s,transform .3s;
+}
+.derniere-toile-texte .btn-derniere::after{content:' →';letter-spacing:0;}
+.derniere-toile-texte .btn-derniere:hover{border-color:#b89a5c;background:rgba(184,154,92,.24);transform:translateY(-2px);}
+@media(max-width:700px){
+  .derniere-toile{grid-template-columns:1fr;padding:28px 22px;gap:20px;}
+}
+
 /* === PLAN DU SITE === */
 .plan-site{background:transparent;padding:48px 24px 36px;max-width:1080px;margin:0 auto;text-align:center;font-family:'Cormorant Garamond',Georgia,serif;color:#3a3220;border-top:1px solid rgba(184,154,92,.25);}
 .plan-site .filet-haut{display:flex;align-items:center;justify-content:center;gap:14px;margin:0 auto 28px;max-width:200px;}
@@ -370,6 +425,25 @@ em{font-style:italic;color:#5a4a30;}
       <p>Michel a été <em>infirmier en psychiatrie et pédo-psychiatrie</em>, ainsi qu&rsquo;infirmier-chef chez les pompiers des Hautes-Alpes, donc, dans une autre vie. <em>L&rsquo;art-thérapie</em> était au quotidien l&rsquo;une de ses ressources.</p>
       <p>Aujourd&rsquo;hui, il se consacre à plein temps à <em>la peinture</em> et à de nombreux projets graphiques et créatifs. Il coordonne les étapes du processus éditorial.</p>
     </article>
+
+    <!-- ============================================================
+         DERNIÈRE TOILE — La souris rêveuse
+         ============================================================ -->
+    <div class="derniere-toile reveler">
+      <div class="derniere-toile-img">
+        <img src="images/souris-reveuse.png"
+             alt="La souris rêveuse — toile de Meichelus, 2026"
+             loading="eager" decoding="async"/>
+      </div>
+      <div class="derniere-toile-texte">
+        <span class="dt-annee">2026 · Félines-Minervois</span>
+        <h3>La souris rêveuse</h3>
+        <p>Une ruelle du Minervois figée dans la lumière dorée d&rsquo;un matin sans bruit. Contre un mur, une petite souris blanche s&rsquo;est assoupie, indifférente au passage du temps. Entre trait et songe, le village devient décor de fable.</p>
+        <a class="btn-derniere"
+           href="https://meichelus-art.blogspot.com/2026/06/la-souris-reveuse-toile-de-meichelus.html"
+           target="_blank" rel="noopener noreferrer">Pour en savoir plus</a>
+      </div>
+    </div>
 
     <!-- ============================================================
          BLOC 2 — Le blog officiel de Meichelus

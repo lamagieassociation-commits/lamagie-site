@@ -213,6 +213,15 @@ em{font-style:italic;color:#5a4a30;}
 }
 .oeuvre-lien::after{content:' →';font-style:normal;}
 .oeuvre-lien:hover{color:#b89a5c;border-color:#b89a5c;background:rgba(246,239,216,.85);}
+.oeuvre-lien--achat{
+  margin-top:.55rem;
+  color:#f1ead4;
+  background:#7a5a2a;
+  border-color:#7a5a2a;
+  font-style:normal;
+}
+.oeuvre-lien--achat::after{content:'';}
+.oeuvre-lien--achat:hover{background:#5a4a22;border-color:#5a4a22;color:#f1ead4;}
 
 /* ── Colonne image ── */
 .oeuvre-image{
@@ -491,6 +500,19 @@ em{font-style:italic;color:#5a4a30;}
 ═══════════════════════════════════════════════════════════ */
 const OEUVRES = [
 
+  // ── 2026 · Œuvre internationale ──────────────────────────
+  {
+    title:     "The Secret of the Morel",
+    year:      "2026",
+    location:  "Hautes-Alpes · Camargue",
+    technique: "Dessin aux crayons de couleur, techniques mixtes — pierres des Hautes-Alpes, feuilles d'or, bois et éléments de Camargue, libellules, coléoptères, branches enroulées de cuivre et tissu, cadre incrusté de glacis et imitation noyer",
+    desc:      "Quelque part dans les bois, entre pierre et silence, une morille gardait son secret. Ce miroir de morilles surgit d'un amas de feuilles et de branches — convoquant la mémoire des sentiers alpins, des plages de Camargue et du bois flotté. Une œuvre-monde, exposée sur la scène internationale via Saatchi Art.",
+    img:       "images/le_secret_de_la_morille.png",
+    url:       "https://meichelus-art.blogspot.com/2026/06/the-secret-of-morel-une-fenetre-sur-la.html",
+    tag:       "Original",
+    saatchi:   "https://www.saatchiart.com/en-fr/art/Drawing-The-Secret-of-the-Morel/298352/1324744/view"
+  },
+
   // ── 2026 ────────────────────────────────────────────────
   {
     title:     "La souris rêveuse",
@@ -707,6 +729,12 @@ const OEUVRES = [
     // Badge HTML (optionnel)
     var badgeHTML = o.tag ? '<span class="oeuvre-badge">' + o.tag + '</span>' : '';
 
+    // Boutons d'action (lien blog + Saatchi si disponible)
+    var actionsHTML = '<a class="oeuvre-lien" href="' + o.url + '" target="_blank" rel="noopener noreferrer">Lire l\'article</a>';
+    if (o.saatchi) {
+      actionsHTML += '<a class="oeuvre-lien oeuvre-lien--achat" href="' + o.saatchi + '" target="_blank" rel="noopener noreferrer">🎨 Acquérir sur Saatchi Art</a>';
+    }
+
     // Colonne texte
     var metaHTML = '<div class="oeuvre-meta">'
       + '<div class="oeuvre-annee">' + o.year + '</div>'
@@ -715,7 +743,7 @@ const OEUVRES = [
       + (o.technique ? '<p class="oeuvre-technique">' + o.technique + '</p>' : '')
       + (o.desc ? '<p class="oeuvre-desc">' + o.desc + '</p>' : '')
       + badgeHTML
-      + '<a class="oeuvre-lien" href="' + o.url + '" target="_blank" rel="noopener">Lire l\'article</a>'
+      + actionsHTML
       + '</div>';
 
     // Colonne image

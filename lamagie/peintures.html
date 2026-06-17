@@ -167,13 +167,6 @@ em{font-style:italic;color:#5a4a30;}
   position:relative;
   box-shadow:0 6px 22px rgba(90,74,48,.10);
 }
-.bloc-vedette .etiquette-toile{
-  position:absolute;
-  top:-11px;left:32px;
-  font-family:'Cormorant Garamond',serif;
-  font-size:.65rem;letter-spacing:.32em;text-transform:uppercase;
-  color:#8a6d2f;background:#ece2c8;padding:0 10px;line-height:1;
-}
 .bloc-vedette::before,.bloc-vedette::after{
   content:'';position:absolute;width:18px;height:18px;
   border:1px solid rgba(184,154,92,.45);pointer-events:none;
@@ -365,8 +358,12 @@ em{font-style:italic;color:#5a4a30;}
   box-shadow:0 4px 18px rgba(90,74,48,.08);
 }
 .derniere-toile::before{
-  content:'';
-  display:none;
+  content:'Nouvelle toile';
+  position:absolute;
+  top:-11px;left:32px;
+  font-family:'Cormorant Garamond',serif;
+  font-size:.65rem;letter-spacing:.32em;text-transform:uppercase;
+  color:#8a6d2f;background:#ece2c8;padding:0 10px;line-height:1;
 }
 .derniere-toile-img img{
   width:100%;height:auto;display:block;
@@ -497,7 +494,6 @@ em{font-style:italic;color:#5a4a30;}
          DERNIÈRE TOILE — The Secret of the Morel
          ============================================================ -->
     <div class="bloc-vedette reveler">
-      <span class="etiquette-toile">Nouvelle toile</span>
       <div class="bloc-vedette-image">
         <img src="images/le_secret_de_la_morille.png"
              alt="The Secret of the Morel — Meichelus, dessin techniques mixtes 2026"
@@ -506,7 +502,7 @@ em{font-style:italic;color:#5a4a30;}
       <div class="bloc-vedette-texte">
         <span class="surtitre-vedette">Dernière œuvre · 2026</span>
         <h3 class="titre-vedette">The Secret of the Morel</h3>
-        <p class="desc-vedette">Quelque part dans les bois des Hautes-Alpes, entre pierre et silence, une morille gardait son secret. Dessin aux crayons de couleur et techniques mixtes — pierres alpines, feuilles d'or, bois flotté de Camargue, libellules et coléoptères, branches enroulées de cuivre. Une œuvre-monde désormais exposée sur la scène internationale.</p>
+        <p class="desc-vedette">Quelque part dans les bois des Hautes-Alpes, entre pierre et silence, une morille gardait son secret. Dessin à l'encre, à la mine graphite et à l'aquarelle, techniques mixtes — pierres alpines, feuilles d'or, bois flotté de Camargue, libellules et coléoptères, branches enroulées de cuivre. Une œuvre-monde désormais exposée sur la scène internationale.</p>
         <div class="vedette-liens">
           <a class="btn-vedette btn-vedette--galerie" href="galerie-peintures.html">
             Voir l&rsquo;œuvre dans la galerie

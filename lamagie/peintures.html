@@ -153,6 +153,70 @@ em{font-style:italic;color:#5a4a30;}
 .section-titre h2::after{right:0;}
 .section-titre .legende{display:block;margin-top:14px;font-family:'Pinyon Script','Cormorant Garamond',cursive;font-size:1.2rem;color:#7a6a48;text-transform:none;letter-spacing:.02em;font-weight:400;}
 
+/* === Bloc œuvre vedette === */
+.bloc-vedette{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+  align-items:center;
+  background:rgba(246,239,216,.62);
+  border:1px solid rgba(184,154,92,.3);
+  border-radius:2px;
+  padding:40px 48px;
+  margin:0 auto 36px;
+  position:relative;
+  box-shadow:0 6px 22px rgba(90,74,48,.10);
+}
+.bloc-vedette::before,.bloc-vedette::after{
+  content:'';position:absolute;width:18px;height:18px;
+  border:1px solid rgba(184,154,92,.45);pointer-events:none;
+}
+.bloc-vedette::before{top:6px;left:6px;border-right:0;border-bottom:0;}
+.bloc-vedette::after{bottom:6px;right:6px;border-left:0;border-top:0;}
+.bloc-vedette-image img{
+  width:100%;height:auto;display:block;border-radius:2px;
+  box-shadow:0 4px 18px rgba(58,50,32,.18);
+  filter:sepia(.05) brightness(.97);
+  transition:filter .4s;
+}
+.bloc-vedette-image img:hover{filter:sepia(0) brightness(1);}
+.surtitre-vedette{
+  display:block;
+  font-family:'Cormorant Garamond',serif;
+  font-size:.72rem;letter-spacing:.32em;text-transform:uppercase;
+  color:#8a6d2f;margin-bottom:10px;
+}
+.titre-vedette{
+  font-family:'Cormorant Garamond',serif;font-weight:500;
+  font-size:clamp(1.5rem,2.6vw,2rem);letter-spacing:.02em;
+  color:#3a3220;margin:0 0 14px;line-height:1.2;
+}
+.desc-vedette{
+  font-size:1rem;line-height:1.82;color:#3a3220;margin-bottom:22px;
+}
+.vedette-liens{display:flex;flex-direction:column;gap:.65rem;align-items:flex-start;}
+.btn-vedette{
+  display:inline-block;
+  font-family:'Cormorant Garamond',serif;font-style:italic;
+  font-size:.95rem;color:#3a3220;
+  padding:8px 18px;border:1px solid rgba(184,154,92,.4);
+  border-radius:2px;background:rgba(246,239,216,.4);
+  transition:color .3s, border-color .3s, background-color .3s;
+}
+.btn-vedette::after{content:' →';font-style:normal;}
+.btn-vedette:hover{color:#b89a5c;border-color:#b89a5c;background:rgba(246,239,216,.85);}
+.btn-vedette--achat{
+  font-style:normal;color:#f1ead4;
+  background:#7a5a2a;border-color:#7a5a2a;
+}
+.btn-vedette--achat::after{content:'';}
+.btn-vedette--achat:hover{background:#5a4a22;border-color:#5a4a22;color:#f1ead4;}
+@media(max-width:700px){
+  .bloc-vedette{grid-template-columns:1fr;padding:28px 22px;gap:24px;}
+  .vedette-liens{align-items:stretch;}
+  .btn-vedette{text-align:center;}
+}
+
 /* === Bouton blog principal === */
 .bloc-blog{
   margin:0 auto 36px;
@@ -427,21 +491,33 @@ em{font-style:italic;color:#5a4a30;}
     </article>
 
     <!-- ============================================================
-         DERNIÈRE TOILE — La souris rêveuse
+         DERNIÈRE TOILE — The Secret of the Morel
          ============================================================ -->
-    <div class="derniere-toile reveler">
-      <div class="derniere-toile-img">
-        <img src="images/souris-reveuse.png"
-             alt="La souris rêveuse — toile de Meichelus, 2026"
+    <div class="bloc-vedette reveler">
+      <div class="bloc-vedette-image">
+        <img src="images/le_secret_de_la_morille.png"
+             alt="The Secret of the Morel — Meichelus, dessin techniques mixtes 2026"
              loading="eager" decoding="async"/>
       </div>
-      <div class="derniere-toile-texte">
-        <span class="dt-annee">2026 · Félines-Minervois</span>
-        <h3>La souris rêveuse</h3>
-        <p>Le monde réel n&rsquo;est pas fait pour les rêveurs<br/><br/><em>Illusion paramétrée de cruauté,<br/>filtre doux sur la lumière crue,<br/>Pointillés nécessaires entre l&rsquo;œil et le feu.</em></p>
-        <a class="btn-derniere"
-           href="https://meichelus-art.blogspot.com/2026/06/la-souris-reveuse-toile-de-meichelus.html"
-           target="_blank" rel="noopener noreferrer">Pour en savoir plus</a>
+      <div class="bloc-vedette-texte">
+        <span class="surtitre-vedette">Dernière œuvre · 2026</span>
+        <h3 class="titre-vedette">The Secret of the Morel</h3>
+        <p class="desc-vedette">Quelque part dans les bois des Hautes-Alpes, entre pierre et silence, une morille gardait son secret. Dessin aux crayons de couleur et techniques mixtes — pierres alpines, feuilles d'or, bois flotté de Camargue, libellules et coléoptères, branches enroulées de cuivre. Une œuvre-monde désormais exposée sur la scène internationale.</p>
+        <div class="vedette-liens">
+          <a class="btn-vedette btn-vedette--galerie" href="galerie-peintures.html">
+            Voir l&rsquo;œuvre dans la galerie
+          </a>
+          <a class="btn-vedette btn-vedette--blog"
+             href="https://meichelus-art.blogspot.com/2026/06/the-secret-of-morel-une-fenetre-sur-la.html"
+             target="_blank" rel="noopener noreferrer">
+            Lire l&rsquo;histoire de sa création
+          </a>
+          <a class="btn-vedette btn-vedette--achat"
+             href="https://www.saatchiart.com/en-fr/art/Drawing-The-Secret-of-the-Morel/298352/1324744/view"
+             target="_blank" rel="noopener noreferrer">
+            🎨 Acquérir sur Saatchi Art
+          </a>
+        </div>
       </div>
     </div>
 
@@ -451,6 +527,25 @@ em{font-style:italic;color:#5a4a30;}
     <div class="section-titre reveler">
       <h2>Atelier de Meichelus</h2>
       <span class="legende">Peintures, dessins et actualités</span>
+    </div>
+
+    <!-- ============================================================
+         TOILE PRÉCÉDENTE — La souris rêveuse
+         ============================================================ -->
+    <div class="derniere-toile reveler">
+      <div class="derniere-toile-img">
+        <img src="images/souris-reveuse.png"
+             alt="La souris rêveuse — toile de Meichelus, 2026"
+             loading="lazy" decoding="async"/>
+      </div>
+      <div class="derniere-toile-texte">
+        <span class="dt-annee">2026 · Félines-Minervois</span>
+        <h3>La souris rêveuse</h3>
+        <p>Le monde réel n&rsquo;est pas fait pour les rêveurs<br/><br/><em>Illusion paramétrée de cruauté,<br/>filtre doux sur la lumière crue,<br/>Pointillés nécessaires entre l&rsquo;œil et le feu.</em></p>
+        <a class="btn-derniere"
+           href="https://meichelus-art.blogspot.com/2026/06/la-souris-reveuse-toile-de-meichelus.html"
+           target="_blank" rel="noopener noreferrer">Pour en savoir plus</a>
+      </div>
     </div>
 
     <div class="bloc-blog reveler">

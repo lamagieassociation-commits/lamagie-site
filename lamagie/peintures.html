@@ -167,6 +167,13 @@ em{font-style:italic;color:#5a4a30;}
   position:relative;
   box-shadow:0 6px 22px rgba(90,74,48,.10);
 }
+.bloc-vedette .etiquette-toile{
+  position:absolute;
+  top:-11px;left:32px;
+  font-family:'Cormorant Garamond',serif;
+  font-size:.65rem;letter-spacing:.32em;text-transform:uppercase;
+  color:#8a6d2f;background:#ece2c8;padding:0 10px;line-height:1;
+}
 .bloc-vedette::before,.bloc-vedette::after{
   content:'';position:absolute;width:18px;height:18px;
   border:1px solid rgba(184,154,92,.45);pointer-events:none;
@@ -358,12 +365,8 @@ em{font-style:italic;color:#5a4a30;}
   box-shadow:0 4px 18px rgba(90,74,48,.08);
 }
 .derniere-toile::before{
-  content:'Nouvelle toile';
-  position:absolute;
-  top:-11px;left:32px;
-  font-family:'Cormorant Garamond',serif;
-  font-size:.65rem;letter-spacing:.32em;text-transform:uppercase;
-  color:#8a6d2f;background:#ece2c8;padding:0 10px;line-height:1;
+  content:'';
+  display:none;
 }
 .derniere-toile-img img{
   width:100%;height:auto;display:block;
@@ -494,6 +497,7 @@ em{font-style:italic;color:#5a4a30;}
          DERNIÈRE TOILE — The Secret of the Morel
          ============================================================ -->
     <div class="bloc-vedette reveler">
+      <span class="etiquette-toile">Nouvelle toile</span>
       <div class="bloc-vedette-image">
         <img src="images/le_secret_de_la_morille.png"
              alt="The Secret of the Morel — Meichelus, dessin techniques mixtes 2026"

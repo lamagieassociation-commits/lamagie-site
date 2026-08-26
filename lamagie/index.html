@@ -8,350 +8,422 @@
 <title>L'AMagie — Maison d'édition indépendante, non conformiste et libre</title>
 <meta name="description" content="L'AMagie, maison d'édition indépendante à Félines-Minervois. Poésie, romans, ateliers d'écriture, médiation animale, peintures et dessins de Meichelus."/>
 
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Pinyon+Script&display=swap" rel="stylesheet"/>
+
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Pinyon+Script&display=swap');
+
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
 html,body{overflow-x:hidden;}
 html{scroll-behavior:smooth;}
 
-/* ============================================================
-   FOND DU SITE — couleur de secours = ton parchemin de la maquette
-   ============================================================ */
 body{
   background-color:#ece2c8;
+  color:#3a3220;
+  font-family:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  font-weight:400;
+  font-size:17px;
+  line-height:1.75;
   min-height:100vh;
-  font-family:Georgia,'Times New Roman',serif; /* utile uniquement au tooltip natif */
   -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  text-rendering:optimizeLegibility;
+  background-image:
+    radial-gradient(ellipse 55% 50% at 12% 18%,  rgba(146, 96, 38, 0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 55% at 88% 82%,  rgba(132, 88, 36, 0.11) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 45% at 78% 18%,  rgba(170,128, 60, 0.09) 0%, transparent 65%),
+    radial-gradient(ellipse 55% 50% at 22% 82%,  rgba(160,118, 50, 0.10) 0%, transparent 65%),
+    radial-gradient(ellipse 75% 60% at 50% 35%,  rgba(212,176,114, 0.10) 0%, transparent 75%),
+    linear-gradient(135deg, #f1ead4 0%, #e8dec0 50%, #ecdfc2 100%),
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='280' height='280'><filter id='g'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' seed='4'/><feColorMatrix values='0 0 0 0 0.42 0 0 0 0 0.32 0 0 0 0 0.17 0 0 0 0.22 0'/></filter><rect width='100%25' height='100%25' filter='url(%23g)'/></svg>");
+  background-attachment:fixed;
+  background-size:auto,auto,auto,auto,auto,auto,280px 280px;
+  background-repeat:no-repeat,no-repeat,no-repeat,no-repeat,no-repeat,no-repeat,repeat;
 }
 
-/* ============================================================
-   CONTENEUR PRINCIPAL — porte l'image de maquette en fond
-   - largeur max 1100 px comme demandé
-   - même ratio que la maquette (1024 / 1536) pour que les
-     hotspots en % tombent toujours au bon endroit
-   ============================================================ */
+a{color:inherit;text-decoration:none;}
+img{max-width:100%;height:auto;display:block;}
+em{font-style:italic;color:#5a4a30;}
+::selection{background:rgba(184,154,92,.32);color:#3a3220;}
+
+.bandeau-top{
+  background:#ece2c8;
+  padding:8px 40px;
+  text-align:center;
+  font-size:0.9rem;
+  color:#5a4a30;
+  border-bottom:1px solid rgba(184,154,92,.2);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.toggle-langue{
+  display:flex;
+  gap:12px;
+  align-items:center;
+}
+
+.toggle-langue button{
+  background:transparent;
+  border:1px solid rgba(184,154,92,.4);
+  padding:4px 12px;
+  border-radius:2px;
+  cursor:pointer;
+  font-family:'Cormorant Garamond',Georgia,serif;
+  font-size:0.85rem;
+  color:#5a4a30;
+  transition:all 0.3s;
+}
+
+.toggle-langue button.active{
+  background:#b89a5c;
+  color:white;
+  border-color:#b89a5c;
+}
+
+.toggle-langue button:hover{
+  background:rgba(184,154,92,.1);
+}
+
 .page-maquette{
+  aspect-ratio:1024/1536;
+  background:url('images/fond-maquette.png') no-repeat center/cover;
   position:relative;
-  width:100%;
-  max-width:1100px;
-  margin:0 auto;
-  aspect-ratio:1024 / 1536;
-  background:url('images/fond-maquette.png') no-repeat top center;
-  background-size:100% auto;
+  margin:40px auto;
+  max-width:90%;
+  box-shadow:0 10px 40px rgba(0,0,0,0.1);
 }
 
-/* ============================================================
-   CERCLE CENTRAL ANIMÉ
-   - posé pile au centre, par-dessus le cercle dessiné dans la maquette
-   - l'image démarre désaturée (croquis) et passe en couleur en 4 s
-   ============================================================ */
 .cercle-anime{
   position:absolute;
   top:48.5%;
   left:50%;
-  transform:translate(-50%,-50%);
-  width:38.5%;
-  aspect-ratio:1 / 1;
-  border-radius:50%;
-  overflow:hidden;
-  pointer-events:none;
-}
-.cercle-anime img{
-  display:block;
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  filter:saturate(0) brightness(1.04) contrast(.95);
-  animation:vers-couleur 4s ease 1s forwards;
-}
-@keyframes vers-couleur{
-  to{filter:saturate(1) brightness(1) contrast(1);}
-}
-
-/* ============================================================
-   HOTSPOTS INVISIBLES — superposés aux 15 textes/icônes
-   ============================================================ */
-.hotspot{
-  position:absolute;
-  display:block;
-  background:transparent;
-  border:none;
-  text-decoration:none;
-  cursor:pointer;
-  border-radius:6px;
-  transition:background-color .25s ease, box-shadow .25s ease;
-  /* Anti-bleu de tap mobile */
-  -webkit-tap-highlight-color:transparent;
-}
-.hotspot:hover,
-.hotspot:focus-visible{
-  /* Léger halo or, très subtil — feedback minimal */
-  background-color:rgba(184,154,92,.10);
-  box-shadow:0 0 0 1px rgba(184,154,92,.18);
-  outline:none;
-}
-
-/* ============================================================
-   RÉDUCTION DE MOUVEMENT
-   ============================================================ */
-@media(prefers-reduced-motion: reduce){
-  .cercle-anime img{
-    animation:none !important;
-    filter:saturate(1) brightness(1) contrast(1) !important;
-  }
-  .hotspot{transition:none !important;}
-}
-
-/* ============================================================
-   AJUSTEMENTS MOBILES
-   - Tout reste en %, donc les hotspots se calent toujours sur
-     l'image qui se redimensionne avec le conteneur.
-   ============================================================ */
-@media(max-width:760px){
-  .page-maquette{max-width:100vw;}
-}
-
-/* ============================================================
-   CORRECTION MOBILE — bandeau "librairies indépendantes"
-   Le bandeau est en position:relative, il pousse naturellement
-   la maquette vers le bas sur tous les écrans sans besoin
-   d'un margin-top compensatoire.
-   ============================================================ */
-
-/* ============================================================
-   ACCESSIBILITÉ — texte alternatif lu, jamais affiché
-   ============================================================ */
-.sr-only{
-  position:absolute;
-  width:1px;height:1px;
-  margin:-1px;padding:0;
-  overflow:hidden;clip:rect(0,0,0,0);
-  white-space:nowrap;border:0;
-}
-
-/* Sélection */
-::selection{background:rgba(184,154,92,.32);color:#3a3220;}
-
-/* === PLAN DU SITE — discret, élégant, utile au SEO === */
-.plan-site{
-  background:transparent;
-  padding:48px 24px 36px;
-  max-width:1080px;
-  margin:0 auto;
-  text-align:center;
-  font-family:'Cormorant Garamond',Georgia,'Times New Roman',serif;
-  color:#3a3220;
-  border-top:1px solid rgba(184,154,92,.25);
-}
-.plan-site .filet-haut{
+  transform:translate(-50%, -50%);
+  width:120px;
+  height:120px;
   display:flex;
   align-items:center;
   justify-content:center;
-  gap:14px;
-  margin:0 auto 28px;
-  max-width:200px;
+  animation:reveal-color 4s ease-in-out infinite;
 }
-.plan-site .filet-haut::before,
-.plan-site .filet-haut::after{
-  content:'';
-  flex:1;
-  height:1px;
-  background:linear-gradient(90deg,transparent,rgba(184,154,92,.55),transparent);
-}
-.plan-site .filet-haut .etoile{color:#b89a5c;font-size:.85rem;line-height:1;}
 
-.plan-site-grille{
+.cercle-anime img{
+  width:100%;
+  height:100%;
+  filter:grayscale(100%);
+  animation:color-shift 4s ease-in-out infinite;
+}
+
+@keyframes reveal-color{
+  0%, 100%{filter:brightness(1);}
+  50%{filter:brightness(1.1) saturate(1);}
+}
+
+@keyframes color-shift{
+  0%, 100%{filter:grayscale(100%);}
+  50%{filter:grayscale(0%);}
+}
+
+.hotspot{
+  position:absolute;
+  cursor:pointer;
+  background:transparent;
+  border:none;
+  opacity:0;
+  transition:opacity 0.3s;
+}
+
+.hotspot:hover{opacity:0.1;}
+
+.page-maquette:hover .hotspot:hover{background:rgba(184,154,92,0.2);}
+
+.plan-du-site{
+  max-width:1200px;
+  margin:60px auto;
+  padding:0 40px 40px;
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:24px 32px;
-  text-align:left;
-  margin-bottom:28px;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:40px;
 }
-.plan-categorie h2{
-  font-family:'Cormorant Garamond',serif;
+
+.plan-section h3{
+  font-size:1.1rem;
   font-weight:500;
-  font-size:.72rem;
-  letter-spacing:.3em;
-  text-transform:uppercase;
-  color:#5a4a30;
-  margin:0 0 10px;
-  padding-bottom:6px;
-  border-bottom:1px solid rgba(184,154,92,.22);
-}
-.plan-categorie ul{
-  list-style:none;
-  margin:0;padding:0;
-}
-.plan-categorie li{
-  font-size:.92rem;
-  line-height:1.65;
-  margin-bottom:2px;
-}
-.plan-categorie a{
   color:#3a3220;
+  margin-bottom:16px;
+  border-bottom:1px solid rgba(184,154,92,.2);
+  padding-bottom:8px;
+}
+
+.plan-section ul{
+  list-style:none;
+  padding:0;
+}
+
+.plan-section li{
+  margin:8px 0;
+}
+
+.plan-section a{
+  color:#5a4a30;
   text-decoration:none;
-  transition:color .3s;
-  border-bottom:1px solid transparent;
+  font-size:0.95rem;
+  transition:color 0.3s;
 }
-.plan-categorie a:hover{
+
+.plan-section a:hover{
   color:#b89a5c;
-  border-bottom-color:rgba(184,154,92,.4);
-}
-.plan-categorie .label{
-  color:#7a6a48;
-  font-style:italic;
-  font-size:.88rem;
+  text-decoration:underline;
 }
 
-.plan-mentions{
-  font-family:'Cormorant Garamond',serif;
-  font-size:.78rem;
-  letter-spacing:.16em;
-  color:#7a6a48;
-  text-transform:uppercase;
-  margin:0;
-}
-.plan-mentions .etoile{color:#b89a5c;margin:0 .6em;}
-.plan-webmaster{
-  margin:14px auto 0;
-  max-width:340px;
-  padding-top:10px;
-  border-top:1px solid rgba(184,154,92,.18);
-  font-family:'Cormorant Garamond',serif;
-  font-style:italic;
-  font-size:.78rem;
-  letter-spacing:.08em;
-  color:#8a6d2f;
+footer{
   text-align:center;
-}
-.plan-webmaster a{color:inherit;border-bottom:1px solid rgba(184,154,92,.3);transition:color .3s, border-color .3s;}
-.plan-webmaster a:hover{color:#b89a5c;border-bottom-color:#b89a5c;}
-
-
-@media(max-width:560px){
-  .plan-site{padding:32px 18px 24px;}
-  .plan-site-grille{gap:18px;text-align:center;}
-  .plan-categorie h2{text-align:center;}
-  .plan-mentions{font-size:.7rem;letter-spacing:.12em;}
+  padding:40px;
+  border-top:1px solid rgba(184,154,92,.2);
+  color:#5a4a30;
+  font-size:0.9rem;
 }
 
+h1{
+  text-align:center;
+  font-size:2.2rem;
+  margin:40px 20px;
+  color:#3a3220;
+}
+
+@media(max-width:768px){
+  .bandeau-top{flex-direction:column;gap:12px;padding:12px 16px;}
+  .plan-du-site{grid-template-columns:1fr;gap:20px;padding:0 16px 20px;}
+  .page-maquette{margin:20px auto;max-width:95%;}
+}
 </style>
 </head>
 
 <body>
 
-<div style="position: relative; top: 0; left: 0; width: 100%; background-color: #f7f3e8; text-align: center; padding: 10px 20px; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.15rem; letter-spacing: 0.05em; font-style: italic; color: #4a3e2b; border-bottom: 1px solid #e3dac3; z-index: 99999;">
-  Les éditions L'AMagie soutiennent les librairies indépendantes
+<!-- BANDEAU LANGUE -->
+<div class="bandeau-top">
+  <span class="bandeau-text"></span>
+  <div class="toggle-langue">
+    <button class="lang-btn active" data-lang="fr">FR</button>
+    <button class="lang-btn" data-lang="en">EN</button>
+  </div>
 </div>
 
-  <!-- ============================================================
-       PAGE D'ACCUEIL — maquette en fond + cercle animé + hotspots
-       Tout est calé sur le ratio 1024×1536 de votre fond-maquette.png
-       ============================================================ -->
-  <main class="page-maquette" role="main">
+<!-- TITRE PRINCIPAL -->
+<h1 class="titre-principal"></h1>
 
-    <!-- Lecteurs d'écran : titre invisible pour identifier la page -->
-    <h1 class="sr-only">L&rsquo;AMagie — Maison d&rsquo;édition indépendante, non conformiste et libre</h1>
+<!-- MAQUETTE INTERACTIVE -->
+<div class="page-maquette">
+  <div class="cercle-anime">
+    <img src="images/maison-lamagie.png" alt="L'AMagie"/>
+  </div>
+  
+  <!-- HOTSPOTS (15 zones cliquables) -->
+  <button class="hotspot" style="left:2%;top:22%;width:24%;height:8%;" onclick="window.location.href='qui-sommes-nous.html';" title="Qui sommes-nous"></button>
+  <button class="hotspot" style="left:2%;top:31%;width:24%;height:8%;" onclick="window.location.href='fonctionnement.html';" title="Fonctionnement"></button>
+  <button class="hotspot" style="left:2%;top:40%;width:24%;height:8%;" onclick="window.location.href='ateliers.html';" title="Ateliers"></button>
+  <button class="hotspot" style="left:2%;top:49%;width:24%;height:8%;" onclick="window.location.href='mots-pour-maux.html';" title="Mots pour Maux"></button>
+  <button class="hotspot" style="left:2%;top:58%;width:24%;height:8%;" onclick="window.location.href='mediation-animale.html';" title="Médiation animale"></button>
+  <button class="hotspot" style="left:2%;top:67%;width:24%;height:8%;" onclick="window.location.href='amis-mots.html';" title="Amis-Mots"></button>
+  <button class="hotspot" style="left:2%;top:76%;width:24%;height:8%;" onclick="window.location.href='edition.html';" title="Édition"></button>
+  
+  <button class="hotspot" style="left:74%;top:22%;width:24%;height:8%;" onclick="window.location.href='poesie.html';" title="Poésie"></button>
+  <button class="hotspot" style="left:74%;top:31%;width:24%;height:8%;" onclick="window.location.href='peintures.html';" title="Peintures"></button>
+  <button class="hotspot" style="left:74%;top:40%;width:24%;height:8%;" onclick="window.location.href='evenements.html';" title="Événements"></button>
+  <button class="hotspot" style="left:74%;top:49%;width:24%;height:8%;" onclick="window.location.href='boutique.html';" title="Boutique"></button>
+  <button class="hotspot" style="left:74%;top:58%;width:24%;height:8%;" onclick="window.location.href='faq.html';" title="FAQ"></button>
+  <button class="hotspot" style="left:74%;top:67%;width:24%;height:8%;" onclick="window.location.href='contact.html';" title="Contact"></button>
+  <button class="hotspot" style="left:74%;top:76%;width:24%;height:8%;" onclick="window.location.href='youtube.html';" title="YouTube"></button>
+  
+  <button class="hotspot" style="left:35%;top:94%;width:30%;height:3.5%;" onclick="window.location.href='mentions-legales.html';" title="Mentions légales"></button>
+</div>
 
-    <!-- ===== CERCLE CENTRAL ANIMÉ ===== -->
-    <!-- L'image démarre en croquis désaturé et passe en couleur en 4 s.
-         Si maison-lamagie.png n'est pas encore en place, le cercle reste
-         vide (transparent) et le dessin de la maquette transparaît. -->
-    <div class="cercle-anime" aria-hidden="true">
-      <img src="images/maison-lamagie.png"
-           alt=""
-           loading="eager"
-           decoding="async"
-           onerror="this.style.display='none'"/>
-    </div>
+<!-- PLAN DU SITE -->
+<div class="plan-du-site">
+  
+  <div class="plan-section">
+    <h3 class="section-title-1"></h3>
+    <ul>
+      <li><a href="qui-sommes-nous.html" class="link-1-1"></a></li>
+      <li><a href="fonctionnement.html" class="link-1-2"></a></li>
+      <li><a href="anouk-journo.html" class="link-1-3"></a></li>
+      <li><a href="peintures.html" class="link-1-4"></a></li>
+    </ul>
+  </div>
 
-    <!-- ===== 15 HOTSPOTS INVISIBLES ===== -->
-    <!-- Sept liens à gauche, sept à droite, Mentions Légales centré en bas.
-         Positions en % du conteneur (qui a le même ratio que la maquette),
-         donc parfaitement calées quelle que soit la taille d'écran. -->
-    <a class="hotspot" href="qui-sommes-nous.html" aria-label="La Maison (qui sommes-nous)" style="top:22.00%;left:2.00%;width:24.00%;height:8.00%;"></a>
-    <a class="hotspot" href="fonctionnement.html" aria-label="Fonctionnement Association" style="top:31.00%;left:2.00%;width:24.00%;height:8.00%;"></a>
-    <a class="hotspot" href="ateliers.html" aria-label="Ateliers & Coaching" style="top:40.00%;left:2.00%;width:24.00%;height:8.00%;"></a>
-    <a class="hotspot" href="mots-pour-maux.html" aria-label="Écriture Thérapeutique" style="top:49.00%;left:2.00%;width:24.00%;height:8.00%;"></a>
-    <a class="hotspot" href="mediation-animale.html" aria-label="Médiation Animale" style="top:58.00%;left:2.00%;width:24.00%;height:8.00%;"></a>
-    <a class="hotspot" href="amis-mots.html" aria-label="Collection Amis-Mots" style="top:67.00%;left:2.00%;width:24.00%;height:8.00%;"></a>
-    <a class="hotspot" href="edition.html" aria-label="Édition (Manuscrits)" style="top:76.00%;left:2.00%;width:24.00%;height:8.00%;"></a>
-    <a class="hotspot" href="poesie.html" aria-label="Poésie au jour le jour" style="top:22.00%;left:74.00%;width:24.00%;height:8.00%;"></a>
-    <a class="hotspot" href="peintures.html" aria-label="Peintures & Dessins" style="top:31.00%;left:74.00%;width:24.00%;height:8.00%;"></a>
-    <a class="hotspot" href="evenements.html" aria-label="Événements & Presse" style="top:40.00%;left:74.00%;width:24.00%;height:8.00%;"></a>
-    <a class="hotspot" href="boutique.html" aria-label="Boutique" style="top:49.00%;left:74.00%;width:24.00%;height:8.00%;"></a>
-    <a class="hotspot" href="faq.html" aria-label="FAQ" style="top:58.00%;left:74.00%;width:24.00%;height:8.00%;"></a>
-    <a class="hotspot" href="contact.html" aria-label="Contact" style="top:67.00%;left:74.00%;width:24.00%;height:8.00%;"></a>
-    <a class="hotspot" href="youtube.html" aria-label="Chaîne Youtube" style="top:76.00%;left:74.00%;width:24.00%;height:8.00%;"></a>
-    <a class="hotspot" href="mentions-legales.html" aria-label="Mentions Légales" style="top:94.00%;left:35.00%;width:30.00%;height:3.50%;"></a>
+  <div class="plan-section">
+    <h3 class="section-title-2"></h3>
+    <ul>
+      <li><a href="ateliers.html" class="link-2-1"></a></li>
+      <li><a href="mots-pour-maux.html" class="link-2-2"></a></li>
+      <li><a href="mediation-animale.html" class="link-2-3"></a></li>
+      <li><a href="amis-mots.html" class="link-2-4"></a></li>
+    </ul>
+  </div>
 
-  </main>
+  <div class="plan-section">
+    <h3 class="section-title-3"></h3>
+    <ul>
+      <li><a href="edition.html" class="link-3-1"></a></li>
+      <li><a href="edition.html#raconter-le-monde" class="link-3-2"></a></li>
+      <li><a href="edition.html#immersion" class="link-3-3"></a></li>
+      <li><a href="edition.html#manifestes" class="link-3-4"></a></li>
+      <li><a href="edition.html#romans-jeunesse" class="link-3-5"></a></li>
+    </ul>
+  </div>
 
+  <div class="plan-section">
+    <h3 class="section-title-4"></h3>
+    <ul>
+      <li><a href="poesie.html" class="link-4-1"></a></li>
+      <li><a href="peintures.html" class="link-4-2"></a></li>
+      <li><a href="evenements.html" class="link-4-3"></a></li>
+    </ul>
+  </div>
 
-  <section class="plan-site" aria-label="Plan du site">
-    <div class="filet-haut" aria-hidden="true">
-      <span class="etoile">✦</span>
-    </div>
+  <div class="plan-section">
+    <h3 class="section-title-5"></h3>
+    <ul>
+      <li><a href="boutique.html" class="link-5-1"></a></li>
+      <li><a href="faq.html" class="link-5-2"></a></li>
+      <li><a href="contact.html" class="link-5-3"></a></li>
+      <li><a href="youtube.html" class="link-5-4"></a></li>
+      <li><a href="mentions-legales.html" class="link-5-5"></a></li>
+    </ul>
+  </div>
 
-    <div class="plan-site-grille">
+</div>
 
-      <div class="plan-categorie">
-        <h2>Qui sommes-nous&nbsp;?</h2>
-        <ul>
-          <li><a href="qui-sommes-nous.html">Qui sommes-nous</a></li>
-          <li><a href="fonctionnement.html">Fonctionnement de l&rsquo;association</a></li>
-          <li><a href="anouk-journo.html">Anouk Journo</a></li>
-          <li><a href="peintures.html">Meichelus</a></li>
-        </ul>
-      </div>
+<footer>
+  <span class="footer-text"></span><br/>
+  © Webmaster Meichelus
+</footer>
 
-      <div class="plan-categorie">
-        <h2>Ateliers &amp; Coaching</h2>
-        <ul>
-          <li><a href="ateliers.html">Ateliers &amp; Coaching</a></li>
-          <li><a href="mots-pour-maux.html">Écriture thérapeutique</a></li>
-          <li><a href="mediation-animale.html">Médiation animale</a></li>
-          <li><a href="amis-mots.html">Collection Amis-Mots</a></li>
-        </ul>
-      </div>
+<script>
 
-      <div class="plan-categorie">
-        <h2>Éditions</h2>
-        <ul>
-          <li><a href="edition.html">Manuscrits &amp; projets</a></li>
-          <li><a href="edition.html#raconter-le-monde">Collection Raconter le monde</a></li>
-          <li><a href="edition.html#immersion">Collection Immersion</a></li>
-          <li><a href="edition.html#manifestes">Collection Manifestes</a></li>
-          <li><a href="edition.html#romans-jeunesse">Romans jeunesse</a></li>
-        </ul>
-      </div>
+const contentFR = {
+  bandeau: "Les éditions L'AMagie soutiennent les librairies indépendantes",
+  titre: "L'AMagie — Maison d'édition indépendante, non conformiste et libre",
+  section1: "✦ Qui sommes-nous ?",
+  link1_1: "Qui sommes-nous",
+  link1_2: "Fonctionnement de l'association",
+  link1_3: "Anouk Journo",
+  link1_4: "Meichelus",
+  section2: "✦ Ateliers & Coaching",
+  link2_1: "Ateliers & Coaching",
+  link2_2: "Écriture thérapeutique",
+  link2_3: "Médiation animale",
+  link2_4: "Collection Amis-Mots",
+  section3: "✦ Éditions",
+  link3_1: "Manuscrits & projets",
+  link3_2: "Collection Raconter le monde",
+  link3_3: "Collection Immersion",
+  link3_4: "Collection Manifestes",
+  link3_5: "Romans jeunesse",
+  section4: "✦ Poésie & Arts",
+  link4_1: "Poésie au jour le jour",
+  link4_2: "Peintures & Dessins",
+  link4_3: "Événements & Presse",
+  section5: "✦ Liens utiles",
+  link5_1: "Boutique",
+  link5_2: "FAQ",
+  link5_3: "Contact",
+  link5_4: "Chaîne Youtube",
+  link5_5: "Mentions légales",
+  footer: "© L'AMagie ✦ Maison d'édition indépendante ✦ Félines-Minervois"
+};
 
-      <div class="plan-categorie">
-        <h2>Poésie &amp; Arts</h2>
-        <ul>
-          <li><a href="poesie.html">Poésie au jour le jour</a></li>
-          <li><a href="peintures.html">Peintures &amp; Dessins</a></li>
-          <li><a href="evenements.html">Événements &amp; Presse</a></li>
-        </ul>
-      </div>
+const contentEN = {
+  bandeau: "L'AMagie editions support independent bookstores worldwide",
+  titre: "L'AMagie — Independent, Non-conformist and Free Publishing House",
+  section1: "✦ Who Are We?",
+  link1_1: "Who Are We",
+  link1_2: "How the Association Works",
+  link1_3: "Anouk Journo",
+  link1_4: "Meichelus",
+  section2: "✦ Workshops & Coaching",
+  link2_1: "Workshops & Coaching",
+  link2_2: "Therapeutic Writing",
+  link2_3: "Animal Mediation",
+  link2_4: "Friends-Words Collection",
+  section3: "✦ Editions",
+  link3_1: "Manuscripts & Projects",
+  link3_2: "Collection: Telling the World (Raconter le monde)",
+  link3_3: "Immersion Collection",
+  link3_4: "Manifestos Collection",
+  link3_5: "Young Adult Novels",
+  section4: "✦ Poetry & Arts",
+  link4_1: "Poetry Day by Day",
+  link4_2: "Paintings & Drawings",
+  link4_3: "Events & Press",
+  section5: "✦ Useful Links",
+  link5_1: "Shop",
+  link5_2: "FAQ",
+  link5_3: "Contact",
+  link5_4: "Youtube Channel",
+  link5_5: "Legal Notice",
+  footer: "© L'AMagie ✦ Independent Publishing House | Worldwide Publications ✦ Félines-Minervois"
+};
 
-      <div class="plan-categorie">
-        <h2>Liens utiles</h2>
-        <ul>
-          <li><a href="boutique.html">Boutique</a></li>
-          <li><a href="faq.html">FAQ</a></li>
-          <li><a href="contact.html">Contact</a></li>
-          <li><a href="youtube.html">Chaîne Youtube</a></li>
-          <li><a href="mentions-legales.html">Mentions légales</a></li>
-        </ul>
-      </div>
+function setLanguage(lang) {
+  const content = lang === 'fr' ? contentFR : contentEN;
+  
+  document.querySelector('.bandeau-text').textContent = content.bandeau;
+  document.querySelector('.titre-principal').textContent = content.titre;
+  document.querySelector('.section-title-1').textContent = content.section1;
+  document.querySelector('.link-1-1').textContent = content.link1_1;
+  document.querySelector('.link-1-2').textContent = content.link1_2;
+  document.querySelector('.link-1-3').textContent = content.link1_3;
+  document.querySelector('.link-1-4').textContent = content.link1_4;
+  document.querySelector('.section-title-2').textContent = content.section2;
+  document.querySelector('.link-2-1').textContent = content.link2_1;
+  document.querySelector('.link-2-2').textContent = content.link2_2;
+  document.querySelector('.link-2-3').textContent = content.link2_3;
+  document.querySelector('.link-2-4').textContent = content.link2_4;
+  document.querySelector('.section-title-3').textContent = content.section3;
+  document.querySelector('.link-3-1').textContent = content.link3_1;
+  document.querySelector('.link-3-2').textContent = content.link3_2;
+  document.querySelector('.link-3-3').textContent = content.link3_3;
+  document.querySelector('.link-3-4').textContent = content.link3_4;
+  document.querySelector('.link-3-5').textContent = content.link3_5;
+  document.querySelector('.section-title-4').textContent = content.section4;
+  document.querySelector('.link-4-1').textContent = content.link4_1;
+  document.querySelector('.link-4-2').textContent = content.link4_2;
+  document.querySelector('.link-4-3').textContent = content.link4_3;
+  document.querySelector('.section-title-5').textContent = content.section5;
+  document.querySelector('.link-5-1').textContent = content.link5_1;
+  document.querySelector('.link-5-2').textContent = content.link5_2;
+  document.querySelector('.link-5-3').textContent = content.link5_3;
+  document.querySelector('.link-5-4').textContent = content.link5_4;
+  document.querySelector('.link-5-5').textContent = content.link5_5;
+  document.querySelector('.footer-text').textContent = content.footer;
+  
+  document.documentElement.lang = lang;
+  
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.classList.remove('active');
+  });
+  document.querySelector(`[data-lang="${lang}"]`).classList.add('active');
+  
+  localStorage.setItem('l-amagie-lang', lang);
+}
 
-    </div>
+document.querySelectorAll('.lang-btn').forEach(btn => {
+  btn.addEventListener('click', function() {
+    setLanguage(this.getAttribute('data-lang'));
+  });
+});
 
-    <p class="plan-mentions">
-      © L&rsquo;AMagie <span class="etoile">✦</span> Maison d&rsquo;édition indépendante <span class="etoile">✦</span> Félines-Minervois
-    </p>
-    <p class="plan-webmaster">© Webmaster Meichelus : <a href="mailto:meichelus@l-amagie.art">meichelus@l-amagie.art</a></p>
-  </section>
+window.addEventListener('DOMContentLoaded', function() {
+  const savedLang = localStorage.getItem('l-amagie-lang') || 'fr';
+  setLanguage(savedLang);
+});
+
+</script>
 
 </body>
 </html>

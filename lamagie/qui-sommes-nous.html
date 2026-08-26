@@ -77,7 +77,33 @@ em{font-style:italic;color:#5a4a30;}
   line-height:1;
   text-decoration:none;
 }
-.entete-retour{display:flex;align-items:center;justify-content:flex-end;}
+.entete-retour{display:flex;align-items:center;justify-content:flex-end;gap:16px;}
+.toggle-langue{
+  display:flex;
+  gap:8px;
+  align-items:center;
+}
+.toggle-langue button{
+  background:transparent;
+  border:1px solid rgba(184,154,92,.4);
+  padding:4px 10px;
+  border-radius:2px;
+  cursor:pointer;
+  font-family:'Cormorant Garamond',Georgia,serif;
+  font-size:0.8rem;
+  color:#5a4a30;
+  transition:all 0.3s;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+.toggle-langue button.active{
+  background:#b89a5c;
+  color:white;
+  border-color:#b89a5c;
+}
+.toggle-langue button:hover{
+  background:rgba(184,154,92,.1);
+}
 .entete-retour a{
   font-family:'Cormorant Garamond',Georgia,serif;
   font-size:.92rem;
@@ -99,6 +125,8 @@ em{font-style:italic;color:#5a4a30;}
   .entete-site{grid-template-columns:auto 1fr auto;padding:14px 16px;gap:12px;}
   .entete-logo img{height:42px;}
   .entete-titre{font-size:1.4rem;}
+  .toggle-langue{gap:6px;}
+  .toggle-langue button{padding:3px 8px;font-size:0.7rem;}
   .entete-retour a{font-size:.7rem;letter-spacing:.1em;padding:6px 10px;}
   .entete-retour a::before{content:'⌂';margin-right:0;}
   .entete-retour a span{display:none;}
@@ -206,255 +234,187 @@ em{font-style:italic;color:#5a4a30;}
 /* ============================================================
    SECTION LES FONDATEURS — titre orné + médaillons
    ============================================================ */
-.section-titre{
-  text-align:center;
-  margin:56px 0 36px;
-}
-.section-titre h2{
-  display:inline-block;
-  font-family:'Cormorant Garamond',serif;
-  font-weight:500;
-  font-size:clamp(1.4rem,2.8vw,1.85rem);
-  letter-spacing:.18em;
-  color:#3a3220;
-  text-transform:uppercase;
-  position:relative;
-  padding:0 30px;
-}
-.section-titre h2::before,
-.section-titre h2::after{
-  content:'❦';
-  position:absolute;
-  top:50%;transform:translateY(-50%);
-  color:#b89a5c;
-  font-size:.85em;
-}
+.section-titre{text-align:center;margin:56px 0 32px;}
+.section-titre h2{display:inline-block;font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(1.4rem,2.8vw,1.85rem);letter-spacing:.18em;color:#3a3220;text-transform:uppercase;position:relative;padding:0 30px;}
+.section-titre h2::before,.section-titre h2::after{content:'❦';position:absolute;top:50%;transform:translateY(-50%);color:#b89a5c;font-size:.85em;}
 .section-titre h2::before{left:0;}
 .section-titre h2::after{right:0;}
 
-/* ============================================================
-   CARTES FONDATEURS — médaillon circulaire à gauche/droite
-   ============================================================ */
 .fondateur{
   display:grid;
-  grid-template-columns:240px 1fr;
+  grid-template-columns:1fr 1fr;
   gap:48px;
-  align-items:center;
-  background:rgba(246,239,216,.5);
-  border:1px solid rgba(184,154,92,.2);
-  border-radius:2px;
-  padding:44px 48px;
-  margin:0 auto 32px;
-  position:relative;
-  box-shadow:0 4px 14px rgba(90,74,48,.06);
+  margin:0 auto 48px;
+  align-items:start;
 }
-.fondateur::before,
-.fondateur::after{
-  content:'';
-  position:absolute;
-  width:18px;height:18px;
-  border:1px solid rgba(184,154,92,.4);
-  pointer-events:none;
-}
-.fondateur::before{top:6px;left:6px;border-right:0;border-bottom:0;}
-.fondateur::after{bottom:6px;right:6px;border-left:0;border-top:0;}
-.fondateur.inverse{grid-template-columns:1fr 240px;}
-.fondateur.inverse .portrait{order:2;}
-.fondateur.inverse .biographie{order:1;}
+.fondateur.inverse{grid-template-columns:1fr 1fr;direction:rtl;}
+.fondateur.inverse > *{direction:ltr;}
 
-.portrait{
-  width:220px;height:220px;
-  border-radius:50%;
-  overflow:hidden;
-  position:relative;
-  margin:0 auto;
-  border:1px solid rgba(184,154,92,.4);
-  box-shadow:
-    0 0 0 6px rgba(241,234,212,.75),
-    0 0 0 7px rgba(184,154,92,.28),
-    0 8px 22px rgba(90,74,48,.14);
-}
+.portrait{position:relative;}
 .portrait img{
-  width:100%;height:100%;
-  object-fit:cover;
-  object-position:center top;
-  filter:saturate(.88) brightness(1.02);
+  width:100%;
+  display:block;
+  border-radius:8px;
+  box-shadow:
+    0 6px 22px rgba(58,50,32,0.12),
+    0 0 0 1px rgba(184,154,92,.22),
+    0 0 0 8px rgba(241,234,212,.5);
+  background:rgba(255,253,245,.3);
+  padding:12px;
 }
 
-.biographie .role{
-  display:block;
+.biographie{display:flex;flex-direction:column;}
+.role{
   font-family:'Cormorant Garamond',serif;
-  font-size:.7rem;
-  letter-spacing:.28em;
+  font-size:.82rem;
+  letter-spacing:.22em;
   text-transform:uppercase;
   color:#8a6d2f;
-  margin-bottom:.7rem;
+  margin-bottom:12px;
 }
-.biographie h3{
-  font-family:'Cormorant Garamond',serif;
+.nom-fondateur{
+  font-family:'Cormorant Garamond',Georgia,serif;
   font-weight:500;
-  font-size:1.7rem;
+  font-size:clamp(1.4rem,2.5vw,1.8rem);
   color:#3a3220;
-  letter-spacing:.02em;
-  margin:0 0 1rem;
-  line-height:1.15;
+  margin:8px 0 16px;
+  line-height:1.2;
 }
-.biographie h3 .alias{
+.alias{
   display:block;
-  font-family:'Pinyon Script','Cormorant Garamond',cursive;
-  font-size:.65em;
-  letter-spacing:.02em;
+  font-weight:400;
+  font-size:0.75em;
   color:#7a6a48;
-  margin-top:.3rem;
+  margin-top:6px;
+  letter-spacing:.08em;
 }
-.biographie p{
-  font-size:1.02rem;
+.texte-biographie{
+  font-size:1.05rem;
   line-height:1.8;
   color:#3a3220;
-  margin:0 0 .85rem;
+  margin:0 0 1rem;
 }
+.texte-biographie em{color:#5a4a30;font-weight:500;}
+
 .lien-externe{
   display:inline-block;
-  margin-top:.6rem;
+  margin-top:12px;
   font-family:'Cormorant Garamond',serif;
   font-size:.95rem;
-  font-style:italic;
-  color:#8a6d2f;
+  letter-spacing:.15em;
+  color:#b89a5c;
   border-bottom:1px solid rgba(184,154,92,.4);
-  padding-bottom:.1rem;
   transition:color .3s, border-color .3s;
 }
-.lien-externe:hover{color:#b89a5c;border-color:#b89a5c;}
+.lien-externe:hover{
+  color:#8a6d2f;
+  border-bottom-color:#8a6d2f;
+}
 
-@media(max-width:760px){
-  .fondateur,
-  .fondateur.inverse{
-    grid-template-columns:1fr;
-    gap:24px;
-    padding:36px 24px;
-    text-align:center;
-  }
-  .fondateur.inverse .portrait,
-  .fondateur.inverse .biographie{order:unset;}
-  .portrait{width:180px;height:180px;}
-  .biographie h3{font-size:1.45rem;}
+@media(max-width:900px){
+  .fondateur{grid-template-columns:1fr;gap:32px;}
+  .fondateur.inverse{direction:ltr;}
 }
 
 /* ============================================================
    ARTICLE DE PRESSE
    ============================================================ */
-.presse{
-  max-width:760px;
-  margin:48px auto 0;
-  text-align:center;
-}
+.presse{margin:48px 0;}
 .presse-cadre{
-  display:inline-block;
-  background:rgba(246,239,216,.7);
-  border:1px solid rgba(184,154,92,.32);
-  padding:30px 30px 24px;
   position:relative;
-  box-shadow:
-    0 8px 24px rgba(90,74,48,.12),
-    inset 0 0 0 1px rgba(184,154,92,.06);
-  max-width:100%;
+  text-align:center;
+  display:inline-block;
+  width:100%;
+  max-width:680px;
+  margin:0 auto;
 }
 .presse-label{
-  position:absolute;
-  top:-12px;
-  left:50%;
-  transform:translateX(-50%);
-  font-family:'Cormorant Garamond',serif;
-  font-size:.65rem;
-  letter-spacing:.3em;
-  color:#8a6d2f;
-  text-transform:uppercase;
-  background:#ece2c8;
-  padding:4px 16px;
-  border:1px solid rgba(184,154,92,.32);
-  border-radius:99px;
-}
-.presse img{
   display:block;
-  margin:0 auto;
-  max-width:100%;
-  height:auto;
-  border:1px solid rgba(184,154,92,.22);
-  box-shadow:0 6px 18px rgba(90,74,48,.18);
+  font-family:'Cormorant Garamond',serif;
+  font-size:.7rem;
+  letter-spacing:.32em;
+  text-transform:uppercase;
+  color:#8a6d2f;
+  margin-bottom:20px;
+}
+.presse-cadre img{
+  width:100%;
+  border-radius:6px;
+  box-shadow:
+    0 6px 24px rgba(58,50,32,0.12),
+    0 0 0 1px rgba(184,154,92,.22),
+    0 0 0 8px rgba(241,234,212,.5);
+  background:rgba(255,253,245,.4);
+  padding:10px;
 }
 .presse-legende{
-  margin-top:1.2rem;
+  margin-top:20px;
   font-family:'Pinyon Script','Cormorant Garamond',cursive;
-  font-size:1.3rem;
-  color:#5a4a30;
-  line-height:1.4;
+  font-size:1.15rem;
+  color:#7a6a48;
+  line-height:1.5;
+  font-style:italic;
 }
-.presse-legende .source{
+.source{
   display:block;
-  margin-top:.45rem;
+  margin-top:10px;
   font-family:'Cormorant Garamond',serif;
-  font-size:.72rem;
-  letter-spacing:.24em;
-  color:#8a6d2f;
+  font-size:.85rem;
+  letter-spacing:.12em;
   text-transform:uppercase;
+  color:#8a6d2f;
+  font-style:normal;
 }
 
 /* ============================================================
    NAVIGATION SUITE
    ============================================================ */
-.navigation-suite{
-  margin:56px auto 0;
-  max-width:820px;
-  text-align:center;
-}
+.navigation-suite{margin:56px 0;text-align:center;}
 .filet-ornement{
   display:flex;
   align-items:center;
   justify-content:center;
   gap:14px;
-  margin:0 auto 28px;
-  max-width:240px;
+  margin:0 auto 32px;
+  max-width:200px;
 }
 .filet-ornement::before,
 .filet-ornement::after{
   content:'';
   flex:1;
   height:1px;
-  background:linear-gradient(90deg,transparent,rgba(184,154,92,.6),transparent);
+  background:linear-gradient(90deg,transparent,rgba(184,154,92,.55),transparent);
 }
 .filet-ornement .etoile{color:#b89a5c;font-size:.85rem;line-height:1;}
-
 .navigation-suite-grille{
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  gap:18px 32px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:24px;
+  max-width:600px;
+  margin:0 auto;
 }
 .navigation-suite-grille a{
-  display:inline-block;
   font-family:'Cormorant Garamond',serif;
-  font-style:italic;
   font-size:1.05rem;
-  color:#3a3220;
-  padding:11px 24px;
-  border:1px solid rgba(184,154,92,.32);
-  background:rgba(246,239,216,.4);
+  letter-spacing:.12em;
+  color:#5a4a30;
+  padding:16px 24px;
+  border:1px solid rgba(184,154,92,.3);
   border-radius:2px;
-  transition:color .3s, border-color .3s, background-color .3s, transform .3s;
+  transition:color .3s, background-color .3s, border-color .3s;
 }
 .navigation-suite-grille a:hover{
   color:#b89a5c;
   border-color:#b89a5c;
-  background:rgba(246,239,216,.7);
-  transform:translateY(-2px);
+  background:rgba(184,154,92,.05);
 }
-.navigation-suite-grille a::after{content:' →';font-style:normal;}
+@media(max-width:600px){
+  .navigation-suite-grille{grid-template-columns:1fr;gap:16px;}
+}
 
 /* ============================================================
-   PLAN DU SITE (footer)
+   PLAN DU SITE (footer commun)
    ============================================================ */
-
-/* === PLAN DU SITE — discret, élégant, utile au SEO === */
 .plan-site{
   background:transparent;
   padding:48px 24px 36px;
@@ -519,11 +479,6 @@ em{font-style:italic;color:#5a4a30;}
   color:#b89a5c;
   border-bottom-color:rgba(184,154,92,.4);
 }
-.plan-categorie .label{
-  color:#7a6a48;
-  font-style:italic;
-  font-size:.88rem;
-}
 
 .plan-mentions{
   font-family:'Cormorant Garamond',serif;
@@ -549,14 +504,12 @@ em{font-style:italic;color:#5a4a30;}
 .plan-webmaster a{color:inherit;border-bottom:1px solid rgba(184,154,92,.3);transition:color .3s, border-color .3s;}
 .plan-webmaster a:hover{color:#b89a5c;border-bottom-color:#b89a5c;}
 
-
 @media(max-width:560px){
   .plan-site{padding:32px 18px 24px;}
   .plan-site-grille{gap:18px;text-align:center;}
   .plan-categorie h2{text-align:center;}
   .plan-mentions{font-size:.7rem;letter-spacing:.12em;}
 }
-
 
 /* ============================================================
    ANIMATION RÉVÉLATION SCROLL
@@ -570,6 +523,28 @@ em{font-style:italic;color:#5a4a30;}
 @media(prefers-reduced-motion: reduce){
   .reveler{opacity:1;transform:none;transition:none;}
 }
+
+/* ============================================================
+   GESTION BILINGUE FR/EN
+   ============================================================ */
+[data-lang="fr"]{display:inherit !important;}
+[data-lang="en"]{display:none !important;}
+
+body.lang-en [data-lang="fr"]{display:none !important;}
+body.lang-en [data-lang="en"]{display:inherit !important;}
+
+/* Spécifique pour les balises block et inline */
+[data-lang="fr"]:not(a):not(span):not(button){display:block !important;}
+[data-lang="en"]:not(a):not(span):not(button){display:none !important;}
+
+body.lang-en [data-lang="fr"]:not(a):not(span):not(button){display:none !important;}
+body.lang-en [data-lang="en"]:not(a):not(span):not(button){display:block !important;}
+
+a[data-lang="fr"], span[data-lang="fr"], button[data-lang="fr"]{display:inline !important;}
+a[data-lang="en"], span[data-lang="en"], button[data-lang="en"]{display:none !important;}
+
+body.lang-en a[data-lang="fr"], body.lang-en span[data-lang="fr"], body.lang-en button[data-lang="fr"]{display:none !important;}
+body.lang-en a[data-lang="en"], body.lang-en span[data-lang="en"], body.lang-en button[data-lang="en"]{display:inline !important;}
 </style>
 </head>
 
@@ -584,6 +559,10 @@ em{font-style:italic;color:#5a4a30;}
     </div>
     <a href="index.html" class="entete-titre" aria-label="L'AMagie — Accueil">L&rsquo;AMagie</a>
     <div class="entete-retour">
+      <div class="toggle-langue">
+        <button class="lang-btn active" data-lang="fr">FR</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+      </div>
       <a href="index.html"><span>Retour à l&rsquo;accueil</span></a>
     </div>
   </header>
@@ -591,12 +570,20 @@ em{font-style:italic;color:#5a4a30;}
   <!-- HÉROS DE PAGE -->
   <section class="heros-page">
     <nav class="fil-ariane" aria-label="Fil d'ariane">
-      <a href="index.html">Accueil</a>
+      <a href="index.html" data-lang="fr">Accueil</a>
+      <a href="index.html" data-lang="en">Home</a>
       <span class="sep">·</span>
-      <span>Qui sommes-nous</span>
+      <span data-lang="fr">Qui sommes-nous</span>
+      <span data-lang="en">Who Are We</span>
     </nav>
-    <h1 class="titre-page">Qui sommes-nous&nbsp;?</h1>
-    <p class="sous-titre-page">L&rsquo;esprit de la maison</p>
+    <h1 class="titre-page">
+      <span data-lang="fr">Qui sommes-nous&nbsp;?</span>
+      <span data-lang="en">Who Are We?</span>
+    </h1>
+    <p class="sous-titre-page">
+      <span data-lang="fr">L&rsquo;esprit de la maison</span>
+      <span data-lang="en">The Spirit of Our House</span>
+    </p>
     <div class="medaillon-titre" aria-hidden="true">✦</div>
   </section>
 
@@ -605,14 +592,22 @@ em{font-style:italic;color:#5a4a30;}
 
     <!-- INTRODUCTION (carte parchemin clair) -->
     <article class="carte reveler">
-      <p>L&rsquo;AMagie a été créée en 2024 par <em>Anouk Journo</em> et <em>Michel Foucher</em>. Elle propose des ateliers et séances individuelles d&rsquo;écriture, de médiation animale, et porte les éditions L&rsquo;AMagie.</p>
-      <p>Notre ambition est simple&nbsp;: offrir une alternative <em>solidaire et accessible</em> à celles et ceux qui souhaitent publier leurs œuvres. Ni contraintes de l&rsquo;édition traditionnelle, ni détour par l&rsquo;édition à compte d&rsquo;auteur — nous privilégions une relation <em>bienveillante, humaine et respectueuse</em> de la création.</p>
-      <p>Nous croyons à cet élan fragile qui fait naître une œuvre&nbsp;: le moment où la plume s&rsquo;anime, où l&rsquo;espoir surgit, renaît, vibre… et se partage.</p>
+      <p data-lang="fr">L&rsquo;AMagie a été créée en 2024 par <em>Anouk Journo</em> et <em>Michel Foucher</em>. Elle propose des ateliers et séances individuelles d&rsquo;écriture, de médiation animale, et porte les éditions L&rsquo;AMagie.</p>
+      <p data-lang="en">L'AMagie was founded in 2024 by <em>Anouk Journo</em> and <em>Michel Foucher</em>. We offer writing workshops and individual sessions, animal mediation, and publish our own literary works through L'AMagie Éditions.</p>
+      
+      <p data-lang="fr">Notre ambition est simple&nbsp;: offrir une alternative <em>solidaire et accessible</em> à celles et ceux qui souhaitent publier leurs œuvres. Ni contraintes de l&rsquo;édition traditionnelle, ni détour par l&rsquo;édition à compte d&rsquo;auteur — nous privilégions une relation <em>bienveillante, humaine et respectueuse</em> de la création.</p>
+      <p data-lang="en">Our vision is straightforward: offer a <em>caring and accessible</em> alternative to those who wish to publish their work. Neither the constraints of traditional publishing nor the expense of self-publishing — we prioritize a <em>respectful, human and heartfelt</em> relationship with creativity.</p>
+      
+      <p data-lang="fr">Nous croyons à cet élan fragile qui fait naître une œuvre&nbsp;: le moment où la plume s&rsquo;anime, où l&rsquo;espoir surgit, renaît, vibre… et se partage.</p>
+      <p data-lang="en">We believe in that fragile impulse that brings a work to life: the moment when the pen awakens, when hope emerges, is reborn, vibrates… and finds its voice.</p>
     </article>
 
     <!-- LES FONDATEURS -->
     <div class="section-titre reveler">
-      <h2>Les fondateurs</h2>
+      <h2>
+        <span data-lang="fr">Les fondateurs</span>
+        <span data-lang="en">The Founders</span>
+      </h2>
     </div>
 
     <!-- Anouk Journo -->
@@ -621,44 +616,62 @@ em{font-style:italic;color:#5a4a30;}
         <img src="images/anouk-journo.jpg" alt="Anouk Journo" loading="lazy"/>
       </div>
       <div class="biographie">
-        <span class="role">Autrice · Traductrice · Animatrice d&rsquo;ateliers d&rsquo;écriture</span>
+        <span class="role" data-lang="fr">Autrice · Traductrice · Animatrice d&rsquo;ateliers d&rsquo;écriture</span>
+        <span class="role" data-lang="en">Author · Translator · Writing Workshop Facilitator</span>
         
         <h3 class="nom-fondateur">Anouk Journo</h3>
-        <p class="texte-biographie">
-          Anouk travaille dans l’édition depuis une trentaine d’années — autrice de documentaires animaliers, de fictions, de poésie, traductrice d’anglais, formatrice.
-        </p>
-        <p class="texte-biographie">
-          Elle a publié de très nombreux textes chez Bayard, Fleurus, Gallimard jeunesse, Rustica… Certains de ses titres seront peu à peu réédités dans une version enrichie par L’AMagie.
-        </p>
-        <p class="texte-biographie">
-          Passionnée par les animaux, elle s’est récemment formée à la médiation animale.
-        </p>
+        <p class="texte-biographie" data-lang="fr">Anouk travaille dans l'édition depuis une trentaine d'années — autrice de documentaires animaliers, de fictions, de poésie, traductrice d'anglais, formatrice.</p>
+        <p class="texte-biographie" data-lang="en">Anouk has been working in publishing for nearly thirty years — author of wildlife documentaries, fiction, poetry, English translator, and educator.</p>
+        
+        <p class="texte-biographie" data-lang="fr">Elle a publié de très nombreux textes chez Bayard, Fleurus, Gallimard jeunesse, Rustica… Certains de ses titres seront peu à peu réédités dans une version enrichie par L'AMagie.</p>
+        <p class="texte-biographie" data-lang="en">She has published numerous titles with Bayard, Fleurus, Gallimard Jeunesse, Rustica, and others. Many of her works will gradually be re-published in enriched editions by L'AMagie.</p>
+        
+        <p class="texte-biographie" data-lang="fr">Passionnée par les animaux, elle s'est récemment formée à la médiation animale.</p>
+        <p class="texte-biographie" data-lang="en">Passionate about animals, she recently trained as an animal mediation facilitator.</p>
 
-        <a class="lien-externe" href="https://www.anoukjourno.fr/" target="_blank" rel="noopener">✦ Visiter son site</a>
+        <a class="lien-externe" href="https://www.anoukjourno.fr/" target="_blank" rel="noopener">
+          <span data-lang="fr">✦ Visiter son site</span>
+          <span data-lang="en">✦ Visit Her Website</span>
+        </a>
       </div>
     </article>
 
-    <!-- Meichelus -->
+    <!-- Meichelus — BLOC CORRIGÉ -->
     <article class="fondateur inverse reveler">
       <div class="portrait">
         <img src="images/meichelus-portrait.jpg" alt="Michel Foucher, dit Meichelus" loading="lazy"/>
       </div>
       <div class="biographie">
-        <span class="role">Peintre · Illustrateur · Coordinateur éditorial</span>
-        <h3>Michel Foucher<span class="alias">dit Meichelus</span></h3>
-        <p>Michel a été infirmier en <em>psychiatrie et pédo-psychiatrie</em>, ainsi que pompier, dans une autre vie. L&rsquo;art-thérapie était, au quotidien, l&rsquo;une de ses ressources.</p>
-        <p>Aujourd&rsquo;hui, il se consacre à plein temps à la <em>peinture pointilliste</em> et à de nombreux projets graphiques et créatifs. Il coordonne les étapes du processus éditorial et illustre bon nombre des ouvrages publiés par L&rsquo;AMagie.</p>
-        <a class="lien-externe" href="https://meichelus-art.blogspot.com/" target="_blank" rel="noopener">✦ Visiter son blog</a>
+        <span class="role" data-lang="fr">Peintre · Illustrateur · Coordinateur éditorial</span>
+        <span class="role" data-lang="en">Painter · Illustrator · Editorial Director</span>
+        
+        <h3 class="nom-fondateur">
+          <span data-lang="fr">Michel Foucher<span class="alias">dit Meichelus</span></span>
+          <span data-lang="en">Michel Foucher<span class="alias">known as Meichelus</span></span>
+        </h3>
+        
+        <p class="texte-biographie" data-lang="fr">Michel a été infirmier en <em>psychiatrie et pédo-psychiatrie</em>, ainsi que pompier, dans une autre vie. L&rsquo;art-thérapie était, au quotidien, l&rsquo;une de ses ressources.</p>
+        <p class="texte-biographie" data-lang="en">Michel was once a nurse in <em>psychiatry and child psychiatry</em>, and also served as a firefighter. Art therapy was, in his daily practice, one of his most valuable resources.</p>
+        
+        <p class="texte-biographie" data-lang="fr">Aujourd&rsquo;hui, il se consacre à plein temps à la <em>peinture pointilliste</em> et à de nombreux projets graphiques et créatifs. Il coordonne les étapes du processus éditorial et illustre bon nombre des ouvrages publiés par L&rsquo;AMagie.</p>
+        <p class="texte-biographie" data-lang="en">Today, he devotes himself full-time to <em>pointillist painting</em> and numerous graphic and creative projects. He oversees the editorial process for L'AMagie publications and illustrates many of the works we publish.</p>
+        
+        <a class="lien-externe" href="https://meichelus-art.blogspot.com/" target="_blank" rel="noopener">
+          <span data-lang="fr">✦ Visiter son blog</span>
+          <span data-lang="en">✦ Visit His Blog</span>
+        </a>
       </div>
     </article>
 
     <!-- ARTICLE DE PRESSE -->
     <section class="presse reveler">
       <figure class="presse-cadre">
-        <span class="presse-label">Dans la presse</span>
+        <span class="presse-label" data-lang="fr">Dans la presse</span>
+        <span class="presse-label" data-lang="en">In the Press</span>
         <img src="images/article-presse-lamagie.jpg" alt="Article de L'Indépendant consacré à L'AMagie" loading="lazy"/>
         <figcaption class="presse-legende">
-          «&nbsp;Avec L&rsquo;AMagie, Anouk et Michel offrent un voyage en poésie&nbsp;»
+          <span data-lang="fr">«&nbsp;Avec L&rsquo;AMagie, Anouk et Michel offrent un voyage en poésie&nbsp;»</span>
+          <span data-lang="en">"With L'AMagie, Anouk and Michel offer a journey through poetry"</span>
           <span class="source">Félines-Minervois · L&rsquo;Indépendant</span>
         </figcaption>
       </figure>
@@ -670,8 +683,14 @@ em{font-style:italic;color:#5a4a30;}
         <span class="etoile">✦</span>
       </div>
       <div class="navigation-suite-grille">
-        <a href="fonctionnement.html">Fonctionnement &amp; rôle de l&rsquo;association</a>
-        <a href="edition.html">Découvrir nos collections</a>
+        <a href="fonctionnement.html">
+          <span data-lang="fr">Fonctionnement &amp; rôle de l&rsquo;association</span>
+          <span data-lang="en">How the Association Works</span>
+        </a>
+        <a href="edition.html">
+          <span data-lang="fr">Découvrir nos collections</span>
+          <span data-lang="en">Discover Our Collections</span>
+        </a>
       </div>
     </nav>
 
@@ -686,64 +705,113 @@ em{font-style:italic;color:#5a4a30;}
     <div class="plan-site-grille">
 
       <div class="plan-categorie">
-        <h2>Qui sommes-nous&nbsp;?</h2>
+        <h2>
+          <span data-lang="fr">Qui sommes-nous&nbsp;?</span>
+          <span data-lang="en">Who Are We?</span>
+        </h2>
         <ul>
-          <li><a href="qui-sommes-nous.html">Qui sommes-nous</a></li>
-          <li><a href="fonctionnement.html">Fonctionnement de l&rsquo;association</a></li>
+          <li><a href="qui-sommes-nous.html"><span data-lang="fr">Qui sommes-nous</span><span data-lang="en">Who Are We</span></a></li>
+          <li><a href="fonctionnement.html"><span data-lang="fr">Fonctionnement de l&rsquo;association</span><span data-lang="en">How the Association Works</span></a></li>
           <li><a href="anouk-journo.html">Anouk Journo</a></li>
         </ul>
       </div>
 
       <div class="plan-categorie">
-        <h2>Ateliers &amp; Coaching</h2>
+        <h2>
+          <span data-lang="fr">Ateliers &amp; Coaching</span>
+          <span data-lang="en">Workshops & Coaching</span>
+        </h2>
         <ul>
-          <li><a href="ateliers.html">Ateliers &amp; Coaching</a></li>
-          <li><a href="mots-pour-maux.html">Écriture thérapeutique</a></li>
-          <li><a href="mediation-animale.html">Médiation animale</a></li>
-          <li><a href="amis-mots.html">Collection Amis-Mots</a></li>
+          <li><a href="ateliers.html"><span data-lang="fr">Ateliers &amp; Coaching</span><span data-lang="en">Workshops & Coaching</span></a></li>
+          <li><a href="mots-pour-maux.html"><span data-lang="fr">Écriture thérapeutique</span><span data-lang="en">Therapeutic Writing</span></a></li>
+          <li><a href="mediation-animale.html"><span data-lang="fr">Médiation animale</span><span data-lang="en">Animal Mediation</span></a></li>
+          <li><a href="amis-mots.html"><span data-lang="fr">Collection Amis-Mots</span><span data-lang="en">Friends-Words Collection (Collection Amis-Mots)</span></a></li>
         </ul>
       </div>
 
       <div class="plan-categorie">
-        <h2>Éditions</h2>
+        <h2>
+          <span data-lang="fr">Éditions</span>
+          <span data-lang="en">Editions</span>
+        </h2>
         <ul>
-          <li><a href="edition.html">Manuscrits &amp; projets</a></li>
-          <li><a href="edition.html#raconter-le-monde">Collection Raconter le monde</a></li>
-          <li><a href="edition.html#immersion">Collection Immersion</a></li>
-          <li><a href="edition.html#manifestes">Collection Manifestes</a></li>
-          <li><a href="edition.html#romans-jeunesse">Romans jeunesse</a></li>
+          <li><a href="edition.html"><span data-lang="fr">Manuscrits &amp; projets</span><span data-lang="en">Manuscripts & Projects</span></a></li>
+          <li><a href="edition.html#raconter-le-monde"><span data-lang="fr">Collection Raconter le monde</span><span data-lang="en">Collection: Telling the World (Raconter le monde)</span></a></li>
+          <li><a href="edition.html#immersion"><span data-lang="fr">Collection Immersion</span><span data-lang="en">Immersion Collection</span></a></li>
+          <li><a href="edition.html#manifestes"><span data-lang="fr">Collection Manifestes</span><span data-lang="en">Manifestos Collection</span></a></li>
+          <li><a href="edition.html#romans-jeunesse"><span data-lang="fr">Romans jeunesse</span><span data-lang="en">Young Adult Novels</span></a></li>
         </ul>
       </div>
 
       <div class="plan-categorie">
-        <h2>Poésie &amp; Arts</h2>
+        <h2>
+          <span data-lang="fr">Poésie &amp; Arts</span>
+          <span data-lang="en">Poetry & Arts</span>
+        </h2>
         <ul>
-          <li><a href="poesie.html">Poésie au jour le jour</a></li>
-          <li><a href="peintures.html">Peintures &amp; Dessins</a></li>
-          <li><a href="evenements.html">Événements &amp; Presse</a></li>
+          <li><a href="poesie.html"><span data-lang="fr">Poésie au jour le jour</span><span data-lang="en">Poetry Day by Day</span></a></li>
+          <li><a href="peintures.html"><span data-lang="fr">Peintures &amp; Dessins</span><span data-lang="en">Paintings & Drawings</span></a></li>
+          <li><a href="evenements.html"><span data-lang="fr">Événements &amp; Presse</span><span data-lang="en">Events & Press</span></a></li>
         </ul>
       </div>
 
       <div class="plan-categorie">
-        <h2>Liens utiles</h2>
+        <h2>
+          <span data-lang="fr">Liens utiles</span>
+          <span data-lang="en">Useful Links</span>
+        </h2>
         <ul>
-          <li><a href="boutique.html">Boutique</a></li>
-          <li><a href="faq.html">FAQ</a></li>
-          <li><a href="contact.html">Contact</a></li>
-          <li><a href="youtube.html">Chaîne Youtube</a></li>
-          <li><a href="mentions-legales.html">Mentions légales</a></li>
+          <li><a href="boutique.html"><span data-lang="fr">Boutique</span><span data-lang="en">Shop</span></a></li>
+          <li><a href="faq.html"><span data-lang="fr">FAQ</span><span data-lang="en">FAQ</span></a></li>
+          <li><a href="contact.html"><span data-lang="fr">Contact</span><span data-lang="en">Contact</span></a></li>
+          <li><a href="youtube.html"><span data-lang="fr">Chaîne Youtube</span><span data-lang="en">Youtube Channel</span></a></li>
+          <li><a href="mentions-legales.html"><span data-lang="fr">Mentions légales</span><span data-lang="en">Legal Notice</span></a></li>
         </ul>
       </div>
 
     </div>
 
     <p class="plan-mentions">
-      © L&rsquo;AMagie <span class="etoile">✦</span> Maison d&rsquo;édition indépendante <span class="etoile">✦</span> Félines-Minervois
+      © L&rsquo;AMagie <span class="etoile">✦</span> <span data-lang="fr">Maison d&rsquo;édition indépendante</span><span data-lang="en">Independent Publishing House</span> <span class="etoile">✦</span> Félines-Minervois
     </p>
     <p class="plan-webmaster">© Webmaster Meichelus : <a href="mailto:meichelus@l-amagie.art">meichelus@l-amagie.art</a></p>
   </section>
 
   <script>
+    // Gestion de la langue
+    function setLanguage(lang) {
+      if (lang === 'en') {
+        document.body.classList.add('lang-en');
+        document.documentElement.lang = 'en';
+      } else {
+        document.body.classList.remove('lang-en');
+        document.documentElement.lang = 'fr';
+      }
+      localStorage.setItem('l-amagie-lang', lang);
+      updateButtonState(lang);
+    }
+
+    function updateButtonState(lang) {
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.remove('active');
+      });
+      document.querySelector(`.lang-btn[data-lang="${lang}"]`).classList.add('active');
+    }
+
+    // Event listeners
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        setLanguage(this.getAttribute('data-lang'));
+      });
+    });
+
+    // Init: charger la langue sauvegardée ou FR par défaut
+    window.addEventListener('DOMContentLoaded', function() {
+      const savedLang = localStorage.getItem('l-amagie-lang') || 'fr';
+      setLanguage(savedLang);
+    });
+
+    // Animation scroll reveal
     if ('IntersectionObserver' in window) {
       var obs = new IntersectionObserver(function(entries){
         entries.forEach(function(e){

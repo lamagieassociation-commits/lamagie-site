@@ -128,6 +128,7 @@ em{font-style:italic;color:#5a4a30;}
 }
 
 .hotspot{
+  display:block;
   position:absolute;
   cursor:pointer;
   background:transparent;
@@ -219,27 +220,27 @@ h1{
 <!-- MAQUETTE INTERACTIVE -->
 <div class="page-maquette">
   <div class="cercle-anime">
-    <img src="images/maison-lamagie.png" alt="L'AMagie"/>
+    <img src="images/maison-lamagie.png" alt="L'AMagie" onerror="this.style.display='none'"/>
   </div>
   
   <!-- HOTSPOTS (15 zones cliquables) -->
-  <button class="hotspot" style="left:2%;top:22%;width:24%;height:8%;" onclick="window.location.href='qui-sommes-nous.html';" title="Qui sommes-nous"></button>
-  <button class="hotspot" style="left:2%;top:31%;width:24%;height:8%;" onclick="window.location.href='fonctionnement.html';" title="Fonctionnement"></button>
-  <button class="hotspot" style="left:2%;top:40%;width:24%;height:8%;" onclick="window.location.href='ateliers.html';" title="Ateliers"></button>
-  <button class="hotspot" style="left:2%;top:49%;width:24%;height:8%;" onclick="window.location.href='mots-pour-maux.html';" title="Mots pour Maux"></button>
-  <button class="hotspot" style="left:2%;top:58%;width:24%;height:8%;" onclick="window.location.href='mediation-animale.html';" title="Médiation animale"></button>
-  <button class="hotspot" style="left:2%;top:67%;width:24%;height:8%;" onclick="window.location.href='amis-mots.html';" title="Amis-Mots"></button>
-  <button class="hotspot" style="left:2%;top:76%;width:24%;height:8%;" onclick="window.location.href='edition.html';" title="Édition"></button>
-  
-  <button class="hotspot" style="left:74%;top:22%;width:24%;height:8%;" onclick="window.location.href='poesie.html';" title="Poésie"></button>
-  <button class="hotspot" style="left:74%;top:31%;width:24%;height:8%;" onclick="window.location.href='peintures.html';" title="Peintures"></button>
-  <button class="hotspot" style="left:74%;top:40%;width:24%;height:8%;" onclick="window.location.href='evenements.html';" title="Événements"></button>
-  <button class="hotspot" style="left:74%;top:49%;width:24%;height:8%;" onclick="window.location.href='boutique.html';" title="Boutique"></button>
-  <button class="hotspot" style="left:74%;top:58%;width:24%;height:8%;" onclick="window.location.href='faq.html';" title="FAQ"></button>
-  <button class="hotspot" style="left:74%;top:67%;width:24%;height:8%;" onclick="window.location.href='contact.html';" title="Contact"></button>
-  <button class="hotspot" style="left:74%;top:76%;width:24%;height:8%;" onclick="window.location.href='youtube.html';" title="YouTube"></button>
-  
-  <button class="hotspot" style="left:35%;top:94%;width:30%;height:3.5%;" onclick="window.location.href='mentions-legales.html';" title="Mentions légales"></button>
+  <a class="hotspot" href="qui-sommes-nous.html" style="left:2%;top:22%;width:24%;height:8%;" title="Qui sommes-nous" aria-label="Qui sommes-nous"></a>
+  <a class="hotspot" href="fonctionnement.html" style="left:2%;top:31%;width:24%;height:8%;" title="Fonctionnement" aria-label="Fonctionnement"></a>
+  <a class="hotspot" href="ateliers.html" style="left:2%;top:40%;width:24%;height:8%;" title="Ateliers" aria-label="Ateliers"></a>
+  <a class="hotspot" href="mots-pour-maux.html" style="left:2%;top:49%;width:24%;height:8%;" title="Mots pour Maux" aria-label="Mots pour Maux"></a>
+  <a class="hotspot" href="mediation-animale.html" style="left:2%;top:58%;width:24%;height:8%;" title="Médiation animale" aria-label="Médiation animale"></a>
+  <a class="hotspot" href="amis-mots.html" style="left:2%;top:67%;width:24%;height:8%;" title="Amis-Mots" aria-label="Amis-Mots"></a>
+  <a class="hotspot" href="edition.html" style="left:2%;top:76%;width:24%;height:8%;" title="Édition" aria-label="Édition"></a>
+
+  <a class="hotspot" href="poesie.html" style="left:74%;top:22%;width:24%;height:8%;" title="Poésie" aria-label="Poésie"></a>
+  <a class="hotspot" href="peintures.html" style="left:74%;top:31%;width:24%;height:8%;" title="Peintures" aria-label="Peintures"></a>
+  <a class="hotspot" href="evenements.html" style="left:74%;top:40%;width:24%;height:8%;" title="Événements" aria-label="Événements"></a>
+  <a class="hotspot" href="boutique.html" style="left:74%;top:49%;width:24%;height:8%;" title="Boutique" aria-label="Boutique"></a>
+  <a class="hotspot" href="faq.html" style="left:74%;top:58%;width:24%;height:8%;" title="FAQ" aria-label="FAQ"></a>
+  <a class="hotspot" href="contact.html" style="left:74%;top:67%;width:24%;height:8%;" title="Contact" aria-label="Contact"></a>
+  <a class="hotspot" href="youtube.html" style="left:74%;top:76%;width:24%;height:8%;" title="YouTube" aria-label="YouTube"></a>
+
+  <a class="hotspot" href="mentions-legales.html" style="left:35%;top:94%;width:30%;height:3.5%;" title="Mentions légales" aria-label="Mentions légales"></a>
 </div>
 
 <!-- PLAN DU SITE -->

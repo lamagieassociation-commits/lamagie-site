@@ -217,6 +217,65 @@ em{font-style:italic;color:#5a4a30;}
   .btn-vedette{text-align:center;}
 }
 
+/* === Toile à l'honneur — cadre chic (Le Papillon et la Libellule) === */
+.toile-honneur{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:44px;
+  align-items:center;
+  margin:0 auto 40px;
+  padding:48px 52px;
+  max-width:1000px;
+  background:linear-gradient(160deg, rgba(241,234,212,.85), rgba(246,239,216,.55));
+  border:1px solid rgba(184,154,92,.32);
+  border-radius:2px;
+  position:relative;
+  box-shadow:0 8px 30px rgba(90,74,48,.12);
+}
+.toile-honneur::before{
+  content:'Toile à l\'honneur';
+  position:absolute;top:-12px;left:50%;transform:translateX(-50%);
+  font-family:'Cormorant Garamond',serif;font-size:.68rem;letter-spacing:.34em;text-transform:uppercase;
+  color:#8a6d2f;background:#ece2c8;padding:0 14px;line-height:1;white-space:nowrap;
+}
+.cadre-chic{
+  position:relative;
+  padding:16px;
+  background:linear-gradient(150deg,#cdb077 0%,#8a6d2f 42%,#ad8d5e 58%,#6b5323 100%);
+  border-radius:3px;
+  box-shadow:0 14px 34px rgba(58,50,32,.38), inset 0 0 0 1px rgba(255,248,230,.28);
+}
+.cadre-chic-mat{
+  padding:12px;
+  background:#f6efd8;
+  box-shadow:inset 0 0 0 1px rgba(184,154,92,.55), inset 0 2px 10px rgba(90,74,48,.08);
+}
+.cadre-chic img{
+  display:block;width:100%;height:auto;
+  box-shadow:0 2px 10px rgba(58,50,32,.25);
+}
+.badge-vendu{
+  position:absolute;top:-16px;right:14px;
+  display:inline-flex;align-items:center;gap:.4em;
+  font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.85rem;
+  color:#f1ead4;background:#7a5a2a;
+  padding:8px 20px;border-radius:2px;
+  box-shadow:0 6px 18px rgba(58,50,32,.32);
+  border:1px solid rgba(241,234,212,.35);
+  letter-spacing:.03em;
+  z-index:2;
+  white-space:nowrap;
+}
+.badge-vendu::before{content:'✦';color:#e8c988;font-size:.8em;}
+.toile-honneur-dims{
+  display:block;font-family:'Cormorant Garamond',serif;font-style:italic;
+  font-size:.9rem;color:#7a6a48;margin:2px 0 18px;
+}
+@media(max-width:760px){
+  .toile-honneur{grid-template-columns:1fr;padding:32px 24px;gap:28px;margin-top:26px;}
+  .badge-vendu{right:50%;transform:translateX(50%);top:-16px;}
+}
+
 /* === Bandeau « Dernières toiles » === */
 .bandeau-nouveautes{
   max-width:760px;
@@ -568,6 +627,35 @@ em{font-style:italic;color:#5a4a30;}
              href="https://www.saatchiart.com/en-fr/art/Drawing-The-Secret-of-the-Morel/298352/1324744/view"
              target="_blank" rel="noopener noreferrer">
             🎨 Acquérir sur Saatchi Art
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================================================
+         TOILE À L'HONNEUR — Le Papillon et la Libellule (vendue)
+         ============================================================ -->
+    <div class="toile-honneur reveler">
+      <div class="cadre-chic">
+        <div class="cadre-chic-mat">
+          <img src="images/papillon-libellule.jpg"
+               alt="Le Papillon et la Libellule — Meichelus, encre, mine graphite et aquarelle, 2026"
+               loading="lazy" decoding="async"/>
+        </div>
+      </div>
+      <div class="toile-honneur-texte">
+        <span class="badge-vendu">Vendue à l&rsquo;exposition</span>
+        <span class="surtitre-vedette">Toile · 2026</span>
+        <h3 class="titre-vedette">Le Papillon et la Libellule</h3>
+        <span class="toile-honneur-dims">44 × 54 cm avec passe-partout — encre, mine graphite et aquarelle</span>
+        <p class="desc-vedette">Née d&rsquo;une photographie des roseaux qui bordent l&rsquo;Ognon à Félines-Minervois, cette toile fait dialoguer le fouillis apparent du feuillage avec la trajectoire libre d&rsquo;un papillon à la poursuite d&rsquo;une libellule &mdash; une méditation graphique où, dans la densité végétale, la grâce discrète des ailes traverse le chaos pour y faire naître l&rsquo;équilibre. Un texte en prose accompagnera cette toile dans le recueil à paraître <em>Roseaux</em>.</p>
+        <p class="desc-vedette">Présentée lors de l&rsquo;exposition <em>Meichelus &amp; Jean-Michel Lafitte</em> au Coin d&rsquo;Art à Olonzac, elle y a trouvé acquéreuse.</p>
+        <div class="vedette-liens">
+          <a class="btn-vedette" href="https://meichelus-art.blogspot.com/2026/06/le-papillon-et-la-libellule.html" target="_blank" rel="noopener noreferrer">
+            Lire l&rsquo;histoire de sa création
+          </a>
+          <a class="btn-vedette" href="https://lecoindart.wordpress.com/2026/09/01/meichelus-et-jean-michel-lafitte/" target="_blank" rel="noopener noreferrer">
+            Voir l&rsquo;exposition au Coin d&rsquo;Art — Olonzac
           </a>
         </div>
       </div>

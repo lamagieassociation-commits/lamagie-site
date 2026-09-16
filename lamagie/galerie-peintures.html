@@ -241,6 +241,26 @@ em{font-style:italic;color:#5a4a30;}
   transform:scale(1.03);
   filter:sepia(0) brightness(1);
 }
+/* Ruban "Vendue" */
+.oeuvre-ruban{
+  position:absolute;
+  top:20px;right:-38px;
+  transform:rotate(40deg);
+  display:block;
+  width:150px;
+  text-align:center;
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;
+  font-size:.85rem;
+  letter-spacing:.06em;
+  color:#f1ead4;
+  background:#7a5a2a;
+  padding:5px 0;
+  box-shadow:0 4px 12px rgba(58,50,32,.35);
+  border-top:1px solid rgba(241,234,212,.35);
+  border-bottom:1px solid rgba(241,234,212,.35);
+  z-index:2;
+}
 /* Effet vignette dorée sur l'image */
 .oeuvre-image::after{
   content:'';
@@ -500,16 +520,19 @@ em{font-style:italic;color:#5a4a30;}
 ═══════════════════════════════════════════════════════════ */
 const OEUVRES = [
 
-  // ── 2026 · Dernière toile ─────────────────────────────────
+  // ── 2026 · Dernière toile — vendue à l'exposition d'Olonzac ─
   {
-    title:     "Le papillon et la libellule",
+    title:     "Le Papillon et la Libellule",
     year:      "2026",
     location:  "Félines-Minervois",
     technique: "Dessin à l'encre, à la mine graphite et à l'aquarelle — toile de 44 × 54 cm avec passe-partout",
-    desc:      "Dans un fouillis de roseaux bordant l'Ognon à Félines-Minervois, un papillon et une libellule s'introduisent et ouvrent vers une autre dimension : celle d'un mouvement devenu libre. Une méditation graphique où le chaos apparent du feuillage révèle un ordre vivant, en mouvement, traversé par une grâce discrète.",
-    img:       "images/libellule.jpg",
+    desc:      "Dans un fouillis de roseaux bordant l'Ognon à Félines-Minervois, un papillon et une libellule s'introduisent et ouvrent vers une autre dimension : celle d'un mouvement devenu libre. Une méditation graphique où le chaos apparent du feuillage révèle un ordre vivant, en mouvement, traversé par une grâce discrète. Présentée à l'exposition Meichelus & Jean-Michel Lafitte au Coin d'Art à Olonzac, elle y a trouvé acquéreuse.",
+    img:       "images/papillon-libellule.jpg",
     url:       "https://meichelus-art.blogspot.com/2026/06/le-papillon-et-la-libellule.html",
-    tag:       "Original"
+    tag:       "Original",
+    sold:      true,
+    expo:      "https://lecoindart.wordpress.com/2026/09/01/meichelus-et-jean-michel-lafitte/",
+    expoLabel: "Voir l'exposition au Coin d'Art"
   },
 
   // ── 2026 · Œuvre internationale ──────────────────────────
@@ -741,10 +764,16 @@ const OEUVRES = [
     // Badge HTML (optionnel)
     var badgeHTML = o.tag ? '<span class="oeuvre-badge">' + o.tag + '</span>' : '';
 
-    // Boutons d'action (lien blog + Saatchi si disponible)
+    // Ruban "Vendue" sur l'image (optionnel)
+    var rubanHTML = o.sold ? '<span class="oeuvre-ruban">Vendue</span>' : '';
+
+    // Boutons d'action (lien blog + Saatchi + exposition si disponibles)
     var actionsHTML = '<a class="oeuvre-lien" href="' + o.url + '" target="_blank" rel="noopener noreferrer">Lire l\'article</a>';
     if (o.saatchi) {
       actionsHTML += '<a class="oeuvre-lien oeuvre-lien--achat" href="' + o.saatchi + '" target="_blank" rel="noopener noreferrer">🎨 Acquérir sur Saatchi Art</a>';
+    }
+    if (o.expo) {
+      actionsHTML += '<a class="oeuvre-lien" href="' + o.expo + '" target="_blank" rel="noopener noreferrer">' + (o.expoLabel || 'Voir l\'exposition') + '</a>';
     }
 
     // Colonne texte
@@ -761,6 +790,7 @@ const OEUVRES = [
     // Colonne image
     var imgHTML = '<div class="oeuvre-image">'
       + '<img src="' + o.img + '" alt="' + o.title + ' — Meichelus" loading="lazy"/>'
+      + rubanHTML
       + '</div>';
 
     var article = document.createElement('article');

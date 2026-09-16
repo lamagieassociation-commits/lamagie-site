@@ -391,6 +391,64 @@ text-decoration:none;
 .bouton:hover{border-color:#b89a5c;background:rgba(184,154,92,.28);transform:translateY(-2px);}
 .cta{text-align:center;margin-top:20px;}
 
+/* === Fiche annonce (couverture pleine largeur, texte centré) === */
+.livre-annonce{
+border-color:rgba(184,154,92,.5);
+box-shadow:0 10px 28px rgba(90,74,48,.16),0 1px 2px rgba(90,74,48,.05);
+text-align:center;
+}
+.couverture-hero{
+max-width:560px;
+margin:0 auto 34px;
+}
+.couverture-hero img{
+display:block;
+width:100%;
+height:auto;
+border:1px solid rgba(184,154,92,.28);
+border-radius:2px;
+box-shadow:0 14px 34px rgba(90,74,48,.18),0 0 0 8px rgba(241,234,212,.55);
+background:rgba(255,253,245,.28);
+}
+.couverture-hero figcaption{
+display:block;
+font-size:.78rem;
+letter-spacing:.16em;
+text-transform:uppercase;
+color:#7a6a48;
+line-height:1.25;
+text-align:center;
+margin-top:15px;
+}
+.livre-texte-centre{
+max-width:660px;
+margin:0 auto;
+text-align:center;
+}
+.livre-texte-centre h3{text-align:center;}
+.livre-texte-centre .auteur{
+display:inline-block;
+border-bottom:none;
+padding-bottom:0;
+}
+.livre-texte-centre p{text-align:left;}
+.livre-texte-centre .resume-original{text-align:left;}
+.livre-texte-centre .disponibilite{text-align:center;}
+.disponibilite{
+font-style:italic;
+color:#8a6d2f;
+font-size:.98rem;
+margin:4px 0 18px !important;
+}
+.cta-double{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:22px;}
+.bouton-discret{
+opacity:.72;
+font-size:.85rem;
+padding:11px 24px;
+background:transparent;
+}
+.bouton-discret:hover{opacity:1;}
+
 .plan-site{
 background:transparent;
 padding:48px 24px 36px;
@@ -551,6 +609,38 @@ text-align:center;
 <span class="legende" data-lang="en">Books from the collection</span>
 </div>
 
+<article class="livre-detail livre-annonce reveler" id="chat-qui-n-avait-pas-de-nom">
+<figure class="couverture-hero">
+<img src="images/chat-qui-n-avait-pas-de-nom.png" alt="Couverture complète (première et quatrième de couverture) du livre Le chat qui n'avait pas de nom, par Anouk Journo et Meichelus" loading="lazy" decoding="async"/>
+<figcaption data-lang="fr">Couverture complète — quatrième et première de couverture</figcaption>
+<figcaption data-lang="en">Full cover — back and front</figcaption>
+</figure>
+<div class="livre-texte livre-texte-centre">
+<h3>Le chat qui n&rsquo;avait pas de nom</h3>
+<span class="auteur">Anouk Journo &amp; Meichelus</span>
+<p data-lang="fr"><em>«&nbsp;Exister, c&rsquo;est être attendu quelque part…&nbsp;»</em> Les Éditions L&rsquo;AMagie ont le bonheur de vous présenter le tout dernier-né de la Collection Amis-Mots&nbsp;: une nouvelle édition, entièrement revisitée, de <em>Moustache, le roi des coussins</em>.</p>
+<p data-lang="en"><em>“To exist is to be expected somewhere…”</em> The Éditions L&rsquo;AMagie are delighted to present the newest arrival in the Amis-Mots Collection&nbsp;: a fully revisited new edition of <em>Moustache, le roi des coussins</em>.</p>
+<p data-lang="fr">Un grand chat noir vit dans un village avec la dignité d&rsquo;un roi… mais sans royaume. Il est seul. Au fil des rencontres, des croquettes partagées, des gestes doux d&rsquo;enfants et des aléas de la rue, il devient Moustache, puis Moumou&nbsp;: une traversée sensible pour découvrir ce que signifie trouver sa place et être aimé.</p>
+<p data-lang="en">A large black cat lives in a village with the dignity of a king… but with no kingdom. He is alone. Through chance encounters, shared kibble, children&rsquo;s gentle gestures and the hazards of the street, he becomes Moustache, then Moumou&nbsp;: a tender journey to discover what it means to find one&rsquo;s place and to be loved.</p>
+<div class="resume-original">
+<p data-lang="fr">Un grand chat noir sans nom vit dans un village avec la dignité d&rsquo;un roi… mais sans royaume. Il est seul.</p>
+<p data-lang="en">A large black cat with no name lives in a village with the dignity of a king… but with no kingdom. He is alone.</p>
+<p data-lang="fr">Entre petites mains d&rsquo;enfants, croquettes partagées et dangers de la rue, il devient Moustache… Puis Moumou. Il découvre qu&rsquo;exister, c&rsquo;est être attendu quelque part…</p>
+<p data-lang="en">Between children&rsquo;s small hands, shared kibble and the dangers of the street, he becomes Moustache… Then Moumou. He discovers that to exist is to be expected somewhere…</p>
+<p class="accroche" data-lang="fr">Inspiré d&rsquo;une histoire réelle, ce conte délicat parle d&rsquo;adoption, de courage et d&rsquo;espoir.</p>
+<p class="accroche" data-lang="en">Inspired by a true story, this delicate tale speaks of adoption, courage, and hope.</p>
+</div>
+<p class="disponibilite" data-lang="fr">✦ Disponible très prochainement en librairies indépendantes.</p>
+<p class="disponibilite" data-lang="en">✦ Coming very soon to independent bookshops.</p>
+<div class="cta cta-double">
+<a class="bouton" data-lang="fr" href="https://www.librairiesindependantes.com/" target="_blank" rel="noopener noreferrer">Trouver en librairie indépendante</a>
+<a class="bouton" data-lang="en" href="https://www.librairiesindependantes.com/" target="_blank" rel="noopener noreferrer">Find at an Independent Bookshop</a>
+<a class="bouton bouton-discret" data-lang="fr" href="https://meichelus-art.blogspot.com/2026/09/parution-aux-editions-lamagie-dans-la.html" target="_blank" rel="noopener noreferrer">Lire l&rsquo;annonce complète</a>
+<a class="bouton bouton-discret" data-lang="en" href="https://meichelus-art.blogspot.com/2026/09/parution-aux-editions-lamagie-dans-la.html" target="_blank" rel="noopener noreferrer">Read Full Announcement</a>
+</div>
+</div>
+</article>
+
 <article class="livre-detail reveler" id="moustache">
 <div class="livre-haut">
 <div class="couvertures">
@@ -572,6 +662,8 @@ text-align:center;
 <p data-lang="en">With <em>Moustache, le roi des coussins</em>, the Amis-Mots Collection welcomes a delicate tale inspired by a true story. We encounter a proud and witty black cat who crosses the world with the dignity of a sovereign… but with no kingdom in which to rest his paws.</p>
 <p data-lang="fr">Entre les rues, les petites mains des enfants, la nourriture partagée et la découverte d&rsquo;un foyer, Moustache devient peu à peu bien plus qu&rsquo;un chat de passage : une présence attendue, aimée, véritablement reconnue. Son histoire parle d&rsquo;adoption, de courage, d&rsquo;espoir, et de ces petits liens qui changent une vie.</p>
 <p data-lang="en">Between the streets, children's small hands, shared food, and the discovery of a home, Moustache gradually becomes more than a passing cat: an expected presence, a beloved one, truly recognized. His story speaks of adoption, courage, hope, and those small bonds that change a life.</p>
+<p data-lang="fr"><em>Ce titre connaît aujourd&rsquo;hui une nouvelle vie sous le titre <a href="#chat-qui-n-avait-pas-de-nom">« Le chat qui n&rsquo;avait pas de nom »</a>, une édition revisitée à découvrir ci-dessus.</em></p>
+<p data-lang="en"><em>This title now lives on under the name <a href="#chat-qui-n-avait-pas-de-nom">“Le chat qui n&rsquo;avait pas de nom”</a>, a revisited edition to discover above.</em></p>
 <div class="resume-original">
 <p data-lang="fr">Un grand chat noir sans nom vit dans un village avec la dignité d&rsquo;un roi… Mais il n&rsquo;a pas de royaume. Il est seul.</p>
 <p data-lang="en">A large black cat with no name lives in a village with the dignity of a king… But he has no kingdom. He is alone.</p>

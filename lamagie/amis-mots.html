@@ -222,6 +222,29 @@ letter-spacing:.01em;
 }
 
 .contenu{max-width:1060px;margin:0 auto;padding:0 20px 60px;}
+.section-portrait{
+display:block;
+width:clamp(170px,20vw,220px);
+margin:-8px auto 28px;
+}
+.section-portrait img{
+display:block;
+width:100%;
+height:auto;
+border-radius:6px;
+box-shadow:0 6px 22px rgba(58,50,32,.16),0 0 0 1px rgba(184,154,92,.25),0 0 0 6px rgba(241,234,212,.55);
+background:rgba(255,253,245,.5);
+padding:8px;
+}
+.section-portrait figcaption{
+margin-top:12px;
+font-family:'Pinyon Script','Cormorant Garamond',cursive;
+font-size:1.1rem;
+color:#7a6a48;
+line-height:1.3;
+letter-spacing:.01em;
+text-align:center;
+}
 .carte{
 background:rgba(246,239,216,.62);
 border:1px solid rgba(184,154,92,.22);
@@ -761,6 +784,11 @@ text-align:center;
 <span class="legende" data-lang="fr">Écriture &amp; présence animale</span>
 <span class="legende" data-lang="en">Writing &amp; animal presence</span>
 </div>
+<figure class="section-portrait">
+<img src="images/pogo-mediation-animale.jpg" alt="Pogo, le beagle complice des ateliers de médiation animale de L'AMagie" loading="lazy" decoding="async"/>
+<figcaption data-lang="fr">Pogo, notre beagle</figcaption>
+<figcaption data-lang="en">Pogo, our beagle</figcaption>
+</figure>
 <p data-lang="fr">La Collection Amis-Mots est profondément liée aux ateliers de médiation animale proposés par L&rsquo;AMagie.</p>
 <p data-lang="en">The Amis-Mots Collection is deeply connected to the animal mediation workshops offered by L&rsquo;AMagie.</p>
 <p data-lang="fr">Écrire sur les animaux, c&rsquo;est apprendre à les écouter, à reconnaître leur présence silencieuse et la place qu&rsquo;ils occupent dans nos vies.</p>

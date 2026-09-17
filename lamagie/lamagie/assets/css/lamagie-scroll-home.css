@@ -1,0 +1,244 @@
+
+/* ==============================
+AJOUT SCROLL LUXE L'AMAGIE
+Sans casser la structure existante
+============================== */
+
+.lamagie-scroll-home{
+
+position:relative;
+
+padding:120px 60px 100px;
+
+background:
+radial-gradient(circle at top,
+rgba(60,90,220,.12),
+transparent 30%),
+
+linear-gradient(180deg,
+#02040a,
+#050711 40%,
+#02040a);
+
+color:#f5f1e8;
+
+overflow:hidden;
+}
+
+.lamagie-scroll-home::before{
+
+content:'';
+
+position:absolute;
+inset:0;
+
+background-image:
+radial-gradient(white 1px, transparent 1px),
+radial-gradient(rgba(255,255,255,.6) 1px, transparent 1px);
+
+background-size:160px 160px, 240px 240px;
+
+opacity:.18;
+
+animation:lamagieStars 120s linear infinite;
+
+pointer-events:none;
+}
+
+@keyframes lamagieStars{
+
+from{
+transform:translateY(0px);
+}
+
+to{
+transform:translateY(-180px);
+}
+
+}
+
+.scroll-intro{
+
+position:relative;
+
+z-index:2;
+
+max-width:920px;
+
+margin:0 auto 90px;
+
+text-align:center;
+}
+
+.scroll-intro h1{
+
+font-family:'Cormorant Garamond',serif;
+
+font-size:clamp(4rem,9vw,7rem);
+
+font-weight:400;
+
+line-height:1;
+
+color:#efc57c;
+
+margin-bottom:24px;
+
+text-shadow:0 0 40px rgba(239,197,124,.16);
+}
+
+.scroll-baseline{
+
+font-family:'Cormorant Garamond',serif;
+
+font-size:2rem;
+
+color:#f4ddb2;
+
+margin-bottom:18px;
+}
+
+.scroll-line{
+
+width:220px;
+height:1px;
+
+background:rgba(239,197,124,.35);
+
+margin:24px auto;
+
+position:relative;
+}
+
+.scroll-line::after{
+
+content:'✦';
+
+position:absolute;
+
+top:-12px;
+left:50%;
+
+transform:translateX(-50%);
+
+padding:0 10px;
+
+background:#07111f;
+
+color:#efc57c;
+}
+
+.scroll-text{
+
+font-size:1.2rem;
+
+line-height:1.9;
+
+max-width:760px;
+
+margin:auto;
+}
+
+.scroll-button{
+
+display:inline-block;
+
+margin-top:36px;
+
+padding:16px 34px;
+
+border:1px solid rgba(239,197,124,.35);
+
+border-radius:12px;
+
+background:rgba(0,0,0,.35);
+
+color:#efc57c;
+
+text-decoration:none;
+
+transition:.3s;
+}
+
+.scroll-button:hover{
+background:rgba(239,197,124,.12);
+}
+
+.scroll-grid{
+
+position:relative;
+
+z-index:2;
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+
+gap:24px;
+}
+
+.scroll-card{
+
+background:rgba(8,12,24,.96);
+
+border:1px solid rgba(239,197,124,.22);
+
+border-radius:22px;
+
+overflow:hidden;
+
+text-decoration:none;
+
+color:white;
+
+transition:.4s;
+}
+
+.scroll-card:hover{
+transform:translateY(-8px);
+}
+
+.scroll-card img{
+
+width:100%;
+height:240px;
+
+object-fit:cover;
+
+display:block;
+}
+
+.scroll-card-content{
+padding:28px;
+}
+
+.scroll-card-content h2{
+
+font-family:'Cormorant Garamond',serif;
+
+font-size:2rem;
+
+color:#efc57c;
+
+margin-bottom:14px;
+}
+
+.scroll-card-content p{
+line-height:1.7;
+}
+
+@media(max-width:900px){
+
+.lamagie-scroll-home{
+padding:80px 20px;
+}
+
+.scroll-baseline{
+font-size:1.5rem;
+}
+
+.scroll-text{
+font-size:1rem;
+}
+
+}

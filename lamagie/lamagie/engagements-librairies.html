@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="google" content="notranslate"/>
+<meta http-equiv="Content-Language" content="fr"/>
+<title>Notre engagement pour les librairies indépendantes | L'AMagie</title>
+<meta name="description" content="L'AMagie soutient les librairies indépendantes. Découvrez notre manifeste pour une culture vivante, un réseau humain et une édition à taille humaine."/>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Pinyon+Script&display=swap" rel="stylesheet"/>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Pinyon+Script&display=swap');
+
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html,body{overflow-x:hidden;}
+html{scroll-behavior:smooth;}
+
+body{
+  background-color:#ece2c8;
+  color:#3a3220;
+  font-family:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  font-weight:400;
+  font-size:17px;
+  line-height:1.75;
+  min-height:100vh;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  text-rendering:optimizeLegibility;
+  background-image:
+    radial-gradient(ellipse 55% 50% at 12% 18%, rgba(146,96,38,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 55% at 88% 82%, rgba(132,88,36,0.11) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 45% at 78% 18%, rgba(170,128,60,0.09) 0%, transparent 65%),
+    radial-gradient(ellipse 55% 50% at 22% 82%, rgba(160,118,50,0.10) 0%, transparent 65%),
+    radial-gradient(ellipse 75% 60% at 50% 35%, rgba(212,176,114,0.10) 0%, transparent 75%),
+    linear-gradient(135deg, #f1ead4 0%, #e8dec0 50%, #ecdfc2 100%),
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='280' height='280'><filter id='g'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' seed='4'/><feColorMatrix values='0 0 0 0 0.42 0 0 0 0 0.32 0 0 0 0 0.17 0 0 0 0.22 0'/></filter><rect width='100%25' height='100%25' filter='url(%23g)'/></svg>");
+  background-attachment:fixed;
+  background-size:auto,auto,auto,auto,auto,auto,280px 280px;
+  background-repeat:no-repeat,no-repeat,no-repeat,no-repeat,no-repeat,no-repeat,repeat;
+}
+a{color:inherit;text-decoration:none;}
+img{max-width:100%;height:auto;display:block;}
+em{font-style:italic;color:#5a4a30;}
+::selection{background:rgba(184,154,92,.32);color:#3a3220;}
+
+/* === HEADER CONSTANT === */
+.entete-site{position:relative;z-index:10;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:24px;padding:24px 40px;border-bottom:1px solid rgba(184,154,92,.28);background:linear-gradient(180deg,rgba(241,234,212,.55),rgba(236,226,200,.25));backdrop-filter:blur(1px);}
+.entete-logo{display:flex;align-items:center;justify-content:flex-start;}
+.entete-logo img{height:55px;width:auto;display:block;}
+.entete-titre{text-align:center;font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:clamp(1.8rem,3.2vw,2.6rem);color:#3a3220;letter-spacing:.01em;line-height:1;text-decoration:none;}
+.entete-retour{display:flex;align-items:center;justify-content:flex-end;}
+.entete-retour a{font-family:'Cormorant Garamond',Georgia,serif;font-size:.92rem;letter-spacing:.18em;text-transform:uppercase;color:#5a4a30;padding:8px 18px;border:1px solid rgba(184,154,92,.4);border-radius:2px;transition:color .3s, background-color .3s, border-color .3s;white-space:nowrap;}
+.entete-retour a::before{content:'⌂ ';margin-right:.25em;letter-spacing:0;}
+.entete-retour a:hover{color:#b89a5c;border-color:#b89a5c;background:rgba(184,154,92,.07);}
+@media(max-width:760px){.entete-site{grid-template-columns:auto 1fr auto;padding:14px 16px;gap:12px;}.entete-logo img{height:42px;}.entete-titre{font-size:1.4rem;}.entete-retour a{font-size:.7rem;letter-spacing:.1em;padding:6px 10px;}.entete-retour a::before{content:'⌂';margin-right:0;}.entete-retour a span{display:none;}}
+
+/* === HÉROS DE PAGE === */
+.heros-page{text-align:center;padding:64px 20px 28px;max-width:820px;margin:0 auto;}
+.fil-ariane{display:inline-block;font-family:'Cormorant Garamond',serif;font-size:.72rem;letter-spacing:.32em;text-transform:uppercase;color:#5a4a30;margin-bottom:24px;}
+.fil-ariane a{color:#8a6d2f;transition:color .3s;}
+.fil-ariane a:hover{color:#b89a5c;}
+.fil-ariane .sep{margin:0 .55em;color:rgba(184,154,92,.55);}
+.titre-page{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:clamp(2.2rem,5vw,3.4rem);color:#3a3220;letter-spacing:.005em;line-height:1.1;margin:0 0 14px;}
+.sous-titre-page{font-family:'Pinyon Script','Cormorant Garamond',cursive;font-size:clamp(1.3rem,2.3vw,1.85rem);color:#7a6a48;line-height:1.3;margin:0;}
+.medaillon-titre{width:54px;height:54px;margin:32px auto 0;border-radius:50%;border:1px solid rgba(184,154,92,.5);box-shadow:0 0 0 5px rgba(241,234,212,.6),0 0 0 6px rgba(184,154,92,.18);display:flex;align-items:center;justify-content:center;color:#b89a5c;font-size:1.1rem;}
+
+/* === CONTENU PRINCIPAL === */
+.contenu{max-width:780px;margin:0 auto;padding:0 20px 64px;}
+
+/* Chapeau introductif */
+.chapeau{
+  margin:0 auto 48px;
+  padding:42px 50px;
+  background:rgba(246,239,216,.65);
+  border:1px solid rgba(184,154,92,.25);
+  border-radius:2px;
+  position:relative;
+  box-shadow:0 4px 14px rgba(90,74,48,.06);
+}
+.chapeau::before,.chapeau::after{content:'';position:absolute;width:18px;height:18px;border:1px solid rgba(184,154,92,.45);pointer-events:none;}
+.chapeau::before{top:6px;left:6px;border-right:0;border-bottom:0;}
+.chapeau::after{bottom:6px;right:6px;border-left:0;border-top:0;}
+.chapeau p{font-size:1.1rem;line-height:1.9;color:#3a3220;margin:0;}
+.chapeau p + p{margin-top:1rem;}
+@media(max-width:600px){.chapeau{padding:28px 22px;}.chapeau p{font-size:1rem;}}
+
+/* Sections du manifeste */
+.manifeste-section{margin:0 0 52px;}
+.manifeste-section h2{
+  font-family:'Cormorant Garamond',serif;
+  font-weight:500;
+  font-size:clamp(1.3rem,2.5vw,1.65rem);
+  color:#3a3220;
+  letter-spacing:.01em;
+  line-height:1.2;
+  margin:0 0 6px;
+  padding-bottom:10px;
+  border-bottom:1px solid rgba(184,154,92,.3);
+  position:relative;
+}
+.manifeste-section h2::before{
+  content:'❦';
+  color:#b89a5c;
+  font-size:.8em;
+  margin-right:.6em;
+}
+.manifeste-section p{
+  font-size:1.06rem;
+  line-height:1.88;
+  color:#3a3220;
+  margin:1rem 0 0;
+}
+
+/* Séparateur orné entre sections */
+.separateur{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:14px;
+  margin:44px auto;
+  max-width:180px;
+}
+.separateur::before,.separateur::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,transparent,rgba(184,154,92,.5),transparent);}
+.separateur span{color:#b89a5c;font-size:.85rem;line-height:1;}
+
+/* Bloc final (coda poétique) */
+.coda{
+  margin:52px auto 0;
+  padding:38px 48px;
+  background:linear-gradient(160deg, rgba(241,234,212,.85), rgba(246,239,216,.65));
+  border:1px solid rgba(184,154,92,.4);
+  border-radius:2px;
+  position:relative;
+  text-align:center;
+  box-shadow:0 6px 22px rgba(90,74,48,.10);
+}
+.coda::before{
+  content:'✦';
+  position:absolute;
+  top:-13px;
+  left:50%;
+  transform:translateX(-50%);
+  color:#b89a5c;
+  font-size:1rem;
+  background:#ece2c8;
+  padding:0 12px;
+  line-height:1;
+}
+.coda p{
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;
+  font-size:1.1rem;
+  line-height:1.85;
+  color:#3a3220;
+  margin:0;
+}
+.coda p + p{margin-top:.75rem;}
+.coda .signature{
+  display:block;
+  margin-top:22px;
+  font-family:'Cormorant Garamond',serif;
+  font-weight:600;
+  font-style:normal;
+  font-size:1.0rem;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:#5a4a30;
+}
+@media(max-width:600px){.coda{padding:28px 22px;}}
+
+/* Lien retour vers éditions */
+.retour-editions{text-align:center;margin:44px auto 0;}
+.retour-editions a{
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;
+  font-size:.98rem;
+  color:#7a6a48;
+  border-bottom:1px solid rgba(184,154,92,.3);
+  padding-bottom:.1em;
+  transition:color .3s, border-color .3s;
+}
+.retour-editions a::before{content:'← ';font-style:normal;}
+.retour-editions a:hover{color:#b89a5c;border-bottom-color:#b89a5c;}
+
+/* === Lien de retour discret === */
+.retour-discret{text-align:center;margin:32px auto 0;}
+.retour-discret a{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.98rem;color:#7a6a48;border-bottom:1px solid rgba(184,154,92,.3);padding-bottom:.1em;transition:color .3s, border-color .3s;}
+.retour-discret a::before{content:'← ';font-style:normal;}
+.retour-discret a:hover{color:#b89a5c;border-bottom-color:#b89a5c;}
+
+/* === PLAN DU SITE === */
+.plan-site{background:transparent;padding:48px 24px 36px;max-width:1080px;margin:0 auto;text-align:center;font-family:'Cormorant Garamond',Georgia,serif;color:#3a3220;border-top:1px solid rgba(184,154,92,.25);}
+.plan-site .filet-haut{display:flex;align-items:center;justify-content:center;gap:14px;margin:0 auto 28px;max-width:200px;}
+.plan-site .filet-haut::before,.plan-site .filet-haut::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,transparent,rgba(184,154,92,.55),transparent);}
+.plan-site .filet-haut .etoile{color:#b89a5c;font-size:.85rem;line-height:1;}
+.plan-site-grille{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px 32px;text-align:left;margin-bottom:28px;}
+.plan-categorie h2{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:#5a4a30;margin:0 0 10px;padding-bottom:6px;border-bottom:1px solid rgba(184,154,92,.22);}
+.plan-categorie ul{list-style:none;margin:0;padding:0;}
+.plan-categorie li{font-size:.92rem;line-height:1.65;margin-bottom:2px;}
+.plan-categorie a{color:#3a3220;text-decoration:none;transition:color .3s;border-bottom:1px solid transparent;}
+.plan-categorie a:hover{color:#b89a5c;border-bottom-color:rgba(184,154,92,.4);}
+.plan-mentions{font-family:'Cormorant Garamond',serif;font-size:.78rem;letter-spacing:.16em;color:#7a6a48;text-transform:uppercase;margin:0;}
+.plan-mentions .etoile{color:#b89a5c;margin:0 .6em;}
+.plan-webmaster{margin:14px auto 0;max-width:340px;padding-top:10px;border-top:1px solid rgba(184,154,92,.18);font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.78rem;letter-spacing:.08em;color:#8a6d2f;text-align:center;}
+.plan-webmaster a{color:inherit;border-bottom:1px solid rgba(184,154,92,.3);transition:color .3s, border-color .3s;}
+.plan-webmaster a:hover{color:#b89a5c;border-bottom-color:#b89a5c;}
+@media(max-width:560px){.plan-site{padding:32px 18px 24px;}.plan-site-grille{gap:18px;text-align:center;}.plan-categorie h2{text-align:center;}.plan-mentions{font-size:.7rem;letter-spacing:.12em;}}
+
+/* === Illustration héros === */
+.illustration-heros{
+  margin:28px auto 0;
+  max-width:460px;
+  padding:0 20px;
+  text-align:center;
+}
+.illustration-heros img{
+  display:block;
+  width:100%;
+  height:auto;
+  border-radius:6px;
+  box-shadow:
+    0 6px 28px rgba(58,50,32,0.16),
+    0 0 0 1px rgba(184,154,92,.28),
+    0 0 0 7px rgba(241,234,212,.62),
+    0 0 0 8px rgba(184,154,92,.16);
+  background:rgba(255,253,245,.5);
+  padding:12px;
+}
+.illustration-heros figcaption{
+  margin-top:14px;
+  font-family:'Pinyon Script','Cormorant Garamond',cursive;
+  font-size:1.25rem;
+  color:#7a6a48;
+  line-height:1.35;
+  letter-spacing:.01em;
+}
+@media(max-width:560px){
+  .illustration-heros{max-width:320px;padding:0 14px;}
+  .illustration-heros figcaption{font-size:1.05rem;}
+}
+
+/* === Révélation au scroll === */
+.reveler{opacity:0;transform:translateY(18px);transition:opacity .9s ease, transform .9s ease;}
+.reveler.visible{opacity:1;transform:translateY(0);}
+@media(prefers-reduced-motion: reduce){.reveler{opacity:1;transform:none;transition:none;}}
+</style>
+</head>
+
+<body>
+
+  <!-- HEADER COMMUN -->
+  <header class="entete-site" role="banner">
+    <div class="entete-logo">
+      <a href="index.html" aria-label="Retour à l'accueil de L'AMagie">
+        <img src="images/logo-amagie.png" alt="L'AMagie" onerror="this.style.display='none'"/>
+      </a>
+    </div>
+    <a href="index.html" class="entete-titre" aria-label="L'AMagie — Accueil">L&rsquo;AMagie</a>
+    <div class="entete-retour">
+      <a href="index.html"><span>Retour à l&rsquo;accueil</span></a>
+    </div>
+  </header>
+
+  <!-- HÉROS DE PAGE -->
+  <section class="heros-page">
+    <nav class="fil-ariane" aria-label="Fil d'ariane">
+      <a href="index.html">Accueil</a>
+      <span class="sep">·</span>
+      <a href="edition.html">Édition</a>
+      <span class="sep">·</span>
+      <span>Librairies indépendantes</span>
+    </nav>
+
+    <figure class="illustration-heros reveler">
+      <img src="images/engagement.png"
+           alt="Librairie indépendante nichée dans un gland — illustration pour L'AMagie"
+           loading="eager"
+           decoding="async"/>
+      <figcaption>Livres choisis avec cœur</figcaption>
+    </figure>
+
+    <h1 class="titre-page">Notre engagement</h1>
+    <p class="sous-titre-page">Pour les librairies indépendantes</p>
+    <div class="medaillon-titre" aria-hidden="true">❦</div>
+  </section>
+
+  <!-- CONTENU -->
+  <main class="contenu" role="main">
+
+    <!-- CHAPEAU INTRODUCTIF -->
+    <article class="chapeau reveler">
+      <p>À l&rsquo;heure où l&rsquo;on peut commander un livre en quelques clics et le recevoir dès le lendemain, certains pourraient penser que la librairie indépendante appartient à un autre temps. Pourtant, partout en France, des femmes et des hommes continuent chaque jour à faire vivre ces lieux précieux où les livres ne sont pas seulement vendus, mais partagés, conseillés et défendus.</p>
+      <p>Aux éditions L&rsquo;AMagie, nous avons choisi de soutenir les librairies indépendantes parce que nous croyons profondément à leur rôle culturel, humain et social.</p>
+    </article>
+
+    <!-- SECTION 1 -->
+    <section class="manifeste-section reveler" aria-labelledby="titre-commerce">
+      <h2 id="titre-commerce">Bien plus qu&rsquo;un commerce</h2>
+      <p>Une librairie indépendante n&rsquo;est pas un simple point de vente.</p>
+      <p>C&rsquo;est un lieu de découverte, d&rsquo;échange et de transmission. Derrière chaque ouvrage recommandé se trouve un libraire qui lit, sélectionne, conseille et accompagne ses lecteurs. Grâce à son regard, un livre peut rencontrer son public, parfois là où les algorithmes ne l&rsquo;auraient jamais conduit.</p>
+      <p>Les libraires indépendants défendent la diversité éditoriale. Ils permettent à de petites maisons d&rsquo;édition, à des auteurs émergents ou à des ouvrages atypiques d&rsquo;exister aux côtés des grandes publications nationales.</p>
+    </section>
+
+    <div class="separateur reveler" aria-hidden="true"><span>✦</span></div>
+
+    <!-- SECTION 2 -->
+    <section class="manifeste-section reveler" aria-labelledby="titre-territoire">
+      <h2 id="titre-territoire">Préserver la richesse culturelle de nos territoires</h2>
+      <p>Dans de nombreuses villes et villages, la librairie constitue un véritable lieu de vie culturelle. Elle accueille des rencontres, des dédicaces, des débats, des ateliers et participe activement à la vie locale.</p>
+      <p>Lorsque nous perdons une librairie indépendante, ce n&rsquo;est pas seulement un commerce qui disparaît. C&rsquo;est un espace de culture, de dialogue et de proximité qui s&rsquo;éteint.</p>
+      <p>Dans les territoires ruraux, où l&rsquo;accès à la culture peut parfois être plus fragile, ces lieux jouent un rôle essentiel. Ils contribuent à maintenir un lien vivant entre les livres et les lecteurs.</p>
+    </section>
+
+    <div class="separateur reveler" aria-hidden="true"><span>✦</span></div>
+
+    <!-- SECTION 3 -->
+    <section class="manifeste-section reveler" aria-labelledby="titre-vision">
+      <h2 id="titre-vision">Une vision que nous partageons</h2>
+      <p>Depuis sa création, L&rsquo;AMagie défend une édition à taille humaine.</p>
+      <p>Nous croyons aux rencontres, aux échanges directs avec les lecteurs, aux partenariats de confiance avec les acteurs culturels locaux et à une diffusion respectueuse du livre.</p>
+      <p>Nos ouvrages sont conçus comme des passerelles&nbsp;: entre les auteurs et leurs lecteurs, entre les générations, entre les territoires et les imaginaires. Cette philosophie rejoint naturellement celle des libraires indépendants, qui œuvrent chaque jour pour faire circuler les idées, les émotions et les connaissances.</p>
+    </section>
+
+    <div class="separateur reveler" aria-hidden="true"><span>✦</span></div>
+
+    <!-- SECTION 4 -->
+    <section class="manifeste-section reveler" aria-labelledby="titre-choix">
+      <h2 id="titre-choix">Acheter un livre, c&rsquo;est aussi choisir un modèle</h2>
+      <p>Chaque fois qu&rsquo;un lecteur pousse la porte d&rsquo;une librairie indépendante, il fait bien davantage qu&rsquo;acheter un livre.</p>
+      <p>Il soutient un professionnel passionné. Il contribue à la vitalité de sa ville ou de son village. Il participe au maintien d&rsquo;un réseau culturel indispensable à la diversité des voix et des idées.</p>
+      <p>Le prix du livre étant le même partout en France grâce à la loi sur le prix unique du livre, choisir sa librairie indépendante, c&rsquo;est faire le choix du conseil, de la proximité et de l&rsquo;humain.</p>
+    </section>
+
+    <div class="separateur reveler" aria-hidden="true"><span>✦</span></div>
+
+    <!-- CODA POÉTIQUE -->
+    <aside class="coda reveler" aria-label="Notre engagement — conclusion">
+      <p>À l&rsquo;occasion des Rencontres nationales de la librairie, les éditions L&rsquo;AMagie souhaitent saluer le travail de toutes celles et ceux qui font vivre les librairies indépendantes partout en France.</p>
+      <p>Nous les remercions pour leur engagement quotidien, leur passion et leur confiance.</p>
+      <p>Parce qu&rsquo;un livre n&rsquo;est jamais seulement un objet.<br/>C&rsquo;est une rencontre.<br/>Et cette rencontre commence souvent grâce à un libraire.</p>
+      <p>Parce que la culture se construit ensemble, livre après livre, lecteur après lecteur.</p>
+      <span class="signature">Les éditions L&rsquo;AMagie soutiennent les librairies indépendantes.</span>
+    </aside>
+
+    <!-- RETOUR VERS ÉDITIONS -->
+    <div class="retour-editions reveler">
+      <a href="edition.html">Retour à la page Éditions</a>
+    </div>
+
+    <div class="retour-discret reveler">
+      <a href="index.html">Retour à l&rsquo;accueil</a>
+    </div>
+
+  </main>
+
+  <!-- PLAN DU SITE -->
+  <section class="plan-site" aria-label="Plan du site">
+    <div class="filet-haut" aria-hidden="true"><span class="etoile">✦</span></div>
+    <div class="plan-site-grille">
+      <div class="plan-categorie">
+        <h2>Qui sommes-nous&nbsp;?</h2>
+        <ul>
+          <li><a href="qui-sommes-nous.html">Qui sommes-nous</a></li>
+          <li><a href="fonctionnement.html">Fonctionnement de l&rsquo;association</a></li>
+          <li><a href="anouk-journo.html">Anouk Journo</a></li>
+          <li><a href="peintures.html">Meichelus</a></li>
+        </ul>
+      </div>
+      <div class="plan-categorie">
+        <h2>Ateliers &amp; Coaching</h2>
+        <ul>
+          <li><a href="ateliers.html">Ateliers &amp; Coaching</a></li>
+          <li><a href="mots-pour-maux.html">Écriture thérapeutique</a></li>
+          <li><a href="mediation-animale.html">Médiation animale</a></li>
+          <li><a href="amis-mots.html">Collection Amis-Mots</a></li>
+        </ul>
+      </div>
+      <div class="plan-categorie">
+        <h2>Éditions</h2>
+        <ul>
+          <li><a href="edition.html">Manuscrits &amp; projets</a></li>
+          <li><a href="edition.html#raconter-le-monde">Collection Raconter le monde</a></li>
+          <li><a href="edition.html#immersion">Collection Immersion</a></li>
+          <li><a href="edition.html#manifestes">Collection Manifestes</a></li>
+          <li><a href="collection-jeunesse.html">Romans jeunesse : collection de La Terre à la Lune</a></li>
+        </ul>
+      </div>
+      <div class="plan-categorie">
+        <h2>Poésie &amp; Arts</h2>
+        <ul>
+          <li><a href="poesie.html">Poésie au jour le jour</a></li>
+          <li><a href="peintures.html">Peintures &amp; Dessins</a></li>
+          <li><a href="evenements.html">Événements &amp; Presse</a></li>
+        </ul>
+      </div>
+      <div class="plan-categorie">
+        <h2>Liens utiles</h2>
+        <ul>
+          <li><a href="boutique.html">Boutique</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="youtube.html">Chaîne Youtube</a></li>
+          <li><a href="mentions-legales.html">Mentions légales</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="plan-mentions">© L&rsquo;AMagie <span class="etoile">✦</span> Maison d&rsquo;édition indépendante <span class="etoile">✦</span> Félines-Minervois</p>
+    <p class="plan-webmaster">© Webmaster Meichelus : <a href="mailto:meichelus@l-amagie.art">meichelus@l-amagie.art</a></p>
+  </section>
+
+  <script>
+    if ('IntersectionObserver' in window) {
+      var obs = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){
+          if (e.isIntersecting){
+            e.target.classList.add('visible');
+            obs.unobserve(e.target);
+          }
+        });
+      }, { threshold:.08, rootMargin:'0px 0px -50px 0px' });
+      document.querySelectorAll('.reveler').forEach(function(el){ obs.observe(el); });
+    } else {
+      document.querySelectorAll('.reveler').forEach(function(el){ el.classList.add('visible'); });
+    }
+  </script>
+
+</body>
+</html>

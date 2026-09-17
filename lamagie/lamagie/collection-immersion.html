@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="google" content="notranslate"/>
+<meta http-equiv="Content-Language" content="fr"/>
+<title>Collection Immersion | L'AMagie</title>
+<meta name="description" content="Collection Immersion — Romans, polars et thrillers de L'AMagie. Des récits adultes qui explorent l'ombre, la profondeur et les méandres de l'âme humaine."/>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Pinyon+Script&display=swap" rel="stylesheet"/>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Pinyon+Script&display=swap');
+
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html,body{overflow-x:hidden;}
+html{scroll-behavior:smooth;}
+
+body{
+  background-color:#ece2c8;
+  color:#3a3220;
+  font-family:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  font-weight:400;
+  font-size:17px;
+  line-height:1.75;
+  min-height:100vh;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  text-rendering:optimizeLegibility;
+  background-image:
+    radial-gradient(ellipse 55% 50% at 12% 18%, rgba(146,96,38,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 55% at 88% 82%, rgba(132,88,36,0.11) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 45% at 78% 18%, rgba(170,128,60,0.09) 0%, transparent 65%),
+    radial-gradient(ellipse 55% 50% at 22% 82%, rgba(160,118,50,0.10) 0%, transparent 65%),
+    radial-gradient(ellipse 75% 60% at 50% 35%, rgba(212,176,114,0.10) 0%, transparent 75%),
+    linear-gradient(135deg, #f1ead4 0%, #e8dec0 50%, #ecdfc2 100%),
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='280' height='280'><filter id='g'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' seed='4'/><feColorMatrix values='0 0 0 0 0.42 0 0 0 0 0.32 0 0 0 0 0.17 0 0 0 0.22 0'/></filter><rect width='100%25' height='100%25' filter='url(%23g)'/></svg>");
+  background-attachment:fixed;
+  background-size:auto,auto,auto,auto,auto,auto,280px 280px;
+  background-repeat:no-repeat,no-repeat,no-repeat,no-repeat,no-repeat,no-repeat,repeat;
+}
+a{color:inherit;text-decoration:none;}
+img{max-width:100%;height:auto;display:block;}
+em{font-style:italic;color:#5a4a30;}
+::selection{background:rgba(184,154,92,.32);color:#3a3220;}
+
+/* === HEADER CONSTANT === */
+.entete-site{position:relative;z-index:10;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:24px;padding:24px 40px;border-bottom:1px solid rgba(184,154,92,.28);background:linear-gradient(180deg,rgba(241,234,212,.55),rgba(236,226,200,.25));backdrop-filter:blur(1px);}
+.entete-logo{display:flex;align-items:center;justify-content:flex-start;}
+.entete-logo img{height:55px;width:auto;display:block;}
+.entete-titre{text-align:center;font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:clamp(1.8rem,3.2vw,2.6rem);color:#3a3220;letter-spacing:.01em;line-height:1;text-decoration:none;}
+.entete-retour{display:flex;align-items:center;justify-content:flex-end;}
+.entete-retour a{font-family:'Cormorant Garamond',Georgia,serif;font-size:.92rem;letter-spacing:.18em;text-transform:uppercase;color:#5a4a30;padding:8px 18px;border:1px solid rgba(184,154,92,.4);border-radius:2px;transition:color .3s, background-color .3s, border-color .3s;white-space:nowrap;}
+.entete-retour a::before{content:'⌂ ';margin-right:.25em;letter-spacing:0;}
+.entete-retour a:hover{color:#b89a5c;border-color:#b89a5c;background:rgba(184,154,92,.07);}
+@media(max-width:760px){.entete-site{grid-template-columns:auto 1fr auto;padding:14px 16px;gap:12px;}.entete-logo img{height:42px;}.entete-titre{font-size:1.4rem;}.entete-retour a{font-size:.7rem;letter-spacing:.1em;padding:6px 10px;}.entete-retour a::before{content:'⌂';margin-right:0;}.entete-retour a span{display:none;}}
+
+/* === HÉROS DE PAGE === */
+.heros-page{text-align:center;padding:64px 20px 28px;max-width:820px;margin:0 auto;}
+.fil-ariane{display:inline-block;font-family:'Cormorant Garamond',serif;font-size:.72rem;letter-spacing:.32em;text-transform:uppercase;color:#5a4a30;margin-bottom:24px;}
+.fil-ariane a{color:#8a6d2f;transition:color .3s;}
+.fil-ariane a:hover{color:#b89a5c;}
+.fil-ariane .sep{margin:0 .55em;color:rgba(184,154,92,.55);}
+.titre-page{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:clamp(2.4rem,5.5vw,3.8rem);color:#3a3220;letter-spacing:.005em;line-height:1.1;margin:0 0 14px;}
+.sous-titre-page{font-family:'Pinyon Script','Cormorant Garamond',cursive;font-size:clamp(1.4rem,2.5vw,1.95rem);color:#7a6a48;line-height:1.3;margin:0;}
+.medaillon-titre{width:54px;height:54px;margin:32px auto 0;border-radius:50%;border:1px solid rgba(184,154,92,.5);box-shadow:0 0 0 5px rgba(241,234,212,.6),0 0 0 6px rgba(184,154,92,.18);display:flex;align-items:center;justify-content:center;color:#b89a5c;font-size:1.1rem;}
+
+/* === Illustration sous le titre === */
+.illustration-titre{
+  margin:28px auto 30px;
+  max-width:680px;
+  padding:0 20px;
+  text-align:center;
+}
+.illustration-titre img{
+  display:block;
+  width:100%;
+  height:auto;
+  border-radius:8px;
+  box-shadow:
+    0 4px 20px rgba(58,50,32,0.12),
+    0 0 0 1px rgba(184,154,92,.22),
+    0 0 0 6px rgba(241,234,212,.55);
+  background:rgba(255,253,245,.5);
+  padding:14px;
+}
+.illustration-titre figcaption{
+  margin-top:14px;
+  font-family:'Pinyon Script','Cormorant Garamond',cursive;
+  font-size:1.2rem;
+  color:#7a6a48;
+  line-height:1.3;
+  letter-spacing:.01em;
+}
+@media(max-width:600px){
+  .illustration-titre{max-width:480px;margin-top:30px;}
+  .illustration-titre figcaption{font-size:1.05rem;}
+}
+
+/* === CONTENU === */
+.contenu{max-width:920px;margin:0 auto;padding:0 20px 56px;}
+
+/* Carte parchemin clair */
+.carte{background:rgba(246,239,216,.62);border:1px solid rgba(184,154,92,.22);border-radius:2px;padding:48px 56px;margin:0 auto 36px;position:relative;box-shadow:0 4px 14px rgba(90,74,48,.06),0 1px 2px rgba(90,74,48,.04);}
+.carte::before,.carte::after{content:'';position:absolute;width:18px;height:18px;border:1px solid rgba(184,154,92,.45);pointer-events:none;}
+.carte::before{top:6px;left:6px;border-right:0;border-bottom:0;}
+.carte::after{bottom:6px;right:6px;border-left:0;border-top:0;}
+.carte p{font-size:1.08rem;line-height:1.85;color:#3a3220;margin:0 0 1.1rem;}
+.carte p:last-child{margin-bottom:0;}
+@media(max-width:600px){.carte{padding:32px 22px;}.carte p{font-size:1rem;}}
+
+/* === Section titre orné === */
+.section-titre{text-align:center;margin:56px 0 32px;}
+.section-titre h2{display:inline-block;font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(1.4rem,2.8vw,1.85rem);letter-spacing:.18em;color:#3a3220;text-transform:uppercase;position:relative;padding:0 30px;}
+.section-titre h2::before,.section-titre h2::after{content:'❦';position:absolute;top:50%;transform:translateY(-50%);color:#b89a5c;font-size:.85em;}
+.section-titre h2::before{left:0;}
+.section-titre h2::after{right:0;}
+.section-titre .legende{display:block;margin-top:14px;font-family:'Pinyon Script','Cormorant Garamond',cursive;font-size:1.2rem;color:#7a6a48;text-transform:none;letter-spacing:.02em;font-weight:400;}
+
+/* === Grille des collections === */
+.grille-collections{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px;margin:0 auto 30px;}
+.collection-carte{
+  background:rgba(246,239,216,.58);
+  border:1px solid rgba(184,154,92,.25);
+  border-radius:2px;
+  padding:34px 32px;
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  box-shadow:0 4px 14px rgba(90,74,48,.05);
+  transition:transform .35s, border-color .35s, background-color .35s;
+  scroll-margin-top:80px;
+}
+.collection-carte::before,.collection-carte::after{content:'';position:absolute;width:14px;height:14px;border:1px solid rgba(184,154,92,.4);pointer-events:none;}
+.collection-carte::before{top:5px;left:5px;border-right:0;border-bottom:0;}
+.collection-carte::after{bottom:5px;right:5px;border-left:0;border-top:0;}
+.collection-carte:hover{transform:translateY(-3px);background:rgba(246,239,216,.78);border-color:rgba(184,154,92,.4);}
+.collection-carte .numero-romain{
+  display:block;
+  font-family:'Cormorant Garamond',serif;
+  font-size:.7rem;
+  letter-spacing:.3em;
+  text-transform:uppercase;
+  color:#8a6d2f;
+  margin-bottom:8px;
+}
+.collection-carte h3{
+  font-family:'Cormorant Garamond',serif;
+  font-weight:500;
+  font-size:1.32rem;
+  letter-spacing:.02em;
+  color:#3a3220;
+  margin:0 0 14px;
+  line-height:1.25;
+}
+.collection-carte p{font-size:1rem;line-height:1.7;color:#3a3220;margin:0 0 18px;font-style:italic;color:#5a4a30;}
+.collection-carte .lien-action{
+  display:inline-block;
+  align-self:flex-start;
+  margin-top:auto;
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;
+  font-size:.95rem;
+  color:#3a3220;
+  padding:8px 20px;
+  border:1px solid rgba(184,154,92,.4);
+  background:rgba(241,234,212,.4);
+  border-radius:2px;
+  transition:color .3s, border-color .3s, background-color .3s;
+}
+.collection-carte .lien-action::after{content:' →';font-style:normal;}
+.collection-carte .lien-action:hover{color:#b89a5c;border-color:#b89a5c;background:rgba(241,234,212,.7);}
+
+/* === Grille du catalogue (titres publiés) === */
+.grille-titres{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:22px;margin:0 auto 36px;}
+.titre-carte{
+  background:rgba(246,239,216,.58);
+  border:1px solid rgba(184,154,92,.25);
+  border-radius:2px;
+  padding:32px 30px;
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  box-shadow:0 4px 14px rgba(90,74,48,.05);
+  transition:transform .35s, border-color .35s, background-color .35s;
+}
+.titre-carte::before,.titre-carte::after{content:'';position:absolute;width:14px;height:14px;border:1px solid rgba(184,154,92,.4);pointer-events:none;}
+.titre-carte::before{top:5px;left:5px;border-right:0;border-bottom:0;}
+.titre-carte::after{bottom:5px;right:5px;border-left:0;border-top:0;}
+.titre-carte:hover{transform:translateY(-3px);background:rgba(246,239,216,.78);border-color:rgba(184,154,92,.4);}
+.titre-carte .numero-romain{
+  display:block;
+  font-family:'Cormorant Garamond',serif;
+  font-size:.66rem;
+  letter-spacing:.28em;
+  text-transform:uppercase;
+  color:#8a6d2f;
+  margin-bottom:4px;
+}
+.titre-carte .surtitre{
+  display:block;
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;
+  font-size:.9rem;
+  color:#7a6a48;
+  margin-bottom:10px;
+}
+.titre-carte h3{
+  font-family:'Cormorant Garamond',serif;
+  font-weight:500;
+  font-size:1.3rem;
+  letter-spacing:.02em;
+  color:#3a3220;
+  margin:0 0 8px;
+  line-height:1.25;
+}
+.titre-carte .auteur{
+  display:block;
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;
+  font-size:.98rem;
+  color:#5a4a30;
+  margin-bottom:14px;
+  padding-bottom:12px;
+  border-bottom:1px dashed rgba(184,154,92,.3);
+}
+.titre-carte .auteur::before{content:'— ';color:#b89a5c;font-style:normal;}
+.titre-carte p{font-size:.98rem;line-height:1.7;color:#3a3220;margin:0;}
+
+/* === Bloc CTA Manuscrit === */
+.cta-manuscrit{
+  margin:48px auto 36px;
+  max-width:760px;
+  padding:42px 48px;
+  background:linear-gradient(135deg, rgba(246,239,216,.85), rgba(241,234,212,.65));
+  border:1px solid rgba(184,154,92,.4);
+  border-radius:2px;
+  position:relative;
+  text-align:center;
+  box-shadow:0 6px 22px rgba(90,74,48,.10);
+}
+.cta-manuscrit::before{
+  content:'✦';
+  position:absolute;
+  top:-13px;
+  left:50%;
+  transform:translateX(-50%);
+  color:#b89a5c;
+  font-size:1rem;
+  background:#ece2c8;
+  padding:0 12px;
+  line-height:1;
+}
+.cta-manuscrit h3{
+  font-family:'Cormorant Garamond',serif;
+  font-weight:500;
+  font-size:1.5rem;
+  letter-spacing:.02em;
+  color:#3a3220;
+  margin:0 0 14px;
+}
+.cta-manuscrit p{
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;
+  font-size:1.05rem;
+  line-height:1.65;
+  color:#5a4a30;
+  margin:0 0 26px;
+}
+.btn-cta{
+  display:inline-block;
+  font-family:'Cormorant Garamond',serif;
+  font-size:1rem;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:#3a3220;
+  padding:13px 32px;
+  border:1px solid rgba(184,154,92,.55);
+  background:rgba(184,154,92,.15);
+  border-radius:2px;
+  transition:color .3s, border-color .3s, background-color .3s, transform .3s;
+  text-decoration:none;
+}
+.btn-cta::after{content:' →';letter-spacing:0;}
+.btn-cta:hover{border-color:#b89a5c;background:rgba(184,154,92,.28);transform:translateY(-2px);}
+
+/* === Lien de retour discret === */
+.retour-discret{text-align:center;margin:32px auto 0;}
+.retour-discret a{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.98rem;color:#7a6a48;border-bottom:1px solid rgba(184,154,92,.3);padding-bottom:.1em;transition:color .3s, border-color .3s;}
+.retour-discret a::before{content:'← ';font-style:normal;}
+.retour-discret a:hover{color:#b89a5c;border-color:#b89a5c;}
+
+/* === PLAN DU SITE === */
+.plan-site{background:transparent;padding:48px 24px 36px;max-width:1080px;margin:0 auto;text-align:center;font-family:'Cormorant Garamond',Georgia,serif;color:#3a3220;border-top:1px solid rgba(184,154,92,.25);}
+.plan-site .filet-haut{display:flex;align-items:center;justify-content:center;gap:14px;margin:0 auto 28px;max-width:200px;}
+.plan-site .filet-haut::before,.plan-site .filet-haut::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,transparent,rgba(184,154,92,.55),transparent);}
+.plan-site .filet-haut .etoile{color:#b89a5c;font-size:.85rem;line-height:1;}
+.plan-site-grille{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px 32px;text-align:left;margin-bottom:28px;}
+.plan-categorie h2{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:#5a4a30;margin:0 0 10px;padding-bottom:6px;border-bottom:1px solid rgba(184,154,92,.22);}
+.plan-categorie ul{list-style:none;margin:0;padding:0;}
+.plan-categorie li{font-size:.92rem;line-height:1.65;margin-bottom:2px;}
+.plan-categorie a{color:#3a3220;text-decoration:none;transition:color .3s;border-bottom:1px solid transparent;}
+.plan-categorie a:hover{color:#b89a5c;border-bottom-color:rgba(184,154,92,.4);}
+.plan-mentions{font-family:'Cormorant Garamond',serif;font-size:.78rem;letter-spacing:.16em;color:#7a6a48;text-transform:uppercase;margin:0;}
+.plan-mentions .etoile{color:#b89a5c;margin:0 .6em;}
+.plan-webmaster{
+  margin:14px auto 0;
+  max-width:340px;
+  padding-top:10px;
+  border-top:1px solid rgba(184,154,92,.18);
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;
+  font-size:.78rem;
+  letter-spacing:.08em;
+  color:#8a6d2f;
+  text-align:center;
+}
+.plan-webmaster a{color:inherit;border-bottom:1px solid rgba(184,154,92,.3);transition:color .3s, border-color .3s;}
+.plan-webmaster a:hover{color:#b89a5c;border-bottom-color:#b89a5c;}
+
+@media(max-width:560px){.plan-site{padding:32px 18px 24px;}.plan-site-grille{gap:18px;text-align:center;}.plan-categorie h2{text-align:center;}.plan-mentions{font-size:.7rem;letter-spacing:.12em;}}
+
+/* === Révélation au scroll === */
+.reveler{opacity:0;transform:translateY(18px);transition:opacity .9s ease, transform .9s ease;}
+.reveler.visible{opacity:1;transform:translateY(0);}
+@media(prefers-reduced-motion: reduce){.reveler{opacity:1;transform:none;transition:none;}}
+
+
+/* === COLLECTION IMMERSION : LIVRE MIS EN VALEUR === */
+.livre-vedette{
+  background:rgba(246,239,216,.62);
+  border:1px solid rgba(184,154,92,.25);
+  border-radius:2px;
+  padding:42px 44px;
+  margin:0 auto 36px;
+  position:relative;
+  box-shadow:0 4px 14px rgba(90,74,48,.06),0 1px 2px rgba(90,74,48,.04);
+}
+.livre-vedette::before,.livre-vedette::after{content:'';position:absolute;width:18px;height:18px;border:1px solid rgba(184,154,92,.45);pointer-events:none;}
+.livre-vedette::before{top:6px;left:6px;border-right:0;border-bottom:0;}
+.livre-vedette::after{bottom:6px;right:6px;border-left:0;border-top:0;}
+.livre-vedette-inner{display:grid;grid-template-columns:minmax(240px,260px) 1fr;gap:36px;align-items:start;}
+.livre-couverture-ajustee{
+  width:clamp(240px,28vw,260px);
+  max-width:100%;
+  margin:0 auto;
+  padding:0;
+  background:transparent;
+  border:1px solid rgba(184,154,92,.3);
+  box-shadow:0 8px 22px rgba(90,74,48,.14),0 0 0 7px rgba(241,234,212,.52);
+  line-height:0;
+}
+.livre-couverture-ajustee img{display:block;width:100%;height:auto;object-fit:contain;border-radius:1px;}
+.livre-info h2{
+  font-family:'Cormorant Garamond',serif;
+  font-weight:500;
+  font-size:clamp(1.7rem,3vw,2.35rem);
+  letter-spacing:.02em;
+  color:#3a3220;
+  line-height:1.1;
+  margin:0 0 8px;
+}
+.livre-info .auteur-livre{
+  display:block;
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;
+  font-size:1.08rem;
+  color:#5a4a30;
+  margin-bottom:18px;
+  padding-bottom:14px;
+  border-bottom:1px dashed rgba(184,154,92,.35);
+}
+.livre-info .auteur-livre::before{content:'— ';color:#b89a5c;font-style:normal;}
+.livre-info p{font-size:1.05rem;line-height:1.78;color:#3a3220;margin:0 0 1rem;}
+.auteur-zone{display:flex;align-items:center;gap:18px;margin:20px 0 24px;padding:16px 18px;background:rgba(241,234,212,.38);border:1px solid rgba(184,154,92,.18);}
+.auteur-medallion{
+  border-radius:50%;
+  width:110px;
+  height:110px;
+  object-fit:cover;
+  flex:0 0 110px;
+  border:2px solid rgba(184,154,92,.38);
+  box-shadow:0 5px 16px rgba(90,74,48,.15),0 0 0 6px rgba(241,234,212,.72);
+}
+.auteur-zone p{margin:0;font-size:.98rem;line-height:1.62;color:#5a4a30;font-style:italic;}
+.livre-lien{
+  display:inline-block;
+  font-family:'Cormorant Garamond',serif;
+  font-size:.95rem;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:#3a3220;
+  padding:12px 28px;
+  border:1px solid rgba(184,154,92,.55);
+  background:rgba(184,154,92,.15);
+  border-radius:2px;
+  transition:color .3s, border-color .3s, background-color .3s, transform .3s;
+  text-decoration:none;
+}
+.livre-lien::after{content:' →';letter-spacing:0;}
+.livre-lien:hover{border-color:#b89a5c;background:rgba(184,154,92,.28);transform:translateY(-2px);}
+.revue-presse{
+  margin:42px auto 36px;
+  padding:34px 36px;
+  background:rgba(246,239,216,.56);
+  border:1px solid rgba(184,154,92,.25);
+  border-left:3px solid rgba(184,154,92,.48);
+  border-radius:2px;
+  box-shadow:0 4px 14px rgba(90,74,48,.06);
+  position:relative;
+}
+.revue-presse h2{
+  font-family:'Cormorant Garamond',serif;
+  font-weight:500;
+  font-size:clamp(1.25rem,2.4vw,1.65rem);
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:#3a3220;
+  margin:0 0 8px;
+  text-align:center;
+}
+.revue-presse .source-presse{
+  display:block;
+  text-align:center;
+  font-family:'Pinyon Script','Cormorant Garamond',cursive;
+  font-size:1.22rem;
+  color:#7a6a48;
+  margin-bottom:24px;
+}
+.article-image-lisible{
+  max-width:760px;
+  margin:0 auto;
+  background:rgba(255,253,245,.45);
+  border:1px solid rgba(184,154,92,.28);
+  box-shadow:0 8px 24px rgba(90,74,48,.12),0 0 0 8px rgba(241,234,212,.46);
+  padding:10px;
+}
+.article-image-lisible img{display:block;width:100%;height:auto;object-fit:contain;border-radius:1px;}
+
+.article-image-lisible,
+.article-presse-container{
+  display:block;
+  visibility:visible;
+  opacity:1;
+  height:auto;
+  min-height:0;
+  max-height:none;
+  overflow:visible;
+}
+.article-presse-img{
+  display:block;
+  visibility:visible;
+  opacity:1;
+  width:100%;
+  max-width:100%;
+  height:auto;
+  min-height:0;
+  max-height:none;
+  object-fit:contain;
+  margin:0 auto;
+  border-radius:1px;
+}
+
+@media(max-width:780px){
+  .livre-vedette{padding:34px 24px;}
+  .livre-vedette-inner{grid-template-columns:1fr;gap:28px;}
+  .livre-couverture-ajustee{width:min(260px,82vw);}
+  .auteur-zone{flex-direction:column;text-align:center;}
+  .revue-presse{padding:28px 20px;}
+  .article-image-lisible{padding:7px;}
+}
+
+</style>
+</head>
+
+<body>
+
+  <!-- HEADER COMMUN -->
+  <header class="entete-site" role="banner">
+    <div class="entete-logo">
+      <a href="index.html" aria-label="Retour à l'accueil de L'AMagie">
+        <img src="images/logo-amagie.png" alt="L'AMagie" onerror="this.style.display='none'"/>
+      </a>
+    </div>
+    <a href="index.html" class="entete-titre" aria-label="L'AMagie — Accueil">L&rsquo;AMagie</a>
+    <div class="entete-retour">
+      <a href="index.html"><span>Retour à l&rsquo;accueil</span></a>
+    </div>
+  </header>
+
+  <!-- HÉROS DE PAGE -->
+  <section class="heros-page">
+    <nav class="fil-ariane" aria-label="Fil d'ariane">
+      <a href="index.html">Accueil</a>
+      <span class="sep">·</span>
+      <a href="edition.html">Éditions</a>
+      <span class="sep">·</span>
+      <span>Collection Immersion</span>
+    </nav>
+    <h1 class="titre-page">Collection Immersion</h1>
+    <p class="sous-titre-page">Romans, polars, thrillers — pour adultes en quête de profondeur et d'ombre.</p>
+    <div class="medaillon-titre" aria-hidden="true">✦</div>
+  </section>
+
+  <!-- CONTENU -->
+  <main class="contenu" role="main">
+
+    <article class="carte reveler">
+      <p>Plongez au cœur d'intrigues psychologiques, de récits sombres et de quêtes intérieures. La collection Immersion s'adresse aux lecteurs qui aiment explorer les méandres de l'âme humaine, là où la lumière côtoie l'ombre. Des romans noirs aux thrillers captivants, chaque ouvrage est une invitation à un voyage littéraire intense et sans concession.</p>
+    </article>
+
+    <div class="section-titre reveler">
+      <h2>Le titre</h2>
+      <span class="legende">Une plongée au plus près du réel</span>
+    </div>
+
+    <article class="livre-vedette reveler">
+      <div class="livre-vedette-inner">
+        <div class="livre-couverture-ajustee">
+          <img src="images/Mort-en-prison.png" alt="Couverture du roman Mort en prison de Jean-Pierre Montaron" loading="lazy" decoding="async"/>
+        </div>
+
+        <div class="livre-info">
+          <h2>Mort en prison</h2>
+          <span class="auteur-livre">Jean-Pierre Montaron</span>
+          <p>Ancien enseignant en milieu carcéral, Jean-Pierre Montaron signe avec <em>Mort en prison</em> un roman d'une intensité rare, nourri par une connaissance intime de l'institution et de ses silences.</p>
+          <p>À travers le regard d'un narrateur confronté au quotidien de jeunes détenus, le récit avance entre salles de classe, couloirs fermés, instants de confiance fragile et zones d'ombre. Peu à peu, derrière l'apparente routine, quelque chose se dérègle. La fiction devient alors un révélateur : elle éclaire ce que l'on préfère souvent ne pas voir.</p>
+
+          <div class="auteur-zone">
+            <img class="auteur-medallion" src="images/Jean-Pierre-Montaron.jpg" alt="Portrait de Jean-Pierre Montaron" loading="lazy" decoding="async"/>
+            <p>Une voix sobre, attentive, traversée par l'expérience de l'enseignement en prison et par le désir de rendre perceptible une réalité humaine complexe.</p>
+          </div>
+
+          <a class="livre-lien" href="https://www.librairiesindependantes.com/product/9782959874680/" target="_blank" rel="noopener noreferrer">Commander</a>
+        </div>
+      </div>
+    </article>
+
+    <section class="revue-presse reveler" aria-labelledby="revue-presse-title">
+      <h2 id="revue-presse-title">Revue de presse</h2>
+      <span class="source-presse">L&rsquo;Indépendant — Jean-Pierre Montaron publie « Mort en prison »</span>
+      <figure class="article-image-lisible">
+        <img src="images/Article-presse-Jean-Pierre-Montaron.jpeg" alt="Article de presse L'Indépendant - Mort en prison" class="article-presse-img">
+      </figure>
+    </section>
+
+    <div class="cta-manuscrit reveler">
+      <h3>Une fiction qui regarde l&rsquo;ombre en face&nbsp;?</h3>
+      <p>La collection Immersion accueille les récits adultes dont la tension intérieure, la profondeur psychologique ou l&rsquo;intensité narrative ouvrent un passage vers l&rsquo;invisible du réel.</p>
+      <a class="btn-cta" href="contact.html">Envoyer un manuscrit</a>
+    </div>
+
+    <div class="retour-discret reveler">
+      <a href="edition.html">Retour aux collections</a>
+    </div>
+
+  </main>
+
+  <!-- PLAN DU SITE -->
+  <section class="plan-site" aria-label="Plan du site">
+    <div class="filet-haut" aria-hidden="true"><span class="etoile">✦</span></div>
+    <div class="plan-site-grille">
+      <div class="plan-categorie">
+        <h2>Qui sommes-nous&nbsp;?</h2>
+        <ul>
+          <li><a href="qui-sommes-nous.html">Qui sommes-nous</a></li>
+          <li><a href="fonctionnement.html">Fonctionnement de l&rsquo;association</a></li>
+          <li><a href="anouk-journo.html">Anouk Journo</a></li>
+          <li><a href="peintures.html">Meichelus</a></li>
+        </ul>
+      </div>
+      <div class="plan-categorie">
+        <h2>Ateliers &amp; Coaching</h2>
+        <ul>
+          <li><a href="ateliers.html">Ateliers &amp; Coaching</a></li>
+          <li><a href="mots-pour-maux.html">Écriture thérapeutique</a></li>
+          <li><a href="mediation-animale.html">Médiation animale</a></li>
+          <li><a href="amis-mots.html">Collection Amis-Mots</a></li>
+        </ul>
+      </div>
+      <div class="plan-categorie">
+        <h2>Éditions</h2>
+        <ul>
+          <li><a href="edition.html">Manuscrits &amp; projets</a></li>
+          <li><a href="collection-raconter-le-monde.html">Collection Raconter le monde</a></li>
+          <li><a href="collection-immersion.html">Collection Immersion</a></li>
+          <li><a href="edition.html#manifestes">Collection Manifestes</a></li>
+          <li><a href="edition.html#romans-jeunesse">Romans jeunesse</a></li>
+        </ul>
+      </div>
+      <div class="plan-categorie">
+        <h2>Poésie &amp; Arts</h2>
+        <ul>
+          <li><a href="poesie.html">Poésie au jour le jour</a></li>
+          <li><a href="peintures.html">Peintures &amp; Dessins</a></li>
+          <li><a href="evenements.html">Événements &amp; Presse</a></li>
+        </ul>
+      </div>
+      <div class="plan-categorie">
+        <h2>Liens utiles</h2>
+        <ul>
+          <li><a href="boutique.html">Boutique</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="youtube.html">Chaîne Youtube</a></li>
+          <li><a href="mentions-legales.html">Mentions légales</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="plan-mentions">© L&rsquo;AMagie <span class="etoile">✦</span> Maison d&rsquo;édition indépendante <span class="etoile">✦</span> Félines-Minervois</p>
+    <p class="plan-webmaster">© Webmaster Meichelus : <a href="mailto:meichelus@l-amagie.art">meichelus@l-amagie.art</a></p>
+  </section>
+
+  <script>
+    if ('IntersectionObserver' in window) {
+      var obs = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){
+          if (e.isIntersecting){
+            e.target.classList.add('visible');
+            obs.unobserve(e.target);
+          }
+        });
+      }, { threshold:.08, rootMargin:'0px 0px -50px 0px' });
+      document.querySelectorAll('.reveler').forEach(function(el){ obs.observe(el); });
+    } else {
+      document.querySelectorAll('.reveler').forEach(function(el){ el.classList.add('visible'); });
+    }
+  </script>
+
+</body>
+</html>

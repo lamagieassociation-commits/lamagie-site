@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="google" content="notranslate"/>
+<meta http-equiv="Content-Language" content="fr"/>
+<title>FAQ — L'AMagie éclaire vos lanternes</title>
+<meta name="description" content="Foire aux questions L'AMagie : publication, droits, coûts, impression à la demande, rémunération des auteurs. Une édition associative et solidaire à Félines-Minervois."/>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Pinyon+Script&display=swap" rel="stylesheet"/>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Pinyon+Script&display=swap');
+
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html,body{overflow-x:hidden;}
+html{scroll-behavior:smooth;}
+
+body{
+  background-color:#ece2c8;
+  color:#3a3220;
+  font-family:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  font-weight:400;
+  font-size:17px;
+  line-height:1.75;
+  min-height:100vh;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  text-rendering:optimizeLegibility;
+  background-image:
+    radial-gradient(ellipse 55% 50% at 12% 18%, rgba(146,96,38,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 55% at 88% 82%, rgba(132,88,36,0.11) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 45% at 78% 18%, rgba(170,128,60,0.09) 0%, transparent 65%),
+    radial-gradient(ellipse 55% 50% at 22% 82%, rgba(160,118,50,0.10) 0%, transparent 65%),
+    radial-gradient(ellipse 75% 60% at 50% 35%, rgba(212,176,114,0.10) 0%, transparent 75%),
+    linear-gradient(135deg, #f1ead4 0%, #e8dec0 50%, #ecdfc2 100%),
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='280' height='280'><filter id='g'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' seed='4'/><feColorMatrix values='0 0 0 0 0.42 0 0 0 0 0.32 0 0 0 0 0.17 0 0 0 0.22 0'/></filter><rect width='100%25' height='100%25' filter='url(%23g)'/></svg>");
+  background-attachment:fixed;
+  background-size:auto,auto,auto,auto,auto,auto,280px 280px;
+  background-repeat:no-repeat,no-repeat,no-repeat,no-repeat,no-repeat,no-repeat,repeat;
+}
+a{color:inherit;text-decoration:none;}
+img{max-width:100%;height:auto;display:block;}
+em{font-style:italic;color:#5a4a30;}
+strong{font-weight:600;color:#3a3220;}
+::selection{background:rgba(184,154,92,.32);color:#3a3220;}
+
+/* === HEADER CONSTANT === */
+.entete-site{position:relative;z-index:10;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:24px;padding:24px 40px;border-bottom:1px solid rgba(184,154,92,.28);background:linear-gradient(180deg,rgba(241,234,212,.55),rgba(236,226,200,.25));backdrop-filter:blur(1px);}
+.entete-logo{display:flex;align-items:center;justify-content:flex-start;}
+.entete-logo img{height:55px;width:auto;display:block;}
+.entete-titre{text-align:center;font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:clamp(1.8rem,3.2vw,2.6rem);color:#3a3220;letter-spacing:.01em;line-height:1;text-decoration:none;}
+.entete-retour{display:flex;align-items:center;justify-content:flex-end;}
+.entete-retour a{font-family:'Cormorant Garamond',Georgia,serif;font-size:.92rem;letter-spacing:.18em;text-transform:uppercase;color:#5a4a30;padding:8px 18px;border:1px solid rgba(184,154,92,.4);border-radius:2px;transition:color .3s, background-color .3s, border-color .3s;white-space:nowrap;}
+.entete-retour a::before{content:'⌂ ';margin-right:.25em;letter-spacing:0;}
+.entete-retour a:hover{color:#b89a5c;border-color:#b89a5c;background:rgba(184,154,92,.07);}
+@media(max-width:760px){.entete-site{grid-template-columns:auto 1fr auto;padding:14px 16px;gap:12px;}.entete-logo img{height:42px;}.entete-titre{font-size:1.4rem;}.entete-retour a{font-size:.7rem;letter-spacing:.1em;padding:6px 10px;}.entete-retour a::before{content:'⌂';margin-right:0;}.entete-retour a span{display:none;}}
+
+/* === HÉROS DE PAGE === */
+.heros-page{text-align:center;padding:50px 20px 28px;max-width:820px;margin:0 auto;}
+.fil-ariane{display:inline-block;font-family:'Cormorant Garamond',serif;font-size:.72rem;letter-spacing:.32em;text-transform:uppercase;color:#5a4a30;margin-bottom:28px;}
+.fil-ariane a{color:#8a6d2f;transition:color .3s;}
+.fil-ariane a:hover{color:#b89a5c;}
+.fil-ariane .sep{margin:0 .55em;color:rgba(184,154,92,.55);}
+.titre-page{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:clamp(2.2rem,5vw,3.4rem);color:#3a3220;letter-spacing:.005em;line-height:1.15;margin:0 0 14px;}
+.sous-titre-page{font-family:'Pinyon Script','Cormorant Garamond',cursive;font-size:clamp(1.4rem,2.5vw,1.95rem);color:#7a6a48;line-height:1.3;margin:0;}
+.medaillon-titre{width:54px;height:54px;margin:32px auto 0;border-radius:50%;border:1px solid rgba(184,154,92,.5);box-shadow:0 0 0 5px rgba(241,234,212,.6),0 0 0 6px rgba(184,154,92,.18);display:flex;align-items:center;justify-content:center;color:#b89a5c;font-size:1.1rem;}
+
+/* === Illustration lanternes (AU-DESSUS du titre) === */
+.illustration-lanternes{
+  margin:0 auto 28px;
+  max-width:380px;
+  padding:0 20px;
+  text-align:center;
+}
+.illustration-lanternes img{
+  display:block;
+  width:100%;
+  height:auto;
+  border-radius:6px;
+  box-shadow:
+    0 6px 26px rgba(58,50,32,0.20),
+    0 0 0 1px rgba(184,154,92,.28),
+    0 0 0 8px rgba(241,234,212,.7);
+  filter:saturate(.96) brightness(1.02);
+}
+@media(max-width:600px){
+  .illustration-lanternes{max-width:260px;margin-bottom:22px;}
+}
+
+/* === CONTENU === */
+.contenu{max-width:920px;margin:0 auto;padding:0 20px 56px;}
+
+/* Carte intro */
+.carte-intro{background:rgba(246,239,216,.62);border:1px solid rgba(184,154,92,.22);border-radius:2px;padding:36px 44px;margin:0 auto 40px;position:relative;text-align:center;box-shadow:0 4px 14px rgba(90,74,48,.06);}
+.carte-intro::before,.carte-intro::after{content:'';position:absolute;width:18px;height:18px;border:1px solid rgba(184,154,92,.45);pointer-events:none;}
+.carte-intro::before{top:6px;left:6px;border-right:0;border-bottom:0;}
+.carte-intro::after{bottom:6px;right:6px;border-left:0;border-top:0;}
+.carte-intro p{font-size:1.05rem;line-height:1.8;color:#3a3220;margin:0;}
+.carte-intro a{color:#8a6d2f;border-bottom:1px solid rgba(184,154,92,.35);transition:color .3s, border-color .3s;}
+.carte-intro a:hover{color:#b89a5c;border-color:#b89a5c;}
+@media(max-width:600px){.carte-intro{padding:26px 22px;}.carte-intro p{font-size:1rem;}}
+
+/* === FAQ — Accordéon === */
+.questions{max-width:780px;margin:0 auto 36px;}
+.question{
+  background:rgba(246,239,216,.58);
+  border:1px solid rgba(184,154,92,.25);
+  border-radius:2px;
+  margin-bottom:14px;
+  position:relative;
+  box-shadow:0 3px 10px rgba(90,74,48,.04);
+  transition:border-color .35s, background-color .35s;
+}
+.question::before,.question::after{content:'';position:absolute;width:12px;height:12px;border:1px solid rgba(184,154,92,.35);pointer-events:none;}
+.question::before{top:5px;left:5px;border-right:0;border-bottom:0;}
+.question::after{bottom:5px;right:5px;border-left:0;border-top:0;}
+.question[open]{border-color:rgba(184,154,92,.45);background:rgba(246,239,216,.78);}
+.question summary{
+  list-style:none;
+  cursor:pointer;
+  padding:22px 56px 22px 32px;
+  font-family:'Cormorant Garamond',serif;
+  font-weight:500;
+  font-size:1.12rem;
+  letter-spacing:.01em;
+  color:#3a3220;
+  position:relative;
+  user-select:none;
+  outline:none;
+}
+.question summary::-webkit-details-marker{display:none;}
+.question summary::after{
+  content:'+';
+  position:absolute;
+  right:28px;
+  top:50%;
+  transform:translateY(-50%);
+  font-family:'Cormorant Garamond',serif;
+  font-weight:300;
+  font-size:1.7rem;
+  color:#b89a5c;
+  line-height:1;
+  transition:transform .35s, color .3s;
+}
+.question[open] summary::after{content:'–';color:#8a6d2f;transform:translateY(-50%) rotate(180deg);}
+.question summary:hover{color:#8a6d2f;}
+.question .reponse{
+  padding:0 32px 24px 32px;
+  font-size:1.02rem;
+  line-height:1.85;
+  color:#3a3220;
+  border-top:1px dashed rgba(184,154,92,.28);
+  margin-top:0;
+  padding-top:18px;
+}
+.question .reponse p{margin:0 0 .9rem;}
+.question .reponse p:last-child{margin-bottom:0;}
+.question .reponse strong{font-weight:600;color:#5a4a30;}
+.question .reponse em{font-style:italic;color:#5a4a30;}
+.question .reponse a{color:#8a6d2f;border-bottom:1px solid rgba(184,154,92,.35);transition:color .3s, border-color .3s;}
+.question .reponse a:hover{color:#b89a5c;border-color:#b89a5c;}
+@media(max-width:600px){
+  .question summary{padding:18px 48px 18px 24px;font-size:1.04rem;}
+  .question summary::after{right:22px;}
+  .question .reponse{padding:14px 24px 22px 24px;font-size:.98rem;}
+}
+
+/* === Bloc CTA final === */
+.cta-final{
+  margin:48px auto 36px;
+  max-width:760px;
+  padding:42px 48px;
+  background:linear-gradient(135deg, rgba(246,239,216,.85), rgba(241,234,212,.65));
+  border:1px solid rgba(184,154,92,.4);
+  border-radius:2px;
+  position:relative;
+  text-align:center;
+  box-shadow:0 6px 22px rgba(90,74,48,.10);
+}
+.cta-final::before{
+  content:'✦';
+  position:absolute;
+  top:-13px;
+  left:50%;
+  transform:translateX(-50%);
+  color:#b89a5c;
+  font-size:1rem;
+  background:#ece2c8;
+  padding:0 12px;
+  line-height:1;
+}
+.cta-final h3{
+  font-family:'Cormorant Garamond',serif;
+  font-weight:500;
+  font-size:1.4rem;
+  letter-spacing:.02em;
+  color:#3a3220;
+  margin:0 0 12px;
+}
+.cta-final p{
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;
+  font-size:1.05rem;
+  line-height:1.65;
+  color:#5a4a30;
+  margin:0 0 24px;
+}
+.btns-cta{display:flex;flex-wrap:wrap;justify-content:center;gap:14px 18px;}
+.btn-cta{
+  display:inline-block;
+  font-family:'Cormorant Garamond',serif;
+  font-size:.95rem;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:#3a3220;
+  padding:13px 28px;
+  border:1px solid rgba(184,154,92,.55);
+  background:rgba(184,154,92,.15);
+  border-radius:2px;
+  transition:color .3s, border-color .3s, background-color .3s, transform .3s;
+  text-decoration:none;
+}
+.btn-cta::after{content:' →';letter-spacing:0;}
+.btn-cta.externe::after{content:' ↗';letter-spacing:0;}
+.btn-cta:hover{border-color:#b89a5c;background:rgba(184,154,92,.28);transform:translateY(-2px);}
+@media(max-width:600px){.cta-final{padding:30px 26px;}}
+
+/* === PLAN DU SITE === */
+.plan-site{background:transparent;padding:48px 24px 36px;max-width:1080px;margin:0 auto;text-align:center;font-family:'Cormorant Garamond',Georgia,serif;color:#3a3220;border-top:1px solid rgba(184,154,92,.25);}
+.plan-site .filet-haut{display:flex;align-items:center;justify-content:center;gap:14px;margin:0 auto 28px;max-width:200px;}
+.plan-site .filet-haut::before,.plan-site .filet-haut::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,transparent,rgba(184,154,92,.55),transparent);}
+.plan-site .filet-haut .etoile{color:#b89a5c;font-size:.85rem;line-height:1;}
+.plan-site-grille{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px 32px;text-align:left;margin-bottom:28px;}
+.plan-categorie h2{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:#5a4a30;margin:0 0 10px;padding-bottom:6px;border-bottom:1px solid rgba(184,154,92,.22);}
+.plan-categorie ul{list-style:none;margin:0;padding:0;}
+.plan-categorie li{font-size:.92rem;line-height:1.65;margin-bottom:2px;}
+.plan-categorie a{color:#3a3220;text-decoration:none;transition:color .3s;border-bottom:1px solid transparent;}
+.plan-categorie a:hover{color:#b89a5c;border-bottom-color:rgba(184,154,92,.4);}
+.plan-mentions{font-family:'Cormorant Garamond',serif;font-size:.78rem;letter-spacing:.16em;color:#7a6a48;text-transform:uppercase;margin:0;}
+.plan-mentions .etoile{color:#b89a5c;margin:0 .6em;}
+.plan-webmaster{
+  margin:14px auto 0;
+  max-width:340px;
+  padding-top:10px;
+  border-top:1px solid rgba(184,154,92,.18);
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;
+  font-size:.78rem;
+  letter-spacing:.08em;
+  color:#8a6d2f;
+  text-align:center;
+}
+.plan-webmaster a{color:inherit;border-bottom:1px solid rgba(184,154,92,.3);transition:color .3s, border-color .3s;}
+.plan-webmaster a:hover{color:#b89a5c;border-bottom-color:#b89a5c;}
+@media(max-width:560px){.plan-site{padding:32px 18px 24px;}.plan-site-grille{gap:18px;text-align:center;}.plan-categorie h2{text-align:center;}.plan-mentions{font-size:.7rem;letter-spacing:.12em;}}
+
+/* === Révélation au scroll === */
+.reveler{opacity:0;transform:translateY(18px);transition:opacity .9s ease, transform .9s ease;}
+.reveler.visible{opacity:1;transform:translateY(0);}
+@media(prefers-reduced-motion: reduce){.reveler{opacity:1;transform:none;transition:none;}}
+</style>
+</head>
+
+<body>
+
+  <!-- HEADER COMMUN -->
+  <header class="entete-site" role="banner">
+    <div class="entete-logo">
+      <a href="index.html" aria-label="Retour à l'accueil de L'AMagie">
+        <img src="images/logo-amagie.png" alt="L'AMagie" onerror="this.style.display='none'"/>
+      </a>
+    </div>
+    <a href="index.html" class="entete-titre" aria-label="L'AMagie — Accueil">L&rsquo;AMagie</a>
+    <div class="entete-retour">
+      <a href="index.html"><span>Retour à l&rsquo;accueil</span></a>
+    </div>
+  </header>
+
+  <!-- HÉROS DE PAGE -->
+  <section class="heros-page">
+    <nav class="fil-ariane" aria-label="Fil d'ariane">
+      <a href="index.html">Accueil</a>
+      <span class="sep">·</span>
+      <span>FAQ</span>
+    </nav>
+
+    <!-- Illustration AU-DESSUS du titre -->
+    <figure class="illustration-lanternes reveler">
+      <img src="images/lamagie-eclaire-vos-lanternes.png"
+           alt="L'AMagie — la lumière de vos possibles"
+           loading="eager"
+           decoding="async"
+           onerror="this.style.display='none'"/>
+    </figure>
+
+    <h1 class="titre-page">L&rsquo;AMagie éclaire vos lanternes</h1>
+    <p class="sous-titre-page">Les questions les plus fréquentes sur nos éditions, publications et ateliers.</p>
+    <div class="medaillon-titre" aria-hidden="true">✦</div>
+  </section>
+
+  <!-- CONTENU -->
+  <main class="contenu" role="main">
+
+    <!-- INTRO -->
+    <div class="carte-intro reveler">
+      <p>Cette FAQ regroupe les questions les plus fréquentes sur nos éditions et ateliers. Votre réponse s&rsquo;y trouve peut-être déjà — sinon, <a href="contact.html">contactez-nous directement</a>.</p>
+    </div>
+
+    <!-- QUESTIONS -->
+    <div class="questions reveler">
+
+      <details class="question">
+        <summary>Qui peut rejoindre L&rsquo;AMagie Éditions&nbsp;?</summary>
+        <div class="reponse">
+          <p>L&rsquo;AMagie accueille des <strong>autrices et auteurs, émergents ou confirmés</strong>, qui souhaitent publier leurs œuvres tout en conservant leurs droits.</p>
+          <p><em>Notre devise&nbsp;: «&nbsp;La poésie sauve&nbsp;!&nbsp;»</em></p>
+        </div>
+      </details>
+
+      <details class="question">
+        <summary>Êtes-vous une maison d&rsquo;édition à compte d&rsquo;auteur&nbsp;?</summary>
+        <div class="reponse">
+          <p><strong>Non.</strong> Vous n&rsquo;avez pas l&rsquo;obligation d&rsquo;acheter des livres.</p>
+          <p><strong>Avec référencement</strong> (librairies)&nbsp;: cession des droits d&rsquo;exploitation uniquement — <em>coût 65&nbsp;€ une fois pour toutes</em>.</p>
+        </div>
+      </details>
+
+      <details class="question">
+        <summary>Comment fonctionne l&rsquo;impression à la demande&nbsp;?</summary>
+        <div class="reponse">
+          <p>Impression de <strong>1, 2, 50, 100 exemplaires ou plus</strong>. Pas de gaspillage, pas de stock inutile.</p>
+          <p>Coût&nbsp;: <strong>4 à 5&nbsp;€ par exemplaire</strong> (roman format poche N&amp;B + couverture couleur).</p>
+        </div>
+      </details>
+
+      <details class="question">
+        <summary>Quels services proposez-vous aux auteurs&nbsp;?</summary>
+        <div class="reponse">
+          <p>Relecture, coaching littéraire, mise en page, graphisme de couverture. <strong>1 heure offerte</strong>, puis 30&nbsp;€/h.</p>
+          <p><strong>ISBN et dépôt légal BnF gratuits.</strong></p>
+          <p>Communication&nbsp;: <em>réseaux sociaux + article de presse offert</em>.</p>
+        </div>
+      </details>
+
+      <details class="question">
+        <summary>Dois-je céder mes droits d&rsquo;auteur&nbsp;?</summary>
+        <div class="reponse">
+          <p><strong>Non</strong>, si vous choisissez la formule <em>sans référencement</em>.</p>
+          <p><strong>Oui</strong>, si vous souhaitez le référencement en librairies (contrat d&rsquo;exclusivité à <em>65&nbsp;€ une fois pour toutes</em>).</p>
+          <p>L&rsquo;AMagie ne perçoit aucun revenu sur les ventes.</p>
+        </div>
+      </details>
+
+      <details class="question">
+        <summary>Quelle est la rémunération pour l&rsquo;auteur&nbsp;?</summary>
+        <div class="reponse">
+          <p><strong>Environ 40&nbsp;% des ventes</strong>, contre 2 à 8&nbsp;% en édition classique.</p>
+          <p>En ventes directes (salons, dédicaces)&nbsp;: <strong>100&nbsp;% pour vous</strong>, hors frais d&rsquo;impression.</p>
+        </div>
+      </details>
+
+      <details class="question">
+        <summary>Quels sont les coûts pour l&rsquo;auteur&nbsp;?</summary>
+        <div class="reponse">
+          <p><strong>Adhésion annuelle&nbsp;:</strong> 30&nbsp;€.</p>
+          <p><strong>Accompagnement éditorial&nbsp;:</strong> gratuit 1h, puis 30&nbsp;€/h.</p>
+          <p><strong>Impression&nbsp;:</strong> 4 à 5&nbsp;€ par exemplaire.</p>
+          <p><strong>Référencement optionnel&nbsp;:</strong> 65&nbsp;€ une fois.</p>
+        </div>
+      </details>
+
+      <details class="question">
+        <summary>Comment rejoindre L&rsquo;AMagie&nbsp;?</summary>
+        <div class="reponse">
+          <p>Envoyez votre manuscrit (Word ou PDF) à <a href="mailto:editions@l-amagie.art">editions@l-amagie.art</a> — nous l&rsquo;étudierons avec attention.</p>
+          <p>Appelez-nous au <a href="tel:0674402880">06&nbsp;74&nbsp;40&nbsp;28&nbsp;80</a>.</p>
+        </div>
+      </details>
+
+      <details class="question">
+        <summary>Pourquoi L&rsquo;AMagie se distingue-t-elle&nbsp;?</summary>
+        <div class="reponse">
+          <p><strong>Anouk Journo</strong> est autrice depuis 30 ans, publiée chez <em>Bayard, Fleurus, Gallimard Jeunesse</em>, membre de la <em>SGDL</em>.</p>
+          <p><strong>Meichelus</strong> est peintre, illustrateur et directeur éditorial.</p>
+          <p>Ensemble, ils offrent une <em>relation humaine, bienveillante et créative</em>.</p>
+        </div>
+      </details>
+
+    </div>
+
+    <!-- CTA FINAL -->
+    <div class="cta-final reveler">
+      <h3>Votre question n&rsquo;est pas ici&nbsp;?</h3>
+      <p>Contactez-nous directement — nous sommes là pour vous accompagner.</p>
+      <div class="btns-cta">
+        <a class="btn-cta" href="contact.html">Nous écrire</a>
+        <a class="btn-cta externe" href="https://www.helloasso.com/associations/l-amagie/adhesions/adhesion-a-l-amagie" target="_blank" rel="noopener">Adhérer</a>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- PLAN DU SITE -->
+  <section class="plan-site" aria-label="Plan du site">
+    <div class="filet-haut" aria-hidden="true"><span class="etoile">✦</span></div>
+    <div class="plan-site-grille">
+      <div class="plan-categorie">
+        <h2>Qui sommes-nous&nbsp;?</h2>
+        <ul>
+          <li><a href="qui-sommes-nous.html">Qui sommes-nous</a></li>
+          <li><a href="fonctionnement.html">Fonctionnement de l&rsquo;association</a></li>
+          <li><a href="anouk-journo.html">Anouk Journo</a></li>
+          <li><a href="peintures.html">Meichelus</a></li>
+        </ul>
+      </div>
+      <div class="plan-categorie">
+        <h2>Ateliers &amp; Coaching</h2>
+        <ul>
+          <li><a href="ateliers.html">Ateliers &amp; Coaching</a></li>
+          <li><a href="mots-pour-maux.html">Écriture thérapeutique</a></li>
+          <li><a href="mediation-animale.html">Médiation animale</a></li>
+          <li><a href="amis-mots.html">Collection Amis-Mots</a></li>
+        </ul>
+      </div>
+      <div class="plan-categorie">
+        <h2>Éditions</h2>
+        <ul>
+          <li><a href="edition.html">Manuscrits &amp; projets</a></li>
+          <li><a href="edition.html#raconter-le-monde">Collection Raconter le monde</a></li>
+          <li><a href="edition.html#immersion">Collection Immersion</a></li>
+          <li><a href="edition.html#manifestes">Collection Manifestes</a></li>
+          <li><a href="edition.html#romans-jeunesse">Romans jeunesse</a></li>
+        </ul>
+      </div>
+      <div class="plan-categorie">
+        <h2>Poésie &amp; Arts</h2>
+        <ul>
+          <li><a href="poesie.html">Poésie au jour le jour</a></li>
+          <li><a href="peintures.html">Peintures &amp; Dessins</a></li>
+          <li><a href="evenements.html">Événements &amp; Presse</a></li>
+        </ul>
+      </div>
+      <div class="plan-categorie">
+        <h2>Liens utiles</h2>
+        <ul>
+          <li><a href="boutique.html">Boutique</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="youtube.html">Chaîne Youtube</a></li>
+          <li><a href="mentions-legales.html">Mentions légales</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="plan-mentions">© 2026 L&rsquo;AMagie <span class="etoile">✦</span> Maison d&rsquo;édition indépendante <span class="etoile">✦</span> SIREN 937629533 <span class="etoile">✦</span> Félines-Minervois</p>
+    <p class="plan-webmaster">© Webmaster Meichelus : <a href="mailto:meichelus@l-amagie.art">meichelus@l-amagie.art</a></p>
+  </section>
+
+  <script>
+    if ('IntersectionObserver' in window) {
+      var obs = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){
+          if (e.isIntersecting){
+            e.target.classList.add('visible');
+            obs.unobserve(e.target);
+          }
+        });
+      }, { threshold:.08, rootMargin:'0px 0px -50px 0px' });
+      document.querySelectorAll('.reveler').forEach(function(el){ obs.observe(el); });
+    } else {
+      document.querySelectorAll('.reveler').forEach(function(el){ el.classList.add('visible'); });
+    }
+  </script>
+
+</body>
+</html>

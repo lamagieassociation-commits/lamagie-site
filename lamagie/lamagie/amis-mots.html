@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="google" content="notranslate"/>
+<meta http-equiv="Content-Language" content="fr"/>
+<title>Collection Amis-Mots — L'AMagie</title>
+<meta name="description" content="Collection Amis-Mots de L'AMagie — contes pour enfants et romans animaliers où les animaux deviennent les héros discrets de nos vies."/>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Pinyon+Script&display=swap" rel="stylesheet"/>
+
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html,body{overflow-x:hidden;}
+html{scroll-behavior:smooth;}
+body{
+background-color:#ece2c8;
+color:#3a3220;
+font-family:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+font-weight:400;
+font-size:17px;
+line-height:1.75;
+min-height:100vh;
+-webkit-font-smoothing:antialiased;
+-moz-osx-font-smoothing:grayscale;
+text-rendering:optimizeLegibility;
+background-image:
+radial-gradient(ellipse 55% 50% at 12% 18%, rgba(146,96,38,0.12) 0%, transparent 60%),
+radial-gradient(ellipse 50% 55% at 88% 82%, rgba(132,88,36,0.11) 0%, transparent 60%),
+radial-gradient(ellipse 60% 45% at 78% 18%, rgba(170,128,60,0.09) 0%, transparent 65%),
+radial-gradient(ellipse 55% 50% at 22% 82%, rgba(160,118,50,0.10) 0%, transparent 65%),
+radial-gradient(ellipse 75% 60% at 50% 35%, rgba(212,176,114,0.10) 0%, transparent 75%),
+linear-gradient(135deg, #f1ead4 0%, #e8dec0 50%, #ecdfc2 100%),
+url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='280' height='280'><filter id='g'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' seed='4'/><feColorMatrix values='0 0 0 0 0.42 0 0 0 0 0.32 0 0 0 0 0.17 0 0 0 0.22 0'/></filter><rect width='100%25' height='100%25' filter='url(%23g)'/></svg>");
+background-attachment:fixed;
+background-size:auto,auto,auto,auto,auto,auto,280px 280px;
+background-repeat:no-repeat,no-repeat,no-repeat,no-repeat,no-repeat,no-repeat,repeat;
+}
+a{color:inherit;text-decoration:none;}
+img{max-width:100%;height:auto;display:block;}
+em{font-style:italic;color:#5a4a30;}
+strong{font-weight:600;}
+::selection{background:rgba(184,154,92,.32);color:#3a3220;}
+
+.entete-site{
+position:relative;
+z-index:10;
+display:grid;
+grid-template-columns:1fr auto 1fr;
+align-items:center;
+gap:24px;
+padding:24px 40px;
+border-bottom:1px solid rgba(184,154,92,.28);
+background:linear-gradient(180deg,rgba(241,234,212,.55),rgba(236,226,200,.25));
+backdrop-filter:blur(1px);
+}
+.entete-logo{display:flex;align-items:center;justify-content:flex-start;}
+.entete-logo img{height:55px;width:auto;display:block;}
+.entete-titre{
+text-align:center;
+font-family:'Cormorant Garamond',Georgia,serif;
+font-weight:500;
+font-size:clamp(1.8rem,3.2vw,2.6rem);
+color:#3a3220;
+letter-spacing:.01em;
+line-height:1;
+text-decoration:none;
+}
+/* === TOGGLE LANGUE === */
+.entete-retour{display:flex;align-items:center;justify-content:flex-end;gap:16px;}
+.toggle-langue{
+display:flex;
+gap:8px;
+align-items:center;
+}
+.toggle-langue button{
+background:transparent;
+border:1px solid rgba(184,154,92,.4);
+padding:4px 10px;
+border-radius:2px;
+cursor:pointer;
+font-family:'Cormorant Garamond',Georgia,serif;
+font-size:0.8rem;
+color:#5a4a30;
+transition:all 0.3s;
+letter-spacing:.08em;
+text-transform:uppercase;
+}
+.toggle-langue button.active{
+background:#b89a5c;
+color:white;
+border-color:#b89a5c;
+}
+.toggle-langue button:hover{
+background:rgba(184,154,92,.1);
+}
+
+/* === DATA-LANG VISIBILITY === */
+/* Par défaut (FR) : on masque tout ce qui est marqué EN, sauf les
+   boutons de bascule (.lang-btn), qui doivent rester cliquables. */
+[data-lang="en"]:not(.lang-btn){display:none !important;}
+
+body.lang-en [data-lang="fr"]:not(.lang-btn){display:none !important;}
+body.lang-en [data-lang="en"]:not(.lang-btn){display:revert;}
+
+.lang-btn[data-lang]{display:inline-block !important;}
+
+[data-lang="fr"]:not(a):not(span):not(button){display:block !important;}
+[data-lang="en"]:not(a):not(span):not(button){display:none !important;}
+
+body.lang-en [data-lang="fr"]:not(a):not(span):not(button){display:none !important;}
+body.lang-en [data-lang="en"]:not(a):not(span):not(button){display:block !important;}
+
+a[data-lang="fr"], span[data-lang="fr"]{display:inline !important;}
+a[data-lang="en"], span[data-lang="en"]{display:none !important;}
+
+body.lang-en a[data-lang="en"], body.lang-en span[data-lang="en"]{display:inline !important;}
+body.lang-en a[data-lang="fr"], body.lang-en span[data-lang="fr"]{display:none !important;}
+
+/* Les boutons .bouton sont en inline-block : on préserve ce display
+   pour ne pas casser leur apparence quand ils portent data-lang. */
+.bouton[data-lang="fr"]{display:inline-block !important;}
+.bouton[data-lang="en"]{display:none !important;}
+body.lang-en .bouton[data-lang="fr"]{display:none !important;}
+body.lang-en .bouton[data-lang="en"]{display:inline-block !important;}
+
+/* .legende est un <span> mais doit rester en display:block (saut de
+   ligne sous le titre) : on corrige l'inline forcé par la règle
+   générale span[data-lang] ci-dessus. */
+.legende[data-lang="fr"]{display:block !important;}
+.legende[data-lang="en"]{display:none !important;}
+body.lang-en .legende[data-lang="fr"]{display:none !important;}
+body.lang-en .legende[data-lang="en"]{display:block !important;}
+
+.entete-retour a{
+font-family:'Cormorant Garamond',Georgia,serif;
+font-size:.92rem;
+letter-spacing:.18em;
+text-transform:uppercase;
+color:#5a4a30;
+padding:8px 18px;
+border:1px solid rgba(184,154,92,.4);
+border-radius:2px;
+transition:color .3s, background-color .3s, border-color .3s;
+white-space:nowrap;
+}
+.entete-retour a::before{content:'⌂ ';margin-right:.25em;letter-spacing:0;}
+.entete-retour a:hover{color:#b89a5c;border-color:#b89a5c;background:rgba(184,154,92,.07);}
+
+.heros-page{
+text-align:center;
+padding:64px 20px 28px;
+max-width:900px;
+margin:0 auto;
+}
+.fil-ariane{
+display:inline-block;
+font-family:'Cormorant Garamond',serif;
+font-size:.72rem;
+letter-spacing:.32em;
+text-transform:uppercase;
+color:#5a4a30;
+margin-bottom:24px;
+}
+.fil-ariane a{color:#8a6d2f;transition:color .3s;}
+.fil-ariane a:hover{color:#b89a5c;}
+.fil-ariane .sep{margin:0 .55em;color:rgba(184,154,92,.55);}
+.titre-page{
+font-family:'Cormorant Garamond',Georgia,serif;
+font-weight:500;
+font-size:clamp(2.4rem,5.5vw,3.8rem);
+color:#3a3220;
+letter-spacing:.005em;
+line-height:1.1;
+margin:0 0 14px;
+}
+.sous-titre-page{
+font-family:'Pinyon Script','Cormorant Garamond',cursive;
+font-size:clamp(1.4rem,2.5vw,1.95rem);
+color:#7a6a48;
+line-height:1.3;
+margin:0;
+}
+.medaillon-titre{
+width:54px;
+height:54px;
+margin:32px auto 0;
+border-radius:50%;
+border:1px solid rgba(184,154,92,.5);
+box-shadow:0 0 0 5px rgba(241,234,212,.6),0 0 0 6px rgba(184,154,92,.18);
+display:flex;
+align-items:center;
+justify-content:center;
+color:#b89a5c;
+font-size:1.1rem;
+}
+.illustration-titre{
+margin:36px auto 0;
+max-width:720px;
+padding:0 20px;
+text-align:center;
+}
+.illustration-titre img{
+display:block;
+width:100%;
+height:auto;
+border-radius:8px;
+box-shadow:0 4px 20px rgba(58,50,32,0.12),0 0 0 1px rgba(184,154,92,.22),0 0 0 6px rgba(241,234,212,.55);
+background:rgba(255,253,245,.5);
+padding:14px;
+}
+.illustration-titre figcaption{
+margin-top:14px;
+font-family:'Pinyon Script','Cormorant Garamond',cursive;
+font-size:1.25rem;
+color:#7a6a48;
+line-height:1.3;
+letter-spacing:.01em;
+}
+
+.contenu{max-width:1060px;margin:0 auto;padding:0 20px 60px;}
+.section-portrait{
+display:block;
+width:clamp(170px,20vw,220px);
+margin:-8px auto 28px;
+}
+.section-portrait img{
+display:block;
+width:100%;
+height:auto;
+border-radius:6px;
+box-shadow:0 6px 22px rgba(58,50,32,.16),0 0 0 1px rgba(184,154,92,.25),0 0 0 6px rgba(241,234,212,.55);
+background:rgba(255,253,245,.5);
+padding:8px;
+}
+.section-portrait figcaption{
+margin-top:12px;
+font-family:'Pinyon Script','Cormorant Garamond',cursive;
+font-size:1.1rem;
+color:#7a6a48;
+line-height:1.3;
+letter-spacing:.01em;
+text-align:center;
+}
+.carte{
+background:rgba(246,239,216,.62);
+border:1px solid rgba(184,154,92,.22);
+border-radius:2px;
+padding:48px 56px;
+margin:0 auto 36px;
+position:relative;
+box-shadow:0 4px 14px rgba(90,74,48,.06),0 1px 2px rgba(90,74,48,.04);
+}
+.carte::before,.carte::after,.livre-detail::before,.livre-detail::after{
+content:'';
+position:absolute;
+width:18px;
+height:18px;
+border:1px solid rgba(184,154,92,.45);
+pointer-events:none;
+}
+.carte::before,.livre-detail::before{top:6px;left:6px;border-right:0;border-bottom:0;}
+.carte::after,.livre-detail::after{bottom:6px;right:6px;border-left:0;border-top:0;}
+.carte p{font-size:1.08rem;line-height:1.85;color:#3a3220;margin:0 0 1.1rem;}
+.carte p:last-child{margin-bottom:0;}
+
+.section-titre{text-align:center;margin:56px 0 32px;}
+.section-titre h2{
+display:inline-block;
+font-family:'Cormorant Garamond',serif;
+font-weight:500;
+font-size:clamp(1.4rem,2.8vw,1.85rem);
+letter-spacing:.18em;
+color:#3a3220;
+text-transform:uppercase;
+position:relative;
+padding:0 30px;
+}
+.section-titre h2::before,.section-titre h2::after{
+content:'❦';
+position:absolute;
+top:50%;
+transform:translateY(-50%);
+color:#b89a5c;
+font-size:.85em;
+}
+.section-titre h2::before{left:0;}
+.section-titre h2::after{right:0;}
+.section-titre .legende{
+display:block;
+margin-top:14px;
+font-family:'Pinyon Script','Cormorant Garamond',cursive;
+font-size:1.25rem;
+color:#7a6a48;
+letter-spacing:.02em;
+font-weight:400;
+}
+
+.livre-detail{
+position:relative;
+background:rgba(246,239,216,.60);
+border:1px solid rgba(184,154,92,.25);
+border-radius:2px;
+padding:42px 44px;
+margin:0 auto 42px;
+box-shadow:0 4px 14px rgba(90,74,48,.06),0 1px 2px rgba(90,74,48,.04);
+}
+.livre-haut{
+display:grid;
+grid-template-columns:minmax(300px,620px) 1fr;
+gap:38px;
+align-items:start;
+}
+.couvertures{
+display:flex;
+flex-wrap:wrap;
+gap:22px;
+align-items:flex-start;
+justify-content:center;
+}
+.couverture-bloc{
+max-width:100%;
+background:transparent;
+padding:0;
+line-height:0;
+}
+.couverture-premiere{
+width:clamp(240px,24vw,260px);
+}
+.couverture-quatrieme{
+width:clamp(280px,30vw,320px);
+}
+.couverture-bloc img{
+display:block;
+width:100%;
+height:auto;
+object-fit:contain;
+border:1px solid rgba(184,154,92,.28);
+border-radius:1px;
+box-shadow:0 8px 22px rgba(90,74,48,.14),0 0 0 7px rgba(241,234,212,.50);
+background:rgba(255,253,245,.28);
+}
+.couverture-legende{
+display:block;
+font-size:.78rem;
+letter-spacing:.16em;
+text-transform:uppercase;
+color:#7a6a48;
+line-height:1.25;
+text-align:center;
+margin-top:13px;
+}
+.livre-texte h3{
+font-family:'Cormorant Garamond',serif;
+font-weight:500;
+font-size:clamp(1.65rem,3vw,2.25rem);
+line-height:1.12;
+letter-spacing:.015em;
+color:#3a3220;
+margin:0 0 8px;
+}
+.livre-texte .auteur{
+display:block;
+font-style:italic;
+font-size:1.08rem;
+color:#5a4a30;
+margin-bottom:18px;
+padding-bottom:14px;
+border-bottom:1px dashed rgba(184,154,92,.35);
+}
+.livre-texte .auteur::before{content:'— ';color:#b89a5c;font-style:normal;}
+.livre-texte p{
+font-size:1.05rem;
+line-height:1.78;
+color:#3a3220;
+margin:0 0 1rem;
+}
+.livre-texte .resume-original{
+margin:22px 0 22px;
+padding:22px 24px;
+background:rgba(241,234,212,.44);
+border-left:3px solid rgba(184,154,92,.45);
+box-shadow:0 3px 10px rgba(90,74,48,.04);
+}
+.livre-texte .resume-original p{
+font-style:italic;
+color:#5a4a30;
+margin-bottom:.82rem;
+}
+.livre-texte .resume-original p:last-child{margin-bottom:0;}
+.livre-texte .resume-original .accroche{
+font-weight:600;
+font-style:italic;
+color:#3a3220;
+}
+.bouton{
+display:inline-block;
+font-family:'Cormorant Garamond',serif;
+font-size:.95rem;
+letter-spacing:.14em;
+text-transform:uppercase;
+color:#3a3220;
+padding:12px 28px;
+border:1px solid rgba(184,154,92,.55);
+background:rgba(184,154,92,.15);
+border-radius:2px;
+transition:color .3s,border-color .3s,background-color .3s,transform .3s;
+text-decoration:none;
+}
+.bouton::after{content:' →';letter-spacing:0;}
+.bouton:hover{border-color:#b89a5c;background:rgba(184,154,92,.28);transform:translateY(-2px);}
+.cta{text-align:center;margin-top:20px;}
+
+/* === Fiche annonce (couverture pleine largeur, texte centré) === */
+.livre-annonce{
+border-color:rgba(184,154,92,.5);
+box-shadow:0 10px 28px rgba(90,74,48,.16),0 1px 2px rgba(90,74,48,.05);
+text-align:center;
+}
+.couverture-hero{
+max-width:560px;
+margin:0 auto 34px;
+}
+.couverture-hero img{
+display:block;
+width:100%;
+height:auto;
+border:1px solid rgba(184,154,92,.28);
+border-radius:2px;
+box-shadow:0 14px 34px rgba(90,74,48,.18),0 0 0 8px rgba(241,234,212,.55);
+background:rgba(255,253,245,.28);
+}
+.couverture-hero figcaption{
+display:block;
+font-size:.78rem;
+letter-spacing:.16em;
+text-transform:uppercase;
+color:#7a6a48;
+line-height:1.25;
+text-align:center;
+margin-top:15px;
+}
+.livre-texte-centre{
+max-width:660px;
+margin:0 auto;
+text-align:center;
+}
+.livre-texte-centre h3{text-align:center;}
+.livre-texte-centre .auteur{
+display:inline-block;
+border-bottom:none;
+padding-bottom:0;
+}
+.livre-texte-centre p{text-align:left;}
+.livre-texte-centre .resume-original{text-align:left;}
+.livre-texte-centre .disponibilite{text-align:center;}
+.disponibilite{
+font-style:italic;
+color:#8a6d2f;
+font-size:.98rem;
+margin:4px 0 18px !important;
+}
+.cta-double{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:22px;}
+.bouton-discret{
+opacity:.72;
+font-size:.85rem;
+padding:11px 24px;
+background:transparent;
+}
+.bouton-discret:hover{opacity:1;}
+
+.plan-site{
+background:transparent;
+padding:48px 24px 36px;
+max-width:1080px;
+margin:0 auto;
+text-align:center;
+font-family:'Cormorant Garamond',Georgia,serif;
+color:#3a3220;
+border-top:1px solid rgba(184,154,92,.25);
+}
+.plan-site .filet-haut{
+display:flex;
+align-items:center;
+justify-content:center;
+gap:14px;
+margin:0 auto 28px;
+max-width:200px;
+}
+.plan-site .filet-haut::before,.plan-site .filet-haut::after{
+content:'';
+flex:1;
+height:1px;
+background:linear-gradient(90deg,transparent,rgba(184,154,92,.55),transparent);
+}
+.plan-site .filet-haut .etoile{color:#b89a5c;font-size:.85rem;line-height:1;}
+.plan-site-grille{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:24px 32px;
+text-align:left;
+margin-bottom:28px;
+}
+.plan-categorie h2{
+font-family:'Cormorant Garamond',serif;
+font-weight:500;
+font-size:.72rem;
+letter-spacing:.3em;
+text-transform:uppercase;
+color:#5a4a30;
+margin:0 0 10px;
+padding-bottom:6px;
+border-bottom:1px solid rgba(184,154,92,.22);
+}
+.plan-categorie ul{list-style:none;margin:0;padding:0;}
+.plan-categorie li{font-size:.92rem;line-height:1.65;margin-bottom:2px;}
+.plan-categorie a{color:#3a3220;text-decoration:none;transition:color .3s;border-bottom:1px solid transparent;}
+.plan-categorie a:hover{color:#b89a5c;border-bottom-color:rgba(184,154,92,.4);}
+.plan-mentions{
+font-family:'Cormorant Garamond',serif;
+font-size:.78rem;
+letter-spacing:.16em;
+color:#7a6a48;
+text-transform:uppercase;
+margin:0;
+}
+.plan-mentions .etoile{color:#b89a5c;margin:0 .6em;}
+.plan-webmaster{
+margin:14px auto 0;
+max-width:340px;
+padding-top:10px;
+border-top:1px solid rgba(184,154,92,.18);
+font-family:'Cormorant Garamond',serif;
+font-style:italic;
+font-size:.78rem;
+letter-spacing:.08em;
+color:#8a6d2f;
+text-align:center;
+}
+.plan-webmaster a{color:inherit;border-bottom:1px solid rgba(184,154,92,.3);transition:color .3s,border-color .3s;}
+.plan-webmaster a:hover{color:#b89a5c;border-bottom-color:#b89a5c;}
+
+.reveler{opacity:0;transform:translateY(18px);transition:opacity .9s ease,transform .9s ease;}
+.reveler.visible{opacity:1;transform:translateY(0);}
+
+@media(max-width:900px){
+.livre-haut{grid-template-columns:1fr;gap:30px;}
+.couverture-premiere{width:min(260px,78vw);}
+.couverture-quatrieme{width:min(320px,88vw);}
+}
+@media(max-width:760px){
+.entete-site{grid-template-columns:auto 1fr auto;padding:14px 16px;gap:12px;}
+.entete-logo img{height:42px;}
+.entete-titre{font-size:1.4rem;}
+.entete-retour a{font-size:.7rem;letter-spacing:.1em;padding:6px 10px;}
+.entete-retour a::before{content:'⌂';margin-right:0;}
+.entete-retour a{font-size:0;width:34px;height:30px;display:flex;align-items:center;justify-content:center;}
+.entete-retour a::before{font-size:.85rem;}
+.titre-page{font-size:2.7rem;}
+.carte,.livre-detail{padding:32px 22px;}
+.couvertures{gap:18px;}
+.plan-site{padding:32px 18px 24px;}
+.plan-site-grille{gap:18px;text-align:center;}
+.plan-categorie h2{text-align:center;}
+.plan-mentions{font-size:.7rem;letter-spacing:.12em;}
+}
+@media(prefers-reduced-motion:reduce){
+.reveler{opacity:1;transform:none;transition:none;}
+}
+</style>
+</head>
+
+<body>
+
+<header class="entete-site" role="banner">
+<div class="entete-logo">
+<a href="index.html" aria-label="Retour à l'accueil de L'AMagie"><img src="images/logo-amagie.png" alt="L'AMagie" onerror="this.style.display='none'"/></a>
+</div>
+<a href="index.html" class="entete-titre" aria-label="L'AMagie — Accueil">L&rsquo;AMagie</a>
+<div class="entete-retour">
+<div class="toggle-langue">
+<button class="lang-btn active" data-lang="fr">FR</button>
+<button class="lang-btn" data-lang="en">EN</button>
+</div>
+<a href="index.html"><span data-lang="fr">Accueil</span><span data-lang="en">Home</span></a>
+</div>
+</header>
+
+<section class="heros-page">
+<nav class="fil-ariane" aria-label="Fil d'ariane">
+<a href="index.html" data-lang="fr">Accueil</a>
+<a href="index.html" data-lang="en">Home</a>
+<span class="sep">·</span>
+<a href="ateliers.html" data-lang="fr">Ateliers</a>
+<a href="ateliers.html" data-lang="en">Workshops</a>
+<span class="sep">·</span>
+<span data-lang="fr">Collection Amis-Mots</span>
+<span data-lang="en">Amis-Mots Collection</span>
+</nav>
+
+<h1 class="titre-page" data-lang="fr">Collection Amis-Mots</h1>
+<h1 class="titre-page" data-lang="en">Amis-Mots Collection</h1>
+<p class="sous-titre-page" data-lang="fr">Quand les animaux deviennent les héros discrets de nos vies</p>
+<p class="sous-titre-page" data-lang="en">Where animals become the quiet heroes of our lives</p>
+<div class="medaillon-titre" aria-hidden="true">✦</div>
+
+<figure class="illustration-titre reveler">
+<img src="images/amis-mots.png" alt="Amis-Mots Collection — L'AMagie" loading="eager" decoding="async" onerror="this.style.display='none'"/>
+<figcaption data-lang="fr">Une présence animale qui veille silencieusement sur les mots.</figcaption>
+<figcaption data-lang="en">An animal presence quietly watching over the words.</figcaption>
+</figure>
+</section>
+
+<main class="contenu" role="main">
+
+<article class="carte reveler">
+<p data-lang="fr">La <strong>Collection Amis-Mots</strong> est née de la passion d&rsquo;Anouk Journo pour le monde animal. Elle réunit des textes où les animaux ne sont jamais de simples silhouettes, mais des présences sensibles — capables d&rsquo;accompagner, de soigner, d&rsquo;apaiser et de transformer notre regard sur le monde.</p>
+<p data-lang="en">The <strong>Amis-Mots Collection</strong> was born from Anouk Journo's passion for the animal world. It brings together texts where animals are never mere silhouettes, but sensitive presences—capable of accompanying, healing, soothing, and transforming how we see the world.</p>
+<p data-lang="fr">Chats recueillis, animaux sauvages sauvés de la captivité, sanctuaires imaginaires ou réels : chaque livre ouvre un chemin vers le vivant, avec tendresse, humour, profondeur et cet émerveillement qui aide les jeunes lecteurs à grandir.</p>
+<p data-lang="en">Rescued cats, wild animals saved from captivity, imagined or real sanctuaries: each book opens a path toward living beings, with tenderness, humor, depth, and that sense of wonder that helps young readers grow.</p>
+<p data-lang="fr"><em>Pour les enfants… et pour les adultes qui ont gardé leur cœur d&rsquo;enfant.</em></p>
+<p data-lang="en"><em>For children… and for adults who have kept their childhood hearts.</em></p>
+</article>
+
+<div class="section-titre reveler">
+<h2 data-lang="fr">Les Titres</h2>
+<h2 data-lang="en">The Titles</h2>
+<span class="legende" data-lang="fr">Les livres de la collection</span>
+<span class="legende" data-lang="en">Books from the collection</span>
+</div>
+
+<article class="livre-detail livre-annonce reveler" id="chat-qui-n-avait-pas-de-nom">
+<figure class="couverture-hero">
+<img src="images/chat-qui-n-avait-pas-de-nom.png" alt="Couverture complète (première et quatrième de couverture) du livre Le chat qui n'avait pas de nom, par Anouk Journo et Meichelus" loading="lazy" decoding="async"/>
+<figcaption data-lang="fr">Couverture complète — quatrième et première de couverture</figcaption>
+<figcaption data-lang="en">Full cover — back and front</figcaption>
+</figure>
+<div class="livre-texte livre-texte-centre">
+<h3>Le chat qui n&rsquo;avait pas de nom</h3>
+<span class="auteur">Anouk Journo &amp; Meichelus</span>
+<p data-lang="fr"><em>«&nbsp;Exister, c&rsquo;est être attendu quelque part…&nbsp;»</em> Les Éditions L&rsquo;AMagie ont le bonheur de vous présenter le tout dernier-né de la Collection Amis-Mots&nbsp;: une nouvelle édition, entièrement revisitée, de <em>Moustache, le roi des coussins</em>.</p>
+<p data-lang="en"><em>“To exist is to be expected somewhere…”</em> The Éditions L&rsquo;AMagie are delighted to present the newest arrival in the Amis-Mots Collection&nbsp;: a fully revisited new edition of <em>Moustache, le roi des coussins</em>.</p>
+<p data-lang="fr">Un grand chat noir vit dans un village avec la dignité d&rsquo;un roi… mais sans royaume. Il est seul. Au fil des rencontres, des croquettes partagées, des gestes doux d&rsquo;enfants et des aléas de la rue, il devient Moustache, puis Moumou&nbsp;: une traversée sensible pour découvrir ce que signifie trouver sa place et être aimé.</p>
+<p data-lang="en">A large black cat lives in a village with the dignity of a king… but with no kingdom. He is alone. Through chance encounters, shared kibble, children&rsquo;s gentle gestures and the hazards of the street, he becomes Moustache, then Moumou&nbsp;: a tender journey to discover what it means to find one&rsquo;s place and to be loved.</p>
+<div class="resume-original">
+<p data-lang="fr">Un grand chat noir sans nom vit dans un village avec la dignité d&rsquo;un roi… mais sans royaume. Il est seul.</p>
+<p data-lang="en">A large black cat with no name lives in a village with the dignity of a king… but with no kingdom. He is alone.</p>
+<p data-lang="fr">Entre petites mains d&rsquo;enfants, croquettes partagées et dangers de la rue, il devient Moustache… Puis Moumou. Il découvre qu&rsquo;exister, c&rsquo;est être attendu quelque part…</p>
+<p data-lang="en">Between children&rsquo;s small hands, shared kibble and the dangers of the street, he becomes Moustache… Then Moumou. He discovers that to exist is to be expected somewhere…</p>
+<p class="accroche" data-lang="fr">Inspiré d&rsquo;une histoire réelle, ce conte délicat parle d&rsquo;adoption, de courage et d&rsquo;espoir.</p>
+<p class="accroche" data-lang="en">Inspired by a true story, this delicate tale speaks of adoption, courage, and hope.</p>
+</div>
+<p class="disponibilite" data-lang="fr">✦ Disponible très prochainement en librairies indépendantes.</p>
+<p class="disponibilite" data-lang="en">✦ Coming very soon to independent bookshops.</p>
+<div class="cta cta-double">
+<a class="bouton" data-lang="fr" href="https://www.librairiesindependantes.com/" target="_blank" rel="noopener noreferrer">Trouver en librairie indépendante</a>
+<a class="bouton" data-lang="en" href="https://www.librairiesindependantes.com/" target="_blank" rel="noopener noreferrer">Find at an Independent Bookshop</a>
+<a class="bouton bouton-discret" data-lang="fr" href="https://meichelus-art.blogspot.com/2026/09/parution-aux-editions-lamagie-dans-la.html" target="_blank" rel="noopener noreferrer">Lire l&rsquo;annonce complète</a>
+<a class="bouton bouton-discret" data-lang="en" href="https://meichelus-art.blogspot.com/2026/09/parution-aux-editions-lamagie-dans-la.html" target="_blank" rel="noopener noreferrer">Read Full Announcement</a>
+</div>
+</div>
+</article>
+
+<article class="livre-detail reveler" id="moustache">
+<div class="livre-haut">
+<div class="couvertures">
+<figure class="couverture-bloc couverture-premiere">
+<img src="images/Moustache.png" alt="Front cover of Moustache, le roi des coussins" loading="lazy" decoding="async"/>
+<figcaption class="couverture-legende" data-lang="fr">Première de couverture</figcaption>
+<figcaption class="couverture-legende" data-lang="en">Front cover</figcaption>
+</figure>
+<figure class="couverture-bloc couverture-quatrieme">
+<img src="images/Moustache4.png" alt="Back cover of Moustache, le roi des coussins" loading="lazy" decoding="async"/>
+<figcaption class="couverture-legende" data-lang="fr">Quatrième de couverture</figcaption>
+<figcaption class="couverture-legende" data-lang="en">Back cover</figcaption>
+</figure>
+</div>
+<div class="livre-texte">
+<h3>Moustache, le roi des coussins</h3>
+<span class="auteur">Anouk Journo</span>
+<p data-lang="fr">Avec <em>Moustache, le roi des coussins</em>, la Collection Amis-Mots accueille un conte délicat inspiré d&rsquo;une histoire vraie. Nous y rencontrons un chat noir fier et espiègle qui traverse le monde avec la dignité d&rsquo;un souverain… mais sans royaume où poser ses pattes.</p>
+<p data-lang="en">With <em>Moustache, le roi des coussins</em>, the Amis-Mots Collection welcomes a delicate tale inspired by a true story. We encounter a proud and witty black cat who crosses the world with the dignity of a sovereign… but with no kingdom in which to rest his paws.</p>
+<p data-lang="fr">Entre les rues, les petites mains des enfants, la nourriture partagée et la découverte d&rsquo;un foyer, Moustache devient peu à peu bien plus qu&rsquo;un chat de passage : une présence attendue, aimée, véritablement reconnue. Son histoire parle d&rsquo;adoption, de courage, d&rsquo;espoir, et de ces petits liens qui changent une vie.</p>
+<p data-lang="en">Between the streets, children's small hands, shared food, and the discovery of a home, Moustache gradually becomes more than a passing cat: an expected presence, a beloved one, truly recognized. His story speaks of adoption, courage, hope, and those small bonds that change a life.</p>
+<p data-lang="fr"><em>Ce titre connaît aujourd&rsquo;hui une nouvelle vie sous le titre <a href="#chat-qui-n-avait-pas-de-nom">« Le chat qui n&rsquo;avait pas de nom »</a>, une édition revisitée à découvrir ci-dessus.</em></p>
+<p data-lang="en"><em>This title now lives on under the name <a href="#chat-qui-n-avait-pas-de-nom">“Le chat qui n&rsquo;avait pas de nom”</a>, a revisited edition to discover above.</em></p>
+<div class="resume-original">
+<p data-lang="fr">Un grand chat noir sans nom vit dans un village avec la dignité d&rsquo;un roi… Mais il n&rsquo;a pas de royaume. Il est seul.</p>
+<p data-lang="en">A large black cat with no name lives in a village with the dignity of a king… But he has no kingdom. He is alone.</p>
+<p data-lang="fr">Entre les mains douces des enfants, les repas partagés et les dangers de la rue, il devient Moustache… Puis Moumou. Il découvre qu&rsquo;exister, c&rsquo;est être attendu quelque part…</p>
+<p data-lang="en">Between children's gentle hands, shared meals, and the dangers of the street, he becomes Moustache… Then Moumou. He discovers that to exist is to be expected somewhere…</p>
+<p class="accroche" data-lang="fr">Inspiré d&rsquo;une histoire vraie, ce conte délicat parle d&rsquo;adoption, de courage et d&rsquo;espoir.</p>
+<p class="accroche" data-lang="en">Inspired by a true story, this delicate tale speaks of adoption, courage, and hope.</p>
+</div>
+<a class="bouton" data-lang="fr" href="https://www.librairiesindependantes.com/product/9791098116940/" target="_blank" rel="noopener noreferrer">Commander</a>
+<a class="bouton" data-lang="en" href="https://www.librairiesindependantes.com/product/9791098116940/" target="_blank" rel="noopener noreferrer">Order Now</a>
+</div>
+</div>
+</article>
+
+<article class="livre-detail reveler" id="serment-de-la-lionne">
+<div class="livre-haut">
+<div class="couvertures">
+<figure class="couverture-bloc couverture-premiere">
+<img src="images/serment.png" alt="Front cover of Valrêve — Le serment de la lionne" loading="lazy" decoding="async"/>
+<figcaption class="couverture-legende" data-lang="fr">Première de couverture</figcaption>
+<figcaption class="couverture-legende" data-lang="en">Front cover</figcaption>
+</figure>
+<figure class="couverture-bloc couverture-quatrieme">
+<img src="images/serment4.png" alt="Back cover of Valrêve — Le serment de la lionne" loading="lazy" decoding="async"/>
+<figcaption class="couverture-legende" data-lang="fr">Quatrième de couverture</figcaption>
+<figcaption class="couverture-legende" data-lang="en">Back cover</figcaption>
+</figure>
+</div>
+<div class="livre-texte">
+<h3>Valrêve — Le serment de la lionne</h3>
+<span class="auteur">Anouk Journo</span>
+<p data-lang="fr">Premier volume de la saga <em>Valrêve, le refuge des animaux libres</em>, <em>Le serment de la lionne</em> invite les lecteurs dans un lieu qui est à la fois un sanctuaire, un territoire d&rsquo;aventure et un seuil de transformation intérieure. À Valrêve, les animaux sauvages blessés et ceux sauvés de la captivité trouvent un espace où ils sont soignés sans être possédés, protégés sans être apprivoisés.</p>
+<p data-lang="en">The first volume of the <em>Valrêve, le refuge des animaux libres</em> saga, <em>Le serment de la lionne</em> invites readers into a place that is at once a sanctuary, an adventure territory, and a threshold of inner transformation. At Valrêve, wounded wild animals and those rescued from captivity find a space where they are healed without being possessed, where they are protected without being tamed.</p>
+<p data-lang="fr">Izia et Jawo découvrent un monde bien plus vaste qu&rsquo;ils ne l&rsquo;imaginaient, peuplé de lions, de secrets, de mémoires enfouies et de liens puissants entre les espèces. La protection animale devient ici le cœur d&rsquo;une quête romanesque : apprendre à voir autrement, à faire confiance, à choisir le courage.</p>
+<p data-lang="en">Izia and Jawo discover a world far vaster than they imagined, filled with lions, secrets, buried memories, and powerful bonds between species. Animal protection becomes here the heart of a romantic quest: learning to see differently, to trust, to choose courage.</p>
+<div class="resume-original">
+<p class="accroche" data-lang="fr">Un sanctuaire. Des animaux sauvés. Une famille en quête de sens.</p>
+<p class="accroche" data-lang="en">A sanctuary. Rescued animals. A family seeking meaning.</p>
+<p data-lang="fr">En Normandie, le sanctuaire de Valrêve accueille des animaux sauvages ayant connu la souffrance et la captivité. Antoine Beucaire y travaille comme vétérinaire. Ses enfants, Izia et Jawo, vont vivre une expérience qui va changer leur regard sur le monde… et sur eux-mêmes.</p>
+<p data-lang="en">In Normandy, the Valrêve sanctuary welcomes wild animals that have known suffering and captivity. Antoine Beucaire works there as a veterinarian. His children, Izia and Jawo, will experience something that will change how they see the world… and themselves.</p>
+<p data-lang="fr">Car Valrêve garde des secrets. Et certains animaux n&rsquo;ont pas oublié…</p>
+<p data-lang="en">For Valrêve holds secrets. And some animals have not forgotten…</p>
+<p class="accroche" data-lang="fr">Une histoire puissante, inspirée de faits réels, sur la protection animale et la force des liens entre les espèces.</p>
+<p class="accroche" data-lang="en">A powerful story, inspired by true events, about animal protection and the strength of bonds between species.</p>
+</div>
+<a class="bouton" data-lang="fr" href="https://www.librairiesindependantes.com/product/9791098116926/" target="_blank" rel="noopener noreferrer">Commander</a>
+<a class="bouton" data-lang="en" href="https://www.librairiesindependantes.com/product/9791098116926/" target="_blank" rel="noopener noreferrer">Order Now</a>
+</div>
+</div>
+</article>
+
+<article class="livre-detail reveler" id="reve-sauvage">
+<div class="livre-haut">
+<div class="couvertures">
+<figure class="couverture-bloc couverture-premiere">
+<img src="images/reve-sauvage.png" alt="Front cover of Valrêve — Le rêve sauvage" loading="lazy" decoding="async"/>
+<figcaption class="couverture-legende" data-lang="fr">Première de couverture</figcaption>
+<figcaption class="couverture-legende" data-lang="en">Front cover</figcaption>
+</figure>
+<figure class="couverture-bloc couverture-quatrieme">
+<img src="images/reve-sauvage4.png" alt="Back cover of Valrêve — Le rêve sauvage" loading="lazy" decoding="async"/>
+<figcaption class="couverture-legende" data-lang="fr">Quatrième de couverture</figcaption>
+<figcaption class="couverture-legende" data-lang="en">Back cover</figcaption>
+</figure>
+</div>
+<div class="livre-texte">
+<h3>Valrêve — Le rêve sauvage</h3>
+<span class="auteur">Anouk Journo</span>
+<p data-lang="fr">Dans ce second volume, l&rsquo;univers de Valrêve s&rsquo;approfondit. Le sanctuaire n&rsquo;est plus seulement un lieu d&rsquo;accueil : il devient un espace de choix, d&rsquo;épreuve et de révélation. Les animaux y gardent leur nature sauvage, leur dignité intacte, leur mystère aussi.</p>
+<p data-lang="en">In this second volume, the Valrêve universe deepens. The sanctuary is no longer simply a place of welcome: it becomes a space of choice, trial, and revelation. The animals there keep their wild nature, their dignity intact, their mystery too.</p>
+<p data-lang="fr">Jawo et Izia poursuivent leur chemin aux côtés de lions, de lémuriens et de chats blessés, tandis que des tensions humaines menacent l&rsquo;équilibre du sanctuaire. Entre trahisons, légendes anciennes et force des liens sincères, <em>Le rêve sauvage</em> célèbre la liberté comme une promesse fragile : celle qu&rsquo;il faut protéger sans jamais l&rsquo;enfermer.</p>
+<p data-lang="en">Jawo and Izia continue their journey alongside lions, lemurs, and injured cats, while human tensions threaten the sanctuary's balance. Between betrayals, ancient legends, and the strength of sincere bonds, <em>Le rêve sauvage</em> celebrates freedom as a fragile promise: one we must protect without ever confining it.</p>
+<div class="resume-original">
+<p class="accroche" data-lang="fr">Un sanctuaire. Des animaux sauvages. Une famille en quête de sens.</p>
+<p class="accroche" data-lang="en">A sanctuary. Wild animals. A family seeking meaning.</p>
+<p data-lang="fr">À Valrêve, une seconde chance est offerte aux animaux sauvages sauvés de la captivité. Lions, lémuriens, chats blessés… Ici, on soigne sans apprivoiser. On protège sans posséder.</p>
+<p data-lang="en">At Valrêve, a second chance is offered to wild animals rescued from captivity. Lions, lemurs, injured cats… Here, we heal without taming. We protect without possessing.</p>
+<p data-lang="fr">Pour Jawo et Izia, vivre au sanctuaire, c&rsquo;est apprendre que la liberté ne se négocie pas. Jawo seul face à Gala, la lionne qu&rsquo;il aime tant. Izia, confrontée aux trahisons humaines, découvre que défendre les animaux, c&rsquo;est aussi trouver sa propre force…</p>
+<p data-lang="en">For Jawo and Izia, living at the sanctuary means learning that freedom cannot be negotiated. Jawo alone facing Gala, the lioness he loves so dearly. Izia, confronted with human betrayals, discovers that defending animals is also finding her own strength…</p>
+<p data-lang="fr">Quand une légende ancienne liée aux Templiers ressurgit près du sanctuaire, l&rsquo;aventure pourrait détourner de l&rsquo;essentiel : le véritable trésor de Valrêve…</p>
+<p data-lang="en">When an ancient legend connected to the Knights Templar resurfaces near the sanctuary, the adventure could distract from what truly matters: the real treasure at Valrêve…</p>
+<p class="accroche" data-lang="fr">Dans la continuité du <em>Serment de la lionne</em>, ce roman vibrant célèbre l&rsquo;amour et le respect des animaux sauvages, ainsi que la force des liens sincères.</p>
+<p class="accroche" data-lang="en">Following <em>Le serment de la lionne</em>, this vibrant novel celebrates love and respect for wild animals, as well as the power of sincere bonds.</p>
+</div>
+<a class="bouton" data-lang="fr" href="https://www.librairiesindependantes.com/product/9791098116957/" target="_blank" rel="noopener noreferrer">Commander</a>
+<a class="bouton" data-lang="en" href="https://www.librairiesindependantes.com/product/9791098116957/" target="_blank" rel="noopener noreferrer">Order Now</a>
+</div>
+</div>
+</article>
+
+<article class="carte reveler">
+<div class="section-titre" style="margin-top:0;">
+<h2 data-lang="fr">Médiation animale</h2>
+<h2 data-lang="en">Animal Mediation</h2>
+<span class="legende" data-lang="fr">Écriture &amp; présence animale</span>
+<span class="legende" data-lang="en">Writing &amp; animal presence</span>
+</div>
+<figure class="section-portrait">
+<img src="images/pogo-mediation-animale.jpg" alt="Pogo, le beagle complice des ateliers de médiation animale de L'AMagie" loading="lazy" decoding="async"/>
+<figcaption data-lang="fr">Pogo, notre beagle</figcaption>
+<figcaption data-lang="en">Pogo, our beagle</figcaption>
+</figure>
+<p data-lang="fr">La Collection Amis-Mots est profondément liée aux ateliers de médiation animale proposés par L&rsquo;AMagie.</p>
+<p data-lang="en">The Amis-Mots Collection is deeply connected to the animal mediation workshops offered by L&rsquo;AMagie.</p>
+<p data-lang="fr">Écrire sur les animaux, c&rsquo;est apprendre à les écouter, à reconnaître leur présence silencieuse et la place qu&rsquo;ils occupent dans nos vies.</p>
+<p data-lang="en">Writing about animals means learning to listen to them, to recognize their silent presence and the place they hold in our lives.</p>
+<div class="cta">
+<a href="mediation-animale.html" class="bouton" data-lang="fr">Découvrir les ateliers</a>
+<a href="mediation-animale.html" class="bouton" data-lang="en">Discover the Workshops</a>
+</div>
+</article>
+
+<article class="carte reveler">
+<div class="section-titre" style="margin-top:0;">
+<h2 data-lang="fr">Commander un titre</h2>
+<h2 data-lang="en">Order a Title</h2>
+<span class="legende" data-lang="fr">Boutique &amp; commandes</span>
+<span class="legende" data-lang="en">Shop &amp; orders</span>
+</div>
+<p style="text-align:center;" data-lang="fr">Tous les titres de la Collection Amis-Mots sont disponibles dans notre boutique ou sur commande directe auprès de L&rsquo;AMagie.</p>
+<p style="text-align:center;" data-lang="en">All titles from the Amis-Mots Collection are available in our shop or by direct order from L&rsquo;AMagie.</p>
+<div class="cta">
+<a href="boutique.html" class="bouton" data-lang="fr">Visiter la boutique</a>
+<a href="boutique.html" class="bouton" data-lang="en">Visit the Shop</a>
+</div>
+</article>
+
+</main>
+
+<section class="plan-site" aria-label="Plan du site">
+<div class="filet-haut" aria-hidden="true"><span class="etoile">✦</span></div>
+<div class="plan-site-grille">
+
+<div class="plan-categorie" data-lang="fr">
+<h2>Qui sommes-nous&nbsp;?</h2>
+<ul>
+<li><a href="qui-sommes-nous.html">Qui sommes-nous</a></li>
+<li><a href="fonctionnement.html">Fonctionnement de l&rsquo;association</a></li>
+<li><a href="anouk-journo.html">Anouk Journo</a></li>
+<li><a href="peintures.html">Meichelus</a></li>
+</ul>
+</div>
+<div class="plan-categorie" data-lang="en">
+<h2>About Us</h2>
+<ul>
+<li><a href="qui-sommes-nous.html">About Us</a></li>
+<li><a href="fonctionnement.html">How the Association Works</a></li>
+<li><a href="anouk-journo.html">Anouk Journo</a></li>
+<li><a href="peintures.html">Meichelus</a></li>
+</ul>
+</div>
+
+<div class="plan-categorie" data-lang="fr">
+<h2>Ateliers &amp; Coaching</h2>
+<ul>
+<li><a href="ateliers.html">Ateliers &amp; Coaching</a></li>
+<li><a href="mots-pour-maux.html">Écriture thérapeutique</a></li>
+<li><a href="mediation-animale.html">Médiation animale</a></li>
+<li><a href="amis-mots.html">Collection Amis-Mots</a></li>
+</ul>
+</div>
+<div class="plan-categorie" data-lang="en">
+<h2>Workshops &amp; Coaching</h2>
+<ul>
+<li><a href="ateliers.html">Workshops &amp; Coaching</a></li>
+<li><a href="mots-pour-maux.html">Therapeutic Writing</a></li>
+<li><a href="mediation-animale.html">Animal Mediation</a></li>
+<li><a href="amis-mots.html">Amis-Mots Collection</a></li>
+</ul>
+</div>
+
+<div class="plan-categorie" data-lang="fr">
+<h2>Éditions</h2>
+<ul>
+<li><a href="edition.html">Manuscrits &amp; projets</a></li>
+<li><a href="poesie.html">Poésie</a></li>
+<li><a href="boutique.html">Boutique</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+</div>
+<div class="plan-categorie" data-lang="en">
+<h2>Editions</h2>
+<ul>
+<li><a href="edition.html">Manuscripts &amp; Projects</a></li>
+<li><a href="poesie.html">Poetry</a></li>
+<li><a href="boutique.html">Shop</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+</div>
+
+</div>
+
+<p class="plan-mentions" data-lang="fr">© L&rsquo;AMagie <span class="etoile">✦</span> Maison d&rsquo;édition indépendante <span class="etoile">✦</span> Félines-Minervois</p>
+<p class="plan-mentions" data-lang="en">© L&rsquo;AMagie <span class="etoile">✦</span> Independent Publishing House <span class="etoile">✦</span> Félines-Minervois</p>
+<p class="plan-webmaster">© Webmaster Meichelus : <a href="mailto:meichelus@l-amagie.art">meichelus@l-amagie.art</a></p>
+</section>
+
+<script>
+if ('IntersectionObserver' in window) {
+var obs = new IntersectionObserver(function(entries){
+entries.forEach(function(e){
+if (e.isIntersecting){
+e.target.classList.add('visible');
+obs.unobserve(e.target);
+}
+});
+},{threshold:.08,rootMargin:'0px 0px -50px 0px'});
+document.querySelectorAll('.reveler').forEach(function(el){obs.observe(el);});
+} else {
+document.querySelectorAll('.reveler').forEach(function(el){el.classList.add('visible');});
+}
+</script>
+
+<script>
+  // Gestion de la langue
+  function setLanguage(lang) {
+    if (lang === 'en') {
+      document.body.classList.add('lang-en');
+      document.documentElement.lang = 'en';
+    } else {
+      document.body.classList.remove('lang-en');
+      document.documentElement.lang = 'fr';
+    }
+    // 'preferredLanguage' est la clé partagée entre toutes les pages du site
+    // (accueil compris) ; 'l-amagie-lang' est conservée pour compatibilité.
+    localStorage.setItem('preferredLanguage', lang);
+    localStorage.setItem('l-amagie-lang', lang);
+    updateButtonState(lang);
+  }
+
+  function updateButtonState(lang) {
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.classList.remove('active');
+    });
+    const activeBtn = document.querySelector(`.lang-btn[data-lang="${lang}"]`);
+    if (activeBtn) activeBtn.classList.add('active');
+  }
+
+  // Event listeners
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      setLanguage(this.getAttribute('data-lang'));
+    });
+  });
+
+  // Init immédiate : dès le chargement de la page, on vérifie si l'utilisateur
+  // a déjà choisi l'anglais sur l'accueil (ou une autre page) via 'preferredLanguage'.
+  (function applyStoredLanguageImmediately() {
+    const savedLang = localStorage.getItem('preferredLanguage')
+      || localStorage.getItem('l-amagie-lang')
+      || 'fr';
+    if (savedLang === 'en') {
+      document.body.classList.add('lang-en');
+      document.documentElement.lang = 'en';
+    }
+    updateButtonState(savedLang);
+  })();
+
+  // Confirmation au DOMContentLoaded
+  window.addEventListener('DOMContentLoaded', function() {
+    const savedLang = localStorage.getItem('preferredLanguage')
+      || localStorage.getItem('l-amagie-lang')
+      || 'fr';
+    setLanguage(savedLang);
+  });
+</script>
+
+</body>
+</html>

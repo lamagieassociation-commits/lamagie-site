@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="google" content="notranslate"/>
+<meta http-equiv="Content-Language" content="fr"/>
+<title>Contact — L'AMagie</title>
+<meta name="description" content="Contactez L'AMagie — manuscrits, ateliers, médiation animale, collaborations artistiques. 5 rue du Puits, 34210 Félines-Minervois. editions@l-amagie.art"/>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Pinyon+Script&display=swap" rel="stylesheet"/>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Pinyon+Script&display=swap');
+
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html,body{overflow-x:hidden;}
+html{scroll-behavior:smooth;}
+
+body{
+  background-color:#ece2c8;
+  color:#3a3220;
+  font-family:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  font-weight:400;
+  font-size:17px;
+  line-height:1.75;
+  min-height:100vh;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  text-rendering:optimizeLegibility;
+  background-image:
+    radial-gradient(ellipse 55% 50% at 12% 18%, rgba(146,96,38,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 55% at 88% 82%, rgba(132,88,36,0.11) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 45% at 78% 18%, rgba(170,128,60,0.09) 0%, transparent 65%),
+    radial-gradient(ellipse 55% 50% at 22% 82%, rgba(160,118,50,0.10) 0%, transparent 65%),
+    radial-gradient(ellipse 75% 60% at 50% 35%, rgba(212,176,114,0.10) 0%, transparent 75%),
+    linear-gradient(135deg, #f1ead4 0%, #e8dec0 50%, #ecdfc2 100%),
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='280' height='280'><filter id='g'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' seed='4'/><feColorMatrix values='0 0 0 0 0.42 0 0 0 0 0.32 0 0 0 0 0.17 0 0 0 0.22 0'/></filter><rect width='100%25' height='100%25' filter='url(%23g)'/></svg>");
+  background-attachment:fixed;
+  background-size:auto,auto,auto,auto,auto,auto,280px 280px;
+  background-repeat:no-repeat,no-repeat,no-repeat,no-repeat,no-repeat,no-repeat,repeat;
+}
+a{color:inherit;text-decoration:none;}
+img{max-width:100%;height:auto;display:block;}
+em{font-style:italic;color:#5a4a30;}
+::selection{background:rgba(184,154,92,.32);color:#3a3220;}
+
+/* === HEADER CONSTANT === */
+.entete-site{position:relative;z-index:10;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:24px;padding:24px 40px;border-bottom:1px solid rgba(184,154,92,.28);background:linear-gradient(180deg,rgba(241,234,212,.55),rgba(236,226,200,.25));backdrop-filter:blur(1px);}
+.entete-logo{display:flex;align-items:center;justify-content:flex-start;}
+.entete-logo img{height:55px;width:auto;display:block;}
+.entete-titre{text-align:center;font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:clamp(1.8rem,3.2vw,2.6rem);color:#3a3220;letter-spacing:.01em;line-height:1;text-decoration:none;}
+.entete-retour{display:flex;align-items:center;justify-content:flex-end;}
+.entete-retour a{font-family:'Cormorant Garamond',Georgia,serif;font-size:.92rem;letter-spacing:.18em;text-transform:uppercase;color:#5a4a30;padding:8px 18px;border:1px solid rgba(184,154,92,.4);border-radius:2px;transition:color .3s, background-color .3s, border-color .3s;white-space:nowrap;}
+.entete-retour a::before{content:'⌂ ';margin-right:.25em;letter-spacing:0;}
+.entete-retour a:hover{color:#b89a5c;border-color:#b89a5c;background:rgba(184,154,92,.07);}
+@media(max-width:760px){.entete-site{grid-template-columns:auto 1fr auto;padding:14px 16px;gap:12px;}.entete-logo img{height:42px;}.entete-titre{font-size:1.4rem;}.entete-retour a{font-size:.7rem;letter-spacing:.1em;padding:6px 10px;}.entete-retour a::before{content:'⌂';margin-right:0;}.entete-retour a span{display:none;}}
+
+/* === HÉROS DE PAGE === */
+.heros-page{text-align:center;padding:50px 20px 24px;max-width:920px;margin:0 auto;}
+.fil-ariane{display:inline-block;font-family:'Cormorant Garamond',serif;font-size:.72rem;letter-spacing:.32em;text-transform:uppercase;color:#5a4a30;margin-bottom:28px;}
+.fil-ariane a{color:#8a6d2f;transition:color .3s;}
+.fil-ariane a:hover{color:#b89a5c;}
+.fil-ariane .sep{margin:0 .55em;color:rgba(184,154,92,.55);}
+.titre-page{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:clamp(2.4rem,5.5vw,3.8rem);color:#3a3220;letter-spacing:.005em;line-height:1.1;margin:0 0 14px;}
+.sous-titre-page{font-family:'Pinyon Script','Cormorant Garamond',cursive;font-size:clamp(1.4rem,2.5vw,1.95rem);color:#7a6a48;line-height:1.3;margin:0;}
+
+/* === Image bandeau (au-dessus du titre) — OVALE avec transition esquisse → photo === */
+.image-editions{
+  margin:0 auto 30px;
+  max-width:760px;
+  padding:0 20px;
+  text-align:center;
+}
+/* Conteneur ovale : porte la forme, l'ombre et le clipping */
+.bandeau-ovale{
+  position:relative;
+  width:100%;
+  aspect-ratio:16 / 9;
+  border-radius:50% / 50%;
+  overflow:hidden;
+  box-shadow:
+    0 8px 28px rgba(58,50,32,0.18),
+    0 0 0 1px rgba(184,154,92,.28),
+    0 0 0 8px rgba(241,234,212,.7);
+  background:rgba(248,243,228,.85);
+}
+.bandeau-ovale img{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+  display:block;
+}
+/* Couche du dessous : esquisse au crayon (niveau de gris + contraste + léger flou) */
+.bandeau-esquisse{
+  filter:grayscale(1) contrast(1.5) brightness(1.18) blur(.5px);
+  opacity:.92;
+  mix-blend-mode:multiply;
+}
+/* Couche du dessus : photographie nette, révélée au centre, fondue vers les bords */
+.bandeau-photo{
+  -webkit-mask-image:radial-gradient(ellipse 62% 70% at center,
+    rgba(0,0,0,1) 28%,
+    rgba(0,0,0,.92) 46%,
+    rgba(0,0,0,.55) 66%,
+    rgba(0,0,0,.18) 84%,
+    rgba(0,0,0,0) 97%);
+  mask-image:radial-gradient(ellipse 62% 70% at center,
+    rgba(0,0,0,1) 28%,
+    rgba(0,0,0,.92) 46%,
+    rgba(0,0,0,.55) 66%,
+    rgba(0,0,0,.18) 84%,
+    rgba(0,0,0,0) 97%);
+}
+/* Voile de grain « papier de croquis » concentré sur les bords */
+.bandeau-ovale::after{
+  content:'';
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='g'><feTurbulence type='fractalNoise' baseFrequency='0.95' numOctaves='3' seed='7'/><feColorMatrix values='0 0 0 0 0.36 0 0 0 0 0.28 0 0 0 0 0.16 0 0 0 0.55 0'/></filter><rect width='100%25' height='100%25' filter='url(%23g)'/></svg>");
+  background-size:240px 240px;
+  mix-blend-mode:multiply;
+  opacity:.45;
+  -webkit-mask-image:radial-gradient(ellipse 62% 70% at center, transparent 36%, black 90%);
+  mask-image:radial-gradient(ellipse 62% 70% at center, transparent 36%, black 90%);
+}
+@media(max-width:600px){
+  .image-editions{max-width:520px;}
+}
+
+/* === Image contact icônes (sous le titre) === */
+.image-contact{
+  margin:24px auto 12px;
+  max-width:520px;
+  padding:0 20px;
+  text-align:center;
+}
+.image-contact img{
+  display:block;
+  width:100%;
+  height:auto;
+  border-radius:10px;
+  box-shadow:
+    0 4px 18px rgba(58,50,32,0.18),
+    0 0 0 1px rgba(184,154,92,.28),
+    0 0 0 6px rgba(241,234,212,.55);
+}
+@media(max-width:600px){
+  .image-contact{max-width:380px;}
+}
+
+/* === CONTENU === */
+.contenu{max-width:920px;margin:0 auto;padding:0 20px 56px;}
+
+/* Carte parchemin clair */
+.carte{background:rgba(246,239,216,.62);border:1px solid rgba(184,154,92,.22);border-radius:2px;padding:42px 50px;margin:0 auto 32px;position:relative;box-shadow:0 4px 14px rgba(90,74,48,.06),0 1px 2px rgba(90,74,48,.04);}
+.carte::before,.carte::after{content:'';position:absolute;width:18px;height:18px;border:1px solid rgba(184,154,92,.45);pointer-events:none;}
+.carte::before{top:6px;left:6px;border-right:0;border-bottom:0;}
+.carte::after{bottom:6px;right:6px;border-left:0;border-top:0;}
+.carte p{font-size:1.05rem;line-height:1.8;color:#3a3220;margin:0 0 1rem;}
+.carte p:last-child{margin-bottom:0;}
+@media(max-width:600px){.carte{padding:30px 22px;}.carte p{font-size:1rem;}}
+
+/* === Citation === */
+.citation{
+  text-align:center;
+  margin:0 auto 36px;
+  max-width:680px;
+  padding:0 24px;
+}
+.citation blockquote{
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;
+  font-size:1.2rem;
+  line-height:1.6;
+  color:#5a4a30;
+  position:relative;
+  padding:0 30px;
+}
+.citation blockquote::before,.citation blockquote::after{
+  font-family:Georgia,serif;
+  color:#b89a5c;
+  font-size:1.6rem;
+  line-height:1;
+  position:relative;
+  top:.18em;
+}
+.citation blockquote::before{content:'« ';margin-right:.15em;}
+.citation blockquote::after{content:' »';margin-left:.15em;}
+.citation cite{
+  display:block;
+  margin-top:14px;
+  font-style:normal;
+  font-family:'Cormorant Garamond',serif;
+  font-size:.78rem;
+  letter-spacing:.26em;
+  text-transform:uppercase;
+  color:#8a6d2f;
+}
+
+/* === Grille adresse + coordonnées === */
+.infos-grille{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin:0 auto 32px;}
+.info-bloc{
+  background:rgba(246,239,216,.58);
+  border:1px solid rgba(184,154,92,.25);
+  border-radius:2px;
+  padding:32px 32px;
+  position:relative;
+  box-shadow:0 4px 14px rgba(90,74,48,.05);
+}
+.info-bloc::before,.info-bloc::after{content:'';position:absolute;width:14px;height:14px;border:1px solid rgba(184,154,92,.4);pointer-events:none;}
+.info-bloc::before{top:5px;left:5px;border-right:0;border-bottom:0;}
+.info-bloc::after{bottom:5px;right:5px;border-left:0;border-top:0;}
+.info-bloc h3{
+  font-family:'Cormorant Garamond',serif;
+  font-weight:500;
+  font-size:.74rem;
+  letter-spacing:.3em;
+  text-transform:uppercase;
+  color:#5a4a30;
+  margin:0 0 16px;
+  padding-bottom:8px;
+  border-bottom:1px dashed rgba(184,154,92,.3);
+}
+.info-bloc p{font-size:1.02rem;line-height:1.75;color:#3a3220;margin:0 0 .5rem;}
+.info-bloc p:last-child{margin-bottom:0;}
+.info-bloc a{color:#3a3220;border-bottom:1px solid transparent;transition:color .3s, border-color .3s;}
+.info-bloc a:hover{color:#b89a5c;border-bottom-color:rgba(184,154,92,.4);}
+.info-bloc .pictogramme{
+  display:inline-block;
+  color:#b89a5c;
+  margin-right:.45em;
+  font-size:.95em;
+}
+@media(max-width:640px){.infos-grille{grid-template-columns:1fr;}}
+
+/* === Section titre orné === */
+.section-titre{text-align:center;margin:48px 0 28px;}
+.section-titre h2{display:inline-block;font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(1.4rem,2.6vw,1.8rem);letter-spacing:.18em;color:#3a3220;text-transform:uppercase;position:relative;padding:0 30px;}
+.section-titre h2::before,.section-titre h2::after{content:'❦';position:absolute;top:50%;transform:translateY(-50%);color:#b89a5c;font-size:.85em;}
+.section-titre h2::before{left:0;}
+.section-titre h2::after{right:0;}
+.section-titre .legende{display:block;margin-top:12px;font-family:'Pinyon Script','Cormorant Garamond',cursive;font-size:1.15rem;color:#7a6a48;text-transform:none;letter-spacing:.02em;font-weight:400;}
+
+/* === FORMULAIRE === */
+.formulaire-contact{
+  background:rgba(246,239,216,.6);
+  border:1px solid rgba(184,154,92,.25);
+  border-radius:2px;
+  padding:42px 48px;
+  margin:0 auto 36px;
+  position:relative;
+  box-shadow:0 4px 14px rgba(90,74,48,.06);
+}
+.formulaire-contact::before,.formulaire-contact::after{content:'';position:absolute;width:18px;height:18px;border:1px solid rgba(184,154,92,.45);pointer-events:none;}
+.formulaire-contact::before{top:6px;left:6px;border-right:0;border-bottom:0;}
+.formulaire-contact::after{bottom:6px;right:6px;border-left:0;border-top:0;}
+.champ-formulaire{margin-bottom:22px;}
+.champ-formulaire label{
+  display:block;
+  font-family:'Cormorant Garamond',serif;
+  font-size:.72rem;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  color:#5a4a30;
+  margin-bottom:8px;
+}
+.champ-formulaire input,
+.champ-formulaire select,
+.champ-formulaire textarea{
+  width:100%;
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.02rem;
+  color:#3a3220;
+  background:rgba(255,253,245,.55);
+  border:1px solid rgba(184,154,92,.35);
+  border-radius:2px;
+  padding:12px 14px;
+  outline:none;
+  transition:border-color .3s, background-color .3s;
+}
+.champ-formulaire input:focus,
+.champ-formulaire select:focus,
+.champ-formulaire textarea:focus{
+  border-color:#b89a5c;
+  background:rgba(255,253,245,.85);
+}
+.champ-formulaire textarea{resize:vertical;min-height:150px;line-height:1.65;}
+.champ-formulaire select{cursor:pointer;}
+.btn-envoyer{
+  display:inline-block;
+  font-family:'Cormorant Garamond',serif;
+  font-size:1rem;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  color:#3a3220;
+  padding:14px 38px;
+  border:1px solid rgba(184,154,92,.55);
+  background:rgba(184,154,92,.18);
+  border-radius:2px;
+  cursor:pointer;
+  transition:color .3s, border-color .3s, background-color .3s, transform .3s;
+}
+.btn-envoyer::after{content:' →';letter-spacing:0;}
+.btn-envoyer:hover{border-color:#b89a5c;background:rgba(184,154,92,.3);transform:translateY(-2px);}
+.action-formulaire{text-align:center;margin-top:6px;}
+@media(max-width:600px){.formulaire-contact{padding:30px 24px;}}
+
+/* === RÉSEAUX SOCIAUX === */
+.reseaux-grille{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin:0 auto 30px;}
+.reseau-carte{
+  background:rgba(246,239,216,.58);
+  border:1px solid rgba(184,154,92,.25);
+  border-radius:2px;
+  padding:24px 22px;
+  text-align:center;
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-decoration:none;
+  color:#3a3220;
+  box-shadow:0 4px 14px rgba(90,74,48,.05);
+  transition:transform .35s, border-color .35s, background-color .35s;
+}
+.reseau-carte::before,.reseau-carte::after{content:'';position:absolute;width:12px;height:12px;border:1px solid rgba(184,154,92,.4);pointer-events:none;}
+.reseau-carte::before{top:4px;left:4px;border-right:0;border-bottom:0;}
+.reseau-carte::after{bottom:4px;right:4px;border-left:0;border-top:0;}
+.reseau-carte:hover{transform:translateY(-3px);background:rgba(246,239,216,.78);border-color:rgba(184,154,92,.5);}
+.reseau-carte .icone{
+  display:block;
+  font-size:1.8rem;
+  margin-bottom:8px;
+  color:#b89a5c;
+  line-height:1;
+}
+.reseau-carte .titre{
+  font-family:'Cormorant Garamond',serif;
+  font-weight:500;
+  font-size:1.1rem;
+  letter-spacing:.04em;
+  margin-bottom:6px;
+}
+.reseau-carte .descr{
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;
+  font-size:.92rem;
+  line-height:1.5;
+  color:#5a4a30;
+}
+
+/* === PLAN DU SITE === */
+.plan-site{background:transparent;padding:48px 24px 36px;max-width:1080px;margin:0 auto;text-align:center;font-family:'Cormorant Garamond',Georgia,serif;color:#3a3220;border-top:1px solid rgba(184,154,92,.25);}
+.plan-site .filet-haut{display:flex;align-items:center;justify-content:center;gap:14px;margin:0 auto 28px;max-width:200px;}
+.plan-site .filet-haut::before,.plan-site .filet-haut::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,transparent,rgba(184,154,92,.55),transparent);}
+.plan-site .filet-haut .etoile{color:#b89a5c;font-size:.85rem;line-height:1;}
+.plan-site-grille{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px 32px;text-align:left;margin-bottom:28px;}
+.plan-categorie h2{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:#5a4a30;margin:0 0 10px;padding-bottom:6px;border-bottom:1px solid rgba(184,154,92,.22);}
+.plan-categorie ul{list-style:none;margin:0;padding:0;}
+.plan-categorie li{font-size:.92rem;line-height:1.65;margin-bottom:2px;}
+.plan-categorie a{color:#3a3220;text-decoration:none;transition:color .3s;border-bottom:1px solid transparent;}
+.plan-categorie a:hover{color:#b89a5c;border-bottom-color:rgba(184,154,92,.4);}
+.plan-mentions{font-family:'Cormorant Garamond',serif;font-size:.78rem;letter-spacing:.16em;color:#7a6a48;text-transform:uppercase;margin:0;}
+.plan-mentions .etoile{color:#b89a5c;margin:0 .6em;}
+.plan-webmaster{
+  margin:14px auto 0;
+  max-width:340px;
+  padding-top:10px;
+  border-top:1px solid rgba(184,154,92,.18);
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;
+  font-size:.78rem;
+  letter-spacing:.08em;
+  color:#8a6d2f;
+  text-align:center;
+}
+.plan-webmaster a{color:inherit;border-bottom:1px solid rgba(184,154,92,.3);transition:color .3s, border-color .3s;}
+.plan-webmaster a:hover{color:#b89a5c;border-bottom-color:#b89a5c;}
+
+@media(max-width:560px){.plan-site{padding:32px 18px 24px;}.plan-site-grille{gap:18px;text-align:center;}.plan-categorie h2{text-align:center;}.plan-mentions{font-size:.7rem;letter-spacing:.12em;}}
+
+/* === Révélation au scroll === */
+.reveler{opacity:0;transform:translateY(18px);transition:opacity .9s ease, transform .9s ease;}
+.reveler.visible{opacity:1;transform:translateY(0);}
+@media(prefers-reduced-motion: reduce){.reveler{opacity:1;transform:none;transition:none;}}
+</style>
+</head>
+
+<body>
+
+  <!-- HEADER COMMUN -->
+  <header class="entete-site" role="banner">
+    <div class="entete-logo">
+      <a href="index.html" aria-label="Retour à l'accueil de L'AMagie">
+        <img src="images/logo-amagie.png" alt="L'AMagie" onerror="this.style.display='none'"/>
+      </a>
+    </div>
+    <a href="index.html" class="entete-titre" aria-label="L'AMagie — Accueil">L&rsquo;AMagie</a>
+    <div class="entete-retour">
+      <a href="index.html"><span>Retour à l&rsquo;accueil</span></a>
+    </div>
+  </header>
+
+  <!-- HÉROS DE PAGE -->
+  <section class="heros-page">
+    <nav class="fil-ariane" aria-label="Fil d'ariane">
+      <a href="index.html">Accueil</a>
+      <span class="sep">·</span>
+      <span>Contact</span>
+    </nav>
+
+    <!-- Image bandeau au-dessus du titre — ovale avec transition esquisse/photo -->
+    <figure class="image-editions reveler">
+      <div class="bandeau-ovale" role="img" aria-label="Éditions L'AMagie — entrée et bibliothèque extérieure">
+        <img class="bandeau-esquisse"
+             src="images/bandeau-lamagie.jpg"
+             alt=""
+             aria-hidden="true"
+             loading="eager"
+             decoding="async"
+             onerror="this.style.display='none'"/>
+        <img class="bandeau-photo"
+             src="images/bandeau-lamagie.jpg"
+             alt=""
+             aria-hidden="true"
+             loading="eager"
+             decoding="async"
+             onerror="this.style.display='none'"/>
+      </div>
+    </figure>
+
+    <h1 class="titre-page">Nous écrire</h1>
+
+    <!-- Image contact (icônes) sous le titre -->
+    <figure class="image-contact reveler">
+      <img src="images/contact.png"
+           alt="Contact — courrier, téléphone, adresse, email"
+           loading="lazy"
+           decoding="async"
+           onerror="this.style.display='none'"/>
+    </figure>
+
+    <p class="sous-titre-page">Pour toute demande éditoriale, atelier, collaboration<br/>ou simplement traverser le seuil.</p>
+  </section>
+
+  <!-- CONTENU -->
+  <main class="contenu" role="main">
+
+    <!-- ============================================================
+         CITATION
+         ============================================================ -->
+    <div class="citation reveler">
+      <blockquote>Une maison où les livres gardent une part d&rsquo;étoiles</blockquote>
+      <cite>Anouk Journo · Meichelus · Éditions L&rsquo;AMagie</cite>
+    </div>
+
+    <!-- ============================================================
+         ADRESSE + COORDONNÉES
+         ============================================================ -->
+    <div class="infos-grille reveler">
+
+      <article class="info-bloc">
+        <h3>Adresse</h3>
+        <p><span class="pictogramme" aria-hidden="true">⌂</span>5 rue du Puits</p>
+        <p>34210 Félines-Minervois</p>
+        <p><em>Occitanie · France</em></p>
+      </article>
+
+      <article class="info-bloc">
+        <h3>Coordonnées</h3>
+        <p><span class="pictogramme" aria-hidden="true">@</span><a href="mailto:editions@l-amagie.art">editions@l-amagie.art</a></p>
+        <p><span class="pictogramme" aria-hidden="true">☎</span><a href="tel:0674402880">06&nbsp;74&nbsp;40&nbsp;28&nbsp;80</a></p>
+        <p><span class="pictogramme" aria-hidden="true">✦</span><a href="https://www.l-amagie.art" target="_blank" rel="noopener">www.l-amagie.art</a></p>
+      </article>
+
+    </div>
+
+    <!-- ============================================================
+         FORMULAIRE
+         ============================================================ -->
+    <div class="section-titre reveler">
+      <h2>Formulaire</h2>
+      <span class="legende">Adressez-nous un message</span>
+    </div>
+
+    <form class="formulaire-contact reveler" action="https://formspree.io/f/xvgzqkbd" method="POST">
+
+      <div class="champ-formulaire">
+        <label for="nom">Votre nom</label>
+        <input type="text" id="nom" name="nom" required/>
+      </div>
+
+      <div class="champ-formulaire">
+        <label for="email">E-mail</label>
+        <input type="email" id="email" name="email" required/>
+      </div>
+
+      <div class="champ-formulaire">
+        <label for="objet">Objet</label>
+        <select id="objet" name="objet" required>
+          <option value="">Choisir</option>
+          <option value="manuscrit">Manuscrit / projet éditorial</option>
+          <option value="atelier">Atelier d&rsquo;écriture</option>
+          <option value="mediation">Médiation animale</option>
+          <option value="collaboration">Collaboration artistique</option>
+          <option value="commande">Commande d&rsquo;ouvrage</option>
+          <option value="peintures">Peintures et œuvres</option>
+          <option value="autre">Autre</option>
+        </select>
+      </div>
+
+      <div class="champ-formulaire">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" required></textarea>
+      </div>
+
+      <div class="action-formulaire">
+        <button type="submit" class="btn-envoyer">Envoyer</button>
+      </div>
+
+    </form>
+
+    <!-- ============================================================
+         RÉSEAUX SOCIAUX
+         ============================================================ -->
+    <div class="section-titre reveler">
+      <h2>Suivez-nous</h2>
+      <span class="legende">Sur les réseaux</span>
+    </div>
+
+    <div class="reseaux-grille reveler">
+
+      <a class="reseau-carte" href="https://www.instagram.com/lamagie_arts_editions/" target="_blank" rel="noopener">
+        <span class="icone" aria-hidden="true">📷</span>
+        <span class="titre">Instagram</span>
+        <span class="descr">Suivez l&rsquo;actualité de L&rsquo;AMagie et les créations de Meichelus.</span>
+      </a>
+
+      <a class="reseau-carte" href="http://www.facebook.com/share/1Rcqk3QQ4z/" target="_blank" rel="noopener">
+        <span class="icone" aria-hidden="true">f</span>
+        <span class="titre">Facebook</span>
+        <span class="descr">La page Facebook de L&rsquo;AMagie — événements, publications, actualités.</span>
+      </a>
+
+      <a class="reseau-carte" href="https://www.youtube.com/@lamagieeditions" target="_blank" rel="noopener">
+        <span class="icone" aria-hidden="true">▶</span>
+        <span class="titre">YouTube</span>
+        <span class="descr">La chaîne L&rsquo;AMagie — Bulles poétiques et vidéos de la maison.</span>
+      </a>
+
+      <a class="reseau-carte" href="https://meichelus-art.blogspot.com" target="_blank" rel="noopener">
+        <span class="icone" aria-hidden="true">✎</span>
+        <span class="titre">Blog Meichelus</span>
+        <span class="descr">Peintures, dessins et actualités de l&rsquo;atelier de Meichelus.</span>
+      </a>
+
+    </div>
+
+  </main>
+
+  <!-- PLAN DU SITE -->
+  <section class="plan-site" aria-label="Plan du site">
+    <div class="filet-haut" aria-hidden="true"><span class="etoile">✦</span></div>
+    <div class="plan-site-grille">
+      <div class="plan-categorie">
+        <h2>Qui sommes-nous&nbsp;?</h2>
+        <ul>
+          <li><a href="qui-sommes-nous.html">Qui sommes-nous</a></li>
+          <li><a href="fonctionnement.html">Fonctionnement de l&rsquo;association</a></li>
+          <li><a href="anouk-journo.html">Anouk Journo</a></li>
+          <li><a href="peintures.html">Meichelus</a></li>
+        </ul>
+      </div>
+      <div class="plan-categorie">
+        <h2>Ateliers &amp; Coaching</h2>
+        <ul>
+          <li><a href="ateliers.html">Ateliers &amp; Coaching</a></li>
+          <li><a href="mots-pour-maux.html">Écriture thérapeutique</a></li>
+          <li><a href="mediation-animale.html">Médiation animale</a></li>
+          <li><a href="amis-mots.html">Collection Amis-Mots</a></li>
+        </ul>
+      </div>
+      <div class="plan-categorie">
+        <h2>Éditions</h2>
+        <ul>
+          <li><a href="edition.html">Manuscrits &amp; projets</a></li>
+          <li><a href="edition.html#raconter-le-monde">Collection Raconter le monde</a></li>
+          <li><a href="edition.html#immersion">Collection Immersion</a></li>
+          <li><a href="edition.html#manifestes">Collection Manifestes</a></li>
+          <li><a href="edition.html#romans-jeunesse">Romans jeunesse</a></li>
+        </ul>
+      </div>
+      <div class="plan-categorie">
+        <h2>Poésie &amp; Arts</h2>
+        <ul>
+          <li><a href="poesie.html">Poésie au jour le jour</a></li>
+          <li><a href="peintures.html">Peintures &amp; Dessins</a></li>
+          <li><a href="evenements.html">Événements &amp; Presse</a></li>
+        </ul>
+      </div>
+      <div class="plan-categorie">
+        <h2>Liens utiles</h2>
+        <ul>
+          <li><a href="boutique.html">Boutique</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="youtube.html">Chaîne Youtube</a></li>
+          <li><a href="mentions-legales.html">Mentions légales</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="plan-mentions">© 2026 L&rsquo;AMagie <span class="etoile">✦</span> Maison d&rsquo;édition indépendante <span class="etoile">✦</span> SIREN 937629533 <span class="etoile">✦</span> Félines-Minervois</p>
+    <p class="plan-webmaster">© Webmaster Meichelus : <a href="mailto:meichelus@l-amagie.art">meichelus@l-amagie.art</a></p>
+  </section>
+
+  <script>
+    if ('IntersectionObserver' in window) {
+      var obs = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){
+          if (e.isIntersecting){
+            e.target.classList.add('visible');
+            obs.unobserve(e.target);
+          }
+        });
+      }, { threshold:.08, rootMargin:'0px 0px -50px 0px' });
+      document.querySelectorAll('.reveler').forEach(function(el){ obs.observe(el); });
+    } else {
+      document.querySelectorAll('.reveler').forEach(function(el){ el.classList.add('visible'); });
+    }
+  </script>
+
+</body>
+</html>

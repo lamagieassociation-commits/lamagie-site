@@ -127,6 +127,35 @@ em{font-style:italic;color:#5a4a30;}
   50%{filter:grayscale(0%);}
 }
 
+.porte-video-conteneur{
+  position:absolute;
+  left:58.3%;
+  top:45.05%;
+  width:5.76%;
+  height:9.18%;
+  overflow:hidden;
+  pointer-events:none;
+  z-index:1;
+  clip-path:polygon(4% 1%, 96% 0%, 100% 99%, 2% 100%);
+  border-radius:1px;
+}
+
+.porte-video{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  filter:brightness(.52) contrast(1.08) saturate(.82);
+}
+
+.porte-video-conteneur::after{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:linear-gradient(135deg, rgba(255,255,255,.10) 0%, transparent 35%, transparent 70%, rgba(0,0,0,.18) 100%);
+  pointer-events:none;
+}
+
 .hotspot{
   display:block;
   position:absolute;
@@ -222,7 +251,14 @@ h1{
   <div class="cercle-anime">
     <img src="images/maison-lamagie.png" alt="L'AMagie" onerror="this.style.display='none'"/>
   </div>
-  
+
+  <!-- VIDÉO DANS LA VITRE DE LA PORTE — anime la scène sans toucher à l'image -->
+  <div class="porte-video-conteneur" aria-hidden="true">
+    <video class="porte-video" muted autoplay loop playsinline preload="auto" poster="images/porte-video-poster.jpg">
+      <source src="videos/yukon-klondike-porte.mp4" type="video/mp4"/>
+    </video>
+  </div>
+
   <!-- HOTSPOTS (15 zones cliquables) -->
   <a class="hotspot" href="qui-sommes-nous.html" style="left:2%;top:22%;width:24%;height:8%;" title="Qui sommes-nous" aria-label="Qui sommes-nous"></a>
   <a class="hotspot" href="fonctionnement.html" style="left:2%;top:31%;width:24%;height:8%;" title="Fonctionnement" aria-label="Fonctionnement"></a>

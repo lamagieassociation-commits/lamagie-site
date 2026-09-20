@@ -308,6 +308,76 @@ em{font-style:italic;color:#5a4a30;}
   .article-titre{font-size:1.2rem;}
 }
 
+/* === Vignette vidéo (Forum des associations) === */
+.video-presse{
+  margin:0 auto 36px;
+  max-width:640px;
+}
+.video-presse .video-cadre{
+  position:relative;
+  background:rgba(246,239,216,.62);
+  border:1px solid rgba(184,154,92,.25);
+  border-radius:2px;
+  overflow:hidden;
+  box-shadow:0 4px 14px rgba(90,74,48,.06);
+  transition:border-color .35s, box-shadow .35s;
+}
+.video-presse .video-cadre::before,.video-presse .video-cadre::after{
+  content:'';
+  position:absolute;
+  width:14px;
+  height:14px;
+  border:1px solid rgba(184,154,92,.45);
+  pointer-events:none;
+  z-index:2;
+}
+.video-presse .video-cadre::before{top:6px;left:6px;border-right:0;border-bottom:0;}
+.video-presse .video-cadre::after{bottom:6px;right:6px;border-left:0;border-top:0;}
+.video-presse .video-cadre:hover{
+  border-color:rgba(184,154,92,.45);
+  box-shadow:0 10px 28px rgba(90,74,48,.12);
+}
+.video-presse video{
+  display:block;
+  width:100%;
+  height:auto;
+  aspect-ratio:16 / 9;
+  background:#1b1710;
+}
+.video-presse .video-legende{
+  padding:20px 26px 24px;
+  text-align:center;
+}
+.video-presse .video-source{
+  display:block;
+  font-family:'Cormorant Garamond',serif;
+  font-size:.7rem;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  color:#8a6d2f;
+  margin-bottom:10px;
+}
+.video-presse .video-titre{
+  font-family:'Cormorant Garamond',serif;
+  font-weight:500;
+  font-size:1.25rem;
+  letter-spacing:.005em;
+  line-height:1.35;
+  color:#3a3220;
+  margin:0 0 10px;
+}
+.video-presse .video-texte{
+  font-size:.98rem;
+  line-height:1.7;
+  color:#5a4a30;
+  font-style:italic;
+  margin:0;
+}
+@media(max-width:600px){
+  .video-presse .video-legende{padding:18px 20px 20px;}
+  .video-presse .video-titre{font-size:1.12rem;}
+}
+
 /* === Coulisses (photo de travail) === */
 .coulisses{
   margin:50px auto 40px;
@@ -665,6 +735,28 @@ em{font-style:italic;color:#5a4a30;}
         </div>
       </article>
 
+    </div>
+
+    <!-- ============================================================
+         VIDÉO — Forum des associations de Félines-Minervois
+         ============================================================ -->
+    <div class="video-presse reveler">
+      <div class="video-cadre">
+        <video
+          controls
+          preload="metadata"
+          playsinline
+          poster="images/evenements/forum-associations-poster.jpg"
+          aria-label="Vidéo de présentation de L'AMagie au Forum des associations de Félines-Minervois">
+          <source src="videos/forum-associations-felines-2026.mp4" type="video/mp4"/>
+          Votre navigateur ne prend pas en charge la lecture vidéo intégrée. <a href="videos/forum-associations-felines-2026.mp4">Téléchargez la vidéo</a>.
+        </video>
+        <div class="video-legende">
+          <span class="video-source">Forum des associations &middot; Félines-Minervois &middot; Septembre 2026</span>
+          <h3 class="video-titre">L&rsquo;AMagie se présente au Forum des associations</h3>
+          <p class="video-texte">Une courte vidéo pour (re)découvrir notre maison d&rsquo;édition associative, son esprit et ses projets, telle que présentée au public lors du Forum des associations de Félines-Minervois.</p>
+        </div>
+      </div>
     </div>
 
     <!-- ============================================================

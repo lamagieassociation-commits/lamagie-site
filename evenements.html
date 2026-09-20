@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="google" content="notranslate"/>
+<meta http-equiv="Content-Language" content="fr"/>
+<title>Événements &amp; Presse — L'AMagie</title>
+<meta name="description" content="Les événements, expositions et articles de presse autour de L'AMagie — maison d'édition associative à Félines-Minervois. Articles parus dans L'Indépendant et Canal du Midi — Minervois."/>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Pinyon+Script&display=swap" rel="stylesheet"/>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Pinyon+Script&display=swap');
+
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html,body{overflow-x:hidden;}
+html{scroll-behavior:smooth;}
+
+body{
+  background-color:#ece2c8;
+  color:#3a3220;
+  font-family:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  font-weight:400;
+  font-size:17px;
+  line-height:1.75;
+  min-height:100vh;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  text-rendering:optimizeLegibility;
+  background-image:
+    radial-gradient(ellipse 55% 50% at 12% 18%, rgba(146,96,38,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 55% at 88% 82%, rgba(132,88,36,0.11) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 45% at 78% 18%, rgba(170,128,60,0.09) 0%, transparent 65%),
+    radial-gradient(ellipse 55% 50% at 22% 82%, rgba(160,118,50,0.10) 0%, transparent 65%),
+    radial-gradient(ellipse 75% 60% at 50% 35%, rgba(212,176,114,0.10) 0%, transparent 75%),
+    linear-gradient(135deg, #f1ead4 0%, #e8dec0 50%, #ecdfc2 100%),
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='280' height='280'><filter id='g'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' seed='4'/><feColorMatrix values='0 0 0 0 0.42 0 0 0 0 0.32 0 0 0 0 0.17 0 0 0 0.22 0'/></filter><rect width='100%25' height='100%25' filter='url(%23g)'/></svg>");
+  background-attachment:fixed;
+  background-size:auto,auto,auto,auto,auto,auto,280px 280px;
+  background-repeat:no-repeat,no-repeat,no-repeat,no-repeat,no-repeat,no-repeat,repeat;
+}
+a{color:inherit;text-decoration:none;}
+img{max-width:100%;height:auto;display:block;}
+em{font-style:italic;color:#5a4a30;}
+::selection{background:rgba(184,154,92,.32);color:#3a3220;}
+
+/* === HEADER CONSTANT === */
+.entete-site{position:relative;z-index:10;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:24px;padding:24px 40px;border-bottom:1px solid rgba(184,154,92,.28);background:linear-gradient(180deg,rgba(241,234,212,.55),rgba(236,226,200,.25));backdrop-filter:blur(1px);}
+.entete-logo{display:flex;align-items:center;justify-content:flex-start;}
+.entete-logo img{height:55px;width:auto;display:block;}
+.entete-titre{text-align:center;font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:clamp(1.8rem,3.2vw,2.6rem);color:#3a3220;letter-spacing:.01em;line-height:1;text-decoration:none;}
+.entete-retour{display:flex;align-items:center;justify-content:flex-end;}
+.entete-retour a{font-family:'Cormorant Garamond',Georgia,serif;font-size:.92rem;letter-spacing:.18em;text-transform:uppercase;color:#5a4a30;padding:8px 18px;border:1px solid rgba(184,154,92,.4);border-radius:2px;transition:color .3s, background-color .3s, border-color .3s;white-space:nowrap;}
+.entete-retour a::before{content:'⌂ ';margin-right:.25em;letter-spacing:0;}
+.entete-retour a:hover{color:#b89a5c;border-color:#b89a5c;background:rgba(184,154,92,.07);}
+@media(max-width:760px){.entete-site{grid-template-columns:auto 1fr auto;padding:14px 16px;gap:12px;}.entete-logo img{height:42px;}.entete-titre{font-size:1.4rem;}.entete-retour a{font-size:.7rem;letter-spacing:.1em;padding:6px 10px;}.entete-retour a::before{content:'⌂';margin-right:0;}.entete-retour a span{display:none;}}
+
+/* === HÉROS DE PAGE === */
+.heros-page{text-align:center;padding:50px 20px 28px;max-width:920px;margin:0 auto;}
+.fil-ariane{display:inline-block;font-family:'Cormorant Garamond',serif;font-size:.72rem;letter-spacing:.32em;text-transform:uppercase;color:#5a4a30;margin-bottom:28px;}
+.fil-ariane a{color:#8a6d2f;transition:color .3s;}
+.fil-ariane a:hover{color:#b89a5c;}
+.fil-ariane .sep{margin:0 .55em;color:rgba(184,154,92,.55);}
+.titre-page{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:clamp(2.2rem,5vw,3.6rem);color:#3a3220;letter-spacing:.005em;line-height:1.15;margin:0 0 14px;}
+.sous-titre-page{font-family:'Pinyon Script','Cormorant Garamond',cursive;font-size:clamp(1.4rem,2.5vw,1.95rem);color:#7a6a48;line-height:1.3;margin:0;}
+.medaillon-titre{width:54px;height:54px;margin:32px auto 0;border-radius:50%;border:1px solid rgba(184,154,92,.5);box-shadow:0 0 0 5px rgba(241,234,212,.6),0 0 0 6px rgba(184,154,92,.18);display:flex;align-items:center;justify-content:center;color:#b89a5c;font-size:1.1rem;}
+
+/* === Image d'en-tête (au-dessus du titre, fond parchemin) === */
+.illustration-entete{
+  margin:0 auto 30px;
+  max-width:520px;
+  padding:0 20px;
+  text-align:center;
+}
+.illustration-entete img{
+  display:block;
+  width:100%;
+  height:auto;
+  border-radius:6px;
+  box-shadow:
+    0 6px 24px rgba(58,50,32,0.18),
+    0 0 0 1px rgba(184,154,92,.28),
+    0 0 0 8px rgba(241,234,212,.68);
+  filter:saturate(.94) brightness(1.02);
+}
+@media(max-width:600px){
+  .illustration-entete{max-width:360px;margin-bottom:22px;}
+}
+
+/* === CONTENU === */
+.contenu{max-width:1040px;margin:0 auto;padding:0 20px 56px;}
+
+/* Carte introduction */
+.carte-intro{background:rgba(246,239,216,.62);border:1px solid rgba(184,154,92,.22);border-radius:2px;padding:38px 50px;margin:0 auto 44px;position:relative;text-align:center;box-shadow:0 4px 14px rgba(90,74,48,.06);}
+.carte-intro::before,.carte-intro::after{content:'';position:absolute;width:18px;height:18px;border:1px solid rgba(184,154,92,.45);pointer-events:none;}
+.carte-intro::before{top:6px;left:6px;border-right:0;border-bottom:0;}
+.carte-intro::after{bottom:6px;right:6px;border-left:0;border-top:0;}
+.carte-intro p{font-size:1.08rem;line-height:1.85;color:#3a3220;margin:0 0 1rem;}
+.carte-intro p:last-child{margin-bottom:0;}
+.carte-intro em{font-style:italic;color:#5a4a30;}
+@media(max-width:600px){.carte-intro{padding:26px 22px;}.carte-intro p{font-size:1rem;}}
+
+/* === Section titre orné === */
+.section-titre{text-align:center;margin:56px 0 36px;}
+.section-titre h2{display:inline-block;font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(1.4rem,2.8vw,1.85rem);letter-spacing:.18em;color:#3a3220;text-transform:uppercase;position:relative;padding:0 30px;}
+.section-titre h2::before,.section-titre h2::after{content:'❦';position:absolute;top:50%;transform:translateY(-50%);color:#b89a5c;font-size:.85em;}
+.section-titre h2::before{left:0;}
+.section-titre h2::after{right:0;}
+.section-titre .legende{display:block;margin-top:14px;font-family:'Pinyon Script','Cormorant Garamond',cursive;font-size:1.2rem;color:#7a6a48;text-transform:none;letter-spacing:.02em;font-weight:400;}
+
+/* === Grille des articles de presse === */
+.grille-articles{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+  gap:28px;
+  margin:0 auto 36px;
+}
+
+.article-carte{
+  background:rgba(246,239,216,.62);
+  border:1px solid rgba(184,154,92,.25);
+  border-radius:2px;
+  position:relative;
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+  box-shadow:0 4px 14px rgba(90,74,48,.06);
+  transition:transform .35s, border-color .35s, box-shadow .35s;
+}
+.article-carte::before,.article-carte::after{
+  content:'';
+  position:absolute;
+  width:14px;
+  height:14px;
+  border:1px solid rgba(184,154,92,.45);
+  pointer-events:none;
+  z-index:2;
+}
+.article-carte::before{top:6px;left:6px;border-right:0;border-bottom:0;}
+.article-carte::after{bottom:6px;right:6px;border-left:0;border-top:0;}
+.article-carte:hover{
+  transform:translateY(-4px);
+  border-color:rgba(184,154,92,.45);
+  box-shadow:0 10px 28px rgba(90,74,48,.12);
+}
+
+.article-image{
+  position:relative;
+  width:100%;
+  aspect-ratio:4 / 3;
+  background:rgba(241,234,212,.6);
+  overflow:hidden;
+  border-bottom:1px solid rgba(184,154,92,.22);
+  cursor:zoom-in;
+}
+.article-image img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  object-position:center center;
+  display:block;
+  transition:transform .6s ease;
+}
+.article-carte:hover .article-image img{transform:scale(1.03);}
+.article-image .agrandir-indice{
+  position:absolute;
+  bottom:10px;
+  right:10px;
+  z-index:3;
+  display:flex;
+  align-items:center;
+  gap:6px;
+  padding:6px 12px;
+  background:rgba(58,50,32,.72);
+  color:#f1ead4;
+  font-family:'Cormorant Garamond',serif;
+  font-size:.68rem;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  border-radius:2px;
+  opacity:0;
+  transform:translateY(6px);
+  transition:opacity .3s ease, transform .3s ease;
+  pointer-events:none;
+}
+.article-carte:hover .agrandir-indice{opacity:1;transform:translateY(0);}
+.article-image .agrandir-indice::before{content:'⊕';font-size:.95rem;line-height:1;}
+
+/* === Lightbox presse (lecture des articles en grand) === */
+.lightbox-presse{
+  position:fixed;
+  inset:0;
+  z-index:1000;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:40px 20px;
+  background:rgba(30,24,14,.88);
+  backdrop-filter:blur(2px);
+}
+.lightbox-presse.ouverte{display:flex;}
+.lightbox-presse .lightbox-cadre{
+  position:relative;
+  max-width:min(94vw, 980px);
+  max-height:90vh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+.lightbox-presse img{
+  max-width:100%;
+  max-height:78vh;
+  width:auto;
+  height:auto;
+  border-radius:3px;
+  box-shadow:0 12px 40px rgba(0,0,0,.5), 0 0 0 8px rgba(241,234,212,.9);
+  background:#f1ead4;
+}
+.lightbox-presse .lightbox-legende{
+  margin-top:18px;
+  max-width:720px;
+  text-align:center;
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.05rem;
+  color:#f1ead4;
+  line-height:1.5;
+}
+.lightbox-presse .lightbox-fermer{
+  position:absolute;
+  top:-18px;
+  right:-18px;
+  width:40px;
+  height:40px;
+  border-radius:50%;
+  border:1px solid rgba(241,234,212,.5);
+  background:rgba(58,50,32,.85);
+  color:#f1ead4;
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.3rem;
+  line-height:1;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  transition:background-color .3s, transform .3s;
+}
+.lightbox-presse .lightbox-fermer:hover{background:rgba(184,154,92,.9);transform:rotate(90deg);}
+@media(max-width:600px){
+  .lightbox-presse{padding:20px 12px;}
+  .lightbox-presse .lightbox-fermer{top:-14px;right:0;}
+  .lightbox-presse .lightbox-legende{font-size:.92rem;}
+}
+
+.article-corps{
+  padding:24px 28px 28px;
+  display:flex;
+  flex-direction:column;
+  flex:1;
+}
+.article-meta{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px 14px;
+  align-items:baseline;
+  margin-bottom:12px;
+  font-family:'Cormorant Garamond',serif;
+  font-size:.7rem;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  color:#8a6d2f;
+}
+.article-meta .source{
+  font-weight:500;
+  color:#5a4a30;
+}
+.article-meta .sep{color:rgba(184,154,92,.55);}
+.article-meta .date{
+  font-style:italic;
+  text-transform:none;
+  letter-spacing:.04em;
+  font-size:.85rem;
+  color:#7a6a48;
+}
+
+.article-titre{
+  font-family:'Cormorant Garamond',serif;
+  font-weight:500;
+  font-size:1.32rem;
+  letter-spacing:.005em;
+  line-height:1.3;
+  color:#3a3220;
+  margin:0 0 14px;
+}
+
+.article-resume{
+  font-size:1rem;
+  line-height:1.7;
+  color:#3a3220;
+  margin:0;
+}
+.article-resume em{font-style:italic;color:#5a4a30;}
+
+@media(max-width:600px){
+  .article-corps{padding:20px 22px 24px;}
+  .article-titre{font-size:1.2rem;}
+}
+
+/* === Vignette vidéo (Forum des associations) === */
+.video-presse{
+  margin:0 auto 36px;
+  max-width:640px;
+}
+.video-presse .video-cadre{
+  position:relative;
+  background:rgba(246,239,216,.62);
+  border:1px solid rgba(184,154,92,.25);
+  border-radius:2px;
+  overflow:hidden;
+  box-shadow:0 4px 14px rgba(90,74,48,.06);
+  transition:border-color .35s, box-shadow .35s;
+}
+.video-presse .video-cadre::before,.video-presse .video-cadre::after{
+  content:'';
+  position:absolute;
+  width:14px;
+  height:14px;
+  border:1px solid rgba(184,154,92,.45);
+  pointer-events:none;
+  z-index:2;
+}
+.video-presse .video-cadre::before{top:6px;left:6px;border-right:0;border-bottom:0;}
+.video-presse .video-cadre::after{bottom:6px;right:6px;border-left:0;border-top:0;}
+.video-presse .video-cadre:hover{
+  border-color:rgba(184,154,92,.45);
+  box-shadow:0 10px 28px rgba(90,74,48,.12);
+}
+.video-presse video{
+  display:block;
+  width:100%;
+  height:auto;
+  aspect-ratio:16 / 9;
+  background:#1b1710;
+}
+.video-presse .video-legende{
+  padding:20px 26px 24px;
+  text-align:center;
+}
+.video-presse .video-source{
+  display:block;
+  font-family:'Cormorant Garamond',serif;
+  font-size:.7rem;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  color:#8a6d2f;
+  margin-bottom:10px;
+}
+.video-presse .video-titre{
+  font-family:'Cormorant Garamond',serif;
+  font-weight:500;
+  font-size:1.25rem;
+  letter-spacing:.005em;
+  line-height:1.35;
+  color:#3a3220;
+  margin:0 0 10px;
+}
+.video-presse .video-texte{
+  font-size:.98rem;
+  line-height:1.7;
+  color:#5a4a30;
+  font-style:italic;
+  margin:0;
+}
+@media(max-width:600px){
+  .video-presse .video-legende{padding:18px 20px 20px;}
+  .video-presse .video-titre{font-size:1.12rem;}
+}
+
+/* === Coulisses (photo de travail) === */
+.coulisses{
+  margin:50px auto 40px;
+  max-width:760px;
+  text-align:center;
+}
+.coulisses figure{
+  position:relative;
+  display:inline-block;
+  max-width:100%;
+}
+.coulisses img{
+  display:block;
+  width:100%;
+  height:auto;
+  border-radius:4px;
+  box-shadow:
+    0 8px 24px rgba(58,50,32,.18),
+    0 0 0 1px rgba(184,154,92,.3),
+    0 0 0 8px rgba(241,234,212,.65);
+}
+.coulisses figcaption{
+  margin-top:14px;
+  font-family:'Pinyon Script','Cormorant Garamond',cursive;
+  font-size:1.2rem;
+  color:#7a6a48;
+}
+
+/* === Bloc CTA presse === */
+.cta-presse{
+  margin:48px auto 36px;
+  max-width:760px;
+  padding:38px 46px;
+  background:linear-gradient(135deg, rgba(246,239,216,.85), rgba(241,234,212,.6));
+  border:1px solid rgba(184,154,92,.4);
+  border-radius:2px;
+  position:relative;
+  text-align:center;
+  box-shadow:0 6px 22px rgba(90,74,48,.10);
+}
+.cta-presse::before{
+  content:'✦';
+  position:absolute;
+  top:-13px;
+  left:50%;
+  transform:translateX(-50%);
+  color:#b89a5c;
+  font-size:1rem;
+  background:#ece2c8;
+  padding:0 12px;
+  line-height:1;
+}
+.cta-presse h3{
+  font-family:'Cormorant Garamond',serif;
+  font-weight:500;
+  font-size:1.4rem;
+  letter-spacing:.02em;
+  color:#3a3220;
+  margin:0 0 12px;
+}
+.cta-presse p{
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;
+  font-size:1.05rem;
+  line-height:1.7;
+  color:#5a4a30;
+  margin:0 0 24px;
+}
+.btn-cta{
+  display:inline-block;
+  font-family:'Cormorant Garamond',serif;
+  font-size:1rem;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:#3a3220;
+  padding:13px 32px;
+  border:1px solid rgba(184,154,92,.55);
+  background:rgba(184,154,92,.15);
+  border-radius:2px;
+  transition:color .3s, border-color .3s, background-color .3s, transform .3s;
+  text-decoration:none;
+}
+.btn-cta::after{content:' →';letter-spacing:0;}
+.btn-cta:hover{border-color:#b89a5c;background:rgba(184,154,92,.28);transform:translateY(-2px);}
+
+/* === PLAN DU SITE === */
+.plan-site{background:transparent;padding:48px 24px 36px;max-width:1080px;margin:0 auto;text-align:center;font-family:'Cormorant Garamond',Georgia,serif;color:#3a3220;border-top:1px solid rgba(184,154,92,.25);}
+.plan-site .filet-haut{display:flex;align-items:center;justify-content:center;gap:14px;margin:0 auto 28px;max-width:200px;}
+.plan-site .filet-haut::before,.plan-site .filet-haut::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,transparent,rgba(184,154,92,.55),transparent);}
+.plan-site .filet-haut .etoile{color:#b89a5c;font-size:.85rem;line-height:1;}
+.plan-site-grille{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px 32px;text-align:left;margin-bottom:28px;}
+.plan-categorie h2{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:#5a4a30;margin:0 0 10px;padding-bottom:6px;border-bottom:1px solid rgba(184,154,92,.22);}
+.plan-categorie ul{list-style:none;margin:0;padding:0;}
+.plan-categorie li{font-size:.92rem;line-height:1.65;margin-bottom:2px;}
+.plan-categorie a{color:#3a3220;text-decoration:none;transition:color .3s;border-bottom:1px solid transparent;}
+.plan-categorie a:hover{color:#b89a5c;border-bottom-color:rgba(184,154,92,.4);}
+.plan-mentions{font-family:'Cormorant Garamond',serif;font-size:.78rem;letter-spacing:.16em;color:#7a6a48;text-transform:uppercase;margin:0;}
+.plan-mentions .etoile{color:#b89a5c;margin:0 .6em;}
+.plan-webmaster{
+  margin:14px auto 0;
+  max-width:340px;
+  padding-top:10px;
+  border-top:1px solid rgba(184,154,92,.18);
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;
+  font-size:.78rem;
+  letter-spacing:.08em;
+  color:#8a6d2f;
+  text-align:center;
+}
+.plan-webmaster a{color:inherit;border-bottom:1px solid rgba(184,154,92,.3);transition:color .3s, border-color .3s;}
+.plan-webmaster a:hover{color:#b89a5c;border-bottom-color:#b89a5c;}
+@media(max-width:560px){.plan-site{padding:32px 18px 24px;}.plan-site-grille{gap:18px;text-align:center;}.plan-categorie h2{text-align:center;}.plan-mentions{font-size:.7rem;letter-spacing:.12em;}}
+
+/* === Révélation au scroll === */
+.reveler{opacity:0;transform:translateY(18px);transition:opacity .9s ease, transform .9s ease;}
+.reveler.visible{opacity:1;transform:translateY(0);}
+@media(prefers-reduced-motion: reduce){.reveler{opacity:1;transform:none;transition:none;}}
+</style>
+</head>
+
+<body>
+
+  <!-- HEADER COMMUN -->
+  <header class="entete-site" role="banner">
+    <div class="entete-logo">
+      <a href="index.html" aria-label="Retour à l'accueil de L'AMagie">
+        <img src="images/logo-amagie.png" alt="L'AMagie" onerror="this.style.display='none'"/>
+      </a>
+    </div>
+    <a href="index.html" class="entete-titre" aria-label="L'AMagie — Accueil">L&rsquo;AMagie</a>
+    <div class="entete-retour">
+      <a href="index.html"><span>Retour à l&rsquo;accueil</span></a>
+    </div>
+  </header>
+
+  <!-- HÉROS DE PAGE -->
+  <section class="heros-page">
+    <nav class="fil-ariane" aria-label="Fil d'ariane">
+      <a href="index.html">Accueil</a>
+      <span class="sep">·</span>
+      <span>Événements &amp; Presse</span>
+    </nav>
+
+    <!-- Image d'en-tête (au-dessus du titre) -->
+    <figure class="illustration-entete reveler">
+      <img src="images/evenements-presse.png"
+           alt="Événements &amp; Presse — L'AMagie"
+           loading="eager"
+           decoding="async"
+           onerror="this.style.display='none'"/>
+    </figure>
+
+    <h1 class="titre-page">Événements &amp; Presse</h1>
+    <p class="sous-titre-page">Les articles, vernissages et rencontres qui jalonnent la vie de la maison</p>
+    <div class="medaillon-titre" aria-hidden="true">✦</div>
+  </section>
+
+  <!-- CONTENU -->
+  <main class="contenu" role="main">
+
+    <!-- INTRODUCTION -->
+    <article class="carte-intro reveler">
+      <p>Depuis la naissance de L&rsquo;AMagie, <em>les rendez-vous se succèdent</em> entre publications, vernissages d&rsquo;expositions, actions solidaires et rencontres avec le public.</p>
+      <p>Voici une sélection d&rsquo;articles parus dans la presse locale — <em>L&rsquo;Indépendant</em>, <em>Midi Libre</em>, <em>Canal du Midi — Minervois</em> — qui retracent l&rsquo;aventure éditoriale et artistique de la maison.</p>
+    </article>
+
+    <!-- ============================================================
+         SECTION ARTICLES DE PRESSE
+         ============================================================ -->
+    <div class="section-titre reveler">
+      <h2>Dans la presse</h2>
+      <span class="legende">Ils ont parlé de nous</span>
+    </div>
+
+    <div class="grille-articles">
+
+      <!-- Article — Nouvelle exposition au Coin d'Art (L'Indépendant) -->
+      <article class="article-carte reveler">
+        <div class="article-image" data-src="images/evenements/midi-libre-article-1.jpg" data-legende="D&#x27;un village à l&#x27;autre — nouvelle exposition de Meichelus au Coin d&#x27;Art, article L&#x27;Indépendant" role="button" tabindex="0" aria-label="Agrandir l&#39;article : D&#x27;un village à l&#x27;autre — nouvelle exposition de Meichelus au Coin d&#x27;Art, article L&#x27;Indépendant">
+          <img src="images/evenements/midi-libre-article-1.jpg"
+               alt="D'un village à l'autre — nouvelle exposition de Meichelus au Coin d'Art, article L'Indépendant"
+               loading="lazy"
+               onerror="this.style.display='none'"/>
+          <span class="agrandir-indice">Lire l&rsquo;article</span>
+        </div>
+        <div class="article-corps">
+          <div class="article-meta">
+            <span class="source">L&rsquo;Indépendant</span>
+            <span class="sep">✦</span>
+            <span class="date">Septembre 2026</span>
+          </div>
+          <h3 class="article-titre">D&rsquo;un village à l&rsquo;autre — Nouvelle exposition de Meichelus&nbsp;: matière, poésie et voyage intérieur dans le Minervois</h3>
+          <p class="article-resume">Du 12 septembre au 6 octobre, Meichelus expose ses nouvelles toiles au Coin d&rsquo;art à Olonzac, aux côtés des sculptures de Jean-Michel Laffite. <em>«&nbsp;J&rsquo;aime inviter à entrer dans un univers où le vivant, la mémoire et les paysages du Minervois deviennent les supports d&rsquo;une réflexion plus intime sur le temps et la conscience&nbsp;»</em>, confie l&rsquo;artiste. Un portrait signé Anouk Journo.</p>
+        </div>
+      </article>
+
+      <!-- Article — Lafitte et Meichelus, invités du Coin d'Art (Midi Libre Béziers) -->
+      <article class="article-carte reveler">
+        <div class="article-image" data-src="images/evenements/midi-libre-coin-dart-lafitte-meichelus.jpg" data-legende="Lafitte et Meichelus sont les invités du Coin d&#x27;Art — article Midi Libre Béziers" role="button" tabindex="0" aria-label="Agrandir l&#39;article : Lafitte et Meichelus sont les invités du Coin d&#x27;Art — article Midi Libre Béziers">
+          <img src="images/evenements/midi-libre-coin-dart-lafitte-meichelus.jpg"
+               alt="Lafitte et Meichelus sont les invités du Coin d'Art — article Midi Libre Béziers"
+               loading="lazy"
+               onerror="this.style.display='none'"/>
+          <span class="agrandir-indice">Lire l&rsquo;article</span>
+        </div>
+        <div class="article-corps">
+          <div class="article-meta">
+            <span class="source">Midi Libre Béziers</span>
+            <span class="sep">✦</span>
+            <span class="date">6 septembre 2026</span>
+          </div>
+          <h3 class="article-titre">Lafitte et Meichelus sont les invités du Coin d&rsquo;Art</h3>
+          <p class="article-resume">La galerie d&rsquo;art contemporain Le Coin d&rsquo;Art, à Olonzac, invite les artistes Jean-Michel Lafitte, de Minerve, et Meichelus, de Félines-Minervois, à exposer leurs œuvres du 12 septembre au 6 octobre&nbsp;; le vernissage est prévu le 12 septembre à 18&nbsp;h. Meichelus se dévoile à travers une exposition au croisement du dessin, de la peinture et de la poésie&nbsp;: <em>«&nbsp;une œuvre graphique, véritable exploration à la fois matérielle et spirituelle, qui navigue avec justesse entre observation minutieuse et imaginaire poétique&nbsp;»</em>. Ensemble, ces deux artistes qui s&rsquo;apprécient feront naviguer le public.</p>
+        </div>
+      </article>
+
+      <!-- Article 1 — Création de L'AMagie -->
+      <article class="article-carte reveler">
+        <div class="article-image" data-src="images/evenements/independant-article-1.jpg" data-legende="Création de la maison d&#x27;édition L&#x27;AMagie — article L&#x27;Indépendant" role="button" tabindex="0" aria-label="Agrandir l&#39;article : Création de la maison d&#x27;édition L&#x27;AMagie — article L&#x27;Indépendant">
+          <img src="images/evenements/independant-article-1.jpg"
+               alt="Création de la maison d'édition L'AMagie — article L'Indépendant"
+               loading="lazy"
+               onerror="this.style.display='none'"/>
+          <span class="agrandir-indice">Lire l&rsquo;article</span>
+        </div>
+        <div class="article-corps">
+          <div class="article-meta">
+            <span class="source">L&rsquo;Indépendant</span>
+            <span class="sep">✦</span>
+            <span class="date">Félines-Minervois</span>
+          </div>
+          <h3 class="article-titre">Avec l&rsquo;AMagie, Anouk et Michel offrent un voyage en poésie</h3>
+          <p class="article-resume">Née à Félines-Minervois, cette nouvelle maison d&rsquo;édition associative se consacre entièrement à la poésie. Fondée par Anouk Journo et Meichelus, elle propose un modèle unique&nbsp;: <em>accompagnement éditorial gratuit, rémunération équitable des auteurs et impression à la demande</em>. Un acte de rébellion contre l&rsquo;édition traditionnelle.</p>
+        </div>
+      </article>
+
+      <!-- Article 2 — À la recherche de Truffe -->
+      <article class="article-carte reveler">
+        <div class="article-image" data-src="images/evenements/independant-article-2.jpg" data-legende="Anouk Journo présente À la recherche de Truffe — article L&#x27;Indépendant" role="button" tabindex="0" aria-label="Agrandir l&#39;article : Anouk Journo présente À la recherche de Truffe — article L&#x27;Indépendant">
+          <img src="images/evenements/independant-article-2.jpg"
+               alt="Anouk Journo présente À la recherche de Truffe — article L'Indépendant"
+               loading="lazy"
+               onerror="this.style.display='none'"/>
+          <span class="agrandir-indice">Lire l&rsquo;article</span>
+        </div>
+        <div class="article-corps">
+          <div class="article-meta">
+            <span class="source">L&rsquo;Indépendant</span>
+            <span class="sep">✦</span>
+            <span class="date">5 octobre 2024</span>
+          </div>
+          <h3 class="article-titre">L&rsquo;autrice Anouk Journo dévoile son dernier ouvrage</h3>
+          <p class="article-resume">«&nbsp;<em>À la recherche de Truffe… ou les alexandrins magiques</em>&nbsp;» — un roman jeunesse illustré par Meichelus, destiné aux lecteurs à partir de sept ans. L&rsquo;histoire suit Nino et Lilla en quête de leur chien Pogo, dans une vallée hantée où les alexandrins deviennent une arme magique.</p>
+        </div>
+      </article>
+
+      <!-- Article 3 — La triple actualité d'Anouk Journo -->
+      <article class="article-carte reveler">
+        <div class="article-image" data-src="images/evenements/independant-article-3.jpg" data-legende="La triple actualité d&#x27;Anouk Journo — Canal du Midi Minervois" role="button" tabindex="0" aria-label="Agrandir l&#39;article : La triple actualité d&#x27;Anouk Journo — Canal du Midi Minervois">
+          <img src="images/evenements/independant-article-3.jpg"
+               alt="La triple actualité d'Anouk Journo — Canal du Midi Minervois"
+               loading="lazy"
+               onerror="this.style.display='none'"/>
+          <span class="agrandir-indice">Lire l&rsquo;article</span>
+        </div>
+        <div class="article-corps">
+          <div class="article-meta">
+            <span class="source">Canal du Midi — Minervois</span>
+            <span class="sep">✦</span>
+            <span class="date">Fin 2024</span>
+          </div>
+          <h3 class="article-titre">La triple actualité d&rsquo;Anouk Journo</h3>
+          <p class="article-resume">Trois ouvrages annoncés en cette fin d&rsquo;année par l&rsquo;autrice jeunesse de Félines-Minervois&nbsp;: <em>À la découverte des félins</em> (Fleurus), <em>À la recherche de Truffe</em> (roman jeunesse), et le recueil de poésie <em>L&rsquo;Âme en selle</em>. Une plume infatigable au service de l&rsquo;imaginaire et du vivant.</p>
+        </div>
+      </article>
+
+      <!-- Article 4 — En quête d'Hozro -->
+      <article class="article-carte reveler">
+        <div class="article-image" data-src="images/evenements/independant-article-4.jpg" data-legende="En quête d&#x27;Hozro — peinture et poésie signées Anouk et Meichelus" role="button" tabindex="0" aria-label="Agrandir l&#39;article : En quête d&#x27;Hozro — peinture et poésie signées Anouk et Meichelus">
+          <img src="images/evenements/independant-article-4.jpg"
+               alt="En quête d'Hozro — peinture et poésie signées Anouk et Meichelus"
+               loading="lazy"
+               onerror="this.style.display='none'"/>
+          <span class="agrandir-indice">Lire l&rsquo;article</span>
+        </div>
+        <div class="article-corps">
+          <div class="article-meta">
+            <span class="source">Canal du Midi — Minervois</span>
+            <span class="sep">✦</span>
+            <span class="date">Début 2025</span>
+          </div>
+          <h3 class="article-titre">Un livre mêlant l&rsquo;art pictural et la poésie signé Anouk et Meichelus</h3>
+          <p class="article-resume">«&nbsp;<em>En quête d&rsquo;Hozro… Enchanter le monde</em>&nbsp;» — un ouvrage où vingt toiles pointillistes de Meichelus répondent à vingt poèmes d&rsquo;Anouk Journo, autour de la mythologie hopi et du mot navajo <em>Hozro</em> qui signifie harmonie, beauté, équilibre.</p>
+        </div>
+      </article>
+
+      <!-- Article 5 — L'art de Meichelus au service des pompiers -->
+      <article class="article-carte reveler">
+        <div class="article-image" data-src="images/evenements/independant-article-5.jpg" data-legende="L&#x27;art de Meichelus au service des pompiers et de la poésie — L&#x27;Indépendant" role="button" tabindex="0" aria-label="Agrandir l&#39;article : L&#x27;art de Meichelus au service des pompiers et de la poésie — L&#x27;Indépendant">
+          <img src="images/evenements/independant-article-5.jpg"
+               alt="L'art de Meichelus au service des pompiers et de la poésie — L'Indépendant"
+               loading="lazy"
+               onerror="this.style.display='none'"/>
+          <span class="agrandir-indice">Lire l&rsquo;article</span>
+        </div>
+        <div class="article-corps">
+          <div class="article-meta">
+            <span class="source">L&rsquo;Indépendant</span>
+            <span class="sep">✦</span>
+            <span class="date">Dimanche 27 avril 2025</span>
+          </div>
+          <h3 class="article-titre">L&rsquo;art de Meichelus au service des pompiers et de la poésie</h3>
+          <p class="article-resume">Au Grand café occitan de Félines, le vernissage de l&rsquo;exposition solidaire de Meichelus a réuni de très nombreux habitants. Infirmier en pédopsychiatrie et sapeur-pompier durant 40 ans dans les Hautes-Alpes, l&rsquo;artiste partage <em>une œuvre nourrie de voyages et d&rsquo;art-thérapie</em>.</p>
+        </div>
+      </article>
+
+      <!-- Article 6 — Exposition solidaire -->
+      <article class="article-carte reveler">
+        <div class="article-image" data-src="images/evenements/independant-article-6.jpg" data-legende="La poésie et les pompiers sauvent le monde — exposition solidaire" role="button" tabindex="0" aria-label="Agrandir l&#39;article : La poésie et les pompiers sauvent le monde — exposition solidaire">
+          <img src="images/evenements/independant-article-6.jpg"
+               alt="La poésie et les pompiers sauvent le monde — exposition solidaire"
+               loading="lazy"
+               onerror="this.style.display='none'"/>
+          <span class="agrandir-indice">Lire l&rsquo;article</span>
+        </div>
+        <div class="article-corps">
+          <div class="article-meta">
+            <span class="source">L&rsquo;Indépendant</span>
+            <span class="sep">✦</span>
+            <span class="date">Jeudi 24 avril 2025</span>
+          </div>
+          <h3 class="article-titre">«&nbsp;La poésie et les pompiers sauvent le monde&nbsp;» — une exposition solidaire</h3>
+          <p class="article-resume">Une vingtaine d&rsquo;œuvres originales de Meichelus — encre de Chine, aquarelle, pointillisme, feuilles d&rsquo;or — exposées au Grand café occitan. Les bénéfices des ventes sont reversés pour moitié à <em>l&rsquo;Amicale des sapeurs-pompiers de Félines</em>, et pour l&rsquo;autre à l&rsquo;association L&rsquo;AMagie.</p>
+        </div>
+      </article>
+
+      <!-- Article 7 — Remise du chèque de 300 € -->
+      <article class="article-carte reveler">
+        <div class="article-image" data-src="images/evenements/independant-article-7.jpg" data-legende="L&#x27;AMagie remet 300 € à l&#x27;Amicale des pompiers — L&#x27;Indépendant" role="button" tabindex="0" aria-label="Agrandir l&#39;article : L&#x27;AMagie remet 300 € à l&#x27;Amicale des pompiers — L&#x27;Indépendant">
+          <img src="images/evenements/independant-article-7.jpg"
+               alt="L'AMagie remet 300 € à l'Amicale des pompiers — L'Indépendant"
+               loading="lazy"
+               onerror="this.style.display='none'"/>
+          <span class="agrandir-indice">Lire l&rsquo;article</span>
+        </div>
+        <div class="article-corps">
+          <div class="article-meta">
+            <span class="source">L&rsquo;Indépendant</span>
+            <span class="sep">✦</span>
+            <span class="date">Mardi 20 mai 2025</span>
+          </div>
+          <h3 class="article-titre">L&rsquo;association L&rsquo;AMagie remet 300 € à l&rsquo;Amicale des pompiers</h3>
+          <p class="article-resume">Un premier chèque de 300 € a été remis à l&rsquo;Amicale des sapeurs-pompiers de Félines-Minervois, fruit de l&rsquo;exposition solidaire de Meichelus. <em>«&nbsp;D&rsquo;autres dons pourraient suivre&nbsp;»</em>, annonce L&rsquo;AMagie. L&rsquo;exposition se poursuit jusqu&rsquo;à la fin août au Grand café occitan.</p>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- ============================================================
+         VIDÉO — Forum des associations de Félines-Minervois
+         ============================================================ -->
+    <div class="video-presse reveler">
+      <div class="video-cadre">
+        <video
+          controls
+          preload="metadata"
+          playsinline
+          poster="images/evenements/forum-associations-poster.jpg"
+          aria-label="Vidéo de présentation de L'AMagie au Forum des associations de Félines-Minervois">
+          <source src="videos/forum-associations-felines-2026.mp4" type="video/mp4"/>
+          Votre navigateur ne prend pas en charge la lecture vidéo intégrée. <a href="videos/forum-associations-felines-2026.mp4">Téléchargez la vidéo</a>.
+        </video>
+        <div class="video-legende">
+          <span class="video-source">Forum des associations &middot; Félines-Minervois &middot; Septembre 2026</span>
+          <h3 class="video-titre">L&rsquo;AMagie se présente au Forum des associations</h3>
+          <p class="video-texte">Une courte vidéo pour (re)découvrir notre maison d&rsquo;édition associative, son esprit et ses projets, telle que présentée au public lors du Forum des associations de Félines-Minervois.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================================================
+         COULISSES — photo de travail
+         ============================================================ -->
+    <div class="coulisses reveler">
+      <figure>
+        <img src="images/evenements/au-travail.jpg"
+             alt="Anouk Journo et Meichelus au travail dans l'atelier"
+             loading="lazy"
+             onerror="this.style.display='none'"/>
+        <figcaption>Anouk &amp; Meichelus, dans l&rsquo;atelier de L&rsquo;AMagie</figcaption>
+      </figure>
+    </div>
+
+    <!-- ============================================================
+         CTA — CONTACT PRESSE
+         ============================================================ -->
+    <div class="cta-presse reveler">
+      <h3>Contact presse</h3>
+      <p>Journalistes, blogueurs littéraires, partenaires d&rsquo;événements&nbsp;: pour toute demande d&rsquo;interview, de visuels en haute définition ou de coordination autour d&rsquo;un vernissage, écrivez-nous directement.</p>
+      <a class="btn-cta" href="contact.html">Nous écrire</a>
+    </div>
+
+  </main>
+
+  <!-- PLAN DU SITE -->
+  <section class="plan-site" aria-label="Plan du site">
+    <div class="filet-haut" aria-hidden="true"><span class="etoile">✦</span></div>
+    <div class="plan-site-grille">
+      <div class="plan-categorie">
+        <h2>Qui sommes-nous&nbsp;?</h2>
+        <ul>
+          <li><a href="qui-sommes-nous.html">Qui sommes-nous</a></li>
+          <li><a href="fonctionnement.html">Fonctionnement de l&rsquo;association</a></li>
+          <li><a href="anouk-journo.html">Anouk Journo</a></li>
+          <li><a href="peintures.html">Meichelus</a></li>
+        </ul>
+      </div>
+      <div class="plan-categorie">
+        <h2>Ateliers &amp; Coaching</h2>
+        <ul>
+          <li><a href="ateliers.html">Ateliers &amp; Coaching</a></li>
+          <li><a href="mots-pour-maux.html">Écriture thérapeutique</a></li>
+          <li><a href="mediation-animale.html">Médiation animale</a></li>
+          <li><a href="amis-mots.html">Collection Amis-Mots</a></li>
+        </ul>
+      </div>
+      <div class="plan-categorie">
+        <h2>Éditions</h2>
+        <ul>
+          <li><a href="edition.html">Manuscrits &amp; projets</a></li>
+          <li><a href="edition.html#raconter-le-monde">Collection Raconter le monde</a></li>
+          <li><a href="edition.html#immersion">Collection Immersion</a></li>
+          <li><a href="edition.html#manifestes">Collection Manifestes</a></li>
+          <li><a href="edition.html#romans-jeunesse">Romans jeunesse</a></li>
+        </ul>
+      </div>
+      <div class="plan-categorie">
+        <h2>Poésie &amp; Arts</h2>
+        <ul>
+          <li><a href="poesie.html">Poésie au jour le jour</a></li>
+          <li><a href="peintures.html">Peintures &amp; Dessins</a></li>
+          <li><a href="evenements.html">Événements &amp; Presse</a></li>
+        </ul>
+      </div>
+      <div class="plan-categorie">
+        <h2>Liens utiles</h2>
+        <ul>
+          <li><a href="boutique.html">Boutique</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="youtube.html">Chaîne Youtube</a></li>
+          <li><a href="mentions-legales.html">Mentions légales</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="plan-mentions">© 2026 L&rsquo;AMagie <span class="etoile">✦</span> Maison d&rsquo;édition indépendante <span class="etoile">✦</span> SIREN 937629533 <span class="etoile">✦</span> Félines-Minervois</p>
+    <p class="plan-webmaster">© Webmaster Meichelus : <a href="mailto:meichelus@l-amagie.art">meichelus@l-amagie.art</a></p>
+  </section>
+
+  <!-- LIGHTBOX — lecture des articles de presse en grand format -->
+  <div class="lightbox-presse" id="lightboxPresse" role="dialog" aria-modal="true" aria-label="Article en grand format" onclick="if(event.target===this)fermerLightbox()">
+    <div class="lightbox-cadre">
+      <button type="button" class="lightbox-fermer" onclick="fermerLightbox()" aria-label="Fermer">✕</button>
+      <img id="lightboxImage" src="" alt=""/>
+      <p class="lightbox-legende" id="lightboxLegende"></p>
+    </div>
+  </div>
+
+  <script>
+    if ('IntersectionObserver' in window) {
+      var obs = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){
+          if (e.isIntersecting){
+            e.target.classList.add('visible');
+            obs.unobserve(e.target);
+          }
+        });
+      }, { threshold:.08, rootMargin:'0px 0px -50px 0px' });
+      document.querySelectorAll('.reveler').forEach(function(el){ obs.observe(el); });
+    } else {
+      document.querySelectorAll('.reveler').forEach(function(el){ el.classList.add('visible'); });
+    }
+
+    // Lightbox — clic ou touche Entrée sur une carte pour agrandir l'article
+    document.querySelectorAll('.article-image[data-src]').forEach(function(el){
+      el.addEventListener('click', function(){
+        ouvrirLightbox(el.getAttribute('data-src'), el.getAttribute('data-legende'));
+      });
+      el.addEventListener('keypress', function(e){
+        if (e.key === 'Enter') ouvrirLightbox(el.getAttribute('data-src'), el.getAttribute('data-legende'));
+      });
+    });
+
+    function ouvrirLightbox(src, legende){
+      var boite = document.getElementById('lightboxPresse');
+      var img = document.getElementById('lightboxImage');
+      var texte = document.getElementById('lightboxLegende');
+      img.src = src;
+      img.alt = legende;
+      texte.textContent = legende;
+      boite.classList.add('ouverte');
+      document.body.style.overflow = 'hidden';
+    }
+    function fermerLightbox(){
+      var boite = document.getElementById('lightboxPresse');
+      boite.classList.remove('ouverte');
+      document.body.style.overflow = '';
+    }
+    document.addEventListener('keydown', function(e){
+      if (e.key === 'Escape') fermerLightbox();
+    });
+  </script>
+
+</body>
+</html>

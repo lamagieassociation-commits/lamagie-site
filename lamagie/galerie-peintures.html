@@ -520,7 +520,21 @@ em{font-style:italic;color:#5a4a30;}
 ═══════════════════════════════════════════════════════════ */
 const OEUVRES = [
 
-  // ── 2026 · Dernière toile — vendue à l'exposition d'Olonzac ─
+  // ── 2026 · Dernière toile ────────────────────────────────
+  {
+    title:     "Thigmotropisme",
+    year:      "2026",
+    location:  "Félines-Minervois",
+    technique: "Mine graphite, encre et aquarelle — 34 × 44 cm",
+    desc:      "Sur un pan de mur envahi de vigne vierge, les vrilles s'enroulent, tâtonnent, inventent leurs propres points d'ancrage — le toucher, le tour, cette manière qu'a la plante de s'attacher sans jamais se figer. Un papillon s'y pose un instant, présence éphémère au cœur d'une architecture patiente. Deux façons d'habiter le monde qui semblent partager le même secret : on ne dure pas en restant immobile, mais en sachant plier sans rompre, s'attacher sans s'enfermer.",
+    img:       "images/thigmotropisme.png",
+    url:       "https://meichelus-art.blogspot.com/2026/09/toile-la-mine-graphite-lencre-et.html",
+    tag:       "Original",
+    achat:     "https://l-amagie.sumupstore.com/product/thigmotropisme",
+    achatLabel:"🎨 Acquérir cette toile"
+  },
+
+  // ── 2026 · Vendue à l'exposition d'Olonzac ───────────────
   {
     title:     "Le Papillon et la Libellule",
     year:      "2026",
@@ -769,6 +783,9 @@ const OEUVRES = [
 
     // Boutons d'action (lien blog + Saatchi + exposition si disponibles)
     var actionsHTML = '<a class="oeuvre-lien" href="' + o.url + '" target="_blank" rel="noopener noreferrer">Lire l\'article</a>';
+    if (o.achat) {
+      actionsHTML += '<a class="oeuvre-lien oeuvre-lien--achat" href="' + o.achat + '" target="_blank" rel="noopener noreferrer">' + (o.achatLabel || '🎨 Acquérir cette toile') + '</a>';
+    }
     if (o.saatchi) {
       actionsHTML += '<a class="oeuvre-lien oeuvre-lien--achat" href="' + o.saatchi + '" target="_blank" rel="noopener noreferrer">🎨 Acquérir sur Saatchi Art</a>';
     }

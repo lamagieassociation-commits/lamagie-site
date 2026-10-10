@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" translate="no" class="notranslate">
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -396,6 +396,27 @@ em{font-style:italic;color:#5a4a30;}
 .reveler{opacity:0;transform:translateY(18px);transition:opacity .9s ease, transform .9s ease;}
 .reveler.visible{opacity:1;transform:translateY(0);}
 @media(prefers-reduced-motion: reduce){.reveler{opacity:1;transform:none;transition:none;}}
+
+/* ============================================================
+   BILINGUE FR/EN — sans traduction automatique
+   ============================================================ */
+.t-en{display:none !important;}
+body.lang-en .t-fr{display:none !important;}
+body.lang-en span.t-en{display:inline !important;}
+body.lang-en p.t-en{display:block !important;}
+.entete-retour{gap:16px;}
+.toggle-langue{display:flex;gap:8px;align-items:center;}
+.toggle-langue button{
+  background:transparent;border:1px solid rgba(184,154,92,.4);padding:4px 10px;border-radius:2px;
+  cursor:pointer;font-family:'Cormorant Garamond',Georgia,serif;font-size:0.8rem;color:#5a4a30;
+  transition:all 0.3s;letter-spacing:.08em;text-transform:uppercase;
+}
+.toggle-langue button.active{background:#b89a5c;color:white;border-color:#b89a5c;}
+.toggle-langue button:hover{background:rgba(184,154,92,.1);}
+@media(max-width:760px){
+  .toggle-langue{gap:6px;}
+  .toggle-langue button{padding:3px 8px;font-size:0.7rem;}
+}
 </style>
 </head>
 
@@ -410,18 +431,22 @@ em{font-style:italic;color:#5a4a30;}
     </div>
     <a href="index.html" class="entete-titre" aria-label="L'AMagie — Accueil">L&rsquo;AMagie</a>
     <div class="entete-retour">
-      <a href="index.html"><span>Retour à l&rsquo;accueil</span></a>
+      <div class="toggle-langue">
+        <button class="lang-btn active" data-lang="fr">FR</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+      </div>
+            <a href="index.html"><span><span class="t-fr">Retour à l&rsquo;accueil</span><span class="t-en">Back to home</span></span></a>
     </div>
   </header>
 
   <!-- HÉROS DE PAGE -->
   <section class="heros-page">
     <nav class="fil-ariane" aria-label="Fil d'ariane">
-      <a href="index.html">Accueil</a>
+      <a href="index.html"><span class="t-fr">Accueil</span><span class="t-en">Home</span></a>
       <span class="sep">·</span>
-      <span>Édition</span>
+      <span class="t-fr">Édition</span><span class="t-en">Publishing</span>
     </nav>
-    <h1 class="titre-page">Éditions</h1>
+    <h1 class="titre-page"><span class="t-fr">Éditions</span><span class="t-en">Publishing</span></h1>
 
     <figure class="illustration-titre reveler">
       <img src="images/editions.jpeg"
@@ -429,10 +454,11 @@ em{font-style:italic;color:#5a4a30;}
            loading="eager"
            decoding="async"
            onerror="this.style.display='none'"/>
-      <figcaption>S&rsquo;élever, en silence, au-dessus de l&rsquo;horizon.</figcaption>
+      <figcaption><span class="t-fr">S&rsquo;élever, en silence, au-dessus de l&rsquo;horizon.</span><span class="t-en">To rise, in silence, above the horizon.</span></figcaption>
     </figure>
 
-    <p class="sous-titre-page">Cinq collections qui accueillent des écritures variées — du récit de vie au roman, de la jeunesse à la poésie — réunies par une même exigence : un élan poétique et libre.</p>
+    <p class="sous-titre-page t-fr">Cinq collections qui accueillent des écritures variées — du récit de vie au roman, de la jeunesse à la poésie — réunies par une même exigence : un élan poétique et libre.</p>
+        <p class="sous-titre-page t-en">Five collections welcoming a wide range of writing — from life stories to novels, from children&rsquo;s books to poetry — united by the same standard: a free, poetic impulse.</p>
     <div class="medaillon-titre" aria-hidden="true">✦</div>
   </section>
 
@@ -443,53 +469,60 @@ em{font-style:italic;color:#5a4a30;}
          INTRODUCTION
          ============================================================ -->
     <article class="carte reveler">
-      <p>L&rsquo;AMagie publie des ouvrages organisés en collections thématiques, chacune avec son propre univers&nbsp;: récits de vie, romans noirs, poésie, jeunesse, hommages animaliers, voyages en imaginaire…</p>
-      <p>Découvrez-les, et choisissez celle qui vous parle.</p>
+      <p class="t-fr">L&rsquo;AMagie publie des ouvrages organisés en collections thématiques, chacune avec son propre univers&nbsp;: récits de vie, romans noirs, poésie, jeunesse, hommages animaliers, voyages en imaginaire…</p>
+        <p class="t-en">L&rsquo;AMagie publishes books organised into themed collections, each with its own world: life stories, noir novels, poetry, children&rsquo;s books, tributes to animals, journeys into the imagination…</p>
+      <p class="t-fr">Découvrez-les, et choisissez celle qui vous parle.</p>
+        <p class="t-en">Discover them, and choose the one that speaks to you.</p>
     </article>
 
     <!-- ============================================================
          LES SIX COLLECTIONS
          ============================================================ -->
     <div class="section-titre reveler">
-      <h2>Nos collections</h2>
-      <span class="legende">Cinq univers à explorer</span>
+      <h2><span class="t-fr">Nos collections</span><span class="t-en">Our collections</span></h2>
+      <span class="legende"><span class="t-fr">Cinq univers à explorer</span><span class="t-en">Five worlds to explore</span></span>
     </div>
 
     <div class="grille-collections reveler">
 
       <article class="collection-carte" id="raconter-le-monde">
         <span class="numero-romain">I</span>
-        <h3>Collection Raconter le monde</h3>
-        <p>Récits &amp; témoignages — la mémoire vivante des voix singulières.</p>
-        <a class="lien-action" href="collection-raconter-le-monde.html">Découvrir</a>
+        <h3><span class="t-fr">Collection Raconter le monde</span><span class="t-en">&ldquo;Telling the World&rdquo; Collection (Raconter le monde)</span></h3>
+        <p class="t-fr">Récits &amp; témoignages — la mémoire vivante des voix singulières.</p>
+        <p class="t-en">Life stories &amp; testimonies — the living memory of singular voices.</p>
+        <a class="lien-action" href="collection-raconter-le-monde.html"><span class="t-fr">Découvrir</span><span class="t-en">Discover</span></a>
       </article>
 
       <article class="collection-carte" id="immersion">
         <span class="numero-romain">II</span>
-        <h3>Collection Immersion</h3>
-        <p>Romans, polars, thrillers — pour adultes en quête d&rsquo;ombre et de profondeur.</p>
-        <a class="lien-action" href="collection-immersion.html">Découvrir</a>
+        <h3><span class="t-fr">Collection Immersion</span><span class="t-en">Immersion Collection</span></h3>
+        <p class="t-fr">Romans, polars, thrillers — pour adultes en quête d&rsquo;ombre et de profondeur.</p>
+        <p class="t-en">Novels, crime fiction, thrillers — for adult readers in search of shadow and depth.</p>
+        <a class="lien-action" href="collection-immersion.html"><span class="t-fr">Découvrir</span><span class="t-en">Discover</span></a>
       </article>
 
       <article class="collection-carte" id="romans-jeunesse">
         <span class="numero-romain">III</span>
-        <h3>Romans jeunesse : collection de La Terre à la Lune</h3>
-        <p>Aventures, courage, imaginaire et merveilleux — pour les lecteurs qui grandissent.</p>
-        <a class="lien-action" href="collection-jeunesse.html">Découvrir</a>
+        <h3><span class="t-fr">Romans jeunesse : collection de La Terre à la Lune</span><span class="t-en">Young Adult Novels: &ldquo;From the Earth to the Moon&rdquo; Collection</span></h3>
+        <p class="t-fr">Aventures, courage, imaginaire et merveilleux — pour les lecteurs qui grandissent.</p>
+        <p class="t-en">Adventure, courage, imagination and wonder — for readers who are growing up.</p>
+        <a class="lien-action" href="collection-jeunesse.html"><span class="t-fr">Découvrir</span><span class="t-en">Discover</span></a>
       </article>
 
       <article class="collection-carte" id="amis-mots-coll">
         <span class="numero-romain">V</span>
-        <h3>Collection Amis-Mots</h3>
-        <p>Là où les animaux deviennent les héros discrets de nos vies.</p>
-        <a class="lien-action" href="amis-mots.html">Découvrir</a>
+        <h3><span class="t-fr">Collection Amis-Mots</span><span class="t-en">Friends-Words Collection (Amis-Mots)</span></h3>
+        <p class="t-fr">Là où les animaux deviennent les héros discrets de nos vies.</p>
+        <p class="t-en">Where animals become the quiet heroes of our lives.</p>
+        <a class="lien-action" href="amis-mots.html"><span class="t-fr">Découvrir</span><span class="t-en">Discover</span></a>
       </article>
 
       <article class="collection-carte" id="lune-a-la-plume">
         <span class="numero-romain">VI</span>
-        <h3>Collection De la Lune à la Plume</h3>
-        <p>Recueils poétiques — légers comme une plume, intenses comme la Lune.</p>
-        <a class="lien-action" href="poesie.html">Découvrir</a>
+        <h3><span class="t-fr">Collection De la Lune à la Plume</span><span class="t-en">&ldquo;From the Moon to the Quill&rdquo; Collection (De la Lune à la Plume)</span></h3>
+        <p class="t-fr">Recueils poétiques — légers comme une plume, intenses comme la Lune.</p>
+        <p class="t-en">Poetry collections — light as a feather, intense as the Moon.</p>
+        <a class="lien-action" href="poesie.html"><span class="t-fr">Découvrir</span><span class="t-en">Discover</span></a>
       </article>
 
     </div>
@@ -498,66 +531,73 @@ em{font-style:italic;color:#5a4a30;}
          CATALOGUE — TITRES PUBLIÉS
          ============================================================ -->
     <div class="section-titre reveler" id="manifestes">
-      <h2>Notre catalogue</h2>
-      <span class="legende">Titres publiés</span>
+      <h2><span class="t-fr">Notre catalogue</span><span class="t-en">Our catalogue</span></h2>
+      <span class="legende"><span class="t-fr">Titres publiés</span><span class="t-en">Published titles</span></span>
     </div>
 
     <div class="grille-titres reveler">
 
       <article class="titre-carte">
         <span class="numero-romain">I</span>
-        <span class="surtitre">Collection Manifestes</span>
+        <span class="surtitre"><span class="t-fr">Collection Manifestes</span><span class="t-en">Manifestos Collection</span></span>
         <h3>Le Seuil</h3>
         <span class="auteur">Meichelus · 2026</span>
-        <p>Manifeste fondateur du <em>Spectralisme cognitif</em> — une phénoménologie du sensible, entre membrane et passage. Premier volume d&rsquo;une trilogie.</p>
+        <p class="t-fr">Manifeste fondateur du <em>Spectralisme cognitif</em> — une phénoménologie du sensible, entre membrane et passage. Premier volume d&rsquo;une trilogie.</p>
+        <p class="t-en">Founding manifesto of <em>Cognitive Spectralism</em> — a phenomenology of the sensible, between membrane and passage. First volume of a trilogy.</p>
       </article>
 
       <article class="titre-carte">
         <span class="numero-romain">II</span>
-        <span class="surtitre">Collection De la Lune à la Plume</span>
+        <span class="surtitre"><span class="t-fr">Collection De la Lune à la Plume</span><span class="t-en">&ldquo;From the Moon to the Quill&rdquo; Collection</span></span>
         <h3>Lucide</h3>
         <span class="auteur">Meichelus &amp; Anouk Journo</span>
-        <p>Recueil poétique co-créé avec illustrations graphite et aquarelle de Meichelus. <em>Précis comme un trait, intense comme la nuit.</em></p>
+        <p class="t-fr">Recueil poétique co-créé avec illustrations graphite et aquarelle de Meichelus. <em>Précis comme un trait, intense comme la nuit.</em></p>
+        <p class="t-en">A co-created poetry collection, illustrated in graphite and watercolour by Meichelus. <em>Precise as a line, intense as the night.</em></p>
       </article>
 
       <article class="titre-carte">
         <span class="numero-romain">III</span>
-        <span class="surtitre">Collection Amis-Mots</span>
+        <span class="surtitre"><span class="t-fr">Collection Amis-Mots</span><span class="t-en">Friends-Words Collection</span></span>
         <h3>Valrêve, le refuge des animaux libres</h3>
         <span class="auteur">Anouk Journo</span>
-        <p>Roman jeunesse — un refuge imaginaire où <em>les animaux libres</em> trouvent paix et dignité. Deuxième tome de la série.</p>
+        <p class="t-fr">Roman jeunesse — un refuge imaginaire où <em>les animaux libres</em> trouvent paix et dignité. Deuxième tome de la série.</p>
+        <p class="t-en">Young adult novel — an imaginary refuge where <em>free animals</em> find peace and dignity. Second volume of the series.</p>
       </article>
 
       <article class="titre-carte">
         <span class="numero-romain">IV</span>
-        <span class="surtitre">Collection Amis-Mots</span>
+        <span class="surtitre"><span class="t-fr">Collection Amis-Mots</span><span class="t-en">Friends-Words Collection</span></span>
         <h3>Moustache, le roi des coussins</h3>
         <span class="auteur">Anouk Journo</span>
-        <p>Roman jeunesse — les aventures d&rsquo;un chat impérial et tendre, héros discret d&rsquo;un quotidien plein de douceur.</p>
+        <p class="t-fr">Roman jeunesse — les aventures d&rsquo;un chat impérial et tendre, héros discret d&rsquo;un quotidien plein de douceur.</p>
+        <p class="t-en">Young adult novel — the adventures of a regal, tender cat, the quiet hero of an everyday life full of gentleness.</p>
       </article>
 
       <article class="titre-carte">
         <span class="numero-romain">V</span>
-        <span class="surtitre">Collection De la Terre à la Lune</span>
+        <span class="surtitre"><span class="t-fr">Collection De la Terre à la Lune</span><span class="t-en">&ldquo;From the Earth to the Moon&rdquo; Collection</span></span>
         <h3>Le triangle des Bermudes</h3>
         <span class="auteur">Anouk Journo</span>
-        <p>Roman jeunesse — une aventure palpitante au cœur du <em>mystère le plus célèbre des océans</em>.</p>
+        <p class="t-fr">Roman jeunesse — une aventure palpitante au cœur du <em>mystère le plus célèbre des océans</em>.</p>
+        <p class="t-en">Young adult novel — a thrilling adventure at the heart of <em>the most famous mystery of the oceans</em>.</p>
       </article>
 
       <article class="titre-carte">
         <span class="numero-romain">VI</span>
-        <span class="surtitre">Collection De la Terre à la Lune</span>
+        <span class="surtitre"><span class="t-fr">Collection De la Terre à la Lune</span><span class="t-en">&ldquo;From the Earth to the Moon&rdquo; Collection</span></span>
         <h3>À la recherche de Truffe ou les alexandrins magiques</h3>
         <span class="auteur">Anouk Journo</span>
-        <p>Roman jeunesse — une quête poétique et rythmée, où <em>les alexandrins deviennent une arme magique</em>.</p>
+        <p class="t-fr">Roman jeunesse — une quête poétique et rythmée, où <em>les alexandrins deviennent une arme magique</em>.</p>
+        <p class="t-en">Young adult novel — a poetic, rhythmic quest in which <em>alexandrines become a magic weapon</em>.</p>
       </article>
 
       <article class="titre-carte">
         <span class="numero-romain">VII</span>
-        <span class="surtitre">Collection De la Terre à la Lune</span>
+        <span class="surtitre"><span class="t-fr">Collection De la Terre à la Lune</span><span class="t-en">&ldquo;From the Earth to the Moon&rdquo; Collection</span></span>
         <h3>Strass et Stress</h3>
         <span class="auteur">Anouk Journo</span>
-        <p>Roman jeunesse — dans les coulisses du spectacle, entre paillettes et pression, une héroïne apprend à <em>trouver sa voix</em>.</p>
+        <p class="t-fr">Roman jeunesse — dans les coulisses du spectacle, entre paillettes et pression, une héroïne apprend à <em>trouver sa voix</em>.</p>
+        <p class="t-en">Young adult novel — behind the scenes of show business, between glitter and pressure, a heroine learns to <em>find her voice</em>.</p>
       </article>
 
     </div>
@@ -566,26 +606,28 @@ em{font-style:italic;color:#5a4a30;}
          CTA MANUSCRIT
          ============================================================ -->
     <div class="cta-manuscrit reveler">
-      <h3>Une voix qui cherche son livre&nbsp;?</h3>
-      <p>Vous portez un texte qui vous tient à cœur&nbsp;? Confiez-le-nous. Notre comité de lecture étudiera votre manuscrit avec attention et bienveillance, et nous cheminerons ensemble vers la publication qui lui ressemble.</p>
-      <a class="btn-cta" href="contact.html">Envoyer un manuscrit</a>
+      <h3><span class="t-fr">Une voix qui cherche son livre&nbsp;?</span><span class="t-en">A voice in search of its book?</span></h3>
+      <p class="t-fr">Vous portez un texte qui vous tient à cœur&nbsp;? Confiez-le-nous. Notre comité de lecture étudiera votre manuscrit avec attention et bienveillance, et nous cheminerons ensemble vers la publication qui lui ressemble.</p>
+        <p class="t-en">Do you have a text close to your heart? Entrust it to us. Our reading committee will study your manuscript with care and kindness, and together we will find our way to the publication that suits it.</p>
+      <a class="btn-cta" href="contact.html"><span class="t-fr">Envoyer un manuscrit</span><span class="t-en">Submit a manuscript</span></a>
     </div>
 
     <!-- ============================================================
          ENCADRÉ MANIFESTE LIBRAIRIES
          ============================================================ -->
     <aside class="encadre-manifeste reveler" aria-label="Notre engagement pour les librairies indépendantes">
-      <span class="encadre-surtitre">Engagement</span>
-      <h3>Pourquoi L&rsquo;AMagie soutient les librairies indépendantes</h3>
-      <p>À l&rsquo;heure où l&rsquo;on peut commander un livre en quelques clics et le recevoir dès le lendemain, certains pourraient penser que la librairie indépendante appartient à un autre temps. Pourtant, partout en France, des femmes et des hommes continuent chaque jour à faire vivre ces lieux précieux où les livres ne sont pas seulement vendus, mais partagés, conseillés et défendus.</p>
-      <a href="engagements-librairies.html" class="btn-manifeste">Lire notre manifeste de soutien complet</a>
+      <span class="encadre-surtitre"><span class="t-fr">Engagement</span><span class="t-en">Commitment</span></span>
+      <h3><span class="t-fr">Pourquoi L&rsquo;AMagie soutient les librairies indépendantes</span><span class="t-en">Why L&rsquo;AMagie supports independent bookshops</span></h3>
+      <p class="t-fr">À l&rsquo;heure où l&rsquo;on peut commander un livre en quelques clics et le recevoir dès le lendemain, certains pourraient penser que la librairie indépendante appartient à un autre temps. Pourtant, partout en France, des femmes et des hommes continuent chaque jour à faire vivre ces lieux précieux où les livres ne sont pas seulement vendus, mais partagés, conseillés et défendus.</p>
+        <p class="t-en">At a time when a book can be ordered in a few clicks and delivered the next day, some might think the independent bookshop belongs to another era. Yet all over France, women and men keep these precious places alive every day — places where books are not just sold, but shared, recommended and championed.</p>
+      <a href="engagements-librairies.html" class="btn-manifeste"><span class="t-fr">Lire notre manifeste de soutien complet</span><span class="t-en">Read our full statement of support</span></a>
     </aside>
 
     <!-- ============================================================
          RETOUR DISCRET
          ============================================================ -->
     <div class="retour-discret reveler">
-      <a href="index.html">Retour à l&rsquo;accueil</a>
+      <a href="index.html"><span class="t-fr">Retour à l&rsquo;accueil</span><span class="t-en">Back to home</span></a>
     </div>
 
   </main>
@@ -595,57 +637,77 @@ em{font-style:italic;color:#5a4a30;}
     <div class="filet-haut" aria-hidden="true"><span class="etoile">✦</span></div>
     <div class="plan-site-grille">
       <div class="plan-categorie">
-        <h2>Qui sommes-nous&nbsp;?</h2>
+        <h2><span class="t-fr">Qui sommes-nous&nbsp;?</span><span class="t-en">About Us</span></h2>
         <ul>
-          <li><a href="qui-sommes-nous.html">Qui sommes-nous</a></li>
-          <li><a href="fonctionnement.html">Fonctionnement de l&rsquo;association</a></li>
+          <li><a href="qui-sommes-nous.html"><span class="t-fr">Qui sommes-nous</span><span class="t-en">About Us</span></a></li>
+          <li><a href="fonctionnement.html"><span class="t-fr">Fonctionnement de l&rsquo;association</span><span class="t-en">How the Association Works</span></a></li>
           <li><a href="anouk-journo.html">Anouk Journo</a></li>
           <li><a href="peintures.html">Meichelus</a></li>
         </ul>
       </div>
       <div class="plan-categorie">
-        <h2>Ateliers &amp; Coaching</h2>
+        <h2><span class="t-fr">Ateliers &amp; Coaching</span><span class="t-en">Workshops &amp; Coaching</span></h2>
         <ul>
-          <li><a href="ateliers.html">Ateliers &amp; Coaching</a></li>
-          <li><a href="mots-pour-maux.html">Écriture thérapeutique</a></li>
-          <li><a href="mediation-animale.html">Médiation animale</a></li>
-          <li><a href="amis-mots.html">Collection Amis-Mots</a></li>
+          <li><a href="ateliers.html"><span class="t-fr">Ateliers &amp; Coaching</span><span class="t-en">Workshops &amp; Coaching</span></a></li>
+          <li><a href="mots-pour-maux.html"><span class="t-fr">Écriture thérapeutique</span><span class="t-en">Therapeutic Writing</span></a></li>
+          <li><a href="mediation-animale.html"><span class="t-fr">Médiation animale</span><span class="t-en">Animal Mediation</span></a></li>
+          <li><a href="amis-mots.html"><span class="t-fr">Collection Amis-Mots</span><span class="t-en">Friends-Words Collection (Collection Amis-Mots)</span></a></li>
         </ul>
       </div>
       <div class="plan-categorie">
-        <h2>Éditions</h2>
+        <h2><span class="t-fr">Éditions</span><span class="t-en">Editions</span></h2>
         <ul>
-          <li><a href="edition.html">Manuscrits &amp; projets</a></li>
-          <li><a href="edition.html#raconter-le-monde">Collection Raconter le monde</a></li>
-          <li><a href="edition.html#immersion">Collection Immersion</a></li>
-          <li><a href="edition.html#manifestes">Collection Manifestes</a></li>
-          <li><a href="collection-jeunesse.html">Romans jeunesse : collection de La Terre à la Lune</a></li>
+          <li><a href="edition.html"><span class="t-fr">Manuscrits &amp; projets</span><span class="t-en">Manuscripts &amp; Projects</span></a></li>
+          <li><a href="edition.html#raconter-le-monde"><span class="t-fr">Collection Raconter le monde</span><span class="t-en">Collection: Telling the World (Raconter le monde)</span></a></li>
+          <li><a href="edition.html#immersion"><span class="t-fr">Collection Immersion</span><span class="t-en">Immersion Collection</span></a></li>
+          <li><a href="edition.html#manifestes"><span class="t-fr">Collection Manifestes</span><span class="t-en">Manifestos Collection</span></a></li>
+          <li><a href="edition.html#romans-jeunesse"><span class="t-fr">Romans jeunesse</span><span class="t-en">Young Adult Novels</span></a></li>
+          <li><a href="lire-partout.html"><span class="t-fr">Lire partout : numérique &amp; éditions en langue anglaise</span><span class="t-en">Read worldwide: ebooks &amp; English-language editions</span></a></li>
         </ul>
       </div>
       <div class="plan-categorie">
-        <h2>Poésie &amp; Arts</h2>
+        <h2><span class="t-fr">Poésie &amp; Arts</span><span class="t-en">Poetry &amp; Arts</span></h2>
         <ul>
-          <li><a href="poesie.html">Poésie au jour le jour</a></li>
-          <li><a href="peintures.html">Peintures &amp; Dessins</a></li>
-          <li><a href="evenements.html">Événements &amp; Presse</a></li>
+          <li><a href="poesie.html"><span class="t-fr">Poésie au jour le jour</span><span class="t-en">Poetry Day by Day</span></a></li>
+          <li><a href="peintures.html"><span class="t-fr">Peintures &amp; Dessins</span><span class="t-en">Paintings &amp; Drawings</span></a></li>
+          <li><a href="evenements.html"><span class="t-fr">Événements &amp; Presse</span><span class="t-en">Events &amp; Press</span></a></li>
         </ul>
       </div>
       <div class="plan-categorie">
-        <h2>Liens utiles</h2>
+        <h2><span class="t-fr">Liens utiles</span><span class="t-en">Useful Links</span></h2>
         <ul>
-          <li><a href="boutique.html">Boutique</a></li>
+          <li><a href="boutique.html"><span class="t-fr">Boutique</span><span class="t-en">Shop</span></a></li>
           <li><a href="faq.html">FAQ</a></li>
           <li><a href="contact.html">Contact</a></li>
-          <li><a href="youtube.html">Chaîne Youtube</a></li>
-          <li><a href="mentions-legales.html">Mentions légales</a></li>
+          <li><a href="youtube.html"><span class="t-fr">Chaîne Youtube</span><span class="t-en">Youtube Channel</span></a></li>
+          <li><a href="mentions-legales.html"><span class="t-fr">Mentions légales</span><span class="t-en">Legal Notice</span></a></li>
         </ul>
       </div>
     </div>
-    <p class="plan-mentions">© L&rsquo;AMagie <span class="etoile">✦</span> Maison d&rsquo;édition indépendante <span class="etoile">✦</span> Félines-Minervois</p>
+    <p class="plan-mentions">© L&rsquo;AMagie <span class="etoile">✦</span> <span class="t-fr">Maison d&rsquo;édition indépendante</span><span class="t-en">Independent Publishing House</span> <span class="etoile">✦</span> Félines-Minervois</p>
     <p class="plan-webmaster">© Webmaster Meichelus : <a href="mailto:meichelus@l-amagie.art">meichelus@l-amagie.art</a></p>
   </section>
 
   <script>
+  /* ===== Langue FR / EN (mémorisée pour tout le site) ===== */
+  function setLanguage(lang) {
+    document.body.classList.toggle('lang-en', lang === 'en');
+    document.documentElement.lang = lang;
+    document.querySelectorAll('.lang-btn').forEach(function(b){
+      b.classList.toggle('active', b.getAttribute('data-lang') === lang);
+    });
+    try { localStorage.setItem('l-amagie-lang', lang); } catch(e) {}
+    
+  }
+  document.querySelectorAll('.lang-btn').forEach(function(b){
+    b.addEventListener('click', function(){ setLanguage(this.getAttribute('data-lang')); });
+  });
+  (function(){
+    var l = 'fr';
+    try { l = localStorage.getItem('l-amagie-lang') || 'fr'; } catch(e) {}
+    setLanguage(l);
+  })();
+
     if ('IntersectionObserver' in window) {
       var obs = new IntersectionObserver(function(entries){
         entries.forEach(function(e){

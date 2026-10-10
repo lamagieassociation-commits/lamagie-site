@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" translate="no" class="notranslate">
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -414,6 +414,27 @@ em{font-style:italic;color:#5a4a30;}
 .reveler{opacity:0;transform:translateY(18px);transition:opacity .9s ease, transform .9s ease;}
 .reveler.visible{opacity:1;transform:translateY(0);}
 @media(prefers-reduced-motion: reduce){.reveler{opacity:1;transform:none;transition:none;}}
+
+/* ============================================================
+   BILINGUE FR/EN — sans traduction automatique
+   ============================================================ */
+.t-en{display:none !important;}
+body.lang-en .t-fr{display:none !important;}
+body.lang-en span.t-en{display:inline !important;}
+body.lang-en p.t-en{display:block !important;}
+.entete-retour{gap:16px;}
+.toggle-langue{display:flex;gap:8px;align-items:center;}
+.toggle-langue button{
+  background:transparent;border:1px solid rgba(184,154,92,.4);padding:4px 10px;border-radius:2px;
+  cursor:pointer;font-family:'Cormorant Garamond',Georgia,serif;font-size:0.8rem;color:#5a4a30;
+  transition:all 0.3s;letter-spacing:.08em;text-transform:uppercase;
+}
+.toggle-langue button.active{background:#b89a5c;color:white;border-color:#b89a5c;}
+.toggle-langue button:hover{background:rgba(184,154,92,.1);}
+@media(max-width:760px){
+  .toggle-langue{gap:6px;}
+  .toggle-langue button{padding:3px 8px;font-size:0.7rem;}
+}
 </style>
 </head>
 
@@ -428,16 +449,20 @@ em{font-style:italic;color:#5a4a30;}
     </div>
     <a href="index.html" class="entete-titre" aria-label="L'AMagie — Accueil">L&rsquo;AMagie</a>
     <div class="entete-retour">
-      <a href="index.html"><span>Retour à l&rsquo;accueil</span></a>
+      <div class="toggle-langue">
+        <button class="lang-btn active" data-lang="fr">FR</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+      </div>
+            <a href="index.html"><span><span class="t-fr">Retour à l&rsquo;accueil</span><span class="t-en">Back to home</span></span></a>
     </div>
   </header>
 
   <!-- HÉROS DE PAGE -->
   <section class="heros-page">
     <nav class="fil-ariane" aria-label="Fil d'ariane">
-      <a href="index.html">Accueil</a>
+      <a href="index.html"><span class="t-fr">Accueil</span><span class="t-en">Home</span></a>
       <span class="sep">·</span>
-      <span>La poésie au jour le jour</span>
+      <span class="t-fr">La poésie au jour le jour</span><span class="t-en">Poetry Day by Day</span>
     </nav>
 
     <!-- Illustration d'en-tête de collection AU-DESSUS du titre -->
@@ -445,8 +470,8 @@ em{font-style:italic;color:#5a4a30;}
       <img src="images/recueil-image.png" alt="Collection Poésie" class="header-banner-img"/>
     </figure>
 
-    <h1 class="titre-page">La poésie au jour le jour</h1>
-    <p class="sous-titre-page">Des poèmes légers comme une plume, intenses comme la Lune.</p>
+    <h1 class="titre-page"><span class="t-fr">La poésie au jour le jour</span><span class="t-en">Poetry Day by Day</span></h1>
+    <p class="sous-titre-page"><span class="t-fr">Des poèmes légers comme une plume, intenses comme la Lune.</span><span class="t-en">Poems as light as a feather, as intense as the Moon.</span></p>
     <div class="medaillon-titre" aria-hidden="true">✦</div>
   </section>
 
@@ -457,41 +482,45 @@ em{font-style:italic;color:#5a4a30;}
          MANIFESTE
          ============================================================ -->
     <article class="carte reveler">
-      <p>La poésie, c&rsquo;est… Mais qu&rsquo;est-ce qui <em>«&nbsp;fait poésie&nbsp;»</em>&nbsp;? Chaque être humain sensible, à l&rsquo;écoute, déployant ses antennes multisensorielles, déclinera ses propositions de définition.</p>
-      <p>Sauf que la poésie <em>ne se définit pas… Jamais.</em> Elle est confinée, figée, dans les quelques lignes du dictionnaire. Elle ne respire plus. Elle a besoin de sortir des pages, des cadres, tout en offrant à nos sens déployés une expérience unique, des griseries intenses ou douces, des baumes sous différentes formes, des aiguillons également — aiguillons pour inciter au décalage, à une certaine révolte, une quête de tranquillité profonde, une soif d&rsquo;authenticité.</p>
+      <p class="t-fr">La poésie, c&rsquo;est… Mais qu&rsquo;est-ce qui <em>«&nbsp;fait poésie&nbsp;»</em>&nbsp;? Chaque être humain sensible, à l&rsquo;écoute, déployant ses antennes multisensorielles, déclinera ses propositions de définition.</p>
+        <p class="t-en">Poetry is… But what is it that <em>&ldquo;makes poetry&rdquo;</em>? Every sensitive human being, listening closely, with their many-sensed antennae unfurled, will offer their own attempts at a definition.</p>
+      <p class="t-fr">Sauf que la poésie <em>ne se définit pas… Jamais.</em> Elle est confinée, figée, dans les quelques lignes du dictionnaire. Elle ne respire plus. Elle a besoin de sortir des pages, des cadres, tout en offrant à nos sens déployés une expérience unique, des griseries intenses ou douces, des baumes sous différentes formes, des aiguillons également — aiguillons pour inciter au décalage, à une certaine révolte, une quête de tranquillité profonde, une soif d&rsquo;authenticité.</p>
+        <p class="t-en">Except that poetry <em>cannot be defined… Ever.</em> Confined, frozen in a few lines of a dictionary, it can no longer breathe. It needs to step out of pages and frames, while offering our unfurled senses a unique experience: intoxications intense or gentle, balms of many kinds, and spurs too — spurs urging us towards a shift, a certain revolt, a quest for deep tranquillity, a thirst for authenticity.</p>
     </article>
 
     <!-- ============================================================
          POÈME VISUEL EN CASCADE
          ============================================================ -->
     <div class="poeme-visuel reveler">
-      <p>La poésie, c&rsquo;est…</p>
+      <p><span class="t-fr">La poésie, c&rsquo;est…</span><span class="t-en">Poetry is…</span></p>
       <p class="indent-1">&nbsp;</p>
-      <p class="indent-1">Un instant</p>
+      <p class="indent-1"><span class="t-fr">Un instant</span><span class="t-en">A moment</span></p>
       <p class="indent-2">&nbsp;</p>
-      <p class="indent-2">Un son</p>
+      <p class="indent-2"><span class="t-fr">Un son</span><span class="t-en">A sound</span></p>
       <p class="indent-3">&nbsp;</p>
-      <p class="indent-3">Un espace</p>
+      <p class="indent-3"><span class="t-fr">Un espace</span><span class="t-en">A space</span></p>
       <p class="indent-4">&nbsp;</p>
-      <p class="indent-4">Des ailes qui se défroissent</p>
+      <p class="indent-4"><span class="t-fr">Des ailes qui se défroissent</span><span class="t-en">Wings smoothing out their creases</span></p>
       <p class="indent-5">&nbsp;</p>
-      <p class="indent-5">Des silences qui font des vagues</p>
-      <p class="clos">Et pour vous&nbsp;? Pour toi&nbsp;?</p>
+      <p class="indent-5"><span class="t-fr">Des silences qui font des vagues</span><span class="t-en">Silences that make waves</span></p>
+      <p class="clos"><span class="t-fr">Et pour vous&nbsp;? Pour toi&nbsp;?</span><span class="t-en">And for you? And for you?</span></p>
     </div>
 
     <!-- ============================================================
          COLLECTION — De la Lune à la Plume
          ============================================================ -->
     <div class="section-titre reveler">
-      <h2>Recueils poétiques</h2>
-      <span class="legende">Collection De la Lune à la Plume</span>
+      <h2><span class="t-fr">Recueils poétiques</span><span class="t-en">Poetry Collections</span></h2>
+      <span class="legende"><span class="t-fr">Collection De la Lune à la Plume</span><span class="t-en">The &ldquo;From the Moon to the Quill&rdquo; Collection</span></span>
     </div>
 
     <article class="carte-esprit reveler">
-      <span class="surtitre">L&rsquo;esprit de la collection</span>
-      <h3>Précis comme un haïku, ouvert comme une porte</h3>
-      <p>L&rsquo;esprit sera celui du <em>haïku</em>, sans qu&rsquo;il s&rsquo;agisse forcément de haïku. Des poèmes plutôt courts, denses, <em>riches de sens</em>, ouvrant sur les portes du Monde.</p>
-      <p>Végétaux, plantes, saisons, éléments naturels, animaux de toutes sortes, insectes, oiseaux… <em>Nous les appelons dans nos poèmes. Nous les choyons. Nos peaux les aiment.</em></p>
+      <span class="surtitre"><span class="t-fr">L&rsquo;esprit de la collection</span><span class="t-en">The spirit of the collection</span></span>
+      <h3><span class="t-fr">Précis comme un haïku, ouvert comme une porte</span><span class="t-en">Precise as a haiku, open as a door</span></h3>
+      <p class="t-fr">L&rsquo;esprit sera celui du <em>haïku</em>, sans qu&rsquo;il s&rsquo;agisse forcément de haïku. Des poèmes plutôt courts, denses, <em>riches de sens</em>, ouvrant sur les portes du Monde.</p>
+        <p class="t-en">The spirit is that of the <em>haiku</em>, without the poems necessarily being haiku. Rather short, dense poems, <em>rich in meaning</em>, opening onto the doors of the World.</p>
+      <p class="t-fr">Végétaux, plantes, saisons, éléments naturels, animaux de toutes sortes, insectes, oiseaux… <em>Nous les appelons dans nos poèmes. Nous les choyons. Nos peaux les aiment.</em></p>
+        <p class="t-en">Plants and greenery, seasons, natural elements, animals of every kind, insects, birds… <em>We call them into our poems. We cherish them. Our skins love them.</em></p>
     </article>
 
     <div class="grille-recueils reveler">
@@ -504,8 +533,9 @@ em{font-style:italic;color:#5a4a30;}
           <img src="images/lucide.png" alt="Couverture Lucide" class="livre-img" style="margin:0;">
           <img src="images/lucide4.png" alt="Quatrième de couverture Lucide" class="livre-img" style="margin:0;">
         </div>
-        <p><em>Lucide</em> est une traversée.<br><br>Deux voix, deux façons d&rsquo;habiter le monde. Anouk Journo écrit depuis l&rsquo;intérieur de la langue, brève, tendue, précise comme une étincelle. Meichelus avance autrement&nbsp;: par cercles et spirales, là où une pensée cherche sa forme, là où une image résiste avant de s&rsquo;ouvrir.<br><br>Ensemble, ils regardent ce qui exige d&rsquo;être regardé sans détour&nbsp;: le vivant, l&rsquo;amour, la conscience, les illusions qui voilent notre époque.<br><br>Les illustrations de Meichelus, à la mine graphite, à l&rsquo;encre et à l&rsquo;aquarelle, tracent un troisième espace, une fractale où mots et images se répondent en rythme.<br><br>Une poésie de veille et de présence. Voir, peut-être, est déjà une manière de résister.</p>
-        <a class="btn-cta" href="https://www.librairiesindependantes.com/product/9791098116988/" target="_blank">Commander Lucide (17&nbsp;€)</a>
+        <p class="t-fr"><em>Lucide</em> est une traversée.<br><br>Deux voix, deux façons d&rsquo;habiter le monde. Anouk Journo écrit depuis l&rsquo;intérieur de la langue, brève, tendue, précise comme une étincelle. Meichelus avance autrement&nbsp;: par cercles et spirales, là où une pensée cherche sa forme, là où une image résiste avant de s&rsquo;ouvrir.<br><br>Ensemble, ils regardent ce qui exige d&rsquo;être regardé sans détour&nbsp;: le vivant, l&rsquo;amour, la conscience, les illusions qui voilent notre époque.<br><br>Les illustrations de Meichelus, à la mine graphite, à l&rsquo;encre et à l&rsquo;aquarelle, tracent un troisième espace, une fractale où mots et images se répondent en rythme.<br><br>Une poésie de veille et de présence. Voir, peut-être, est déjà une manière de résister.</p>
+        <p class="t-en"><em>Lucide</em> is a crossing.<br><br>Two voices, two ways of inhabiting the world. Anouk Journo writes from inside the language — brief, taut, precise as a spark. Meichelus moves differently: in circles and spirals, where a thought seeks its form, where an image resists before it opens.<br><br>Together they look at what demands to be looked at directly: the living world, love, consciousness, the illusions that veil our times.<br><br>Meichelus&rsquo;s illustrations, in graphite, ink and watercolour, trace a third space, a fractal where words and images answer each other in rhythm.<br><br>A poetry of watchfulness and presence. To see, perhaps, is already a way of resisting.</p>
+        <a class="btn-cta" href="https://www.librairiesindependantes.com/product/9791098116988/" target="_blank"><span class="t-fr">Commander Lucide (17&nbsp;€)</span><span class="t-en">Order Lucide (€17)</span></a>
       </article>
 
       <article class="recueil-carte">
@@ -516,9 +546,10 @@ em{font-style:italic;color:#5a4a30;}
           <img src="images/lame-en-selle.png" alt="L'Âme en selle" class="livre-img">
           <img src="images/Riding- Soul.jpg" alt="Riding Soul" class="livre-img">
         </div>
-        <p>Poésie bilingue français-anglais — le galop, la liberté, <em>l&rsquo;âme qui chevauche au-delà des frontières</em>.</p>
-        <a class="btn-cta" href="https://librairie.bod.fr/lame-en-selle-anouk-journo-9782959874635" target="_blank">Commander L&rsquo;Âme en selle</a>
-        <a class="btn-cta" href="https://www.librairiesindependantes.com/product/9782959874659/" target="_blank">Commander Riding Soul</a>
+        <p class="t-fr">Poésie bilingue français-anglais — le galop, la liberté, <em>l&rsquo;âme qui chevauche au-delà des frontières</em>.</p>
+        <p class="t-en">Bilingual French–English poetry — the gallop, freedom, <em>the soul riding beyond borders</em>.</p>
+        <a class="btn-cta" href="https://librairie.bod.fr/lame-en-selle-anouk-journo-9782959874635" target="_blank"><span class="t-fr">Commander L&rsquo;Âme en selle</span><span class="t-en">Order L&rsquo;Âme en selle</span></a>
+        <a class="btn-cta" href="https://www.librairiesindependantes.com/product/9782959874659/" target="_blank"><span class="t-fr">Commander Riding Soul</span><span class="t-en">Order Riding Soul</span></a>
       </article>
 
       <article class="recueil-carte">
@@ -526,8 +557,9 @@ em{font-style:italic;color:#5a4a30;}
         <h3>Abécédaire des étoiles</h3>
         <span class="auteur">Anouk Journo</span>
         <img src="images/abecedaire.jpg" alt="L'Abécédaire des étoiles" class="livre-img">
-        <p>Nouveau recueil — Un livre né au pied de la Montagne Noire, écrit à quatre mains avec Anouk Journo &amp; Michel Foucher (Meichelus).<br><br>Un abécédaire poétique où chaque lettre devient une respiration, une émotion, un fragment de vie.<br><br>✨ Chaque poème est accompagné d'une illustration originale de Michel Foucher (Meichelus). Une vraie conversation entre les mots et le dessin, entre l'intime et le paysage, entre l'amour et la lumière du quotidien. L'Abécédaire des Étoiles est bien plus qu'un simple recueil alphabétique. C'est une cartographie poétique du cœur et de l'âme, où chaque lettre devient un point lumineux dans le ciel.<br><br>Écrit avec Anouk Journo et illustré par Meichelus, ce recueil révèle la conversation secrète entre les mots et l'image, le visible et l'invisible. Chaque page est une respiration, chaque poème une étoile qui guide le lecteur dans les chemins intérieurs.<br><br>Un livre qui se lit comme on marche : doucement, en laissant les étoiles montrer la route.</p>
-        <a class="btn-cta" href="https://www.librairiesindependantes.com/product/9782959874697/" target="_blank">Format papier</a>
+        <p class="t-fr">Nouveau recueil — Un livre né au pied de la Montagne Noire, écrit à quatre mains avec Anouk Journo &amp; Michel Foucher (Meichelus).<br><br>Un abécédaire poétique où chaque lettre devient une respiration, une émotion, un fragment de vie.<br><br>✨ Chaque poème est accompagné d'une illustration originale de Michel Foucher (Meichelus). Une vraie conversation entre les mots et le dessin, entre l'intime et le paysage, entre l'amour et la lumière du quotidien. L'Abécédaire des Étoiles est bien plus qu'un simple recueil alphabétique. C'est une cartographie poétique du cœur et de l'âme, où chaque lettre devient un point lumineux dans le ciel.<br><br>Écrit avec Anouk Journo et illustré par Meichelus, ce recueil révèle la conversation secrète entre les mots et l'image, le visible et l'invisible. Chaque page est une respiration, chaque poème une étoile qui guide le lecteur dans les chemins intérieurs.<br><br>Un livre qui se lit comme on marche : doucement, en laissant les étoiles montrer la route.</p>
+        <p class="t-en">New collection — a book born at the foot of the Montagne Noire, written four-handed by Anouk Journo &amp; Michel Foucher (Meichelus).<br><br>A poetic alphabet in which each letter becomes a breath, an emotion, a fragment of life.<br><br>✨ Each poem comes with an original illustration by Michel Foucher (Meichelus). A true conversation between words and drawing, between the intimate and the landscape, between love and the light of everyday life. L&rsquo;Abécédaire des Étoiles is much more than a simple alphabetical collection. It is a poetic map of the heart and soul, where each letter becomes a point of light in the sky.<br><br>Written by Anouk Journo and illustrated by Meichelus, this collection reveals the secret conversation between words and image, the visible and the invisible. Each page is a breath, each poem a star guiding the reader along inner paths.<br><br>A book to be read the way one walks: gently, letting the stars show the way.</p>
+        <a class="btn-cta" href="https://www.librairiesindependantes.com/product/9782959874697/" target="_blank"><span class="t-fr">Format papier</span><span class="t-en">Paperback</span></a>
         <a class="btn-cta" href="https://www.cultura.com/p-abecedaire-des-etoiles-13005293.html" target="_blank">Ebook</a>
       </article>
 
@@ -536,8 +568,9 @@ em{font-style:italic;color:#5a4a30;}
         <h3>Où est passé l&rsquo;Ô d&rsquo;Hautpoul</h3>
         <span class="auteur">Anouk Journo</span>
         <img src="images/hautpoul.png" alt="L'Ô d'Hautpoul" class="livre-img">
-        <p>Un recueil poétique qui interroge les mystères d'un lieu, d'une voix perdue, d'une âme en quête.<br><br>L'Ô d'Hautpoul — cette prononciation particulière, ce secret du terroir — devient métaphore d'une absence, d'une énigme que les poèmes tentent de résoudre sans jamais vraiment y parvenir. Où est passé l'Ô d'Hautpoul ? La question elle-même est énigmatique, presque magique. Elle évoque un lieu, une légende, une voix qui s'est perdue dans le temps.<br><br>Ce recueil explore les territoires du silence et de l'absence. Chaque poème est une tentative de retrouver ce qui s'est échappé, de nommer l'innommable, de donner voix à ce qui reste muet.<br><br>Un voyage poétique où le mystère n'est jamais résolu, mais où la quête elle-même devient source de beauté et de sens.</p>
-        <a class="btn-cta" href="https://www.librairiesindependantes.com/product/9782959874673/" target="_blank">Commander L&rsquo;Ô d&rsquo;Hautpoul</a>
+        <p class="t-fr">Un recueil poétique qui interroge les mystères d'un lieu, d'une voix perdue, d'une âme en quête.<br><br>L'Ô d'Hautpoul — cette prononciation particulière, ce secret du terroir — devient métaphore d'une absence, d'une énigme que les poèmes tentent de résoudre sans jamais vraiment y parvenir. Où est passé l'Ô d'Hautpoul ? La question elle-même est énigmatique, presque magique. Elle évoque un lieu, une légende, une voix qui s'est perdue dans le temps.<br><br>Ce recueil explore les territoires du silence et de l'absence. Chaque poème est une tentative de retrouver ce qui s'est échappé, de nommer l'innommable, de donner voix à ce qui reste muet.<br><br>Un voyage poétique où le mystère n'est jamais résolu, mais où la quête elle-même devient source de beauté et de sens.</p>
+        <p class="t-en">A poetry collection that questions the mysteries of a place, a lost voice, a seeking soul.<br><br>The Ô d&rsquo;Hautpoul — that particular pronunciation, that secret of the local land — becomes a metaphor for an absence, a riddle the poems try to solve without ever quite succeeding. Where has the Ô d&rsquo;Hautpoul gone? The question itself is enigmatic, almost magical. It evokes a place, a legend, a voice lost in time.<br><br>This collection explores the territories of silence and absence. Each poem is an attempt to recover what has slipped away, to name the unnameable, to give a voice to what remains mute.<br><br>A poetic journey in which the mystery is never solved, but where the quest itself becomes a source of beauty and meaning.</p>
+        <a class="btn-cta" href="https://www.librairiesindependantes.com/product/9782959874673/" target="_blank"><span class="t-fr">Commander L&rsquo;Ô d&rsquo;Hautpoul</span><span class="t-en">Order L&rsquo;Ô d&rsquo;Hautpoul</span></a>
       </article>
 
       <article class="recueil-carte">
@@ -545,12 +578,17 @@ em{font-style:italic;color:#5a4a30;}
         <h3>En quête d&rsquo;Hozro</h3>
         <span class="auteur">Anouk Journo</span>
         <img src="images/ozro.png" alt="En quête d'Ozro" class="livre-img">
-        <p>Un beau-livre associant 20 poèmes et 20 peintures — une conversation intime entre la parole et l&rsquo;image.</p>
-        <p>Anouk Journo &amp; Meichelus explorent ensemble les territoires d&rsquo;Hozro, ce monde imaginaire où la poésie devient peinture, où chaque couleur chante un poème.</p>
-        <p>2024 — Une quête visuelle et poétique vers l&rsquo;ailleurs. En Quête d&rsquo;Hozro est bien plus qu&rsquo;un recueil. C&rsquo;est une invitation à voyager vers un monde où les frontières entre la poésie et la peinture s&rsquo;effacent.</p>
-        <p>Chaque page révèle une conversation silencieuse entre les mots d&rsquo;Anouk Journo et les pinceaux de Meichelus. Les poèmes deviennent tableaux, les peintures murmurent des vers oubliés.</p>
-        <p>Hozro — ce nom même évoque l&rsquo;énigme, le voyage sans fin, la quête permanente de beauté et de sens. Un monde où l&rsquo;enchantement du monde se vit au fil des pages. <a href="blog.html" target="_blank" style="color:#8a6d2f;border-bottom:1px solid rgba(184,154,92,.35);">Pour en savoir plus</a></p>
-        <a class="btn-cta" href="contact.html">Nous écrire pour ce recueil</a>
+        <p class="t-fr">Un beau-livre associant 20 poèmes et 20 peintures — une conversation intime entre la parole et l&rsquo;image.</p>
+        <p class="t-en">A fine art book pairing 20 poems and 20 paintings — an intimate conversation between word and image.</p>
+        <p class="t-fr">Anouk Journo &amp; Meichelus explorent ensemble les territoires d&rsquo;Hozro, ce monde imaginaire où la poésie devient peinture, où chaque couleur chante un poème.</p>
+        <p class="t-en">Anouk Journo &amp; Meichelus explore together the territories of Hozro, an imaginary world where poetry becomes painting and every colour sings a poem.</p>
+        <p class="t-fr">2024 — Une quête visuelle et poétique vers l&rsquo;ailleurs. En Quête d&rsquo;Hozro est bien plus qu&rsquo;un recueil. C&rsquo;est une invitation à voyager vers un monde où les frontières entre la poésie et la peinture s&rsquo;effacent.</p>
+        <p class="t-en">2024 — a visual and poetic quest towards elsewhere. En Quête d&rsquo;Hozro is much more than a collection. It is an invitation to travel to a world where the boundaries between poetry and painting fade away.</p>
+        <p class="t-fr">Chaque page révèle une conversation silencieuse entre les mots d&rsquo;Anouk Journo et les pinceaux de Meichelus. Les poèmes deviennent tableaux, les peintures murmurent des vers oubliés.</p>
+        <p class="t-en">Each page reveals a silent conversation between Anouk Journo&rsquo;s words and Meichelus&rsquo;s brushes. Poems become paintings; paintings murmur forgotten verses.</p>
+        <p class="t-fr">Hozro — ce nom même évoque l&rsquo;énigme, le voyage sans fin, la quête permanente de beauté et de sens. Un monde où l&rsquo;enchantement du monde se vit au fil des pages. <a href="blog.html" target="_blank" style="color:#8a6d2f;border-bottom:1px solid rgba(184,154,92,.35);">Pour en savoir plus</a></p>
+        <p class="t-en">Hozro — the very name evokes mystery, the endless journey, the constant quest for beauty and meaning. A world where the enchantment of the world is lived page by page. <a href="blog.html" target="_blank" style="color:#8a6d2f;border-bottom:1px solid rgba(184,154,92,.35);">Find out more</a></p>
+        <a class="btn-cta" href="contact.html"><span class="t-fr">Nous écrire pour ce recueil</span><span class="t-en">Write to us about this book</span></a>
       </article>
 
       <article class="recueil-carte">
@@ -558,10 +596,13 @@ em{font-style:italic;color:#5a4a30;}
         <h3>Mots en aparté</h3>
         <span class="auteur">Michel Bonnin</span>
         <img src="images/mots-en-aparte.jpg" alt="Mots en aparté" class="livre-img">
-        <p>Poésie et peinture s&rsquo;y répondent dans un même souffle, portées par une écriture intime, sensible, nourrie par la course, le rêve et son énergie de vie communicative. Un ouvrage singulier, à l&rsquo;image de son auteur — poète, peintre… et champion. Michel Bonnin explore dans ce recueil les territoires de l&rsquo;intime — là où la poésie et la peinture se rencontrent, se dialoguent, s&rsquo;entrelacent.</p>
-        <p>Chaque page révèle une dualité poétique : les mots dansent avec les pinceaux, la course de l&rsquo;athlète se transforme en rêve du poète, l&rsquo;énergie vitale s&rsquo;exprime par des confidences murmurées.</p>
-        <p>Mots en Aparté est une invitation à ralentir, à écouter les voix secrètes qui habitent chacun d&rsquo;entre nous, à voir le monde à travers le double regard de l&rsquo;artiste. Des mots en aparté qui se chuchotent à l&rsquo;oreille, entre confidences poétiques et visions picturales.</p>
-        <a class="btn-cta" href="https://www.librairiesindependantes.com/product/9782959874666/" target="_blank">Commander Mots en aparté</a>
+        <p class="t-fr">Poésie et peinture s&rsquo;y répondent dans un même souffle, portées par une écriture intime, sensible, nourrie par la course, le rêve et son énergie de vie communicative. Un ouvrage singulier, à l&rsquo;image de son auteur — poète, peintre… et champion. Michel Bonnin explore dans ce recueil les territoires de l&rsquo;intime — là où la poésie et la peinture se rencontrent, se dialoguent, s&rsquo;entrelacent.</p>
+        <p class="t-en">Poetry and painting answer each other here in a single breath, carried by intimate, sensitive writing nourished by running, by dreams and by an infectious zest for life. A singular book, like its author — poet, painter… and champion. In this collection Michel Bonnin explores the territories of the intimate — where poetry and painting meet, converse and intertwine.</p>
+        <p class="t-fr">Chaque page révèle une dualité poétique : les mots dansent avec les pinceaux, la course de l&rsquo;athlète se transforme en rêve du poète, l&rsquo;énergie vitale s&rsquo;exprime par des confidences murmurées.</p>
+        <p class="t-en">Each page reveals a poetic duality: words dance with brushes, the athlete&rsquo;s race turns into the poet&rsquo;s dream, vital energy finds expression in whispered confidences.</p>
+        <p class="t-fr">Mots en Aparté est une invitation à ralentir, à écouter les voix secrètes qui habitent chacun d&rsquo;entre nous, à voir le monde à travers le double regard de l&rsquo;artiste. Des mots en aparté qui se chuchotent à l&rsquo;oreille, entre confidences poétiques et visions picturales.</p>
+        <p class="t-en">Mots en Aparté is an invitation to slow down, to listen to the secret voices that live in each of us, to see the world through the artist&rsquo;s double gaze. Words spoken aside, whispered in the ear, between poetic confidences and painted visions.</p>
+        <a class="btn-cta" href="https://www.librairiesindependantes.com/product/9782959874666/" target="_blank"><span class="t-fr">Commander Mots en aparté</span><span class="t-en">Order Mots en aparté</span></a>
       </article>
 
     </div>
@@ -570,7 +611,7 @@ em{font-style:italic;color:#5a4a30;}
          CITATION
          ============================================================ -->
     <div class="exergue reveler">
-      <blockquote>Un nuage enveloppe tendrement le soleil.</blockquote>
+      <blockquote><span class="t-fr">Un nuage enveloppe tendrement le soleil.</span><span class="t-en">A cloud tenderly wraps the sun.</span></blockquote>
       <cite>Anouk Journo · L&rsquo;AMagie</cite>
     </div>
 
@@ -578,9 +619,10 @@ em{font-style:italic;color:#5a4a30;}
          CTA — PROPOSER UN RECUEIL
          ============================================================ -->
     <div class="cta-recueil reveler">
-      <h3>Vous écrivez de la poésie&nbsp;?</h3>
-      <p>L&rsquo;AMagie accueille des voix poétiques nouvelles dans sa collection <em>De la Lune à la Plume</em>. Si vous portez un recueil, confiez-le-nous — nous l&rsquo;écouterons avec attention.</p>
-      <a class="btn-cta" href="contact.html">Proposer un recueil</a>
+      <h3><span class="t-fr">Vous écrivez de la poésie&nbsp;?</span><span class="t-en">Do you write poetry?</span></h3>
+      <p class="t-fr">L&rsquo;AMagie accueille des voix poétiques nouvelles dans sa collection <em>De la Lune à la Plume</em>. Si vous portez un recueil, confiez-le-nous — nous l&rsquo;écouterons avec attention.</p>
+        <p class="t-en">L&rsquo;AMagie welcomes new poetic voices into its <em>De la Lune à la Plume</em> collection. If you have a collection of poems, entrust it to us — we will listen to it with care.</p>
+      <a class="btn-cta" href="contact.html"><span class="t-fr">Proposer un recueil</span><span class="t-en">Submit a collection</span></a>
     </div>
 
   </main>
@@ -590,57 +632,77 @@ em{font-style:italic;color:#5a4a30;}
     <div class="filet-haut" aria-hidden="true"><span class="etoile">✦</span></div>
     <div class="plan-site-grille">
       <div class="plan-categorie">
-        <h2>Qui sommes-nous&nbsp;?</h2>
+        <h2><span class="t-fr">Qui sommes-nous&nbsp;?</span><span class="t-en">About Us</span></h2>
         <ul>
-          <li><a href="qui-sommes-nous.html">Qui sommes-nous</a></li>
-          <li><a href="fonctionnement.html">Fonctionnement de l&rsquo;association</a></li>
+          <li><a href="qui-sommes-nous.html"><span class="t-fr">Qui sommes-nous</span><span class="t-en">About Us</span></a></li>
+          <li><a href="fonctionnement.html"><span class="t-fr">Fonctionnement de l&rsquo;association</span><span class="t-en">How the Association Works</span></a></li>
           <li><a href="anouk-journo.html">Anouk Journo</a></li>
           <li><a href="peintures.html">Meichelus</a></li>
         </ul>
       </div>
       <div class="plan-categorie">
-        <h2>Ateliers &amp; Coaching</h2>
+        <h2><span class="t-fr">Ateliers &amp; Coaching</span><span class="t-en">Workshops &amp; Coaching</span></h2>
         <ul>
-          <li><a href="ateliers.html">Ateliers &amp; Coaching</a></li>
-          <li><a href="mots-pour-maux.html">Écriture thérapeutique</a></li>
-          <li><a href="mediation-animale.html">Médiation animale</a></li>
-          <li><a href="amis-mots.html">Collection Amis-Mots</a></li>
+          <li><a href="ateliers.html"><span class="t-fr">Ateliers &amp; Coaching</span><span class="t-en">Workshops &amp; Coaching</span></a></li>
+          <li><a href="mots-pour-maux.html"><span class="t-fr">Écriture thérapeutique</span><span class="t-en">Therapeutic Writing</span></a></li>
+          <li><a href="mediation-animale.html"><span class="t-fr">Médiation animale</span><span class="t-en">Animal Mediation</span></a></li>
+          <li><a href="amis-mots.html"><span class="t-fr">Collection Amis-Mots</span><span class="t-en">Friends-Words Collection (Collection Amis-Mots)</span></a></li>
         </ul>
       </div>
       <div class="plan-categorie">
-        <h2>Éditions</h2>
+        <h2><span class="t-fr">Éditions</span><span class="t-en">Editions</span></h2>
         <ul>
-          <li><a href="edition.html">Manuscrits &amp; projets</a></li>
-          <li><a href="edition.html#raconter-le-monde">Collection Raconter le monde</a></li>
-          <li><a href="edition.html#immersion">Collection Immersion</a></li>
-          <li><a href="edition.html#manifestes">Collection Manifestes</a></li>
-          <li><a href="edition.html#romans-jeunesse">Romans jeunesse</a></li>
+          <li><a href="edition.html"><span class="t-fr">Manuscrits &amp; projets</span><span class="t-en">Manuscripts &amp; Projects</span></a></li>
+          <li><a href="edition.html#raconter-le-monde"><span class="t-fr">Collection Raconter le monde</span><span class="t-en">Collection: Telling the World (Raconter le monde)</span></a></li>
+          <li><a href="edition.html#immersion"><span class="t-fr">Collection Immersion</span><span class="t-en">Immersion Collection</span></a></li>
+          <li><a href="edition.html#manifestes"><span class="t-fr">Collection Manifestes</span><span class="t-en">Manifestos Collection</span></a></li>
+          <li><a href="edition.html#romans-jeunesse"><span class="t-fr">Romans jeunesse</span><span class="t-en">Young Adult Novels</span></a></li>
+          <li><a href="lire-partout.html"><span class="t-fr">Lire partout : numérique &amp; éditions en langue anglaise</span><span class="t-en">Read worldwide: ebooks &amp; English-language editions</span></a></li>
         </ul>
       </div>
       <div class="plan-categorie">
-        <h2>Poésie &amp; Arts</h2>
+        <h2><span class="t-fr">Poésie &amp; Arts</span><span class="t-en">Poetry &amp; Arts</span></h2>
         <ul>
-          <li><a href="poesie.html">Poésie au jour le jour</a></li>
-          <li><a href="peintures.html">Peintures &amp; Dessins</a></li>
-          <li><a href="evenements.html">Événements &amp; Presse</a></li>
+          <li><a href="poesie.html"><span class="t-fr">Poésie au jour le jour</span><span class="t-en">Poetry Day by Day</span></a></li>
+          <li><a href="peintures.html"><span class="t-fr">Peintures &amp; Dessins</span><span class="t-en">Paintings &amp; Drawings</span></a></li>
+          <li><a href="evenements.html"><span class="t-fr">Événements &amp; Presse</span><span class="t-en">Events &amp; Press</span></a></li>
         </ul>
       </div>
       <div class="plan-categorie">
-        <h2>Liens utiles</h2>
+        <h2><span class="t-fr">Liens utiles</span><span class="t-en">Useful Links</span></h2>
         <ul>
-          <li><a href="boutique.html">Boutique</a></li>
+          <li><a href="boutique.html"><span class="t-fr">Boutique</span><span class="t-en">Shop</span></a></li>
           <li><a href="faq.html">FAQ</a></li>
           <li><a href="contact.html">Contact</a></li>
-          <li><a href="youtube.html">Chaîne Youtube</a></li>
-          <li><a href="mentions-legales.html">Mentions légales</a></li>
+          <li><a href="youtube.html"><span class="t-fr">Chaîne Youtube</span><span class="t-en">Youtube Channel</span></a></li>
+          <li><a href="mentions-legales.html"><span class="t-fr">Mentions légales</span><span class="t-en">Legal Notice</span></a></li>
         </ul>
       </div>
     </div>
-    <p class="plan-mentions">© 2026 L&rsquo;AMagie <span class="etoile">✦</span> Maison d&rsquo;édition indépendante <span class="etoile">✦</span> SIREN 937629533 <span class="etoile">✦</span> Félines-Minervois</p>
+    <p class="plan-mentions">© 2026 L&rsquo;AMagie <span class="etoile">✦</span> <span class="t-fr">Maison d&rsquo;édition indépendante</span><span class="t-en">Independent Publishing House</span> <span class="etoile">✦</span> SIREN 937629533 <span class="etoile">✦</span> Félines-Minervois</p>
     <p class="plan-webmaster">© Webmaster Meichelus : <a href="mailto:meichelus@l-amagie.art">meichelus@l-amagie.art</a></p>
   </section>
 
   <script>
+  /* ===== Langue FR / EN (mémorisée pour tout le site) ===== */
+  function setLanguage(lang) {
+    document.body.classList.toggle('lang-en', lang === 'en');
+    document.documentElement.lang = lang;
+    document.querySelectorAll('.lang-btn').forEach(function(b){
+      b.classList.toggle('active', b.getAttribute('data-lang') === lang);
+    });
+    try { localStorage.setItem('l-amagie-lang', lang); } catch(e) {}
+    
+  }
+  document.querySelectorAll('.lang-btn').forEach(function(b){
+    b.addEventListener('click', function(){ setLanguage(this.getAttribute('data-lang')); });
+  });
+  (function(){
+    var l = 'fr';
+    try { l = localStorage.getItem('l-amagie-lang') || 'fr'; } catch(e) {}
+    setLanguage(l);
+  })();
+
     if ('IntersectionObserver' in window) {
       var obs = new IntersectionObserver(function(entries){
         entries.forEach(function(e){

@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="google" content="notranslate"/>
+<title>Lire partout — L'AMagie</title>
+<meta name="description" content="Les livres des éditions L'AMagie en numérique et en anglais : poésie, albums et romans d'Anouk Journo et Meichelus, disponibles en France et outre-Atlantique."/>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Pinyon+Script&display=swap" rel="stylesheet"/>
+
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html,body{overflow-x:hidden;}
+html{scroll-behavior:smooth;}
+
+body{
+  background-color:#ece2c8;
+  color:#3a3220;
+  font-family:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  font-size:17px;
+  line-height:1.75;
+  min-height:100vh;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+  background-image:
+    radial-gradient(ellipse 55% 50% at 12% 18%, rgba(146,96,38,.12) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 55% at 88% 82%, rgba(132,88,36,.11) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 45% at 78% 18%, rgba(170,128,60,.09) 0%, transparent 65%),
+    linear-gradient(135deg, #f1ead4 0%, #e8dec0 50%, #ecdfc2 100%),
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='280' height='280'><filter id='g'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' seed='4'/><feColorMatrix values='0 0 0 0 0.42 0 0 0 0 0.32 0 0 0 0 0.17 0 0 0 0.22 0'/></filter><rect width='100%25' height='100%25' filter='url(%23g)'/></svg>");
+  background-attachment:fixed;
+  background-size:auto,auto,auto,auto,280px 280px;
+  background-repeat:no-repeat,no-repeat,no-repeat,no-repeat,repeat;
+}
+a{color:inherit;text-decoration:none;}
+img{max-width:100%;height:auto;display:block;}
+em{font-style:italic;color:#5a4a30;}
+::selection{background:rgba(184,154,92,.32);}
+
+.bandeau-top{
+  padding:8px 40px;font-size:.9rem;color:#5a4a30;
+  border-bottom:1px solid rgba(184,154,92,.2);
+  display:flex;justify-content:space-between;align-items:center;gap:12px;
+}
+.retour{color:#5a4a30;}
+.retour:hover{color:#b89a5c;}
+.toggle-langue{display:flex;gap:12px;}
+.toggle-langue button{
+  background:transparent;border:1px solid rgba(184,154,92,.4);padding:4px 12px;border-radius:2px;
+  cursor:pointer;font-family:inherit;font-size:.85rem;color:#5a4a30;transition:all .3s;
+}
+.toggle-langue button.active{background:#b89a5c;color:#fff;border-color:#b89a5c;}
+.toggle-langue button:hover{background:rgba(184,154,92,.1);}
+
+header.intro{max-width:760px;margin:56px auto 24px;padding:0 24px;text-align:center;}
+.surtitre{font-family:'Pinyon Script',cursive;font-size:2rem;color:#b89a5c;line-height:1.2;}
+h1{font-size:2.4rem;font-weight:500;margin:4px 0 18px;letter-spacing:.01em;}
+.intro p{font-size:1.15rem;color:#5a4a30;}
+.ornement{color:#b89a5c;margin:28px 0 0;letter-spacing:.6em;}
+
+main{max-width:1040px;margin:0 auto;padding:0 24px 40px;}
+h2.rubrique{
+  font-size:1.5rem;font-weight:500;text-align:center;margin:56px 0 28px;
+  display:flex;align-items:center;gap:18px;
+}
+h2.rubrique::before,h2.rubrique::after{content:'';flex:1;border-top:1px solid rgba(184,154,92,.35);}
+
+.oeuvre{
+  display:grid;grid-template-columns:180px 1fr;gap:32px;
+  padding:28px 0;border-bottom:1px solid rgba(184,154,92,.2);
+}
+.oeuvre:last-child{border-bottom:none;}
+.couverture{
+  width:180px;align-self:start;background:#e4d6b2;
+  box-shadow:0 8px 24px rgba(58,50,32,.18);overflow:hidden;
+}
+.couverture img{width:100%;height:auto;}
+.couverture .sans-image{
+  width:100%;aspect-ratio:2/3;display:flex;align-items:center;justify-content:center;
+  text-align:center;padding:16px;font-style:italic;font-size:1.1rem;color:#5a4a30;
+  border:1px solid rgba(184,154,92,.5);
+}
+.oeuvre h3{font-size:1.65rem;font-weight:500;line-height:1.25;}
+.auteurs{font-style:italic;color:#7a6a48;margin:2px 0 12px;}
+.resume{margin-bottom:16px;max-width:62ch;}
+.note{font-size:.95rem;color:#7a6a48;margin:-6px 0 16px;}
+
+.editions{list-style:none;border-top:1px dotted rgba(184,154,92,.5);}
+.editions li{
+  display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:6px 16px;
+  padding:8px 0;border-bottom:1px dotted rgba(184,154,92,.5);
+}
+.ed-info{font-size:1rem;}
+.ed-info .format{font-weight:600;}
+.ed-info .titre-ed{font-style:italic;}
+.ed-info .isbn{font-size:.85rem;color:#8a7a58;margin-left:6px;}
+.liens{display:flex;flex-wrap:wrap;gap:8px;}
+.btn{
+  display:inline-block;font-size:.9rem;padding:3px 12px;border:1px solid #b89a5c;border-radius:2px;
+  color:#5a4a30;transition:all .25s;white-space:nowrap;
+}
+.btn:hover{background:#b89a5c;color:#fff;}
+.bientot{font-size:.9rem;font-style:italic;color:#8a7a58;}
+
+.pied-intro{max-width:760px;margin:40px auto 0;padding:0 24px;text-align:center;color:#5a4a30;}
+.pied-intro a{border-bottom:1px solid rgba(184,154,92,.6);}
+.pied-intro a:hover{color:#b89a5c;}
+footer{
+  text-align:center;padding:40px 24px;margin-top:48px;
+  border-top:1px solid rgba(184,154,92,.2);color:#5a4a30;font-size:.9rem;
+}
+
+@media(max-width:700px){
+  .bandeau-top{padding:10px 16px;}
+  header.intro{margin-top:36px;padding:0 16px;}
+  h1{font-size:1.9rem;}
+  main{padding:0 16px 24px;}
+  .oeuvre{grid-template-columns:1fr;gap:18px;}
+  .couverture{width:150px;margin:0 auto;}
+  .oeuvre h3{text-align:center;}
+  .auteurs{text-align:center;}
+}
+</style>
+</head>
+<body>
+
+<div class="bandeau-top">
+  <a href="index.html" class="retour" data-t="retour"></a>
+  <div class="toggle-langue">
+    <button class="lang-btn active" data-lang="fr">FR</button>
+    <button class="lang-btn" data-lang="en">EN</button>
+  </div>
+</div>
+
+<header class="intro">
+  <div class="surtitre" data-t="surtitre"></div>
+  <h1 data-t="titre"></h1>
+  <p data-t="intro"></p>
+  <div class="ornement">✦ ✦ ✦</div>
+</header>
+
+<main id="catalogue"></main>
+
+<p class="pied-intro" data-t="pied" data-html></p>
+
+<footer>
+  <span data-t="footer"></span><br/>
+  © Webmaster Meichelus
+</footer>
+
+<script>
+/* =====================================================================
+   CATALOGUE — c'est ici qu'on ajoute un livre ou un lien.
+   - Un lien laissé vide ("") n'affiche pas de bouton.
+   - Si aucun lien n'est renseigné pour une édition, « Bientôt disponible »
+     s'affiche à la place.
+   - Couverture : la page cherche d'abord images/livres/<ISBN>.jpg sur le
+     site, puis l'image Apple Books, puis affiche le titre en italique.
+   ===================================================================== */
+
+const CATALOGUE = [
+  {
+    rubrique: "poesie",
+    oeuvres: [
+      {
+        titre: { fr: "Van Life Poetry", en: "Van Life Poetry" },
+        auteurs: { fr: "Anouk Journo · illustrations de Meichelus", en: "Anouk Journo · illustrated by Meichelus" },
+        resume: {
+          fr: "Un chien, un chat, une caravane et la route devant soi. Ces poèmes ont été écrits en chemin, et Meichelus les a mis en images. Un carnet de voyage en vers, entre grands paysages et petits moments du quotidien.",
+          en: "A dog, a cat, a travel trailer and the open road. These poems were written along the way, and Meichelus turned them into pictures. A travel journal in verse, made of wide landscapes and small everyday moments."
+        },
+        couverture: "9791098117053",
+        appleImg: "https://is1-ssl.mzstatic.com/image/thumb/Publication211/v4/c0/d7/fc/c0d7fc29-dc90-f311-ce59-09b0c278f5fd/9791098117053.jpg/400x600bb.jpg",
+        editions: [
+          { format: "broche", langue: "en", titre: "Van Life Poetry: a Dog, a Cat and Us", isbn: "9791098117008",
+            liens: { bookshop: "https://bookshop.org/search?keywords=9791098117008" } },
+          { format: "ebook", langue: "en", isbn: "9791098117053",
+            liens: { apple: "https://books.apple.com/fr/book/van-life-poetry/id6818923737" } }
+        ]
+      },
+      {
+        titre: { fr: "Lucide", en: "Lucide" },
+        auteurs: { fr: "Anouk Journo & Meichelus", en: "Anouk Journo & Meichelus" },
+        resume: {
+          fr: "Deux voix, deux façons d'habiter le monde. Anouk Journo écrit depuis l'intérieur de la langue, brève, tendue ; Meichelus avance par cercles et spirales, à la mine graphite, à l'encre et à l'aquarelle. Ensemble, ils regardent sans détour le vivant, l'amour, la conscience. Une poésie de veille et de présence.",
+          en: "Two voices, two ways of living in the world. Anouk Journo writes from inside the language, brief and taut; Meichelus moves in circles and spirals, in graphite, ink and watercolour. Together they look straight at what is alive, at love, at awareness. Poetry of watchfulness and presence. In French."
+        },
+        couverture: "9791098116988",
+        editions: [
+          { format: "broche", langue: "fr", isbn: "9791098116988", liens: { boutique: "boutique.html" } },
+          { format: "ebook", langue: "fr", isbn: "9791098117060", liens: { apple: "" } }
+        ]
+      },
+      {
+        titre: { fr: "Abécédaire des étoiles", en: "Abécédaire des étoiles" },
+        auteurs: { fr: "Anouk Journo & Meichelus", en: "Anouk Journo & Meichelus" },
+        resume: {
+          fr: "Un petit recueil illustré, écrit à quatre mains. Il part des choses de tous les jours pour parler de soi et de ce que l'on devient. Collection De la Lune à la Plume.",
+          en: "A small illustrated collection, written four-handed. It starts from everyday things to talk about who we are and who we become. In French."
+        },
+        couverture: "9791098116902",
+        appleImg: "https://is1-ssl.mzstatic.com/image/thumb/Publication211/v4/db/5a/89/db5a892a-19c8-9849-f562-c9fc537da4e3/9791098116902.jpg/400x600bb.jpg",
+        editions: [
+          { format: "ebook", langue: "fr", isbn: "9791098116902",
+            liens: { apple: "https://books.apple.com/fr/book/ab%C3%A9c%C3%A9daire-des-%C3%A9toiles/id6759670303" } }
+        ]
+      }
+    ]
+  },
+  {
+    rubrique: "albums",
+    oeuvres: [
+      {
+        titre: { fr: "Le chat qui n'avait pas de nom", en: "The Cat Who Had No Name" },
+        auteurs: { fr: "Anouk Journo · illustrations de Meichelus", en: "Anouk Journo · illustrated by Meichelus" },
+        resume: {
+          fr: "Un jour, un grand chat noir entre dans la vie d'une famille. Il n'a ni nom ni adresse, mais il a l'air d'avoir choisi chez qui il veut vivre. Une histoire vraie, pour parler aux enfants d'accueil, d'attachement et de respect des animaux.",
+          en: "One day, a big black cat walks into a family's life. He has no name and no home, but he seems to have chosen where he wants to live. A true story about welcome, attachment and caring for animals."
+        },
+        couverture: "9791098117077",
+        appleImg: "https://is1-ssl.mzstatic.com/image/thumb/Publication221/v4/36/aa/ef/36aaef13-df45-124f-4888-92439ffb9bc2/9791098117077.jpg/400x600bb.jpg",
+        couvertureEn: "9791098117015",
+        editions: [
+          { format: "ebook", langue: "fr", titre: "Le chat qui n'avait pas de nom", isbn: "9791098117077",
+            liens: { apple: "https://books.apple.com/fr/book/le-chat-qui-navait-pas-de-nom/id6818930557" } },
+          { format: "broche", langue: "en", titre: "The Cat Who Had No Name", isbn: "9791098117015",
+            liens: { bookshop: "https://bookshop.org/search?keywords=9791098117015" } },
+          { format: "ebook", langue: "en", titre: "The Cat Who Had No Name", isbn: "9791098117022",
+            liens: { apple: "" } },
+          { format: "ebook", langue: "fr", titre: "Moustache, le roi des coussins", premiere: true, isbn: "9791098116964",
+            liens: { apple: "https://books.apple.com/fr/book/moustache-le-roi-des-coussins/id6764106717" } }
+        ]
+      }
+    ]
+  },
+  {
+    rubrique: "romans",
+    oeuvres: [
+      {
+        titre: { fr: "Le serment de la lionne", en: "Le serment de la lionne" },
+        serie: { fr: "Le refuge des animaux libres — tome 1", en: "Le refuge des animaux libres — book 1" },
+        auteurs: { fr: "Anouk Journo", en: "Anouk Journo" },
+        resume: {
+          fr: "Antoine Beaucaire, vétérinaire, s'installe avec ses enfants Izia et Jawau à Valrêve, un refuge normand pour animaux sauvages sauvés de la captivité. Les deux adolescents y vivent une rencontre qui change leur regard sur le monde. Un roman inspiré de faits réels.",
+          en: "Antoine Beaucaire, a vet, moves with his children Izia and Jawau to Valrêve, a refuge in Normandy for wild animals rescued from captivity. There, the two teenagers live through an encounter that changes how they see the world. Inspired by true events. In French."
+        },
+        couverture: "9791098116933",
+        appleImg: "https://is1-ssl.mzstatic.com/image/thumb/Publication221/v4/e8/4f/fc/e84ffc0f-2e98-5abe-62e3-4db64b192ecc/9791098116933.jpg/400x600bb.jpg",
+        editions: [
+          { format: "ebook", langue: "fr", isbn: "9791098116933",
+            liens: { apple: "https://books.apple.com/fr/book/le-serment-de-la-lionne/id6760687285" } }
+        ]
+      },
+      {
+        titre: { fr: "Le rêve sauvage", en: "Le rêve sauvage" },
+        serie: { fr: "Le refuge des animaux libres — tome 2", en: "Le refuge des animaux libres — book 2" },
+        auteurs: { fr: "Anouk Journo", en: "Anouk Journo" },
+        resume: {
+          fr: "Retour à Valrêve, où lions et éléphants vivent libres et protégés. Nouveaux défis, rencontres inattendues : la suite du Serment de la lionne.",
+          en: "Back to Valrêve, where lions and elephants live free and protected. New challenges and unexpected encounters in the sequel to Le serment de la lionne. In French."
+        },
+        note: {
+          fr: "Paru d'abord chez Fleurus sous le titre Nouveaux défis à Valrêve. Grand Prix des lecteurs du Salon du livre de La Saussaye, 2019.",
+          en: "First published by Fleurus as Nouveaux défis à Valrêve. Readers' Grand Prize, La Saussaye book fair, 2019."
+        },
+        couverture: "9791098117084",
+        appleImg: "https://is1-ssl.mzstatic.com/image/thumb/Publication221/v4/13/21/f6/1321f616-8ac4-4085-79c4-fbeab191d927/9791098117084.jpg/400x600bb.jpg",
+        editions: [
+          { format: "ebook", langue: "fr", isbn: "9791098117084",
+            liens: { apple: "https://books.apple.com/fr/book/le-r%C3%AAve-sauvage/id6818881513" } }
+        ]
+      },
+      {
+        titre: { fr: "Le mystère du Triangle des Bermudes", en: "Le mystère du Triangle des Bermudes" },
+        serie: { fr: "Série Mystères", en: "Mystères series" },
+        auteurs: { fr: "Meichelus", en: "Meichelus" },
+        resume: {
+          fr: "Matteo, 13 ans, passe ses vacances aux Bermudes. Entre deux plongées, il veut comprendre pourquoi tant de navires et d'avions ont disparu dans le Triangle. Plus il approche de la vérité, plus un homme aux yeux étrangement clairs croise sa route.",
+          en: "Matteo, 13, is on holiday in Bermuda. Between dives, he wants to find out why so many ships and planes have vanished in the Triangle. The closer he gets to the truth, the more often a man with strangely pale eyes crosses his path. In French."
+        },
+        couverture: "9791098116919",
+        appleImg: "https://is1-ssl.mzstatic.com/image/thumb/Publication211/v4/e1/28/19/e12819e8-7b41-2759-518a-68a3686b4db0/9791098116919.jpg/400x600bb.jpg",
+        editions: [
+          { format: "ebook", langue: "fr", isbn: "9791098116919",
+            liens: { apple: "https://books.apple.com/fr/book/le-myst%C3%A8re-du-triangle-des-bermudes/id6758957268" } }
+        ]
+      }
+    ]
+  }
+];
+
+const TEXTES = {
+  fr: {
+    retour: "← Retour à l'accueil",
+    surtitre: "Nos livres voyagent",
+    titre: "Lire partout",
+    intro: "Certains de nos livres existent en version numérique, d'autres ont pris un titre anglais et traversé l'Atlantique. Vous les trouverez tous ici, avec un lien direct vers les librairies en ligne qui les proposent.",
+    rubriques: { poesie: "Poésie", albums: "Albums", romans: "Romans" },
+    formats: { ebook: "Livre numérique", broche: "Livre broché" },
+    langues: { fr: "en français", en: "en anglais" },
+    premiere: "première version",
+    boutiques: { apple: "Apple Books", bookshop: "Bookshop.org", boutique: "Notre boutique" },
+    bientot: "Bientôt disponible",
+    pied: "Nos éditions papier en français se commandent aussi dans votre librairie ou depuis notre <a href=\"boutique.html\">boutique</a>.",
+    footer: "© L'AMagie ✦ Maison d'édition indépendante ✦ Félines-Minervois"
+  },
+  en: {
+    retour: "← Back to home",
+    surtitre: "Our books travel",
+    titre: "Read worldwide",
+    intro: "Some of our books are available as ebooks, others have crossed the Atlantic in English. You will find them all here, with direct links to the online bookstores that carry them.",
+    rubriques: { poesie: "Poetry", albums: "Picture books", romans: "Novels" },
+    formats: { ebook: "Ebook", broche: "Paperback" },
+    langues: { fr: "in French", en: "in English" },
+    premiere: "first version",
+    boutiques: { apple: "Apple Books", bookshop: "Bookshop.org", boutique: "Our shop" },
+    bientot: "Coming soon",
+    pied: "Our French print editions can also be ordered from your local bookshop or from our <a href=\"boutique.html\">shop</a>.",
+    footer: "© L'AMagie ✦ Independent Publishing House | Worldwide Publications ✦ Félines-Minervois"
+  }
+};
+
+function el(tag, cls, text){
+  const e = document.createElement(tag);
+  if (cls) e.className = cls;
+  if (text != null) e.textContent = text;
+  return e;
+}
+
+function couverture(oeuvre, lang, titre){
+  const box = el('div', 'couverture');
+  const isbn = (lang === 'en' && oeuvre.couvertureEn) ? oeuvre.couvertureEn : oeuvre.couverture;
+  const sources = [`images/livres/${isbn}.jpg`];
+  if (oeuvre.appleImg && isbn === oeuvre.couverture) sources.push(oeuvre.appleImg);
+  const img = document.createElement('img');
+  img.alt = titre;
+  img.loading = 'lazy';
+  let i = 0;
+  img.onerror = () => {
+    i++;
+    if (i < sources.length) { img.src = sources[i]; }
+    else { box.innerHTML = ''; box.appendChild(el('div', 'sans-image', titre)); }
+  };
+  img.src = sources[0];
+  box.appendChild(img);
+  return box;
+}
+
+function render(lang){
+  const T = TEXTES[lang];
+  const main = document.getElementById('catalogue');
+  main.innerHTML = '';
+
+  CATALOGUE.forEach(groupe => {
+    main.appendChild(el('h2', 'rubrique', T.rubriques[groupe.rubrique]));
+
+    groupe.oeuvres.forEach(o => {
+      const titre = o.titre[lang];
+      const art = el('article', 'oeuvre');
+      art.appendChild(couverture(o, lang, titre));
+
+      const txt = el('div');
+      txt.appendChild(el('h3', null, titre));
+      const aut = o.serie ? `${o.serie[lang]} · ${o.auteurs[lang]}` : o.auteurs[lang];
+      txt.appendChild(el('p', 'auteurs', aut));
+      txt.appendChild(el('p', 'resume', o.resume[lang]));
+      if (o.note) txt.appendChild(el('p', 'note', o.note[lang]));
+
+      const ul = el('ul', 'editions');
+      o.editions.forEach(ed => {
+        const li = el('li');
+        const info = el('span', 'ed-info');
+        info.appendChild(el('span', 'format', `${T.formats[ed.format]} ${T.langues[ed.langue]}`));
+        if (ed.titre && ed.titre !== titre) {
+          info.appendChild(document.createTextNode(' — '));
+          info.appendChild(el('span', 'titre-ed', ed.titre));
+          if (ed.premiere) info.appendChild(document.createTextNode(` (${T.premiere})`));
+        }
+        info.appendChild(el('span', 'isbn', `ISBN ${ed.isbn}`));
+        li.appendChild(info);
+
+        const liens = el('span', 'liens');
+        Object.entries(ed.liens || {}).forEach(([boutique, url]) => {
+          if (!url) return;
+          const a = el('a', 'btn', T.boutiques[boutique] || boutique);
+          a.href = url;
+          if (/^https?:/.test(url)) { a.target = '_blank'; a.rel = 'noopener'; }
+          liens.appendChild(a);
+        });
+        if (!liens.children.length) liens.appendChild(el('span', 'bientot', T.bientot));
+        li.appendChild(liens);
+        ul.appendChild(li);
+      });
+      txt.appendChild(ul);
+      art.appendChild(txt);
+      main.appendChild(art);
+    });
+  });
+}
+
+function setLanguage(lang){
+  const T = TEXTES[lang];
+  document.querySelectorAll('[data-t]').forEach(n => {
+    const v = T[n.getAttribute('data-t')];
+    if (n.hasAttribute('data-html')) n.innerHTML = v; else n.textContent = v;
+  });
+  document.title = `${T.titre} — L'AMagie`;
+  document.documentElement.lang = lang;
+  document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
+  render(lang);
+  try { localStorage.setItem('l-amagie-lang', lang); } catch(e) {}
+}
+
+document.querySelectorAll('.lang-btn').forEach(b => b.addEventListener('click', () => setLanguage(b.dataset.lang)));
+
+window.addEventListener('DOMContentLoaded', () => {
+  let saved = 'fr';
+  try { saved = localStorage.getItem('l-amagie-lang') || 'fr'; } catch(e) {}
+  setLanguage(saved);
+});
+</script>
+</body>
+</html>

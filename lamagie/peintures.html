@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" translate="no" class="notranslate">
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -538,6 +538,29 @@ em{font-style:italic;color:#5a4a30;}
 .reveler{opacity:0;transform:translateY(18px);transition:opacity .9s ease, transform .9s ease;}
 .reveler.visible{opacity:1;transform:translateY(0);}
 @media(prefers-reduced-motion: reduce){.reveler{opacity:1;transform:none;transition:none;}}
+
+/* ============================================================
+   BILINGUE FR/EN — sans traduction automatique
+   ============================================================ */
+.t-en{display:none !important;}
+body.lang-en .t-fr{display:none !important;}
+body.lang-en span.t-en{display:inline !important;}
+body.lang-en p.t-en{display:block !important;}
+.entete-retour{gap:16px;}
+.toggle-langue{display:flex;gap:8px;align-items:center;}
+.toggle-langue button{
+  background:transparent;border:1px solid rgba(184,154,92,.4);padding:4px 10px;border-radius:2px;
+  cursor:pointer;font-family:'Cormorant Garamond',Georgia,serif;font-size:0.8rem;color:#5a4a30;
+  transition:all 0.3s;letter-spacing:.08em;text-transform:uppercase;
+}
+.toggle-langue button.active{background:#b89a5c;color:white;border-color:#b89a5c;}
+.toggle-langue button:hover{background:rgba(184,154,92,.1);}
+@media(max-width:760px){
+  .toggle-langue{gap:6px;}
+  .toggle-langue button{padding:3px 8px;font-size:0.7rem;}
+}
+body.lang-en .toile-honneur::before{content:'Featured work';}
+body.lang-en .derniere-toile::before{content:'New work';}
 </style>
 </head>
 
@@ -552,26 +575,30 @@ em{font-style:italic;color:#5a4a30;}
     </div>
     <a href="index.html" class="entete-titre" aria-label="L'AMagie — Accueil">L&rsquo;AMagie</a>
     <div class="entete-retour">
-      <a href="index.html"><span>Retour à l&rsquo;accueil</span></a>
+      <div class="toggle-langue">
+        <button class="lang-btn active" data-lang="fr">FR</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+      </div>
+            <a href="index.html"><span><span class="t-fr">Retour à l&rsquo;accueil</span><span class="t-en">Back to home</span></span></a>
     </div>
   </header>
 
   <!-- BANDEAU — Dernières toiles -->
   <div class="bandeau-nouveautes reveler">
-    <a href="https://www.l-amagie.art/galerie-peintures">Dernières toiles de Meichelus</a>
+    <a href="https://www.l-amagie.art/galerie-peintures"><span class="t-fr">Dernières toiles de Meichelus</span><span class="t-en">Meichelus&rsquo;s latest works</span></a>
   </div>
 
   <!-- HÉROS DE PAGE -->
   <section class="heros-page">
     <nav class="fil-ariane" aria-label="Fil d'ariane">
-      <a href="index.html">Accueil</a>
+      <a href="index.html"><span class="t-fr">Accueil</span><span class="t-en">Home</span></a>
       <span class="sep">·</span>
-      <span>Peintures &amp; Dessins</span>
+      <span class="t-fr">Peintures &amp; Dessins</span><span class="t-en">Paintings &amp; Drawings</span>
       <span class="sep">·</span>
       <span>Meichelus</span>
     </nav>
-    <h1 class="titre-page">Peintures &amp; Dessins</h1>
-    <p class="sous-titre-page">L&rsquo;univers artistique de Meichelus</p>
+    <h1 class="titre-page"><span class="t-fr">Peintures &amp; Dessins</span><span class="t-en">Paintings &amp; Drawings</span></h1>
+    <p class="sous-titre-page"><span class="t-fr">L&rsquo;univers artistique de Meichelus</span><span class="t-en">The artistic world of Meichelus</span></p>
     <div class="medaillon-titre" aria-hidden="true">✦</div>
 
     <figure class="portrait-meichelus reveler">
@@ -580,7 +607,7 @@ em{font-style:italic;color:#5a4a30;}
            loading="eager"
            decoding="async"
            onerror="this.style.display='none'"/>
-      <figcaption>Meichelus dessinant</figcaption>
+      <figcaption><span class="t-fr">Meichelus dessinant</span><span class="t-en">Meichelus drawing</span></figcaption>
     </figure>
   </section>
 
@@ -593,12 +620,14 @@ em{font-style:italic;color:#5a4a30;}
     <article class="carte reveler">
 
       <div class="bloc-artiste">
-        <h2 class="nom">Michel Foucher<span class="alias">dit Meichelus</span></h2>
-        <span class="roles">Peintre · Illustrateur · Directeur éditorial<br/>Webmaster &amp; poète</span>
+        <h2 class="nom">Michel Foucher<span class="alias"><span class="t-fr">dit Meichelus</span><span class="t-en">known as Meichelus</span></span></h2>
+        <span class="roles"><span class="t-fr">Peintre · Illustrateur · Directeur éditorial<br/>Webmaster &amp; poète</span><span class="t-en">Painter · Illustrator · Editorial Director<br/>Webmaster &amp; Poet</span></span>
       </div>
 
-      <p>Michel a été <em>infirmier en psychiatrie et pédo-psychiatrie</em>, ainsi qu&rsquo;infirmier-chef chez les pompiers des Hautes-Alpes, donc, dans une autre vie. <em>L&rsquo;art-thérapie</em> était au quotidien l&rsquo;une de ses ressources.</p>
-      <p>Aujourd&rsquo;hui, il se consacre à plein temps à <em>la peinture</em> et à de nombreux projets graphiques et créatifs. Il coordonne les étapes du processus éditorial.</p>
+      <p class="t-fr">Michel a été <em>infirmier en psychiatrie et pédo-psychiatrie</em>, ainsi qu&rsquo;infirmier-chef chez les pompiers des Hautes-Alpes, donc, dans une autre vie. <em>L&rsquo;art-thérapie</em> était au quotidien l&rsquo;une de ses ressources.</p>
+      <p class="t-en">In another life, Michel was a <em>psychiatric and child-psychiatric nurse</em>, and later head nurse with the fire brigade of the Hautes-Alpes. <em>Art therapy</em> was one of his everyday resources.</p>
+      <p class="t-fr">Aujourd&rsquo;hui, il se consacre à plein temps à <em>la peinture</em> et à de nombreux projets graphiques et créatifs. Il coordonne les étapes du processus éditorial.</p>
+      <p class="t-en">Today he devotes himself full-time to <em>painting</em> and to many graphic and creative projects. He coordinates the stages of the editorial process.</p>
     </article>
 
     <!-- ============================================================
@@ -611,22 +640,23 @@ em{font-style:italic;color:#5a4a30;}
              loading="eager" decoding="async"/>
       </div>
       <div class="bloc-vedette-texte">
-        <span class="surtitre-vedette">Dernière œuvre · 2026</span>
+        <span class="surtitre-vedette"><span class="t-fr">Dernière œuvre · 2026</span><span class="t-en">Latest work · 2026</span></span>
         <h3 class="titre-vedette">Que trame ce papillon</h3>
-        <p class="desc-vedette">Un enchevêtrement de branches, de racines et de pierre où le regard se perd, puis se reprend : les formes hésitent entre chaos et signe, comme une trame qui se tisserait sous nos yeux. Seul élément en couleur, un papillon s&rsquo;y pose &mdash; esprit vivant de ce fouillis, tourné vers la lumière. Encre et graphite tiennent l&rsquo;ensemble&nbsp;; une unique touche d&rsquo;aquarelle suffit à l&rsquo;éveiller. Une invitation à accueillir la complexité plutôt qu&rsquo;à la fuir. Série <em>Papillons et libellules</em> &mdash; encre, mine graphite et aquarelle, 44 × 54 cm avec passe-partout.</p>
+        <p class="desc-vedette t-en">A tangle of branches, roots and stone in which the eye gets lost, then finds its way again: the shapes waver between chaos and sign, like a weave being woven before our eyes. The only touch of colour, a butterfly settles there &mdash; the living spirit of this thicket, turned towards the light. Ink and graphite hold the whole together; a single touch of watercolour is enough to awaken it. An invitation to welcome complexity rather than flee it. From the <em>Butterflies and Dragonflies</em> series &mdash; ink, graphite and watercolour, 44 × 54 cm with mount.</p>
+        <p class="desc-vedette t-fr">Un enchevêtrement de branches, de racines et de pierre où le regard se perd, puis se reprend : les formes hésitent entre chaos et signe, comme une trame qui se tisserait sous nos yeux. Seul élément en couleur, un papillon s&rsquo;y pose &mdash; esprit vivant de ce fouillis, tourné vers la lumière. Encre et graphite tiennent l&rsquo;ensemble&nbsp;; une unique touche d&rsquo;aquarelle suffit à l&rsquo;éveiller. Une invitation à accueillir la complexité plutôt qu&rsquo;à la fuir. Série <em>Papillons et libellules</em> &mdash; encre, mine graphite et aquarelle, 44 × 54 cm avec passe-partout.</p>
         <div class="vedette-liens">
           <a class="btn-vedette btn-vedette--galerie" href="galerie-peintures.html">
-            Voir l&rsquo;œuvre dans la galerie
+            <span class="t-fr">Voir l&rsquo;œuvre dans la galerie</span><span class="t-en">See the work in the gallery</span>
           </a>
           <a class="btn-vedette btn-vedette--blog"
              href="https://meichelus-art.blogspot.com/2026/10/ce-qui-veille-sous-la-trame-si-tu-te.html"
              target="_blank" rel="noopener noreferrer">
-            Lire le poème et la prose de la toile
+            <span class="t-fr">Lire le poème et la prose de la toile</span><span class="t-en">Read the poem and prose behind the painting (in French)</span>
           </a>
           <a class="btn-vedette btn-vedette--achat"
              href="https://l-amagie.sumupstore.com/product/que-trame-ce-papillon"
              target="_blank" rel="noopener noreferrer">
-            🎨 Acquérir cette toile
+            <span class="t-fr">🎨 Acquérir cette toile</span><span class="t-en">🎨 Acquire this painting</span>
           </a>
         </div>
       </div>
@@ -642,22 +672,23 @@ em{font-style:italic;color:#5a4a30;}
              loading="lazy" decoding="async"/>
       </div>
       <div class="bloc-vedette-texte">
-        <span class="surtitre-vedette">Œuvre récente · 2026</span>
+        <span class="surtitre-vedette"><span class="t-fr">Œuvre récente · 2026</span><span class="t-en">Recent work · 2026</span></span>
         <h3 class="titre-vedette">Thigmotropisme</h3>
-        <p class="desc-vedette">Sur un pan de mur envahi de vigne vierge, les vrilles s&rsquo;enroulent, tâtonnent, inventent leurs propres points d&rsquo;ancrage — le toucher, le tour, cette manière qu&rsquo;a la plante de s&rsquo;attacher sans jamais se figer. Un papillon s&rsquo;y pose un instant, présence éphémère au cœur d&rsquo;une architecture patiente. Deux façons d&rsquo;habiter le monde, l&rsquo;une enracinée, l&rsquo;autre passagère, qui semblent partager le même secret : on ne dure pas en restant immobile, mais en sachant plier sans rompre, s&rsquo;attacher sans s&rsquo;enfermer, changer sans se perdre. Mine graphite, encre et aquarelle — 34 × 44 cm.</p>
+        <p class="desc-vedette t-en">On a stretch of wall overrun by Virginia creeper, the tendrils coil, feel their way and invent their own anchor points &mdash; touch, turning, the plant&rsquo;s way of clinging without ever freezing in place. A butterfly lands there for a moment, a fleeting presence at the heart of a patient architecture. Two ways of inhabiting the world, one rooted, the other passing through, which seem to share the same secret: we do not last by standing still, but by knowing how to bend without breaking, to hold on without shutting ourselves in, to change without losing ourselves. Graphite, ink and watercolour &mdash; 34 × 44 cm.</p>
+        <p class="desc-vedette t-fr">Sur un pan de mur envahi de vigne vierge, les vrilles s&rsquo;enroulent, tâtonnent, inventent leurs propres points d&rsquo;ancrage — le toucher, le tour, cette manière qu&rsquo;a la plante de s&rsquo;attacher sans jamais se figer. Un papillon s&rsquo;y pose un instant, présence éphémère au cœur d&rsquo;une architecture patiente. Deux façons d&rsquo;habiter le monde, l&rsquo;une enracinée, l&rsquo;autre passagère, qui semblent partager le même secret : on ne dure pas en restant immobile, mais en sachant plier sans rompre, s&rsquo;attacher sans s&rsquo;enfermer, changer sans se perdre. Mine graphite, encre et aquarelle — 34 × 44 cm.</p>
         <div class="vedette-liens">
           <a class="btn-vedette btn-vedette--galerie" href="galerie-peintures.html">
-            Voir l&rsquo;œuvre dans la galerie
+            <span class="t-fr">Voir l&rsquo;œuvre dans la galerie</span><span class="t-en">See the work in the gallery</span>
           </a>
           <a class="btn-vedette btn-vedette--blog"
              href="https://meichelus-art.blogspot.com/2026/09/toile-la-mine-graphite-lencre-et.html"
              target="_blank" rel="noopener noreferrer">
-            Lire l&rsquo;histoire de sa création
+            <span class="t-fr">Lire l&rsquo;histoire de sa création</span><span class="t-en">Read the story of its making (in French)</span>
           </a>
           <a class="btn-vedette btn-vedette--achat"
              href="https://l-amagie.sumupstore.com/product/thigmotropisme"
              target="_blank" rel="noopener noreferrer">
-            🎨 Acquérir cette toile
+            <span class="t-fr">🎨 Acquérir cette toile</span><span class="t-en">🎨 Acquire this painting</span>
           </a>
         </div>
       </div>
@@ -675,18 +706,20 @@ em{font-style:italic;color:#5a4a30;}
         </div>
       </div>
       <div class="toile-honneur-texte">
-        <span class="badge-vendu">Vendue à l&rsquo;exposition</span>
-        <span class="surtitre-vedette">Toile · 2026</span>
+        <span class="badge-vendu"><span class="t-fr">Vendue à l&rsquo;exposition</span><span class="t-en">Sold at the exhibition</span></span>
+        <span class="surtitre-vedette"><span class="t-fr">Toile · 2026</span><span class="t-en">Painting · 2026</span></span>
         <h3 class="titre-vedette">Le Papillon et la Libellule</h3>
-        <span class="toile-honneur-dims">44 × 54 cm avec passe-partout — encre, mine graphite et aquarelle</span>
-        <p class="desc-vedette">Née d&rsquo;une photographie des roseaux qui bordent l&rsquo;Ognon à Félines-Minervois, cette toile fait dialoguer le fouillis apparent du feuillage avec la trajectoire libre d&rsquo;un papillon à la poursuite d&rsquo;une libellule &mdash; une méditation graphique où, dans la densité végétale, la grâce discrète des ailes traverse le chaos pour y faire naître l&rsquo;équilibre. Un texte en prose accompagnera cette toile dans le recueil à paraître <em>Roseaux</em>.</p>
-        <p class="desc-vedette">Présentée lors de l&rsquo;exposition <em>Meichelus &amp; Jean-Michel Lafitte</em> au Coin d&rsquo;Art à Olonzac, elle y a trouvé acquéreuse.</p>
+        <span class="toile-honneur-dims"><span class="t-fr">44 × 54 cm avec passe-partout — encre, mine graphite et aquarelle</span><span class="t-en">44 × 54 cm with mount — ink, graphite and watercolour</span></span>
+        <p class="desc-vedette t-en">Born from a photograph of the reeds along the Ognon river in Félines-Minervois, this painting sets the apparent tangle of the foliage in dialogue with the free flight of a butterfly chasing a dragonfly &mdash; a graphic meditation in which, amid the dense vegetation, the quiet grace of wings crosses the chaos and brings balance out of it. A prose text will accompany this painting in the forthcoming collection <em>Roseaux</em>.</p>
+        <p class="desc-vedette t-fr">Née d&rsquo;une photographie des roseaux qui bordent l&rsquo;Ognon à Félines-Minervois, cette toile fait dialoguer le fouillis apparent du feuillage avec la trajectoire libre d&rsquo;un papillon à la poursuite d&rsquo;une libellule &mdash; une méditation graphique où, dans la densité végétale, la grâce discrète des ailes traverse le chaos pour y faire naître l&rsquo;équilibre. Un texte en prose accompagnera cette toile dans le recueil à paraître <em>Roseaux</em>.</p>
+        <p class="desc-vedette t-en">Shown at the exhibition <em>Meichelus &amp; Jean-Michel Lafitte</em> at Le Coin d&rsquo;Art in Olonzac, it found a buyer there.</p>
+        <p class="desc-vedette t-fr">Présentée lors de l&rsquo;exposition <em>Meichelus &amp; Jean-Michel Lafitte</em> au Coin d&rsquo;Art à Olonzac, elle y a trouvé acquéreuse.</p>
         <div class="vedette-liens">
           <a class="btn-vedette" href="https://meichelus-art.blogspot.com/2026/06/le-papillon-et-la-libellule.html" target="_blank" rel="noopener noreferrer">
-            Lire l&rsquo;histoire de sa création
+            <span class="t-fr">Lire l&rsquo;histoire de sa création</span><span class="t-en">Read the story of its making (in French)</span>
           </a>
           <a class="btn-vedette" href="https://lecoindart.wordpress.com/2026/09/01/meichelus-et-jean-michel-lafitte/" target="_blank" rel="noopener noreferrer">
-            Voir l&rsquo;exposition au Coin d&rsquo;Art — Olonzac
+            <span class="t-fr">Voir l&rsquo;exposition au Coin d&rsquo;Art — Olonzac</span><span class="t-en">See the exhibition at Le Coin d&rsquo;Art — Olonzac</span>
           </a>
         </div>
       </div>
@@ -696,8 +729,8 @@ em{font-style:italic;color:#5a4a30;}
          BLOC 2 — Le blog officiel de Meichelus
          ============================================================ -->
     <div class="section-titre reveler">
-      <h2>Atelier de Meichelus</h2>
-      <span class="legende">Peintures, dessins et actualités</span>
+      <h2><span class="t-fr">Atelier de Meichelus</span><span class="t-en">Meichelus&rsquo;s Studio</span></h2>
+      <span class="legende"><span class="t-fr">Peintures, dessins et actualités</span><span class="t-en">Paintings, drawings and news</span></span>
     </div>
 
     <!-- ============================================================
@@ -712,39 +745,42 @@ em{font-style:italic;color:#5a4a30;}
       <div class="derniere-toile-texte">
         <span class="dt-annee">2026 · Hautes-Alpes · Camargue</span>
         <h3>The Secret of the Morel</h3>
-        <p>Quelque part dans les bois des Hautes-Alpes, entre pierre et silence, une morille gardait son secret. Dessin à l&rsquo;encre, à la mine graphite et à l&rsquo;aquarelle, techniques mixtes — pierres alpines, feuilles d&rsquo;or, bois flotté de Camargue, libellules et coléoptères, branches enroulées de cuivre. Une œuvre-monde désormais exposée sur la scène internationale.</p>
+        <p class="t-en">Somewhere in the woods of the Hautes-Alpes, between stone and silence, a morel was keeping its secret. An ink, graphite and watercolour drawing in mixed media &mdash; Alpine stones, gold leaf, driftwood from the Camargue, dragonflies and beetles, branches wound with copper. A world-in-a-work, now shown on the international stage.</p>
+        <p class="t-fr">Quelque part dans les bois des Hautes-Alpes, entre pierre et silence, une morille gardait son secret. Dessin à l&rsquo;encre, à la mine graphite et à l&rsquo;aquarelle, techniques mixtes — pierres alpines, feuilles d&rsquo;or, bois flotté de Camargue, libellules et coléoptères, branches enroulées de cuivre. Une œuvre-monde désormais exposée sur la scène internationale.</p>
         <a class="btn-derniere"
            href="https://meichelus-art.blogspot.com/2026/06/the-secret-of-morel-une-fenetre-sur-la.html"
-           target="_blank" rel="noopener noreferrer">Pour en savoir plus</a>
+           target="_blank" rel="noopener noreferrer"><span class="t-fr">Pour en savoir plus</span><span class="t-en">Find out more</span></a>
       </div>
     </div>
 
     <div class="bloc-blog reveler">
-      <span class="surtitre">Galerie &amp; Blog officiel</span>
-      <h3>L&rsquo;univers pointilliste de Meichelus</h3>
-      <p>Découvrez ses œuvres, ses séries en cours et les actualités de l&rsquo;atelier — un voyage au cœur de la patience et de la lumière.</p>
+      <span class="surtitre"><span class="t-fr">Galerie &amp; Blog officiel</span><span class="t-en">Gallery &amp; Official Blog</span></span>
+      <h3><span class="t-fr">L&rsquo;univers pointilliste de Meichelus</span><span class="t-en">The pointillist world of Meichelus</span></h3>
+      <p class="t-fr">Découvrez ses œuvres, ses séries en cours et les actualités de l&rsquo;atelier — un voyage au cœur de la patience et de la lumière.</p>
+      <p class="t-en">Discover his works, his ongoing series and news from the studio — a journey into the heart of patience and light.</p>
       <div style="display:flex;flex-wrap:wrap;gap:16px;justify-content:center;">
         <a class="btn-blog" href="galerie-peintures.html">
-          Galerie des œuvres &mdash; Peintures &amp; Dessins
+          <span class="t-fr">Galerie des œuvres &mdash; Peintures &amp; Dessins</span><span class="t-en">Gallery &mdash; Paintings &amp; Drawings</span>
         </a>
         <a class="btn-blog"
            href="https://meichelus-art.blogspot.com/"
            target="_blank"
            rel="noopener noreferrer">
-          Visiter le blog &mdash; Actualités &amp; Atelier
+          <span class="t-fr">Visiter le blog &mdash; Actualités &amp; Atelier</span><span class="t-en">Visit the blog &mdash; News &amp; Studio</span>
         </a>
       </div>
     </div>
 
     <div class="infos-pratiques reveler">
-      <p>Pour toute demande de visite d&rsquo;atelier, commande sur mesure ou collaboration éditoriale, <a href="contact.html">écrivez-nous directement</a> — Meichelus vous répond personnellement.</p>
+      <p class="t-fr">Pour toute demande de visite d&rsquo;atelier, commande sur mesure ou collaboration éditoriale, <a href="contact.html">écrivez-nous directement</a> — Meichelus vous répond personnellement.</p>
+      <p class="t-en">For studio visits, commissions or editorial collaborations, <a href="contact.html">write to us directly</a> — Meichelus will reply personally.</p>
     </div>
 
     <!-- ============================================================
          RETOUR DISCRET VERS L'ACCUEIL
          ============================================================ -->
     <div class="retour-discret reveler">
-      <a href="index.html">Retour à l&rsquo;accueil</a>
+      <a href="index.html"><span class="t-fr">Retour à l&rsquo;accueil</span><span class="t-en">Back to home</span></a>
     </div>
 
   </main>
@@ -754,57 +790,77 @@ em{font-style:italic;color:#5a4a30;}
     <div class="filet-haut" aria-hidden="true"><span class="etoile">✦</span></div>
     <div class="plan-site-grille">
       <div class="plan-categorie">
-        <h2>Qui sommes-nous&nbsp;?</h2>
+        <h2><span class="t-fr">Qui sommes-nous&nbsp;?</span><span class="t-en">About Us</span></h2>
         <ul>
-          <li><a href="qui-sommes-nous.html">Qui sommes-nous</a></li>
-          <li><a href="fonctionnement.html">Fonctionnement de l&rsquo;association</a></li>
+          <li><a href="qui-sommes-nous.html"><span class="t-fr">Qui sommes-nous</span><span class="t-en">About Us</span></a></li>
+          <li><a href="fonctionnement.html"><span class="t-fr">Fonctionnement de l&rsquo;association</span><span class="t-en">How the Association Works</span></a></li>
           <li><a href="anouk-journo.html">Anouk Journo</a></li>
           <li><a href="peintures.html">Meichelus</a></li>
         </ul>
       </div>
       <div class="plan-categorie">
-        <h2>Ateliers &amp; Coaching</h2>
+        <h2><span class="t-fr">Ateliers &amp; Coaching</span><span class="t-en">Workshops &amp; Coaching</span></h2>
         <ul>
-          <li><a href="ateliers.html">Ateliers &amp; Coaching</a></li>
-          <li><a href="mots-pour-maux.html">Écriture thérapeutique</a></li>
-          <li><a href="mediation-animale.html">Médiation animale</a></li>
-          <li><a href="amis-mots.html">Collection Amis-Mots</a></li>
+          <li><a href="ateliers.html"><span class="t-fr">Ateliers &amp; Coaching</span><span class="t-en">Workshops &amp; Coaching</span></a></li>
+          <li><a href="mots-pour-maux.html"><span class="t-fr">Écriture thérapeutique</span><span class="t-en">Therapeutic Writing</span></a></li>
+          <li><a href="mediation-animale.html"><span class="t-fr">Médiation animale</span><span class="t-en">Animal Mediation</span></a></li>
+          <li><a href="amis-mots.html"><span class="t-fr">Collection Amis-Mots</span><span class="t-en">Friends-Words Collection (Collection Amis-Mots)</span></a></li>
         </ul>
       </div>
       <div class="plan-categorie">
-        <h2>Éditions</h2>
+        <h2><span class="t-fr">Éditions</span><span class="t-en">Editions</span></h2>
         <ul>
-          <li><a href="edition.html">Manuscrits &amp; projets</a></li>
-          <li><a href="edition.html#raconter-le-monde">Collection Raconter le monde</a></li>
-          <li><a href="edition.html#immersion">Collection Immersion</a></li>
-          <li><a href="edition.html#manifestes">Collection Manifestes</a></li>
-          <li><a href="edition.html#romans-jeunesse">Romans jeunesse</a></li>
+          <li><a href="edition.html"><span class="t-fr">Manuscrits &amp; projets</span><span class="t-en">Manuscripts &amp; Projects</span></a></li>
+          <li><a href="edition.html#raconter-le-monde"><span class="t-fr">Collection Raconter le monde</span><span class="t-en">Collection: Telling the World (Raconter le monde)</span></a></li>
+          <li><a href="edition.html#immersion"><span class="t-fr">Collection Immersion</span><span class="t-en">Immersion Collection</span></a></li>
+          <li><a href="edition.html#manifestes"><span class="t-fr">Collection Manifestes</span><span class="t-en">Manifestos Collection</span></a></li>
+          <li><a href="edition.html#romans-jeunesse"><span class="t-fr">Romans jeunesse</span><span class="t-en">Young Adult Novels</span></a></li>
+          <li><a href="lire-partout.html"><span class="t-fr">Lire partout : numérique &amp; éditions en langue anglaise</span><span class="t-en">Read worldwide: ebooks &amp; English-language editions</span></a></li>
         </ul>
       </div>
       <div class="plan-categorie">
-        <h2>Poésie &amp; Arts</h2>
+        <h2><span class="t-fr">Poésie &amp; Arts</span><span class="t-en">Poetry &amp; Arts</span></h2>
         <ul>
-          <li><a href="poesie.html">Poésie au jour le jour</a></li>
-          <li><a href="peintures.html">Peintures &amp; Dessins</a></li>
-          <li><a href="evenements.html">Événements &amp; Presse</a></li>
+          <li><a href="poesie.html"><span class="t-fr">Poésie au jour le jour</span><span class="t-en">Poetry Day by Day</span></a></li>
+          <li><a href="peintures.html"><span class="t-fr">Peintures &amp; Dessins</span><span class="t-en">Paintings &amp; Drawings</span></a></li>
+          <li><a href="evenements.html"><span class="t-fr">Événements &amp; Presse</span><span class="t-en">Events &amp; Press</span></a></li>
         </ul>
       </div>
       <div class="plan-categorie">
-        <h2>Liens utiles</h2>
+        <h2><span class="t-fr">Liens utiles</span><span class="t-en">Useful Links</span></h2>
         <ul>
-          <li><a href="boutique.html">Boutique</a></li>
+          <li><a href="boutique.html"><span class="t-fr">Boutique</span><span class="t-en">Shop</span></a></li>
           <li><a href="faq.html">FAQ</a></li>
           <li><a href="contact.html">Contact</a></li>
-          <li><a href="youtube.html">Chaîne Youtube</a></li>
-          <li><a href="mentions-legales.html">Mentions légales</a></li>
+          <li><a href="youtube.html"><span class="t-fr">Chaîne Youtube</span><span class="t-en">Youtube Channel</span></a></li>
+          <li><a href="mentions-legales.html"><span class="t-fr">Mentions légales</span><span class="t-en">Legal Notice</span></a></li>
         </ul>
       </div>
     </div>
-    <p class="plan-mentions">© L&rsquo;AMagie <span class="etoile">✦</span> Maison d&rsquo;édition indépendante <span class="etoile">✦</span> Félines-Minervois</p>
+    <p class="plan-mentions">© L&rsquo;AMagie <span class="etoile">✦</span> <span class="t-fr">Maison d&rsquo;édition indépendante</span><span class="t-en">Independent Publishing House</span> <span class="etoile">✦</span> Félines-Minervois</p>
     <p class="plan-webmaster">© Webmaster Meichelus : <a href="mailto:meichelus@l-amagie.art">meichelus@l-amagie.art</a></p>
   </section>
 
   <script>
+  /* ===== Langue FR / EN (mémorisée pour tout le site) ===== */
+  function setLanguage(lang) {
+    document.body.classList.toggle('lang-en', lang === 'en');
+    document.documentElement.lang = lang;
+    document.querySelectorAll('.lang-btn').forEach(function(b){
+      b.classList.toggle('active', b.getAttribute('data-lang') === lang);
+    });
+    try { localStorage.setItem('l-amagie-lang', lang); } catch(e) {}
+    
+  }
+  document.querySelectorAll('.lang-btn').forEach(function(b){
+    b.addEventListener('click', function(){ setLanguage(this.getAttribute('data-lang')); });
+  });
+  (function(){
+    var l = 'fr';
+    try { l = localStorage.getItem('l-amagie-lang') || 'fr'; } catch(e) {}
+    setLanguage(l);
+  })();
+
     if ('IntersectionObserver' in window) {
       var obs = new IntersectionObserver(function(entries){
         entries.forEach(function(e){

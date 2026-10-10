@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" translate="no" class="notranslate">
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -372,6 +372,27 @@ em{font-style:italic;color:#5a4a30;}
   .oeuvre-image img{ min-height:240px; }
   .oeuvre-annee{ font-size:2.4rem; }
 }
+
+/* ============================================================
+   BILINGUE FR/EN — sans traduction automatique
+   ============================================================ */
+.t-en{display:none !important;}
+body.lang-en .t-fr{display:none !important;}
+body.lang-en span.t-en{display:inline !important;}
+body.lang-en p.t-en{display:block !important;}
+.entete-retour{gap:16px;}
+.toggle-langue{display:flex;gap:8px;align-items:center;}
+.toggle-langue button{
+  background:transparent;border:1px solid rgba(184,154,92,.4);padding:4px 10px;border-radius:2px;
+  cursor:pointer;font-family:'Cormorant Garamond',Georgia,serif;font-size:0.8rem;color:#5a4a30;
+  transition:all 0.3s;letter-spacing:.08em;text-transform:uppercase;
+}
+.toggle-langue button.active{background:#b89a5c;color:white;border-color:#b89a5c;}
+.toggle-langue button:hover{background:rgba(184,154,92,.1);}
+@media(max-width:760px){
+  .toggle-langue{gap:6px;}
+  .toggle-langue button{padding:3px 8px;font-size:0.7rem;}
+}
 </style>
 </head>
 
@@ -388,7 +409,11 @@ em{font-style:italic;color:#5a4a30;}
   </div>
   <a href="index.html" class="entete-titre" aria-label="L'AMagie — Accueil">L&rsquo;AMagie</a>
   <div class="entete-retour">
-    <a href="index.html"><span>Retour à l&rsquo;accueil</span></a>
+      <div class="toggle-langue">
+        <button class="lang-btn active" data-lang="fr">FR</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+      </div>
+          <a href="index.html"><span><span class="t-fr">Retour à l&rsquo;accueil</span><span class="t-en">Back to home</span></span></a>
   </div>
 </header>
 
@@ -397,14 +422,14 @@ em{font-style:italic;color:#5a4a30;}
 ═════════════════════════════════════ -->
 <section class="heros-page">
   <nav class="fil-ariane" aria-label="Fil d'ariane">
-    <a href="index.html">Accueil</a>
+    <a href="index.html"><span class="t-fr">Accueil</span><span class="t-en">Home</span></a>
     <span class="sep">·</span>
-    <a href="peintures.html">Peintures &amp; Dessins</a>
+    <a href="peintures.html"><span class="t-fr">Peintures &amp; Dessins</span><span class="t-en">Paintings &amp; Drawings</span></a>
     <span class="sep">·</span>
-    <span>Galerie</span>
+    <span class="t-fr">Galerie</span><span class="t-en">Gallery</span>
   </nav>
-  <h1 class="titre-page">Peintures &amp; Dessins</h1>
-  <p class="sous-titre-page">Encres, graphites &amp; aquarelles — Minervois · Occitanie</p>
+  <h1 class="titre-page"><span class="t-fr">Peintures &amp; Dessins</span><span class="t-en">Paintings &amp; Drawings</span></h1>
+  <p class="sous-titre-page"><span class="t-fr">Encres, graphites &amp; aquarelles — Minervois · Occitanie</span><span class="t-en">Inks, graphite &amp; watercolours — Minervois · Occitanie</span></p>
   <div class="medaillon-titre" aria-hidden="true">✦</div>
 </section>
 
@@ -414,19 +439,21 @@ em{font-style:italic;color:#5a4a30;}
 <main class="contenu" role="main">
 
   <div class="retour-discret reveler" style="margin-bottom:24px;">
-    <a href="peintures.html">Retour à la présentation de Meichelus</a>
+    <a href="peintures.html"><span class="t-fr">Retour à la présentation de Meichelus</span><span class="t-en">Back to Meichelus&rsquo;s introduction</span></a>
   </div>
 
   <!-- Intro -->
   <article class="carte reveler">
-    <p><em>Meichelus</em>, peintre pointilliste et poète, partage ici ses œuvres récentes : dessins à la mine graphite et à l'encre de Chine, aquarelles, et sculptures — autant de fenêtres ouvertes sur le Minervois, ses pierres, ses vignes et ses mémoires enfouies.</p>
-    <p>Chaque toile naît d'un territoire, d'une rencontre ou d'un poème. Les formats varient de la feuille Canson au papier Hahnemühle, les techniques se mêlent — graphite, encre noire, aquarelle, pastels — mais le geste reste le même : rendre visible ce qui demeure.</p>
+    <p class="t-en"><em>Meichelus</em>, pointillist painter and poet, shares his recent work here: drawings in graphite and Indian ink, watercolours and sculptures — so many windows opening onto the Minervois, its stones, its vines and its buried memories.</p>
+    <p class="t-en">Each work is born of a place, an encounter or a poem. Formats range from Canson sheets to Hahnemühle paper, and techniques mingle — graphite, black ink, watercolour, pastels — but the gesture remains the same: to make visible what endures.</p>
+    <p class="t-fr"><em>Meichelus</em>, peintre pointilliste et poète, partage ici ses œuvres récentes : dessins à la mine graphite et à l'encre de Chine, aquarelles, et sculptures — autant de fenêtres ouvertes sur le Minervois, ses pierres, ses vignes et ses mémoires enfouies.</p>
+    <p class="t-fr">Chaque toile naît d'un territoire, d'une rencontre ou d'un poème. Les formats varient de la feuille Canson au papier Hahnemühle, les techniques se mêlent — graphite, encre noire, aquarelle, pastels — mais le geste reste le même : rendre visible ce qui demeure.</p>
   </article>
 
   <!-- Titre de section -->
   <div class="section-titre reveler">
-    <h2>Galerie</h2>
-    <span class="legende">Œuvres originales · 2024 – 2026</span>
+    <h2><span class="t-fr">Galerie</span><span class="t-en">Gallery</span></h2>
+    <span class="legende"><span class="t-fr">Œuvres originales · 2024 – 2026</span><span class="t-en">Original works · 2024 – 2026</span></span>
   </div>
 
   <!-- ═══════════════════════════════════
@@ -436,8 +463,9 @@ em{font-style:italic;color:#5a4a30;}
 
   <!-- Acquisition -->
   <div class="bloc-acquisition reveler">
-    <p>Chaque œuvre est disponible en original ou en copie numérotée — hologramme et certificat d'authenticité sur papier fine art, plexiglass, aluminium ou bois.</p>
-    <a class="btn-acquisition" href="mailto:editions@l-amagie.art">Demande d'acquisition</a>
+    <p class="t-fr">Chaque œuvre est disponible en original ou en copie numérotée — hologramme et certificat d'authenticité sur papier fine art, plexiglass, aluminium ou bois.</p>
+    <p class="t-en">Each work is available as an original or as a numbered print — with hologram and certificate of authenticity, on fine art paper, plexiglass, aluminium or wood.</p>
+    <a class="btn-acquisition" href="mailto:editions@l-amagie.art"><span class="t-fr">Demande d'acquisition</span><span class="t-en">Purchase enquiry</span></a>
   </div>
 
   <!-- Navigation suite -->
@@ -446,9 +474,9 @@ em{font-style:italic;color:#5a4a30;}
       <span class="etoile">✦</span>
     </div>
     <div class="navigation-suite-grille">
-      <a href="poesie.html">Poésie au jour le jour</a>
-      <a href="evenements.html">Événements &amp; Presse</a>
-      <a href="contact.html">Nous contacter</a>
+      <a href="poesie.html"><span class="t-fr">Poésie au jour le jour</span><span class="t-en">Poetry Day by Day</span></a>
+      <a href="evenements.html"><span class="t-fr">Événements &amp; Presse</span><span class="t-en">Events &amp; Press</span></a>
+      <a href="contact.html"><span class="t-fr">Nous contacter</span><span class="t-en">Contact us</span></a>
     </div>
   </nav>
 
@@ -458,57 +486,58 @@ em{font-style:italic;color:#5a4a30;}
      PLAN DU SITE (identique ateliers.html)
 ═════════════════════════════════════ -->
 <section class="plan-site" aria-label="Plan du site">
-  <div class="filet-haut" aria-hidden="true"><span class="etoile">✦</span></div>
-  <div class="plan-site-grille">
-    <div class="plan-categorie">
-      <h2>Qui sommes-nous&nbsp;?</h2>
-      <ul>
-        <li><a href="qui-sommes-nous.html">Qui sommes-nous</a></li>
-        <li><a href="fonctionnement.html">Fonctionnement de l&rsquo;association</a></li>
-        <li><a href="anouk-journo.html">Anouk Journo</a></li>
-      </ul>
+    <div class="filet-haut" aria-hidden="true"><span class="etoile">✦</span></div>
+    <div class="plan-site-grille">
+      <div class="plan-categorie">
+        <h2><span class="t-fr">Qui sommes-nous&nbsp;?</span><span class="t-en">About Us</span></h2>
+        <ul>
+          <li><a href="qui-sommes-nous.html"><span class="t-fr">Qui sommes-nous</span><span class="t-en">About Us</span></a></li>
+          <li><a href="fonctionnement.html"><span class="t-fr">Fonctionnement de l&rsquo;association</span><span class="t-en">How the Association Works</span></a></li>
+          <li><a href="anouk-journo.html">Anouk Journo</a></li>
+        </ul>
+      </div>
+      <div class="plan-categorie">
+        <h2><span class="t-fr">Ateliers &amp; Coaching</span><span class="t-en">Workshops &amp; Coaching</span></h2>
+        <ul>
+          <li><a href="ateliers.html"><span class="t-fr">Ateliers &amp; Coaching</span><span class="t-en">Workshops &amp; Coaching</span></a></li>
+          <li><a href="mots-pour-maux.html"><span class="t-fr">Écriture thérapeutique</span><span class="t-en">Therapeutic Writing</span></a></li>
+          <li><a href="mediation-animale.html"><span class="t-fr">Médiation animale</span><span class="t-en">Animal Mediation</span></a></li>
+          <li><a href="amis-mots.html"><span class="t-fr">Collection Amis-Mots</span><span class="t-en">Friends-Words Collection (Collection Amis-Mots)</span></a></li>
+        </ul>
+      </div>
+      <div class="plan-categorie">
+        <h2><span class="t-fr">Éditions</span><span class="t-en">Editions</span></h2>
+        <ul>
+          <li><a href="edition.html"><span class="t-fr">Manuscrits &amp; projets</span><span class="t-en">Manuscripts &amp; Projects</span></a></li>
+          <li><a href="edition.html#raconter-le-monde"><span class="t-fr">Collection Raconter le monde</span><span class="t-en">Collection: Telling the World (Raconter le monde)</span></a></li>
+          <li><a href="edition.html#immersion"><span class="t-fr">Collection Immersion</span><span class="t-en">Immersion Collection</span></a></li>
+          <li><a href="edition.html#manifestes"><span class="t-fr">Collection Manifestes</span><span class="t-en">Manifestos Collection</span></a></li>
+          <li><a href="edition.html#romans-jeunesse"><span class="t-fr">Romans jeunesse</span><span class="t-en">Young Adult Novels</span></a></li>
+          <li><a href="lire-partout.html"><span class="t-fr">Lire partout : numérique &amp; éditions en langue anglaise</span><span class="t-en">Read worldwide: ebooks &amp; English-language editions</span></a></li>
+        </ul>
+      </div>
+      <div class="plan-categorie">
+        <h2><span class="t-fr">Poésie &amp; Arts</span><span class="t-en">Poetry &amp; Arts</span></h2>
+        <ul>
+          <li><a href="poesie.html"><span class="t-fr">Poésie au jour le jour</span><span class="t-en">Poetry Day by Day</span></a></li>
+          <li><a href="peintures.html"><span class="t-fr">Peintures &amp; Dessins</span><span class="t-en">Paintings &amp; Drawings</span></a></li>
+          <li><a href="evenements.html"><span class="t-fr">Événements &amp; Presse</span><span class="t-en">Events &amp; Press</span></a></li>
+        </ul>
+      </div>
+      <div class="plan-categorie">
+        <h2><span class="t-fr">Liens utiles</span><span class="t-en">Useful Links</span></h2>
+        <ul>
+          <li><a href="boutique.html"><span class="t-fr">Boutique</span><span class="t-en">Shop</span></a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="youtube.html"><span class="t-fr">Chaîne Youtube</span><span class="t-en">Youtube Channel</span></a></li>
+          <li><a href="mentions-legales.html"><span class="t-fr">Mentions légales</span><span class="t-en">Legal Notice</span></a></li>
+        </ul>
+      </div>
     </div>
-    <div class="plan-categorie">
-      <h2>Ateliers &amp; Coaching</h2>
-      <ul>
-        <li><a href="ateliers.html">Ateliers &amp; Coaching</a></li>
-        <li><a href="mots-pour-maux.html">Écriture thérapeutique</a></li>
-        <li><a href="mediation-animale.html">Médiation animale</a></li>
-        <li><a href="amis-mots.html">Collection Amis-Mots</a></li>
-      </ul>
-    </div>
-    <div class="plan-categorie">
-      <h2>Éditions</h2>
-      <ul>
-        <li><a href="edition.html">Manuscrits &amp; projets</a></li>
-        <li><a href="edition.html#raconter-le-monde">Collection Raconter le monde</a></li>
-        <li><a href="edition.html#immersion">Collection Immersion</a></li>
-        <li><a href="edition.html#manifestes">Collection Manifestes</a></li>
-        <li><a href="edition.html#romans-jeunesse">Romans jeunesse</a></li>
-      </ul>
-    </div>
-    <div class="plan-categorie">
-      <h2>Poésie &amp; Arts</h2>
-      <ul>
-        <li><a href="poesie.html">Poésie au jour le jour</a></li>
-        <li><a href="peintures.html">Peintures &amp; Dessins</a></li>
-        <li><a href="evenements.html">Événements &amp; Presse</a></li>
-      </ul>
-    </div>
-    <div class="plan-categorie">
-      <h2>Liens utiles</h2>
-      <ul>
-        <li><a href="boutique.html">Boutique</a></li>
-        <li><a href="faq.html">FAQ</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="youtube.html">Chaîne Youtube</a></li>
-        <li><a href="mentions-legales.html">Mentions légales</a></li>
-      </ul>
-    </div>
-  </div>
-  <p class="plan-mentions">© L&rsquo;AMagie <span class="etoile">✦</span> Maison d&rsquo;édition indépendante <span class="etoile">✦</span> Félines-Minervois</p>
-  <p class="plan-webmaster">© Webmaster Meichelus : <a href="mailto:meichelus@l-amagie.art">meichelus@l-amagie.art</a></p>
-</section>
+    <p class="plan-mentions">© L&rsquo;AMagie <span class="etoile">✦</span> <span class="t-fr">Maison d&rsquo;édition indépendante</span><span class="t-en">Independent Publishing House</span> <span class="etoile">✦</span> Félines-Minervois</p>
+    <p class="plan-webmaster">© Webmaster Meichelus : <a href="mailto:meichelus@l-amagie.art">meichelus@l-amagie.art</a></p>
+  </section>
 
 <script>
 /* ═══════════════════════════════════════════════════════════
@@ -781,45 +810,162 @@ const OEUVRES = [
 ];
 
 /* ═══════════════════════════════════════════════════════════
-   RENDU AUTOMATIQUE
+   ✦  TRADUCTIONS ANGLAISES
+   Clé = le titre exact de l'œuvre (champ title ci-dessus).
+   Une œuvre absente d'ici s'affiche en français dans la
+   version anglaise : rien ne casse si on oublie de traduire.
+   Champs possibles : location, technique, desc, urlLabel,
+   achatLabel, expoLabel
 ═══════════════════════════════════════════════════════════ */
-(function() {
+const OEUVRES_EN = {
+  "Que trame ce papillon": {
+    location:  "“Butterflies and Dragonflies” series",
+    technique: "Ink, graphite and watercolour on paper — 44 × 54 cm with mount",
+    desc:      "A tangle of branches, roots and stone in which the eye gets lost, then finds its way again: the shapes waver between chaos and sign, like a weave being woven before our eyes. The only touch of colour, a butterfly settles there — the living spirit of this thicket, turned towards the light. Ink and graphite hold the whole together; a single touch of watercolour is enough to awaken it. An invitation to welcome complexity rather than flee it. A text in poetry and prose accompanies the painting on the blog.",
+    urlLabel:  "Read the poem and prose (in French)",
+    achatLabel:"🎨 Acquire this painting"
+  },
+  "Thigmotropisme": {
+    technique: "Graphite, ink and watercolour — 34 × 44 cm",
+    desc:      "On a stretch of wall overrun by Virginia creeper, the tendrils coil, feel their way and invent their own anchor points — touch, turning, the plant's way of clinging without ever freezing in place. A butterfly lands there for a moment, a fleeting presence at the heart of a patient architecture. Two ways of inhabiting the world that seem to share the same secret: we do not last by standing still, but by knowing how to bend without breaking, to hold on without shutting ourselves in.",
+    achatLabel:"🎨 Acquire this painting"
+  },
+  "Le Papillon et la Libellule": {
+    technique: "Ink, graphite and watercolour drawing — 44 × 54 cm with mount",
+    desc:      "In a tangle of reeds along the Ognon river in Félines-Minervois, a butterfly and a dragonfly slip in and open onto another dimension: that of movement set free. A graphic meditation in which the apparent chaos of the foliage reveals a living order, in motion, crossed by a quiet grace. Shown at the exhibition Meichelus & Jean-Michel Lafitte at Le Coin d'Art in Olonzac, it found a buyer there.",
+    expoLabel: "See the exhibition at Le Coin d'Art"
+  },
+  "The Secret of the Morel": {
+    technique: "Ink, graphite and watercolour drawing, mixed media — stones from the Hautes-Alpes, gold leaf, wood and objects from the Camargue, dragonflies, beetles, branches wound with copper and fabric, frame inlaid with glaze and faux walnut",
+    desc:      "Somewhere in the woods, between stone and silence, a morel was keeping its secret. This mirror of morels rises from a heap of leaves and branches — summoning the memory of Alpine paths, Camargue beaches and driftwood. A world-in-a-work, shown on the international stage via Saatchi Art."
+  },
+  "La souris rêveuse": {
+    technique: "Graphite, Indian ink, watercolour",
+    desc:      "The real world is not made for dreamers\n\nA programmed illusion of cruelty,\na soft filter over the harsh light,\nDotted lines needed between the eye and the fire."
+  },
+  "Le Seuil": {
+    technique: "Graphite, Indian ink, watercolour — 44 × 54 cm",
+    desc:      "A closed door on an old façade in the village. Within the arch a face emerges — not drawn, but revealed by the contrast itself. This work illustrates the manifesto of the same name published by Éditions L'AMagie."
+  },
+  "Ferrals-les-Montagnes": {
+    technique: "Ink and pastels — 44 × 54 cm",
+    desc:      "A memory of the iron mines, clinging to the slope, proud of its people. The lines intertwine from the roots of its history while the light gently reveals what endures."
+  },
+  "L'éveilleur d'Azille": {
+    technique: "Graphite, Indian ink, watercolour — 44 × 54 cm",
+    desc:      "Before the village, they were there. They still keep watch — without ruling, without owning, without destroying. A poem accompanies this painting, in praise of a gentler presence in the world."
+  },
+  "Als Catars, la mémoire de la pierre": {
+    technique: "Graphite, Indian ink, watercolour — 43 × 55 cm",
+    desc:      "Minerve as a living consciousness. The rock, the bridge, the walls and the garrigue carry a memory that time has not erased. The engraved stele acts as a threshold between History and inner transmission."
+  },
+  "Le gardien des très vents": {
+    technique: "Ink and graphite on paper — 43 × 55 cm",
+    desc:      "The windmill of Félines, standing on top of the Pech Maracassi, watches over the plain. Its silhouette lets an almost human form show through — a nod to Don Quixote and Cervantes. A motionless sentinel on the dividing line between the Hérault and the Aude, facing the winds."
+  },
+  "Cella Vinaria": {
+    technique: "Graphite, black ink, watercolour on Hahnemühle paper — 40 × 60 cm",
+    desc:      "A poetic portrait of an ancestral wine-growing village. Pared back, almost monochrome, the drawing sets buildings, vines and sky in dialogue. An almost hieroglyphic script surfaces among the vines, a graphic trace of time and labour."
+  },
+  "La place de l'apéro": {
+    technique: "Indian ink and graphite",
+    desc:      "A small square in the neighbourhood, the one where people meet, where the world is invented or retold. Lines, shadows, strokes and tiny dots take their time. A familiar place — seen, felt, reimagined."
+  },
+  "Vue du village de Félines-Minervois": {
+    technique: "Graphite and Indian ink",
+    desc:      "A Minervois landscape between hills and vines, in a soft, silent atmosphere. The line captures the soul of the village through its contours, its cast shadows and the air of the plateau."
+  },
+  "Bar le Minervois": {
+    technique: "Graphite and ink — 44 × 54 cm",
+    desc:      "The little square of the Bar le Minervois in Siran, in the calm of an Occitan village. A poppy and a daisy spring up through the asphalt — symbols of life and resistance. The stones speak; there is always a force that keeps pushing through."
+  },
+  "Coccinelle des vignes": {
+    technique: "Painting with mount — 40 × 60 cm",
+    desc:      "A tribute to the wine cooperative of Siran, in the heart of the Minervois. Between stone and memory, two discreet symbols: the red of the wine and its writing, and the ladybird, messenger of nature and luck."
+  },
+  "Quand les chausses souris, la vigne aussi": {
+    technique: "Indian ink, graphite & watercolour — 40 × 60 cm",
+    desc:      "Old shoes resting on a wooden bucket carry the memory of work in the vineyards: the dust, the mud, the weariness of a demanding trade. A tender, mischievous tribute to the vineyard workers and to harvest time."
+  },
+  "L'école de Félines": {
+    technique: "Indian ink & graphite — 40 × 60 cm",
+    desc:      "A personal look at a place essential to the village: the school. Between line and silence, the memory of a threshold everyone has crossed."
+  },
+  "Ombre bienveillante": {
+    technique: "Graphite, watercolour & Indian ink — 41 × 30 cm (frame 50 × 60 cm)",
+    desc:      "In the shade of the town hall, two tall trees; a step, a muzzle, murmured words — and the village listening. A work linked to the book « Paroles de Félinoises » and the collection « Mais où est L'Ô d'Hautpoul ? »."
+  },
+  "Hannibal et ses éléphants passant par le panier de Julie": {
+    technique: "Indian ink, graphite & watercolour — A3 (29.7 × 42 cm)",
+    desc:      "“Fragments of Dream” series. A familiar alleyway where the memory of the place takes on symbols: Hannibal and his elephants cross into the real, slipping reverie into everyday life in the Minervois."
+  },
+  "Le Grand Café Occitan": {
+    technique: "Indian ink, graphite & watercolour — A3 (29.7 × 42 cm)",
+    desc:      "“Fragments of Dream” series. The Occitan café caught between observation and dream, where village life is told around a table."
+  },
+  "Mon Félines imaginaire": {
+    technique: "Indian ink, graphite & watercolour — A3 (29.7 × 42 cm)",
+    desc:      "“Fragments of Dream” series. The village dreamed rather than described: an odd detail, a strange light turn the familiar into a fragment of dream. Acquired by the town council of Félines-Minervois."
+  },
+  "Arrival": {
+    technique: "Sculpture — driftwood, engraved stone, glass, acrylic, pastel, iridescent paint — 50 cm",
+    desc:      "Inspired by the Kachina dolls of the Hopi tribes, this sculpture tells of the arrival of the first beings from the stars on Earth. Each material and each colour symbolises an aspect of this mystical meeting between sky and ground."
+  }
+};
+
+/* Libellés de la galerie dans chaque langue */
+const LIBELLES = {
+  fr: { lire: "Lire l'article", acheter: "🎨 Acquérir cette toile", saatchi: "🎨 Acquérir sur Saatchi Art", expo: "Voir l'exposition", vendue: "Vendue",
+        tags: { "Original": "Original", "Sculpture": "Sculpture", "Illustration": "Illustration", "Vendue": "Vendue" } },
+  en: { lire: "Read the article (in French)", acheter: "🎨 Acquire this painting", saatchi: "🎨 Buy on Saatchi Art", expo: "See the exhibition", vendue: "Sold",
+        tags: { "Original": "Original", "Sculpture": "Sculpture", "Illustration": "Illustration", "Vendue": "Sold" } }
+};
+
+/* ═══════════════════════════════════════════════════════════
+   RENDU AUTOMATIQUE (se refait à chaque changement de langue)
+═══════════════════════════════════════════════════════════ */
+function rendreGalerie(lang) {
   var container = document.getElementById('galerie');
   if (!container) return;
+  container.innerHTML = '';
+  var L = LIBELLES[lang] || LIBELLES.fr;
 
   OEUVRES.forEach(function(o, i) {
     var pair = (i % 2 === 1);
+    var t = (lang === 'en' && OEUVRES_EN[o.title]) ? OEUVRES_EN[o.title] : {};
+    var location  = t.location  || o.location;
+    var technique = t.technique || o.technique;
+    var desc      = t.desc      || o.desc;
 
-    // Badge HTML (optionnel)
-    var badgeHTML = o.tag ? '<span class="oeuvre-badge">' + o.tag + '</span>' : '';
+    var tagTexte = o.tag ? (L.tags[o.tag] || o.tag) : '';
+    var badgeHTML = tagTexte ? '<span class="oeuvre-badge">' + tagTexte + '</span>' : '';
+    var rubanHTML = o.sold ? '<span class="oeuvre-ruban">' + L.vendue + '</span>' : '';
 
-    // Ruban "Vendue" sur l'image (optionnel)
-    var rubanHTML = o.sold ? '<span class="oeuvre-ruban">Vendue</span>' : '';
+    var lireLabel  = lang === 'en' ? (t.urlLabel || L.lire) : (o.urlLabel || L.lire);
+    var achatLabel = lang === 'en' ? (t.achatLabel || L.acheter) : (o.achatLabel || L.acheter);
+    var expoLabel  = lang === 'en' ? (t.expoLabel || L.expo) : (o.expoLabel || L.expo);
 
-    // Boutons d'action (lien blog + Saatchi + exposition si disponibles)
-    var actionsHTML = '<a class="oeuvre-lien" href="' + o.url + '" target="_blank" rel="noopener noreferrer">' + (o.urlLabel || 'Lire l\'article') + '</a>';
+    var actionsHTML = '<a class="oeuvre-lien" href="' + o.url + '" target="_blank" rel="noopener noreferrer">' + lireLabel + '</a>';
     if (o.achat) {
-      actionsHTML += '<a class="oeuvre-lien oeuvre-lien--achat" href="' + o.achat + '" target="_blank" rel="noopener noreferrer">' + (o.achatLabel || '🎨 Acquérir cette toile') + '</a>';
+      actionsHTML += '<a class="oeuvre-lien oeuvre-lien--achat" href="' + o.achat + '" target="_blank" rel="noopener noreferrer">' + achatLabel + '</a>';
     }
     if (o.saatchi) {
-      actionsHTML += '<a class="oeuvre-lien oeuvre-lien--achat" href="' + o.saatchi + '" target="_blank" rel="noopener noreferrer">🎨 Acquérir sur Saatchi Art</a>';
+      actionsHTML += '<a class="oeuvre-lien oeuvre-lien--achat" href="' + o.saatchi + '" target="_blank" rel="noopener noreferrer">' + L.saatchi + '</a>';
     }
     if (o.expo) {
-      actionsHTML += '<a class="oeuvre-lien" href="' + o.expo + '" target="_blank" rel="noopener noreferrer">' + (o.expoLabel || 'Voir l\'exposition') + '</a>';
+      actionsHTML += '<a class="oeuvre-lien" href="' + o.expo + '" target="_blank" rel="noopener noreferrer">' + expoLabel + '</a>';
     }
 
-    // Colonne texte
     var metaHTML = '<div class="oeuvre-meta">'
       + '<div class="oeuvre-annee">' + o.year + '</div>'
-      + (o.location ? '<div class="oeuvre-filet"><span class="oeuvre-lieu">' + o.location + '</span></div>' : '')
+      + (location ? '<div class="oeuvre-filet"><span class="oeuvre-lieu">' + location + '</span></div>' : '')
       + '<h2 class="oeuvre-titre">' + o.title + '</h2>'
-      + (o.technique ? '<p class="oeuvre-technique">' + o.technique + '</p>' : '')
-      + (o.desc ? '<p class="oeuvre-desc">' + o.desc + '</p>' : '')
+      + (technique ? '<p class="oeuvre-technique">' + technique + '</p>' : '')
+      + (desc ? '<p class="oeuvre-desc">' + desc + '</p>' : '')
       + badgeHTML
       + actionsHTML
       + '</div>';
 
-    // Colonne image
     var imgHTML = '<div class="oeuvre-image">'
       + '<img src="' + o.img + '" alt="' + o.title + ' — Meichelus" loading="lazy"/>'
       + rubanHTML
@@ -832,7 +978,7 @@ const OEUVRES = [
     container.appendChild(article);
   });
 
-  // Scroll reveal sur les entrées
+  // Apparition au défilement
   if ('IntersectionObserver' in window) {
     var obs = new IntersectionObserver(function(entries) {
       entries.forEach(function(e) {
@@ -846,7 +992,27 @@ const OEUVRES = [
   } else {
     document.querySelectorAll('.oeuvre').forEach(function(el) { el.classList.add('visible'); });
   }
-})();
+}
+
+
+  /* ===== Langue FR / EN (mémorisée pour tout le site) ===== */
+  function setLanguage(lang) {
+    document.body.classList.toggle('lang-en', lang === 'en');
+    document.documentElement.lang = lang;
+    document.querySelectorAll('.lang-btn').forEach(function(b){
+      b.classList.toggle('active', b.getAttribute('data-lang') === lang);
+    });
+    try { localStorage.setItem('l-amagie-lang', lang); } catch(e) {}
+    rendreGalerie(lang);
+  }
+  document.querySelectorAll('.lang-btn').forEach(function(b){
+    b.addEventListener('click', function(){ setLanguage(this.getAttribute('data-lang')); });
+  });
+  (function(){
+    var l = 'fr';
+    try { l = localStorage.getItem('l-amagie-lang') || 'fr'; } catch(e) {}
+    setLanguage(l);
+  })();
 
 /* ═══════════════════════════════════════════════════════════
    SCROLL REVEAL (éléments .reveler)

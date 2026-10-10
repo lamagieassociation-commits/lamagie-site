@@ -4,8 +4,9 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <meta name="google" content="notranslate"/>
+<meta http-equiv="Content-Language" content="fr"/>
 <title>Lire partout — L'AMagie</title>
-<meta name="description" content="Les livres des éditions L'AMagie en numérique et en anglais : poésie, albums et romans d'Anouk Journo et Meichelus, disponibles en France et outre-Atlantique."/>
+<meta name="description" content="Les livres des éditions L'AMagie en numérique et en langue anglaise : poésie, albums et romans d'Anouk Journo et Meichelus, disponibles en France et outre-Atlantique."/>
 
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
@@ -16,57 +17,189 @@
 html,body{overflow-x:hidden;}
 html{scroll-behavior:smooth;}
 
+/* ============================================================
+   FOND PARCHEMIN — même ambiance que les autres pages
+   ============================================================ */
 body{
   background-color:#ece2c8;
   color:#3a3220;
   font-family:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  font-weight:400;
   font-size:17px;
   line-height:1.75;
   min-height:100vh;
   -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
   text-rendering:optimizeLegibility;
   background-image:
-    radial-gradient(ellipse 55% 50% at 12% 18%, rgba(146,96,38,.12) 0%, transparent 60%),
-    radial-gradient(ellipse 50% 55% at 88% 82%, rgba(132,88,36,.11) 0%, transparent 60%),
-    radial-gradient(ellipse 60% 45% at 78% 18%, rgba(170,128,60,.09) 0%, transparent 65%),
+    radial-gradient(ellipse 55% 50% at 12% 18%,  rgba(146, 96, 38, 0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 55% at 88% 82%,  rgba(132, 88, 36, 0.11) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 45% at 78% 18%,  rgba(170,128, 60, 0.09) 0%, transparent 65%),
+    radial-gradient(ellipse 55% 50% at 22% 82%,  rgba(160,118, 50, 0.10) 0%, transparent 65%),
+    radial-gradient(ellipse 75% 60% at 50% 35%,  rgba(212,176,114, 0.10) 0%, transparent 75%),
     linear-gradient(135deg, #f1ead4 0%, #e8dec0 50%, #ecdfc2 100%),
     url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='280' height='280'><filter id='g'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' seed='4'/><feColorMatrix values='0 0 0 0 0.42 0 0 0 0 0.32 0 0 0 0 0.17 0 0 0 0.22 0'/></filter><rect width='100%25' height='100%25' filter='url(%23g)'/></svg>");
   background-attachment:fixed;
-  background-size:auto,auto,auto,auto,280px 280px;
-  background-repeat:no-repeat,no-repeat,no-repeat,no-repeat,repeat;
+  background-size:auto,auto,auto,auto,auto,auto,280px 280px;
+  background-repeat:no-repeat,no-repeat,no-repeat,no-repeat,no-repeat,no-repeat,repeat;
 }
 a{color:inherit;text-decoration:none;}
 img{max-width:100%;height:auto;display:block;}
 em{font-style:italic;color:#5a4a30;}
-::selection{background:rgba(184,154,92,.32);}
+::selection{background:rgba(184,154,92,.32);color:#3a3220;}
 
-.bandeau-top{
-  padding:8px 40px;font-size:.9rem;color:#5a4a30;
-  border-bottom:1px solid rgba(184,154,92,.2);
-  display:flex;justify-content:space-between;align-items:center;gap:12px;
+/* Bilingue : textes fixes en <span class="t-fr"> / <span class="t-en"> */
+.t-en{display:none;}
+body.lang-en .t-fr{display:none;}
+body.lang-en .t-en{display:inline;}
+
+/* ============================================================
+   HEADER CONSTANT — logo gauche, titre centre, retour droite
+   ============================================================ */
+.entete-site{
+  position:relative;
+  z-index:10;
+  display:grid;
+  grid-template-columns:1fr auto 1fr;
+  align-items:center;
+  gap:24px;
+  padding:24px 40px;
+  border-bottom:1px solid rgba(184,154,92,.28);
+  background:linear-gradient(180deg, rgba(241,234,212,.55), rgba(236,226,200,.25));
+  backdrop-filter:blur(1px);
 }
-.retour{color:#5a4a30;}
-.retour:hover{color:#b89a5c;}
-.toggle-langue{display:flex;gap:12px;}
+.entete-logo{display:flex;align-items:center;justify-content:flex-start;}
+.entete-logo img{height:55px;width:auto;display:block;}
+.entete-titre{
+  text-align:center;
+  font-weight:500;
+  font-size:clamp(1.8rem,3.2vw,2.6rem);
+  color:#3a3220;
+  letter-spacing:.01em;
+  line-height:1;
+}
+.entete-retour{display:flex;align-items:center;justify-content:flex-end;gap:16px;}
+.toggle-langue{display:flex;gap:8px;align-items:center;}
 .toggle-langue button{
-  background:transparent;border:1px solid rgba(184,154,92,.4);padding:4px 12px;border-radius:2px;
-  cursor:pointer;font-family:inherit;font-size:.85rem;color:#5a4a30;transition:all .3s;
+  background:transparent;
+  border:1px solid rgba(184,154,92,.4);
+  padding:4px 10px;
+  border-radius:2px;
+  cursor:pointer;
+  font-family:'Cormorant Garamond',Georgia,serif;
+  font-size:0.8rem;
+  color:#5a4a30;
+  transition:all 0.3s;
+  letter-spacing:.08em;
+  text-transform:uppercase;
 }
-.toggle-langue button.active{background:#b89a5c;color:#fff;border-color:#b89a5c;}
+.toggle-langue button.active{background:#b89a5c;color:white;border-color:#b89a5c;}
 .toggle-langue button:hover{background:rgba(184,154,92,.1);}
-
-header.intro{max-width:760px;margin:56px auto 24px;padding:0 24px;text-align:center;}
-.surtitre{font-family:'Pinyon Script',cursive;font-size:2rem;color:#b89a5c;line-height:1.2;}
-h1{font-size:2.4rem;font-weight:500;margin:4px 0 18px;letter-spacing:.01em;}
-.intro p{font-size:1.15rem;color:#5a4a30;}
-.ornement{color:#b89a5c;margin:28px 0 0;letter-spacing:.6em;}
-
-main{max-width:1040px;margin:0 auto;padding:0 24px 40px;}
-h2.rubrique{
-  font-size:1.5rem;font-weight:500;text-align:center;margin:56px 0 28px;
-  display:flex;align-items:center;gap:18px;
+.entete-retour a{
+  font-size:.92rem;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:#5a4a30;
+  padding:8px 18px;
+  border:1px solid rgba(184,154,92,.4);
+  border-radius:2px;
+  transition:color .3s, background-color .3s, border-color .3s;
+  white-space:nowrap;
 }
-h2.rubrique::before,h2.rubrique::after{content:'';flex:1;border-top:1px solid rgba(184,154,92,.35);}
+.entete-retour a::before{content:'⌂ ';margin-right:.25em;letter-spacing:0;}
+.entete-retour a:hover{color:#b89a5c;border-color:#b89a5c;background:rgba(184,154,92,.07);}
+@media(max-width:760px){
+  .entete-site{grid-template-columns:auto 1fr auto;padding:14px 16px;gap:12px;}
+  .entete-logo img{height:42px;}
+  .entete-titre{font-size:1.4rem;}
+  .toggle-langue{gap:6px;}
+  .toggle-langue button{padding:3px 8px;font-size:0.7rem;}
+  .entete-retour a{font-size:.7rem;letter-spacing:.1em;padding:6px 10px;}
+  .entete-retour a::before{content:'⌂';margin-right:0;}
+  .entete-retour a .libelle{display:none;}
+}
+
+/* ============================================================
+   HÉROS DE PAGE
+   ============================================================ */
+.heros-page{
+  text-align:center;
+  padding:64px 20px 28px;
+  max-width:760px;
+  margin:0 auto;
+}
+.fil-ariane{
+  display:inline-block;
+  font-size:.72rem;
+  letter-spacing:.32em;
+  text-transform:uppercase;
+  color:#5a4a30;
+  margin-bottom:24px;
+}
+.fil-ariane a{color:#8a6d2f;transition:color .3s;}
+.fil-ariane a:hover{color:#b89a5c;}
+.fil-ariane .sep{margin:0 .55em;color:rgba(184,154,92,.55);}
+.titre-page{
+  font-weight:500;
+  font-size:clamp(2.4rem,5.5vw,3.8rem);
+  color:#3a3220;
+  letter-spacing:.005em;
+  line-height:1.1;
+  margin:0 0 14px;
+}
+.sous-titre-page{
+  font-family:'Pinyon Script','Cormorant Garamond',cursive;
+  font-size:clamp(1.4rem,2.5vw,1.95rem);
+  color:#7a6a48;
+  line-height:1.3;
+}
+.medaillon-titre{
+  width:54px;height:54px;
+  margin:32px auto 0;
+  border-radius:50%;
+  border:1px solid rgba(184,154,92,.5);
+  box-shadow:0 0 0 5px rgba(241,234,212,.6), 0 0 0 6px rgba(184,154,92,.18);
+  display:flex;align-items:center;justify-content:center;
+  color:#b89a5c;font-size:1.1rem;
+}
+
+/* ============================================================
+   INTRODUCTION (carte parchemin clair)
+   ============================================================ */
+.contenu{max-width:1040px;margin:0 auto;padding:0 20px 40px;}
+.carte{
+  max-width:800px;
+  background:rgba(246,239,216,.62);
+  border:1px solid rgba(184,154,92,.22);
+  border-radius:2px;
+  padding:40px 56px;
+  margin:0 auto 20px;
+  position:relative;
+  box-shadow:0 4px 14px rgba(90,74,48,.06), 0 1px 2px rgba(90,74,48,.04);
+  text-align:center;
+}
+.carte::before,.carte::after{
+  content:'';position:absolute;width:18px;height:18px;
+  border:1px solid rgba(184,154,92,.45);pointer-events:none;
+}
+.carte::before{top:6px;left:6px;border-right:0;border-bottom:0;}
+.carte::after{bottom:6px;right:6px;border-left:0;border-top:0;}
+.carte p{font-size:1.08rem;line-height:1.85;}
+@media(max-width:600px){.carte{padding:28px 22px;}.carte p{font-size:1rem;}}
+
+/* ============================================================
+   CATALOGUE
+   ============================================================ */
+.section-titre{text-align:center;margin:56px 0 24px;}
+.section-titre h2{
+  display:inline-block;font-weight:500;font-size:clamp(1.3rem,2.6vw,1.7rem);
+  letter-spacing:.18em;color:#3a3220;text-transform:uppercase;position:relative;padding:0 30px;
+}
+.section-titre h2::before,.section-titre h2::after{
+  content:'❦';position:absolute;top:50%;transform:translateY(-50%);color:#b89a5c;font-size:.85em;
+}
+.section-titre h2::before{left:0;}
+.section-titre h2::after{right:0;}
 
 .oeuvre{
   display:grid;grid-template-columns:180px 1fr;gap:32px;
@@ -93,7 +226,6 @@ h2.rubrique::before,h2.rubrique::after{content:'';flex:1;border-top:1px solid rg
   display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:6px 16px;
   padding:8px 0;border-bottom:1px dotted rgba(184,154,92,.5);
 }
-.ed-info{font-size:1rem;}
 .ed-info .format{font-weight:600;}
 .ed-info .titre-ed{font-style:italic;}
 .ed-info .isbn{font-size:.85rem;color:#8a7a58;margin-left:6px;}
@@ -105,51 +237,184 @@ h2.rubrique::before,h2.rubrique::after{content:'';flex:1;border-top:1px solid rg
 .btn:hover{background:#b89a5c;color:#fff;}
 .bientot{font-size:.9rem;font-style:italic;color:#8a7a58;}
 
-.pied-intro{max-width:760px;margin:40px auto 0;padding:0 24px;text-align:center;color:#5a4a30;}
+.pied-intro{max-width:760px;margin:40px auto 0;text-align:center;color:#5a4a30;}
 .pied-intro a{border-bottom:1px solid rgba(184,154,92,.6);}
 .pied-intro a:hover{color:#b89a5c;}
-footer{
-  text-align:center;padding:40px 24px;margin-top:48px;
-  border-top:1px solid rgba(184,154,92,.2);color:#5a4a30;font-size:.9rem;
-}
 
 @media(max-width:700px){
-  .bandeau-top{padding:10px 16px;}
-  header.intro{margin-top:36px;padding:0 16px;}
-  h1{font-size:1.9rem;}
-  main{padding:0 16px 24px;}
   .oeuvre{grid-template-columns:1fr;gap:18px;}
   .couverture{width:150px;margin:0 auto;}
-  .oeuvre h3{text-align:center;}
-  .auteurs{text-align:center;}
+  .oeuvre h3,.auteurs{text-align:center;}
+}
+
+/* ============================================================
+   PLAN DU SITE (footer commun)
+   ============================================================ */
+.plan-site{
+  padding:48px 24px 36px;
+  max-width:1080px;
+  margin:0 auto;
+  text-align:center;
+  color:#3a3220;
+  border-top:1px solid rgba(184,154,92,.25);
+}
+.filet-haut{
+  display:flex;align-items:center;justify-content:center;gap:14px;
+  margin:0 auto 28px;max-width:200px;
+}
+.filet-haut::before,.filet-haut::after{
+  content:'';flex:1;height:1px;
+  background:linear-gradient(90deg,transparent,rgba(184,154,92,.55),transparent);
+}
+.filet-haut .etoile{color:#b89a5c;font-size:.85rem;line-height:1;}
+.plan-site-grille{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:24px 32px;text-align:left;margin-bottom:28px;
+}
+.plan-categorie h2{
+  font-weight:500;font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;
+  color:#5a4a30;margin:0 0 10px;padding-bottom:6px;border-bottom:1px solid rgba(184,154,92,.22);
+}
+.plan-categorie ul{list-style:none;}
+.plan-categorie li{font-size:.92rem;line-height:1.65;margin-bottom:2px;}
+.plan-categorie a{color:#3a3220;transition:color .3s;border-bottom:1px solid transparent;}
+.plan-categorie a:hover{color:#b89a5c;border-bottom-color:rgba(184,154,92,.4);}
+.plan-mentions{font-size:.78rem;letter-spacing:.16em;color:#7a6a48;text-transform:uppercase;}
+.plan-mentions .etoile{color:#b89a5c;margin:0 .6em;}
+.plan-webmaster{
+  margin:14px auto 0;max-width:340px;padding-top:10px;border-top:1px solid rgba(184,154,92,.18);
+  font-style:italic;font-size:.78rem;letter-spacing:.08em;color:#8a6d2f;text-align:center;
+}
+.plan-webmaster a{border-bottom:1px solid rgba(184,154,92,.3);transition:color .3s, border-color .3s;}
+.plan-webmaster a:hover{color:#b89a5c;border-bottom-color:#b89a5c;}
+@media(max-width:560px){
+  .plan-site{padding:32px 18px 24px;}
+  .plan-site-grille{gap:18px;text-align:center;}
+  .plan-categorie h2{text-align:center;}
+  .plan-mentions{font-size:.7rem;letter-spacing:.12em;}
 }
 </style>
 </head>
+
 <body>
 
-<div class="bandeau-top">
-  <a href="index.html" class="retour" data-t="retour"></a>
-  <div class="toggle-langue">
-    <button class="lang-btn active" data-lang="fr">FR</button>
-    <button class="lang-btn" data-lang="en">EN</button>
-  </div>
-</div>
+  <!-- HEADER CONSTANT — identique aux autres pages -->
+  <header class="entete-site" role="banner">
+    <div class="entete-logo">
+      <a href="index.html" aria-label="Retour à l'accueil de L'AMagie">
+        <img src="images/logo-amagie.png" alt="Monogramme L'AMagie" onerror="this.style.display='none'"/>
+      </a>
+    </div>
+    <a href="index.html" class="entete-titre" aria-label="L'AMagie — Accueil">L&rsquo;AMagie</a>
+    <div class="entete-retour">
+      <div class="toggle-langue">
+        <button class="lang-btn active" data-lang="fr">FR</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+      </div>
+      <a href="index.html"><span class="libelle"><span class="t-fr">Retour à l&rsquo;accueil</span><span class="t-en">Back to home</span></span></a>
+    </div>
+  </header>
 
-<header class="intro">
-  <div class="surtitre" data-t="surtitre"></div>
-  <h1 data-t="titre"></h1>
-  <p data-t="intro"></p>
-  <div class="ornement">✦ ✦ ✦</div>
-</header>
+  <!-- HÉROS DE PAGE -->
+  <section class="heros-page">
+    <nav class="fil-ariane" aria-label="Fil d'ariane">
+      <a href="index.html"><span class="t-fr">Accueil</span><span class="t-en">Home</span></a>
+      <span class="sep">·</span>
+      <a href="edition.html"><span class="t-fr">Éditions</span><span class="t-en">Editions</span></a>
+      <span class="sep">·</span>
+      <span class="t-fr">Lire partout</span><span class="t-en">Read worldwide</span>
+    </nav>
+    <h1 class="titre-page">
+      <span class="t-fr">Lire partout</span><span class="t-en">Read worldwide</span>
+    </h1>
+    <p class="sous-titre-page">
+      <span class="t-fr">Nos livres voyagent</span><span class="t-en">Our books travel</span>
+    </p>
+    <div class="medaillon-titre" aria-hidden="true">✦</div>
+  </section>
 
-<main id="catalogue"></main>
+  <main class="contenu" role="main">
 
-<p class="pied-intro" data-t="pied" data-html></p>
+    <article class="carte">
+      <p>
+        <span class="t-fr">Certains de nos livres existent en version numérique, d&rsquo;autres ont pris un titre anglais et traversé l&rsquo;Atlantique. Vous les trouverez tous ici, avec un lien direct vers les librairies en ligne qui les proposent.</span>
+        <span class="t-en">Some of our books are available as ebooks, others have crossed the Atlantic in English. You will find them all here, with direct links to the online bookstores that carry them.</span>
+      </p>
+    </article>
 
-<footer>
-  <span data-t="footer"></span><br/>
-  © Webmaster Meichelus
-</footer>
+    <div id="catalogue"></div>
+
+    <p class="pied-intro">
+      <span class="t-fr">Nos éditions papier en français se commandent aussi dans votre librairie ou depuis notre <a href="boutique.html">boutique</a>.</span>
+      <span class="t-en">Our French print editions can also be ordered from your local bookshop or from our <a href="boutique.html">shop</a>.</span>
+    </p>
+
+  </main>
+
+  <!-- PLAN DU SITE (footer commun) -->
+  <section class="plan-site" aria-label="Plan du site">
+    <div class="filet-haut" aria-hidden="true"><span class="etoile">✦</span></div>
+
+    <div class="plan-site-grille">
+
+      <div class="plan-categorie">
+        <h2><span class="t-fr">Qui sommes-nous&nbsp;?</span><span class="t-en">About Us</span></h2>
+        <ul>
+          <li><a href="qui-sommes-nous.html"><span class="t-fr">Qui sommes-nous</span><span class="t-en">About Us</span></a></li>
+          <li><a href="fonctionnement.html"><span class="t-fr">Fonctionnement de l&rsquo;association</span><span class="t-en">How the Association Works</span></a></li>
+          <li><a href="anouk-journo.html">Anouk Journo</a></li>
+        </ul>
+      </div>
+
+      <div class="plan-categorie">
+        <h2><span class="t-fr">Ateliers &amp; Coaching</span><span class="t-en">Workshops &amp; Coaching</span></h2>
+        <ul>
+          <li><a href="ateliers.html"><span class="t-fr">Ateliers &amp; Coaching</span><span class="t-en">Workshops &amp; Coaching</span></a></li>
+          <li><a href="mots-pour-maux.html"><span class="t-fr">Écriture thérapeutique</span><span class="t-en">Therapeutic Writing</span></a></li>
+          <li><a href="mediation-animale.html"><span class="t-fr">Médiation animale</span><span class="t-en">Animal Mediation</span></a></li>
+          <li><a href="amis-mots.html"><span class="t-fr">Collection Amis-Mots</span><span class="t-en">Friends-Words Collection (Collection Amis-Mots)</span></a></li>
+        </ul>
+      </div>
+
+      <div class="plan-categorie">
+        <h2><span class="t-fr">Éditions</span><span class="t-en">Editions</span></h2>
+        <ul>
+          <li><a href="edition.html"><span class="t-fr">Manuscrits &amp; projets</span><span class="t-en">Manuscripts &amp; Projects</span></a></li>
+          <li><a href="edition.html#raconter-le-monde"><span class="t-fr">Collection Raconter le monde</span><span class="t-en">Collection: Telling the World (Raconter le monde)</span></a></li>
+          <li><a href="edition.html#immersion"><span class="t-fr">Collection Immersion</span><span class="t-en">Immersion Collection</span></a></li>
+          <li><a href="edition.html#manifestes"><span class="t-fr">Collection Manifestes</span><span class="t-en">Manifestos Collection</span></a></li>
+          <li><a href="edition.html#romans-jeunesse"><span class="t-fr">Romans jeunesse</span><span class="t-en">Young Adult Novels</span></a></li>
+          <li><a href="lire-partout.html"><span class="t-fr">Lire partout : numérique &amp; éditions en langue anglaise</span><span class="t-en">Read worldwide: ebooks &amp; English-language editions</span></a></li>
+        </ul>
+      </div>
+
+      <div class="plan-categorie">
+        <h2><span class="t-fr">Poésie &amp; Arts</span><span class="t-en">Poetry &amp; Arts</span></h2>
+        <ul>
+          <li><a href="poesie.html"><span class="t-fr">Poésie au jour le jour</span><span class="t-en">Poetry Day by Day</span></a></li>
+          <li><a href="peintures.html"><span class="t-fr">Peintures &amp; Dessins</span><span class="t-en">Paintings &amp; Drawings</span></a></li>
+          <li><a href="evenements.html"><span class="t-fr">Événements &amp; Presse</span><span class="t-en">Events &amp; Press</span></a></li>
+        </ul>
+      </div>
+
+      <div class="plan-categorie">
+        <h2><span class="t-fr">Liens utiles</span><span class="t-en">Useful Links</span></h2>
+        <ul>
+          <li><a href="boutique.html"><span class="t-fr">Boutique</span><span class="t-en">Shop</span></a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="youtube.html"><span class="t-fr">Chaîne Youtube</span><span class="t-en">Youtube Channel</span></a></li>
+          <li><a href="mentions-legales.html"><span class="t-fr">Mentions légales</span><span class="t-en">Legal Notice</span></a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <p class="plan-mentions">
+      © L&rsquo;AMagie <span class="etoile">✦</span> <span class="t-fr">Maison d&rsquo;édition indépendante</span><span class="t-en">Independent Publishing House</span> <span class="etoile">✦</span> Félines-Minervois
+    </p>
+    <p class="plan-webmaster">© Webmaster Meichelus : <a href="mailto:meichelus@l-amagie.art">meichelus@l-amagie.art</a></p>
+  </section>
 
 <script>
 /* =====================================================================
@@ -229,9 +494,23 @@ const CATALOGUE = [
           { format: "broche", langue: "en", titre: "The Cat Who Had No Name", isbn: "9791098117015",
             liens: { bookshop: "https://bookshop.org/search?keywords=9791098117015" } },
           { format: "ebook", langue: "en", titre: "The Cat Who Had No Name", isbn: "9791098117022",
-            liens: { apple: "" } },
-          { format: "ebook", langue: "fr", titre: "Moustache, le roi des coussins", premiere: true, isbn: "9791098116964",
-            liens: { apple: "https://books.apple.com/fr/book/moustache-le-roi-des-coussins/id6764106717" } }
+            liens: { apple: "" } }
+        ]
+      },
+      {
+        titre: { fr: "Moustache, le roi des coussins", en: "Moustache, le roi des coussins" },
+        auteurs: { fr: "Anouk Journo · illustrations de Meichelus", en: "Anouk Journo · illustrated by Meichelus" },
+        resume: {
+          fr: "Un grand chat noir sans nom vit seul dans un village. On finit par l'appeler Moustache, puis Moumou, et il comprend peu à peu qu'exister, c'est être attendu quelque part. Une histoire vraie sur l'adoption, le courage et l'espoir.",
+          en: "A big black cat with no name lives alone in a village. People end up calling him Moustache, then Moumou, and little by little he learns that to exist is to be waited for somewhere. A true story about adoption, courage and hope. In French."
+        },
+        couverture: "9791098116964",
+        editions: [
+          { format: "ebook", langue: "fr", isbn: "9791098116964",
+            liens: {
+              apple: "https://books.apple.com/fr/book/moustache-le-roi-des-coussins/id6764106717",
+              vivlio: "https://shop.vivlio.com/product/9791098116964_9791098116964_10007/moustache-le-roi-des-coussins"
+            } }
         ]
       }
     ]
@@ -294,32 +573,22 @@ const CATALOGUE = [
 
 const TEXTES = {
   fr: {
-    retour: "← Retour à l'accueil",
-    surtitre: "Nos livres voyagent",
-    titre: "Lire partout",
-    intro: "Certains de nos livres existent en version numérique, d'autres ont pris un titre anglais et traversé l'Atlantique. Vous les trouverez tous ici, avec un lien direct vers les librairies en ligne qui les proposent.",
+    titreDoc: "Lire partout",
     rubriques: { poesie: "Poésie", albums: "Albums", romans: "Romans" },
     formats: { ebook: "Livre numérique", broche: "Livre broché" },
     langues: { fr: "en français", en: "en anglais" },
     premiere: "première version",
-    boutiques: { apple: "Apple Books", bookshop: "Bookshop.org", boutique: "Notre boutique" },
-    bientot: "Bientôt disponible",
-    pied: "Nos éditions papier en français se commandent aussi dans votre librairie ou depuis notre <a href=\"boutique.html\">boutique</a>.",
-    footer: "© L'AMagie ✦ Maison d'édition indépendante ✦ Félines-Minervois"
+    boutiques: { apple: "Apple Books", bookshop: "Bookshop.org", boutique: "Notre boutique", vivlio: "Vivlio" },
+    bientot: "Bientôt disponible"
   },
   en: {
-    retour: "← Back to home",
-    surtitre: "Our books travel",
-    titre: "Read worldwide",
-    intro: "Some of our books are available as ebooks, others have crossed the Atlantic in English. You will find them all here, with direct links to the online bookstores that carry them.",
+    titreDoc: "Read worldwide",
     rubriques: { poesie: "Poetry", albums: "Picture books", romans: "Novels" },
     formats: { ebook: "Ebook", broche: "Paperback" },
     langues: { fr: "in French", en: "in English" },
     premiere: "first version",
-    boutiques: { apple: "Apple Books", bookshop: "Bookshop.org", boutique: "Our shop" },
-    bientot: "Coming soon",
-    pied: "Our French print editions can also be ordered from your local bookshop or from our <a href=\"boutique.html\">shop</a>.",
-    footer: "© L'AMagie ✦ Independent Publishing House | Worldwide Publications ✦ Félines-Minervois"
+    boutiques: { apple: "Apple Books", bookshop: "Bookshop.org", boutique: "Our shop", vivlio: "Vivlio" },
+    bientot: "Coming soon"
   }
 };
 
@@ -351,11 +620,13 @@ function couverture(oeuvre, lang, titre){
 
 function render(lang){
   const T = TEXTES[lang];
-  const main = document.getElementById('catalogue');
-  main.innerHTML = '';
+  const zone = document.getElementById('catalogue');
+  zone.innerHTML = '';
 
   CATALOGUE.forEach(groupe => {
-    main.appendChild(el('h2', 'rubrique', T.rubriques[groupe.rubrique]));
+    const st = el('div', 'section-titre');
+    st.appendChild(el('h2', null, T.rubriques[groupe.rubrique]));
+    zone.appendChild(st);
 
     groupe.oeuvres.forEach(o => {
       const titre = o.titre[lang];
@@ -396,19 +667,15 @@ function render(lang){
       });
       txt.appendChild(ul);
       art.appendChild(txt);
-      main.appendChild(art);
+      zone.appendChild(art);
     });
   });
 }
 
 function setLanguage(lang){
-  const T = TEXTES[lang];
-  document.querySelectorAll('[data-t]').forEach(n => {
-    const v = T[n.getAttribute('data-t')];
-    if (n.hasAttribute('data-html')) n.innerHTML = v; else n.textContent = v;
-  });
-  document.title = `${T.titre} — L'AMagie`;
+  document.body.classList.toggle('lang-en', lang === 'en');
   document.documentElement.lang = lang;
+  document.title = `${TEXTES[lang].titreDoc} — L'AMagie`;
   document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
   render(lang);
   try { localStorage.setItem('l-amagie-lang', lang); } catch(e) {}

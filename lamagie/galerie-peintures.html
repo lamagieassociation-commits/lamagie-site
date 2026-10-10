@@ -522,6 +522,21 @@ const OEUVRES = [
 
   // ── 2026 · Dernière toile ────────────────────────────────
   {
+    title:     "Que trame ce papillon",
+    year:      "2026",
+    location:  "Série « Papillons et libellules »",
+    technique: "Encre, mine graphite et aquarelle sur papier — 44 × 54 cm avec passe-partout",
+    desc:      "Un enchevêtrement de branches, de racines et de pierre où le regard se perd, puis se reprend : les formes hésitent entre chaos et signe, comme une trame qui se tisserait sous nos yeux. Seul élément en couleur, un papillon s'y pose — esprit vivant de ce fouillis, tourné vers la lumière. Encre et graphite tiennent l'ensemble ; une unique touche d'aquarelle suffit à l'éveiller. Une invitation à accueillir la complexité plutôt qu'à la fuir. Un texte en poésie et en prose accompagne la toile sur le blog.",
+    img:       "images/que-trame-ce-papillon.png",
+    url:       "https://meichelus-art.blogspot.com/2026/10/ce-qui-veille-sous-la-trame-si-tu-te.html",
+    urlLabel:  "Lire le poème et la prose",
+    tag:       "Original",
+    achat:     "https://l-amagie.sumupstore.com/product/que-trame-ce-papillon",
+    achatLabel:"🎨 Acquérir cette toile"
+  },
+
+  // ── 2026 ────────────────────────────────────────────────
+  {
     title:     "Thigmotropisme",
     year:      "2026",
     location:  "Félines-Minervois",
@@ -782,7 +797,7 @@ const OEUVRES = [
     var rubanHTML = o.sold ? '<span class="oeuvre-ruban">Vendue</span>' : '';
 
     // Boutons d'action (lien blog + Saatchi + exposition si disponibles)
-    var actionsHTML = '<a class="oeuvre-lien" href="' + o.url + '" target="_blank" rel="noopener noreferrer">Lire l\'article</a>';
+    var actionsHTML = '<a class="oeuvre-lien" href="' + o.url + '" target="_blank" rel="noopener noreferrer">' + (o.urlLabel || 'Lire l\'article') + '</a>';
     if (o.achat) {
       actionsHTML += '<a class="oeuvre-lien oeuvre-lien--achat" href="' + o.achat + '" target="_blank" rel="noopener noreferrer">' + (o.achatLabel || '🎨 Acquérir cette toile') + '</a>';
     }

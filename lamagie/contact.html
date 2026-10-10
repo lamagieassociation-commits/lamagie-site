@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" translate="no" class="notranslate">
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -389,6 +389,27 @@ em{font-style:italic;color:#5a4a30;}
 .reveler{opacity:0;transform:translateY(18px);transition:opacity .9s ease, transform .9s ease;}
 .reveler.visible{opacity:1;transform:translateY(0);}
 @media(prefers-reduced-motion: reduce){.reveler{opacity:1;transform:none;transition:none;}}
+
+/* ============================================================
+   BILINGUE FR/EN — sans traduction automatique
+   ============================================================ */
+.t-en{display:none !important;}
+body.lang-en .t-fr{display:none !important;}
+body.lang-en span.t-en{display:inline !important;}
+body.lang-en p.t-en{display:block !important;}
+.entete-retour{gap:16px;}
+.toggle-langue{display:flex;gap:8px;align-items:center;}
+.toggle-langue button{
+  background:transparent;border:1px solid rgba(184,154,92,.4);padding:4px 10px;border-radius:2px;
+  cursor:pointer;font-family:'Cormorant Garamond',Georgia,serif;font-size:0.8rem;color:#5a4a30;
+  transition:all 0.3s;letter-spacing:.08em;text-transform:uppercase;
+}
+.toggle-langue button.active{background:#b89a5c;color:white;border-color:#b89a5c;}
+.toggle-langue button:hover{background:rgba(184,154,92,.1);}
+@media(max-width:760px){
+  .toggle-langue{gap:6px;}
+  .toggle-langue button{padding:3px 8px;font-size:0.7rem;}
+}
 </style>
 </head>
 
@@ -403,14 +424,18 @@ em{font-style:italic;color:#5a4a30;}
     </div>
     <a href="index.html" class="entete-titre" aria-label="L'AMagie — Accueil">L&rsquo;AMagie</a>
     <div class="entete-retour">
-      <a href="index.html"><span>Retour à l&rsquo;accueil</span></a>
+      <div class="toggle-langue">
+        <button class="lang-btn active" data-lang="fr">FR</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+      </div>
+            <a href="index.html"><span><span class="t-fr">Retour à l&rsquo;accueil</span><span class="t-en">Back to home</span></span></a>
     </div>
   </header>
 
   <!-- HÉROS DE PAGE -->
   <section class="heros-page">
     <nav class="fil-ariane" aria-label="Fil d'ariane">
-      <a href="index.html">Accueil</a>
+      <a href="index.html"><span class="t-fr">Accueil</span><span class="t-en">Home</span></a>
       <span class="sep">·</span>
       <span>Contact</span>
     </nav>
@@ -435,7 +460,7 @@ em{font-style:italic;color:#5a4a30;}
       </div>
     </figure>
 
-    <h1 class="titre-page">Nous écrire</h1>
+    <h1 class="titre-page"><span class="t-fr">Nous écrire</span><span class="t-en">Write to us</span></h1>
 
     <!-- Image contact (icônes) sous le titre -->
     <figure class="image-contact reveler">
@@ -446,7 +471,7 @@ em{font-style:italic;color:#5a4a30;}
            onerror="this.style.display='none'"/>
     </figure>
 
-    <p class="sous-titre-page">Pour toute demande éditoriale, atelier, collaboration<br/>ou simplement traverser le seuil.</p>
+    <p class="sous-titre-page"><span class="t-fr">Pour toute demande éditoriale, atelier, collaboration<br/>ou simplement traverser le seuil.</span><span class="t-en">For any publishing enquiry, workshop or collaboration<br/>— or simply to step across the threshold.</span></p>
   </section>
 
   <!-- CONTENU -->
@@ -456,7 +481,7 @@ em{font-style:italic;color:#5a4a30;}
          CITATION
          ============================================================ -->
     <div class="citation reveler">
-      <blockquote>Une maison où les livres gardent une part d&rsquo;étoiles</blockquote>
+      <blockquote><span class="t-fr">Une maison où les livres gardent une part d&rsquo;étoiles</span><span class="t-en">A house where books keep a share of the stars</span></blockquote>
       <cite>Anouk Journo · Meichelus · Éditions L&rsquo;AMagie</cite>
     </div>
 
@@ -466,14 +491,14 @@ em{font-style:italic;color:#5a4a30;}
     <div class="infos-grille reveler">
 
       <article class="info-bloc">
-        <h3>Adresse</h3>
+        <h3><span class="t-fr">Adresse</span><span class="t-en">Address</span></h3>
         <p><span class="pictogramme" aria-hidden="true">⌂</span>5 rue du Puits</p>
         <p>34210 Félines-Minervois</p>
         <p><em>Occitanie · France</em></p>
       </article>
 
       <article class="info-bloc">
-        <h3>Coordonnées</h3>
+        <h3><span class="t-fr">Coordonnées</span><span class="t-en">Contact details</span></h3>
         <p><span class="pictogramme" aria-hidden="true">@</span><a href="mailto:editions@l-amagie.art">editions@l-amagie.art</a></p>
         <p><span class="pictogramme" aria-hidden="true">☎</span><a href="tel:0674402880">06&nbsp;74&nbsp;40&nbsp;28&nbsp;80</a></p>
         <p><span class="pictogramme" aria-hidden="true">✦</span><a href="https://www.l-amagie.art" target="_blank" rel="noopener">www.l-amagie.art</a></p>
@@ -485,14 +510,14 @@ em{font-style:italic;color:#5a4a30;}
          FORMULAIRE
          ============================================================ -->
     <div class="section-titre reveler">
-      <h2>Formulaire</h2>
-      <span class="legende">Adressez-nous un message</span>
+      <h2><span class="t-fr">Formulaire</span><span class="t-en">Form</span></h2>
+      <span class="legende"><span class="t-fr">Adressez-nous un message</span><span class="t-en">Send us a message</span></span>
     </div>
 
     <form class="formulaire-contact reveler" action="https://formspree.io/f/xvgzqkbd" method="POST">
 
       <div class="champ-formulaire">
-        <label for="nom">Votre nom</label>
+        <label for="nom"><span class="t-fr">Votre nom</span><span class="t-en">Your name</span></label>
         <input type="text" id="nom" name="nom" required/>
       </div>
 
@@ -502,16 +527,16 @@ em{font-style:italic;color:#5a4a30;}
       </div>
 
       <div class="champ-formulaire">
-        <label for="objet">Objet</label>
+        <label for="objet"><span class="t-fr">Objet</span><span class="t-en">Subject</span></label>
         <select id="objet" name="objet" required>
-          <option value="">Choisir</option>
-          <option value="manuscrit">Manuscrit / projet éditorial</option>
-          <option value="atelier">Atelier d&rsquo;écriture</option>
-          <option value="mediation">Médiation animale</option>
-          <option value="collaboration">Collaboration artistique</option>
-          <option value="commande">Commande d&rsquo;ouvrage</option>
-          <option value="peintures">Peintures et œuvres</option>
-          <option value="autre">Autre</option>
+          <option value="" data-en="Choose">Choisir</option>
+          <option value="manuscrit" data-en="Manuscript / publishing project">Manuscrit / projet éditorial</option>
+          <option value="atelier" data-en="Writing workshop">Atelier d&rsquo;écriture</option>
+          <option value="mediation" data-en="Animal mediation">Médiation animale</option>
+          <option value="collaboration" data-en="Artistic collaboration">Collaboration artistique</option>
+          <option value="commande" data-en="Book order">Commande d&rsquo;ouvrage</option>
+          <option value="peintures" data-en="Paintings and artworks">Peintures et œuvres</option>
+          <option value="autre" data-en="Other">Autre</option>
         </select>
       </div>
 
@@ -521,7 +546,7 @@ em{font-style:italic;color:#5a4a30;}
       </div>
 
       <div class="action-formulaire">
-        <button type="submit" class="btn-envoyer">Envoyer</button>
+        <button type="submit" class="btn-envoyer"><span class="t-fr">Envoyer</span><span class="t-en">Send</span></button>
       </div>
 
     </form>
@@ -530,8 +555,8 @@ em{font-style:italic;color:#5a4a30;}
          RÉSEAUX SOCIAUX
          ============================================================ -->
     <div class="section-titre reveler">
-      <h2>Suivez-nous</h2>
-      <span class="legende">Sur les réseaux</span>
+      <h2><span class="t-fr">Suivez-nous</span><span class="t-en">Follow us</span></h2>
+      <span class="legende"><span class="t-fr">Sur les réseaux</span><span class="t-en">On social media</span></span>
     </div>
 
     <div class="reseaux-grille reveler">
@@ -539,31 +564,31 @@ em{font-style:italic;color:#5a4a30;}
       <a class="reseau-carte" href="https://www.instagram.com/lamagie_arts_editions/" target="_blank" rel="noopener">
         <span class="icone" aria-hidden="true">📷</span>
         <span class="titre">Instagram</span>
-        <span class="descr">Suivez l&rsquo;actualité de L&rsquo;AMagie et les créations de Meichelus.</span>
+        <span class="descr"><span class="t-fr">Suivez l&rsquo;actualité de L&rsquo;AMagie et les créations de Meichelus.</span><span class="t-en">Follow L&rsquo;AMagie&rsquo;s news and Meichelus&rsquo;s creations.</span></span>
       </a>
 
       <a class="reseau-carte" href="http://www.facebook.com/share/1Rcqk3QQ4z/" target="_blank" rel="noopener">
         <span class="icone" aria-hidden="true">f</span>
         <span class="titre">Facebook</span>
-        <span class="descr">La page Facebook de L&rsquo;AMagie — événements, publications, actualités.</span>
+        <span class="descr"><span class="t-fr">La page Facebook de L&rsquo;AMagie — événements, publications, actualités.</span><span class="t-en">L&rsquo;AMagie&rsquo;s Facebook page — events, publications, news.</span></span>
       </a>
 
       <a class="reseau-carte" href="https://www.youtube.com/@lamagieeditions" target="_blank" rel="noopener">
         <span class="icone" aria-hidden="true">▶</span>
         <span class="titre">YouTube</span>
-        <span class="descr">La chaîne L&rsquo;AMagie — Bulles poétiques et vidéos de la maison.</span>
+        <span class="descr"><span class="t-fr">La chaîne L&rsquo;AMagie — Bulles poétiques et vidéos de la maison.</span><span class="t-en">The L&rsquo;AMagie channel — <em>Bulles poétiques</em> and videos from the house.</span></span>
       </a>
 
       <a class="reseau-carte" href="https://meichelus-art.blogspot.com" target="_blank" rel="noopener">
         <span class="icone" aria-hidden="true">✎</span>
-        <span class="titre">Blog Meichelus</span>
-        <span class="descr">Peintures, dessins et actualités de l&rsquo;atelier de Meichelus.</span>
+        <span class="titre"><span class="t-fr">Blog Meichelus</span><span class="t-en">Meichelus&rsquo;s Blog</span></span>
+        <span class="descr"><span class="t-fr">Peintures, dessins et actualités de l&rsquo;atelier de Meichelus.</span><span class="t-en">Paintings, drawings and news from Meichelus&rsquo;s studio.</span></span>
       </a>
 
       <a class="reseau-carte" href="https://www.anoukjourno.fr/" target="_blank" rel="noopener">
         <span class="icone" aria-hidden="true">✦</span>
-        <span class="titre">Site d&rsquo;Anouk Journo</span>
-        <span class="descr">Ouvrages, ateliers et univers d&rsquo;Anouk Journo, autrice et poète.</span>
+        <span class="titre"><span class="t-fr">Site d&rsquo;Anouk Journo</span><span class="t-en">Anouk Journo&rsquo;s website</span></span>
+        <span class="descr"><span class="t-fr">Ouvrages, ateliers et univers d&rsquo;Anouk Journo, autrice et poète.</span><span class="t-en">Books, workshops and the world of Anouk Journo, author and poet.</span></span>
       </a>
 
     </div>
@@ -575,57 +600,80 @@ em{font-style:italic;color:#5a4a30;}
     <div class="filet-haut" aria-hidden="true"><span class="etoile">✦</span></div>
     <div class="plan-site-grille">
       <div class="plan-categorie">
-        <h2>Qui sommes-nous&nbsp;?</h2>
+        <h2><span class="t-fr">Qui sommes-nous&nbsp;?</span><span class="t-en">About Us</span></h2>
         <ul>
-          <li><a href="qui-sommes-nous.html">Qui sommes-nous</a></li>
-          <li><a href="fonctionnement.html">Fonctionnement de l&rsquo;association</a></li>
+          <li><a href="qui-sommes-nous.html"><span class="t-fr">Qui sommes-nous</span><span class="t-en">About Us</span></a></li>
+          <li><a href="fonctionnement.html"><span class="t-fr">Fonctionnement de l&rsquo;association</span><span class="t-en">How the Association Works</span></a></li>
           <li><a href="anouk-journo.html">Anouk Journo</a></li>
           <li><a href="peintures.html">Meichelus</a></li>
         </ul>
       </div>
       <div class="plan-categorie">
-        <h2>Ateliers &amp; Coaching</h2>
+        <h2><span class="t-fr">Ateliers &amp; Coaching</span><span class="t-en">Workshops &amp; Coaching</span></h2>
         <ul>
-          <li><a href="ateliers.html">Ateliers &amp; Coaching</a></li>
-          <li><a href="mots-pour-maux.html">Écriture thérapeutique</a></li>
-          <li><a href="mediation-animale.html">Médiation animale</a></li>
-          <li><a href="amis-mots.html">Collection Amis-Mots</a></li>
+          <li><a href="ateliers.html"><span class="t-fr">Ateliers &amp; Coaching</span><span class="t-en">Workshops &amp; Coaching</span></a></li>
+          <li><a href="mots-pour-maux.html"><span class="t-fr">Écriture thérapeutique</span><span class="t-en">Therapeutic Writing</span></a></li>
+          <li><a href="mediation-animale.html"><span class="t-fr">Médiation animale</span><span class="t-en">Animal Mediation</span></a></li>
+          <li><a href="amis-mots.html"><span class="t-fr">Collection Amis-Mots</span><span class="t-en">Friends-Words Collection (Collection Amis-Mots)</span></a></li>
         </ul>
       </div>
       <div class="plan-categorie">
-        <h2>Éditions</h2>
+        <h2><span class="t-fr">Éditions</span><span class="t-en">Editions</span></h2>
         <ul>
-          <li><a href="edition.html">Manuscrits &amp; projets</a></li>
-          <li><a href="edition.html#raconter-le-monde">Collection Raconter le monde</a></li>
-          <li><a href="edition.html#immersion">Collection Immersion</a></li>
-          <li><a href="edition.html#manifestes">Collection Manifestes</a></li>
-          <li><a href="edition.html#romans-jeunesse">Romans jeunesse</a></li>
+          <li><a href="edition.html"><span class="t-fr">Manuscrits &amp; projets</span><span class="t-en">Manuscripts &amp; Projects</span></a></li>
+          <li><a href="edition.html#raconter-le-monde"><span class="t-fr">Collection Raconter le monde</span><span class="t-en">Collection: Telling the World (Raconter le monde)</span></a></li>
+          <li><a href="edition.html#immersion"><span class="t-fr">Collection Immersion</span><span class="t-en">Immersion Collection</span></a></li>
+          <li><a href="edition.html#manifestes"><span class="t-fr">Collection Manifestes</span><span class="t-en">Manifestos Collection</span></a></li>
+          <li><a href="edition.html#romans-jeunesse"><span class="t-fr">Romans jeunesse</span><span class="t-en">Young Adult Novels</span></a></li>
+          <li><a href="lire-partout.html"><span class="t-fr">Lire partout : numérique &amp; éditions en langue anglaise</span><span class="t-en">Read worldwide: ebooks &amp; English-language editions</span></a></li>
         </ul>
       </div>
       <div class="plan-categorie">
-        <h2>Poésie &amp; Arts</h2>
+        <h2><span class="t-fr">Poésie &amp; Arts</span><span class="t-en">Poetry &amp; Arts</span></h2>
         <ul>
-          <li><a href="poesie.html">Poésie au jour le jour</a></li>
-          <li><a href="peintures.html">Peintures &amp; Dessins</a></li>
-          <li><a href="evenements.html">Événements &amp; Presse</a></li>
+          <li><a href="poesie.html"><span class="t-fr">Poésie au jour le jour</span><span class="t-en">Poetry Day by Day</span></a></li>
+          <li><a href="peintures.html"><span class="t-fr">Peintures &amp; Dessins</span><span class="t-en">Paintings &amp; Drawings</span></a></li>
+          <li><a href="evenements.html"><span class="t-fr">Événements &amp; Presse</span><span class="t-en">Events &amp; Press</span></a></li>
         </ul>
       </div>
       <div class="plan-categorie">
-        <h2>Liens utiles</h2>
+        <h2><span class="t-fr">Liens utiles</span><span class="t-en">Useful Links</span></h2>
         <ul>
-          <li><a href="boutique.html">Boutique</a></li>
+          <li><a href="boutique.html"><span class="t-fr">Boutique</span><span class="t-en">Shop</span></a></li>
           <li><a href="faq.html">FAQ</a></li>
           <li><a href="contact.html">Contact</a></li>
-          <li><a href="youtube.html">Chaîne Youtube</a></li>
-          <li><a href="mentions-legales.html">Mentions légales</a></li>
+          <li><a href="youtube.html"><span class="t-fr">Chaîne Youtube</span><span class="t-en">Youtube Channel</span></a></li>
+          <li><a href="mentions-legales.html"><span class="t-fr">Mentions légales</span><span class="t-en">Legal Notice</span></a></li>
         </ul>
       </div>
     </div>
-    <p class="plan-mentions">© 2026 L&rsquo;AMagie <span class="etoile">✦</span> Maison d&rsquo;édition indépendante <span class="etoile">✦</span> SIREN 937629533 <span class="etoile">✦</span> Félines-Minervois</p>
+    <p class="plan-mentions">© 2026 L&rsquo;AMagie <span class="etoile">✦</span> <span class="t-fr">Maison d&rsquo;édition indépendante</span><span class="t-en">Independent Publishing House</span> <span class="etoile">✦</span> SIREN 937629533 <span class="etoile">✦</span> Félines-Minervois</p>
     <p class="plan-webmaster">© Webmaster Meichelus : <a href="mailto:meichelus@l-amagie.art">meichelus@l-amagie.art</a></p>
   </section>
 
   <script>
+  /* ===== Langue FR / EN (mémorisée pour tout le site) ===== */
+  function setLanguage(lang) {
+    document.body.classList.toggle('lang-en', lang === 'en');
+    document.documentElement.lang = lang;
+    document.querySelectorAll('.lang-btn').forEach(function(b){
+      b.classList.toggle('active', b.getAttribute('data-lang') === lang);
+    });
+    try { localStorage.setItem('l-amagie-lang', lang); } catch(e) {}
+    document.querySelectorAll('option[data-en]').forEach(function(o){
+      if (!o.hasAttribute('data-fr')) o.setAttribute('data-fr', o.textContent);
+      o.textContent = (lang === 'en') ? o.getAttribute('data-en') : o.getAttribute('data-fr');
+    });
+  }
+  document.querySelectorAll('.lang-btn').forEach(function(b){
+    b.addEventListener('click', function(){ setLanguage(this.getAttribute('data-lang')); });
+  });
+  (function(){
+    var l = 'fr';
+    try { l = localStorage.getItem('l-amagie-lang') || 'fr'; } catch(e) {}
+    setLanguage(l);
+  })();
+
     if ('IntersectionObserver' in window) {
       var obs = new IntersectionObserver(function(entries){
         entries.forEach(function(e){

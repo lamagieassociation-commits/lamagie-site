@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" translate="no" class="notranslate">
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -496,6 +496,27 @@ em{font-style:italic;color:#5a4a30;}
 .reveler{opacity:0;transform:translateY(18px);transition:opacity .9s ease, transform .9s ease;}
 .reveler.visible{opacity:1;transform:translateY(0);}
 @media(prefers-reduced-motion: reduce){.reveler{opacity:1;transform:none;transition:none;}}
+
+/* ============================================================
+   BILINGUE FR/EN — sans traduction automatique
+   ============================================================ */
+.t-en{display:none !important;}
+body.lang-en .t-fr{display:none !important;}
+body.lang-en span.t-en{display:inline !important;}
+body.lang-en p.t-en{display:block !important;}
+.entete-retour{gap:16px;}
+.toggle-langue{display:flex;gap:8px;align-items:center;}
+.toggle-langue button{
+  background:transparent;border:1px solid rgba(184,154,92,.4);padding:4px 10px;border-radius:2px;
+  cursor:pointer;font-family:'Cormorant Garamond',Georgia,serif;font-size:0.8rem;color:#5a4a30;
+  transition:all 0.3s;letter-spacing:.08em;text-transform:uppercase;
+}
+.toggle-langue button.active{background:#b89a5c;color:white;border-color:#b89a5c;}
+.toggle-langue button:hover{background:rgba(184,154,92,.1);}
+@media(max-width:760px){
+  .toggle-langue{gap:6px;}
+  .toggle-langue button{padding:3px 8px;font-size:0.7rem;}
+}
 </style>
 </head>
 
@@ -510,16 +531,20 @@ em{font-style:italic;color:#5a4a30;}
     </div>
     <a href="index.html" class="entete-titre" aria-label="L'AMagie — Accueil">L&rsquo;AMagie</a>
     <div class="entete-retour">
-      <a href="index.html"><span>Retour à l&rsquo;accueil</span></a>
+      <div class="toggle-langue">
+        <button class="lang-btn active" data-lang="fr">FR</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+      </div>
+            <a href="index.html"><span><span class="t-fr">Retour à l&rsquo;accueil</span><span class="t-en">Back to home</span></span></a>
     </div>
   </header>
 
   <!-- HÉROS DE PAGE -->
   <section class="heros-page">
     <nav class="fil-ariane" aria-label="Fil d'ariane">
-      <a href="index.html">Accueil</a>
+      <a href="index.html"><span class="t-fr">Accueil</span><span class="t-en">Home</span></a>
       <span class="sep">·</span>
-      <span>Événements &amp; Presse</span>
+      <span class="t-fr">Événements &amp; Presse</span><span class="t-en">Events &amp; Press</span>
     </nav>
 
     <!-- Image d'en-tête (au-dessus du titre) -->
@@ -531,8 +556,8 @@ em{font-style:italic;color:#5a4a30;}
            onerror="this.style.display='none'"/>
     </figure>
 
-    <h1 class="titre-page">Événements &amp; Presse</h1>
-    <p class="sous-titre-page">Les articles, vernissages et rencontres qui jalonnent la vie de la maison</p>
+    <h1 class="titre-page"><span class="t-fr">Événements &amp; Presse</span><span class="t-en">Events &amp; Press</span></h1>
+    <p class="sous-titre-page"><span class="t-fr">Les articles, vernissages et rencontres qui jalonnent la vie de la maison</span><span class="t-en">The articles, openings and encounters that mark the life of the house</span></p>
     <div class="medaillon-titre" aria-hidden="true">✦</div>
   </section>
 
@@ -541,16 +566,18 @@ em{font-style:italic;color:#5a4a30;}
 
     <!-- INTRODUCTION -->
     <article class="carte-intro reveler">
-      <p>Depuis la naissance de L&rsquo;AMagie, <em>les rendez-vous se succèdent</em> entre publications, vernissages d&rsquo;expositions, actions solidaires et rencontres avec le public.</p>
-      <p>Voici une sélection d&rsquo;articles parus dans la presse locale — <em>L&rsquo;Indépendant</em>, <em>Midi Libre</em>, <em>Canal du Midi — Minervois</em> — qui retracent l&rsquo;aventure éditoriale et artistique de la maison.</p>
+      <p class="t-en">Since L&rsquo;AMagie was born, <em>one event has followed another</em>: publications, exhibition openings, charity initiatives and meetings with the public.</p>
+      <p class="t-en">Here is a selection of articles from the local press — <em>L&rsquo;Indépendant</em>, <em>Midi Libre</em>, <em>Canal du Midi — Minervois</em> — tracing the publishing and artistic adventure of the house. The articles themselves are in French.</p>
+      <p class="t-fr">Depuis la naissance de L&rsquo;AMagie, <em>les rendez-vous se succèdent</em> entre publications, vernissages d&rsquo;expositions, actions solidaires et rencontres avec le public.</p>
+      <p class="t-fr">Voici une sélection d&rsquo;articles parus dans la presse locale — <em>L&rsquo;Indépendant</em>, <em>Midi Libre</em>, <em>Canal du Midi — Minervois</em> — qui retracent l&rsquo;aventure éditoriale et artistique de la maison.</p>
     </article>
 
     <!-- ============================================================
          SECTION ARTICLES DE PRESSE
          ============================================================ -->
     <div class="section-titre reveler">
-      <h2>Dans la presse</h2>
-      <span class="legende">Ils ont parlé de nous</span>
+      <h2><span class="t-fr">Dans la presse</span><span class="t-en">In the Press</span></h2>
+      <span class="legende"><span class="t-fr">Ils ont parlé de nous</span><span class="t-en">What they wrote about us</span></span>
     </div>
 
     <div class="grille-articles">
@@ -562,16 +589,17 @@ em{font-style:italic;color:#5a4a30;}
                alt="D'un village à l'autre — nouvelle exposition de Meichelus au Coin d'Art, article L'Indépendant"
                loading="lazy"
                onerror="this.style.display='none'"/>
-          <span class="agrandir-indice">Lire l&rsquo;article</span>
+          <span class="agrandir-indice"><span class="t-fr">Lire l&rsquo;article</span><span class="t-en">Read the article</span></span>
         </div>
         <div class="article-corps">
           <div class="article-meta">
             <span class="source">L&rsquo;Indépendant</span>
             <span class="sep">✦</span>
-            <span class="date">Septembre 2026</span>
+            <span class="date"><span class="t-fr">Septembre 2026</span><span class="t-en">September 2026</span></span>
           </div>
-          <h3 class="article-titre">D&rsquo;un village à l&rsquo;autre — Nouvelle exposition de Meichelus&nbsp;: matière, poésie et voyage intérieur dans le Minervois</h3>
-          <p class="article-resume">Du 12 septembre au 6 octobre, Meichelus expose ses nouvelles toiles au Coin d&rsquo;art à Olonzac, aux côtés des sculptures de Jean-Michel Laffite. <em>«&nbsp;J&rsquo;aime inviter à entrer dans un univers où le vivant, la mémoire et les paysages du Minervois deviennent les supports d&rsquo;une réflexion plus intime sur le temps et la conscience&nbsp;»</em>, confie l&rsquo;artiste. Un portrait signé Anouk Journo.</p>
+          <h3 class="article-titre"><span class="t-fr">D&rsquo;un village à l&rsquo;autre — Nouvelle exposition de Meichelus&nbsp;: matière, poésie et voyage intérieur dans le Minervois</span><span class="t-en">From one village to another — Meichelus&rsquo;s new exhibition: matter, poetry and an inner journey in the Minervois</span></h3>
+          <p class="article-resume t-fr">Du 12 septembre au 6 octobre, Meichelus expose ses nouvelles toiles au Coin d&rsquo;art à Olonzac, aux côtés des sculptures de Jean-Michel Laffite. <em>«&nbsp;J&rsquo;aime inviter à entrer dans un univers où le vivant, la mémoire et les paysages du Minervois deviennent les supports d&rsquo;une réflexion plus intime sur le temps et la conscience&nbsp;»</em>, confie l&rsquo;artiste. Un portrait signé Anouk Journo.</p>
+          <p class="article-resume t-en">From 12 September to 6 October, Meichelus shows his new paintings at Le Coin d&rsquo;Art in Olonzac, alongside the sculptures of Jean-Michel Laffite. <em>&ldquo;I like to invite people into a world where living things, memory and the landscapes of the Minervois become the ground for a more intimate reflection on time and consciousness,&rdquo;</em> says the artist. A portrait by Anouk Journo.</p>
         </div>
       </article>
 
@@ -582,16 +610,17 @@ em{font-style:italic;color:#5a4a30;}
                alt="Lafitte et Meichelus sont les invités du Coin d'Art — article Midi Libre Béziers"
                loading="lazy"
                onerror="this.style.display='none'"/>
-          <span class="agrandir-indice">Lire l&rsquo;article</span>
+          <span class="agrandir-indice"><span class="t-fr">Lire l&rsquo;article</span><span class="t-en">Read the article</span></span>
         </div>
         <div class="article-corps">
           <div class="article-meta">
             <span class="source">Midi Libre Béziers</span>
             <span class="sep">✦</span>
-            <span class="date">6 septembre 2026</span>
+            <span class="date"><span class="t-fr">6 septembre 2026</span><span class="t-en">6 September 2026</span></span>
           </div>
-          <h3 class="article-titre">Lafitte et Meichelus sont les invités du Coin d&rsquo;Art</h3>
-          <p class="article-resume">La galerie d&rsquo;art contemporain Le Coin d&rsquo;Art, à Olonzac, invite les artistes Jean-Michel Lafitte, de Minerve, et Meichelus, de Félines-Minervois, à exposer leurs œuvres du 12 septembre au 6 octobre&nbsp;; le vernissage est prévu le 12 septembre à 18&nbsp;h. Meichelus se dévoile à travers une exposition au croisement du dessin, de la peinture et de la poésie&nbsp;: <em>«&nbsp;une œuvre graphique, véritable exploration à la fois matérielle et spirituelle, qui navigue avec justesse entre observation minutieuse et imaginaire poétique&nbsp;»</em>. Ensemble, ces deux artistes qui s&rsquo;apprécient feront naviguer le public.</p>
+          <h3 class="article-titre"><span class="t-fr">Lafitte et Meichelus sont les invités du Coin d&rsquo;Art</span><span class="t-en">Lafitte and Meichelus are the guests of Le Coin d&rsquo;Art</span></h3>
+          <p class="article-resume t-fr">La galerie d&rsquo;art contemporain Le Coin d&rsquo;Art, à Olonzac, invite les artistes Jean-Michel Lafitte, de Minerve, et Meichelus, de Félines-Minervois, à exposer leurs œuvres du 12 septembre au 6 octobre&nbsp;; le vernissage est prévu le 12 septembre à 18&nbsp;h. Meichelus se dévoile à travers une exposition au croisement du dessin, de la peinture et de la poésie&nbsp;: <em>«&nbsp;une œuvre graphique, véritable exploration à la fois matérielle et spirituelle, qui navigue avec justesse entre observation minutieuse et imaginaire poétique&nbsp;»</em>. Ensemble, ces deux artistes qui s&rsquo;apprécient feront naviguer le public.</p>
+          <p class="article-resume t-en">The contemporary art gallery Le Coin d&rsquo;Art in Olonzac invites the artists Jean-Michel Lafitte, from Minerve, and Meichelus, from Félines-Minervois, to show their work from 12 September to 6 October; the opening is on 12 September at 6 pm. Meichelus reveals himself through an exhibition at the crossroads of drawing, painting and poetry: <em>&ldquo;a graphic body of work, a truly material and spiritual exploration, moving deftly between close observation and poetic imagination.&rdquo;</em> Together, these two artists, who admire each other&rsquo;s work, take the public on a voyage.</p>
         </div>
       </article>
 
@@ -602,7 +631,7 @@ em{font-style:italic;color:#5a4a30;}
                alt="Création de la maison d'édition L'AMagie — article L'Indépendant"
                loading="lazy"
                onerror="this.style.display='none'"/>
-          <span class="agrandir-indice">Lire l&rsquo;article</span>
+          <span class="agrandir-indice"><span class="t-fr">Lire l&rsquo;article</span><span class="t-en">Read the article</span></span>
         </div>
         <div class="article-corps">
           <div class="article-meta">
@@ -610,8 +639,9 @@ em{font-style:italic;color:#5a4a30;}
             <span class="sep">✦</span>
             <span class="date">Félines-Minervois</span>
           </div>
-          <h3 class="article-titre">Avec l&rsquo;AMagie, Anouk et Michel offrent un voyage en poésie</h3>
-          <p class="article-resume">Née à Félines-Minervois, cette nouvelle maison d&rsquo;édition associative se consacre entièrement à la poésie. Fondée par Anouk Journo et Meichelus, elle propose un modèle unique&nbsp;: <em>accompagnement éditorial gratuit, rémunération équitable des auteurs et impression à la demande</em>. Un acte de rébellion contre l&rsquo;édition traditionnelle.</p>
+          <h3 class="article-titre"><span class="t-fr">Avec l&rsquo;AMagie, Anouk et Michel offrent un voyage en poésie</span><span class="t-en">With L&rsquo;AMagie, Anouk and Michel offer a journey into poetry</span></h3>
+          <p class="article-resume t-fr">Née à Félines-Minervois, cette nouvelle maison d&rsquo;édition associative se consacre entièrement à la poésie. Fondée par Anouk Journo et Meichelus, elle propose un modèle unique&nbsp;: <em>accompagnement éditorial gratuit, rémunération équitable des auteurs et impression à la demande</em>. Un acte de rébellion contre l&rsquo;édition traditionnelle.</p>
+          <p class="article-resume t-en">Born in Félines-Minervois, this new associative publishing house is devoted entirely to poetry. Founded by Anouk Journo and Meichelus, it offers a unique model: <em>free editorial support, fair pay for authors and print on demand</em>. An act of rebellion against traditional publishing.</p>
         </div>
       </article>
 
@@ -622,16 +652,17 @@ em{font-style:italic;color:#5a4a30;}
                alt="Anouk Journo présente À la recherche de Truffe — article L'Indépendant"
                loading="lazy"
                onerror="this.style.display='none'"/>
-          <span class="agrandir-indice">Lire l&rsquo;article</span>
+          <span class="agrandir-indice"><span class="t-fr">Lire l&rsquo;article</span><span class="t-en">Read the article</span></span>
         </div>
         <div class="article-corps">
           <div class="article-meta">
             <span class="source">L&rsquo;Indépendant</span>
             <span class="sep">✦</span>
-            <span class="date">5 octobre 2024</span>
+            <span class="date"><span class="t-fr">5 octobre 2024</span><span class="t-en">5 October 2024</span></span>
           </div>
-          <h3 class="article-titre">L&rsquo;autrice Anouk Journo dévoile son dernier ouvrage</h3>
-          <p class="article-resume">«&nbsp;<em>À la recherche de Truffe… ou les alexandrins magiques</em>&nbsp;» — un roman jeunesse illustré par Meichelus, destiné aux lecteurs à partir de sept ans. L&rsquo;histoire suit Nino et Lilla en quête de leur chien Pogo, dans une vallée hantée où les alexandrins deviennent une arme magique.</p>
+          <h3 class="article-titre"><span class="t-fr">L&rsquo;autrice Anouk Journo dévoile son dernier ouvrage</span><span class="t-en">Author Anouk Journo unveils her latest book</span></h3>
+          <p class="article-resume t-fr">«&nbsp;<em>À la recherche de Truffe… ou les alexandrins magiques</em>&nbsp;» — un roman jeunesse illustré par Meichelus, destiné aux lecteurs à partir de sept ans. L&rsquo;histoire suit Nino et Lilla en quête de leur chien Pogo, dans une vallée hantée où les alexandrins deviennent une arme magique.</p>
+          <p class="article-resume t-en">&ldquo;<em>À la recherche de Truffe… ou les alexandrins magiques</em>&rdquo; — a children&rsquo;s novel illustrated by Meichelus, for readers aged seven and up. The story follows Nino and Lilla as they search for their dog Pogo, in a haunted valley where alexandrines become a magic weapon.</p>
         </div>
       </article>
 
@@ -642,16 +673,17 @@ em{font-style:italic;color:#5a4a30;}
                alt="La triple actualité d'Anouk Journo — Canal du Midi Minervois"
                loading="lazy"
                onerror="this.style.display='none'"/>
-          <span class="agrandir-indice">Lire l&rsquo;article</span>
+          <span class="agrandir-indice"><span class="t-fr">Lire l&rsquo;article</span><span class="t-en">Read the article</span></span>
         </div>
         <div class="article-corps">
           <div class="article-meta">
             <span class="source">Canal du Midi — Minervois</span>
             <span class="sep">✦</span>
-            <span class="date">Fin 2024</span>
+            <span class="date"><span class="t-fr">Fin 2024</span><span class="t-en">Late 2024</span></span>
           </div>
-          <h3 class="article-titre">La triple actualité d&rsquo;Anouk Journo</h3>
-          <p class="article-resume">Trois ouvrages annoncés en cette fin d&rsquo;année par l&rsquo;autrice jeunesse de Félines-Minervois&nbsp;: <em>À la découverte des félins</em> (Fleurus), <em>À la recherche de Truffe</em> (roman jeunesse), et le recueil de poésie <em>L&rsquo;Âme en selle</em>. Une plume infatigable au service de l&rsquo;imaginaire et du vivant.</p>
+          <h3 class="article-titre"><span class="t-fr">La triple actualité d&rsquo;Anouk Journo</span><span class="t-en">Three new books from Anouk Journo</span></h3>
+          <p class="article-resume t-fr">Trois ouvrages annoncés en cette fin d&rsquo;année par l&rsquo;autrice jeunesse de Félines-Minervois&nbsp;: <em>À la découverte des félins</em> (Fleurus), <em>À la recherche de Truffe</em> (roman jeunesse), et le recueil de poésie <em>L&rsquo;Âme en selle</em>. Une plume infatigable au service de l&rsquo;imaginaire et du vivant.</p>
+          <p class="article-resume t-en">Three books announced at the end of the year by the children&rsquo;s author from Félines-Minervois: <em>À la découverte des félins</em> (Fleurus), <em>À la recherche de Truffe</em> (a children&rsquo;s novel) and the poetry collection <em>L&rsquo;Âme en selle</em>. A tireless pen in the service of imagination and the living world.</p>
         </div>
       </article>
 
@@ -662,16 +694,17 @@ em{font-style:italic;color:#5a4a30;}
                alt="En quête d'Hozro — peinture et poésie signées Anouk et Meichelus"
                loading="lazy"
                onerror="this.style.display='none'"/>
-          <span class="agrandir-indice">Lire l&rsquo;article</span>
+          <span class="agrandir-indice"><span class="t-fr">Lire l&rsquo;article</span><span class="t-en">Read the article</span></span>
         </div>
         <div class="article-corps">
           <div class="article-meta">
             <span class="source">Canal du Midi — Minervois</span>
             <span class="sep">✦</span>
-            <span class="date">Début 2025</span>
+            <span class="date"><span class="t-fr">Début 2025</span><span class="t-en">Early 2025</span></span>
           </div>
-          <h3 class="article-titre">Un livre mêlant l&rsquo;art pictural et la poésie signé Anouk et Meichelus</h3>
-          <p class="article-resume">«&nbsp;<em>En quête d&rsquo;Hozro… Enchanter le monde</em>&nbsp;» — un ouvrage où vingt toiles pointillistes de Meichelus répondent à vingt poèmes d&rsquo;Anouk Journo, autour de la mythologie hopi et du mot navajo <em>Hozro</em> qui signifie harmonie, beauté, équilibre.</p>
+          <h3 class="article-titre"><span class="t-fr">Un livre mêlant l&rsquo;art pictural et la poésie signé Anouk et Meichelus</span><span class="t-en">A book combining painting and poetry, by Anouk and Meichelus</span></h3>
+          <p class="article-resume t-fr">«&nbsp;<em>En quête d&rsquo;Hozro… Enchanter le monde</em>&nbsp;» — un ouvrage où vingt toiles pointillistes de Meichelus répondent à vingt poèmes d&rsquo;Anouk Journo, autour de la mythologie hopi et du mot navajo <em>Hozro</em> qui signifie harmonie, beauté, équilibre.</p>
+          <p class="article-resume t-en">&ldquo;<em>En quête d&rsquo;Hozro… Enchanter le monde</em>&rdquo; — a book in which twenty pointillist paintings by Meichelus answer twenty poems by Anouk Journo, drawing on Hopi mythology and the Navajo word <em>Hozro</em>, meaning harmony, beauty, balance.</p>
         </div>
       </article>
 
@@ -682,16 +715,17 @@ em{font-style:italic;color:#5a4a30;}
                alt="L'art de Meichelus au service des pompiers et de la poésie — L'Indépendant"
                loading="lazy"
                onerror="this.style.display='none'"/>
-          <span class="agrandir-indice">Lire l&rsquo;article</span>
+          <span class="agrandir-indice"><span class="t-fr">Lire l&rsquo;article</span><span class="t-en">Read the article</span></span>
         </div>
         <div class="article-corps">
           <div class="article-meta">
             <span class="source">L&rsquo;Indépendant</span>
             <span class="sep">✦</span>
-            <span class="date">Dimanche 27 avril 2025</span>
+            <span class="date"><span class="t-fr">Dimanche 27 avril 2025</span><span class="t-en">Sunday 27 April 2025</span></span>
           </div>
-          <h3 class="article-titre">L&rsquo;art de Meichelus au service des pompiers et de la poésie</h3>
-          <p class="article-resume">Au Grand café occitan de Félines, le vernissage de l&rsquo;exposition solidaire de Meichelus a réuni de très nombreux habitants. Infirmier en pédopsychiatrie et sapeur-pompier durant 40 ans dans les Hautes-Alpes, l&rsquo;artiste partage <em>une œuvre nourrie de voyages et d&rsquo;art-thérapie</em>.</p>
+          <h3 class="article-titre"><span class="t-fr">L&rsquo;art de Meichelus au service des pompiers et de la poésie</span><span class="t-en">Meichelus&rsquo;s art in the service of firefighters and poetry</span></h3>
+          <p class="article-resume t-fr">Au Grand café occitan de Félines, le vernissage de l&rsquo;exposition solidaire de Meichelus a réuni de très nombreux habitants. Infirmier en pédopsychiatrie et sapeur-pompier durant 40 ans dans les Hautes-Alpes, l&rsquo;artiste partage <em>une œuvre nourrie de voyages et d&rsquo;art-thérapie</em>.</p>
+          <p class="article-resume t-en">At the Grand café occitan in Félines, the opening of Meichelus&rsquo;s charity exhibition drew a great many local residents. A child-psychiatric nurse and firefighter for 40 years in the Hautes-Alpes, the artist shares <em>a body of work shaped by travel and art therapy</em>.</p>
         </div>
       </article>
 
@@ -702,16 +736,17 @@ em{font-style:italic;color:#5a4a30;}
                alt="La poésie et les pompiers sauvent le monde — exposition solidaire"
                loading="lazy"
                onerror="this.style.display='none'"/>
-          <span class="agrandir-indice">Lire l&rsquo;article</span>
+          <span class="agrandir-indice"><span class="t-fr">Lire l&rsquo;article</span><span class="t-en">Read the article</span></span>
         </div>
         <div class="article-corps">
           <div class="article-meta">
             <span class="source">L&rsquo;Indépendant</span>
             <span class="sep">✦</span>
-            <span class="date">Jeudi 24 avril 2025</span>
+            <span class="date"><span class="t-fr">Jeudi 24 avril 2025</span><span class="t-en">Thursday 24 April 2025</span></span>
           </div>
-          <h3 class="article-titre">«&nbsp;La poésie et les pompiers sauvent le monde&nbsp;» — une exposition solidaire</h3>
-          <p class="article-resume">Une vingtaine d&rsquo;œuvres originales de Meichelus — encre de Chine, aquarelle, pointillisme, feuilles d&rsquo;or — exposées au Grand café occitan. Les bénéfices des ventes sont reversés pour moitié à <em>l&rsquo;Amicale des sapeurs-pompiers de Félines</em>, et pour l&rsquo;autre à l&rsquo;association L&rsquo;AMagie.</p>
+          <h3 class="article-titre"><span class="t-fr">«&nbsp;La poésie et les pompiers sauvent le monde&nbsp;» — une exposition solidaire</span><span class="t-en">&ldquo;Poetry and firefighters save the world&rdquo; — a charity exhibition</span></h3>
+          <p class="article-resume t-fr">Une vingtaine d&rsquo;œuvres originales de Meichelus — encre de Chine, aquarelle, pointillisme, feuilles d&rsquo;or — exposées au Grand café occitan. Les bénéfices des ventes sont reversés pour moitié à <em>l&rsquo;Amicale des sapeurs-pompiers de Félines</em>, et pour l&rsquo;autre à l&rsquo;association L&rsquo;AMagie.</p>
+          <p class="article-resume t-en">Some twenty original works by Meichelus — Indian ink, watercolour, pointillism, gold leaf — on show at the Grand café occitan. Half of the proceeds from sales go to <em>the Félines firefighters&rsquo; association</em>, the other half to the L&rsquo;AMagie association.</p>
         </div>
       </article>
 
@@ -722,16 +757,17 @@ em{font-style:italic;color:#5a4a30;}
                alt="L'AMagie remet 300 € à l'Amicale des pompiers — L'Indépendant"
                loading="lazy"
                onerror="this.style.display='none'"/>
-          <span class="agrandir-indice">Lire l&rsquo;article</span>
+          <span class="agrandir-indice"><span class="t-fr">Lire l&rsquo;article</span><span class="t-en">Read the article</span></span>
         </div>
         <div class="article-corps">
           <div class="article-meta">
             <span class="source">L&rsquo;Indépendant</span>
             <span class="sep">✦</span>
-            <span class="date">Mardi 20 mai 2025</span>
+            <span class="date"><span class="t-fr">Mardi 20 mai 2025</span><span class="t-en">Tuesday 20 May 2025</span></span>
           </div>
-          <h3 class="article-titre">L&rsquo;association L&rsquo;AMagie remet 300 € à l&rsquo;Amicale des pompiers</h3>
-          <p class="article-resume">Un premier chèque de 300 € a été remis à l&rsquo;Amicale des sapeurs-pompiers de Félines-Minervois, fruit de l&rsquo;exposition solidaire de Meichelus. <em>«&nbsp;D&rsquo;autres dons pourraient suivre&nbsp;»</em>, annonce L&rsquo;AMagie. L&rsquo;exposition se poursuit jusqu&rsquo;à la fin août au Grand café occitan.</p>
+          <h3 class="article-titre"><span class="t-fr">L&rsquo;association L&rsquo;AMagie remet 300 € à l&rsquo;Amicale des pompiers</span><span class="t-en">L&rsquo;AMagie hands €300 to the firefighters&rsquo; association</span></h3>
+          <p class="article-resume t-fr">Un premier chèque de 300 € a été remis à l&rsquo;Amicale des sapeurs-pompiers de Félines-Minervois, fruit de l&rsquo;exposition solidaire de Meichelus. <em>«&nbsp;D&rsquo;autres dons pourraient suivre&nbsp;»</em>, annonce L&rsquo;AMagie. L&rsquo;exposition se poursuit jusqu&rsquo;à la fin août au Grand café occitan.</p>
+          <p class="article-resume t-en">A first cheque for €300 was handed to the Félines-Minervois firefighters&rsquo; association, the fruit of Meichelus&rsquo;s charity exhibition. <em>&ldquo;Further donations may follow,&rdquo;</em> says L&rsquo;AMagie. The exhibition continues until the end of August at the Grand café occitan.</p>
         </div>
       </article>
 
@@ -746,15 +782,16 @@ em{font-style:italic;color:#5a4a30;}
           controls
           preload="metadata"
           playsinline
-          
+          poster="images/evenements/forum-associations-poster.jpg"
           aria-label="Vidéo de présentation de L'AMagie au Forum des associations de Félines-Minervois">
           <source src="videos/forum-associations-felines-2026.mp4" type="video/mp4"/>
           Votre navigateur ne prend pas en charge la lecture vidéo intégrée. <a href="videos/forum-associations-felines-2026.mp4">Téléchargez la vidéo</a>.
         </video>
         <div class="video-legende">
-          <span class="video-source">Forum des associations &middot; Félines-Minervois &middot; Septembre 2026</span>
-          <h3 class="video-titre">L&rsquo;AMagie se présente au Forum des associations</h3>
-          <p class="video-texte">Une courte vidéo pour (re)découvrir notre maison d&rsquo;édition associative, son esprit et ses projets, telle que présentée au public lors du Forum des associations de Félines-Minervois.</p>
+          <span class="video-source"><span class="t-fr">Forum des associations &middot; Félines-Minervois &middot; Septembre 2026</span><span class="t-en">Associations Fair &middot; Félines-Minervois &middot; September 2026</span></span>
+          <h3 class="video-titre"><span class="t-fr">L&rsquo;AMagie se présente au Forum des associations</span><span class="t-en">L&rsquo;AMagie at the Félines-Minervois Associations Fair</span></h3>
+          <p class="video-texte t-en">A short video to (re)discover our associative publishing house, its spirit and its projects, as presented to the public at the Félines-Minervois Associations Fair.</p>
+          <p class="video-texte t-fr">Une courte vidéo pour (re)découvrir notre maison d&rsquo;édition associative, son esprit et ses projets, telle que présentée au public lors du Forum des associations de Félines-Minervois.</p>
         </div>
       </div>
     </div>
@@ -768,7 +805,7 @@ em{font-style:italic;color:#5a4a30;}
              alt="Anouk Journo et Meichelus au travail dans l'atelier"
              loading="lazy"
              onerror="this.style.display='none'"/>
-        <figcaption>Anouk &amp; Meichelus, dans l&rsquo;atelier de L&rsquo;AMagie</figcaption>
+        <figcaption><span class="t-fr">Anouk &amp; Meichelus, dans l&rsquo;atelier de L&rsquo;AMagie</span><span class="t-en">Anouk &amp; Meichelus in the L&rsquo;AMagie studio</span></figcaption>
       </figure>
     </div>
 
@@ -776,9 +813,10 @@ em{font-style:italic;color:#5a4a30;}
          CTA — CONTACT PRESSE
          ============================================================ -->
     <div class="cta-presse reveler">
-      <h3>Contact presse</h3>
-      <p>Journalistes, blogueurs littéraires, partenaires d&rsquo;événements&nbsp;: pour toute demande d&rsquo;interview, de visuels en haute définition ou de coordination autour d&rsquo;un vernissage, écrivez-nous directement.</p>
-      <a class="btn-cta" href="contact.html">Nous écrire</a>
+      <h3><span class="t-fr">Contact presse</span><span class="t-en">Press contact</span></h3>
+      <p class="t-en">Journalists, literary bloggers, event partners: for interviews, high-resolution images or help coordinating an exhibition opening, write to us directly.</p>
+      <p class="t-fr">Journalistes, blogueurs littéraires, partenaires d&rsquo;événements&nbsp;: pour toute demande d&rsquo;interview, de visuels en haute définition ou de coordination autour d&rsquo;un vernissage, écrivez-nous directement.</p>
+      <a class="btn-cta" href="contact.html"><span class="t-fr">Nous écrire</span><span class="t-en">Write to us</span></a>
     </div>
 
   </main>
@@ -788,53 +826,54 @@ em{font-style:italic;color:#5a4a30;}
     <div class="filet-haut" aria-hidden="true"><span class="etoile">✦</span></div>
     <div class="plan-site-grille">
       <div class="plan-categorie">
-        <h2>Qui sommes-nous&nbsp;?</h2>
+        <h2><span class="t-fr">Qui sommes-nous&nbsp;?</span><span class="t-en">About Us</span></h2>
         <ul>
-          <li><a href="qui-sommes-nous.html">Qui sommes-nous</a></li>
-          <li><a href="fonctionnement.html">Fonctionnement de l&rsquo;association</a></li>
+          <li><a href="qui-sommes-nous.html"><span class="t-fr">Qui sommes-nous</span><span class="t-en">About Us</span></a></li>
+          <li><a href="fonctionnement.html"><span class="t-fr">Fonctionnement de l&rsquo;association</span><span class="t-en">How the Association Works</span></a></li>
           <li><a href="anouk-journo.html">Anouk Journo</a></li>
           <li><a href="peintures.html">Meichelus</a></li>
         </ul>
       </div>
       <div class="plan-categorie">
-        <h2>Ateliers &amp; Coaching</h2>
+        <h2><span class="t-fr">Ateliers &amp; Coaching</span><span class="t-en">Workshops &amp; Coaching</span></h2>
         <ul>
-          <li><a href="ateliers.html">Ateliers &amp; Coaching</a></li>
-          <li><a href="mots-pour-maux.html">Écriture thérapeutique</a></li>
-          <li><a href="mediation-animale.html">Médiation animale</a></li>
-          <li><a href="amis-mots.html">Collection Amis-Mots</a></li>
+          <li><a href="ateliers.html"><span class="t-fr">Ateliers &amp; Coaching</span><span class="t-en">Workshops &amp; Coaching</span></a></li>
+          <li><a href="mots-pour-maux.html"><span class="t-fr">Écriture thérapeutique</span><span class="t-en">Therapeutic Writing</span></a></li>
+          <li><a href="mediation-animale.html"><span class="t-fr">Médiation animale</span><span class="t-en">Animal Mediation</span></a></li>
+          <li><a href="amis-mots.html"><span class="t-fr">Collection Amis-Mots</span><span class="t-en">Friends-Words Collection (Collection Amis-Mots)</span></a></li>
         </ul>
       </div>
       <div class="plan-categorie">
-        <h2>Éditions</h2>
+        <h2><span class="t-fr">Éditions</span><span class="t-en">Editions</span></h2>
         <ul>
-          <li><a href="edition.html">Manuscrits &amp; projets</a></li>
-          <li><a href="edition.html#raconter-le-monde">Collection Raconter le monde</a></li>
-          <li><a href="edition.html#immersion">Collection Immersion</a></li>
-          <li><a href="edition.html#manifestes">Collection Manifestes</a></li>
-          <li><a href="edition.html#romans-jeunesse">Romans jeunesse</a></li>
+          <li><a href="edition.html"><span class="t-fr">Manuscrits &amp; projets</span><span class="t-en">Manuscripts &amp; Projects</span></a></li>
+          <li><a href="edition.html#raconter-le-monde"><span class="t-fr">Collection Raconter le monde</span><span class="t-en">Collection: Telling the World (Raconter le monde)</span></a></li>
+          <li><a href="edition.html#immersion"><span class="t-fr">Collection Immersion</span><span class="t-en">Immersion Collection</span></a></li>
+          <li><a href="edition.html#manifestes"><span class="t-fr">Collection Manifestes</span><span class="t-en">Manifestos Collection</span></a></li>
+          <li><a href="edition.html#romans-jeunesse"><span class="t-fr">Romans jeunesse</span><span class="t-en">Young Adult Novels</span></a></li>
+          <li><a href="lire-partout.html"><span class="t-fr">Lire partout : numérique &amp; éditions en langue anglaise</span><span class="t-en">Read worldwide: ebooks &amp; English-language editions</span></a></li>
         </ul>
       </div>
       <div class="plan-categorie">
-        <h2>Poésie &amp; Arts</h2>
+        <h2><span class="t-fr">Poésie &amp; Arts</span><span class="t-en">Poetry &amp; Arts</span></h2>
         <ul>
-          <li><a href="poesie.html">Poésie au jour le jour</a></li>
-          <li><a href="peintures.html">Peintures &amp; Dessins</a></li>
-          <li><a href="evenements.html">Événements &amp; Presse</a></li>
+          <li><a href="poesie.html"><span class="t-fr">Poésie au jour le jour</span><span class="t-en">Poetry Day by Day</span></a></li>
+          <li><a href="peintures.html"><span class="t-fr">Peintures &amp; Dessins</span><span class="t-en">Paintings &amp; Drawings</span></a></li>
+          <li><a href="evenements.html"><span class="t-fr">Événements &amp; Presse</span><span class="t-en">Events &amp; Press</span></a></li>
         </ul>
       </div>
       <div class="plan-categorie">
-        <h2>Liens utiles</h2>
+        <h2><span class="t-fr">Liens utiles</span><span class="t-en">Useful Links</span></h2>
         <ul>
-          <li><a href="boutique.html">Boutique</a></li>
+          <li><a href="boutique.html"><span class="t-fr">Boutique</span><span class="t-en">Shop</span></a></li>
           <li><a href="faq.html">FAQ</a></li>
           <li><a href="contact.html">Contact</a></li>
-          <li><a href="youtube.html">Chaîne Youtube</a></li>
-          <li><a href="mentions-legales.html">Mentions légales</a></li>
+          <li><a href="youtube.html"><span class="t-fr">Chaîne Youtube</span><span class="t-en">Youtube Channel</span></a></li>
+          <li><a href="mentions-legales.html"><span class="t-fr">Mentions légales</span><span class="t-en">Legal Notice</span></a></li>
         </ul>
       </div>
     </div>
-    <p class="plan-mentions">© 2026 L&rsquo;AMagie <span class="etoile">✦</span> Maison d&rsquo;édition indépendante <span class="etoile">✦</span> SIREN 937629533 <span class="etoile">✦</span> Félines-Minervois</p>
+    <p class="plan-mentions">© 2026 L&rsquo;AMagie <span class="etoile">✦</span> <span class="t-fr">Maison d&rsquo;édition indépendante</span><span class="t-en">Independent Publishing House</span> <span class="etoile">✦</span> SIREN 937629533 <span class="etoile">✦</span> Félines-Minervois</p>
     <p class="plan-webmaster">© Webmaster Meichelus : <a href="mailto:meichelus@l-amagie.art">meichelus@l-amagie.art</a></p>
   </section>
 
@@ -848,6 +887,25 @@ em{font-style:italic;color:#5a4a30;}
   </div>
 
   <script>
+  /* ===== Langue FR / EN (mémorisée pour tout le site) ===== */
+  function setLanguage(lang) {
+    document.body.classList.toggle('lang-en', lang === 'en');
+    document.documentElement.lang = lang;
+    document.querySelectorAll('.lang-btn').forEach(function(b){
+      b.classList.toggle('active', b.getAttribute('data-lang') === lang);
+    });
+    try { localStorage.setItem('l-amagie-lang', lang); } catch(e) {}
+    
+  }
+  document.querySelectorAll('.lang-btn').forEach(function(b){
+    b.addEventListener('click', function(){ setLanguage(this.getAttribute('data-lang')); });
+  });
+  (function(){
+    var l = 'fr';
+    try { l = localStorage.getItem('l-amagie-lang') || 'fr'; } catch(e) {}
+    setLanguage(l);
+  })();
+
     if ('IntersectionObserver' in window) {
       var obs = new IntersectionObserver(function(entries){
         entries.forEach(function(e){
@@ -864,11 +922,19 @@ em{font-style:italic;color:#5a4a30;}
 
     // Lightbox — clic ou touche Entrée sur une carte pour agrandir l'article
     document.querySelectorAll('.article-image[data-src]').forEach(function(el){
+      function legende(){
+        // En anglais : la légende reprend le titre traduit de l'article
+        if (document.body.classList.contains('lang-en')) {
+          var t = el.closest('.article-carte').querySelector('.article-titre .t-en');
+          if (t) return t.textContent;
+        }
+        return el.getAttribute('data-legende');
+      }
       el.addEventListener('click', function(){
-        ouvrirLightbox(el.getAttribute('data-src'), el.getAttribute('data-legende'));
+        ouvrirLightbox(el.getAttribute('data-src'), legende());
       });
       el.addEventListener('keypress', function(e){
-        if (e.key === 'Enter') ouvrirLightbox(el.getAttribute('data-src'), el.getAttribute('data-legende'));
+        if (e.key === 'Enter') ouvrirLightbox(el.getAttribute('data-src'), legende());
       });
     });
 

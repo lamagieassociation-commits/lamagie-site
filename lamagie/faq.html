@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" translate="no" class="notranslate">
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -262,6 +262,29 @@ strong{font-weight:600;color:#3a3220;}
 .reveler{opacity:0;transform:translateY(18px);transition:opacity .9s ease, transform .9s ease;}
 .reveler.visible{opacity:1;transform:translateY(0);}
 @media(prefers-reduced-motion: reduce){.reveler{opacity:1;transform:none;transition:none;}}
+
+/* ============================================================
+   BILINGUE FR/EN — sans traduction automatique
+   ============================================================ */
+.t-en{display:none !important;}
+body.lang-en .t-fr{display:none !important;}
+body.lang-en span.t-en{display:inline !important;}
+body.lang-en p.t-en{display:block !important;}
+.entete-retour{gap:16px;}
+.toggle-langue{display:flex;gap:8px;align-items:center;}
+.toggle-langue button{
+  background:transparent;border:1px solid rgba(184,154,92,.4);padding:4px 10px;border-radius:2px;
+  cursor:pointer;font-family:'Cormorant Garamond',Georgia,serif;font-size:0.8rem;color:#5a4a30;
+  transition:all 0.3s;letter-spacing:.08em;text-transform:uppercase;
+}
+.toggle-langue button.active{background:#b89a5c;color:white;border-color:#b89a5c;}
+.toggle-langue button:hover{background:rgba(184,154,92,.1);}
+/* Les deux boutons FR / EN restent toujours visibles */
+body .entete-retour .toggle-langue button.lang-btn{display:inline-block !important;}
+@media(max-width:760px){
+  .toggle-langue{gap:6px;}
+  .toggle-langue button{padding:3px 8px;font-size:0.7rem;}
+}
 </style>
 </head>
 
@@ -276,14 +299,18 @@ strong{font-weight:600;color:#3a3220;}
     </div>
     <a href="index.html" class="entete-titre" aria-label="L'AMagie — Accueil">L&rsquo;AMagie</a>
     <div class="entete-retour">
-      <a href="index.html"><span>Retour à l&rsquo;accueil</span></a>
+      <div class="toggle-langue">
+        <button class="lang-btn active" data-lang="fr">FR</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+      </div>
+            <a href="index.html"><span><span class="t-fr">Retour à l&rsquo;accueil</span><span class="t-en">Home</span></span></a>
     </div>
   </header>
 
   <!-- HÉROS DE PAGE -->
   <section class="heros-page">
     <nav class="fil-ariane" aria-label="Fil d'ariane">
-      <a href="index.html">Accueil</a>
+      <a href="index.html"><span class="t-fr">Accueil</span><span class="t-en">Home</span></a>
       <span class="sep">·</span>
       <span>FAQ</span>
     </nav>
@@ -297,8 +324,8 @@ strong{font-weight:600;color:#3a3220;}
            onerror="this.style.display='none'"/>
     </figure>
 
-    <h1 class="titre-page">L&rsquo;AMagie éclaire vos lanternes</h1>
-    <p class="sous-titre-page">Les questions les plus fréquentes sur nos éditions, publications et ateliers.</p>
+    <h1 class="titre-page"><span class="t-fr">L&rsquo;AMagie éclaire vos lanternes</span><span class="t-en">L&rsquo;AMagie lights your way</span></h1>
+    <p class="sous-titre-page"><span class="t-fr">Les questions les plus fréquentes sur nos éditions, publications et ateliers.</span><span class="t-en">Frequently asked questions about our publishing house, books and workshops.</span></p>
     <div class="medaillon-titre" aria-hidden="true">✦</div>
   </section>
 
@@ -307,86 +334,110 @@ strong{font-weight:600;color:#3a3220;}
 
     <!-- INTRO -->
     <div class="carte-intro reveler">
-      <p>Cette FAQ regroupe les questions les plus fréquentes sur nos éditions et ateliers. Votre réponse s&rsquo;y trouve peut-être déjà — sinon, <a href="contact.html">contactez-nous directement</a>.</p>
+      <p class="t-fr">Cette FAQ regroupe les questions les plus fréquentes sur nos éditions et ateliers. Votre réponse s&rsquo;y trouve peut-être déjà — sinon, <a href="contact.html">contactez-nous directement</a>.</p>
+      <p class="t-en">This FAQ gathers the questions we are asked most often about our publishing house and workshops. Your answer may already be here — if not, <a href="contact.html">contact us directly</a>.</p>
     </div>
 
     <!-- QUESTIONS -->
     <div class="questions reveler">
 
       <details class="question">
-        <summary>Qui peut rejoindre L&rsquo;AMagie Éditions&nbsp;?</summary>
+        <summary><span class="t-fr">Qui peut rejoindre L&rsquo;AMagie Éditions&nbsp;?</span><span class="t-en">Who can join L&rsquo;AMagie Éditions?</span></summary>
         <div class="reponse">
-          <p>L&rsquo;AMagie accueille des <strong>autrices et auteurs, émergents ou confirmés</strong>, qui souhaitent publier leurs œuvres tout en conservant leurs droits.</p>
-          <p><em>Notre devise&nbsp;: «&nbsp;La poésie sauve&nbsp;!&nbsp;»</em></p>
+          <p class="t-fr">L&rsquo;AMagie accueille des <strong>autrices et auteurs, émergents ou confirmés</strong>, qui souhaitent publier leurs œuvres tout en conservant leurs droits.</p>
+          <p class="t-en">L&rsquo;AMagie welcomes <strong>authors, both emerging and established</strong>, who wish to publish their work while keeping their rights.</p>
+          <p class="t-fr"><em>Notre devise&nbsp;: «&nbsp;La poésie sauve&nbsp;!&nbsp;»</em></p>
+          <p class="t-en"><em>Our motto: “Poetry saves!” (« La poésie sauve ! »)</em></p>
         </div>
       </details>
 
       <details class="question">
-        <summary>Êtes-vous une maison d&rsquo;édition à compte d&rsquo;auteur&nbsp;?</summary>
+        <summary><span class="t-fr">Êtes-vous une maison d&rsquo;édition à compte d&rsquo;auteur&nbsp;?</span><span class="t-en">Are you a vanity (author-funded) publisher?</span></summary>
         <div class="reponse">
-          <p><strong>Non.</strong> Vous n&rsquo;avez pas l&rsquo;obligation d&rsquo;acheter des livres.</p>
-          <p><strong>Avec référencement</strong> (librairies)&nbsp;: cession des droits d&rsquo;exploitation uniquement — <em>coût 65&nbsp;€ une fois pour toutes</em>.</p>
+          <p class="t-fr"><strong>Non.</strong> Vous n&rsquo;avez pas l&rsquo;obligation d&rsquo;acheter des livres.</p>
+          <p class="t-en"><strong>No.</strong> You are under no obligation to buy copies of your book.</p>
+          <p class="t-fr"><strong>Avec référencement</strong> (librairies)&nbsp;: cession des droits d&rsquo;exploitation uniquement — <em>coût 65&nbsp;€ une fois pour toutes</em>.</p>
+          <p class="t-en"><strong>With bookshop listing</strong>: transfer of exploitation rights only — <em>a one-time cost of €65</em>.</p>
         </div>
       </details>
 
       <details class="question">
-        <summary>Comment fonctionne l&rsquo;impression à la demande&nbsp;?</summary>
+        <summary><span class="t-fr">Comment fonctionne l&rsquo;impression à la demande&nbsp;?</span><span class="t-en">How does print-on-demand work?</span></summary>
         <div class="reponse">
-          <p>Impression de <strong>1, 2, 50, 100 exemplaires ou plus</strong>. Pas de gaspillage, pas de stock inutile.</p>
-          <p>Coût&nbsp;: <strong>4 à 5&nbsp;€ par exemplaire</strong> (roman format poche N&amp;B + couverture couleur).</p>
+          <p class="t-fr">Impression de <strong>1, 2, 50, 100 exemplaires ou plus</strong>. Pas de gaspillage, pas de stock inutile.</p>
+          <p class="t-en">Print <strong>1, 2, 50, 100 copies or more</strong>. No waste, no unnecessary stock.</p>
+          <p class="t-fr">Coût&nbsp;: <strong>4 à 5&nbsp;€ par exemplaire</strong> (roman format poche N&amp;B + couverture couleur).</p>
+          <p class="t-en">Cost: <strong>€4 to €5 per copy</strong> (pocket-size novel, black-and-white interior + colour cover).</p>
         </div>
       </details>
 
       <details class="question">
-        <summary>Quels services proposez-vous aux auteurs&nbsp;?</summary>
+        <summary><span class="t-fr">Quels services proposez-vous aux auteurs&nbsp;?</span><span class="t-en">What services do you offer authors?</span></summary>
         <div class="reponse">
-          <p>Relecture, coaching littéraire, mise en page, graphisme de couverture. <strong>1 heure offerte</strong>, puis 30&nbsp;€/h.</p>
-          <p><strong>ISBN et dépôt légal BnF gratuits.</strong></p>
-          <p>Communication&nbsp;: <em>réseaux sociaux + article de presse offert</em>.</p>
+          <p class="t-fr">Relecture, coaching littéraire, mise en page, graphisme de couverture. <strong>1 heure offerte</strong>, puis 30&nbsp;€/h.</p>
+          <p class="t-en">Proofreading, literary coaching, layout, cover design. <strong>First hour free</strong>, then €30/hour.</p>
+          <p class="t-fr"><strong>ISBN et dépôt légal BnF gratuits.</strong></p>
+          <p class="t-en"><strong>ISBN and legal deposit with the Bibliothèque nationale de France (BnF) free of charge.</strong></p>
+          <p class="t-fr">Communication&nbsp;: <em>réseaux sociaux + article de presse offert</em>.</p>
+          <p class="t-en">Promotion: <em>social media + a complimentary press article</em>.</p>
         </div>
       </details>
 
       <details class="question">
-        <summary>Dois-je céder mes droits d&rsquo;auteur&nbsp;?</summary>
+        <summary><span class="t-fr">Dois-je céder mes droits d&rsquo;auteur&nbsp;?</span><span class="t-en">Do I have to transfer my copyright?</span></summary>
         <div class="reponse">
-          <p><strong>Non</strong>, si vous choisissez la formule <em>sans référencement</em>.</p>
-          <p><strong>Oui</strong>, si vous souhaitez le référencement en librairies (contrat d&rsquo;exclusivité à <em>65&nbsp;€ une fois pour toutes</em>).</p>
-          <p>L&rsquo;AMagie ne perçoit aucun revenu sur les ventes.</p>
+          <p class="t-fr"><strong>Non</strong>, si vous choisissez la formule <em>sans référencement</em>.</p>
+          <p class="t-en"><strong>No</strong>, if you choose the option <em>without bookshop listing</em>.</p>
+          <p class="t-fr"><strong>Oui</strong>, si vous souhaitez le référencement en librairies (contrat d&rsquo;exclusivité à <em>65&nbsp;€ une fois pour toutes</em>).</p>
+          <p class="t-en"><strong>Yes</strong>, if you want your book listed in bookshops (exclusive contract, <em>a one-time cost of €65</em>).</p>
+          <p class="t-fr">L&rsquo;AMagie ne perçoit aucun revenu sur les ventes.</p>
+          <p class="t-en">L&rsquo;AMagie takes no income from sales.</p>
         </div>
       </details>
 
       <details class="question">
-        <summary>Quelle est la rémunération pour l&rsquo;auteur&nbsp;?</summary>
+        <summary><span class="t-fr">Quelle est la rémunération pour l&rsquo;auteur&nbsp;?</span><span class="t-en">How much does the author earn?</span></summary>
         <div class="reponse">
-          <p><strong>Environ 40&nbsp;% des ventes</strong>, contre 2 à 8&nbsp;% en édition classique.</p>
-          <p>En ventes directes (salons, dédicaces)&nbsp;: <strong>100&nbsp;% pour vous</strong>, hors frais d&rsquo;impression.</p>
+          <p class="t-fr"><strong>Environ 40&nbsp;% des ventes</strong>, contre 2 à 8&nbsp;% en édition classique.</p>
+          <p class="t-en"><strong>About 40% of sales</strong>, compared with 2 to 8% in traditional publishing.</p>
+          <p class="t-fr">En ventes directes (salons, dédicaces)&nbsp;: <strong>100&nbsp;% pour vous</strong>, hors frais d&rsquo;impression.</p>
+          <p class="t-en">On direct sales (book fairs, signings): <strong>100% goes to you</strong>, minus printing costs.</p>
         </div>
       </details>
 
       <details class="question">
-        <summary>Quels sont les coûts pour l&rsquo;auteur&nbsp;?</summary>
+        <summary><span class="t-fr">Quels sont les coûts pour l&rsquo;auteur&nbsp;?</span><span class="t-en">What are the costs for the author?</span></summary>
         <div class="reponse">
-          <p><strong>Adhésion annuelle&nbsp;:</strong> 30&nbsp;€.</p>
-          <p><strong>Accompagnement éditorial&nbsp;:</strong> gratuit 1h, puis 30&nbsp;€/h.</p>
-          <p><strong>Impression&nbsp;:</strong> 4 à 5&nbsp;€ par exemplaire.</p>
-          <p><strong>Référencement optionnel&nbsp;:</strong> 65&nbsp;€ une fois.</p>
+          <p class="t-fr"><strong>Adhésion annuelle&nbsp;:</strong> 30&nbsp;€.</p>
+          <p class="t-en"><strong>Annual membership:</strong> €30.</p>
+          <p class="t-fr"><strong>Accompagnement éditorial&nbsp;:</strong> gratuit 1h, puis 30&nbsp;€/h.</p>
+          <p class="t-en"><strong>Editorial support:</strong> first hour free, then €30/hour.</p>
+          <p class="t-fr"><strong>Impression&nbsp;:</strong> 4 à 5&nbsp;€ par exemplaire.</p>
+          <p class="t-en"><strong>Printing:</strong> €4 to €5 per copy.</p>
+          <p class="t-fr"><strong>Référencement optionnel&nbsp;:</strong> 65&nbsp;€ une fois.</p>
+          <p class="t-en"><strong>Optional bookshop listing:</strong> €65, one time.</p>
         </div>
       </details>
 
       <details class="question">
-        <summary>Comment rejoindre L&rsquo;AMagie&nbsp;?</summary>
+        <summary><span class="t-fr">Comment rejoindre L&rsquo;AMagie&nbsp;?</span><span class="t-en">How do I join L&rsquo;AMagie?</span></summary>
         <div class="reponse">
-          <p>Envoyez votre manuscrit (Word ou PDF) à <a href="mailto:editions@l-amagie.art">editions@l-amagie.art</a> — nous l&rsquo;étudierons avec attention.</p>
-          <p>Appelez-nous au <a href="tel:0674402880">06&nbsp;74&nbsp;40&nbsp;28&nbsp;80</a>.</p>
+          <p class="t-fr">Envoyez votre manuscrit (Word ou PDF) à <a href="mailto:editions@l-amagie.art">editions@l-amagie.art</a> — nous l&rsquo;étudierons avec attention.</p>
+          <p class="t-en">Send your manuscript (Word or PDF) to <a href="mailto:editions@l-amagie.art">editions@l-amagie.art</a> — we will read it with care.</p>
+          <p class="t-fr">Appelez-nous au <a href="tel:0674402880">06&nbsp;74&nbsp;40&nbsp;28&nbsp;80</a>.</p>
+          <p class="t-en">Call us at <a href="tel:+33674402880">+33&nbsp;6&nbsp;74&nbsp;40&nbsp;28&nbsp;80</a>.</p>
         </div>
       </details>
 
       <details class="question">
-        <summary>Pourquoi L&rsquo;AMagie se distingue-t-elle&nbsp;?</summary>
+        <summary><span class="t-fr">Pourquoi L&rsquo;AMagie se distingue-t-elle&nbsp;?</span><span class="t-en">What makes L&rsquo;AMagie different?</span></summary>
         <div class="reponse">
-          <p><strong>Anouk Journo</strong> est autrice depuis 30 ans, publiée chez <em>Bayard, Fleurus, Gallimard Jeunesse</em>, membre de la <em>SGDL</em>.</p>
-          <p><strong>Meichelus</strong> est peintre, illustrateur et directeur éditorial.</p>
-          <p>Ensemble, ils offrent une <em>relation humaine, bienveillante et créative</em>.</p>
+          <p class="t-fr"><strong>Anouk Journo</strong> est autrice depuis 30 ans, publiée chez <em>Bayard, Fleurus, Gallimard Jeunesse</em>, membre de la <em>SGDL</em>.</p>
+          <p class="t-en"><strong>Anouk Journo</strong> has been an author for 30 years, published by <em>Bayard, Fleurus, Gallimard Jeunesse</em>, and is a member of the <em>SGDL</em> (French Society of Men and Women of Letters).</p>
+          <p class="t-fr"><strong>Meichelus</strong> est peintre, illustrateur et directeur éditorial.</p>
+          <p class="t-en"><strong>Meichelus</strong> is a painter, illustrator and editorial director.</p>
+          <p class="t-fr">Ensemble, ils offrent une <em>relation humaine, bienveillante et créative</em>.</p>
+          <p class="t-en">Together, they offer <em>a human, caring and creative relationship</em>.</p>
         </div>
       </details>
 
@@ -394,11 +445,12 @@ strong{font-weight:600;color:#3a3220;}
 
     <!-- CTA FINAL -->
     <div class="cta-final reveler">
-      <h3>Votre question n&rsquo;est pas ici&nbsp;?</h3>
-      <p>Contactez-nous directement — nous sommes là pour vous accompagner.</p>
+      <h3><span class="t-fr">Votre question n&rsquo;est pas ici&nbsp;?</span><span class="t-en">Can&rsquo;t find your question?</span></h3>
+      <p class="t-fr">Contactez-nous directement — nous sommes là pour vous accompagner.</p>
+      <p class="t-en">Contact us directly — we are here to help.</p>
       <div class="btns-cta">
-        <a class="btn-cta" href="contact.html">Nous écrire</a>
-        <a class="btn-cta externe" href="https://www.helloasso.com/associations/l-amagie/adhesions/adhesion-a-l-amagie" target="_blank" rel="noopener">Adhérer</a>
+        <a class="btn-cta" href="contact.html"><span class="t-fr">Nous écrire</span><span class="t-en">Write to us</span></a>
+        <a class="btn-cta externe" href="https://www.helloasso.com/associations/l-amagie/adhesions/adhesion-a-l-amagie" target="_blank" rel="noopener"><span class="t-fr">Adhérer</span><span class="t-en">Become a member</span></a>
       </div>
     </div>
 
@@ -409,57 +461,78 @@ strong{font-weight:600;color:#3a3220;}
     <div class="filet-haut" aria-hidden="true"><span class="etoile">✦</span></div>
     <div class="plan-site-grille">
       <div class="plan-categorie">
-        <h2>Qui sommes-nous&nbsp;?</h2>
+        <h2><span class="t-fr">Qui sommes-nous&nbsp;?</span><span class="t-en">About Us</span></h2>
         <ul>
-          <li><a href="qui-sommes-nous.html">Qui sommes-nous</a></li>
-          <li><a href="fonctionnement.html">Fonctionnement de l&rsquo;association</a></li>
+          <li><a href="qui-sommes-nous.html"><span class="t-fr">Qui sommes-nous</span><span class="t-en">About Us</span></a></li>
+          <li><a href="fonctionnement.html"><span class="t-fr">Fonctionnement de l&rsquo;association</span><span class="t-en">How the Association Works</span></a></li>
           <li><a href="anouk-journo.html">Anouk Journo</a></li>
           <li><a href="peintures.html">Meichelus</a></li>
         </ul>
       </div>
       <div class="plan-categorie">
-        <h2>Ateliers &amp; Coaching</h2>
+        <h2><span class="t-fr">Ateliers &amp; Coaching</span><span class="t-en">Workshops &amp; Coaching</span></h2>
         <ul>
-          <li><a href="ateliers.html">Ateliers &amp; Coaching</a></li>
-          <li><a href="mots-pour-maux.html">Écriture thérapeutique</a></li>
-          <li><a href="mediation-animale.html">Médiation animale</a></li>
-          <li><a href="amis-mots.html">Collection Amis-Mots</a></li>
+          <li><a href="ateliers.html"><span class="t-fr">Ateliers &amp; Coaching</span><span class="t-en">Workshops &amp; Coaching</span></a></li>
+          <li><a href="mots-pour-maux.html"><span class="t-fr">Écriture thérapeutique</span><span class="t-en">Therapeutic Writing</span></a></li>
+          <li><a href="mediation-animale.html"><span class="t-fr">Médiation animale</span><span class="t-en">Animal Mediation</span></a></li>
+          <li><a href="amis-mots.html"><span class="t-fr">Collection Amis-Mots</span><span class="t-en">Friends-Words Collection (Collection Amis-Mots)</span></a></li>
         </ul>
       </div>
       <div class="plan-categorie">
-        <h2>Éditions</h2>
+        <h2><span class="t-fr">Éditions</span><span class="t-en">Editions</span></h2>
         <ul>
-          <li><a href="edition.html">Manuscrits &amp; projets</a></li>
-          <li><a href="edition.html#raconter-le-monde">Collection Raconter le monde</a></li>
-          <li><a href="edition.html#immersion">Collection Immersion</a></li>
-          <li><a href="edition.html#manifestes">Collection Manifestes</a></li>
-          <li><a href="edition.html#romans-jeunesse">Romans jeunesse</a></li>
+          <li><a href="edition.html"><span class="t-fr">Manuscrits &amp; projets</span><span class="t-en">Manuscripts &amp; Projects</span></a></li>
+          <li><a href="edition.html#raconter-le-monde"><span class="t-fr">Collection Raconter le monde</span><span class="t-en">Collection: Telling the World (Raconter le monde)</span></a></li>
+          <li><a href="edition.html#immersion"><span class="t-fr">Collection Immersion</span><span class="t-en">Immersion Collection</span></a></li>
+          <li><a href="edition.html#manifestes"><span class="t-fr">Collection Manifestes</span><span class="t-en">Manifestos Collection</span></a></li>
+          <li><a href="edition.html#romans-jeunesse"><span class="t-fr">Romans jeunesse</span><span class="t-en">Young Adult Novels</span></a></li>
+          <li><a href="lire-partout.html"><span class="t-fr">Lire partout : numérique &amp; éditions en langue anglaise</span><span class="t-en">Read worldwide: ebooks &amp; English-language editions</span></a></li>
         </ul>
       </div>
       <div class="plan-categorie">
-        <h2>Poésie &amp; Arts</h2>
+        <h2><span class="t-fr">Poésie &amp; Arts</span><span class="t-en">Poetry &amp; Arts</span></h2>
         <ul>
-          <li><a href="poesie.html">Poésie au jour le jour</a></li>
-          <li><a href="peintures.html">Peintures &amp; Dessins</a></li>
-          <li><a href="evenements.html">Événements &amp; Presse</a></li>
+          <li><a href="poesie.html"><span class="t-fr">Poésie au jour le jour</span><span class="t-en">Poetry Day by Day</span></a></li>
+          <li><a href="peintures.html"><span class="t-fr">Peintures &amp; Dessins</span><span class="t-en">Paintings &amp; Drawings</span></a></li>
+          <li><a href="evenements.html"><span class="t-fr">Événements &amp; Presse</span><span class="t-en">Events &amp; Press</span></a></li>
         </ul>
       </div>
       <div class="plan-categorie">
-        <h2>Liens utiles</h2>
+        <h2><span class="t-fr">Liens utiles</span><span class="t-en">Useful Links</span></h2>
         <ul>
-          <li><a href="boutique.html">Boutique</a></li>
+          <li><a href="boutique.html"><span class="t-fr">Boutique</span><span class="t-en">Shop</span></a></li>
           <li><a href="faq.html">FAQ</a></li>
           <li><a href="contact.html">Contact</a></li>
-          <li><a href="youtube.html">Chaîne Youtube</a></li>
-          <li><a href="mentions-legales.html">Mentions légales</a></li>
+          <li><a href="youtube.html"><span class="t-fr">Chaîne Youtube</span><span class="t-en">Youtube Channel</span></a></li>
+          <li><a href="mentions-legales.html"><span class="t-fr">Mentions légales</span><span class="t-en">Legal Notice</span></a></li>
         </ul>
       </div>
     </div>
-    <p class="plan-mentions">© 2026 L&rsquo;AMagie <span class="etoile">✦</span> Maison d&rsquo;édition indépendante <span class="etoile">✦</span> SIREN 937629533 <span class="etoile">✦</span> Félines-Minervois</p>
+    <p class="plan-mentions">© 2026 L&rsquo;AMagie <span class="etoile">✦</span> <span class="t-fr">Maison d&rsquo;édition indépendante</span><span class="t-en">Independent Publishing House</span> <span class="etoile">✦</span> SIREN 937629533 <span class="etoile">✦</span> Félines-Minervois</p>
     <p class="plan-webmaster">© Webmaster Meichelus : <a href="mailto:meichelus@l-amagie.art">meichelus@l-amagie.art</a></p>
   </section>
 
   <script>
+    /* ===== Langue FR / EN (mémorisée pour tout le site) ===== */
+    var TITRES = { fr: "FAQ — L'AMagie éclaire vos lanternes", en: "FAQ — L'AMagie lights your way" };
+    function setLanguage(lang) {
+      document.body.classList.toggle('lang-en', lang === 'en');
+      document.documentElement.lang = lang;
+      document.title = TITRES[lang] || TITRES.fr;
+      document.querySelectorAll('.lang-btn').forEach(function(b){
+        b.classList.toggle('active', b.getAttribute('data-lang') === lang);
+      });
+      try { localStorage.setItem('l-amagie-lang', lang); localStorage.setItem('preferredLanguage', lang); } catch(e) {}
+    }
+    document.querySelectorAll('.lang-btn').forEach(function(b){
+      b.addEventListener('click', function(){ setLanguage(this.getAttribute('data-lang')); });
+    });
+    (function(){
+      var l = 'fr';
+      try { l = localStorage.getItem('l-amagie-lang') || localStorage.getItem('preferredLanguage') || 'fr'; } catch(e) {}
+      setLanguage(l === 'en' ? 'en' : 'fr');
+    })();
+
     if ('IntersectionObserver' in window) {
       var obs = new IntersectionObserver(function(entries){
         entries.forEach(function(e){

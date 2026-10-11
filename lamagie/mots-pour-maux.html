@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" translate="no" class="notranslate">
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -295,6 +295,29 @@ em{font-style:italic;color:#5a4a30;}
 .reveler{opacity:0;transform:translateY(18px);transition:opacity .9s ease, transform .9s ease;}
 .reveler.visible{opacity:1;transform:translateY(0);}
 @media(prefers-reduced-motion: reduce){.reveler{opacity:1;transform:none;transition:none;}}
+
+/* ============================================================
+   BILINGUE FR/EN — sans traduction automatique
+   ============================================================ */
+.t-en{display:none !important;}
+body.lang-en .t-fr{display:none !important;}
+body.lang-en span.t-en{display:inline !important;}
+body.lang-en p.t-en{display:block !important;}
+.entete-retour{gap:16px;}
+.toggle-langue{display:flex;gap:8px;align-items:center;}
+.toggle-langue button{
+  background:transparent;border:1px solid rgba(184,154,92,.4);padding:4px 10px;border-radius:2px;
+  cursor:pointer;font-family:'Cormorant Garamond',Georgia,serif;font-size:0.8rem;color:#5a4a30;
+  transition:all 0.3s;letter-spacing:.08em;text-transform:uppercase;
+}
+.toggle-langue button.active{background:#b89a5c;color:white;border-color:#b89a5c;}
+.toggle-langue button:hover{background:rgba(184,154,92,.1);}
+/* Les deux boutons FR / EN restent toujours visibles */
+body .entete-retour .toggle-langue button.lang-btn{display:inline-block !important;}
+@media(max-width:760px){
+  .toggle-langue{gap:6px;}
+  .toggle-langue button{padding:3px 8px;font-size:0.7rem;}
+}
 </style>
 </head>
 
@@ -309,21 +332,26 @@ em{font-style:italic;color:#5a4a30;}
     </div>
     <a href="index.html" class="entete-titre" aria-label="L'AMagie — Accueil">L&rsquo;AMagie</a>
     <div class="entete-retour">
-      <a href="index.html"><span>Retour à l&rsquo;accueil</span></a>
+      <div class="toggle-langue">
+        <button class="lang-btn active" data-lang="fr">FR</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+      </div>
+            <a href="index.html"><span><span class="t-fr">Retour à l&rsquo;accueil</span><span class="t-en">Home</span></span></a>
     </div>
   </header>
 
   <!-- HÉROS DE PAGE -->
   <section class="heros-page">
     <nav class="fil-ariane" aria-label="Fil d'ariane">
-      <a href="index.html">Accueil</a>
+      <a href="index.html"><span class="t-fr">Accueil</span><span class="t-en">Home</span></a>
       <span class="sep">·</span>
-      <a href="ateliers.html">Ateliers</a>
+      <a href="ateliers.html"><span class="t-fr">Ateliers</span><span class="t-en">Workshops</span></a>
       <span class="sep">·</span>
       <span>Mots pour Maux</span>
     </nav>
     <h1 class="titre-page">Mots pour Maux</h1>
-    <p class="sous-titre-page">L&rsquo;écriture thérapeutique — des mots qui apaisent, éclairent, transforment.</p>
+    <p class="t-en" style="font-style:italic;color:#7a6a48;margin:-6px 0 12px;">(Words for Wounds)</p>
+    <p class="sous-titre-page"><span class="t-fr">L&rsquo;écriture thérapeutique — des mots qui apaisent, éclairent, transforment.</span><span class="t-en">Therapeutic writing — words that soothe, illuminate, transform.</span></p>
     <div class="medaillon-titre" aria-hidden="true">✦</div>
   </section>
 
@@ -339,71 +367,80 @@ em{font-style:italic;color:#5a4a30;}
         <img src="images/maux-pour-maux.png" alt="Mots pour Maux — Écriture thérapeutique" style="max-width:50%; height:auto; border-radius: 8px; box-shadow: 0 4px 20px rgba(58,50,32,0.15); margin: 20px auto; display: block;" loading="lazy">
       </figure>
 
-      <p><em>Écrivaine publiée et poète</em>, Anouk Journo anime depuis vingt ans des ateliers d&rsquo;écriture créative. Son parcours personnel — une longue thérapie, une expérience d&rsquo;aidante — l&rsquo;a convaincue de <em>la force des mots pour apaiser et transformer</em>.</p>
-      <p>Écrire, c&rsquo;est partir en voyage intérieur. Chaque mot devient une clé, chaque phrase un passage.</p>
-      <p>Les mots apaisent, éclairent, transforment. Ils offrent un chemin vers soi, <em>dans la douceur et la vérité</em>.</p>
+      <p class="t-fr"><em>Écrivaine publiée et poète</em>, Anouk Journo anime depuis vingt ans des ateliers d&rsquo;écriture créative. Son parcours personnel — une longue thérapie, une expérience d&rsquo;aidante — l&rsquo;a convaincue de <em>la force des mots pour apaiser et transformer</em>.</p>
+      <p class="t-en"><em>A published author and poet</em>, Anouk Journo has been leading creative writing workshops for twenty years. Her own journey — a long therapy, years as a caregiver — convinced her of <em>the power of words to soothe and transform</em>.</p>
+      <p class="t-fr">Écrire, c&rsquo;est partir en voyage intérieur. Chaque mot devient une clé, chaque phrase un passage.</p>
+      <p class="t-en">To write is to set out on an inner journey. Each word becomes a key, each sentence a passage.</p>
+      <p class="t-fr">Les mots apaisent, éclairent, transforment. Ils offrent un chemin vers soi, <em>dans la douceur et la vérité</em>.</p>
+      <p class="t-en">Words soothe, illuminate, transform. They open a path back to yourself, <em>gently and truthfully</em>.</p>
     </article>
 
     <!-- ============================================================
          BLOC 2 — Le cadre & déroulement
          ============================================================ -->
     <div class="section-titre reveler">
-      <h2>Le cadre</h2>
-      <span class="legende">Comment ça se passe&nbsp;?</span>
+      <h2><span class="t-fr">Le cadre</span><span class="t-en">The Setting</span></h2>
+      <span class="legende"><span class="t-fr">Comment ça se passe&nbsp;?</span><span class="t-en">How does it work?</span></span>
     </div>
 
     <article class="carte reveler">
-      <p>Les séances se vivent <em>en ligne</em>, dans la simplicité d&rsquo;une rencontre par Zoom ou une autre plateforme de votre choix. Nous définissons ensemble leur durée — entre 1h et 2h — selon votre rythme et vos besoins.</p>
-      <p>Tout se déroule dans <em>un cadre bienveillant et confidentiel</em>, garanti par une charte que nous signons ensemble.</p>
-      <p>Pour ouvrir ce chemin en douceur, <em>le premier entretien est offert</em>.</p>
+      <p class="t-fr">Les séances se vivent <em>en ligne</em>, dans la simplicité d&rsquo;une rencontre par Zoom ou une autre plateforme de votre choix. Nous définissons ensemble leur durée — entre 1h et 2h — selon votre rythme et vos besoins.</p>
+      <p class="t-en">Sessions take place <em>online</em>, as a simple meeting on Zoom or another platform of your choice. Together we decide how long they last — between one and two hours — according to your pace and your needs.</p>
+      <p class="t-fr">Tout se déroule dans <em>un cadre bienveillant et confidentiel</em>, garanti par une charte que nous signons ensemble.</p>
+      <p class="t-en">Everything happens within <em>a caring, confidential setting</em>, guaranteed by a charter we sign together.</p>
+      <p class="t-fr">Pour ouvrir ce chemin en douceur, <em>le premier entretien est offert</em>.</p>
+      <p class="t-en">To begin this journey gently, <em>the first conversation is free</em>.</p>
     </article>
 
     <!-- ============================================================
          BLOC 3 — Tarifs & formules
          ============================================================ -->
     <div class="section-titre reveler">
-      <h2>Tarifs</h2>
-      <span class="legende">Formules</span>
+      <h2><span class="t-fr">Tarifs</span><span class="t-en">Fees</span></h2>
+      <span class="legende"><span class="t-fr">Formules</span><span class="t-en">Options</span></span>
     </div>
 
     <div class="formules reveler">
 
       <article class="formule">
-        <span class="label">Séance à l&rsquo;unité</span>
-        <h3>Une rencontre</h3>
-        <span class="prix">50 €</span>
-        <span class="prix-suffixe">par heure</span>
-        <p>Durée adaptable entre 1h et 2h selon vos besoins. Règlement sécurisé en ligne.</p>
+        <span class="label"><span class="t-fr">Séance à l&rsquo;unité</span><span class="t-en">Single session</span></span>
+        <h3><span class="t-fr">Une rencontre</span><span class="t-en">One meeting</span></h3>
+        <span class="prix"><span class="t-fr">50 €</span><span class="t-en">€50</span></span>
+        <span class="prix-suffixe"><span class="t-fr">par heure</span><span class="t-en">per hour</span></span>
+        <p class="t-fr">Durée adaptable entre 1h et 2h selon vos besoins. Règlement sécurisé en ligne.</p>
+        <p class="t-en">Length adjustable between one and two hours to suit your needs. Secure online payment.</p>
       </article>
 
       <article class="formule">
-        <span class="label">Forfait 5 séances</span>
-        <h3>Un accompagnement</h3>
-        <span class="prix">200 €</span>
-        <span class="prix-suffixe">les cinq séances</span>
-        <p>Un suivi régulier, à votre rythme. Plus économique et plus structurant pour ancrer la démarche.</p>
+        <span class="label"><span class="t-fr">Forfait 5 séances</span><span class="t-en">5-session package</span></span>
+        <h3><span class="t-fr">Un accompagnement</span><span class="t-en">Ongoing support</span></h3>
+        <span class="prix"><span class="t-fr">200 €</span><span class="t-en">€200</span></span>
+        <span class="prix-suffixe"><span class="t-fr">les cinq séances</span><span class="t-en">for five sessions</span></span>
+        <p class="t-fr">Un suivi régulier, à votre rythme. Plus économique et plus structurant pour ancrer la démarche.</p>
+        <p class="t-en">Regular follow-up, at your own pace. Better value, and more structure to help the process take root.</p>
       </article>
 
     </div>
 
     <div class="premier-entretien reveler">
-      <h3>Premier entretien offert</h3>
-      <p>Pour commencer en douceur, sans engagement. Échangeons sur votre parcours et vos besoins.</p>
+      <h3><span class="t-fr">Premier entretien offert</span><span class="t-en">First conversation free</span></h3>
+      <p class="t-fr">Pour commencer en douceur, sans engagement. Échangeons sur votre parcours et vos besoins.</p>
+      <p class="t-en">A gentle start, with no commitment. Let&rsquo;s talk about your journey and what you need.</p>
     </div>
 
     <!-- ============================================================
          APPEL À L'ACTION
          ============================================================ -->
     <div class="actions reveler">
-      <a class="btn-action principal" href="contact.html">Réserver une séance</a>
-      <a class="btn-action" href="contact.html">Nous écrire</a>
+      <a class="btn-action principal" href="contact.html"><span class="t-fr">Réserver une séance</span><span class="t-en">Book a session</span></a>
+      <a class="btn-action" href="contact.html"><span class="t-fr">Nous écrire</span><span class="t-en">Write to us</span></a>
     </div>
 
     <!-- ============================================================
          RETOUR DISCRET VERS LES ATELIERS
          ============================================================ -->
     <div class="retour-discret reveler">
-      <a href="ateliers.html">Retour aux ateliers</a>
+      <a href="ateliers.html"><span class="t-fr">Retour aux ateliers</span><span class="t-en">Back to workshops</span></a>
     </div>
 
   </main>
@@ -413,56 +450,78 @@ em{font-style:italic;color:#5a4a30;}
     <div class="filet-haut" aria-hidden="true"><span class="etoile">✦</span></div>
     <div class="plan-site-grille">
       <div class="plan-categorie">
-        <h2>Qui sommes-nous&nbsp;?</h2>
+        <h2><span class="t-fr">Qui sommes-nous&nbsp;?</span><span class="t-en">About Us</span></h2>
         <ul>
-          <li><a href="qui-sommes-nous.html">Qui sommes-nous</a></li>
-          <li><a href="fonctionnement.html">Fonctionnement de l&rsquo;association</a></li>
+          <li><a href="qui-sommes-nous.html"><span class="t-fr">Qui sommes-nous</span><span class="t-en">About Us</span></a></li>
+          <li><a href="fonctionnement.html"><span class="t-fr">Fonctionnement de l&rsquo;association</span><span class="t-en">How the Association Works</span></a></li>
           <li><a href="anouk-journo.html">Anouk Journo</a></li>
+          <li><a href="peintures.html">Meichelus</a></li>
         </ul>
       </div>
       <div class="plan-categorie">
-        <h2>Ateliers &amp; Coaching</h2>
+        <h2><span class="t-fr">Ateliers &amp; Coaching</span><span class="t-en">Workshops &amp; Coaching</span></h2>
         <ul>
-          <li><a href="ateliers.html">Ateliers &amp; Coaching</a></li>
-          <li><a href="mots-pour-maux.html">Écriture thérapeutique</a></li>
-          <li><a href="mediation-animale.html">Médiation animale</a></li>
-          <li><a href="amis-mots.html">Collection Amis-Mots</a></li>
+          <li><a href="ateliers.html"><span class="t-fr">Ateliers &amp; Coaching</span><span class="t-en">Workshops &amp; Coaching</span></a></li>
+          <li><a href="mots-pour-maux.html"><span class="t-fr">Écriture thérapeutique</span><span class="t-en">Therapeutic Writing</span></a></li>
+          <li><a href="mediation-animale.html"><span class="t-fr">Médiation animale</span><span class="t-en">Animal Mediation</span></a></li>
+          <li><a href="amis-mots.html"><span class="t-fr">Collection Amis-Mots</span><span class="t-en">Friends-Words Collection (Collection Amis-Mots)</span></a></li>
         </ul>
       </div>
       <div class="plan-categorie">
-        <h2>Éditions</h2>
+        <h2><span class="t-fr">Éditions</span><span class="t-en">Editions</span></h2>
         <ul>
-          <li><a href="edition.html">Manuscrits &amp; projets</a></li>
-          <li><a href="edition.html#raconter-le-monde">Collection Raconter le monde</a></li>
-          <li><a href="edition.html#immersion">Collection Immersion</a></li>
-          <li><a href="edition.html#manifestes">Collection Manifestes</a></li>
-          <li><a href="edition.html#romans-jeunesse">Romans jeunesse</a></li>
+          <li><a href="edition.html"><span class="t-fr">Manuscrits &amp; projets</span><span class="t-en">Manuscripts &amp; Projects</span></a></li>
+          <li><a href="edition.html#raconter-le-monde"><span class="t-fr">Collection Raconter le monde</span><span class="t-en">Collection: Telling the World (Raconter le monde)</span></a></li>
+          <li><a href="edition.html#immersion"><span class="t-fr">Collection Immersion</span><span class="t-en">Immersion Collection</span></a></li>
+          <li><a href="edition.html#manifestes"><span class="t-fr">Collection Manifestes</span><span class="t-en">Manifestos Collection</span></a></li>
+          <li><a href="edition.html#romans-jeunesse"><span class="t-fr">Romans jeunesse</span><span class="t-en">Young Adult Novels</span></a></li>
+          <li><a href="lire-partout.html"><span class="t-fr">Lire partout : numérique &amp; éditions en langue anglaise</span><span class="t-en">Read worldwide: ebooks &amp; English-language editions</span></a></li>
         </ul>
       </div>
       <div class="plan-categorie">
-        <h2>Poésie &amp; Arts</h2>
+        <h2><span class="t-fr">Poésie &amp; Arts</span><span class="t-en">Poetry &amp; Arts</span></h2>
         <ul>
-          <li><a href="poesie.html">Poésie au jour le jour</a></li>
-          <li><a href="peintures.html">Peintures &amp; Dessins</a></li>
-          <li><a href="evenements.html">Événements &amp; Presse</a></li>
+          <li><a href="poesie.html"><span class="t-fr">Poésie au jour le jour</span><span class="t-en">Poetry Day by Day</span></a></li>
+          <li><a href="peintures.html"><span class="t-fr">Peintures &amp; Dessins</span><span class="t-en">Paintings &amp; Drawings</span></a></li>
+          <li><a href="evenements.html"><span class="t-fr">Événements &amp; Presse</span><span class="t-en">Events &amp; Press</span></a></li>
         </ul>
       </div>
       <div class="plan-categorie">
-        <h2>Liens utiles</h2>
+        <h2><span class="t-fr">Liens utiles</span><span class="t-en">Useful Links</span></h2>
         <ul>
-          <li><a href="boutique.html">Boutique</a></li>
+          <li><a href="boutique.html"><span class="t-fr">Boutique</span><span class="t-en">Shop</span></a></li>
           <li><a href="faq.html">FAQ</a></li>
           <li><a href="contact.html">Contact</a></li>
-          <li><a href="youtube.html">Chaîne Youtube</a></li>
-          <li><a href="mentions-legales.html">Mentions légales</a></li>
+          <li><a href="youtube.html"><span class="t-fr">Chaîne Youtube</span><span class="t-en">Youtube Channel</span></a></li>
+          <li><a href="mentions-legales.html"><span class="t-fr">Mentions légales</span><span class="t-en">Legal Notice</span></a></li>
         </ul>
       </div>
     </div>
-    <p class="plan-mentions">© L&rsquo;AMagie <span class="etoile">✦</span> Maison d&rsquo;édition indépendante <span class="etoile">✦</span> Félines-Minervois</p>
+    <p class="plan-mentions">© L&rsquo;AMagie <span class="etoile">✦</span> <span class="t-fr">Maison d&rsquo;édition indépendante</span><span class="t-en">Independent Publishing House</span> <span class="etoile">✦</span> Félines-Minervois</p>
     <p class="plan-webmaster">© Webmaster Meichelus : <a href="mailto:meichelus@l-amagie.art">meichelus@l-amagie.art</a></p>
   </section>
 
   <script>
+    /* ===== Langue FR / EN (mémorisée pour tout le site) ===== */
+    var TITRES = { fr: "Mots pour Maux — Écriture thérapeutique | L'AMagie", en: "Mots pour Maux — Therapeutic Writing | L'AMagie" };
+    function setLanguage(lang) {
+      document.body.classList.toggle('lang-en', lang === 'en');
+      document.documentElement.lang = lang;
+      document.title = TITRES[lang] || TITRES.fr;
+      document.querySelectorAll('.lang-btn').forEach(function(b){
+        b.classList.toggle('active', b.getAttribute('data-lang') === lang);
+      });
+      try { localStorage.setItem('l-amagie-lang', lang); localStorage.setItem('preferredLanguage', lang); } catch(e) {}
+    }
+    document.querySelectorAll('.lang-btn').forEach(function(b){
+      b.addEventListener('click', function(){ setLanguage(this.getAttribute('data-lang')); });
+    });
+    (function(){
+      var l = 'fr';
+      try { l = localStorage.getItem('l-amagie-lang') || localStorage.getItem('preferredLanguage') || 'fr'; } catch(e) {}
+      setLanguage(l === 'en' ? 'en' : 'fr');
+    })();
+
     if ('IntersectionObserver' in window) {
       var obs = new IntersectionObserver(function(entries){
         entries.forEach(function(e){

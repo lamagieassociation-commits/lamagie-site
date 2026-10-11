@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" translate="no" class="notranslate">
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -295,6 +295,29 @@ em{font-style:italic;color:#5a4a30;}
 .reveler{opacity:0;transform:translateY(18px);transition:opacity .9s ease, transform .9s ease;}
 .reveler.visible{opacity:1;transform:translateY(0);}
 @media(prefers-reduced-motion: reduce){.reveler{opacity:1;transform:none;transition:none;}}
+
+/* ============================================================
+   BILINGUE FR/EN — sans traduction automatique
+   ============================================================ */
+.t-en{display:none !important;}
+body.lang-en .t-fr{display:none !important;}
+body.lang-en span.t-en{display:inline !important;}
+body.lang-en p.t-en{display:block !important;}
+.entete-retour{gap:16px;}
+.toggle-langue{display:flex;gap:8px;align-items:center;}
+.toggle-langue button{
+  background:transparent;border:1px solid rgba(184,154,92,.4);padding:4px 10px;border-radius:2px;
+  cursor:pointer;font-family:'Cormorant Garamond',Georgia,serif;font-size:0.8rem;color:#5a4a30;
+  transition:all 0.3s;letter-spacing:.08em;text-transform:uppercase;
+}
+.toggle-langue button.active{background:#b89a5c;color:white;border-color:#b89a5c;}
+.toggle-langue button:hover{background:rgba(184,154,92,.1);}
+/* Les deux boutons FR / EN restent toujours visibles */
+body .entete-retour .toggle-langue button.lang-btn{display:inline-block !important;}
+@media(max-width:760px){
+  .toggle-langue{gap:6px;}
+  .toggle-langue button{padding:3px 8px;font-size:0.7rem;}
+}
 </style>
 </head>
 
@@ -309,21 +332,25 @@ em{font-style:italic;color:#5a4a30;}
     </div>
     <a href="index.html" class="entete-titre" aria-label="L'AMagie — Accueil">L&rsquo;AMagie</a>
     <div class="entete-retour">
-      <a href="index.html"><span>Retour à l&rsquo;accueil</span></a>
+      <div class="toggle-langue">
+        <button class="lang-btn active" data-lang="fr">FR</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+      </div>
+            <a href="index.html"><span><span class="t-fr">Retour à l&rsquo;accueil</span><span class="t-en">Home</span></span></a>
     </div>
   </header>
 
   <!-- HÉROS DE PAGE -->
   <section class="heros-page">
     <nav class="fil-ariane" aria-label="Fil d'ariane">
-      <a href="index.html">Accueil</a>
+      <a href="index.html"><span class="t-fr">Accueil</span><span class="t-en">Home</span></a>
       <span class="sep">·</span>
-      <a href="qui-sommes-nous.html">La maison</a>
+      <a href="qui-sommes-nous.html"><span class="t-fr">La maison</span><span class="t-en">About Us</span></a>
       <span class="sep">·</span>
-      <span>Médiation animale</span>
+      <span class="t-fr">Médiation animale</span><span class="t-en">Animal-Assisted Mediation</span>
     </nav>
-    <h1 class="titre-page">Médiation animale</h1>
-    <p class="sous-titre-page">La présence animale qui ouvre la parole et crée une confiance nouvelle</p>
+    <h1 class="titre-page"><span class="t-fr">Médiation animale</span><span class="t-en">Animal-Assisted Mediation</span></h1>
+    <p class="sous-titre-page"><span class="t-fr">La présence animale qui ouvre la parole et crée une confiance nouvelle</span><span class="t-en">The presence of animals that opens up speech and builds a new kind of trust</span></p>
     <div class="medaillon-titre" aria-hidden="true">✦</div>
 
     <figure class="illustration-titre reveler">
@@ -332,7 +359,7 @@ em{font-style:italic;color:#5a4a30;}
            loading="eager"
            decoding="async"
            onerror="this.style.display='none'"/>
-      <figcaption>Un cercle où la présence animale ouvre les mots.</figcaption>
+      <figcaption><span class="t-fr">Un cercle où la présence animale ouvre les mots.</span><span class="t-en">A circle where the presence of animals opens up words.</span></figcaption>
     </figure>
   </section>
 
@@ -343,52 +370,59 @@ em{font-style:italic;color:#5a4a30;}
          INTRODUCTION
          ============================================================ -->
     <article class="carte reveler">
-      <p>Dans le cadre d&rsquo;<em>actions solidaires</em>, L&rsquo;AMagie propose des ateliers de médiation animale qui associent <em>des temps de parole</em> — notamment pour la création de recueils de textes personnels ou collectifs&nbsp;: travail de mémoire, cognitif, artistique.</p>
+      <p class="t-fr">Dans le cadre d&rsquo;<em>actions solidaires</em>, L&rsquo;AMagie propose des ateliers de médiation animale qui associent <em>des temps de parole</em> — notamment pour la création de recueils de textes personnels ou collectifs&nbsp;: travail de mémoire, cognitif, artistique.</p>
+      <p class="t-en">As part of its <em>community outreach</em>, L&rsquo;AMagie offers animal-assisted mediation workshops that include <em>time for speaking and sharing</em> — notably to create collections of personal or group texts: work on memory, cognition and artistic expression.</p>
     </article>
 
     <!-- ============================================================
          LA FACILITATRICE
          ============================================================ -->
     <div class="section-titre reveler">
-      <h2>La facilitatrice</h2>
-      <span class="legende">Anouk Journo, certifiée</span>
+      <h2><span class="t-fr">La facilitatrice</span><span class="t-en">The Facilitator</span></h2>
+      <span class="legende"><span class="t-fr">Anouk Journo, certifiée</span><span class="t-en">Anouk Journo, certified</span></span>
     </div>
 
     <article class="carte reveler">
-      <p>En 2025, <em>Anouk Journo</em> s&rsquo;est formée à la médiation animale avec <em>Les Entrepreneurs Animaliers</em>. Elle a obtenu sa certification.</p>
-      <p>Elle a également réussi l&rsquo;<em>ACACED « Chiens »</em> — Attestation de Connaissances pour les Animaux de Compagnie d&rsquo;Espèces Domestiques — indispensable pour exercer des activités professionnelles liées aux chiens. Cette attestation est délivrée par le <em>Ministère de l&rsquo;Agriculture</em>.</p>
-      <p>Sa passion pour le monde des animaux et des mots se cristallise dans la médiation animale autant que dans <em>l&rsquo;écriture de documentaires animaliers</em>.</p>
+      <p class="t-fr">En 2025, <em>Anouk Journo</em> s&rsquo;est formée à la médiation animale avec <em>Les Entrepreneurs Animaliers</em>. Elle a obtenu sa certification.</p>
+      <p class="t-en">In 2025, <em>Anouk Journo</em> trained in animal-assisted mediation with <em>Les Entrepreneurs Animaliers</em> and earned her certification as an animal-assisted intervention facilitator.</p>
+      <p class="t-fr">Elle a également réussi l&rsquo;<em>ACACED « Chiens »</em> — Attestation de Connaissances pour les Animaux de Compagnie d&rsquo;Espèces Domestiques — indispensable pour exercer des activités professionnelles liées aux chiens. Cette attestation est délivrée par le <em>Ministère de l&rsquo;Agriculture</em>.</p>
+      <p class="t-en">She also passed the <em>ACACED “Dogs”</em> (Attestation de Connaissances pour les Animaux de Compagnie d&rsquo;Espèces Domestiques) — the French certificate of knowledge for domestic companion animals, required for any professional activity involving dogs. It is issued by the French <em>Ministry of Agriculture</em>.</p>
+      <p class="t-fr">Sa passion pour le monde des animaux et des mots se cristallise dans la médiation animale autant que dans <em>l&rsquo;écriture de documentaires animaliers</em>.</p>
+      <p class="t-en">Her passion for animals and for words comes together in animal-assisted mediation as much as in <em>her writing of wildlife and animal non-fiction</em>.</p>
     </article>
 
     <!-- ============================================================
          LES ATELIERS
          ============================================================ -->
     <div class="section-titre reveler">
-      <h2>Les ateliers</h2>
-      <span class="legende">Ce que nous proposons</span>
+      <h2><span class="t-fr">Les ateliers</span><span class="t-en">The Workshops</span></h2>
+      <span class="legende"><span class="t-fr">Ce que nous proposons</span><span class="t-en">What we offer</span></span>
     </div>
 
     <div class="grille-ateliers reveler">
 
       <article class="atelier-carte">
         <span class="icone" aria-hidden="true">🐕</span>
-        <h3>Ateliers collectifs</h3>
-        <p>La présence animale crée <em>un espace de confiance et d&rsquo;ouverture</em>. Idéal pour les groupes en accompagnement socioprofessionnel ou artistique.</p>
-        <a class="lien-action" href="ateliers.html">Voir les ateliers</a>
+        <h3><span class="t-fr">Ateliers collectifs</span><span class="t-en">Group Workshops</span></h3>
+        <p class="t-fr">La présence animale crée <em>un espace de confiance et d&rsquo;ouverture</em>. Idéal pour les groupes en accompagnement socioprofessionnel ou artistique.</p>
+        <p class="t-en">The presence of animals creates <em>a space of trust and openness</em>. Ideal for groups in social, vocational or artistic support programmes.</p>
+        <a class="lien-action" href="ateliers.html"><span class="t-fr">Voir les ateliers</span><span class="t-en">See the workshops</span></a>
       </article>
 
       <article class="atelier-carte">
         <span class="icone" aria-hidden="true">✍</span>
-        <h3>Écriture &amp; animaux</h3>
-        <p>Associer la médiation animale à des <em>temps d&rsquo;écriture</em> pour créer des recueils de textes personnels ou collectifs.</p>
-        <a class="lien-action" href="mots-pour-maux.html">Écriture thérapeutique</a>
+        <h3><span class="t-fr">Écriture &amp; animaux</span><span class="t-en">Writing &amp; Animals</span></h3>
+        <p class="t-fr">Associer la médiation animale à des <em>temps d&rsquo;écriture</em> pour créer des recueils de textes personnels ou collectifs.</p>
+        <p class="t-en">Combining animal-assisted mediation with <em>writing time</em> to create collections of personal or group texts.</p>
+        <a class="lien-action" href="mots-pour-maux.html"><span class="t-fr">Écriture thérapeutique</span><span class="t-en">Therapeutic writing</span></a>
       </article>
 
       <article class="atelier-carte">
         <span class="icone" aria-hidden="true">❀</span>
-        <h3>Collection Amis-Mots</h3>
-        <p>Des livres où <em>les animaux sont les héros discrets de nos vies</em>. Une collection née de cette même passion pour le monde animal.</p>
-        <a class="lien-action" href="amis-mots.html">Découvrir</a>
+        <h3><span class="t-fr">Collection Amis-Mots</span><span class="t-en">Collection Amis-Mots <em>(Word Friends)</em></span></h3>
+        <p class="t-fr">Des livres où <em>les animaux sont les héros discrets de nos vies</em>. Une collection née de cette même passion pour le monde animal.</p>
+        <p class="t-en">Books in which <em>animals are the quiet heroes of our lives</em>. A collection born of the same passion for the animal world.</p>
+        <a class="lien-action" href="amis-mots.html"><span class="t-fr">Découvrir</span><span class="t-en">Discover</span></a>
       </article>
 
     </div>
@@ -397,16 +431,17 @@ em{font-style:italic;color:#5a4a30;}
          CTA — ORGANISER UN ATELIER
          ============================================================ -->
     <div class="cta-organiser reveler">
-      <h3>Organiser un atelier</h3>
-      <p>Pour une association, une structure médico-sociale, une école ou un groupe privé — contactez-nous pour construire ensemble un projet adapté.</p>
-      <a class="btn-cta" href="contact.html">Nous contacter</a>
+      <h3><span class="t-fr">Organiser un atelier</span><span class="t-en">Host a workshop</span></h3>
+      <p class="t-fr">Pour une association, une structure médico-sociale, une école ou un groupe privé — contactez-nous pour construire ensemble un projet adapté.</p>
+      <p class="t-en">For a non-profit, a health or social care facility, a school or a private group — contact us and we will build a tailored project together.</p>
+      <a class="btn-cta" href="contact.html"><span class="t-fr">Nous contacter</span><span class="t-en">Contact us</span></a>
     </div>
 
     <!-- ============================================================
          RETOUR DISCRET
          ============================================================ -->
     <div class="retour-discret reveler">
-      <a href="ateliers.html">Retour aux ateliers</a>
+      <a href="ateliers.html"><span class="t-fr">Retour aux ateliers</span><span class="t-en">Back to workshops</span></a>
     </div>
 
   </main>
@@ -416,57 +451,78 @@ em{font-style:italic;color:#5a4a30;}
     <div class="filet-haut" aria-hidden="true"><span class="etoile">✦</span></div>
     <div class="plan-site-grille">
       <div class="plan-categorie">
-        <h2>Qui sommes-nous&nbsp;?</h2>
+        <h2><span class="t-fr">Qui sommes-nous&nbsp;?</span><span class="t-en">About Us</span></h2>
         <ul>
-          <li><a href="qui-sommes-nous.html">Qui sommes-nous</a></li>
-          <li><a href="fonctionnement.html">Fonctionnement de l&rsquo;association</a></li>
+          <li><a href="qui-sommes-nous.html"><span class="t-fr">Qui sommes-nous</span><span class="t-en">About Us</span></a></li>
+          <li><a href="fonctionnement.html"><span class="t-fr">Fonctionnement de l&rsquo;association</span><span class="t-en">How the Association Works</span></a></li>
           <li><a href="anouk-journo.html">Anouk Journo</a></li>
           <li><a href="peintures.html">Meichelus</a></li>
         </ul>
       </div>
       <div class="plan-categorie">
-        <h2>Ateliers &amp; Coaching</h2>
+        <h2><span class="t-fr">Ateliers &amp; Coaching</span><span class="t-en">Workshops &amp; Coaching</span></h2>
         <ul>
-          <li><a href="ateliers.html">Ateliers &amp; Coaching</a></li>
-          <li><a href="mots-pour-maux.html">Écriture thérapeutique</a></li>
-          <li><a href="mediation-animale.html">Médiation animale</a></li>
-          <li><a href="amis-mots.html">Collection Amis-Mots</a></li>
+          <li><a href="ateliers.html"><span class="t-fr">Ateliers &amp; Coaching</span><span class="t-en">Workshops &amp; Coaching</span></a></li>
+          <li><a href="mots-pour-maux.html"><span class="t-fr">Écriture thérapeutique</span><span class="t-en">Therapeutic Writing</span></a></li>
+          <li><a href="mediation-animale.html"><span class="t-fr">Médiation animale</span><span class="t-en">Animal Mediation</span></a></li>
+          <li><a href="amis-mots.html"><span class="t-fr">Collection Amis-Mots</span><span class="t-en">Friends-Words Collection (Collection Amis-Mots)</span></a></li>
         </ul>
       </div>
       <div class="plan-categorie">
-        <h2>Éditions</h2>
+        <h2><span class="t-fr">Éditions</span><span class="t-en">Editions</span></h2>
         <ul>
-          <li><a href="edition.html">Manuscrits &amp; projets</a></li>
-          <li><a href="edition.html#raconter-le-monde">Collection Raconter le monde</a></li>
-          <li><a href="edition.html#immersion">Collection Immersion</a></li>
-          <li><a href="edition.html#manifestes">Collection Manifestes</a></li>
-          <li><a href="edition.html#romans-jeunesse">Romans jeunesse</a></li>
+          <li><a href="edition.html"><span class="t-fr">Manuscrits &amp; projets</span><span class="t-en">Manuscripts &amp; Projects</span></a></li>
+          <li><a href="edition.html#raconter-le-monde"><span class="t-fr">Collection Raconter le monde</span><span class="t-en">Collection: Telling the World (Raconter le monde)</span></a></li>
+          <li><a href="edition.html#immersion"><span class="t-fr">Collection Immersion</span><span class="t-en">Immersion Collection</span></a></li>
+          <li><a href="edition.html#manifestes"><span class="t-fr">Collection Manifestes</span><span class="t-en">Manifestos Collection</span></a></li>
+          <li><a href="edition.html#romans-jeunesse"><span class="t-fr">Romans jeunesse</span><span class="t-en">Young Adult Novels</span></a></li>
+          <li><a href="lire-partout.html"><span class="t-fr">Lire partout : numérique &amp; éditions en langue anglaise</span><span class="t-en">Read worldwide: ebooks &amp; English-language editions</span></a></li>
         </ul>
       </div>
       <div class="plan-categorie">
-        <h2>Poésie &amp; Arts</h2>
+        <h2><span class="t-fr">Poésie &amp; Arts</span><span class="t-en">Poetry &amp; Arts</span></h2>
         <ul>
-          <li><a href="poesie.html">Poésie au jour le jour</a></li>
-          <li><a href="peintures.html">Peintures &amp; Dessins</a></li>
-          <li><a href="evenements.html">Événements &amp; Presse</a></li>
+          <li><a href="poesie.html"><span class="t-fr">Poésie au jour le jour</span><span class="t-en">Poetry Day by Day</span></a></li>
+          <li><a href="peintures.html"><span class="t-fr">Peintures &amp; Dessins</span><span class="t-en">Paintings &amp; Drawings</span></a></li>
+          <li><a href="evenements.html"><span class="t-fr">Événements &amp; Presse</span><span class="t-en">Events &amp; Press</span></a></li>
         </ul>
       </div>
       <div class="plan-categorie">
-        <h2>Liens utiles</h2>
+        <h2><span class="t-fr">Liens utiles</span><span class="t-en">Useful Links</span></h2>
         <ul>
-          <li><a href="boutique.html">Boutique</a></li>
+          <li><a href="boutique.html"><span class="t-fr">Boutique</span><span class="t-en">Shop</span></a></li>
           <li><a href="faq.html">FAQ</a></li>
           <li><a href="contact.html">Contact</a></li>
-          <li><a href="youtube.html">Chaîne Youtube</a></li>
-          <li><a href="mentions-legales.html">Mentions légales</a></li>
+          <li><a href="youtube.html"><span class="t-fr">Chaîne Youtube</span><span class="t-en">Youtube Channel</span></a></li>
+          <li><a href="mentions-legales.html"><span class="t-fr">Mentions légales</span><span class="t-en">Legal Notice</span></a></li>
         </ul>
       </div>
     </div>
-    <p class="plan-mentions">© L&rsquo;AMagie <span class="etoile">✦</span> Maison d&rsquo;édition indépendante <span class="etoile">✦</span> Félines-Minervois</p>
+    <p class="plan-mentions">© L&rsquo;AMagie <span class="etoile">✦</span> <span class="t-fr">Maison d&rsquo;édition indépendante</span><span class="t-en">Independent Publishing House</span> <span class="etoile">✦</span> Félines-Minervois</p>
     <p class="plan-webmaster">© Webmaster Meichelus : <a href="mailto:meichelus@l-amagie.art">meichelus@l-amagie.art</a></p>
   </section>
 
   <script>
+    /* ===== Langue FR / EN (mémorisée pour tout le site) ===== */
+    var TITRES = { fr: "Médiation animale — L'AMagie", en: "Animal-Assisted Mediation — L'AMagie" };
+    function setLanguage(lang) {
+      document.body.classList.toggle('lang-en', lang === 'en');
+      document.documentElement.lang = lang;
+      document.title = TITRES[lang] || TITRES.fr;
+      document.querySelectorAll('.lang-btn').forEach(function(b){
+        b.classList.toggle('active', b.getAttribute('data-lang') === lang);
+      });
+      try { localStorage.setItem('l-amagie-lang', lang); localStorage.setItem('preferredLanguage', lang); } catch(e) {}
+    }
+    document.querySelectorAll('.lang-btn').forEach(function(b){
+      b.addEventListener('click', function(){ setLanguage(this.getAttribute('data-lang')); });
+    });
+    (function(){
+      var l = 'fr';
+      try { l = localStorage.getItem('l-amagie-lang') || localStorage.getItem('preferredLanguage') || 'fr'; } catch(e) {}
+      setLanguage(l === 'en' ? 'en' : 'fr');
+    })();
+
     if ('IntersectionObserver' in window) {
       var obs = new IntersectionObserver(function(entries){
         entries.forEach(function(e){

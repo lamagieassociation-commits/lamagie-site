@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" translate="no" class="notranslate">
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -330,6 +330,29 @@ em{font-style:italic;color:#5a4a30;}
 .reveler{opacity:0;transform:translateY(18px);transition:opacity .9s ease, transform .9s ease;}
 .reveler.visible{opacity:1;transform:translateY(0);}
 @media(prefers-reduced-motion: reduce){.reveler{opacity:1;transform:none;transition:none;}}
+
+/* ============================================================
+   BILINGUE FR/EN — sans traduction automatique
+   ============================================================ */
+.t-en{display:none !important;}
+body.lang-en .t-fr{display:none !important;}
+body.lang-en span.t-en{display:inline !important;}
+body.lang-en p.t-en{display:block !important;}
+.entete-retour{gap:16px;}
+.toggle-langue{display:flex;gap:8px;align-items:center;}
+.toggle-langue button{
+  background:transparent;border:1px solid rgba(184,154,92,.4);padding:4px 10px;border-radius:2px;
+  cursor:pointer;font-family:'Cormorant Garamond',Georgia,serif;font-size:0.8rem;color:#5a4a30;
+  transition:all 0.3s;letter-spacing:.08em;text-transform:uppercase;
+}
+.toggle-langue button.active{background:#b89a5c;color:white;border-color:#b89a5c;}
+.toggle-langue button:hover{background:rgba(184,154,92,.1);}
+/* Les deux boutons FR / EN restent toujours visibles */
+body .entete-retour .toggle-langue button.lang-btn{display:inline-block !important;}
+@media(max-width:760px){
+  .toggle-langue{gap:6px;}
+  .toggle-langue button{padding:3px 8px;font-size:0.7rem;}
+}
 </style>
 </head>
 
@@ -344,19 +367,23 @@ em{font-style:italic;color:#5a4a30;}
     </div>
     <a href="index.html" class="entete-titre" aria-label="L'AMagie — Accueil">L&rsquo;AMagie</a>
     <div class="entete-retour">
-      <a href="index.html"><span>Retour à l&rsquo;accueil</span></a>
+      <div class="toggle-langue">
+        <button class="lang-btn active" data-lang="fr">FR</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+      </div>
+            <a href="index.html"><span><span class="t-fr">Retour à l&rsquo;accueil</span><span class="t-en">Home</span></span></a>
     </div>
   </header>
 
   <!-- HÉROS DE PAGE -->
   <section class="heros-page">
     <nav class="fil-ariane" aria-label="Fil d'ariane">
-      <a href="index.html">Accueil</a>
+      <a href="index.html"><span class="t-fr">Accueil</span><span class="t-en">Home</span></a>
       <span class="sep">·</span>
-      <span>Ateliers &amp; Coaching</span>
+      <span class="t-fr">Ateliers &amp; Coaching</span><span class="t-en">Workshops &amp; Coaching</span>
     </nav>
-    <h1 class="titre-page">Ateliers d&rsquo;écriture<br/>&amp; Coaching créatif</h1>
-    <p class="sous-titre-page">Les mots pour cheminer, créer et se raconter</p>
+    <h1 class="titre-page"><span class="t-fr">Ateliers d&rsquo;écriture<br/>&amp; Coaching créatif</span><span class="t-en">Writing Workshops<br/>&amp; Creative Coaching</span></h1>
+    <p class="sous-titre-page"><span class="t-fr">Les mots pour cheminer, créer et se raconter</span><span class="t-en">Words to find your way, to create, to tell your story</span></p>
     <div class="medaillon-titre" aria-hidden="true">✦</div>
   </section>
 
@@ -367,13 +394,16 @@ em{font-style:italic;color:#5a4a30;}
          BLOC 1 — Présentation générale & image
          ============================================================ -->
     <article class="carte reveler">
-      <p><em>Anouk Journo</em>, autrice depuis plus de trente ans et formatrice expérimentée, anime à L&rsquo;AMagie des accompagnements d&rsquo;écriture <em>individuels ou collectifs</em>, adaptés à chaque parcours et à chaque voix.</p>
-      <p>Que vous portiez un manuscrit en gestation, le désir d&rsquo;écrire pour vous libérer, ou simplement l&rsquo;envie de rejoindre un cercle de lecteurs et d&rsquo;auteurs, vous trouverez ici <em>un espace bienveillant</em> pour libérer votre plume, dépasser les blocages et explorer votre propre voix.</p>
-      <p>De la première intuition au manuscrit fini, du désir de raconter à la mise en mots qui libère — L&rsquo;AMagie accompagne <em>toutes les étapes de l&rsquo;écriture</em>, à votre rythme, sans jugement, dans la confiance.</p>
+      <p class="t-fr"><em>Anouk Journo</em>, autrice depuis plus de trente ans et formatrice expérimentée, anime à L&rsquo;AMagie des accompagnements d&rsquo;écriture <em>individuels ou collectifs</em>, adaptés à chaque parcours et à chaque voix.</p>
+      <p class="t-en"><em>Anouk Journo</em>, an author for more than thirty years and an experienced trainer, leads writing support at L&rsquo;AMagie, <em>one-on-one or in groups</em>, shaped to each person&rsquo;s path and each voice.</p>
+      <p class="t-fr">Que vous portiez un manuscrit en gestation, le désir d&rsquo;écrire pour vous libérer, ou simplement l&rsquo;envie de rejoindre un cercle de lecteurs et d&rsquo;auteurs, vous trouverez ici <em>un espace bienveillant</em> pour libérer votre plume, dépasser les blocages et explorer votre propre voix.</p>
+      <p class="t-en">Whether you are carrying a manuscript still taking shape, a need to write to set yourself free, or simply the wish to join a circle of readers and writers, you will find here <em>a caring space</em> to loosen your pen, move past creative blocks and explore your own voice.</p>
+      <p class="t-fr">De la première intuition au manuscrit fini, du désir de raconter à la mise en mots qui libère — L&rsquo;AMagie accompagne <em>toutes les étapes de l&rsquo;écriture</em>, à votre rythme, sans jugement, dans la confiance.</p>
+      <p class="t-en">From the first spark to the finished manuscript, from the wish to tell a story to the words that set you free — L&rsquo;AMagie walks with you through <em>every stage of writing</em>, at your own pace, without judgment, in trust.</p>
 
       <figure class="image-coaching-wrap">
         <img src="images/Image-coaching.png" alt="Ateliers et Coaching d'écriture — L'AMagie" style="max-width:50%; height:auto; border-radius: 8px; box-shadow: 0 4px 20px rgba(58,50,32,0.15); margin: 20px auto; display: block;" loading="lazy">
-        <figcaption>Un cercle d&rsquo;écriture animé par Anouk Journo, à Félines-Minervois.</figcaption>
+        <figcaption><span class="t-fr">Un cercle d&rsquo;écriture animé par Anouk Journo, à Félines-Minervois.</span><span class="t-en">A writing circle led by Anouk Journo in Félines-Minervois.</span></figcaption>
       </figure>
     </article>
 
@@ -381,50 +411,60 @@ em{font-style:italic;color:#5a4a30;}
          BLOC 2 — Les cinq voies pour entrer en écriture
          ============================================================ -->
     <div class="section-titre reveler">
-      <h2>Les cinq voies pour entrer en écriture</h2>
-      <span class="legende">Nos accompagnements</span>
+      <h2><span class="t-fr">Les cinq voies pour entrer en écriture</span><span class="t-en">Five paths into writing</span></h2>
+      <span class="legende"><span class="t-fr">Nos accompagnements</span><span class="t-en">How we support you</span></span>
     </div>
 
     <div class="voies reveler">
 
       <article class="voie">
         <span class="numero" aria-hidden="true">I</span>
-        <h3>Mots pour maux</h3>
-        <p class="sous-titre-voie">Écriture thérapeutique et libératrice</p>
-        <p>Écrire pour traverser, comprendre, déposer. Une parole qui apaise et transforme&nbsp;: la page devient un lieu d&rsquo;accueil, où ce qui pèse trouve enfin une forme et un souffle.</p>
-        <a class="bouton-voie" href="mots-pour-maux.html">Découvrir</a>
+        <h3><span class="t-fr">Mots pour maux</span><span class="t-en">Mots pour Maux <em>(Words for Wounds)</em></span></h3>
+        <p class="sous-titre-voie t-fr">Écriture thérapeutique et libératrice</p>
+        <p class="sous-titre-voie t-en">Therapeutic, liberating writing</p>
+        <p class="t-fr">Écrire pour traverser, comprendre, déposer. Une parole qui apaise et transforme&nbsp;: la page devient un lieu d&rsquo;accueil, où ce qui pèse trouve enfin une forme et un souffle.</p>
+        <p class="t-en">Writing to get through, to understand, to set things down. Words that soothe and transform: the page becomes a place of welcome, where whatever weighs on you finally finds a shape and room to breathe.</p>
+        <a class="bouton-voie" href="mots-pour-maux.html"><span class="t-fr">Découvrir</span><span class="t-en">Discover</span></a>
       </article>
 
       <article class="voie">
         <span class="numero" aria-hidden="true">II</span>
-        <h3>Médiation animale</h3>
-        <p class="sous-titre-voie">La rencontre sensible avec le vivant pour ouvrir les mots</p>
-        <p>Des ateliers où la présence des animaux ouvre la parole et crée une confiance nouvelle. Une porte douce vers l&rsquo;écriture, animée par Anouk, <em>certifiée en médiation animale</em>.</p>
-        <a class="bouton-voie" href="mediation-animale.html">Découvrir</a>
+        <h3><span class="t-fr">Médiation animale</span><span class="t-en">Animal-Assisted Mediation</span></h3>
+        <p class="sous-titre-voie t-fr">La rencontre sensible avec le vivant pour ouvrir les mots</p>
+        <p class="sous-titre-voie t-en">A sensitive encounter with living beings to open up words</p>
+        <p class="t-fr">Des ateliers où la présence des animaux ouvre la parole et crée une confiance nouvelle. Une porte douce vers l&rsquo;écriture, animée par Anouk, <em>certifiée en médiation animale</em>.</p>
+        <p class="t-en">Workshops where the presence of animals opens up speech and builds a new kind of trust. A gentle doorway into writing, led by Anouk, <em>a certified animal-assisted intervention facilitator</em>.</p>
+        <a class="bouton-voie" href="mediation-animale.html"><span class="t-fr">Découvrir</span><span class="t-en">Discover</span></a>
       </article>
 
       <article class="voie">
         <span class="numero" aria-hidden="true">III</span>
-        <h3>Amis-Mots</h3>
-        <p class="sous-titre-voie">Le plaisir du partage, des lectures et de la création collective</p>
-        <p>Un cercle où l&rsquo;on lit, on écrit, on s&rsquo;écoute. Création collective et bienveillante autour des textes des participants, à partir d&rsquo;élans, de souvenirs, d&rsquo;intuitions partagées.</p>
-        <a class="bouton-voie" href="amis-mots.html">Découvrir</a>
+        <h3><span class="t-fr">Amis-Mots</span><span class="t-en">Amis-Mots <em>(Word Friends)</em></span></h3>
+        <p class="sous-titre-voie t-fr">Le plaisir du partage, des lectures et de la création collective</p>
+        <p class="sous-titre-voie t-en">The joy of sharing, reading and creating together</p>
+        <p class="t-fr">Un cercle où l&rsquo;on lit, on écrit, on s&rsquo;écoute. Création collective et bienveillante autour des textes des participants, à partir d&rsquo;élans, de souvenirs, d&rsquo;intuitions partagées.</p>
+        <p class="t-en">A circle where we read, write and listen to one another. Warm, collective creation around the participants&rsquo; own texts, drawing on impulses, memories and shared intuitions.</p>
+        <a class="bouton-voie" href="amis-mots.html"><span class="t-fr">Découvrir</span><span class="t-en">Discover</span></a>
       </article>
 
       <article class="voie">
         <span class="numero" aria-hidden="true">IV</span>
-        <h3>Ateliers d&rsquo;écriture thématiques</h3>
-        <p class="sous-titre-voie">Des rendez-vous réguliers à Félines-Minervois</p>
-        <p>Des sessions construites autour d&rsquo;un thème, d&rsquo;une forme ou d&rsquo;une saison. En groupe, dans la rencontre des voix et des élans partagés. Un espace de création collective au cœur du Minervois.</p>
-        <a class="bouton-voie" href="contact.html">Programme &amp; inscriptions</a>
+        <h3><span class="t-fr">Ateliers d&rsquo;écriture thématiques</span><span class="t-en">Themed Writing Workshops</span></h3>
+        <p class="sous-titre-voie t-fr">Des rendez-vous réguliers à Félines-Minervois</p>
+        <p class="sous-titre-voie t-en">Regular sessions in Félines-Minervois</p>
+        <p class="t-fr">Des sessions construites autour d&rsquo;un thème, d&rsquo;une forme ou d&rsquo;une saison. En groupe, dans la rencontre des voix et des élans partagés. Un espace de création collective au cœur du Minervois.</p>
+        <p class="t-en">Sessions built around a theme, a form or a season. In a group, where voices meet and creative energy is shared. A space for creating together in the heart of the Minervois.</p>
+        <a class="bouton-voie" href="contact.html"><span class="t-fr">Programme &amp; inscriptions</span><span class="t-en">Programme &amp; registration</span></a>
       </article>
 
       <article class="voie">
         <span class="numero" aria-hidden="true">V</span>
-        <h3>Accompagnement littéraire</h3>
-        <p class="sous-titre-voie">Suivi individuel de manuscrits et projets de livres</p>
-        <p>Un coaching sur mesure pour faire naître ou avancer votre projet d&rsquo;écriture&nbsp;: structure du récit, voix, rythme, mise au point du manuscrit jusqu&rsquo;à la publication par L&rsquo;AMagie si vous le souhaitez.</p>
-        <a class="bouton-voie" href="edition.html">Découvrir</a>
+        <h3><span class="t-fr">Accompagnement littéraire</span><span class="t-en">Literary Mentoring</span></h3>
+        <p class="sous-titre-voie t-fr">Suivi individuel de manuscrits et projets de livres</p>
+        <p class="sous-titre-voie t-en">One-on-one support for manuscripts and book projects</p>
+        <p class="t-fr">Un coaching sur mesure pour faire naître ou avancer votre projet d&rsquo;écriture&nbsp;: structure du récit, voix, rythme, mise au point du manuscrit jusqu&rsquo;à la publication par L&rsquo;AMagie si vous le souhaitez.</p>
+        <p class="t-en">Tailored coaching to bring your writing project to life or move it forward: story structure, voice, rhythm, polishing the manuscript — all the way to publication with L&rsquo;AMagie, if you wish.</p>
+        <a class="bouton-voie" href="edition.html"><span class="t-fr">Découvrir</span><span class="t-en">Discover</span></a>
       </article>
 
     </div>
@@ -433,7 +473,8 @@ em{font-style:italic;color:#5a4a30;}
          Citation d'Anouk en exergue
          ============================================================ -->
     <blockquote class="citation-anouk reveler">
-      <p>Écrire, ce n&rsquo;est pas trouver les bons mots&nbsp;— c&rsquo;est rencontrer les siens.</p>
+      <p class="t-fr">Écrire, ce n&rsquo;est pas trouver les bons mots&nbsp;— c&rsquo;est rencontrer les siens.</p>
+      <p class="t-en">Writing is not about finding the right words — it is about meeting your own.</p>
       <cite>— Anouk Journo</cite>
     </blockquote>
 
@@ -441,26 +482,26 @@ em{font-style:italic;color:#5a4a30;}
          BLOC 3 — Informations pratiques
          ============================================================ -->
     <div class="section-titre reveler">
-      <h2>Informations pratiques</h2>
+      <h2><span class="t-fr">Informations pratiques</span><span class="t-en">Practical Information</span></h2>
     </div>
 
     <section class="infos-pratiques reveler">
-      <h3>Comment participer&nbsp;?</h3>
+      <h3><span class="t-fr">Comment participer&nbsp;?</span><span class="t-en">How to take part</span></h3>
       <ul class="infos-liste">
         <li>
-          <strong>Adhésion à l&rsquo;association</strong> — l&rsquo;adhésion annuelle à L&rsquo;AMagie (30 €, via HelloAsso) est requise pour rejoindre les ateliers collectifs ou bénéficier d&rsquo;un accompagnement individuel. Elle soutient l&rsquo;ensemble de nos actions culturelles.
+          <span class="t-fr"><strong>Adhésion à l&rsquo;association</strong> — l&rsquo;adhésion annuelle à L&rsquo;AMagie (30 €, via HelloAsso) est requise pour rejoindre les ateliers collectifs ou bénéficier d&rsquo;un accompagnement individuel. Elle soutient l&rsquo;ensemble de nos actions culturelles.</span><span class="t-en"><strong>Membership</strong> — annual membership of L&rsquo;AMagie (€30, via HelloAsso) is required to join the group workshops or receive one-on-one support. It helps fund all of our cultural activities.</span>
         </li>
         <li>
-          <strong>Lieu</strong> — les ateliers en présentiel se tiennent à <em>Félines-Minervois</em> (Occitanie). Les coachings individuels peuvent également se dérouler à distance, selon votre situation.
+          <span class="t-fr"><strong>Lieu</strong> — les ateliers en présentiel se tiennent à <em>Félines-Minervois</em> (Occitanie). Les coachings individuels peuvent également se dérouler à distance, selon votre situation.</span><span class="t-en"><strong>Location</strong> — in-person workshops take place in <em>Félines-Minervois</em> (Occitanie, southern France). One-on-one coaching can also be done remotely, depending on your situation.</span>
         </li>
         <li>
-          <strong>Tarifs</strong> — chaque voie a son rythme et son cadre. Les <em>participations</em> sont volontairement modestes et adaptées à la nature de la formule. Les détails et calendriers sont communiqués au moment de la prise de contact.
+          <span class="t-fr"><strong>Tarifs</strong> — chaque voie a son rythme et son cadre. Les <em>participations</em> sont volontairement modestes et adaptées à la nature de la formule. Les détails et calendriers sont communiqués au moment de la prise de contact.</span><span class="t-en"><strong>Fees</strong> — each path has its own rhythm and format. <em>Contributions</em> are deliberately modest and suited to each option. Details and schedules are shared when you get in touch.</span>
         </li>
         <li>
-          <strong>Prendre contact</strong> — pour échanger sur votre projet ou demander le programme à venir, écrivez-nous via la <a href="contact.html">page contact</a>. Anouk vous répond personnellement et vous orientera vers la voie qui vous correspond.
+          <span class="t-fr"><strong>Prendre contact</strong> — pour échanger sur votre projet ou demander le programme à venir, écrivez-nous via la <a href="contact.html">page contact</a>. Anouk vous répond personnellement et vous orientera vers la voie qui vous correspond.</span><span class="t-en"><strong>Get in touch</strong> — to talk about your project or ask for the upcoming programme, write to us through the <a href="contact.html">contact page</a>. Anouk will reply personally and help you find the path that suits you.</span>
         </li>
         <li>
-          <strong>Pour aller plus loin</strong> — vous pouvez aussi explorer le site personnel d&rsquo;Anouk Journo&nbsp;: <a href="https://www.anoukjourno.fr/" target="_blank" rel="noopener">anoukjourno.fr</a>.
+          <span class="t-fr"><strong>Pour aller plus loin</strong> — vous pouvez aussi explorer le site personnel d&rsquo;Anouk Journo&nbsp;: <a href="https://www.anoukjourno.fr/" target="_blank" rel="noopener">anoukjourno.fr</a>.</span><span class="t-en"><strong>Learn more</strong> — you can also explore Anouk Journo&rsquo;s personal website: <a href="https://www.anoukjourno.fr/" target="_blank" rel="noopener">anoukjourno.fr</a>.</span>
         </li>
       </ul>
     </section>
@@ -471,9 +512,9 @@ em{font-style:italic;color:#5a4a30;}
         <span class="etoile">✦</span>
       </div>
       <div class="navigation-suite-grille">
-        <a href="contact.html">Nous contacter</a>
-        <a href="fonctionnement.html">Fonctionnement de l&rsquo;association</a>
-        <a href="edition.html">Soumettre un manuscrit</a>
+        <a href="contact.html"><span class="t-fr">Nous contacter</span><span class="t-en">Contact us</span></a>
+        <a href="fonctionnement.html"><span class="t-fr">Fonctionnement de l&rsquo;association</span><span class="t-en">How the Association Works</span></a>
+        <a href="edition.html"><span class="t-fr">Soumettre un manuscrit</span><span class="t-en">Submit a manuscript</span></a>
       </div>
     </nav>
 
@@ -484,56 +525,78 @@ em{font-style:italic;color:#5a4a30;}
     <div class="filet-haut" aria-hidden="true"><span class="etoile">✦</span></div>
     <div class="plan-site-grille">
       <div class="plan-categorie">
-        <h2>Qui sommes-nous&nbsp;?</h2>
+        <h2><span class="t-fr">Qui sommes-nous&nbsp;?</span><span class="t-en">About Us</span></h2>
         <ul>
-          <li><a href="qui-sommes-nous.html">Qui sommes-nous</a></li>
-          <li><a href="fonctionnement.html">Fonctionnement de l&rsquo;association</a></li>
+          <li><a href="qui-sommes-nous.html"><span class="t-fr">Qui sommes-nous</span><span class="t-en">About Us</span></a></li>
+          <li><a href="fonctionnement.html"><span class="t-fr">Fonctionnement de l&rsquo;association</span><span class="t-en">How the Association Works</span></a></li>
           <li><a href="anouk-journo.html">Anouk Journo</a></li>
+          <li><a href="peintures.html">Meichelus</a></li>
         </ul>
       </div>
       <div class="plan-categorie">
-        <h2>Ateliers &amp; Coaching</h2>
+        <h2><span class="t-fr">Ateliers &amp; Coaching</span><span class="t-en">Workshops &amp; Coaching</span></h2>
         <ul>
-          <li><a href="ateliers.html">Ateliers &amp; Coaching</a></li>
-          <li><a href="mots-pour-maux.html">Écriture thérapeutique</a></li>
-          <li><a href="mediation-animale.html">Médiation animale</a></li>
-          <li><a href="amis-mots.html">Collection Amis-Mots</a></li>
+          <li><a href="ateliers.html"><span class="t-fr">Ateliers &amp; Coaching</span><span class="t-en">Workshops &amp; Coaching</span></a></li>
+          <li><a href="mots-pour-maux.html"><span class="t-fr">Écriture thérapeutique</span><span class="t-en">Therapeutic Writing</span></a></li>
+          <li><a href="mediation-animale.html"><span class="t-fr">Médiation animale</span><span class="t-en">Animal Mediation</span></a></li>
+          <li><a href="amis-mots.html"><span class="t-fr">Collection Amis-Mots</span><span class="t-en">Friends-Words Collection (Collection Amis-Mots)</span></a></li>
         </ul>
       </div>
       <div class="plan-categorie">
-        <h2>Éditions</h2>
+        <h2><span class="t-fr">Éditions</span><span class="t-en">Editions</span></h2>
         <ul>
-          <li><a href="edition.html">Manuscrits &amp; projets</a></li>
-          <li><a href="edition.html#raconter-le-monde">Collection Raconter le monde</a></li>
-          <li><a href="edition.html#immersion">Collection Immersion</a></li>
-          <li><a href="edition.html#manifestes">Collection Manifestes</a></li>
-          <li><a href="edition.html#romans-jeunesse">Romans jeunesse</a></li>
+          <li><a href="edition.html"><span class="t-fr">Manuscrits &amp; projets</span><span class="t-en">Manuscripts &amp; Projects</span></a></li>
+          <li><a href="edition.html#raconter-le-monde"><span class="t-fr">Collection Raconter le monde</span><span class="t-en">Collection: Telling the World (Raconter le monde)</span></a></li>
+          <li><a href="edition.html#immersion"><span class="t-fr">Collection Immersion</span><span class="t-en">Immersion Collection</span></a></li>
+          <li><a href="edition.html#manifestes"><span class="t-fr">Collection Manifestes</span><span class="t-en">Manifestos Collection</span></a></li>
+          <li><a href="edition.html#romans-jeunesse"><span class="t-fr">Romans jeunesse</span><span class="t-en">Young Adult Novels</span></a></li>
+          <li><a href="lire-partout.html"><span class="t-fr">Lire partout : numérique &amp; éditions en langue anglaise</span><span class="t-en">Read worldwide: ebooks &amp; English-language editions</span></a></li>
         </ul>
       </div>
       <div class="plan-categorie">
-        <h2>Poésie &amp; Arts</h2>
+        <h2><span class="t-fr">Poésie &amp; Arts</span><span class="t-en">Poetry &amp; Arts</span></h2>
         <ul>
-          <li><a href="poesie.html">Poésie au jour le jour</a></li>
-          <li><a href="peintures.html">Peintures &amp; Dessins</a></li>
-          <li><a href="evenements.html">Événements &amp; Presse</a></li>
+          <li><a href="poesie.html"><span class="t-fr">Poésie au jour le jour</span><span class="t-en">Poetry Day by Day</span></a></li>
+          <li><a href="peintures.html"><span class="t-fr">Peintures &amp; Dessins</span><span class="t-en">Paintings &amp; Drawings</span></a></li>
+          <li><a href="evenements.html"><span class="t-fr">Événements &amp; Presse</span><span class="t-en">Events &amp; Press</span></a></li>
         </ul>
       </div>
       <div class="plan-categorie">
-        <h2>Liens utiles</h2>
+        <h2><span class="t-fr">Liens utiles</span><span class="t-en">Useful Links</span></h2>
         <ul>
-          <li><a href="boutique.html">Boutique</a></li>
+          <li><a href="boutique.html"><span class="t-fr">Boutique</span><span class="t-en">Shop</span></a></li>
           <li><a href="faq.html">FAQ</a></li>
           <li><a href="contact.html">Contact</a></li>
-          <li><a href="youtube.html">Chaîne Youtube</a></li>
-          <li><a href="mentions-legales.html">Mentions légales</a></li>
+          <li><a href="youtube.html"><span class="t-fr">Chaîne Youtube</span><span class="t-en">Youtube Channel</span></a></li>
+          <li><a href="mentions-legales.html"><span class="t-fr">Mentions légales</span><span class="t-en">Legal Notice</span></a></li>
         </ul>
       </div>
     </div>
-    <p class="plan-mentions">© L&rsquo;AMagie <span class="etoile">✦</span> Maison d&rsquo;édition indépendante <span class="etoile">✦</span> Félines-Minervois</p>
+    <p class="plan-mentions">© L&rsquo;AMagie <span class="etoile">✦</span> <span class="t-fr">Maison d&rsquo;édition indépendante</span><span class="t-en">Independent Publishing House</span> <span class="etoile">✦</span> Félines-Minervois</p>
     <p class="plan-webmaster">© Webmaster Meichelus : <a href="mailto:meichelus@l-amagie.art">meichelus@l-amagie.art</a></p>
   </section>
 
   <script>
+    /* ===== Langue FR / EN (mémorisée pour tout le site) ===== */
+    var TITRES = { fr: "Ateliers d'écriture & Coaching créatif — L'AMagie", en: "Writing Workshops & Creative Coaching — L'AMagie" };
+    function setLanguage(lang) {
+      document.body.classList.toggle('lang-en', lang === 'en');
+      document.documentElement.lang = lang;
+      document.title = TITRES[lang] || TITRES.fr;
+      document.querySelectorAll('.lang-btn').forEach(function(b){
+        b.classList.toggle('active', b.getAttribute('data-lang') === lang);
+      });
+      try { localStorage.setItem('l-amagie-lang', lang); localStorage.setItem('preferredLanguage', lang); } catch(e) {}
+    }
+    document.querySelectorAll('.lang-btn').forEach(function(b){
+      b.addEventListener('click', function(){ setLanguage(this.getAttribute('data-lang')); });
+    });
+    (function(){
+      var l = 'fr';
+      try { l = localStorage.getItem('l-amagie-lang') || localStorage.getItem('preferredLanguage') || 'fr'; } catch(e) {}
+      setLanguage(l === 'en' ? 'en' : 'fr');
+    })();
+
     if ('IntersectionObserver' in window) {
       var obs = new IntersectionObserver(function(entries){
         entries.forEach(function(e){

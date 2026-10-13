@@ -293,6 +293,14 @@ body.lang-en .t-en{display:inline;}
   .plan-categorie h2{text-align:center;}
   .plan-mentions{font-size:.7rem;letter-spacing:.12em;}
 }
+/* ===== Téléviseur — vidéo de présentation (Lucide) : le téléviseur s'adapte à la vidéo 9:16 ===== */
+.tele{margin:20px auto 26px;width:100%;max-width:520px;}
+.tele-ecran{position:relative;width:100%;}
+.tele-plan{position:relative;width:100%;overflow:hidden;}
+.tele-plan img{display:block;width:100%;height:auto;}
+.tele-video{position:absolute;left:20%;top:22.831%;width:60%;height:0;padding-top:106.7%;background:#000;}
+.tele-video iframe{position:absolute;inset:0;width:100%;height:100%;border:0;}
+.tele-legende{margin-top:10px;text-align:center;font-style:italic;font-size:.9rem;color:#7a6a48;line-height:1.4;}
 </style>
 </head>
 
@@ -454,6 +462,7 @@ const CATALOGUE = [
           en: "Two voices, two ways of living in the world. Anouk Journo writes from inside the language, brief and taut; Meichelus moves in circles and spirals, in graphite, ink and watercolour. Together they look straight at what is alive, at love, at awareness. Poetry of watchfulness and presence. In French."
         },
         couverture: "9791098116988",
+        tele: true,
         editions: [
           { format: "broche", langue: "fr", isbn: "9791098116988", liens: { boutique: "boutique.html" } },
           { format: "ebook", langue: "fr", isbn: "9791098117060", liens: { apple: "" } }
@@ -620,6 +629,38 @@ function couverture(oeuvre, lang, titre){
   return box;
 }
 
+/* Vidéo de présentation : coller ici l'adresse src de l'intégration Vimeo
+   (ex. https://player.vimeo.com/video/XXXXXXXX?h=XXXX). Vide = écran noir. */
+const TELE_VIDEO_SRC = "https://player.vimeo.com/video/1235496154?title=0&byline=0&portrait=0";
+
+function televiseur(lang){
+  const titreVideo = lang === 'en'
+    ? "Presentation of the poetry collection Lucide and the children's novel The Cat Who Had No Name"
+    : "Présentation du recueil de poésie Lucide et du roman jeunesse Le chat qui n’avait pas de nom";
+  const fig = el('figure', 'tele');
+  const ecran = el('div', 'tele-ecran');
+  const plan = el('div', 'tele-plan');
+  const img = document.createElement('img');
+  img.src = 'images/tv-lucide-v2.png';
+  img.alt = lang === 'en' ? 'Retro television framing the presentation video' : 'Téléviseur rétro encadrant la vidéo de présentation';
+  img.loading = 'lazy';
+  plan.appendChild(img);
+  if (TELE_VIDEO_SRC) {
+    const v = el('div', 'tele-video');
+    const ifr = document.createElement('iframe');
+    ifr.src = TELE_VIDEO_SRC;
+    ifr.title = titreVideo;
+    ifr.allow = 'autoplay; fullscreen; picture-in-picture';
+    ifr.allowFullscreen = true;
+    v.appendChild(ifr);
+    plan.appendChild(v);
+  }
+  ecran.appendChild(plan);
+  fig.appendChild(ecran);
+  fig.appendChild(el('figcaption', 'tele-legende', titreVideo));
+  return fig;
+}
+
 function render(lang){
   const T = TEXTES[lang];
   const zone = document.getElementById('catalogue');
@@ -641,6 +682,7 @@ function render(lang){
       txt.appendChild(el('p', 'auteurs', aut));
       txt.appendChild(el('p', 'resume', o.resume[lang]));
       if (o.note) txt.appendChild(el('p', 'note', o.note[lang]));
+      if (o.tele) txt.appendChild(televiseur(lang));
 
       const ul = el('ul', 'editions');
       o.editions.forEach(ed => {

@@ -489,6 +489,8 @@ const CATALOGUE = [
         appleImg: "https://is1-ssl.mzstatic.com/image/thumb/Publication221/v4/36/aa/ef/36aaef13-df45-124f-4888-92439ffb9bc2/9791098117077.jpg/400x600bb.jpg",
         couvertureEn: "9791098117015",
         editions: [
+          { format: "broche", langue: "fr", isbn: "9791098117039",
+            liens: { librairies: "https://www.librairiesindependantes.com/product/9791098117039/" } },
           { format: "ebook", langue: "fr", titre: "Le chat qui n'avait pas de nom", isbn: "9791098117077",
             liens: { apple: "https://books.apple.com/fr/book/le-chat-qui-navait-pas-de-nom/id6818930557" } },
           { format: "broche", langue: "en", titre: "The Cat Who Had No Name", isbn: "9791098117015",
@@ -578,7 +580,7 @@ const TEXTES = {
     formats: { ebook: "Livre numérique", broche: "Livre broché" },
     langues: { fr: "en français", en: "en anglais" },
     premiere: "première version",
-    boutiques: { apple: "Apple Books", bookshop: "Bookshop.org", boutique: "Notre boutique", vivlio: "Vivlio" },
+    boutiques: { apple: "Apple Books", bookshop: "Bookshop.org", bookshopEn: "Bookshop.org (en anglais)", librairies: "Librairies indépendantes", boutique: "Notre boutique", vivlio: "Vivlio" },
     bientot: "Bientôt disponible"
   },
   en: {
@@ -587,7 +589,7 @@ const TEXTES = {
     formats: { ebook: "Ebook", broche: "Paperback" },
     langues: { fr: "in French", en: "in English" },
     premiere: "first version",
-    boutiques: { apple: "Apple Books", bookshop: "Bookshop.org", boutique: "Our shop", vivlio: "Vivlio" },
+    boutiques: { apple: "Apple Books", bookshop: "Bookshop.org", bookshopEn: "Bookshop.org (English)", librairies: "Independent bookshops", boutique: "Our shop", vivlio: "Vivlio" },
     bientot: "Coming soon"
   }
 };
@@ -656,7 +658,8 @@ function render(lang){
         const liens = el('span', 'liens');
         Object.entries(ed.liens || {}).forEach(([boutique, url]) => {
           if (!url) return;
-          const a = el('a', 'btn', T.boutiques[boutique] || boutique);
+          const libelle = (boutique === 'bookshop' && ed.langue === 'en') ? T.boutiques.bookshopEn : (T.boutiques[boutique] || boutique);
+          const a = el('a', 'btn', libelle);
           a.href = url;
           if (/^https?:/.test(url)) { a.target = '_blank'; a.rel = 'noopener'; }
           liens.appendChild(a);

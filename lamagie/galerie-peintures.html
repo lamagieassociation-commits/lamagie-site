@@ -221,6 +221,8 @@ em{font-style:italic;color:#5a4a30;}
   font-style:normal;
 }
 .oeuvre-lien--achat::after{content:'';}
+.oeuvre-lien--mail{margin-top:.55rem;}
+.oeuvre-lien--mail::after{content:'';}
 .oeuvre-lien--achat:hover{background:#5a4a22;border-color:#5a4a22;color:#f1ead4;}
 
 /* ── Colonne image ── */
@@ -549,7 +551,23 @@ body.lang-en p.t-en{display:block !important;}
 ═══════════════════════════════════════════════════════════ */
 const OEUVRES = [
 
-  // ── 2026 · Dernière toile ────────────────────────────────
+  // ── 2026 · Dernière toile — pré-couverture de « Forêt » ──
+  {
+    title:     "La fleur de Yuka",
+    year:      "2026",
+    location:  "Pré-couverture du recueil « Forêt »",
+    technique: "Mine graphite, encre de Chine et aquarelle sur papier Arches — et beaucoup de patience. Format A3, environ 40 × 60 cm avec passe-partout et cadre",
+    desc:      "Sur un fond de nuit, des fleurs de yucca en grisaille s'élèvent à travers des feuilles-lames ornées d'arabesques mauresques. Seules deux libellules, l'une rouge, l'autre émeraude, portent la couleur : elles sont le désir, la vie qui veille au cœur du végétal. Cette œuvre est la pré-couverture de « Forêt », prochain recueil de poésie des Éditions L'AMagie, un duo entre Anouk Journo et Meichelus.",
+    img:       "images/fleur-de-yuka.jpg",
+    url:       "https://meichelus-art.blogspot.com/2026/10/ce-qui-veille-sous-la-trame-si-tu-te.html",
+    urlLabel:  "Découvrir l'œuvre sur le blog",
+    tag:       "Original",
+    achat:     "https://l-amagie.sumupstore.com/product/la-fleur-de-yuka",
+    achatLabel:"🎨 Acquérir cette toile",
+    mail:      "michelfoucher@gmail.com"
+  },
+
+  // ── 2026 ────────────────────────────────────────────────
   {
     title:     "Que trame ce papillon",
     year:      "2026",
@@ -818,6 +836,13 @@ const OEUVRES = [
    achatLabel, expoLabel
 ═══════════════════════════════════════════════════════════ */
 const OEUVRES_EN = {
+  "La fleur de Yuka": {
+    location:  "Pre-cover of the collection “Forêt” (Forest)",
+    technique: "Graphite, Indian ink and watercolour on Arches paper — and a great deal of patience. A3 format, about 40 × 60 cm with mount and frame",
+    desc:      "Against a night-dark ground, grisaille yucca blossoms rise through blade-like leaves adorned with Moorish arabesques. Only two dragonflies — one crimson, one emerald — carry colour: they are desire, the life that keeps watch at the heart of the plant. This work is the pre-cover of “Forêt” (Forest), the forthcoming poetry collection from L'AMagie Éditions, a duet between Anouk Journo and Meichelus.",
+    urlLabel:  "Discover the work on the blog (in French)",
+    achatLabel:"🎨 Acquire this painting"
+  },
   "Que trame ce papillon": {
     location:  "“Butterflies and Dragonflies” series",
     technique: "Ink, graphite and watercolour on paper — 44 × 54 cm with mount",
@@ -915,9 +940,9 @@ const OEUVRES_EN = {
 
 /* Libellés de la galerie dans chaque langue */
 const LIBELLES = {
-  fr: { lire: "Lire l'article", acheter: "🎨 Acquérir cette toile", saatchi: "🎨 Acquérir sur Saatchi Art", expo: "Voir l'exposition", vendue: "Vendue",
+  fr: { lire: "Lire l'article", acheter: "🎨 Acquérir cette toile", saatchi: "🎨 Acquérir sur Saatchi Art", expo: "Voir l'exposition", vendue: "Vendue", mail: "✉ Écrire à l'artiste",
         tags: { "Original": "Original", "Sculpture": "Sculpture", "Illustration": "Illustration", "Vendue": "Vendue" } },
-  en: { lire: "Read the article (in French)", acheter: "🎨 Acquire this painting", saatchi: "🎨 Buy on Saatchi Art", expo: "See the exhibition", vendue: "Sold",
+  en: { lire: "Read the article (in French)", acheter: "🎨 Acquire this painting", saatchi: "🎨 Buy on Saatchi Art", expo: "See the exhibition", vendue: "Sold", mail: "✉ Write to the artist",
         tags: { "Original": "Original", "Sculpture": "Sculpture", "Illustration": "Illustration", "Vendue": "Sold" } }
 };
 
@@ -946,6 +971,9 @@ function rendreGalerie(lang) {
     var expoLabel  = lang === 'en' ? (t.expoLabel || L.expo) : (o.expoLabel || L.expo);
 
     var actionsHTML = '<a class="oeuvre-lien" href="' + o.url + '" target="_blank" rel="noopener noreferrer">' + lireLabel + '</a>';
+    if (o.mail) {
+      actionsHTML += '<a class="oeuvre-lien oeuvre-lien--mail" href="mailto:' + o.mail + '?subject=' + encodeURIComponent(o.title + ' — Meichelus') + '">' + L.mail + '</a>';
+    }
     if (o.achat) {
       actionsHTML += '<a class="oeuvre-lien oeuvre-lien--achat" href="' + o.achat + '" target="_blank" rel="noopener noreferrer">' + achatLabel + '</a>';
     }

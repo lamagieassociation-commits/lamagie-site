@@ -206,6 +206,77 @@ em{font-style:italic;color:#5a4a30;}
 .livre-lien::after{content:' →';font-style:normal;}
 .livre-lien:hover{color:#b89a5c;border-color:#b89a5c;background:rgba(241,234,212,.7);}
 
+/* === Couverture recto / verso === */
+.livre-visuel{grid-row:1 / span 5;text-align:center;}
+.livre-visuel .livre-couverture{margin-bottom:14px;position:relative;}
+.livre-couverture .face-verso{position:absolute;inset:0;opacity:0;transition:opacity .6s ease;}
+.livre-visuel.verso .face-verso{opacity:1;}
+.livre-visuel.verso .face-recto{opacity:0;}
+.livre-couverture .face-recto{transition:opacity .6s ease;}
+.btn-retourner{
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;
+  font-size:.92rem;
+  color:#5a4a30;
+  background:rgba(241,234,212,.45);
+  border:1px solid rgba(184,154,92,.4);
+  border-radius:2px;
+  padding:6px 16px;
+  cursor:pointer;
+  transition:color .3s, border-color .3s, background-color .3s;
+}
+.btn-retourner::before{content:'↻ ';font-style:normal;color:#b89a5c;}
+.btn-retourner:hover{color:#b89a5c;border-color:#b89a5c;background:rgba(241,234,212,.75);}
+@media(max-width:720px){.livre-visuel{grid-row:auto;}.livre-visuel .livre-couverture{margin-bottom:12px;}}
+
+/* === Nouveauté : bandeau, écoute, disponibilité === */
+.livre-nouveaute{
+  display:inline-block;
+  font-family:'Cormorant Garamond',serif;
+  font-size:.72rem;
+  letter-spacing:.3em;
+  text-transform:uppercase;
+  color:#8a6d2f;
+  padding:4px 12px;
+  margin:0 0 12px;
+  border:1px solid rgba(184,154,92,.45);
+  background:rgba(184,154,92,.08);
+  border-radius:2px;
+}
+.livre-nouveaute::before{content:'✦ ';color:#b89a5c;letter-spacing:0;}
+.livre-ecoute{
+  clear:both;
+  margin:4px 0 20px;
+  padding:16px 18px;
+  background:rgba(241,234,212,.55);
+  border:1px solid rgba(184,154,92,.28);
+  border-left:3px solid rgba(184,154,92,.5);
+  border-radius:2px;
+}
+.livre-ecoute p{
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;
+  font-size:.98rem;
+  color:#5a4a30;
+  margin:0 0 10px;
+  line-height:1.5;
+}
+.livre-ecoute audio{width:100%;height:38px;display:block;}
+.livre-ecoute a{font-size:.88rem;font-style:italic;color:#8a6d2f;border-bottom:1px solid rgba(184,154,92,.35);transition:color .3s,border-color .3s;}
+.livre-ecoute a:hover{color:#b89a5c;border-color:#b89a5c;}
+.livre-ecoute .lien-ecoute{display:inline-block;margin-top:8px;}
+.livre-bientot{
+  display:inline-block;
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;
+  font-size:.95rem;
+  color:#7a6a48;
+  padding:8px 20px;
+  border:1px dashed rgba(184,154,92,.45);
+  border-radius:2px;
+  background:rgba(241,234,212,.3);
+}
+
 /* === Bloc CTA === */
 .cta-bloc{
   margin:48px auto 36px;
@@ -432,6 +503,43 @@ em{font-style:italic;color:#5a4a30;}
       <span class="legende">Paroles portées</span>
     </div>
 
+    <!-- NOUVEAUTÉ : LA BARAKA -->
+    <div class="grille-livres reveler">
+
+      <article class="livre-carte">
+        <div class="livre-visuel" id="visuel-baraka">
+          <div class="livre-couverture">
+            <img class="face-recto" src="images/la-baraka.jpg" alt="Couverture — La Baraka, Olivier Julien"/>
+            <img class="face-verso" src="images/la-baraka-4e.jpg" alt="Quatrième de couverture — La Baraka, Olivier Julien" aria-hidden="true"/>
+          </div>
+          <button type="button" class="btn-retourner" aria-controls="visuel-baraka" aria-pressed="false">Voir la 4<sup>e</sup> de couverture</button>
+        </div>
+        <div class="livre-texte">
+          <span class="livre-nouveaute">Nouveauté · novembre 2026</span>
+          <h3 class="livre-titre">La Baraka</h3>
+          <span class="livre-auteur">Olivier Julien</span>
+
+          <!-- Médaillon portrait de l'auteur -->
+          <div class="auteur-medallion">
+            <img src="images/Olivier-Julien.jpg" alt="Portrait d'Olivier Julien"/>
+          </div>
+
+          <p class="livre-description">C&rsquo;est avec une grande joie que nous annonçons la parution de <em>La Baraka</em>, le témoignage d&rsquo;Olivier Julien. En mars 2020, il apprend qu&rsquo;il est atteint d&rsquo;un cancer du rein de stade IV. Commencent alors six années de combat, mais aussi de rencontres extraordinaires. Porté par l&rsquo;amour des siens, soutenu par des médecins engagés et des amis fidèles, il livre un récit magnifique et profondément émouvant, plein de tendresse et d&rsquo;humour, sur la maladie, et surtout sur la vie. Car la Baraka, c&rsquo;est parfois simplement la chance de croiser les bonnes personnes au bon moment.</p>
+
+          <div class="livre-ecoute">
+            <p>Écoutez Olivier Julien présenter son livre sur Radio Totem&nbsp;:</p>
+            <audio controls preload="none" src="https://api.octopus.saooti.com/podcast/download/2916329.mp3?origin=rss">
+              Votre navigateur ne permet pas la lecture audio.
+            </audio>
+            <a class="lien-ecoute" href="https://api.octopus.saooti.com/podcast/download/2916329.mp3?origin=rss" target="_blank" rel="noopener">Ouvrir l&rsquo;interview dans un nouvel onglet</a>
+          </div>
+
+          <span class="livre-bientot">Bientôt disponible en librairie</span>
+        </div>
+      </article>
+
+    </div>
+
     <div class="grille-livres reveler">
 
       <!-- OUVRAGE 1 : PAROLES DE FÉLINOISES -->
@@ -574,6 +682,16 @@ em{font-style:italic;color:#5a4a30;}
   </section>
 
   <script>
+    document.querySelectorAll('.btn-retourner').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        var v = btn.closest('.livre-visuel');
+        var verso = v.classList.toggle('verso');
+        btn.setAttribute('aria-pressed', verso ? 'true' : 'false');
+        btn.innerHTML = verso ? 'Voir la 1<sup>re</sup> de couverture' : 'Voir la 4<sup>e</sup> de couverture';
+        v.querySelector('.face-verso').setAttribute('aria-hidden', verso ? 'false' : 'true');
+        v.querySelector('.face-recto').setAttribute('aria-hidden', verso ? 'true' : 'false');
+      });
+    });
     if ('IntersectionObserver' in window) {
       var obs = new IntersectionObserver(function(entries){
         entries.forEach(function(e){

@@ -464,6 +464,22 @@ const CATALOGUE = [
   {
     rubrique: "poesie",
     oeuvres: [
+
+      {
+        titre: { fr: "Roseaux", en: "Roseaux" },
+        auteurs: { fr: "Anouk Journo & Meichelus", en: "Anouk Journo & Meichelus" },
+        resume: {
+          fr: "Recueil n° 8 de la collection De la Lune à la Plume. Un souffle de toute vie traverse l'arbre, le vent, la pierre et l'oiseau : des poèmes qui refusent un monde plat et font de l'attention un acte doux et radical.",
+          en: "No. 8 in the From the Moon to the Quill collection. A breath of all life runs through the tree, the wind, the stone and the bird: poems that refuse a flat world and make attention a gentle, radical act. In French."
+        },
+        image: "images/roseaux.jpg",
+        editions: [
+          { format: "broche", langue: "fr", isbn: "9782489653014",
+            liens: { librairies: "" } },  // lien papier à renseigner ici quand disponible
+          { format: "ebook", langue: "fr",
+            liens: { apple: "https://books.apple.com/fr/book/roseaux/id6829564502" } }
+        ]
+      },
       {
         titre: { fr: "Van Life Poetry", en: "Van Life Poetry" },
         auteurs: { fr: "Anouk Journo · illustrations de Meichelus", en: "Anouk Journo · illustrated by Meichelus" },
@@ -641,7 +657,7 @@ function el(tag, cls, text){
 function couverture(oeuvre, lang, titre){
   const box = el('div', 'couverture');
   const isbn = (lang === 'en' && oeuvre.couvertureEn) ? oeuvre.couvertureEn : oeuvre.couverture;
-  const sources = [`images/livres/${isbn}.jpg`];
+  const sources = oeuvre.image ? [oeuvre.image] : [`images/livres/${isbn}.jpg`];
   if (oeuvre.appleImg && isbn === oeuvre.couverture) sources.push(oeuvre.appleImg);
   if (lang === 'en' && oeuvre.imgEn) sources.push(oeuvre.imgEn);
   const img = document.createElement('img');
@@ -732,7 +748,7 @@ function render(lang){
           info.appendChild(el('span', 'titre-ed', ed.titre));
           if (ed.premiere) info.appendChild(document.createTextNode(` (${T.premiere})`));
         }
-        info.appendChild(el('span', 'isbn', `ISBN ${ed.isbn}`));
+        if (ed.isbn) info.appendChild(el('span', 'isbn', `ISBN ${ed.isbn}`));
         li.appendChild(info);
 
         const liens = el('span', 'liens');

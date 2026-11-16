@@ -448,6 +448,22 @@ em{font-style:italic;color:#5a4a30;}
 
 @media(max-width:560px){.plan-site{padding:32px 18px 24px;}.plan-site-grille{gap:18px;text-align:center;}.plan-categorie h2{text-align:center;}.plan-mentions{font-size:.7rem;letter-spacing:.12em;}}
 
+/* === Presse : L'Indépendant (La Baraka) === */
+.presse-duo{clear:both;margin:8px 0 22px;}
+.presse-duo p.presse-titre{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.95rem;color:#5a4a30;margin:0 0 10px;}
+.presse-duo-grille{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.presse-duo figure{margin:0;text-align:center;}
+.presse-duo button.presse-vignette{display:block;width:100%;padding:0;border:0;background:none;cursor:zoom-in;}
+.presse-duo img{width:100%;height:auto;border-radius:2px;border:1px solid rgba(184,154,92,.35);box-shadow:0 4px 12px rgba(90,74,48,.14);transition:transform .3s, box-shadow .3s;}
+.presse-duo button.presse-vignette:hover img,.presse-duo button.presse-vignette:focus-visible img{transform:translateY(-2px);box-shadow:0 8px 18px rgba(90,74,48,.2);}
+.presse-duo figcaption{margin-top:8px;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.85rem;color:#7a6a48;line-height:1.35;}
+.presse-duo .presse-aide{display:block;margin-top:6px;font-size:.78rem;color:#8a6d2f;}
+.lightbox-presse{position:fixed;inset:0;z-index:1000;background:rgba(40,32,18,.88);display:none;align-items:center;justify-content:center;padding:20px;cursor:zoom-out;}
+.lightbox-presse.ouvert{display:flex;}
+.lightbox-presse img{max-width:100%;max-height:92vh;width:auto;height:auto;border-radius:3px;box-shadow:0 10px 40px rgba(0,0,0,.5);}
+.lightbox-presse button{position:absolute;top:14px;right:18px;background:rgba(241,234,212,.92);border:1px solid rgba(184,154,92,.6);border-radius:2px;padding:6px 14px;font-family:'Cormorant Garamond',serif;font-size:1rem;color:#3a3220;cursor:pointer;}
+@media(max-width:600px){.presse-duo-grille{gap:10px;}}
+
 /* === Révélation au scroll === */
 .reveler{opacity:0;transform:translateY(18px);transition:opacity .9s ease, transform .9s ease;}
 .reveler.visible{opacity:1;transform:translateY(0);}
@@ -532,6 +548,24 @@ em{font-style:italic;color:#5a4a30;}
               Votre navigateur ne permet pas la lecture audio.
             </audio>
             <a class="lien-ecoute" href="https://api.octopus.saooti.com/podcast/download/2916329.mp3?origin=rss" target="_blank" rel="noopener">Ouvrir l&rsquo;interview dans un nouvel onglet</a>
+          </div>
+
+          <div class="presse-duo">
+            <p class="presse-titre">Dans la presse : L&rsquo;Indépendant, mardi 17 novembre 2026, à la une.</p>
+            <div class="presse-duo-grille">
+              <figure>
+                <button type="button" class="presse-vignette" data-grand="images/presse-independant-une.jpg" aria-label="Agrandir : une de L'Indépendant du 17 novembre 2026">
+                  <img src="images/presse-independant-une.jpg" alt="Une de L'Indépendant du mardi 17 novembre 2026" loading="lazy"/>
+                </button>
+                <figcaption>La une de L&rsquo;Indépendant</figcaption>
+              </figure>
+              <figure>
+                <button type="button" class="presse-vignette" data-grand="images/presse-independant-baraka.jpg" aria-label="Agrandir : article de L'Indépendant sur La Baraka">
+                  <img src="images/presse-independant-baraka.jpg" alt="Article de L'Indépendant : « La Baraka » par Olivier Julien" loading="lazy"/>
+                </button>
+                <figcaption>« La Baraka » par Olivier Julien<span class="presse-aide">Cliquer pour agrandir</span></figcaption>
+              </figure>
+            </div>
           </div>
 
           <span class="livre-bientot">Bientôt disponible en librairie</span>
@@ -705,6 +739,41 @@ em{font-style:italic;color:#5a4a30;}
     } else {
       document.querySelectorAll('.reveler').forEach(function(el){ el.classList.add('visible'); });
     }
+  </script>
+
+  <!-- AGRANDISSEMENT PRESSE -->
+  <div class="lightbox-presse" id="lightbox-presse" role="dialog" aria-modal="true" aria-label="Image agrandie">
+    <button type="button" id="lightbox-fermer">Fermer ✕</button>
+    <img id="lightbox-image" src="" alt=""/>
+  </div>
+
+  <script>
+    (function(){
+      var box = document.getElementById('lightbox-presse');
+      var img = document.getElementById('lightbox-image');
+      var fermer = document.getElementById('lightbox-fermer');
+      var dernier = null;
+      function ouvrir(src, alt, bouton){
+        img.src = src; img.alt = alt || '';
+        box.classList.add('ouvert'); dernier = bouton;
+        fermer.focus();
+      }
+      function fermerBox(){
+        box.classList.remove('ouvert'); img.src = '';
+        if (dernier) dernier.focus();
+      }
+      document.querySelectorAll('.presse-vignette').forEach(function(b){
+        b.addEventListener('click', function(){
+          var i = b.querySelector('img');
+          ouvrir(b.getAttribute('data-grand'), i ? i.alt : '', b);
+        });
+      });
+      box.addEventListener('click', function(e){ if (e.target !== img) fermerBox(); });
+      fermer.addEventListener('click', fermerBox);
+      document.addEventListener('keydown', function(e){
+        if (e.key === 'Escape' && box.classList.contains('ouvert')) fermerBox();
+      });
+    })();
   </script>
 
 </body>
